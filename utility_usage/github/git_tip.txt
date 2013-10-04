@@ -1,0 +1,87 @@
+/*--------------------------------------------------
+# Creates a git repository:
+
+	$ cd /path/to/repository
+	$ git init
+	$ git add .
+	$ git commit -m "Initial commit"
+	$ git remote add origin git@github.com:username/repository.git
+	$ git push -u origin master
+
+# Force 
+	$ git push -u --force origin master
+
+
+
+
+/*--------------------------------------------------
+# Check out a copy of repository
+
+	$ git clone git@github.com:Githib-Username/simc_gfortran.git
+
+
+
+
+
+
+/*--------------------------------------------------
+
+Remote Command
+
+# Show the remote URL
+
+	$git remote -v
+
+
+# Remove origin URL and add a new one
+	$git remote rm origin
+	$git remote add origin git@github.com:billlee77/computer.git
+
+# Change change the URL for origin
+	$git remote set-url origin git@github.com:"yourname"/"projectname".git
+
+
+
+
+git commit -m "Commit descriptions"
+
+git push origin master
+
+
+git remote add upstream https://github.com/JeffersonLab/simc_gfortran
+
+git fetch upstream
+
+git merge upstream/master
+
+
+
+
+
+
+
+
+
+git add .
+git add -u
+
+
+git add .; git add -u
+git add -A
+
+
+
+
+
+/*--------------------------------------------------
+Update and Reset:
+
+	# Replace local changes
+		$ git checkout -- <filename>
+	
+	# Update and reset the local repository
+	
+		$ git fetch origin
+		$ git reset --hard origin/master
+	
+
