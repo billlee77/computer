@@ -1,0 +1,15 @@
+# Copy a file to multiple directory
+  	for i in dir1 dir2 dir3; do cp filename $i; done
+	for i in folder1 folder2 folder3 folder4; do cp text.txt $i; done
+
+# more directory ??
+	for i in `ls -d ../*/`;do
+	cp file "$i";
+	done 
+
+# one line
+	for i in folder[1-100]; do cp test.txt "$i"; done;
+
+# different approches
+	cp file dir%n
+	while dir%n==(0,100)

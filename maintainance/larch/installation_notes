@@ -1,0 +1,169 @@
+Date: 02/05/2011
+
+Step 1: Disk Patitioning
+
+Name		  Size			Partion
+sda1 		  250MB			/Boot
+sda2		 4094MB			/swep
+
+sda4 (holder)
+sda5		20481MB			/
+sda6		50446MB			/home
+Free		1019
+
+
+
+Step 2: Create Users and Groups
+
+Huberg
+Garth Huberg
+UserID:	 500
+GroupID: 500
+
+g4user
+G4 user
+UserID:  501
+GroupID: 501
+
+acqu
+AcquRoot
+UserID:  504
+GroupID: 504
+
+misha
+Mikhail
+User:	 505
+GroupID: 505
+
+billlee
+Bill Li
+UserID:  510
+GroupId: 510
+
+sichelll
+Lee Sichello
+UserID:  511
+Group:	 511
+
+Step 3: Configuration
+		
+		Restoreing hosts, hosts_denny, hosts_allow, aliases into /etc/
+
+		Configuring /etc/ssh/ssh_config, by adding 
+			X11FORWARDING yes
+		
+		Configuring CUPS:
+		localhost:631/printers
+		copy over cups.config from /home/custom/etc.
+		/etc/cups/cupsd.conf
+
+		Tick in the configuration : run command as login shell
+		
+		Obtain RPM-GPG keys for atrpm, key is stored in 
+		/etc/pki/rpm-gpg
+
+Step 4:	restoring logwatch into /etc/cron.daily/:	
+
+		cp logwacth form lichen:/usr/share/logwatch
+		linking 0logwatch with /usr/share/logwatch/scripts/logwatch.pl
+		create dir: /var/cache/logwatch
+
+
+Step 5: Fix the ssh public key issue
+		When ssh into /home/user there is a Error Messege:
+		"Can not chdir into /home/user/: Permission dennied".					
+		Along with this issue, public key in .ssh/ does not work too!		
+		
+		This issue can be resovled by using :
+			sudo restorecon /home/billlee
+
+Step 6: Package Installed
+		skype vim-x11 gv gimp pine pdftool skype latex gvim emacs vnc openoffice vncserver tkdiff xfig java tgif svn flash icewm unrar alacarte policycoreutils-gui xcircuit qcad paw x11vnc pdf-tool a2ps logwatch php apcupsd filezilla gparted vnc-server
+
+Step 7: Correcting httpd DocumentRoot
+
+		When trying to start apache deamon and change Ducoment Root from /var/www to /home/html, there is a Error messege:		
+		"DocumentRoot need to be a directory"
+		where /home/html is clearly a directory.
+		
+		This problem can be solved by type in as root:
+			chcon -R -h -t httpd_sys_content_t /path/to/directory 
+		to correct permission issue.
+
+Step 8: Enable service 
+		Use the service configuration tool in: Main Manu-> System-> Administration-> Services
+		Enable the service: httpd 
+
+
+Step 9: Setting Firewall
+		
+ 		User Firewall configuration tool in: Main Manu-> System-> Administration-> Firewall
+		Allow SSH 							22/tcp  
+		Allow WWW (HTTP)					80/tcp
+		Allow Network Printing Client(IPP)	631/udp
+
+Step 10: selinux Setting Change
+		In order to allow httpd access /home/user/public_html file, selinux mode need to be changed from Enforcing mode to permissive.
+		To do this we need to configure in
+
+		/etc/selinux/config
+		change SELINUX=enforcing to SELINUX=permissive
+		
+		Then /home/user/public_html is accessable
+
+#****************************************************************************
+
+New 160G SATA2 Hard Drive Installatiom
+Date: 08/June/2010
+
+Step 1: 
+	$ sudo mkdir /dsk2 && sudo chmod 777 /dsk2
+
+Step 2: Format new hard drive to EXT4 and Label DW160 with gparted GUI
+	Format: EXT4
+	Label : DW160
+
+Step 3:
+	$ e2label /dev/sdb1 DW160
+	$ e2label /dev/sdb1
+
+Step 4: 
+	$ mount /dev/sdb1 /dsk2
+
+Step 5: Edit /etc/fstab file by adding:
+	LABEL=WD160 		/dsk2			ext4	defaults 	1 2
+
+Step 6: move files and link
+	$ mv work/ important_file/ computer/ /dsk2/billlee
+	$ ln -s /dsk2/billlee/computer/ ~/computer
+	$ ln -s /dsk2/billlee/work/ work
+	$ ln -s /dsk2/billlee/important_file/ important_file
+
+
+#****************************************************************************
+
+Installing the New nvidia Driving and top using nouveau driver
+
+Step 1:
+	$ yum install yum-conf-elrepo
+
+Step 2: 
+	$ yum --enablerepo=elrepo install kmod-nvidia
+
+Step 3: Modify /etc/X11/xorg.conf file
+	Add 
+
+	# added by gh, 03.02.07
+	# to keep paw++ and physica window from being overwritten by other jobs
+        Option "backingstore"
+
+	to the Section "Screen"
+
+
+
+#****************************************
+# Installing XFCE
+# 07/07/2011
+# yum groupinstall xfce
+
+

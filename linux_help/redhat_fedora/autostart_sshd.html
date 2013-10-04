@@ -1,0 +1,2776 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head>
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="generator" content="vBulletin 3.8.7">
+
+<meta name="keywords" content=" How to start sshd automatically on boot up, fedoraforum,fedora support,fedora tech,fedora,fedora linux,fedora project,linux,,linux operating system,linux software,learn linux,linux hosting,linux server,linux driver,linux support,linux kernel,linux distribution,linux command,fedora core,linux tutorial,linux security,linux gallery,linux wallpaper,linux help,fedora help,fedora forums,fedora discussions,gnome,kde,xfree,xorg,samba,apt,firefox,mozilla,mplayer,konqueror,bluecurve,xine,xmms,bittorrent,torrent,linux tutorial,linux reviews,fc8,fc9,fc10,fc11,fc12,f8,f9,f10,f11,f12">
+<meta name="description" content=" How to start sshd automatically on boot up General Support">
+
+
+<!-- CSS Stylesheet -->
+<style type="text/css" id="vbulletin_css">
+/**
+* vBulletin 3.8.7 CSS
+* Style: 'FedoraForum V1'; Style ID: 2
+*/
+body
+{
+	background: #c5d4Fe;
+	color: #000000;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+	margin: 0px 0px 0px 0px;
+}
+a:link, body_alink
+{
+	color: #000000;
+}
+a:visited, body_avisited
+{
+	color: #000000;
+}
+a:hover, a:active, body_ahover
+{
+	color: #536C97;
+}
+.page
+{
+	background: #e1e3eF;
+	color: #000000;
+}
+td, th, p, li
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+}
+.tborder
+{
+	background: #D1D1E1;
+	color: #000000;
+	border: 1px solid #000000;
+}
+.tcat
+{
+	background: #294172 url(http://forums.fedoraforum.org/images/cat_bg.gif) repeat-x top left;
+	color: #FFFFFF;
+	font: bold 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+}
+.tcat a:link, .tcat_alink
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.tcat a:visited, .tcat_avisited
+{
+	color: #ffffff;
+	text-decoration: none;
+}
+.tcat a:hover, .tcat a:active, .tcat_ahover
+{
+	color: #FFFF66;
+	text-decoration: underline;
+}
+.thead
+{
+	background: #3C6EB4;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+}
+.thead a:link, .thead_alink
+{
+	color: #FFFFFF;
+}
+.thead a:visited, .thead_avisited
+{
+	color: #FFFFFF;
+}
+.thead a:hover, .thead a:active, .thead_ahover
+{
+	color: #FFFF00;
+}
+.tfoot
+{
+	background: #3C6EB4;
+	color: #E0E0F6;
+}
+.tfoot a:link, .tfoot_alink
+{
+	color: #E0E0F6;
+}
+.tfoot a:visited, .tfoot_avisited
+{
+	color: #E0E0F6;
+}
+.tfoot a:hover, .tfoot a:active, .tfoot_ahover
+{
+	color: #FFFF66;
+}
+.alt1, .alt1Active
+{
+	background: #FAFAFA;
+	color: #000000;
+	border-top: #FFFFFF 1px solid;
+	border-left: #FFFFFF 1px solid;
+}
+.alt2, .alt2Active
+{
+	background: #EDEFF1;
+	color: #000000;
+	border-top: #FFFFFF 1px solid;
+	border-left: #FFFFFF 1px solid;
+}
+.inlinemod
+{
+	background: #FFFFCC;
+	color: #000000;
+}
+.wysiwyg
+{
+	background: #F5F5FF;
+	color: #000000;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+}
+.wysiwyg a:link, .wysiwyg_alink
+{
+	color: #22229C;
+}
+.wysiwyg a:visited, .wysiwyg_avisited
+{
+	color: #22229C;
+}
+.wysiwyg a:hover, .wysiwyg a:active, .wysiwyg_ahover
+{
+	color: #54039E;
+}
+textarea, .bginput
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+}
+.bginput option, .bginput optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+}
+.button
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+}
+select
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+}
+option, optgroup
+{
+	font-size: 11px;
+	font-family: verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+}
+.smallfont
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+}
+.time
+{
+	color: #666686;
+}
+.navbar
+{
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+}
+.highlight
+{
+	color: #FF0000;
+	font-weight: bold;
+}
+.fjsel
+{
+	background: #3E5C92;
+	color: #E0E0F6;
+}
+.fjdpth0
+{
+	background: #F7F7F7;
+	color: #000000;
+}
+.panel
+{
+	background: #E4E7F5 url(http://forums.fedoraforum.org/images/gradients/gradient_panel.gif) repeat-x top left;
+	color: #000000;
+	padding: 10px;
+	border: 2px outset;
+}
+.panelsurround
+{
+	background: #D1D4E0;
+	color: #000000;
+}
+legend
+{
+	color: #22229C;
+	font: 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+}
+.vbmenu_control
+{
+	background: #3C6EB4 url(http://forums.fedoraforum.org/images/cat_bg.gif) repeat-x top left;
+	color: #FFFFFF;
+	font: bold 11px tahoma, verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+	padding: 3px 6px 3px 6px;
+	white-space: nowrap;
+}
+.vbmenu_control a:link, .vbmenu_control_alink
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:visited, .vbmenu_control_avisited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_control a:hover, .vbmenu_control a:active, .vbmenu_control_ahover
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+.vbmenu_popup
+{
+	background: #FFFFFF;
+	color: #000000;
+	border: 1px solid #000000;
+}
+.vbmenu_option
+{
+	background: #FAFAFA;
+	color: #000000;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_option a:link, .vbmenu_option_alink
+{
+	color: #22229C;
+	text-decoration: none;
+}
+.vbmenu_option a:visited, .vbmenu_option_avisited
+{
+	color: #22229C;
+	text-decoration: none;
+}
+.vbmenu_option a:hover, .vbmenu_option a:active, .vbmenu_option_ahover
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite
+{
+	background: #8A949E;
+	color: #FFFFFF;
+	font: 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+	white-space: nowrap;
+	cursor: pointer;
+}
+.vbmenu_hilite a:link, .vbmenu_hilite_alink
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:visited, .vbmenu_hilite_avisited
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.vbmenu_hilite a:hover, .vbmenu_hilite a:active, .vbmenu_hilite_ahover
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+/* ***** styling for 'big' usernames on postbit etc. ***** */
+.bigusername { font-size: 14pt; }
+
+/* ***** small padding on 'thead' elements ***** */
+td.thead, div.thead { padding: 4px; }
+
+/* ***** basic styles for multi-page nav elements */
+.pagenav a { text-decoration: none; }
+.pagenav td { padding: 2px 4px 2px 4px; }
+
+/* ***** define margin and font-size for elements inside panels ***** */
+.fieldset { margin-bottom: 6px; }
+.fieldset, .fieldset td, .fieldset p, .fieldset li { font-size: 11px; }
+
+/* ***** don't change the following ***** */
+form { display: inline; }
+label { cursor: default; }
+.normal { font-weight: normal; }
+.inlineimg { vertical-align: middle; }
+
+
+
+.shadowing1 {
+height: 5px; 
+font-size: 1px; 
+line-height: 1px;
+}
+.shadowing2 {
+float: left; 
+width: 20px; 
+height: 5px;
+}
+.shadowing3 {
+float: right; 
+width: 20px; 
+height: 5px;
+}
+
+.white { COLOR: #FFFFFF;
+font-size: 10pt;
+font-family : verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif, sans;
+                    TEXT-DECORATION: none;}
+
+A.white:link { COLOR: #FFFFFF;
+font-size: 10pt;
+font-family : verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+                    TEXT-DECORATION: none;}
+A.white:visited { COLOR: #FFFFFF;
+font-size: 10pt;
+font-family : verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+                    TEXT-DECORATION: none;}
+A.white:active { COLOR: #FFFFFF;
+font-size: 10pt;
+font-family : verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+                     TEXT-DECORATION: none;}
+A.white:hover { COLOR: #F5CE45;
+font-size: 10pt;
+font-family : verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+                      TEXT-DECORATION: none;}
+
+
+
+.black { COLOR: #000000;
+font-size: 10px;
+font-family : verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+                    TEXT-DECORATION: none;}
+A.black:link { COLOR: #000000;
+font-size: 10px;
+font-family : verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+                    TEXT-DECORATION: none;}
+A.black:visited { COLOR: #000000;
+font-size: 10px;
+font-family : verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+                    TEXT-DECORATION: none;}
+A.black:active { COLOR: #000000;
+font-size: 10px;
+font-family : verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+                     TEXT-DECORATION: none;}
+A.black:hover { COLOR: #FF4400;
+font-size: 10px;
+font-family : verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+                      TEXT-DECORATION: none;}
+
+.tcat2
+{
+	background: #5A76A5;
+	color: #FFFFFF;
+	font: bold 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+a.tcat2:link
+{
+	background: #5A76A5;
+	color: #FFFFFF;
+	font: bold 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+a.tcat2:active
+{
+	background: #5A76A5;
+	color: #FFFFFF;
+	font: bold 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+a.tcat2:visited
+{
+	background: #5A76A5;
+	color: #FFFFFF;
+	font: bold 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+a.tcat2:hover
+{
+	background: #5A76A5;
+	color: #FFFFFF;
+	font: bold 11px verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+
+.shadow {
+        border-style: solid;
+        border-width:1px;
+        border-color: #000000;
+ 	top: -5px;
+ 	left: -5px;
+ 	filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=4, OffY=4, Color='#000000', Positive='true');
+}
+
+.endfoot img {
+display: none;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="autostart_sshd_files/vbulletin_important.css">
+
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript" src="autostart_sshd_files/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="autostart_sshd_files/connection-min.js"></script>
+<script type="text/javascript">
+<!--
+var SESSIONURL = "";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "http://forums.fedoraforum.org//forum/images/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</script>
+<script type="text/javascript" src="autostart_sshd_files/vbulletin_global.js"></script>
+<script type="text/javascript" src="autostart_sshd_files/vbulletin_menu.js"></script>
+
+
+	<link rel="alternate" type="application/rss+xml" title="FedoraForum.org RSS Feed" href="http://www.fedoraforum.org/forum/external.php?type=RSS2">
+	
+		<link rel="alternate" type="application/rss+xml" title="FedoraForum.org - General Support - RSS Feed" href="http://www.fedoraforum.org/forum/external.php?type=RSS2&amp;forumids=7">
+	
+
+<script type="text/javascript" src="autostart_sshd_files/tapatalkdetect.js"></script>
+	<title> How to start sshd automatically on boot up - FedoraForum.org</title>
+	<script type="text/javascript" src="autostart_sshd_files/vbulletin_post_loader.js"></script>
+	<style type="text/css" id="vbulletin_showthread_css">
+	<!--
+	
+	#links div { white-space: nowrap; }
+	#links img { vertical-align: middle; }
+	-->
+	</style>
+</head><body onload="">
+
+<a name="top"></a>
+<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0"> 
+  <tbody><tr> 
+    <td background="autostart_sshd_files/headbg.gif" bgcolor="#5a76a5">
+	<table width="100%" align="center" border="0">
+		<tbody><tr>
+			<td valign="top" align="left"><a href="http://www.fedoraforum.org/"> <img title="Fedora Linux Support Community &amp; Resources Center" src="autostart_sshd_files/fedoraforumlogo.gif" alt="Fedora Linux Support Community &amp; Resources Center" height="60" width="350" border="0"></a></td>
+			
+
+
+
+        </tr> 
+      </tbody></table></td> 
+  </tr> 
+  <tr> 
+    <td background="autostart_sshd_files/headerbg2.gif"> <img src="autostart_sshd_files/headerbg2.gif" height="17" width="2" border="0"></td> 
+  </tr> 
+</tbody></table> 
+<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0"> 
+  <tbody><tr> 
+    <td valign="top" align="center"> <table alicen="center" width="100%" bgcolor="#f5f5f5" border="0" cellpadding="10" cellspacing="0"> 
+        <tbody><tr> 
+          <td> <table width="100%" border="0" cellpadding="0" cellspacing="0"> 
+              <tbody><tr> 
+                <td width="10"> <img src="autostart_sshd_files/left_box_corner.gif" height="10" width="10"></td> 
+                <td height="10" background="autostart_sshd_files/top_box.gif"> <img src="autostart_sshd_files/top_box.gif" height="10" width="1"></td> 
+                <td width="10"> <img src="autostart_sshd_files/right_box_corner.gif" height="10" width="10"></td> 
+              </tr> 
+              <tr> 
+                <td width="10" background="autostart_sshd_files/left_box.gif"> <img src="autostart_sshd_files/left_box.gif" height="1" width="10"></td> 
+                <td bgcolor="#ffffff"><table width="100%" border="0" cellpadding="0" cellspacing="0"> 
+                    <tbody><tr> 
+                      <td align="center"> 
+
+<!-- logo -->
+
+<!-- content table -->
+
+
+<!--  FORUM ADS -->
+
+<script type="text/javascript"><!--
+  google_ad_client = "pub-3289245938931236";
+ google_ad_width = 728;
+ google_ad_height = 90;
+ google_ad_format = "728x90_as";
+ google_ad_type = "text_image";
+ google_color_border = "FFFFFF";
+ google_color_bg = "FFFFFF";
+ google_color_link = "000000";
+ google_color_url = "000000";
+ google_color_text = "000000";
+ //--></script>                                                                               
+                                                                                                
+<script type="text/javascript" src="autostart_sshd_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><ins id="aswift_0_anchor" style="display: block; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins>
+
+<!-- / FORUM ADS -->
+
+
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px 10px;" align="left">
+
+
+
+
+
+
+<br>
+<!-- Navbar Links -->
+<div class="tborder" style="padding: 1px; border-top-width: 1px; border-bottom-width: 0px;">
+	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr align="center">
+<td class="vbmenu_control"><a href="http://www.fedoraforum.org/?">Home</a></td>
+<td class="vbmenu_control"><a href="http://forums.fedoraforum.org/?">Forums</a></td>
+<td class="vbmenu_control"><a href="http://www.fedoraforum.org/?view=guide">Posting Rules</a></td>
+<td class="vbmenu_control"><a href="http://www.fedoraforum.org/?view=linux_help">Linux Help</a></td>
+<td class="vbmenu_control"><a style="color: rgb(255, 255, 34);" href="http://www.fedoraforum.org/?view=fedora_setup"> Fedora Set-Up Guides</a></td>
+<td class="vbmenu_control"><a href="http://www.fedoranews.org/">Fedora News</a></td>
+<td class="vbmenu_control"><a style="cursor: pointer;" id="fedoraproject" href="http://www.fedoraforum.org/?&amp;nojs=1#fedoraproject" rel="nofollow" accesskey="7">FedoraProject <img alt="" title="" src="autostart_sshd_files/menu_open.gif" border="0"></a> <script type="text/javascript"> vbmenu_register("fedoraproject"); </script></td>
+</tr>
+</tbody></table>
+</div>
+<!-- / Navbar Links -->
+
+	<!-- fedoraproject link menu -->
+	<div class="vbmenu_popup" id="fedoraproject_menu" style="display: none; margin-top: 3px;" align="left">
+		<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr><td class="thead">FedoraProject Links</td></tr>
+		
+		
+		<tr><td class="vbmenu_option"><a href="http://fedoraproject.org/">The Fedora Project</a></td></tr>
+		
+		
+		<tr><td class="vbmenu_option"><a href="http://fedoraproject.org/en/get-fedora-all">Get Fedora</a></td></tr>
+
+		
+		
+		<tr><td class="vbmenu_option"><a href="http://docs.fedoraproject.org/en-US/Fedora/14/html-single/Release_Notes/">Release Notes</a></td></tr>
+		
+		
+		<tr><td class="vbmenu_option"><a href="http://docs.fedoraproject.org/en-US/Fedora/14/html-single/Installation_Guide/">Installation Guide</a></td></tr>
+	
+
+		<tr><td class="vbmenu_option"><a href="http://fedoraproject.org/wiki/Communicate">Communicate with Fedora</a></td></tr>
+
+
+		<tr><td class="vbmenu_option"><a href="http://docs.fedoraproject.org/">The Documents</a></td></tr>
+
+
+		<tr><td class="vbmenu_option"><a href="https://bugzilla.redhat.com/">Bug Reports</a></td></tr>
+
+                <tr><td class="vbmenu_option"><a href="https://admin.fedoraproject.org/updates/">Fedora Update System (Bohdi)</a></td></tr>
+
+                <tr><td class="vbmenu_option"><a href="http://koji.fedoraproject.org/koji/">Fedora Build System (Koji)</a></td></tr>
+
+                <tr><td class="vbmenu_option"><a href="http://spins.fedoraproject.org/">Official Spins</a></td></tr>                	
+		
+		</tbody></table>
+	</div>
+	<!-- / fedoraproject link menu -->
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+<tbody><tr>
+	<td class="alt1" width="100%">
+		
+			<table border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr valign="bottom">
+				<td><a href="#" onclick="history.back(1); return false;"><img title="Go Back" src="autostart_sshd_files/navbits_start.gif" alt="Go Back" border="0"></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a href="http://www.fedoraforum.org/forum/index.php" accesskey="1">FedoraForum.org</a></span> 
+	<span class="navbar">&gt; <a href="http://www.fedoraforum.org/forum/forumdisplay.php?f=3">Fedora Support</a></span>
+
+
+	<span class="navbar">&gt; <a href="http://www.fedoraforum.org/forum/forumdisplay.php?f=7">General Support</a></span>
+
+</td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size: 10pt; padding-top: 1px;" colspan="3"><a href="http://www.fedoraforum.org/forum/showthread.php?t=235853"><img title="Reload this Page" class="inlineimg" src="autostart_sshd_files/navbits_finallink_ltr.gif" alt="Reload this Page" border="0"></a> <strong>
+	 How to start sshd automatically on boot up
+
+</strong></td>
+			</tr>
+			</tbody></table>
+		
+	</td>
+
+	<td class="alt2" style="padding: 0px;" nowrap="nowrap">
+		<!-- login form -->
+		<form action="login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+		<script type="text/javascript" src="autostart_sshd_files/vbulletin_md5.js"></script>
+		<table border="0" cellpadding="0" cellspacing="3">
+		<tbody><tr>
+			<td class="smallfont" style="white-space: nowrap;"><label for="navbar_username">User Name</label></td>
+			<td><input class="bginput" style="font-size: 11px;" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name" onfocus="if (this.value == 'User Name') this.value = '';" type="text"></td>
+			<td class="smallfont" nowrap="nowrap"><label for="cb_cookieuser_navbar"><input name="cookieuser" value="1" tabindex="103" id="cb_cookieuser_navbar" accesskey="c" type="checkbox">Remember Me?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont"><label for="navbar_password">Password</label></td>
+			<td><input class="bginput" style="font-size: 11px;" name="vb_login_password" id="navbar_password" size="10" tabindex="102" type="password"></td>
+			<td><input class="button" value="Log in" tabindex="104" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" type="submit"></td>
+		</tr>
+<!-- Forgot Password Line Starts -->
+    <tr>
+      <td colspan="2">
+        <a style="font-size: 8pt; color: red;" href="http://www.fedoraforum.org/forum/login.php?do=lostpw">Forgot Password?</a>
+      </td>
+      <td style="text-align: right;">
+        <a style="font-size: 8pt; color: red;" href="http://www.fedoraforum.org/forum/register.php">Join Us!</a>
+      </td>
+    </tr>
+<!-- Forgot Password Line Ends -->
+		</tbody></table>
+		<input name="s" value="" type="hidden">
+		<input name="securitytoken" value="guest" type="hidden">
+		<input name="do" value="login" type="hidden">
+		<input name="vb_login_md5password" type="hidden">
+		<input name="vb_login_md5password_utf" type="hidden">
+		</form>
+		<!-- / login form -->
+	</td>
+
+</tr>
+</tbody></table>
+<!-- / breadcrumb, login, pm info -->
+
+<!-- nav buttons bar -->
+<div class="tborder" style="padding: 1px; border-top-width: 0px;">
+	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr align="center">
+		
+		
+			<td class="vbmenu_control"><a href="http://www.fedoraforum.org/forum/register.php" rel="nofollow">Register</a></td>
+		
+		
+		<td class="vbmenu_control"><a rel="help" href="http://www.fedoraforum.org/forum/faq.php" accesskey="5">FAQ</a></td>
+		
+			
+			
+		
+		<td class="vbmenu_control"><a href="http://www.fedoraforum.org/forum/calendar.php">Calendar</a></td>
+		
+			
+				
+				<td class="vbmenu_control"><a href="http://www.fedoraforum.org/forum/search.php?do=getdaily" accesskey="2">Today's Posts</a></td>
+				
+				<td class="vbmenu_control"><a style="cursor: pointer;" id="navbar_search" href="http://www.fedoraforum.org/forum/search.php" accesskey="4" rel="nofollow">Search <img alt="" title="" src="autostart_sshd_files/menu_open.gif" border="0"></a> <script type="text/javascript"> vbmenu_register("navbar_search"); </script></td>
+			
+			
+		
+		
+		
+		</tr>
+	</tbody></table>
+</div>
+<!-- / nav buttons bar -->
+
+<br>
+
+
+
+
+	<table class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+	<tbody><tr>
+		<td class="alt1" width="100%"><strong>General Support</strong> <span class="smallfont">Fedora general support. Ask  questions here that do not belong in any other forum.</span></td>
+	</tr>
+	</tbody></table>
+	<br>
+
+
+
+<!-- NAVBAR POPUP MENUS -->
+
+	
+	
+	
+	<!-- header quick search form -->
+	<div class="vbmenu_popup" id="navbar_search_menu" style="display: none; margin-top: 3px;" align="left">
+		<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr>
+			<td class="thead">Search Forums</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+				<form action="search.php?do=process" method="post">
+
+					<input name="do" value="process" type="hidden">
+					<input name="quicksearch" value="1" type="hidden">
+					<input name="childforums" value="1" type="hidden">
+					<input name="exactname" value="1" type="hidden">
+					<input name="s" value="" type="hidden">
+					<input name="securitytoken" value="guest" type="hidden">
+					<div><input class="bginput" name="query" size="25" tabindex="1001" type="text"><input class="button" value="Go" tabindex="1004" type="submit"></div>
+					<div style="margin-top: 6px;">
+						<label for="rb_nb_sp0"><input name="showposts" value="0" id="rb_nb_sp0" tabindex="1002" checked="checked" type="radio">Show Threads</label>
+						&nbsp;
+						<label for="rb_nb_sp1"><input name="showposts" value="1" id="rb_nb_sp1" tabindex="1003" type="radio">Show Posts</label>
+					</div>
+				</form>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/tags.php" rel="nofollow">Tag Search</a></td>
+		</tr>
+		
+		<tr>
+			<td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/search.php" accesskey="4" rel="nofollow">Advanced Search</a></td>
+		</tr>
+		<tr>
+	<td class="thead" align="left">Google&#8482; Search</td>
+</tr>
+<tr>
+	<td class="vbmenu_option" title="nohilite">
+	<font color="#000000" face="verdana, arial, helvetica" size="2"> FedoraForum Search</font>
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input name="cx" value="011145912271890646366:nmym_cfcmy8" type="hidden">
+    <input name="ie" value="UTF-8" type="hidden">
+    <input name="q" size="24" type="text">
+    <input name="sa" value="Go" type="submit">
+
+  </div>
+</form>
+
+<br><font color="#000000" face="verdana, arial, helvetica" size="2">Red Hat Bugzilla Search</font>
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input name="cx" value="011145912271890646366:nrhnadohw7i" type="hidden">
+    <input name="ie" value="UTF-8" type="hidden">
+    <input name="q" size="24" type="text">
+    <input name="sa" value="Go" type="submit">
+
+  </div>
+</form>
+	</td>
+</tr>
+		</tbody></table>
+	</div>
+	<!-- / header quick search form -->
+	
+	
+	
+<!-- / NAVBAR POPUP MENUS -->
+<!-- PAGENAV POPUP -->
+	<div class="vbmenu_popup" id="pagenav_menu" style="display: none;">
+		<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr>
+			<td class="thead" nowrap="nowrap">Go to Page...</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+			<form action="index.php" method="get" onsubmit="return this.gotopage()" id="pagenav_form">
+				<input class="bginput" id="pagenav_itxt" style="font-size: 11px;" size="4" type="text">
+				<input class="button" id="pagenav_ibtn" value="Go" type="button">
+			</form>
+			</td>
+		</tr>
+		</tbody></table>
+	</div>
+<!-- / PAGENAV POPUP -->
+
+
+
+
+
+
+
+
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table style="margin-bottom: 3px;" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr valign="bottom">
+	
+		<td class="smallfont"><a href="http://www.fedoraforum.org/forum/newreply.php?do=newreply&amp;noquote=1&amp;p=1302074" rel="nofollow"><img title="Reply" src="autostart_sshd_files/reply.gif" alt="Reply" border="0"></a></td>
+	
+	
+</tr>
+</tbody></table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" style="border-bottom-width: 0px;" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+<tbody><tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+	<td style="cursor: pointer;" class="vbmenu_control" id="threadtools" nowrap="nowrap">
+		<a href="http://www.fedoraforum.org/forum/showthread.php?t=235853&amp;nojs=1#goto_threadtools">Thread Tools</a>
+		<script type="text/javascript"> vbmenu_register("threadtools"); </script> <img alt="" title="" src="autostart_sshd_files/menu_open.gif" border="0">
+	</td>
+	
+		<td style="cursor: pointer;" class="vbmenu_control" id="threadsearch" nowrap="nowrap">
+			<a href="http://www.fedoraforum.org/forum/showthread.php?t=235853&amp;nojs=1#goto_threadsearch">Search this Thread</a>
+			<script type="text/javascript"> vbmenu_register("threadsearch"); </script> <img alt="" title="" src="autostart_sshd_files/menu_open.gif" border="0">
+		</td>
+	
+	
+	
+	<td style="cursor: pointer;" class="vbmenu_control" id="displaymodes" nowrap="nowrap">
+		<a href="http://www.fedoraforum.org/forum/showthread.php?t=235853&amp;nojs=1#goto_displaymodes">Display Modes</a>
+		<script type="text/javascript"> vbmenu_register("displaymodes"); </script> <img alt="" title="" src="autostart_sshd_files/menu_open.gif" border="0">
+	</td>
+	
+
+	
+
+</tr>
+</tbody></table>
+<!-- / toolbar -->
+
+
+
+<!-- end content table -->
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+
+
+<div id="posts"><!-- post #1302074 -->
+
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px 10px;" align="left">
+
+	<div id="edit1302074" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post1302074" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float: right;">
+			&nbsp;
+			#<a href="http://www.fedoraforum.org/forum/showpost.php?p=1302074&amp;postcount=1" target="new" rel="nofollow" id="postcount1302074" name="1"><strong>1</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1302074"><img title="Old" class="inlineimg" src="autostart_sshd_files/post_old.gif" alt="Old" border="0"></a>
+			
+				6th December 2009, 11:45 AM
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="6">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1302074">
+					
+					<a class="bigusername" href="http://www.fedoraforum.org/forum/member.php?u=163091">BigTummyGuy</a>
+					<i>Offline</i>
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1302074", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Registered User</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Dec 2009</div>
+					
+					
+					<div>
+						Posts: 4
+					</div>
+					
+					
+					
+					<img title="linuxfedora" src="autostart_sshd_files/icon_linuxfedora.gif" alt="linuxfedora"><img title="firefox" src="autostart_sshd_files/icon_firefox.gif" alt="firefox">
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1302074">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>How to start sshd automatically on boot up</strong>
+			</div>
+			<hr style="color: rgb(209, 209, 225); background-color: rgb(209, 209, 225);" size="1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_1302074">
+			
+			have search the web for answer and there are some suggestion. tried those suggestion but was not successful.<br>
+<br>
+appreciate if any one can help to resolve this? I'm running fedora 11 and using the NXserver for remote access.<br>
+<br>
+Please advise
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px;" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://www.fedoraforum.org/forum/newreply.php?do=newreply&amp;p=1302074" rel="nofollow"><img title="Reply With Quote" src="autostart_sshd_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+ 
+<!-- post 1302074 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1302074_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">BigTummyGuy</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/member.php?u=163091">View Public Profile</a></td></tr>
+	
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/search.php?do=finduser&amp;u=163091" rel="nofollow">Find all posts by BigTummyGuy</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1302074 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1302074 --><!-- post #1302078 -->
+
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px 10px;" align="left">
+
+	<div id="edit1302078" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post1302078" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float: right;">
+			&nbsp;
+			#<a href="http://www.fedoraforum.org/forum/showpost.php?p=1302078&amp;postcount=2" target="new" rel="nofollow" id="postcount1302078" name="2"><strong>2</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1302078"><img title="Old" class="inlineimg" src="autostart_sshd_files/post_old.gif" alt="Old" border="0"></a>
+			
+				6th December 2009, 12:06 PM
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="6">
+		<tbody><tr>
+			<td class="alt2"><a href="http://www.fedoraforum.org/forum/member.php?u=78273"><img title="leigh123linux's Avatar" src="autostart_sshd_files/image.jpg" alt="leigh123linux's Avatar" height="60" width="60" border="0"></a></td>
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1302078">
+					
+					<a class="bigusername" href="http://www.fedoraforum.org/forum/member.php?u=78273"><b><i>leigh123linux</i></b></a>
+					<i>Offline</i>
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1302078", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Administrator</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Oct 2006</div>
+					
+					
+					<div>
+						Posts: 19,262
+					</div>
+					
+					
+					
+					<img title="linuxfedora" src="autostart_sshd_files/icon_linuxfedora.gif" alt="linuxfedora"><img title="firefox" src="autostart_sshd_files/icon_firefox.gif" alt="firefox">
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1302078">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+
+		<!-- message -->
+		<div id="post_message_1302078">
+			
+			Try<br>
+<br>
+<div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Code:</div>
+	<pre class="alt2" dir="ltr" style="margin: 0px; padding: 6px; border: 1px inset; width: 640px; height: 66px; text-align: left; overflow: auto;">su
+chkconfig --level 2345 sshd on
+service sshd restart</pre>
+</div>
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px;" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://www.fedoraforum.org/forum/newreply.php?do=newreply&amp;p=1302078" rel="nofollow"><img title="Reply With Quote" src="autostart_sshd_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+ 
+<!-- post 1302078 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1302078_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">leigh123linux</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/member.php?u=78273">View Public Profile</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://leigh123linux.fedorapeople.org/">Visit leigh123linux's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/search.php?do=finduser&amp;u=78273" rel="nofollow">Find all posts by leigh123linux</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1302078 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1302078 --><!-- post #1302084 -->
+
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px 10px;" align="left">
+
+	<div id="edit1302084" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post1302084" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float: right;">
+			&nbsp;
+			#<a href="http://www.fedoraforum.org/forum/showpost.php?p=1302084&amp;postcount=3" target="new" rel="nofollow" id="postcount1302084" name="3"><strong>3</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1302084"><img title="Old" class="inlineimg" src="autostart_sshd_files/post_old.gif" alt="Old" border="0"></a>
+			
+				6th December 2009, 12:22 PM
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="6">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1302084">
+					
+					<a class="bigusername" href="http://www.fedoraforum.org/forum/member.php?u=163091">BigTummyGuy</a>
+					<i>Offline</i>
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1302084", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Registered User</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Dec 2009</div>
+					
+					
+					<div>
+						Posts: 4
+					</div>
+					
+					
+					
+					<img title="linuxfedora" src="autostart_sshd_files/icon_linuxfedora.gif" alt="linuxfedora"><img title="firefox" src="autostart_sshd_files/icon_firefox.gif" alt="firefox">
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1302084">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>Done that too....any suggestions</strong>
+			</div>
+			<hr style="color: rgb(209, 209, 225); background-color: rgb(209, 209, 225);" size="1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_1302084">
+			
+			[root@klkkhost ~]# chkconfig sshd --list<br>
+sshd           	0:off	1:off	2:on	3:on	4:on	5:on	6:off<br>
+[root@klkkhost ~]#
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px;" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://www.fedoraforum.org/forum/newreply.php?do=newreply&amp;p=1302084" rel="nofollow"><img title="Reply With Quote" src="autostart_sshd_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+ 
+<!-- post 1302084 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1302084_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">BigTummyGuy</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/member.php?u=163091">View Public Profile</a></td></tr>
+	
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/search.php?do=finduser&amp;u=163091" rel="nofollow">Find all posts by BigTummyGuy</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1302084 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1302084 --><!-- post #1302088 -->
+
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px 10px;" align="left">
+
+	<div id="edit1302088" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post1302088" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float: right;">
+			&nbsp;
+			#<a href="http://www.fedoraforum.org/forum/showpost.php?p=1302088&amp;postcount=4" target="new" rel="nofollow" id="postcount1302088" name="4"><strong>4</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1302088"><img title="Old" class="inlineimg" src="autostart_sshd_files/post_old.gif" alt="Old" border="0"></a>
+			
+				6th December 2009, 12:35 PM
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="6">
+		<tbody><tr>
+			<td class="alt2"><a href="http://www.fedoraforum.org/forum/member.php?u=78273"><img title="leigh123linux's Avatar" src="autostart_sshd_files/image.jpg" alt="leigh123linux's Avatar" height="60" width="60" border="0"></a></td>
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1302088">
+					
+					<a class="bigusername" href="http://www.fedoraforum.org/forum/member.php?u=78273"><b><i>leigh123linux</i></b></a>
+					<i>Offline</i>
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1302088", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Administrator</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Oct 2006</div>
+					
+					
+					<div>
+						Posts: 19,262
+					</div>
+					
+					
+					
+					<img title="linuxfedora" src="autostart_sshd_files/icon_linuxfedora.gif" alt="linuxfedora"><img title="firefox" src="autostart_sshd_files/icon_firefox.gif" alt="firefox">
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1302088">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+
+		<!-- message -->
+		<div id="post_message_1302088">
+			
+			Post<br>
+<br>
+<br>
+<div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Code:</div>
+	<pre class="alt2" dir="ltr" style="margin: 0px; padding: 6px; border: 1px inset; width: 640px; height: 50px; text-align: left; overflow: auto;">su
+service sshd status</pre>
+</div>
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px;" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://www.fedoraforum.org/forum/newreply.php?do=newreply&amp;p=1302088" rel="nofollow"><img title="Reply With Quote" src="autostart_sshd_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+ 
+<!-- post 1302088 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1302088_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">leigh123linux</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/member.php?u=78273">View Public Profile</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://leigh123linux.fedorapeople.org/">Visit leigh123linux's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/search.php?do=finduser&amp;u=78273" rel="nofollow">Find all posts by leigh123linux</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1302088 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1302088 --><!-- post #1302110 -->
+
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px 10px;" align="left">
+
+	<div id="edit1302110" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post1302110" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float: right;">
+			&nbsp;
+			#<a href="http://www.fedoraforum.org/forum/showpost.php?p=1302110&amp;postcount=5" target="new" rel="nofollow" id="postcount1302110" name="5"><strong>5</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1302110"><img title="Old" class="inlineimg" src="autostart_sshd_files/post_old.gif" alt="Old" border="0"></a>
+			
+				6th December 2009, 01:44 PM
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="6">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1302110">
+					
+					<a class="bigusername" href="http://www.fedoraforum.org/forum/member.php?u=163091">BigTummyGuy</a>
+					<i>Offline</i>
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1302110", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Registered User</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Dec 2009</div>
+					
+					
+					<div>
+						Posts: 4
+					</div>
+					
+					
+					
+					<img title="linuxfedora" src="autostart_sshd_files/icon_linuxfedora.gif" alt="linuxfedora"><img title="konqueror" src="autostart_sshd_files/icon_konqueror.gif" alt="konqueror">
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1302110">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>is it ok?</strong>
+			</div>
+			<hr style="color: rgb(209, 209, 225); background-color: rgb(209, 209, 225);" size="1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+		<div id="post_message_1302110">
+			
+			[root@klkkhost Documents]# service sshd status<br>
+openssh-daemon (pid  2347) is running...<br>
+[root@klkkhost Documents]#
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px;" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://www.fedoraforum.org/forum/newreply.php?do=newreply&amp;p=1302110" rel="nofollow"><img title="Reply With Quote" src="autostart_sshd_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+ 
+<!-- post 1302110 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1302110_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">BigTummyGuy</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/member.php?u=163091">View Public Profile</a></td></tr>
+	
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/search.php?do=finduser&amp;u=163091" rel="nofollow">Find all posts by BigTummyGuy</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1302110 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1302110 --><!-- post #1302113 -->
+
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px 10px;" align="left">
+
+	<div id="edit1302113" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post1302113" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float: right;">
+			&nbsp;
+			#<a href="http://www.fedoraforum.org/forum/showpost.php?p=1302113&amp;postcount=6" target="new" rel="nofollow" id="postcount1302113" name="6"><strong>6</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1302113"><img title="Old" class="inlineimg" src="autostart_sshd_files/post_old.gif" alt="Old" border="0"></a>
+			
+				6th December 2009, 01:51 PM
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="6">
+		<tbody><tr>
+			<td class="alt2"><a href="http://www.fedoraforum.org/forum/member.php?u=78273"><img title="leigh123linux's Avatar" src="autostart_sshd_files/image.jpg" alt="leigh123linux's Avatar" height="60" width="60" border="0"></a></td>
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1302113">
+					
+					<a class="bigusername" href="http://www.fedoraforum.org/forum/member.php?u=78273"><b><i>leigh123linux</i></b></a>
+					<i>Offline</i>
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1302113", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Administrator</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Oct 2006</div>
+					
+					
+					<div>
+						Posts: 19,262
+					</div>
+					
+					
+					
+					<img title="linuxfedora" src="autostart_sshd_files/icon_linuxfedora.gif" alt="linuxfedora"><img title="firefox" src="autostart_sshd_files/icon_firefox.gif" alt="firefox">
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1302113">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+
+		<!-- message -->
+		<div id="post_message_1302113">
+			
+			<div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Quote:</div>
+	<table width="100%" border="0" cellpadding="6" cellspacing="0">
+	<tbody><tr>
+		<td class="alt2" style="border: 1px inset;">
+			
+				<div>
+					Originally Posted by <strong>BigTummyGuy</strong>
+					<a href="http://www.fedoraforum.org/forum/showthread.php?p=1302110#post1302110" rel="nofollow"><img title="View Post" class="inlineimg" src="autostart_sshd_files/viewpost.gif" alt="View Post" border="0"></a>
+				</div>
+				<div style="font-style: italic;">[root@klkkhost Documents]# service sshd status<br>
+openssh-daemon (pid  2347) is running...<br>
+[root@klkkhost Documents]#</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div><br>
+The output indicates sshd its running OK.
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px;" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://www.fedoraforum.org/forum/newreply.php?do=newreply&amp;p=1302113" rel="nofollow"><img title="Reply With Quote" src="autostart_sshd_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+ 
+<!-- post 1302113 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1302113_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">leigh123linux</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/member.php?u=78273">View Public Profile</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://leigh123linux.fedorapeople.org/">Visit leigh123linux's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/search.php?do=finduser&amp;u=78273" rel="nofollow">Find all posts by leigh123linux</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1302113 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1302113 --><!-- post #1302142 -->
+
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px 10px;" align="left">
+
+	<div id="edit1302142" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post1302142" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float: right;">
+			&nbsp;
+			#<a href="http://www.fedoraforum.org/forum/showpost.php?p=1302142&amp;postcount=7" target="new" rel="nofollow" id="postcount1302142" name="7"><strong>7</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1302142"><img title="Old" class="inlineimg" src="autostart_sshd_files/post_old.gif" alt="Old" border="0"></a>
+			
+				6th December 2009, 03:46 PM
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="6">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1302142">
+					
+					<a class="bigusername" href="http://www.fedoraforum.org/forum/member.php?u=163091">BigTummyGuy</a>
+					<i>Offline</i>
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1302142", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Registered User</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Dec 2009</div>
+					
+					
+					<div>
+						Posts: 4
+					</div>
+					
+					
+					
+					<img title="linuxfedora" src="autostart_sshd_files/icon_linuxfedora.gif" alt="linuxfedora"><img title="firefox" src="autostart_sshd_files/icon_firefox.gif" alt="firefox">
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1302142">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+
+		<!-- message -->
+		<div id="post_message_1302142">
+			
+			that's is after I run the sshd services
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px;" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://www.fedoraforum.org/forum/newreply.php?do=newreply&amp;p=1302142" rel="nofollow"><img title="Reply With Quote" src="autostart_sshd_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+ 
+<!-- post 1302142 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1302142_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">BigTummyGuy</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/member.php?u=163091">View Public Profile</a></td></tr>
+	
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/search.php?do=finduser&amp;u=163091" rel="nofollow">Find all posts by BigTummyGuy</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1302142 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1302142 --><!-- post #1302144 -->
+
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px 10px;" align="left">
+
+	<div id="edit1302144" style="padding: 0px 0px 6px;">
+	
+
+
+
+<table class="tborder" id="post1302144" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+<tbody><tr>
+	<td class="thead">
+		<div class="normal" style="float: right;">
+			&nbsp;
+			#<a href="http://www.fedoraforum.org/forum/showpost.php?p=1302144&amp;postcount=8" target="new" rel="nofollow" id="postcount1302144" name="8"><strong>8</strong></a> &nbsp;
+			
+			
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post1302144"><img title="Old" class="inlineimg" src="autostart_sshd_files/post_old.gif" alt="Old" border="0"></a>
+			
+				6th December 2009, 03:51 PM
+			
+			
+			<!-- / status icon and date -->
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table width="100%" border="0" cellpadding="0" cellspacing="6">
+		<tbody><tr>
+			<td class="alt2"><a href="http://www.fedoraforum.org/forum/member.php?u=78273"><img title="leigh123linux's Avatar" src="autostart_sshd_files/image.jpg" alt="leigh123linux's Avatar" height="60" width="60" border="0"></a></td>
+			<td nowrap="nowrap">
+
+				<div id="postmenu_1302144">
+					
+					<a class="bigusername" href="http://www.fedoraforum.org/forum/member.php?u=78273"><b><i>leigh123linux</i></b></a>
+					<i>Offline</i>
+
+
+					<script type="text/javascript"> vbmenu_register("postmenu_1302144", true); </script>
+					
+				</div>
+
+				<div class="smallfont">Administrator</div>
+				
+				
+
+			</td>
+			<td width="100%">&nbsp;</td>
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Oct 2006</div>
+					
+					
+					<div>
+						Posts: 19,262
+					</div>
+					
+					
+					
+					<img title="linuxfedora" src="autostart_sshd_files/icon_linuxfedora.gif" alt="linuxfedora"><img title="firefox" src="autostart_sshd_files/icon_firefox.gif" alt="firefox">
+					<div>    </div>
+				</div>
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_1302144">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+
+		<!-- message -->
+		<div id="post_message_1302144">
+			
+			Ok, reboot and then run<br>
+<div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Code:</div>
+	<pre class="alt2" dir="ltr" style="margin: 0px; padding: 6px; border: 1px inset; width: 640px; height: 50px; text-align: left; overflow: auto;">su
+service sshd status</pre>
+</div>to confirm sshd has started
+		</div>
+		<!-- / message -->
+
+		
+
+		
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px;" align="right">
+			<!-- controls -->
+			
+			
+			
+				<a href="http://www.fedoraforum.org/forum/newreply.php?do=newreply&amp;p=1302144" rel="nofollow"><img title="Reply With Quote" src="autostart_sshd_files/quote.gif" alt="Reply With Quote" border="0"></a>
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+</tbody></table>
+
+
+ 
+<!-- post 1302144 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1302144_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">leigh123linux</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/member.php?u=78273">View Public Profile</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://leigh123linux.fedorapeople.org/">Visit leigh123linux's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/search.php?do=finduser&amp;u=78273" rel="nofollow">Find all posts by leigh123linux</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1302144 popup menu -->
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1302144 --><div id="lastpost"></div></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px 10px;" align="left">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table style="margin-top: -3px;" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr valign="top">
+	
+		<td class="smallfont"><a href="http://www.fedoraforum.org/forum/newreply.php?do=newreply&amp;noquote=1&amp;p=1302144" rel="nofollow"><img title="Reply" src="autostart_sshd_files/reply.gif" alt="Reply" border="0"></a></td>
+	
+	
+</tr>
+</tbody></table>
+<!-- / controls below postbits -->
+
+
+
+
+
+
+
+
+
+
+<!-- lightbox scripts -->
+	<script type="text/javascript" src="autostart_sshd_files/vbulletin_lightbox.js"></script>
+	<script type="text/javascript">
+	<!--
+	vBulletin.register_control("vB_Lightbox_Container", "posts", 1);
+	//-->
+	</script>
+<!-- / lightbox scripts -->
+
+
+
+
+
+
+
+
+
+
+<!-- next / previous links -->
+	<br>
+	<div class="smallfont" align="center">
+		<strong>«</strong>
+			<a href="http://www.fedoraforum.org/forum/showthread.php?t=235853&amp;goto=nextoldest" rel="nofollow">Previous Thread</a>
+			|
+			<a href="http://www.fedoraforum.org/forum/showthread.php?t=235853&amp;goto=nextnewest" rel="nofollow">Next Thread</a>
+		<strong>»</strong>
+	</div>
+<!-- / next / previous links -->
+
+
+
+
+
+
+
+<!-- popup menu contents -->
+<br>
+
+<!-- thread tools menu -->
+<div class="vbmenu_popup" id="threadtools_menu" style="display: none;">
+<form action="postings.php?t=235853&amp;pollid=" method="post" name="threadadminform">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Thread Tools<a name="goto_threadtools"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><img title="Show Printable Version" class="inlineimg" src="autostart_sshd_files/printer.gif" alt="Show Printable Version"> <a href="http://www.fedoraforum.org/forum/printthread.php?t=235853" accesskey="3" rel="nofollow">Show Printable Version</a></td>
+	</tr>
+	
+	<tr>
+		<td class="vbmenu_option"><img title="Email this Page" class="inlineimg" src="autostart_sshd_files/sendtofriend.gif" alt="Email this Page"> <a href="http://www.fedoraforum.org/forum/sendmessage.php?do=sendtofriend&amp;t=235853" rel="nofollow">Email this Page</a></td>
+	</tr>
+	
+	
+	
+	
+			
+	
+	
+	</tbody></table>
+</form>
+</div>
+<!-- / thread tools menu -->
+
+<!-- **************************************************** -->
+
+<!-- thread display mode menu -->
+<div class="vbmenu_popup" id="displaymodes_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Display Modes<a name="goto_displaymodes"></a></td>
+	</tr>
+	<tr>
+	
+		<td class="vbmenu_option" title="nohilite"><img title="Linear Mode" class="inlineimg" src="autostart_sshd_files/mode_linear.gif" alt="Linear Mode"> <strong>Linear Mode</strong></td>
+	
+	</tr>
+	<tr>
+	
+		<td class="vbmenu_option"><img title="Hybrid Mode" class="inlineimg" src="autostart_sshd_files/mode_hybrid.gif" alt="Hybrid Mode"> <a href="http://www.fedoraforum.org/forum/showthread.php?mode=hybrid&amp;t=235853">Switch to Hybrid Mode</a></td>
+	
+	</tr>
+	<tr>
+	
+		<td class="vbmenu_option"><img title="Threaded Mode" class="inlineimg" src="autostart_sshd_files/mode_threaded.gif" alt="Threaded Mode"> <a href="http://www.fedoraforum.org/forum/showthread.php?p=1302074&amp;mode=threaded#post1302074">Switch to Threaded Mode</a></td>
+	
+	</tr>
+	</tbody></table>
+</div>
+<!-- / thread display mode menu -->
+
+<!-- **************************************************** -->
+
+
+<!-- thread search menu -->
+<div class="vbmenu_popup" id="threadsearch_menu" style="display: none;">
+<form action="search.php?do=process&amp;searchthreadid=235853" method="post">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Search this Thread<a name="goto_threadsearch"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option" title="nohilite">
+			<input name="s" value="" type="hidden">
+			<input name="securitytoken" value="guest" type="hidden">
+			<input name="do" value="process" type="hidden">
+			<input name="searchthreadid" value="235853" type="hidden">
+			<input class="bginput" name="query" size="25" type="text"><input class="button" value="Go" type="submit"><br>
+		</td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><a href="http://www.fedoraforum.org/forum/search.php?searchthreadid=235853">Advanced Search</a></td>
+	</tr>
+	</tbody></table>
+</form>
+</div>
+<!-- / thread search menu -->
+
+
+<!-- **************************************************** -->
+
+
+
+<!-- / popup menu contents -->
+
+
+<!-- forum rules and admin links -->
+<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr valign="bottom">
+	<td valign="top" width="100%">
+		<table class="tborder" width="210" border="0" cellpadding="6" cellspacing="1">
+<thead>
+<tr>
+	<td class="thead">
+		<a style="float: right;" href="#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="autostart_sshd_files/collapse_thead.gif" alt="" border="0"></a>
+		Posting Rules
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div>You <strong>may not</strong> post new threads</div>
+		<div>You <strong>may not</strong> post replies</div>
+		<div>You <strong>may not</strong> post attachments</div>
+		<div>You <strong>may not</strong> edit your posts</div>
+		<hr>
+		
+		<div><a href="http://www.fedoraforum.org/forum/misc.php?do=bbcode" target="_blank">BB code</a> is <strong>On</strong></div>
+		<div><a href="http://www.fedoraforum.org/forum/misc.php?do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></div>
+		<div><a href="http://www.fedoraforum.org/forum/misc.php?do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>On</strong></div>
+		<div>HTML code is <strong>Off</strong></div>
+		<hr>
+		<div><a href="http://www.fedoraforum.org/forum/misc.php?do=showrules" target="_blank">Forum Rules</a></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table border="0" cellpadding="0" cellspacing="0">
+		
+		<tbody><tr>
+			<td>
+			<div class="smallfont" style="text-align: left; white-space: nowrap;">
+	<form action="forumdisplay.php" method="get">
+	<input name="s" value="" type="hidden">
+	<input name="daysprune" value="" type="hidden">
+	<strong>Forum Jump</strong><br>
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Site Areas">
+			<option value="cp">User Control Panel</option>
+			<option value="pm">Private Messages</option>
+			<option value="subs">Subscriptions</option>
+			<option value="wol">Who's Online</option>
+			<option value="search">Search Forums</option>
+			<option value="home">Forums Home</option>
+		</optgroup>
+		
+		<optgroup label="Forums">
+		<option value="3" class="fjdpth0"> Fedora Support</option>
+<option value="61" class="fjdpth1">&nbsp; &nbsp;  Read This First  (Good Tips)</option>
+<option value="12" class="fjdpth1">&nbsp; &nbsp;  Guides &amp; Solutions (No Questions)</option>
+<option value="74" class="fjdpth1">&nbsp; &nbsp;  Rawhide</option>
+<option value="80" class="fjdpth1">&nbsp; &nbsp;  F15 Development</option>
+<option value="81" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  F15 Rants - Talking To The Wind</option>
+<option value="6" class="fjdpth1">&nbsp; &nbsp;  Installation Help</option>
+<option value="7" class="fjsel" selected="selected">&nbsp; &nbsp;  General Support</option>
+<option value="8" class="fjdpth1">&nbsp; &nbsp;  Hardware</option>
+<option value="9" class="fjdpth1">&nbsp; &nbsp;  Software</option>
+<option value="11" class="fjdpth1">&nbsp; &nbsp;  Laptop</option>
+<option value="67" class="fjdpth1">&nbsp; &nbsp;  Live Media (Live CD/DVD/USB)</option>
+<option value="73" class="fjdpth1">&nbsp; &nbsp;  Fedora Spins &amp; Remixes</option>
+<option value="10" class="fjdpth1">&nbsp; &nbsp;  Networking</option>
+<option value="28" class="fjdpth1">&nbsp; &nbsp;  Servers</option>
+<option value="44" class="fjdpth1">&nbsp; &nbsp;  Security</option>
+<option value="29" class="fjdpth1">&nbsp; &nbsp;  x86 64-bit</option>
+<option value="51" class="fjdpth1">&nbsp; &nbsp;  Mac</option>
+<option value="75" class="fjdpth1">&nbsp; &nbsp;  EOL (End Of Life) Versions</option>
+<option value="50" class="fjdpth1">&nbsp; &nbsp;  Archived</option>
+<option value="47" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  alt.os.linux.redhat</option>
+<option value="48" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  gmane.linux.redhat.fedora.general</option>
+<option value="46" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Advisories &amp; Updates</option>
+<option value="79" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  F14 Development</option>
+<option value="22" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Fedora Core 2 Test Releases</option>
+<option value="52" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Fedora Core 3 Test Releases</option>
+<option value="57" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Fedora Core 4 Test</option>
+<option value="59" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Fedora Core 5 - Dev</option>
+<option value="63" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Alpha - Beta (Fedora 9 Only)</option>
+<option value="64" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Alpha, Beta &amp; Snapshots Discussions (Fedora 10 Only)</option>
+<option value="66" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Alpha, Beta &amp; Snapshots Discussions (Fedora 11 Only)</option>
+<option value="71" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Fedora 12 Alpha, Beta &amp; Release Candidates</option>
+<option value="76" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Fedora 13 Development Branch</option>
+<option value="65" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Gallery</option>
+<option value="23" class="fjdpth0"> Fedora Resources</option>
+<option value="24" class="fjdpth1">&nbsp; &nbsp;  Links</option>
+<option value="25" class="fjdpth1">&nbsp; &nbsp;  Reviews, Rants &amp; Things That Make You Scream</option>
+<option value="5" class="fjdpth0"> The Community Lounge</option>
+<option value="17" class="fjdpth1">&nbsp; &nbsp;  News</option>
+<option value="60" class="fjdpth1">&nbsp; &nbsp;  Gamers Lounge</option>
+<option value="16" class="fjdpth1">&nbsp; &nbsp;  Wibble</option>
+<option value="45" class="fjdpth1">&nbsp; &nbsp;  Fedora Focus</option>
+<option value="43" class="fjdpth1">&nbsp; &nbsp;  Linux Chat</option>
+<option value="27" class="fjdpth1">&nbsp; &nbsp;  Programming</option>
+<option value="78" class="fjdpth1">&nbsp; &nbsp;  Packaging</option>
+<option value="15" class="fjdpth1">&nbsp; &nbsp;  Suggestions &amp; Feedback</option>
+<option value="69" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Please pardon our dust</option>
+
+		</optgroup>
+		
+	</select><input class="button" value="Go" type="submit">
+	</form>
+</div>
+			</td>
+		</tr>
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+<!-- /forum rules and admin links -->
+
+<br>
+
+<table class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+<thead>
+	<tr>
+		<td class="tcat" colspan="5" width="100%">
+			<a style="float: right;" href="#top" onclick="return toggle_collapse('similarthreads')"><img id="collapseimg_similarthreads" src="autostart_sshd_files/collapse_tcat.gif" alt="" border="0"></a>
+			Similar Threads<a name="similarthreads"></a>
+		</td>
+	</tr>
+</thead>
+<tbody id="collapseobj_similarthreads" style="">
+<tr class="thead" align="center">
+	<td class="thead" width="40%">Thread</td>
+	<td class="thead" nowrap="nowrap" width="15%">Thread Starter</td>
+	<td class="thead" width="20%">Forum</td>
+	<td class="thead" width="5%">Replies</td>
+	<td class="thead" width="20%">Last Post</td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.fedoraforum.org/forum/showthread.php?t=193794" title="Hi,all 
+ 
+I am using the fedora 9 usb key rescue mode ,how can I get the sshd start automatically when i enter the rescue mode? 
+ 
+anyone can help me? 
+Thanks in advance!">sshd start automatically in fedora rescue boot</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">liqin</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">General Support</span></td>
+	<td class="alt2" align="center"><span class="smallfont">6</span></td>
+	<td class="alt1" align="right"><span class="smallfont">8th July 2008 <span class="time">08:13 PM</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.fedoraforum.org/forum/showthread.php?t=162288" title="Hello guys ! 
+ 
+I am using FC 7 on a DELL XPS M1210 . My problem is that the network does not start automatically at boot up . I have to manually make my network interface(eth 0) active every time I boot my P.C">network does not start automatically at boot up</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">simpleashwin</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Networking</span></td>
+	<td class="alt2" align="center"><span class="smallfont">3</span></td>
+	<td class="alt1" align="right"><span class="smallfont">30th July 2007 <span class="time">01:57 PM</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.fedoraforum.org/forum/showthread.php?t=159610" title="I have a 64 bit machine. 
+ 
+I was hacking around and acciently messed up my HD partitions.  Well I got that mostly fixed, and I had to do a new install of Fc6--Luckily I had backedup my home folder before playing! 
+ 
+Mostly seems to be working, but the X server does not load up automatically 
+ 
+The...">x server does not start automatically on boot</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">anafshalom</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Installation Help</span></td>
+	<td class="alt2" align="center"><span class="smallfont">6</span></td>
+	<td class="alt1" align="right"><span class="smallfont">1st July 2007 <span class="time">05:29 AM</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.fedoraforum.org/forum/showthread.php?t=107698" title="Hi all. I'm using apache 2.0.53 that I compiled from a tarball on my RHEL4 OS. There's a reason why I didn't go with the Apache that comes preinstalled. But that reason might not be so big anymore. anyway... 
+ 
+I installed the Apache binary to it's directory in /usr/local/apache2/bin/httpd . My...">Can't get apache server to automatically start on boot</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">bowie101</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Servers</span></td>
+	<td class="alt2" align="center"><span class="smallfont">3</span></td>
+	<td class="alt1" align="right"><span class="smallfont">3rd May 2006 <span class="time">03:53 PM</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.fedoraforum.org/forum/showthread.php?t=48942" title="Please guide me how to set VNC server to start automatically at boot so that i can login with it remotely from my other PC..I tried to set vnc server to start on boot (runlevel 3 &amp; 5) through services GUI but it didn't work..Another thing, once im connected at my vnc server at Fedora from my XP...">How to set VNC server to start automatically after boot?</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">orbknives</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">General Support</span></td>
+	<td class="alt2" align="center"><span class="smallfont">2</span></td>
+	<td class="alt1" align="right"><span class="smallfont">24th March 2005 <span class="time">04:31 AM</span></span></td>
+</tr>
+
+</tbody>
+</table>
+
+<br>
+
+<br>
+<div class="smallfont" align="center">Current GMT-time: 21:56 (Saturday, 07-05-2011)
+</div>
+
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- /content area table -->
+
+	
+<table class="page" width="100%" align="center" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr>
+	
+	</tr>
+</tbody></table>
+
+<br>
+
+		
+	<div class="smallfont" align="center">
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+		</div>
+
+
+
+
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+
+	// Initialize 'Active' Table Cells
+	//activecells_init();
+//-->
+</script>
+
+
+</td> 
+                    </tr> 
+                  </tbody></table></td> 
+                <td width="10" background="autostart_sshd_files/right_box.gif"> <img src="autostart_sshd_files/right_box.gif" height="1" width="10"></td> 
+              </tr> 
+              <tr> 
+                <td width="10"> <img src="autostart_sshd_files/left_box_bottom_corner.gif" height="10" width="10"></td> 
+                <td height="10" background="autostart_sshd_files/bottom_box.gif"> <img src="autostart_sshd_files/bottom_box.gif" height="10" width="1"></td> 
+                <td width="10"> <img src="autostart_sshd_files/right_box_bottom_corner.gif" height="10" width="10"></td> 
+              </tr> 
+            </tbody></table></td> 
+        </tr> 
+      </tbody></table></td> 
+  </tr> 
+</tbody></table> 
+ 
+<table width="100%" border="0" cellpadding="0" cellspacing="0"> 
+<tbody><tr> 
+    <td height="24" align="center" bgcolor="#f5f5f5"><a href="#top"><img src="autostart_sshd_files/jumptop.gif" alt="Top" height="24" width="110" border="0"></a><a href="http://forums.fedoraforum.org/external.php?type=RSS2"><img src="autostart_sshd_files/rssjump.gif" alt="Subscribe to XML RSS for all Threads in all Forums" height="24" width="110" border="0"></a><a href="http://forums.fedoraforum.org/archive/index.php"><img src="autostart_sshd_files/archivejump.gif" alt="FedoraForumDotOrg Archive" height="24" width="110" border="0"></a></td> 
+  </tr> 
+  <tr> 
+    <td height="15" background="autostart_sshd_files/fotter1_1bg.gif"></td> 
+  </tr> 
+  <tr> 
+    <td background="autostart_sshd_files/foot2_1bg.gif"></td> 
+  </tr> 
+<tr> 
+    <td height="62" valign="top" align="center" background="autostart_sshd_files/footbglowf.gif"><table width="540" align="center" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td valign="top" width="36" align="right"><img src="autostart_sshd_files/adsleftf.gif" height="62" width="36" border="0"></td>
+		<td valign="top" width="468" align="center" background="autostart_sshd_files/middlebglowf.gif">
+
+</td>
+		<td valign="top" width="36" align="left"><img src="autostart_sshd_files/adsrightf.gif" height="62" width="36" border="0"></td>
+	</tr>
+</tbody></table>
+</td> 
+        </tr></tbody></table> 
+<table width="100%" align="center" bgcolor="#ffffff" border="0"> 
+  <tbody><tr>
+
+<td width="223" align="left"><a href="http://www.fedoraforum.org/" target="_blank"><img src="autostart_sshd_files/fedora-graphic-200.png" alt="logo" border="0"><br></a></td>
+
+<td><p align="center"><br><font class="black"><br>All trademarks, and forum posts in this site are property of their respective owner(s).<br> 
+        <p><b>FedoraForum.org is privately owned and <u>is not</u> directly sponsored by the Fedora Project or Red Hat, Inc. </b></p><a href="http://www.fedoraforum.org/?view=privacy" class="black"><b>Privacy Policy</b></a> | <a href="http://www.fedoraforum.org/?view=term" class="black"><b>Term of Use</b></a> | <a href="http://www.fedoraforum.org/?view=guide" class="black"><b>Posting Rules</b></a> | <a href="http://forums.fedoraforum.org/archive/index.php" class="black"><b>Archive</b></a> | <a href="http://forums.fedoraforum.org/sendmessage.php" class="black"><b>Contact</b></a> | <a href="http://www.fedoraforum.org/?view=people" class="black"><b>Founding Members</b></a><br><a href="http://www.shuttervoice.com/">ShutterVoice.com</a> News: <a href="http://www.shuttervoice.com/4064/android-gingerbread-features-version-2-3-announced.html">Android 2.3</a> - <a href="http://www.shuttervoice.com/1354/sony-playstation-4-expected-to-arrive-soon.html"><b>Playstation 4</b> by Sony</a> <a href="http://www.shuttervoice.com/3005/verizon-iphone-release-date-may-be-summer-2010.html"><b>Verizon iPhone</b></a>
+ | Powered by vBulletin ©2000-2011, Jelsoft Enterprises Ltd.<br>
+</font></p></td>
+<td width="223" align="center">
+ <img src="autostart_sshd_files/poweredby.gif" alt="FedoraForum is Powered by Open Source Projects and Products" border="0">
+</td>
+  </tr> 
+</tbody></table><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr> 
+    <td height="15" background="autostart_sshd_files/fotter1_1bgv.gif"><img src="autostart_sshd_files/pixel.gif" height="15"></td> 
+  </tr>
+<tr> 
+    <td height="15" bgcolor="#314263"><img src="autostart_sshd_files/pixel.gif" height="15"></td> 
+  </tr>
+</tbody></table>
+
+
+<script src="autostart_sshd_files/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-170932-2";
+urchinTracker();
+</script>
+<!-- Start Quantcast tag -->
+<script type="text/javascript" src="autostart_sshd_files/quant.js"></script>
+<script type="text/javascript">_qacct="p-19xNj0LY6-xa-";quantserve();</script>
+<noscript>
+<a href="http://www.quantcast.com/p-19xNj0LY6-xa-" target="_blank"><img src="http://pixel.quantserve.com/pixel/p-19xNj0LY6-xa-.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/></a>
+</noscript>
+<!-- End Quantcast tag -->
+
+<!-- temp -->
+<div style="display: none;">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</div>
+
+</body></html>

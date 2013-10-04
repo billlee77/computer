@@ -1,0 +1,1181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+<title>linux - Split string based on delimiter in bash? - Stack Overflow</title>
+<link rel="stylesheet" type="text/css" href="split-string-based-on-delimiter-in-bash_files/all.css">
+<link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
+<link rel="apple-touch-icon" href="http://sstatic.net/stackoverflow/img/apple-touch-icon.png">
+<link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+<script src="split-string-based-on-delimiter-in-bash_files/ga.js" async="" type="text/javascript"></script><script src="split-string-based-on-delimiter-in-bash_files/adzerk1_2_4_43adzerk2_2_17_45adzerk3_2_4_44.html" async="" type="text/javascript"></script><script type="text/javascript" src="split-string-based-on-delimiter-in-bash_files/jquery.js"></script>
+<script type="text/javascript" src="split-string-based-on-delimiter-in-bash_files/master.js"></script>
+<script type="text/javascript">
+$(function () {
+    genuwine.init();
+});
+var imagePath='http://sstatic.net/stackoverflow/img/';
+var inboxUnviewedCount = -1;
+</script>
+
+    <link rel="canonical" href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'Split string based on delimiter in bash?'" href="http://stackoverflow.com/feeds/question/918886">
+    <script src="split-string-based-on-delimiter-in-bash_files/question.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        
+        
+        $(function() {
+            vote.init(918886);
+            sedits.bindPopupLinks();
+            comments.init();
+            initTagMenu();
+            styleCode();
+        });
+    </script>
+
+    <script type="text/javascript"> gauth.checkStackAuth('http://stackauth.com');</script>
+    <script type="text/javascript"> gauth.informStackAuth('http://stackauth.com');</script>
+</head><body style="margin-top: 2.5em;" class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"><div id="notify--1" style=""><span class="notify-close"><a title="dismiss this notification">×</a></span><span class="notify-text">Welcome to Q&amp;A for professional and enthusiast programmers — check out the <a onclick="notify.closeFirstTime(); return false;" href="http://stackoverflow.com/faq">FAQ</a>!</span></div></div>
+    <script type="text/javascript">
+        $(function () { notify.showFirstTime('Q&A for professional and enthusiast programmers'); });
+    </script>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    <span id="hlinks-user">
+                  
+                  
+                  </span>
+                  <span id="hlinks-nav">
+                  <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f918886%2fsplit-string-based-on-delimiter-in-bash">log in</a>
+ <span class="lsep">|</span>
+<a href="http://careers.stackoverflow.com/">careers</a>
+ <span class="lsep">|</span>
+
+                  </span>
+                  <span id="hlinks-custom">
+                  <a href="http://chat.stackoverflow.com/">chat</a>
+ <span class="lsep">|</span>
+<a href="http://meta.stackoverflow.com/">meta</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/about">about</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/faq">faq</a>
+                  </span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get">
+                    <div>
+                        <input name="q" class="textbox" tabindex="1" onfocus="if (this.value=='search') this.value = ''" maxlength="140" size="28" value="search" type="text">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            
+
+
+
+
+<div id="question-header">
+    <h1><a href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash" class="question-hyperlink">Split string based on delimiter in bash?</a></h1>
+</div>
+
+<div id="mainbar">
+
+
+
+<div id="question">
+    
+    <div style="height: 90px;" class="everyonelovesstackoverflow" id="stop-adzerk"><div id="herebeninjas"> <style type="text/css"> #herebeninjas { background: #e8deca url(http://sstatic.net/ads/img/ninja-bg.jpg) no-repeat top left; color: #333; font-family: Arial, Helvetica, sans-serif; font-size:12px; line-height:20px; padding:5px 10px; width:708px; height:80px; position:relative; overflow:hidden; } #herebeninjas > a#all { position:absolute; width:728px; height:90px; top:0; left:0; } #herebeninjas > p { margin:0; margin-left:215px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; position:relative; } #herebeninjas > p > a { color: #D65A1D; text-decoration: none; text-shadow: #F4F0E7 0px 1px 0px; } #herebeninjas > p > a:hover { color: #a54a1d; } #herebeninjas > p.last { width:400px; display:inline-block; } #herebeninjas > p > span { color:#666; } #herebeninjas > a#more { width:90px; height:20px; top:70px; left:638px; position:absolute; } </style> <a id="all" href="http://careers.stackoverflow.com/?campaign=BannerHeader" target="_blank"></a> <p class=""> <a href="http://careers.stackoverflow.com/jobs/9464/software-engineer-corensic?campaign=BannerTopspot" target="_blank" title="Software Engineer at Corensic. Click to learn more."> Corensic - Software Engineer </a> <span>Seattle, WA</span> </p> <p class=""> <a href="http://careers.stackoverflow.com/jobs/10038/senior-ruby-on-rails-developer-foraker-labs?campaign=BannerGeocoded" target="_blank" title="Senior Ruby on Rails Developer at Foraker Labs. Click to learn more."> Foraker Labs - Senior Ruby on Rails Developer </a> <span>Boulder, CO</span> </p> <p class=""> <a href="http://careers.stackoverflow.com/jobs/10252/web-developer-php-wordpress-theme-foundry?campaign=BannerGeocoded" target="_blank" title="Web Developer - PHP / WordPress at The Theme Foundry. Click to learn more."> The Theme Foundry - Web Developer - PHP / WordPress </a> <span>Boise, ID; Portland, OR; San Francisco, CA...</span> </p> <p class="last"> <a href="http://careers.stackoverflow.com/jobs/7572/web-application-developer-deviantart?campaign=BannerGeocoded" target="_blank" title="Web Application Developer at deviantART. Click to learn more."> deviantART - Web Application Developer </a> <span>United States; Europe; South America...</span> </p> <a id="more" href="http://careers.stackoverflow.com/?campaign=BannerFooter" target="_blank"></a> <img src="split-string-based-on-delimiter-in-bash_files/jobimpression_002.gif" alt="impression" class="impression"> </div></div>
+
+     
+    
+
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+<div class="vote">
+    <input value="918886" type="hidden">
+    <a class="vote-up-off" title="This question is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">26</span>
+    <a class="vote-down-off" title="This question is unclear or not useful (click again to undo)">down vote</a>
+
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>7</b></div>    
+
+</div>
+
+    </td>
+    <td class="postcell">
+        <div>          
+            <div class="post-text">
+                <p>How to split string based on delimiter in bash?</p>
+
+<p>I have this string stored in a variable:</p>
+
+<pre class="lang-bsh prettyprint"><code><span class="pln">IN</span><span class="pun">=</span><span class="str">"bla@some.com;john@home.com"</span><span class="pln"><br></span></code></pre>
+
+<p>Now I would like to split the strings by ';' delimiter so that I have</p>
+
+<pre class="lang-bsh prettyprint"><code><span class="pln">ADDR1</span><span class="pun">=</span><span class="str">"bla@some.com"</span><span class="pln"><br>ADDR2</span><span class="pun">=</span><span class="str">"john@home.com"</span><span class="pln"><br></span></code></pre>
+
+<p>Don't necessarily need <code>ADDR1</code>, <code>ADDR2</code> variables, if they are elements of an array that's even better.</p>
+
+<p><strong>Edit</strong>: After suggestions from answers below I ended up with the following which is what I was after:</p>
+
+<pre class="lang-bsh prettyprint"><code><span class="com">#!/usr/bin/env bash</span><span class="pln"><br><br>IN</span><span class="pun">=</span><span class="str">"bla@some.com;john@home.com"</span><span class="pln"><br><br>arr</span><span class="pun">=</span><span class="pln">$</span><span class="pun">(</span><span class="pln">echo $IN </span><span class="pun">|</span><span class="pln"> tr </span><span class="str">";"</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">)</span><span class="pln"><br><br></span><span class="kwd">for</span><span class="pln"> x </span><span class="kwd">in</span><span class="pln"> $arr<br></span><span class="kwd">do</span><span class="pln"><br>&nbsp; &nbsp; echo </span><span class="str">"&gt; [$x]"</span><span class="pln"><br></span><span class="kwd">done</span><span class="pln"><br></span></code></pre>
+
+<p>output:</p>
+
+<pre class="lang-bsh prettyprint"><code><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">[</span><span class="pln">bla@some</span><span class="pun">.</span><span class="pln">com</span><span class="pun">]</span><span class="pln"><br></span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">[</span><span class="pln">john@home</span><span class="pun">.</span><span class="pln">com</span><span class="pun">]</span><span class="pln"><br></span></code></pre>
+
+<p><strong>Edit2</strong>: There was a solution involving setting IFS to
+ ';', not sure what happened with that answer, how do you reset IFS back
+ to default?</p>
+
+<p><strong>Edit3</strong>: RE: IFS solution, I tried this and it works, I keep the old IFS and then restore it:</p>
+
+<pre class="lang-bsh prettyprint"><code><span class="pln">IN</span><span class="pun">=</span><span class="str">"bla@some.com;john@home.com"</span><span class="pln"><br><br>OIFS</span><span class="pun">=</span><span class="pln">$IFS<br>IFS</span><span class="pun">=</span><span class="str">';'</span><span class="pln"><br>arr2</span><span class="pun">=</span><span class="pln">$IN<br></span><span class="kwd">for</span><span class="pln"> x </span><span class="kwd">in</span><span class="pln"> $arr2<br></span><span class="kwd">do</span><span class="pln"><br>&nbsp; &nbsp; echo </span><span class="str">"&gt; [$x]"</span><span class="pln"><br></span><span class="kwd">done</span><span class="pln"><br><br>IFS</span><span class="pun">=</span><span class="pln">$OIFS<br></span></code></pre>
+
+<p>Btw, when I tried </p>
+
+<pre class="lang-bsh prettyprint"><code><span class="pln">arr2</span><span class="pun">=(</span><span class="pln">$IN</span><span class="pun">)</span><span class="pln"><br></span></code></pre>
+
+<p>I only got the first string when printing it in loop, without brackets around <code>$IN</code> it works.</p>
+
+            </div>            
+            <div class="post-taglist">
+                <a href="http://stackoverflow.com/questions/tagged/linux" class="post-tag" title="show questions tagged 'linux'" rel="tag">linux</a> <a href="http://stackoverflow.com/questions/tagged/bash" class="post-tag" title="show questions tagged 'bash'" rel="tag">bash</a> <a href="http://stackoverflow.com/questions/tagged/scripting" class="post-tag" title="show questions tagged 'scripting'" rel="tag">scripting</a> 
+            </div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/q/918886" title="short permalink to this question">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/918886/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-918886" title="flag this post for serious problems or moderator attention">flag</a></div>
+                
+            </td>
+        
+            <td class="post-signature" align="right">
+            <div class="user-info"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/918886/revisions" title="show all edits to this post"><span title="2009-05-28 03:06:59Z" class="relativetime">May 28 '09 at 3:06</span></a></div><div class="user-gravatar32"></div><div class="user-details"><br></div></div>
+            
+            </td>
+            
+            <td class="post-signature owner">
+            <div class="user-info"><div class="user-action-time">asked <span title="2009-05-28 02:03:43Z" class="relativetime">May 28 '09 at 2:03</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/45654/stefanb"><img src="split-string-based-on-delimiter-in-bash_files/074cb23f424613c8d5dbc3eedc5d3dbf.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/45654/stefanb">stefanB</a><br><span class="reputation-score" title="reputation score">9,838</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="14 silver badges"><span class="badge2"></span><span class="badgecount">14</span></span><span title="44 bronze badges"><span class="badge3"></span><span class="badgecount">44</span></span></div></div>
+            <br class="cbt">
+            <div class="accept-rate accept-answer-link" title="this user has accepted an answer for 32 of 32 eligible questions">100% accept rate</div>
+            
+            </td>
+            </tr>
+            </tbody></table>
+        </div>
+    </td>
+    </tr>
+
+    
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-918886" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-727044" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">arr2=($IN)
+ creates a real array. So you should iterate over it with  for i in 
+"${arr2[@]}"; do ... ; done instead, when using the arr2=($IN) syntax :)
+ That's why you only got the first string with the other method (like 
+for i in $arr2; do ...; done). Note that you can print out items of an 
+array too. Say you want to print the second item (mail addy), you would 
+do  echo "${arr2[1]}" . index "@" stands for "expand each item in the 
+array to a separate word". </span> –&nbsp;<a href="http://stackoverflow.com/users/34509/johannes-schaub-litb" title="101254 reputation" class="comment-user">Johannes Schaub - litb</a> <span class="comment-date"><span title="2009-05-28 03:22:57Z">May 28 '09 at 3:22</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-727052" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">So  
+"${arr2[@]}"  with arr2 containing mails a@b.com and c@d.com, expands to
+  "a@b.com" "c@d.com"  :) Note that you can then also restore IFS 
+already before the for-loop starts (when using this array method). now, 
+since  "for x in $arr2" only works because IFS is still ";" (the string 
+is seen by "for" as separate words, since IFS split them at that time), 
+currently you have to have IFS set to ";" throughout the whole loop, 
+which may cause subtle problems when you don't think of it :) I found 
+bash has some evil pitfalls. Maybe we should start making up a "bash 
+pitfalls" question on SO? :)</span> –&nbsp;<a href="http://stackoverflow.com/users/34509/johannes-schaub-litb" title="101254 reputation" class="comment-user">Johannes Schaub - litb</a> <span class="comment-date"><span title="2009-05-28 03:26:54Z">May 28 '09 at 3:26</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+
+    </tbody></table>
+    
+</div>
+
+
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>8 Answers</h2>
+            <div id="tabs">
+                <a href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash?tab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash?tab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash?tab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <a name="918931"></a>
+    
+    <div id="answer-918931" class="answer">
+        
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="918931" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">10</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+<span class="vote-accepted-on" title="The question owner accepted this as the best answer Sep 13 '10 at 23:40">accepted</span>
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>You can set the <code>IFS</code> variable, and then let it parse into an array. When this happens in a command, then the assignment to <code>IFS</code> only takes place to that single command's envionment ( to <code>read</code> ). It then parses the input according to the <code>IFS</code> variable value into an array, which we can then iterate over.</p>
+
+<pre class="lang-bsh prettyprint"><code><span class="pln">IFS</span><span class="pun">=</span><span class="str">';'</span><span class="pln"> read </span><span class="pun">-</span><span class="pln">ra ADDR </span><span class="pun">&lt;&lt;&lt;</span><span class="pln"> </span><span class="str">"$IN"</span><span class="pln"><br></span><span class="kwd">for</span><span class="pln"> i </span><span class="kwd">in</span><span class="pln"> </span><span class="str">"${ADDR[@]}"</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="com"># process "$i"</span><span class="pln"><br></span><span class="kwd">done</span><span class="pln"><br></span></code></pre>
+
+<p>It will parse one line of items separated by <code>;</code>, pushing it into an array. Stuff for processing whole of <code>$IN</code>, each time one line of input separated by <code>;</code>:</p>
+
+<pre class="lang-bsh prettyprint"><code><span class="pln">&nbsp;</span><span class="kwd">while</span><span class="pln"> IFS</span><span class="pun">=</span><span class="str">';'</span><span class="pln"> read </span><span class="pun">-</span><span class="pln">ra ADDR</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> <br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">for</span><span class="pln"> i </span><span class="kwd">in</span><span class="pln"> </span><span class="str">"${ADDR[@]}"</span><span class="pun">;</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="com"># process "$i"</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="kwd">done</span><span class="pln"> <br>&nbsp;</span><span class="kwd">done</span><span class="pln"> </span><span class="pun">&lt;&lt;&lt;</span><span class="pln"> </span><span class="str">"$IN"</span><span class="pln"><br></span></code></pre>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash/918931#918931" title="permalink to this answer">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/918931/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-918931" title="flag this post for serious problems or moderator attention">flag</a></div>
+                
+            </td>
+            
+            <td class="post-signature" align="right">
+            <div class="user-info"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/918931/revisions" title="show all edits to this post"><span title="2009-05-28 03:03:42Z" class="relativetime">May 28 '09 at 3:03</span></a></div><div class="user-gravatar32"></div><div class="user-details"><br></div></div>
+            </td>
+            
+            <td class="post-signature" align="right">
+            <div class="user-info"><div class="user-action-time">answered <span title="2009-05-28 02:23:27Z" class="relativetime">May 28 '09 at 2:23</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/34509/johannes-schaub-litb"><img src="split-string-based-on-delimiter-in-bash_files/31a1c40a45079decc7f5525d2a873481.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/34509/johannes-schaub-litb">Johannes Schaub - litb</a><br><span class="reputation-score" title="reputation score 101254">101k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="168 silver badges"><span class="badge2"></span><span class="badgecount">168</span></span><span title="399 bronze badges"><span class="badge3"></span><span class="badgecount">399</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-918931" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-726934" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">This is
+ probably the best way. How long will IFS persist in it's current value,
+ can it mess up my code by being set when it shouldn't be, and how can I
+ reset it when I'm done with it?</span> –&nbsp;<a href="http://stackoverflow.com/users/60777/chris-lutz" title="18465 reputation" class="comment-user">Chris Lutz</a> <span class="comment-date"><span title="2009-05-28 02:25:24Z">May 28 '09 at 2:25</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-727008" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">now after the fix applied, only within the duration of the read command :)</span> –&nbsp;<a href="http://stackoverflow.com/users/34509/johannes-schaub-litb" title="101254 reputation" class="comment-user">Johannes Schaub - litb</a> <span class="comment-date"><span title="2009-05-28 03:04:10Z">May 28 '09 at 3:04</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-727023" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">I knew 
+there was a way with arrays, just couldn't remember what it was. I like 
+setting the IFS but am not sure with the redirect from $IN and go 
+through read just to populate array. Isn't just restoring IFS easier? 
+Anyway +1 fro IFS suggestion, thanks.</span> –&nbsp;<a href="http://stackoverflow.com/users/45654/stefanb" title="9838 reputation" class="comment-user owner">stefanB</a> <span class="comment-date"><span title="2009-05-28 03:11:40Z">May 28 '09 at 3:11</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-727029" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">I didn't like this saved="$IFS"; IFS=';'; ADDR=($IN); IFS="$saved" mess. :)</span> –&nbsp;<a href="http://stackoverflow.com/users/34509/johannes-schaub-litb" title="101254 reputation" class="comment-user">Johannes Schaub - litb</a> <span class="comment-date"><span title="2009-05-28 03:14:27Z">May 28 '09 at 3:14</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-727370" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="cool">2</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">You can
+ read everything at once without using a while loop:
+read -r -d '' -a addr &lt;&lt;&lt; "$in" # The -d '' is key here, it 
+tells read not to stop at the first newline (which is the default -d) 
+but to continue until EOF or a NULL byte (which only occur in binary 
+data).</span> –&nbsp;<a href="http://stackoverflow.com/users/58803/lhunath" title="4183 reputation" class="comment-user">lhunath</a> <span class="comment-date"><span title="2009-05-28 06:14:17Z">May 28 '09 at 6:14</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    <a id="comments-link-918931" class="comments-link" title="expand to show all comments on this post">show <b>1</b> more comment</a>
+</td>
+</tr>
+        </tbody></table>
+    </div>
+
+    <div class="everyonelovesstackoverflow" id="adzerk3"><a href="http://engine.adzerk.net/redirect/0/2568/2444/8277/dd6c1851292e42649c4a599db97cf962/44/1178/2292/634345393133842516?keywords=linux%2cbash%2cscripting" rel="nofollow" target="_blank" title=""><img src="split-string-based-on-delimiter-in-bash_files/2568.bin" title="" alt="" height="90" width="728" border="0"></a></div>
+
+    
+    <a name="918898"></a>
+    
+    <div id="answer-918898" class="answer">
+        
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="918898" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">11</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>If you don't mind processing them immediately, I like to do this:</p>
+
+<pre class="lang-bsh prettyprint"><code><span class="kwd">for</span><span class="pln"> i </span><span class="kwd">in</span><span class="pln"> $</span><span class="pun">(</span><span class="pln">echo $IN </span><span class="pun">|</span><span class="pln"> tr </span><span class="str">";"</span><span class="pln"> </span><span class="str">"\n"</span><span class="pun">)</span><span class="pln"><br></span><span class="kwd">do</span><span class="pln"><br>&nbsp; </span><span class="com"># process</span><span class="pln"><br></span><span class="kwd">done</span><span class="pln"><br></span></code></pre>
+
+<p>You could use this kind of loop to initialize an array, but there's probably an easier way to do it. Hope this helps, though.</p>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash/918898#918898" title="permalink to this answer">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/918898/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-918898" title="flag this post for serious problems or moderator attention">flag</a></div>
+                
+            </td>
+            
+            <td class="post-signature" align="right">
+            <div class="user-info"><div class="user-action-time">answered <span title="2009-05-28 02:09:44Z" class="relativetime">May 28 '09 at 2:09</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/60777/chris-lutz"><img src="split-string-based-on-delimiter-in-bash_files/4e698bea14e1d5f5c86d0359e5f24d28.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/60777/chris-lutz">Chris Lutz</a><br><span class="reputation-score" title="reputation score 18465">18.5k</span><span title="33 silver badges"><span class="badge2"></span><span class="badgecount">33</span></span><span title="88 bronze badges"><span class="badge3"></span><span class="badgecount">88</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-918898" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-726954" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">tried 
+using IFS=';' ADDR=($IN) , but i'm not sure how IFS behave afterwards so
+ i removed my answer :( giving u +1 thou since i like it</span> –&nbsp;<a href="http://stackoverflow.com/users/34509/johannes-schaub-litb" title="101254 reputation" class="comment-user">Johannes Schaub - litb</a> <span class="comment-date"><span title="2009-05-28 02:32:19Z">May 28 '09 at 2:32</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-726972" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">You 
+should have kept the IFS answer. It taught me something I didn't know, 
+and it definitely made an array, whereas this just makes a cheap 
+substitute.</span> –&nbsp;<a href="http://stackoverflow.com/users/60777/chris-lutz" title="18465 reputation" class="comment-user">Chris Lutz</a> <span class="comment-date"><span title="2009-05-28 02:42:44Z">May 28 '09 at 2:42</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-727003" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">I see. 
+Yeah i find doing these silly experiments, i'm going to learn new things
+ each time i'm trying to answer things. I've edited stuff based on #bash
+ IRC feedback and undeleted :)</span> –&nbsp;<a href="http://stackoverflow.com/users/34509/johannes-schaub-litb" title="101254 reputation" class="comment-user">Johannes Schaub - litb</a> <span class="comment-date"><span title="2009-05-28 02:59:02Z">May 28 '09 at 2:59</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-728818" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">I would
+ listen to you closer, Ihunath, and understand that you're right, if you
+ weren't being as much of a jerk about it. While this is certainly not 
+perfect (and I know that - I've seen wordsplitting before), if you know 
+you're working with a list of semicolon-separated email addresses, 
+good-enough is often better than technically correct. I upvoted the IFS 
+answer (and even recommended that it be undeleted) because it's a better
+ answer, but for the OP's problem this was good enough. There's a reason
+ for the phrase "good enough."</span> –&nbsp;<a href="http://stackoverflow.com/users/60777/chris-lutz" title="18465 reputation" class="comment-user">Chris Lutz</a> <span class="comment-date"><span title="2009-05-28 13:54:20Z">May 28 '09 at 13:54</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-729989" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="cool">3</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@Chris:
+ People being satisfied with "good enough" is the reason why 99.9% of 
+all bash scripts in existance are a danger to anyone using them because 
+of race conditions, bugs and security issues.  "Good enough" is not good
+ enough; and definitely not recommended (and any advice given is a 
+recommendation to the one asking).</span> –&nbsp;<a href="http://stackoverflow.com/users/58803/lhunath" title="4183 reputation" class="comment-user">lhunath</a> <span class="comment-date"><span title="2009-05-28 17:09:01Z">May 28 '09 at 17:09</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    <a id="comments-link-918898" class="comments-link" title="expand to show all comments on this post">show <b>2</b> more comments</a>
+</td>
+</tr>
+        </tbody></table>
+    </div>
+
+    <a name="918906"></a>
+    
+    <div id="answer-918906" class="answer">
+        
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="918906" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">4</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><pre class="lang-bsh prettyprint"><code><span class="pln">echo </span><span class="str">"bla@some.com;john@home.com"</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> sed </span><span class="pun">-</span><span class="pln">e </span><span class="str">'s/;/\n/g'</span><span class="pln"><br>bla@some</span><span class="pun">.</span><span class="pln">com<br>john@home</span><span class="pun">.</span><span class="pln">com<br></span></code></pre>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash/918906#918906" title="permalink to this answer">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/918906/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-918906" title="flag this post for serious problems or moderator attention">flag</a></div>
+                
+            </td>
+            
+            <td class="post-signature" align="right">
+            <div class="user-info"><div class="user-action-time">answered <span title="2009-05-28 02:12:59Z" class="relativetime">May 28 '09 at 2:12</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/44434/lothar"><img src="split-string-based-on-delimiter-in-bash_files/f333f6188ba0909e297366d2eda2dffd.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/44434/lothar">lothar</a><br><span class="reputation-score" title="reputation score">6,930</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="26 bronze badges"><span class="badge3"></span><span class="badgecount">26</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-918906" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-726923" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">I think this is good as well, I took the first suggestion using tr</span> –&nbsp;<a href="http://stackoverflow.com/users/45654/stefanb" title="9838 reputation" class="comment-user owner">stefanB</a> <span class="comment-date"><span title="2009-05-28 02:21:43Z">May 28 '09 at 2:21</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+        </tbody></table>
+    </div>
+
+    <a name="920198"></a>
+    
+    <div id="answer-920198" class="answer">
+        
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="920198" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">3</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>How about this approach:</p>
+
+<pre class="lang-bsh prettyprint"><code><span class="pln">IN</span><span class="pun">=</span><span class="str">"bla@some.com;john@home.com"</span><span class="pln"> <br></span><span class="kwd">set</span><span class="pln"> </span><span class="pun">--</span><span class="pln"> </span><span class="str">"$IN"</span><span class="pln"> <br>IFS</span><span class="pun">=</span><span class="str">";"</span><span class="pun">;</span><span class="pln"> declare </span><span class="pun">-</span><span class="pln">a </span><span class="typ">Array</span><span class="pun">=(</span><span class="pln">$</span><span class="pun">*)</span><span class="pln"> <br>echo </span><span class="str">"${Array[@]}"</span><span class="pln"> <br>echo </span><span class="str">"${Array[0]}"</span><span class="pln"> <br>echo </span><span class="str">"${Array[1]}"</span><span class="pln"><br></span></code></pre>
+
+<p>Taken from:</p>
+
+<p>antonolsen.com/2006/04/10/bash-split-a-string-without-cut-or-awk/ </p>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash/920198#920198" title="permalink to this answer">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/920198/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-920198" title="flag this post for serious problems or moderator attention">flag</a></div>
+                
+            </td>
+            
+            <td class="post-signature" align="right">
+            <div class="user-info"><div class="user-action-time">answered <span title="2009-05-28 10:31:16Z" class="relativetime">May 28 '09 at 10:31</span></div><div class="user-gravatar32"><span class="anonymous-gravatar"></span></div><div class="user-details">errator<br></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-920198" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-904303" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">+1, nice, I like that it does not use any external tools</span> –&nbsp;<a href="http://stackoverflow.com/users/45654/stefanb" title="9838 reputation" class="comment-user owner">stefanB</a> <span class="comment-date"><span title="2009-07-07 04:22:58Z">Jul 7 '09 at 4:22</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+        </tbody></table>
+    </div>
+
+    <a name="3865430"></a>
+    
+    <div id="answer-3865430" class="answer">
+        
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="3865430" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>You may also:</p>
+
+<pre class="lang-bsh prettyprint"><code><span class="pln">dirList</span><span class="pun">=(</span><span class="pln"><br>some<br>list<br>of<br>elements<br></span><span class="pun">)</span><span class="pln"><br><br></span><span class="kwd">for</span><span class="pln"> i </span><span class="kwd">in</span><span class="pln"> $</span><span class="pun">{</span><span class="pln">dirList</span><span class="pun">[@]};</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"><br></span><span class="pun">...</span><span class="pln"><br></span><span class="kwd">done</span><span class="pln"><br></span></code></pre>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash/3865430#3865430" title="permalink to this answer">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3865430/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-3865430" title="flag this post for serious problems or moderator attention">flag</a></div>
+                
+            </td>
+            
+            <td class="post-signature" align="right">
+            <div class="user-info"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/3865430/revisions" title="show all edits to this post"><span title="2010-10-05 17:02:57Z" class="relativetime">Oct 5 '10 at 17:02</span></a></div><div class="user-gravatar32"></div><div class="user-details"><br></div></div>
+            </td>
+            
+            <td class="post-signature" align="right">
+            <div class="user-info"><div class="user-action-time">answered <span title="2010-10-05 15:55:01Z" class="relativetime">Oct 5 '10 at 15:55</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/467038/dmilith"><img src="split-string-based-on-delimiter-in-bash_files/6c6088d4a7d9d07e28a13d9c2677d5a6.jpeg" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/467038/dmilith">dmilith</a><br><span class="reputation-score" title="reputation score">11</span><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-3865430" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+        </tbody></table>
+    </div>
+
+    <a name="3704011"></a>
+    
+    <div id="answer-3704011" class="answer">
+        
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="3704011" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>How about this one liner, if you're not using arrays:</p>
+
+<pre class="lang-bsh prettyprint"><code><span class="pln">IFS</span><span class="pun">=</span><span class="str">';'</span><span class="pln"> read ADDR1 ADDR2 </span><span class="pun">&lt;&lt;&lt;</span><span class="pln">$IN<br></span></code></pre>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash/3704011#3704011" title="permalink to this answer">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3704011/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-3704011" title="flag this post for serious problems or moderator attention">flag</a></div>
+                
+            </td>
+            
+            <td class="post-signature" align="right">
+            <div class="user-info"><div class="user-action-time">answered <span title="2010-09-13 20:10:42Z" class="relativetime">Sep 13 '10 at 20:10</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/22704/darron"><img src="split-string-based-on-delimiter-in-bash_files/333b8a55b9164038b686c9751006674d.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/22704/darron">Darron</a><br><span class="reputation-score" title="reputation score">7,324</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="29 bronze badges"><span class="badge3"></span><span class="badgecount">29</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-3704011" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+        </tbody></table>
+    </div>
+
+    <a name="4050683"></a>
+    
+    <div id="answer-4050683" class="answer">
+        
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="4050683" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>This works:</p>
+
+<pre class="lang-bsh prettyprint"><code><span class="pln">echo </span><span class="str">"one two three four"</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> read FIRST REST </span><span class="pun">;</span><span class="pln"> echo </span><span class="str">"{$FIRST} {$REST}"</span><span class="pun">;</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p>But this does not:</p>
+
+<pre class="lang-bsh prettyprint"><code><span class="pln">echo </span><span class="str">"one two three four"</span><span class="pln"> </span><span class="pun">|</span><span class="pln"> read FIRST REST </span><span class="pun">;</span><span class="pln"> echo </span><span class="str">"{$FIRST} {$REST}"</span><span class="pun">;</span><span class="pln"> <br></span></code></pre>
+
+<p>How is this possible?</p>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash/4050683#4050683" title="permalink to this answer">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4050683/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-4050683" title="flag this post for serious problems or moderator attention">flag</a></div>
+                
+            </td>
+            
+            <td class="post-signature" align="right">
+            <div class="user-info"><div class="user-action-time">answered <span title="2010-10-29 09:40:26Z" class="relativetime">Oct 29 '10 at 9:40</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/487821/andor"><img src="split-string-based-on-delimiter-in-bash_files/62b83b08e929d5d054b23b7fe53678ad.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/487821/andor">Andor</a><br><span class="reputation-score" title="reputation score">1</span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4050683" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+        </tbody></table>
+    </div>
+
+    <a name="4110109"></a>
+    
+    <div id="answer-4110109" class="answer">
+        
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="4110109" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>Because { ... } declares a function, onto which you pass the string by pipe.
+If you do not set {} the locale variables FIRST REST will be lost,
+as soon as you execute the <strong>separate</strong> command echo.
+So you will just print two empty strings...</p>
+
+<p>hope it helped</p>
+
+<p>leviathan</p>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash/4110109#4110109" title="permalink to this answer">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4110109/edit" title="edit this post">edit</a><span class="lsep">|</span><a id="flag-post-4110109" title="flag this post for serious problems or moderator attention">flag</a></div>
+                
+            </td>
+            
+            <td class="post-signature" align="right">
+            <div class="user-info"><div class="user-action-time">answered <span title="2010-11-05 21:08:38Z" class="relativetime">Nov 5 '10 at 21:08</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/498794/leviathan"><img src="split-string-based-on-delimiter-in-bash_files/3104d299ee07f40c15e34042da02933a.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/498794/leviathan">leviathan</a><br><span class="reputation-score" title="reputation score">1</span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4110109" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+        </tbody></table>
+    </div>
+    
+    <a name="new-answer"></a>
+    <form id="post-form" action="/questions/918886/answer/submit" method="post">
+        <h2 class="space">Your Answer</h2>
+        
+<script src="split-string-based-on-delimiter-in-bash_files/wmd.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    
+    var enableImageUploads = true; 
+    
+    $(function() {
+     
+        initTagRenderer("".split(" "), "".split(" "));
+        editorReady('answer', true/* confirm navigation after wmd keypress */);
+    });  
+</script>
+
+
+<div id="post-editor">  
+
+    
+    <div id="wmd-container">
+        <div id="wmd-button-bar"><ul id="wmd-button-row"><li style="background-position: 0px 0px;" title="Strong &lt;strong&gt; Ctrl+B" id="wmd-bold-button" class="wmd-button"></li><li style="background-position: -20px 0px;" title="Emphasis &lt;em&gt; Ctrl+I" id="wmd-italic-button" class="wmd-button"></li><li id="wmd-spacer1" class="wmd-spacer"></li><li style="background-position: -40px 0px;" title="Hyperlink &lt;a&gt; Ctrl+L" id="wmd-link-button" class="wmd-button"></li><li style="background-position: -60px 0px;" title="Blockquote &lt;blockquote&gt; Ctrl+Q" id="wmd-quote-button" class="wmd-button"></li><li style="background-position: -80px 0px;" title="Code Sample &lt;pre&gt;&lt;code&gt; Ctrl+K" id="wmd-code-button" class="wmd-button"></li><li style="background-position: -100px 0px;" title="Image &lt;img&gt; Ctrl+G" id="wmd-image-button" class="wmd-button"></li><li id="wmd-spacer2" class="wmd-spacer"></li><li style="background-position: -120px 0px;" title="Numbered List &lt;ol&gt; Ctrl+O" id="wmd-olist-button" class="wmd-button"></li><li style="background-position: -140px 0px;" title="Bulleted List &lt;ul&gt; Ctrl+U" id="wmd-ulist-button" class="wmd-button"></li><li style="background-position: -160px 0px;" title="Heading &lt;h1&gt;/&lt;h2&gt; Ctrl+H" id="wmd-heading-button" class="wmd-button"></li><li style="background-position: -180px 0px;" title="Horizontal Rule &lt;hr&gt; Ctrl+R" id="wmd-hr-button" class="wmd-button"></li><li id="wmd-spacer3" class="wmd-spacer"></li><li style="background-position: -200px -20px;" title="Undo - Ctrl+Z" id="wmd-undo-button" class="wmd-button"></li><li style="background-position: -220px -20px;" title="Redo - Ctrl+Shift+Z" id="wmd-redo-button" class="wmd-button"></li><li style="background-position: -240px 0px;" id="wmd-help-button" class="wmd-button"><a title="Markdown Editing Help" target="_blank" href="http://stackoverflow.com/editing-help"></a></li></ul></div>
+        <textarea class="processed" id="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    <div style="margin-right: 0px;" class="grippie"></div></div>
+
+    <div class="fl" style="margin-top: 8px; height: 24px;">&nbsp;</div>
+    <div id="draft-saved" class="community-option fl" style="margin-top: 8px; height: 24px; display: none;">draft saved</div>
+
+
+    <div id="wmd-preview"></div>
+
+
+    <div id="edit-block">
+        <input id="fkey" name="fkey" value="ab74a1909dfcab95d5413cb4a8d7c40f" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+           
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+        <td class="vm open-id-login">
+            <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f918886%2fsplit-string-based-on-delimiter-in-bash">log in</a>
+            <script type="text/javascript">
+                master.onClickDraftSave('#login-link');
+            </script>
+        </td>
+
+    
+        <td class="orcell">
+            <div class="orword">or</div>
+            <div class="orline"></div>
+        </td>
+        <td class="vm">
+            <div>
+                <label for="display-name">Name</label>
+                <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+            </div>
+            <div>
+                <label for="m-address">Email</label>
+                <input disabled="disabled" class="actual-edit-overlay" style="opacity: 1; position: absolute; background-color: white; color: black; width: 330px; height: 15px;" size="40" maxlength="100" value="never shown" tabindex="106" type="text"><input class="edit-field-overlayed" style="opacity: 0.3; z-index: 1; position: relative;" id="m-address" name="m-address" size="40" maxlength="100" tabindex="106" type="text">
+                <span class="edit-field-overlay">never shown</span>
+            </div>
+            <div>
+                <label for="home-page">Home Page</label>
+                <input id="home-page" name="home-page" size="40" maxlength="200" tabindex="107" type="text">
+            </div>
+        </td>
+    
+        </tr>
+        </tbody></table>
+    </div>
+    
+           
+        
+        
+        <div class="form-submit cbt"><input id="submit-button" value="Post Your Answer" tabindex="110" type="submit"></div>
+    </form>
+
+
+    <h2 class="bottom-notice">
+        Not the answer you're looking for? 
+        Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/linux" class="post-tag" title="show questions tagged 'linux'" rel="tag">linux</a> <a href="http://stackoverflow.com/questions/tagged/bash" class="post-tag" title="show questions tagged 'bash'" rel="tag">bash</a> <a href="http://stackoverflow.com/questions/tagged/scripting" class="post-tag" title="show questions tagged 'scripting'" rel="tag">scripting</a> 
+        or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.
+    </h2>
+
+</div>
+</div>
+<div id="sidebar">
+
+<div class="module newuser newuser-greeting" style="">
+    <h4>Hello World!</h4>
+    <div>
+        <p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p>
+        <p class="ar"><a href="http://stackoverflow.com/about">about »</a>&nbsp;&nbsp;&nbsp;<a href="http://stackoverflow.com/faq">faq »</a></p>
+    </div>
+</div>    <div class="module">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://stackoverflow.com/questions/tagged/linux" class="post-tag" title="show questions tagged 'linux'" rel="tag">linux</a>&nbsp;<span class="item-multiplier">×&nbsp;13619</span><br>
+<a href="http://stackoverflow.com/questions/tagged/bash" class="post-tag" title="show questions tagged 'bash'" rel="tag">bash</a>&nbsp;<span class="item-multiplier">×&nbsp;4840</span><br>
+<a href="http://stackoverflow.com/questions/tagged/scripting" class="post-tag" title="show questions tagged 'scripting'" rel="tag">scripting</a>&nbsp;<span class="item-multiplier">×&nbsp;3164</span><br>
+</div> 
+        <p class="label-key">asked</p>
+        <p class="label-value" title="2009-05-28 02:03:43Z">1 year ago</p>
+        <p class="label-key">viewed</p>
+        <p class="label-value">48,557 times</p>
+        <p class="label-key">latest activity</p>
+        <p class="label-value"><a href="http://stackoverflow.com/questions/918886/split-string-based-on-delimiter-in-bash?lastactivity" class="lastactivity-link" title="2010-11-05 21:08:38Z">3 months ago</a></p>
+    </div>
+    
+    
+        <script type="text/javascript">
+            var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine2.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44?keywords=linux,bash,scripting"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);
+        </script>
+    
+    <div class="everyonelovesstackoverflow" id="adzerk2"><div id="SE20-ad-container" style="height: 250px; width: 220px;">
+<style>
+#launched-ad { width: 220px; height: 250px; overflow: hidden; background: url(http://sstatic.net/stackexchange/Img/launched-ads/english.jpg) no-repeat bottom center; }
+#launched-ad-link { display: block; width: 220px; height: 250px; line-height: 1.2; color: #923c3d; font-family: Georgia,"Times New Roman",serif; font-size: 20px; line-height: 26px; text-decoration: none; cursor: pointer; }
+#launched-ad-inner { width: 185px; margin: 30px 15px 0 20px;}
+</style>
+<a id="launched-ad-link" href="http://engine.adzerk.net/redirect/0/3194/3013/8277/1dffca8b3e5e48ee9c69950c5c2d5ac7/45/1178/3561/634345393133842516?keywords=linux%2cbash%2cscripting&amp;url=http%3A%2F%2Fenglish.stackexchange.com%2Fquestions%2F14436%2Fwhat-is-the-difference-between-illegal-and-unlawful">
+    <div id="launched-ad">
+        <div id="launched-ad-inner">What is the difference between illegal and unlawful?</div>
+    </div>
+</a>
+</div><script type="text/javascript">window._launchedAdUrl= "http://engine.adzerk.net/redirect/0/3194/3013/8277/1dffca8b3e5e48ee9c69950c5c2d5ac7/45/1178/3561/634345393133842516?keywords=linux%2cbash%2cscripting";</script><script src="split-string-based-on-delimiter-in-bash_files/js" type="text/javascript"></script></div>
+
+    
+    <div>
+        <script type="text/javascript">
+            (function(){var q="http://careers.stackoverflow.com/Ad/js",g=location.search=="?golarge",a,d=100,c=location.hash.indexOf("#ninjas")>-1,f="Pretty",h="#adzerk2",b="#adzerk1",i="#herebeninjas";(function(){var b="min-height:248px;margin:15px 0",c=$("<div>").addClass("hireme").attr("style",b),a=$("<div>").html(c);document.write(a.html())})();$(function(){setTimeout(r,2e3);a=setTimeout(e,d)});var e=function(){clearTimeout(a);if(m()&&!k()){a=setTimeout(e,d);return}c=c||n();c&&$(b).css("height",$(b).outerHeight()).attr("id","stop-adzerk");if(l()&&!j()){a=setTimeout(e,d);return}g=g||o();f=g?"Large":f;p()},r=function(){clearTimeout(a);var b=$("div.hireme, "+i);b.each(function(){var a=$(this),d=a.html().replace(/\s+/g,"").length==0;if(d){var c=a,b=a.parents(".everyonelovesstackoverflow").first();if(b.length>0)c=b;c.remove()}})},l=function(){return $(h).length>0},j=function(){var a=$(h);return a.length==0?false:a.html().replace(/\s+/g,"").length>0},o=function(){return $("#careersadsdoublehigh").length>0},m=function(){return $(b).length>0},k=function(){var a=$(b);return a.length==0?false:a.html().replace(/\s+/g,"").length>0},n=function(){return $(i).length>0},p=function(){$.ajax({url:s(),dataType:"script",cache:true})},s=function(){return q+"?style="+f+"&gobanner="+c.toString()}})();
+        </script><div style="min-height: 248px; margin: 15px 0pt;" class="hireme"> <style type="text/css"> .hireme { background: #fff url(http://sstatic.net/ads/img/careers-ad-bg-so.png?v=20101012) no-repeat 0 100%; border-top:1px solid #e6e6e6; color: #333; font-family: Arial, Helvetica, sans-serif; font-size:12px; line-height:130%; padding:0; width:220px; } .hireme > p { display:block; clear:both; margin:0; padding:13px; padding-bottom:0; } .hireme > p.hed { margin:0; padding:0; font-weight:bold; } .hireme > p > a { cursor:pointer; text-decoration:none; display:block; margin-left:1px; } .hireme > p.hed > a { font-weight:bold; } .hireme > p.hed > a > img { height:76px; } .hireme > p > a > span.location { color:#666; } .hireme > img.impression { display:none; } .hireme > p.hed img.careers-hed { margin-top:2px; margin-bottom:2px; } .hireme > a#bottomlink { display:block; height:45px; margin:15px 0 15px 0; } </style> <p class="hed"> <a href="http://careers.stackoverflow.com/?campaign=PrettyHeader" target="_blank"><img src="split-string-based-on-delimiter-in-bash_files/careers-ad-header-so.png" alt="careers.stackoverflow.com" class="careers-hed"></a> </p> <p> <a href="http://careers.stackoverflow.com/jobs/5991/pragmatic-programmer-youdevise?campaign=PrettyTopspot" target="_blank" title="Pragmatic Programmer at youDevise, Ltd.. Click to learn more."> Pragmatic Programmer at youDevise, Ltd. <span class="location">(London, England)</span> </a> </p> <p> <a href="http://careers.stackoverflow.com/jobs/7572/web-application-developer-deviantart?campaign=PrettyGeocoded" target="_blank" title="Web Application Developer at deviantART. Click to learn more."> Web Application Developer at deviantART <span class="location">(United States; Europe; South America...)</span> </a> </p> <a href="http://careers.stackoverflow.com/?campaign=PrettyFooter" id="bottomlink"></a> <img src="split-string-based-on-delimiter-in-bash_files/jobimpression.gif" alt="impression" class="impression"> </div>
+    </div>
+
+      
+
+    <div class="module">
+    <h4 id="h-linked">Linked</h4>
+    <div class="linked">
+    <div class="spacer">
+<a href="http://stackoverflow.com/questions/2706599/how-do-i-pull-info-from-string" class="question-hyperlink">How Do I Pull Info from String</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3791567/bash-split-text-file-into-words-with-non-alphanumeric-characters-as-delimiters" class="question-hyperlink">Bash: Split text-file into words with non-alphanumeric characters as delimiters</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3913451/problem-with-run-commands-in-shell-bash-with-arguments-as-variables" class="question-hyperlink">Problem with run commands in shell (bash) with arguments as variables !</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4326086/valgrind-opening-several-suppression-files-at-once" class="question-hyperlink">valgrind : Opening several suppression files at once</a>
+</div>
+
+    </div>
+    </div>
+
+    <div class="module">
+    <h4 id="h-related">Related</h4>
+    <div class="related">
+    <div class="spacer">
+<a href="http://stackoverflow.com/questions/85880/determine-if-a-function-exists-in-bash" class="question-hyperlink">Determine if a function exists in bash</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/511683/bash-get-list-of-commands-starting-with-a-given-string" class="question-hyperlink">bash: get list of commands starting with a given string</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/511694/bash-get-list-of-variables-whose-name-matches-a-certain-pattern" class="question-hyperlink">bash: get list of variables whose name matches a certain pattern</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/685435/bash-stacktrace" class="question-hyperlink">bash stacktrace</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1205605/value-of-global-variable-doesnt-change-in-bash" class="question-hyperlink">Value of global variable doesn't change in BASH.</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1464253/global-environment-variables-in-a-bash-script" class="question-hyperlink">Global environment variables in a bash script</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1919355/search-through-a-range-of-directories-bash-script" class="question-hyperlink">search through a range of directories bash script</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2073106/how-to-get-this-bash-script-to-work-if-the-variable-filename-contains-space" class="question-hyperlink">How to get this bash script to work if the variable “fileName” contains space?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2091300/bash-scripting-problem" class="question-hyperlink">Bash scripting problem</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2470638/prevent-to-be-expanded-in-the-bash-script" class="question-hyperlink">Prevent * to be expanded in the bash script</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash" class="question-hyperlink">how does ` cat &lt;&lt; EOF` work in bash?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2602538/split-a-line-of-text-in-bash-using-soh-delimiter" class="question-hyperlink">Split a line of text in bash using SOH delimiter</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2752654/how-to-store-and-echo-multiple-lines-elegantly-in-bash" class="question-hyperlink">How to store and echo multiple lines elegantly in bash?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2841593/bash-script-bad-interpreter" class="question-hyperlink">Bash script: bad interpreter</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2852397/what-scripts-should-not-be-ported-from-bash-to-python" class="question-hyperlink">What scripts should not be ported from bash to python?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3096561/fork-and-exec-in-bash" class="question-hyperlink">fork and exec in bash</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3435312/bash-subshells-and-sudo" class="question-hyperlink">BASH subshells and sudo?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3968111/simple-regular-expression-parsing-in-bash" class="question-hyperlink">Simple regular expression parsing in bash</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3977922/for-loop-with-bash-from-variable" class="question-hyperlink">for loop with bash from variable</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3986436/newbie-in-bash-scripting-assistance-please" class="question-hyperlink">newbie in bash scripting assistance please</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4276924/parsing-command-output-in-bash-script" class="question-hyperlink">Parsing Command Output in Bash Script</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4277665/bash-how-do-i-compare-two-string-variables-in-an-if-statement" class="question-hyperlink">BASH - How do I compare two string variables in an if statement</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4391456/how-to-use-the-same-bash-variable-between-a-parent-shell-and-child-shell" class="question-hyperlink">How to use the same bash variable between a parent shell and child shell</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4720454/linux-list-all-directories-push-into-a-bash-array" class="question-hyperlink">LINUX: List all directories, push into a bash array</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4850096/what-in-a-bash-script-stands-for" class="question-hyperlink">What […] in a bash script stands for?</a>
+</div>
+
+    </div>
+    </div>
+
+</div>
+
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/918886" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+
+
+<script type="text/javascript" src="split-string-based-on-delimiter-in-bash_files/9803.asc"></script>
+<noscript>
+    <div><img src="/posts/918886/ivc/9803" class="dno" alt=""></div>
+</noscript>
+
+<div style="display: none;" id="prettify-lang">lang-bsh</div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://stackoverflow.com/about">about</a> |
+                <a href="http://stackoverflow.com/faq">faq</a> |
+                 <a href="http://blog.stackoverflow.com/">blog</a> |
+                    <a href="http://chat.stackoverflow.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://itc.conversationsnetwork.org/series/stackoverflow.html">podcast</a> |
+                <a href="http://stackoverflow.com/legal">legal</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+                <b><a href="mailto:team@stackoverflow.com">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com/">feedback always welcome</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color: rgb(254, 122, 21); font-size: 140%;">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color: rgb(254, 122, 21); font-size: 140%;">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color: rgb(254, 122, 21); font-size: 140%;">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color: rgb(232, 39, 44); font-size: 140%;">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color: rgb(0, 175, 239); font-size: 140%;">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color: rgb(150, 150, 150); font-size: 140%;">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color: rgb(70, 147, 125); font-size: 140%;">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color: rgb(192, 208, 220); font-size: 140%;">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color: rgb(0, 0, 0); font-size: 140%;">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color: rgb(221, 72, 20); font-size: 140%;">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color: rgb(156, 228, 254); font-size: 140%;">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color: rgb(207, 77, 63); font-size: 140%;">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color: rgb(244, 242, 141); font-size: 140%;">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color: rgb(15, 53, 89); font-size: 140%;">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color: rgb(242, 242, 242); font-size: 140%;">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color: rgb(3, 113, 135); font-size: 140%;">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color: rgb(241, 231, 204); font-size: 140%;">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color: rgb(225, 205, 174); font-size: 140%;">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color: rgb(162, 217, 246); font-size: 140%;">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color: rgb(27, 62, 108); font-size: 140%;">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color: rgb(41, 58, 93); font-size: 140%;">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color: rgb(190, 192, 203); font-size: 140%;">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color: rgb(147, 145, 133); font-size: 140%;">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color: rgb(181, 205, 164); font-size: 140%;">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>
+                </div>
+            </div>
+            <div id="footer-flair">
+	            <a href="http://creativecommons.org/licenses/by-sa/2.5/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2011.2.28.1</div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2011 stack overflow internet services, inc; 
+                <a href="http://stackoverflow.com/questions-all">user contributions</a> licensed under <a href="http://creativecommons.org/licenses/by-sa/2.5/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+        </div>
+    </div>
+    
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src='http://www.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();_qoptions={qacct:"p-c1rF4kxgLUzNc"};</script>
+    <script type="text/javascript" src="split-string-based-on-delimiter-in-bash_files/quant.js"></script>
+    
+</body></html>

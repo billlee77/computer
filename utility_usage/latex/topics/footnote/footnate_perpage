@@ -1,0 +1,90 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title>TeX Frequently Asked Questions  -- question label "footnpp"</title>
+</head><body>
+<h1 align="center">Welcome to the UK List of<br>
+                TeX Frequently Asked Questions<br>
+                        on the Web</h1>
+
+<h2><a name="search">Searching</a></h2>
+<form action="http://www.tex.ac.uk/cgi-bin/texfaq2html" method="get">
+The index of Frequently Asked Questions about TeX is searchable.<br><br>
+Please enter your keyword here:<input name="keyword" type="text">&nbsp;&nbsp;
+then press here: <input value="search" type="submit">, &nbsp;&nbsp; or:
+</form>
+<!-- Search Google -->
+<center>
+<form method="GET" action="http://www.google.com/search">
+<table bgcolor="#ffffff"><tbody><tr><td>
+<a href="http://www.google.com/">
+<img src="footnate_perpage_files/Logo_40wht.gif" alt="Google" align="absmiddle" border="0"></a>
+<input name="q" size="25" maxlength="255" type="text">
+<input name="q" value="TeX Frequently Asked Questions" type="hidden">
+<input name="sitesearch" value="tex.ac.uk" type="hidden">
+<input name="as_eq" value="matches" type="hidden">
+<input name="btnG" value="Google Search" type="submit">
+</td></tr></tbody></table>
+</form>
+</center>
+<!-- Search Google -->
+<hr>
+
+<h2><a name="[Q-footnpp]">Footnotes numbered &#8220;per page&#8221;</a></h2>
+<p>The obvious solution is to make the footnote number reset whenever the
+page number is stepped, using the 
+<a href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=addtoreset">LaTeX internal mechanism</a>.  Sadly, the place
+in the document where the page number is stepped is unpredictable, not
+(&#8220;tidily&#8221;) at the end of the printed page; so changing the footnote
+number only ever works by &#8216;luck&#8217;.
+</p><p>As a result, resetting footnotes is inevitably a complicated process,
+using labels of some sort.  It&#8217;s nevertheless important, given the
+common requirement for footnotes marked by symbols (with painfully
+small symbol sets).  There are four packages that manage it, one way
+or another.
+</p><p>The <i>perpage</i> and <i>zref-perpage</i> packages provide a
+general mechanism for resetting counters per page, so can obviously be
+used for this task.  The interface is pretty simple:
+<code>\</code><code>MakePerPage{footnote}</code> (in <i>perpage</i>) or
+<code>\</code><code>zmakeperpage{footnote}</code> (in <i>zref-perpage</i>).  If
+you want to restart the counter at something other than 1 (for example
+to avoid something in the LaTeX footnote symbol list), you can use:
+<code>\</code><code>MakePerPage[2]{footnote}</code> (in <i>perpage</i>) or
+<code>\</code><code>zmakeperpage[2]{footnote}</code> (in <i>zref-perpage</i>).
+Note that you can also load <i>zref-perpage</i> 
+</p><p><i>Perpage</i> is a compact and efficient package;
+<i>zref-perpage</i>, being a <i>zref</i> &#8220;module&#8221;, comes with
+<i>zref</i>&#8217;s general mechanism for extending the the
+<code>\</code><code>label</code>&#8212;<code>\</code><code>[page]ref</code> of LaTeX, which can offer many other
+useful facilities.
+</p><p>The <i>footmisc</i> package provides a variety of means of
+controlling footnote appearance, among them a package option
+<code>perpage</code> that adjusts the numbering per page; if you&#8217;re
+doing something else odd about footnotes, it means you may only need
+the one package to achieve your ends.
+</p><p>The <i>footnpag</i> package also does per-page footnotes (and
+nothing else).  With the competition from <i>perpage</i>, it&#8217;s
+probably not particularly useful any more.
+</p><dl>
+<dt><tt><i>footmisc.sty</i></tt></dt><dd><a href="http://mirror.ctan.org/macros/latex/contrib/footmisc.zip">macros/latex/contrib/footmisc</a> (or <a href="http://mirror.ctan.org/macros/latex/contrib/footmisc/">browse the directory</a>); <a href="http://mirror.ctan.org/help/Catalogue/entries/footmisc.html">catalogue entry</a>
+</dd><dt><tt><i>footnpag.sty</i></tt></dt><dd><a href="http://mirror.ctan.org/macros/latex/contrib/footnpag.zip">macros/latex/contrib/footnpag</a> (or <a href="http://mirror.ctan.org/macros/latex/contrib/footnpag/">browse the directory</a>); <a href="http://mirror.ctan.org/help/Catalogue/entries/footnpag.html">catalogue entry</a>
+</dd><dt><tt><i>perpage.sty</i></tt></dt><dd>Distributed as part <a href="http://mirror.ctan.org/macros/latex/contrib/bigfoot.zip">macros/latex/contrib/bigfoot</a> (or <a href="http://mirror.ctan.org/macros/latex/contrib/bigfoot/">browse the directory</a>); <a href="http://mirror.ctan.org/help/Catalogue/entries/perpage.html">catalogue entry</a>
+
+</dd><dt><tt><i>zref-perpage.sty</i></tt></dt><dd>Distributed as part of <i>zref</i> in
+  <a href="http://mirror.ctan.org/macros/latex/contrib/oberdiek.zip">macros/latex/contrib/oberdiek</a> (or <a href="http://mirror.ctan.org/macros/latex/contrib/oberdiek/">browse the directory</a>); <a href="http://mirror.ctan.org/help/Catalogue/entries/zref.html">catalogue entry</a>
+</dd></dl>
+<p></p><p>
+</p><hr>
+Go to <a href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=multfoot">
+           previous question</a>, or
+           <a href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=run-fn-nos">
+           next question</a>
+<p>Go to <a href="http://www.tex.ac.uk/faq">FAQ home</a>.</p><p>
+URL for this question: http://www.tex.ac.uk/cgi-bin/texfaq2html?label=footnpp</p><p>
+
+   Comments, suggestions, or error reports? - see
+   &#8220;<a href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=noans+newans">how to improve the FAQ</a>&#8221;.
+</p><p>
+   This is FAQ version 3.20, last modified on 2010-08-17.
+
+</p></body></html>

@@ -1,0 +1,168 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body>
+<h1>XDVI key commands</h1>
+
+<p> Some commands take a numerical argument which must be entered 
+<em>before</em> the kestroke command.  For example
+the command <code>15g</code> will cause the display to go to page 15.
+</p><p>
+</p><h3>Help and Exiting</h3>
+
+<dl>
+<dt> H or ? or Help
+</dt><dd>     Displays this help text.
+<p>
+
+</p></dd><dt> q or Control-C or Control-D
+</dt><dd>      Quits the program.
+</dd></dl>
+<p>
+
+</p><h3>Page Motion</h3>
+
+<dl>
+<dt> n or f or Space or Return or LineFeed or PgDn
+</dt><dd>      Moves to the next page (or to the nth next page if a
+     number is given).
+<p>
+</p></dd><dt> p or b or Control-H or BackSpace or DELete or PgUp
+</dt><dd>      Moves to the previous page (or back n pages).
+<p>
+
+</p></dd><dt> u or Up-arrow
+</dt><dd>      Moves up two thirds of a window-full.
+<p>
+
+</p></dd><dt> d or Down-arrow
+</dt><dd>      Moves down two thirds of a window-full.
+<p>
+
+</p></dd><dt> l or Left-arrow
+</dt><dd>      Moves left two thirds of a window-full.
+<p>
+
+</p></dd><dt> r or Right-arrow
+</dt><dd>      Moves right two thirds of a window-full.
+<p>
+
+</p></dd><dt> g or j or End
+</dt><dd>      Moves to the page with the given number.  If no page
+     number is given, then it goes to the last page.
+<p>
+
+</p></dd><dt> &lt;
+</dt><dd>     Move to first page in document.
+<p>
+
+</p></dd><dt> &gt;
+</dt><dd>     Move to last page in document.
+</dd></dl>
+<p>
+
+</p><h3>Other Commands</h3>
+
+<dl>
+<dt> Control-A or Again
+</dt><dd>      Repeat last command (including its argument).
+<p>
+
+</p></dd><dt> Control-L or Clear
+</dt><dd>      Redisplays the current page.
+<p>
+
+</p></dd><dt>Control-P
+</dt><dd>     Prints bitmap unit, bit order, and byte order.
+<p>
+
+</p></dd><dt> ^ or Home
+</dt><dd>      Move to the ``home'' position of the page.  This is
+     normally the upper left-hand corner of the page,
+     depending on the margins as described in the -margins
+     option, above.
+<p>
+
+</p></dd><dt> c    
+</dt><dd>      Moves the page so that the point currently beneath the
+     cursor is moved to the middle of the window.  It also
+     (gasp!) warps the cursor to the same place.
+<p>
+
+</p></dd><dt> G    
+</dt><dd>      This key toggles the use of greyscale anti-aliasing for
+     displaying shrunken bitmaps.  In addition, the key
+     sequences `0G' and `1G' clear and set this flag,
+     respectively.  See also the -nogrey option.
+<p>
+
+</p></dd><dt> K
+</dt><dd>      Normally when xdvi switches pages, it moves to the home
+     position as well.  The `k' keystroke toggles a `keep-
+     position' flag which, when set, will keep the same
+     position when moving between pages.  Also `0k' and `1k'
+     clear and set this flag, respectively.  See also the
+     -keep option.
+<p>
+
+</p></dd><dt> M
+</dt><dd>    Sets the margins so that the point currently under the
+     cursor is the upper left-hand corner of the text in the
+     page.  Note that this command itself does not move the
+     image at all.  For details on how the margins are used,
+     see the -margins option.
+<p>
+
+</p></dd><dt>P    ``This is page number n.''  
+</dt><dd>This can be used to make
+     the `g' keystroke refer to actual page numbers instead
+     of absolute page numbers.
+<p>
+</p></dd><dt> R
+</dt><dd>    Forces the dvi file to be reread.  This allows you to
+     preview many versions of the same file while running
+     xdvi only once.
+<p>
+
+</p></dd><dt> s
+</dt><dd>    Changes the shrink factor to the given number.  If no
+     number is given, the smallest factor that makes the
+     entire page fit in the window will be used.  (Margins
+     are ignored in this computation.)
+<p>
+
+</p></dd><dt> S
+</dt><dd>    Sets the density factor to be used when shrinking
+     bitmaps.  This should be a number between 0 and 100;
+     higher numbers produce lighter characters.
+<p>
+
+</p></dd><dt> t
+</dt><dd>    Toggles to the next unit in a sorted list of TeX dimension
+     units for the popup magnifier ruler.
+<p>
+
+</p></dd><dt> x
+</dt><dd>    Toggles expert mode (in which the buttons do not appear).
+     Also `0x' and `1x' clear and enable this mode,
+     respectively.  See also the -expert option.
+<p>
+
+</p></dd><dt> V
+</dt><dd>    Toggles Ghostscript anti-aliasing.  Also `0V' and `1V' clear
+     and enables this mode, respectively.  See also the the -gsalpha
+     option.
+<p>
+
+</p></dd><dt> Control-F
+</dt><dd>     Find another DVI file.
+<p>
+
+</p></dd><dt> B
+</dt><dd>    Go back to the previous anchor.
+<p>
+
+</p></dd><dt> F
+</dt><dd>    Follow hyperlink forward.
+</dd></dl>
+
+
+</body></html>

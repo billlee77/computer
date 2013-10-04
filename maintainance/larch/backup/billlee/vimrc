@@ -1,0 +1,40 @@
+"search lighting
+set hls
+
+"""""""""""""""""""""'
+"tab setting
+
+"tabstop
+set ts=4
+
+"shiftwidth
+set sw=4
+
+"visualbell
+set vb
+
+
+" Comment - jg at samdorr.net "
+function ToggleComment(onoff)
+    if &filetype == 'cpp' || &filetype == 'c' || &filetype == 'java' || &filetype == 'javascript'
+        let comm = '//'
+        let uncomm = '//\+'
+    elseif &filetype == 'vim'
+        let comm = '"'
+        let uncomm = '"\+'
+        elseif &filetype == 'tex'
+                let comm = '%'
+        let uncomm = '%\+'
+    else
+        let comm = '#'
+        let uncomm = '#\+'
+    endif
+    if a:onoff
+        let line = substitute(getline('.'), '^', comm . ' ', '')
+    else
+        let line = substitute(getline('.'), '^\([ \t]*\)'. uncomm . ' \=', '\1', '')
+    end
+    call setline('.', line)
+endfunction
+vmap <F7> :call ToggleComment(1)<cr>
+vmap <F8> :call ToggleComment(0)<cr>

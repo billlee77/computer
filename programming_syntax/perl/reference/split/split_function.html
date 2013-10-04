@@ -1,0 +1,403 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+  <title>
+Using the Perl split() function
+</title>
+  <link href="split_function_files/perlmeme_common.css" rel="stylesheet" type="text/css">
+  <link href="split_function_files/perllab_pod.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="split_function_files/trail.js"></script>
+  <link rel="icon" href="http://www.perlmeme.org/favicon.ico">
+  <link rel="shortcut icon" href="http://www.perlmeme.org/favicon.ico">
+</head><body>
+
+<table class="navbar" cols="2" width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td width="78%">
+    <ul>
+      <li><a href="http://perlmeme.org/start_here/index.html">Start Here</a></li>
+      <li><a href="http://perlmeme.org/faqs/index.html">FAQs</a></li>
+      <li><a href="http://perlmeme.org/howtos/index.html">HOWTOs</a></li>
+      <li><a href="http://perlmeme.org/tutorials/index.html">TUTORIALs</a></li>
+      <li><a href="http://perlmeme.org/misc/most_recent.html">Most Recent</a></li>
+      <li><a href="http://perlmeme.org/sitemap/index.html">Site map</a></li>
+      <li class="norightborder"><a href="http://perlmeme.org/misc/feedback.html?url=/howtos/perlfunc/split_function.html&amp;page_title=Using%20the%20Perl%20split%28%29%20function">Provide Feedback</a></li>
+    </ul>
+    </td>
+    <td class="padright" width="22%" align="right">
+      Search perlmeme.org
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <span style="font-family: Arial,Helvetica,sans-serif; font-size: 12px; color: rgb(0, 0, 0); padding: 4px; float: left;">
+<a href="http://perlmeme.org/" style="color: rgb(51, 153, 102);">Home</a>&nbsp;»&nbsp;<a href="http://perlmeme.org/howtos/" style="color: rgb(51, 153, 102);">Howtos</a>&nbsp;»&nbsp;<a href="http://perlmeme.org/howtos/perlfunc/" style="color: rgb(51, 153, 102);">Perlfunc</a>&nbsp;»&nbsp;Split function</span>
+
+    </td>
+    <td class="padright" align="right">
+    <form name="search" class="no_margin" action="http://www.perlmeme.org/cgi-bin/search_perlmeme.pl">
+      <input name="query" size="12" type="text">
+      <input value="Search" type="submit">
+    </form>
+    </td>
+  </tr>
+</tbody></table>
+
+
+<h2 class="POD_HEAD1"><a name="Using_the_Perl_split">Using the Perl split() function</a></h2>
+<h3 class="POD_HEAD2"><a name="Introduction">Introduction</a></h3>
+<p class="POD_TEXT">
+The <code>split()</code> function is used to split a string into smaller
+ sections.  You can split a string on a single character, a group of 
+characers or a regular expression (a pattern).
+</p>
+<p class="POD_TEXT">
+You can also specify how many pieces to split the string into.  This is better explained in the examples below.
+</p>
+<h3 class="POD_HEAD2"><a name="Example_1_Splitting_">Example 1. Splitting on a character</a></h3>
+<p class="POD_TEXT">
+A common use of <code>split()</code> is when parsing data from a file or
+ from another program.  In this example, we will split the string on the
+ comma ','.  Note that you typically should not use <code>split()</code> to parse CSV (comma separated value) files in case there are commas in your data: use Text::CSV instead.
+</p>
+<pre class="POD_VERBATIM">  #!/usr/bin/perl
+
+  use strict;
+  use warnings;
+
+  my $data = 'Becky Alcorn,25,female,Melbourne';
+
+  my @values = split(',', $data);
+
+  foreach my $val (@values) {
+    print "$val\n";
+  }
+
+  exit 0;
+</pre>
+<p class="POD_TEXT">
+This program produces the following output:
+</p>
+<pre class="POD_OUTPUT">  Becky Alcorn
+  25
+  female
+  Melbourne
+</pre>
+<h3 class="POD_HEAD2"><a name="Example_2_Splitting_">Example 2. Splitting on a string</a></h3>
+<p class="POD_TEXT">
+In the same way you use a character to split, you can use a string.  In 
+this example, the data is separated by three tildas '~~~'.
+</p>
+<pre class="POD_VERBATIM">  #!/usr/bin/perl
+
+  use strict;
+  use warnings;
+
+  my $data = 'Bob the Builder~~~10:30am~~~1,6~~~ABC';
+
+  my @values = split('~~~', $data);
+
+  foreach my $val (@values) {
+    print "$val\n";
+  }
+
+  exit 0;
+</pre>
+<p class="POD_TEXT">
+This outputs:
+</p>
+<pre class="POD_OUTPUT">  Bob the Builder
+  10:30am
+  1,6
+  ABC
+</pre>
+<h3 class="POD_HEAD2"><a name="Example_3_Splitting_">Example 3. Splitting on a pattern</a></h3>
+<p class="POD_TEXT">
+In some cases, you may want to split the string on a pattern (regular 
+expression) or a type of character.  We'll assume here that you know a 
+little about regular expressions.  In this example we will split on any 
+integer:
+</p>
+<pre class="POD_VERBATIM">  #!/usr/bin/perl
+
+  use strict;
+  use warnings;
+
+  my $data = 'Home1Work2Cafe3Work4Home';
+
+  # \d+ matches one or more integer numbers
+  my @values = split(/\d+/, $data);
+
+  foreach my $val (@values) {
+    print "$val\n";
+  }
+
+  exit 0;
+</pre>
+<p class="POD_TEXT">
+The output of this program is:
+</p>
+<pre class="POD_OUTPUT">  Home
+  Work
+  Cafe
+  Work
+  Home
+</pre>
+<h3 class="POD_HEAD2"><a name="Example_4_Splitting_">Example 4. Splitting on an undefined value</a></h3>
+<p class="POD_TEXT">
+If you split on an undefined value, the string will be split on every character:
+</p>
+<pre class="POD_VERBATIM">  #!/usr/bin/perl
+
+  use strict;
+  use warnings;
+
+  my $data = 'Becky Alcorn';
+
+  my @values = split(undef,$data);
+
+  foreach my $val (@values) {
+    print "$val\n";
+  }
+
+  exit 0;
+</pre>
+<p class="POD_TEXT">
+The results of this program are:
+</p>
+<pre class="POD_OUTPUT">  B
+  e
+  c
+  k
+  y
+
+  A
+  l
+  c
+  o
+  r
+  n
+</pre>
+<h3 class="POD_HEAD2"><a name="Example_5_Splitting_">Example 5. Splitting on a space</a></h3>
+<p class="POD_TEXT">
+If you use a space ' ' to split on, it will actually split on any kind 
+of space including newlines and tabs (regular expression /\s+/) rather 
+than just a space.  In this example we print 'aa' either side of the 
+values so we can see where the split took place:
+</p>
+<pre class="POD_VERBATIM">  #!/usr/bin/perl
+
+  use strict;
+  use warnings;
+
+  my $data = "Becky\n\nAlcorn";
+
+  my @values = split(' ',$data);
+
+  # Print 'aa' either side of the value, so we can see where it split
+  foreach my $val (@values) {
+    print "aa${val}aa\n";
+  }
+
+  exit 0;
+</pre>
+<p class="POD_TEXT">
+This produces:
+</p>
+<pre class="POD_OUTPUT">  aaBeckyaa
+  aaAlcornaa
+</pre>
+<p class="POD_TEXT">
+As you can see, it has split on the newlines that were in our data.  If 
+you really want to split on a space, use regular expressions:
+</p>
+<pre class="POD_VERBATIM">  my @values = split(/ /,$data);
+</pre>
+<p></p>
+<h3 class="POD_HEAD2"><a name="Example_6_Delimiter_">Example 6. Delimiter at the start of the string</a></h3>
+<p class="POD_TEXT">
+If the delimiter is at the start of the string then the first element in
+ the array of results will be empty.  We'll print fixed text with each 
+line so that you can see the blank one:
+</p>
+<pre class="POD_VERBATIM">  #!/usr/bin/perl
+
+  use strict;
+  use warnings;
+
+  my $data = ',test,data';
+
+  my @values = split(',',$data);
+
+  # We print "Val: " with each line so that you can see the blank one
+  foreach my $val (@values) {
+    print "Val: $val\n";
+  }
+
+  exit 0;
+</pre>
+<p class="POD_TEXT">
+The output of this program is:
+</p>
+<pre class="POD_OUTPUT">  Val: 
+  Val: test
+  Val: data
+</pre>
+<h3 class="POD_HEAD2"><a name="Example_7_Split_and_">Example 7. Split and context</a></h3>
+<p class="POD_TEXT">
+If you do not pass in a string to split, then <code>split()</code> will use $_.  If you do not pass an expression or string to split on, then <code>split()</code> will use ' ':
+</p>
+<pre class="POD_VERBATIM">  #!/usr/bin/perl
+
+  use strict;
+  use warnings;
+
+  foreach ('Bob the Builder', 'Thomas the TankEngine', 'B1 and B2') {
+    my @values = split;
+    print "Split $_:\n";
+    foreach my $val (@values) {
+      print "  $val\n";
+    }
+  }
+
+  exit 0;
+</pre>
+<p class="POD_TEXT">
+This produces:
+</p>
+<pre class="POD_OUTPUT">  Split Bob the Builder:
+    Bob
+    the
+    Builder
+  Split Thomas the TankEngine:
+    Thomas
+    the
+    TankEngine
+  Split B1 and B2:
+    B1
+    and
+    B2
+</pre>
+<h3 class="POD_HEAD2"><a name="Example_8_Limiting_t">Example 8. Limiting the split</a></h3>
+<p class="POD_TEXT">
+You can limit the number of sections the string will be split into.  You
+ can do this by passing in a positive integer as the third argument.  In
+ this example, we're splitting our data into 3 fields - even though 
+there are 4 occurrances of the delimiter:
+</p>
+<pre class="POD_VERBATIM">  #!/usr/bin/perl
+
+  use strict;
+  use warnings;
+
+  my $data = 'Becky Alcorn,25,female,Melbourne';
+
+  my @values = split(',', $data, 3);
+
+  foreach my $val (@values) {
+    print "$val\n";
+  }
+
+  exit 0;
+</pre>
+<p class="POD_TEXT">
+This program produces:
+</p>
+<pre class="POD_OUTPUT">  Becky Alcorn
+  25
+  female,Melbourne
+</pre>
+<h3 class="POD_HEAD2"><a name="Example_9_Keeping_th">Example 9. Keeping the delimiter</a></h3>
+<p class="POD_TEXT">
+Sometimes, when splitting on a pattern, you want the delimiter in the 
+result of the split.  You can do this by capturing the characters you 
+want to keep inside parenthesis.  Let's do our regular expression 
+example again, but this time we'll keep the numbers in the result:
+</p>
+<pre class="POD_VERBATIM">  #!/usr/bin/perl
+
+  use strict;
+  use warnings;
+
+  my $data = 'Home1Work2Cafe3Work4Home';
+
+  # \d+ matches one or more integer numbers
+  # The parenthesis () mean we keep the digits we match
+  my @values = split(/(\d+)/, $data);
+
+  foreach my $val (@values) {
+    print "$val\n";
+  }
+
+  exit 0;
+</pre>
+<p class="POD_TEXT">
+The output is:
+</p>
+<pre class="POD_OUTPUT">  Home
+  1
+  Work
+  2
+  Cafe
+  3
+  Work
+  4
+  Home
+</pre>
+<h3 class="POD_HEAD2"><a name="Example_10_Splitting">Example 10. Splitting into a hash</a></h3>
+<p class="POD_TEXT">
+If you know a bit about your data, you could split it directly into a hash instead of an array:
+</p>
+<pre class="POD_VERBATIM">  #!/usr/bin/perl
+
+  use strict;
+  use warnings;
+
+  my $data = 'FIRSTFIELD=1;SECONDFIELD=2;THIRDFIELD=3';
+
+  my %values =  split(/[=;]/, $data);
+
+  foreach my $k (keys %values) {
+    print "$k: $values{$k}\n";
+  }
+
+  exit 0;
+</pre>
+<p class="POD_TEXT">
+The output of this program is:
+</p>
+<pre class="POD_OUTPUT">  FIRSTFIELD: 1
+  THIRDFIELD: 3
+  SECONDFIELD: 2
+</pre>
+<p class="POD_TEXT">
+The problem is that if the data does not contain exactly what you think, for example <code>FIRSTFIELD=1;SECONDFIELD=2;THIRDFIELD=</code>
+ then you will get an 'Odd number of elements in hash assignment' 
+warning.  Here is the output of the same program but with this new data:
+</p>
+<pre class="POD_OUTPUT">  Odd number of elements in hash assignment at ./test.pl line 8.
+  FIRSTFIELD: 1
+  Use of uninitialized value in concatenation (.) or string at ./test.pl line 11.
+  THIRDFIELD:
+  SECONDFIELD: 2
+</pre>
+<h3 class="POD_HEAD2"><a name="See_also">See also</a></h3>
+<pre class="POD_OUTPUT">  perldoc -f split
+</pre>
+
+
+
+  <div class="reviewed">
+    <span class="footerbox">Revision: 
+1.2  
+  </span>
+    <span class="footerbox">Reviewed: 
+&nbsp;
+ </span>
+  </div>
+<hr>
+<a class="POD_NAVLINK" href="#top">[Top]</a>
+</body></html>

@@ -1,0 +1,60 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{times}
+
+%\usepackage[cm]{fullpage}
+%\usepackage[margin=1in, paperwidth=5.5in, paperheight=8.5in]{geometry}
+\usepackage[]{geometry}
+
+\usepackage{graphicx}
+
+\usepackage{setspace}
+
+\usepackage[square, super]{natbib}
+\usepackage[english]{babel}
+%\usepackage[square, super]{natbib}
+
+\usepackage{multirow}
+\usepackage{booktabs}
+
+\bibpunct{[}{]}{,}{s}{}{;}
+
+\makeatletter
+\renewcommand\NAT@citesuper[3]{\ifNAT@swa
+\unskip\kern\p@\textsuperscript{\NAT@@open #1\NAT@@close}%
+\if*#3*\else\ (#3)\fi\else #1\fi\endgroup}
+\makeatother 
+
+\pagestyle{plain}
+
+\begin{document}
+
+%\newcommand{\degree}{\ensuremath{^\circ}}
+\newcommand{\cue}{\mathcal{E}}
+
+\doublespacing
+
+\title{}
+\author{Wenliang Li\thanks{li479@uregina.ca}\\ \normalsize Department of Physics, University of Regina \\}
+
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\section{Introduction}
+\section{Theory}
+\section{Experimental Setup}
+\section{Result}
+\section{Conclusion}
+\section*{Acknowledgment}
+
+\begin{thebibliography}{00}
+\bibitem{bethe} 
+\end{thebibliography}
+
+\end{document}
+

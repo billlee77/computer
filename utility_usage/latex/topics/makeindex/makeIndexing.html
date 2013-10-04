@@ -1,0 +1,896 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" class="client-js" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<title>LaTeX/Indexing - Wikibooks, open books for an open world</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="generator" content="MediaWiki 1.20wmf9">
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit">
+<link rel="edit" title="Edit" href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit">
+<link rel="shortcut icon" href="http://en.wikibooks.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikibooks.org/w/opensearch_desc.php" title="Wikibooks (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikibooks.org/w/api.php?action=rsd">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Wikibooks Atom feed" href="http://en.wikibooks.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="makeIndexing_files/load.css" type="text/css" media="all">
+<link rel="stylesheet" href="makeIndexing_files/readerfeedback.css" type="text/css" media="all"><style type="text/css">.js-messagebox{margin:1em 5%;padding:0.5em 2.5%;border:1px solid #ccc;background-color:#fcfcfc;font-size:0.8em}.js-messagebox .js-messagebox-group{margin:1px;padding:0.5em 2.5%;border-bottom:1px solid #ddd}.js-messagebox .js-messagebox-group:last-child{border-bottom:thin none transparent}
+
+/* cache key: enwikibooks:resourceloader:filter:minify-css:7:8b08bdc91c52a9ffba396dccfb5b473c */
+</style><style type="text/css">.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+
+/* cache key: enwikibooks:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */
+</style><style type="text/css">.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;font-size:0.8em;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;font-size:0.8em;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{font-size:0.8em;color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+
+/* cache key: enwikibooks:resourceloader:filter:minify-css:7:d3d0fccf9f8cf3b31866dd3fd3326a6a */
+</style><style type="text/css">#mw-panel.collapsible-nav .portal{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAABCAMAAAA7MLYKAAAAS1BMVEXb29vy8vLv7+/c3NzZ2dni4uLr6+vt7e3s7Ozw8PDn5+fj4+Ph4eHd3d3f39/o6Ojl5eXp6enx8fHa2trg4ODq6urk5OTz8/PY2NjolWftAAAAO0lEQVR4XrXAhwGAMAgEQB5I71X3n9QpPHqAGZidt2e02G8yedciQkv1/YPqIpFSdzbp9tjGsd4xhwl8yuMKHhkJhm8AAAAASUVORK5CYII=) left top no-repeat;background:url(//bits.wikimedia.org/static-1.20wmf9/extensions/Vector/modules/images/portal-break.png?2012-08-06T16:10:00Z) left top no-repeat!ie;padding:0.25em 0 !important;margin:-11px 9px 10px 11px}#mw-panel.collapsible-nav .portal h5{color:#4D4D4D;font-weight:normal;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAD1BMVEX////d3d2ampqxsbF5eXmCtCYvAAAAAXRSTlMAQObYZgAAADBJREFUeF6dzNEJACAMA1HdINQJCp1Ebv+ZlLYLaD4f4cbnDNi6MAO8KCHJ+7X02j3mzgMQe93HcQAAAABJRU5ErkJggg==) left center no-repeat;background:url(//bits.wikimedia.org/static-1.20wmf9/extensions/Vector/modules/images/open.png?2012-08-06T16:10:00Z) left center no-repeat!ie;padding:4px 0 3px 1.5em;margin-bottom:0}#mw-panel.collapsible-nav .portal h5:hover{cursor:pointer;text-decoration:none}#mw-panel.collapsible-nav .portal h5 a{color:#4D4D4D;text-decoration:none}#mw-panel.collapsible-nav .portal .body{background:none !important;padding-top:0;display:none}#mw-panel.collapsible-nav .portal .body ul li{padding:0.25em 0} #mw-panel.collapsible-nav .portal.first h5{display:none}#mw-panel.collapsible-nav .portal.first{background-image:none;margin-top:0} #mw-panel.collapsible-nav .portal.persistent .body{display:block}#mw-panel.collapsible-nav .portal.persistent h5{background:none !important;padding-left:0.7em;cursor:default}#mw-panel.collapsible-nav .portal.persistent .body{margin-left:0.5em} #mw-panel.collapsible-nav .portal.collapsed h5{color:#0645AD;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAgMAAABinRfyAAAADFBMVEX///95eXnd3d2dnZ3aAo3QAAAAAXRSTlMAQObYZgAAADFJREFUeF5dyzEKACAMA0CXolNe2Id09Kl5igZahWY4AiGjZwmIuS9GEcJfY63Ix88Bol4EYP1O7JMAAAAASUVORK5CYII=) left center no-repeat;background:url(//bits.wikimedia.org/static-1.20wmf9/extensions/Vector/modules/images/closed-ltr.png?2012-08-06T16:10:00Z) left center no-repeat!ie;margin-bottom:0}#mw-panel.collapsible-nav .portal.collapsed h5 a{color:#0645AD}#mw-panel.collapsible-nav .portal.collapsed h5:hover{text-decoration:underline}
+
+/* cache key: enwikibooks:resourceloader:filter:minify-css:7:1bdd772fee6feb700335b4d08c65ab76 */
+</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="makeIndexing_files/load_002.css" type="text/css" media="all">
+<style type="text/css" media="all">a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+
+/* cache key: enwikibooks:resourceloader:filter:minify-css:7:c0df19c2e2b97f701181d5a10957b977 */</style>
+
+<script src="makeIndexing_files/load_005.js" type="text/javascript"></script><script src="makeIndexing_files/load_004.js" type="text/javascript"></script>
+<script type="text/javascript">if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"LaTeX/Indexing","wgTitle":"LaTeX/Indexing","wgCurRevisionId":2369361,"wgArticleId":112602,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["LaTeX"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"LaTeX/Indexing","wgRestrictionEdit":[],"wgRestrictionMove":[],"wgSearchNamespaces":[0,4,112],"wgVectorEnabledModules":{"collapsiblenav":true,"collapsibletabs":true,"editwarning":true,"expandablesearch":false,"footercleanup":false,"sectioneditlinks":false,"simplesearch":true,"experiments":true},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false},"wgFeedbackParams":{"tags":{"reliability":3,"completeness":2,"npov":2,"presentation":1}},"wgAjaxFeedback":{"sendingMsg":"Submitting …","sentMsg":"Thank you!"},"wgFlaggedRevsParams":{"tags":{"value":{"levels":3,"quality":2,"pristine":3}}},"wgStableRevisionId":2369361,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","Geo":{"city":"","country":""},"wgNoticeProject":"wikibooks"});
+}</script><script type="text/javascript">if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":false,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":3
+,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":0,"flaggedrevsstable":0,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":true,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs102":false,"searchNs103":false,"searchNs108":false,"searchNs109":false,"searchNs110":false,"searchNs111":false,"searchNs112":true,"searchNs113":false,"gadget-extlinks":1,"gadget-commons-file":1,"gadget-toolboxcompat":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.
+tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+
+/* cache key: enwikibooks:resourceloader:filter:minify-js:7:73c7fd9b32f09ca4e03afb736e277ea1 */
+}</script>
+<script type="text/javascript">if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script type="text/javascript" src="makeIndexing_files/load_003.js"></script>
+<style type="text/css">/*<![CDATA[*/
+.source-latex {line-height: normal;}
+.source-latex li, .source-latex pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for latex
+ * CSS class: source-latex, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.latex.source-latex .de1, .latex.source-latex .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.latex.source-latex  {font-family:monospace;}
+.latex.source-latex .imp {font-weight: bold; color: red;}
+.latex.source-latex li, .latex.source-latex .li1 {font-weight: normal; vertical-align:top;}
+.latex.source-latex .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.latex.source-latex .li2 {font-weight: bold; vertical-align:top;}
+.latex.source-latex .kw1 {color: #800000;}
+.latex.source-latex .co1 {color: #2C922C; font-style: italic;}
+.latex.source-latex .es0 {color: #000000; font-weight: bold;}
+.latex.source-latex .sy0 {color: #E02020; }
+.latex.source-latex .st0 {color: #000000;}
+.latex.source-latex .re1 {color: #8020E0; font-weight: normal;}
+.latex.source-latex .re2 {color: #C08020; font-weight: normal;}
+.latex.source-latex .re3 {color: #8020E0; font-weight: normal;}
+.latex.source-latex .re4 {color: #800000; font-weight: normal;}
+.latex.source-latex .re5 {color: #00008B; font-weight: bold;}
+.latex.source-latex .re6 {color: #800000; font-weight: normal;}
+.latex.source-latex .re7 {color: #0000D0; font-weight: normal;}
+.latex.source-latex .re8 {color: #C00000; font-weight: normal;}
+.latex.source-latex .re9 {color: #2020C0; font-weight: normal;}
+.latex.source-latex .re10 {color: #800000; font-weight: normal;}
+.latex.source-latex .re11 {color: #E00000; font-weight: normal;}
+.latex.source-latex .re12 {color: #800000; font-weight: normal;}
+.latex.source-latex .ln-xtra, .latex.source-latex li.ln-xtra, .latex.source-latex div.ln-xtra {background-color: #ffc;}
+.latex.source-latex span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.20wmf9/vector/csshover.min.htc")}</style><![endif]--><link href="makeIndexing_files/index.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="makeIndexing_files/index_003.js"></script><script type="text/javascript" src="makeIndexing_files/index_005.js"></script><script type="text/javascript" src="makeIndexing_files/index_002.js"></script><script type="text/javascript" src="makeIndexing_files/index_013.js"></script><script type="text/javascript" src="makeIndexing_files/index_010.js"></script><script type="text/javascript" src="makeIndexing_files/index_012.js"></script><script type="text/javascript" src="makeIndexing_files/index_009.js"></script><script type="text/javascript" src="makeIndexing_files/index.js"></script><script type="text/javascript" src="makeIndexing_files/index_007.js"></script><script type="text/javascript" src="makeIndexing_files/index_004.js"></script><script type="text/javascript" src="makeIndexing_files/index_006.js"></script><link href="makeIndexing_files/index_002.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="makeIndexing_files/index_011.js"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-LaTeX_Indexing skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content" class="mw-body">
+			<a id="top"></a>
+			<div class="js-messagebox" id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- centralNotice loads here --></div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading"><span dir="auto">LaTeX/Indexing</span></h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+								<!-- tagline -->
+				<div id="siteSub">From Wikibooks, open books for an open world</div>
+				<!-- /tagline -->
+								<!-- subtitle -->
+				<div id="contentSub"><span class="subpages">&lt; <a href="http://en.wikibooks.org/wiki/LaTeX" title="LaTeX">LaTeX</a></span><div id="mw-fr-revisiontag" class="flaggedrevs_basic plainlinks noprint"><img class="flaggedrevs-icon" src="makeIndexing_files/1.png" alt="Unreviewed changes are displayed on this page" title="Unreviewed changes are displayed on this page">The <a class="external text" href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;stable=1">latest reviewed version</a> was <a class="external text" href="http://en.wikibooks.org/w/index.php?title=Special:Log&amp;type=review&amp;page=LaTeX/Indexing">checked</a> on <i>27 June 2012</i>. There are <a class="external text" href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;oldid=2369361&amp;diff=cur&amp;diffonly=0">template/file changes</a> awaiting review.</div>
+</div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodycontent -->
+				<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><table class="wikitable collapsible selected" style="background-color: rgb(238, 255, 238); float: right; clear: right; border: 1px solid rgb(136, 187, 136); padding: 0.5em; font-size: small; text-align: left; width: 20%; margin: 0.5em;">
+<tbody><tr>
+<th><span class="action"><a><img src="makeIndexing_files/MediaWiki_Vector_skin_right_arrow.png"></a></span>
+<div class="floatright"><a href="http://commons.wikimedia.org/wiki/File:LaTeX_logo.svg" class="image"><img alt="LaTeX logo.svg" src="makeIndexing_files/60px-LaTeX_logo.png" height="25" width="60"></a></div>
+<p><a href="http://en.wikibooks.org/wiki/LaTeX" title="LaTeX">LaTeX</a></p>
+</th>
+</tr>
+<tr style="display: none;">
+<td>Getting Started
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Introduction" title="LaTeX/Introduction">Introduction</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Basics" title="LaTeX/Basics">Basics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Errors_and_Warnings" title="LaTeX/Errors and Warnings">Errors and Warnings</a></li>
+</ol>
+<p>Formatting</p>
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Document_Structure" title="LaTeX/Document Structure">Document Structure</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Useful_Measurement_Macros" title="LaTeX/Useful Measurement Macros">Useful Measurement Macros</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Text_Formatting" title="LaTeX/Text Formatting">Text Formatting</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Paragraph_Formatting" title="LaTeX/Paragraph Formatting">Paragraph Formatting</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Colors" title="LaTeX/Colors">Colors</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Fonts" title="LaTeX/Fonts">Fonts</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/List_Structures" title="LaTeX/List Structures">List Structures</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Tables" title="LaTeX/Tables">Tables</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Title_Creation" title="LaTeX/Title Creation">Title creation</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Page_Layout" title="LaTeX/Page Layout">Page Layout</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Importing_Graphics" title="LaTeX/Importing Graphics">Importing Graphics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions" title="LaTeX/Floats, Figures and Captions">Floats, Figures and Captions</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Footnotes_and_Margin_Notes" title="LaTeX/Footnotes and Margin Notes">Footnotes and Margin Notes</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Hyperlinks" title="LaTeX/Hyperlinks">Hyperlinks</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing" title="LaTeX/Labels and Cross-referencing">Labels and Cross-referencing</a></li>
+</ol>
+<p>Creating Graphics</p>
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Creating_Graphics" title="LaTeX/Creating Graphics">Creating Graphics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Picture" title="LaTeX/Picture">Picture</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/PGF/TikZ" title="LaTeX/PGF/TikZ">PGF/TikZ</a></li>
+<li><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/PSTricks&amp;action=edit&amp;redlink=1" class="new" title="LaTeX/PSTricks (does not exist)">PSTricks</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Xy-pic" title="LaTeX/Xy-pic">Xy-pic</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Creating_3D_graphics" title="LaTeX/Creating 3D graphics">Creating 3D graphics</a></li>
+</ol>
+<p>Technical Texts</p>
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Mathematics" title="LaTeX/Mathematics">Mathematics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics" title="LaTeX/Advanced Mathematics">Advanced Mathematics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Theorems" title="LaTeX/Theorems">Theorems</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Chemical_Graphics" title="LaTeX/Chemical Graphics">Chemical Graphics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Algorithms_and_Pseudocode" title="LaTeX/Algorithms and Pseudocode">Algorithms and Pseudocode</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Linguistics" title="LaTeX/Linguistics">Linguistics</a></li>
+</ol>
+<p>Special Pages</p>
+<ol>
+<li><strong class="selflink">Indexing</strong></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Glossary" title="LaTeX/Glossary">Glossary</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management" title="LaTeX/Bibliography Management">Bibliography Management</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/More_Bibliographies" title="LaTeX/More Bibliographies">More Bibliographies</a></li>
+</ol>
+<p>Special Documents</p>
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Letters" title="LaTeX/Letters">Letters</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Presentations" title="LaTeX/Presentations">Presentations</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Teacher%27s_Corner" title="LaTeX/Teacher's Corner">Teacher's Corner</a></li>
+</ol>
+<p>Advanced Topics</p>
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/General_Guidelines" title="LaTeX/General Guidelines">General Guidelines</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Customizing_LaTeX" title="LaTeX/Customizing LaTeX">Customizing LaTeX</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Packages" title="LaTeX/Packages">Packages</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Advanced_Topics" title="LaTeX/Advanced Topics">Advanced Topics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Collaborative_Writing_of_LaTeX_Documents" title="LaTeX/Collaborative Writing of LaTeX Documents">Collaborative Writing of LaTeX Documents</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Export_To_Other_Formats" title="LaTeX/Export To Other Formats">Export To Other Formats</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Internationalization" title="LaTeX/Internationalization">Internationalization</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Accents" title="LaTeX/Accents">Accents and Special Characters</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Tips_and_Tricks" title="LaTeX/Tips and Tricks">Tips / Tricks</a></li>
+</ol>
+<p>Appendices</p>
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Authors" title="LaTeX/Authors">Authors</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Links" title="LaTeX/Links">Useful Links</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Installation" title="LaTeX/Installation">Installation</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Packages/Installing_Extra_Packages" title="LaTeX/Packages/Installing Extra Packages">Installing Extra Packages</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Package_Reference" title="LaTeX/Package Reference">Package Reference</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Sample_LaTeX_documents" title="LaTeX/Sample LaTeX documents">Sample LaTeX documents</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Index" title="LaTeX/Index">Index</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Command_Glossary" title="LaTeX/Command Glossary">Command Glossary</a></li>
+</ol>
+</td>
+</tr>
+<tr style="display: none;">
+<td>
+<p><small><a class="external text" href="http://en.wikibooks.org/w/index.php?title=Template:LaTeX/Top&amp;action=edit">edit this box</a> • <a class="external text" href="http://en.wikibooks.org/w/index.php?title=Template:LaTeX/Contents&amp;action=edit">edit the TOC</a></small></p>
+</td>
+</tr>
+</tbody></table>
+<p>Especially useful in printed books, an index is an alphabetical list 
+of words and expressions with the pages of the book upon which they are 
+to be found. LaTeX supports the creation of indices with its package <span style="font-family: monospace; color: #2020C0; font-weight: normal;">makeidx</span>, and its support program <code>makeindex</code>, called on some systems <code>makeidx</code>.</p>
+<table id="toc" class="toc">
+<tbody><tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+<span class="toctoggle">&nbsp;[<a href="#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Using_makeidx"><span class="tocnumber">1</span> <span class="toctext">Using makeidx</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Compiling_indices"><span class="tocnumber">1.1</span> <span class="toctext">Compiling indices</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#MakeIndex_settings_in_WinEdt"><span class="tocnumber">1.1.1</span> <span class="toctext">MakeIndex settings in WinEdt</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-4"><a href="#Sophisticated_indexing"><span class="tocnumber">1.2</span> <span class="toctext">Sophisticated indexing</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#Subentries"><span class="tocnumber">1.2.1</span> <span class="toctext">Subentries</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Controlling_sorting"><span class="tocnumber">1.2.2</span> <span class="toctext">Controlling sorting</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Changing_page_number_style"><span class="tocnumber">1.2.3</span> <span class="toctext">Changing page number style</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Multiple_pages"><span class="tocnumber">1.2.4</span> <span class="toctext">Multiple pages</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Using_special_characters"><span class="tocnumber">1.2.5</span> <span class="toctext">Using special characters</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Abbreviation_list"><span class="tocnumber">2</span> <span class="toctext">Abbreviation list</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Multiple_indices"><span class="tocnumber">3</span> <span class="toctext">Multiple indices</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Adding_index_to_table_of_contents"><span class="tocnumber">4</span> <span class="toctext">Adding index to table of contents</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#International_indices"><span class="tocnumber">5</span> <span class="toctext">International indices</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="#Generating_index"><span class="tocnumber">5.1</span> <span class="toctext">Generating index</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="#xindy_in_kile"><span class="tocnumber">5.1.1</span> <span class="toctext">xindy in kile</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=1" title="Edit section: Using makeidx">edit</a>]</span> <span class="mw-headline" id="Using_makeidx">Using <tt>makeidx</tt></span></h2>
+<p>To enable the indexing feature of LaTeX, the <span style="font-family: monospace; color: #2020C0; font-weight: normal;">makeidx</span> package must be loaded in the preamble with:</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">{</span><span class="re9">makeidx</span><span class="sy0">}</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>and the special indexing commands must be enabled by putting the</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="sy0">\</span><span class="kw1">makeindex</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>command into the input file preamble. This should be done within the 
+preamble, since it tells LaTeX to create the files needed for indexing. 
+To tell LaTeX what to index, use</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">key</span><span class="sy0">}</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>where <i>key</i> is the index entry and does not appear in the final 
+layout. You enter the index commands at the points in the text that you 
+want to be referenced in the index, likely near the reason for the <i>key</i>. For example, the text</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex">To solve various problems in physics, it can be advantageous<br>
+to express any arbitrary piecewise-smooth function as a<br>
+Fourier Series composed of multiples of sine and cosine functions.</span></p>
+</td>
+</tr>
+</tbody></table>
+<p>can be re-written as</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex">To solve various problems in physics, it can be advantageous<br>
+to express any arbitrary piecewise-smooth function as a Fourier Series<br>
+<span class="re12">\index</span><span class="sy0">{</span><span class="re9">Fourier Series</span><span class="sy0">}</span><br>
+composed of multiples of sine and cosine functions.</span></p>
+</td>
+</tr>
+</tbody></table>
+<p>to create an entry called 'Fourier Series' with a reference to the target page. Multiple uses of <i>\index</i> with the same <i>key</i> on different pages will add those target pages to the same index entry.</p>
+<p><br>
+To show the index within the document, merely use the command</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="re12">\printindex</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>It is common to place it at the end of the document. The default index format is two columns.</p>
+<p><br>
+The <span style="font-family: monospace; color: #2020C0; font-weight: normal;">showidx</span>
+ package that comes with LaTeX prints out all index entries in the left 
+margin of the text. This is quite useful for proofreading a document and
+ verifying the index.</p>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=2" title="Edit section: Compiling indices">edit</a>]</span> <span class="mw-headline" id="Compiling_indices">Compiling indices</span></h3>
+<p>When the input file is processed with LaTeX, each <span class="mw-geshi latex source-latex"><span class="re12">\index</span></span>
+ command writes an appropriate index entry, together with the current 
+page number, to a special file. The file has the same name as the LaTeX 
+input file, but a different extension (<code>.idx</code>). This <code>.idx</code> file can then be processed with the <code>makeindex</code> program. Type in the command line:</p>
+<pre><tt>makeindex</tt> <i>filename</i>
+</pre>
+<p>Note that <i>filename</i> is without extension: the program will look for <i>filename.idx</i> and use that. You can optionally pass <i>filename.idx</i> directly to the program as an argument. The <code>makeindex</code> program generates a sorted index with the same base file name, but this time with the extension <code>.ind</code>.
+ If now the LaTeX input file is processed again, this sorted index gets 
+included into the document at the point where LaTeX finds <span class="mw-geshi latex source-latex"><span class="re12">\printindex</span></span>.</p>
+<p>The index created by latex with the default options may not look as 
+nice or as suitable as you would like it. To improve the looks of the 
+index <code>makeindex</code> comes with a set of style files, usually located somewhere in the tex directory structure, usually below the <code>makeindex</code> subdirectory. To tell <tt>makeindex</tt> to use a specific style file, run it with the command line option:</p>
+<pre> <tt>makeindex</tt> -s &lt;style file&gt; <i>filename</i>
+</pre>
+<p>If you use a GUI for compiling latex and index files, you may have to
+ set this in the options. Here are some configuration tips for typical 
+tools:</p>
+<h4><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=3" title="Edit section: MakeIndex settings in WinEdt">edit</a>]</span> <span class="mw-headline" id="MakeIndex_settings_in_WinEdt">MakeIndex settings in WinEdt</span></h4>
+<p>Say you want to add an index style file named <code>simpleidx.ist</code></p>
+<ul>
+<li>Texify/PDFTexify: Options→Execution Modes→Accessories→PDFTeXify, add to the Switches: <code>--mkidx-option="-s simpleidx.ist"</code></li>
+<li>MakeIndex alone: Options-&gt;Execution Modes→Accessories→MakeIndex, add to command line: <code>-s simpleidx.ist</code></li>
+</ul>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=4" title="Edit section: Sophisticated indexing">edit</a>]</span> <span class="mw-headline" id="Sophisticated_indexing">Sophisticated indexing</span></h3>
+<p>Below are examples of <span class="mw-geshi latex source-latex"><span class="re12">\index</span></span> entries:</p>
+<table class="wikitable">
+<tbody><tr>
+<th>Example</th>
+<th>Index Entry</th>
+<th>Comment</th>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">hello</span><span class="sy0">}</span></span></td>
+<td>hello, 1</td>
+<td>Plain entry</td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">hello!Peter</span><span class="sy0">}</span></span></td>
+<td>&nbsp;&nbsp;Peter, 3</td>
+<td>Subentry under 'hello'</td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">Sam@<span class="re12">\textsl</span>{Sam}</span><span class="sy0">}</span></span></td>
+<td><i>Sam</i>, 2</td>
+<td>Formatted entry</td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">Lin@\<span class="kw1">textbf</span>{Lin}</span><span class="sy0">}</span></span></td>
+<td><b>Lin</b>, 7</td>
+<td>Same as above</td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="sy0"><span class="re9">Jenny|textbf</span></span><span class="sy0">}</span></span></td>
+<td>Jenny, <b>3</b></td>
+<td>Formatted page number</td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="sy0"><span class="re9">Joe|textit</span></span><span class="sy0">}</span></span></td>
+<td>Joe, <i>5</i></td>
+<td>Same as above</td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">ecole@\'ecole</span><span class="sy0">}</span></span></td>
+<td>école, 4</td>
+<td>Handling of accents</td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="sy0"><span class="re9">Peter|see{hello}</span></span><span class="sy0">}</span></span></td>
+<td>Peter, <i>see</i> hello</td>
+<td>Cross-references</td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="sy0"><span class="re9">Jen|seealso{Jenny}</span></span><span class="sy0">}</span></span></td>
+<td>Jen, <i>see also</i> Jenny</td>
+<td>Same as above</td>
+</tr>
+</tbody></table>
+<h4><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=5" title="Edit section: Subentries">edit</a>]</span> <span class="mw-headline" id="Subentries">Subentries</span></h4>
+<p>If some entry has subsections, these can be marked off with <code>!</code>. For example,</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">encodings!input!cp850</span><span class="sy0">}</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>would an index with 'cp850' categorized under 'input' (which itself 
+is categorized into 'encodings'). These are called subsubentries and 
+subentries in makeidx terminology.</p>
+<h4><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=6" title="Edit section: Controlling sorting">edit</a>]</span> <span class="mw-headline" id="Controlling_sorting">Controlling sorting</span></h4>
+<p>In order to determine how an index key is sorted, place a value to sort by before the key with the <code>@</code> as a separator. This is useful if there is any formatting or math mode, so one example may be</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">F@<span class="re3">$<span class="re12">\vec</span>{F}$</span></span><span class="sy0">}</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>so that the entry in the index will show as '<img class="tex" alt="\vec{F}" src="makeIndexing_files/0572a81848732cd8d2f7cd7181644e9c.png">' but be sorted as 'F'.</p>
+<h4><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=7" title="Edit section: Changing page number style">edit</a>]</span> <span class="mw-headline" id="Changing_page_number_style">Changing page number style</span></h4>
+<p>To change the formatting of a page number, append a <code>|</code> and the name of some command which does the formatting. This command should only accept one argument.</p>
+<p>For example, if on page 3 of a book you introduce bulldogs and include the command</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">bulldog</span><span class="sy0">}</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>and on page 10 of the same book you wish to show the main section on bulldogs with a bold page number, use</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="sy0"><span class="re9">bulldog|textbf</span></span><span class="sy0">}</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>This will appear in the index as bulldog, 3, <b>10</b></p>
+<p>If you use <code>texindy</code> in place of <code>makeindex</code>, the classified entries will be sorted too, such that all the bolded entries will be placed before all others by default.</p>
+<h4><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=8" title="Edit section: Multiple pages">edit</a>]</span> <span class="mw-headline" id="Multiple_pages">Multiple pages</span></h4>
+<p>To perform multi-page indexing, add a <code>|(</code> and <code>|)</code> to the end of the <span class="mw-geshi latex source-latex"><span class="re12">\index</span></span> command, as in</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">Quantum Mechanics!History|(<span class="sy0">}</span><br>
+In 1901, Max Planck released his theory of radiation dependant on quantized energy.<br>
+While this explained the ultraviolet catastrophe in the spectrum of<br>
+blackbody radiation, this had far larger consequences as the beginnings of quantum mechanics.<br>
+...<br>
+<span class="re12">\index</span><span class="sy0">{</span>Quantum Mechanics!History|)</span><span class="sy0">}</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>The entry in the index for the subentry 'History' will be the range of pages between the two <span class="mw-geshi latex source-latex"><span class="re12">\index</span></span> commands.</p>
+<h4><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=9" title="Edit section: Using special characters">edit</a>]</span> <span class="mw-headline" id="Using_special_characters">Using special characters</span></h4>
+<p>In order to place values with <code>!</code>, <code>@</code>, or <code>|</code>, which are otherwise escape characters, in the index, one must quote these characters in the <span class="mw-geshi latex source-latex"><span class="re12">\index</span></span> command by putting a double quotation mark (<code>"</code>) in front of them, and one can only place a <code>"</code> in the index by quoting it (i.e., a key for " would be <span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">""</span><span class="sy0">}</span></span>).</p>
+<p>This rule does not hold for \", so to put the letter ä in the index, one may still use <span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">a@\"{a}</span><span class="sy0">}</span></span>.</p>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=10" title="Edit section: Abbreviation list">edit</a>]</span> <span class="mw-headline" id="Abbreviation_list">Abbreviation list</span></h2>
+<p>You can make a list of abbreviations with the package <span style="font-family: monospace; color: #2020C0; font-weight: normal;">nomencl</span> <a target="_blank" rel="nofollow" class="external autonumber" href="http://www.ctan.org/tex-archive/macros/latex/contrib/nomencl/">[1]</a>. You may also be interested in using the <span style="font-family: monospace; color: #2020C0; font-weight: normal;">glossaries</span> package described in the <a href="http://en.wikibooks.org/wiki/LaTeX/Glossary" title="LaTeX/Glossary">Glossary</a> chapter.</p>
+<p>To enable the Nomenclature feature of LaTeX, the <span style="font-family: monospace; color: #2020C0; font-weight: normal;">nomencl</span> package must be loaded in the preamble with:</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">[</span><span class="re2">⟨options ⟩</span><span class="sy0">]{</span><span class="re9">nomencl</span><span class="sy0">}</span><br>
+<span class="re12">\makenomenclature</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>Issue the <span class="mw-geshi latex source-latex"><span class="re12">\nomenclature</span><span class="sy0">[</span><span class="re2">⟨preﬁx⟩</span><span class="sy0">]{</span><span class="re9">⟨symbol⟩}{⟨description⟩</span><span class="sy0">}</span></span>
+ command for each symbol you want to have included in the nomenclature 
+list. The best place for this command is immediately after you introduce
+ the symbol for the ﬁrst time. Put <span class="mw-geshi latex source-latex"><span class="re12">\printnomenclature</span></span> at the place you want to have your nomenclature list.</p>
+<p>Run LaTeX 2 times then</p>
+<pre><tt>makeindex</tt> <i>filename.nlo</i>  -s nomencl.ist -o <i>filename.nls</i>
+</pre>
+<p>followed by running LaTeX once again.</p>
+<p>To add the abbreviation list to the table of content, <span style="font-family: monospace; color: #C08020; font-weight: normal;">intoc</span> option can be used when declare the <span style="font-family: monospace; color: #2020C0; font-weight: normal;">nomencl</span> package, i.e.</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">[</span><span class="re2">intoc</span><span class="sy0">]{</span><span class="re9">nomencl</span><span class="sy0">}</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>instead of using the code in <a href="#Adding_Index_to_Table_Of_Contents">Adding Index to Table Of Contents</a> section.</p>
+<p>The title of the list can be changed using the following command:</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="sy0">\</span><span class="kw1">renewcommand</span><span class="sy0">{</span><span class="re9"><span class="re12">\nomname</span>}{List of Abbreviations</span><span class="sy0">}</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=11" title="Edit section: Multiple indices">edit</a>]</span> <span class="mw-headline" id="Multiple_indices">Multiple indices</span></h2>
+<p>If you need multiple indices you can use the package <span style="font-family: monospace; color: #2020C0; font-weight: normal;">multind</span> <a target="_blank" rel="nofollow" class="external autonumber" href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=multind">[2]</a>.</p>
+<p>This package provides the same commands as <span style="font-family: monospace; color: #2020C0; font-weight: normal;">makeidx</span>, but now you also have to pass a name as the first argument to every command.</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">{</span><span class="re9">multind<span class="sy0">}</span><br>
+<span class="sy0">\</span><span class="kw1">makeindex</span><span class="sy0">{</span>books<span class="sy0">}</span><br>
+<span class="sy0">\</span><span class="kw1">makeindex</span><span class="sy0">{</span>authors<span class="sy0">}</span><br>
+...<br>
+<span class="re12">\index</span><span class="sy0">{</span>books<span class="sy0">}{</span>A book to index<span class="sy0">}</span><br>
+<span class="re12">\index</span><span class="sy0">{</span>authors<span class="sy0">}{</span>Put this author in the index<span class="sy0">}</span><br>
+...<br>
+<span class="re12">\printindex</span><span class="sy0">{</span>books<span class="sy0">}{</span>The Books index<span class="sy0">}</span><br>
+<span class="re12">\printindex</span>{authors}{The Authors index</span><span class="sy0">}</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=12" title="Edit section: Adding index to table of contents">edit</a>]</span> <span class="mw-headline" id="Adding_index_to_table_of_contents">Adding index to table of contents</span></h2>
+<p>By default, Index won't show in Table Of Contents, you have to add it manually.</p>
+<p>To add index as a chapter, use this commands:</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="re12">\clearpage</span><br>
+<span class="re12">\addcontentsline</span><span class="sy0">{</span><span class="re9">toc}{chapter}{Index</span><span class="sy0">}</span><br>
+<span class="re12">\printindex</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>If you use book class, you may want to start it on odd page, for this, use <span class="mw-geshi latex source-latex"><span class="re12">\cleardoublepage</span></span>.</p>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=13" title="Edit section: International indices">edit</a>]</span> <span class="mw-headline" id="International_indices">International indices</span></h2>
+<p>If you want to sort entries that have international characters (such 
+as ő, ą, ó, ç, etc.) you may find that the sorting "is not quite right".
+ In most cases the characters are treated as special characters and end 
+up in the same group as @, ¶ or µ. In most languages that use Latin 
+alphabet it's not correct.</p>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=14" title="Edit section: Generating index">edit</a>]</span> <span class="mw-headline" id="Generating_index">Generating index</span></h3>
+<p><small>Unfortunately, current version of <code>xindy</code> and <span style="font-family: monospace; color: #2020C0; font-weight: normal;">hyperref</span> are incompatible. When you use <span style="font-family: monospace; color: #C08020; font-weight: normal;">textbf</span> or <span style="font-family: monospace; color: #C08020; font-weight: normal;">textit</span> modifiers, <code>texindy</code> will print error message:<code>unknown cross-reference-class `hyperindexformat'! (ignored)</code> and won't add those pages to index. Work-around for this bug is described on the <a href="http://en.wikibooks.org/wiki/Talk:LaTeX/Indexing#Texindy.2C_hyperref_and_textbf.2C_textit_modifiers" title="Talk:LaTeX/Indexing">talk page</a>.</small></p>
+<p>To generate international index file you have to use <code>texindy</code> instead of <code>makeindex</code>.</p>
+<p><a target="_blank" rel="nofollow" class="external text" href="http://xindy.sourceforge.net/">xindy</a> is a much more extensible and robust indexing system than the <code>makeindex</code> system.</p>
+<p>For example, one does not need to write:</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">Lin@\<span class="kw1">textbf</span>{Lin}</span><span class="sy0">}</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>to get the <tt>Lin</tt> entry after <tt>LAN</tt> and before <tt>LZA</tt>, instead, it's enough to write</p>
+<table style="margin-top: 1.5em; margin-bottom: 1.5em;">
+<tbody><tr>
+<td style="padding-left: 3em;">
+<p><span class="mw-geshi latex source-latex"><span class="re12">\index</span><span class="sy0">{</span><span class="re9">\<span class="kw1">textbf</span>{Lin}</span><span class="sy0">}</span></span></p>
+</td>
+</tr>
+</tbody></table>
+<p>But what is much more important, it can properly sort index files in many languages, not only English.</p>
+<p>Unfortunately, generating indices ready to use by <tt>LaTeX</tt> using <code>xindy</code> is a bit more complicated than with <code>makeindex</code>.</p>
+<p>First, we need to know in what encoding the <tt>.tex</tt> project 
+file is saved. In most cases it will be UTF-8 or ISO-8859-1, though if 
+you live, for example in Poland it may be ISO-8859-2 or CP-1250. Check 
+the parameter to the <code>inputenc</code> package.</p>
+<p>Second, we need to know which language is prominently used in our document. <tt>xindy</tt>
+ can natively sort indices in Albanian, Belarusian, Bulgarian, Croatian,
+ Czech, Danish, Dutch, English, Esperanto, Estonian, Finnish, French, 
+Georgian, German, Greek, Gypsy, Hausa, Hebrew, Hungarian, Icelandic, 
+Italian, Klingon, Kurdish, Latin, Latvian, Lithuanian, Macedonian, 
+Mongolian, Norwegian, Polish, Portuguese, Romanian, Russian, Serbian 
+Slovak, Slovenian, Sorbian, Spanish, Swedish, Turkish, Ukrainian and 
+Vietnamese,</p>
+<p>I don't know if other languages have similar problems, but with Polish, if your <code>.tex</code> is saved using UTF-8, the <code>.ind</code> produced by texindy will be encoded in ISO-8859-2 if you use only <code>-L polish</code>.
+ While it's not a problem for entries containing polish letters, as 
+LaTeX internally encodes all letters to plain ASCII, it is for accented 
+letters at beginning of words, they create new index entry groups, if 
+you have, for example an "średnia" entry, you'll get a "Ś" encoded in 
+ISO-8859-2 <code>.ind</code> file. LaTeX doesn't like if part of the file is in UTF-8 and part is in IS-8859-2. The obvious solution (adding <code>-C utf8</code>) doesn't work, <code>texindy</code> stops with</p>
+<pre>ERROR: Could not find file "tex/inputenc/utf8.xdy"
+</pre>
+<p>error. The fix this, you have to load the definiton style for the headings using <code>-M switch</code>:</p>
+<pre>-M lang/polish/utf8
+</pre>
+<p>In the end we have to run such command:</p>
+<pre>texindy -L polish -M lang/polish/utf8 <i>filename.idx</i>
+</pre>
+<p>Additional way to fix this problem is use "iconv" to create utf8.xdy from latin2.xdy</p>
+<pre><code> iconv -f latin2 -t utf8 latin2.xdy &gt;utf8.xdy </code>
+</pre>
+<p>in folder</p>
+<pre><code>  /usr/share/xindy/tex/inputenc </code>
+</pre>
+<p>(You must have root privileges)</p>
+<p><br></p>
+<h4><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit&amp;section=15" title="Edit section: xindy in kile">edit</a>]</span> <span class="mw-headline" id="xindy_in_kile">xindy in kile</span></h4>
+<p>To use <code>texindy</code> instead of <code>makeindex</code> in 
+kile, you have to either redefine the MakeIndex tool in Settings → 
+Configure Kile... → Tools → Build, or define new tool and redefine other
+ tools to use it.</p>
+<p>The <code>xindy</code> definition should look similar to this:</p>
+<pre>General:
+ Command: texindy
+ Options: -L polish -M lang/polish/utf8 -I latex '%S.idx'
+Advanced:
+ Type: Run Outside of Kile
+ Class: Compile
+ Source extension: idx
+ Target extension: ind
+ Target file: &lt;empty&gt;
+ Relative dir: &lt;empty&gt;
+ State: Editor
+Menu:
+ Add tool to Build menu: Compile
+ Icon: the one you like
+</pre>
+<p><br></p>
+<table style="border: 1px solid black;" class="noprint" cellpadding="2" cellspacing="0" width="100%">
+<tbody><tr>
+<td bgcolor="#FFFFE0" width="33%"><a href="http://en.wikibooks.org/wiki/LaTeX/Linguistics" title="LaTeX/Linguistics">Previous: Linguistics</a></td>
+<td align="center" bgcolor="#FFFFE0" width="33%"><a href="http://en.wikibooks.org/wiki/LaTeX" title="LaTeX">Index</a></td>
+<td align="right" bgcolor="#FFFFE0" width="33%"><a href="http://en.wikibooks.org/wiki/LaTeX/Glossary" title="LaTeX/Glossary">Next: Glossary</a></td>
+</tr>
+</tbody></table>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 1326/1000000
+Post-expand include size: 15934/2048000 bytes
+Template argument size: 3754/2048000 bytes
+Highest expansion depth: 7/40
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key enwikibooks:pcache:idhash:112602-0!0!0!default!!en!4!* and timestamp 20120803212947 -->
+</div>				<!-- /bodycontent -->
+								<!-- printfooter -->
+				<div class="printfooter">
+				Retrieved from "<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;oldid=2369361">http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;oldid=2369361</a>"				</div>
+				<!-- /printfooter -->
+												<!-- catlinks -->
+				<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikibooks.org/wiki/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://en.wikibooks.org/wiki/Category:LaTeX" title="Category:LaTeX">LaTeX</a></li></ul></div></div>				<!-- /catlinks -->
+												<!-- dataAfterContent -->
+				<div id="mw-data-after-content">
+	<form method="post" action="/w/index.php?title=Special:ReaderFeedback&amp;action=submit" id="mw-feedbackform"><fieldset class="feedback_reviewform noprint"><legend><strong>What do you think of this page?</strong></legend>
+<p><i>Please take a moment to rate this page below. Your feedback is valuable and helps us improve our website.</i>
+</p><span id="mw-feedbackselects"><b><label for="wpreliability">Reliability</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wpreliability" id="wpreliability" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+<b><label for="wpcompleteness">Completeness</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wpcompleteness" id="wpcompleteness" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+<b><label for="wpnpov">Neutrality</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wpnpov" id="wpnpov" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+<b><label for="wppresentation">Presentation</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wppresentation" id="wppresentation" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+</span><input disabled="disabled" value="Submit" id="submitfeedback" accesskey="b" title="Submit review [alt-shift-b]" type="submit"><input value="Special:ReaderFeedback" name="title" type="hidden">
+<input value="LaTeX/Indexing" name="target" type="hidden">
+<input value="2369361" name="oldid" type="hidden">
+<input value="abe744086b80711d585603487993c325" name="validatedParams" type="hidden"><input value="submit" name="action" type="hidden">
+<input value="+\" name="wpEditToken" type="hidden">
+<input name="commentary" size="12" style="display: none;">
+</fieldset></form>
+</div>
+				<!-- /dataAfterContent -->
+								<div class="visualClear"></div>
+				<!-- debughtml -->
+								<!-- /debughtml -->
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+		<li id="pt-createaccount"><a href="http://en.wikibooks.org/w/index.php?title=Special:UserLogin&amp;returnto=LaTeX%2FIndexing&amp;type=signup">Create account</a></li>
+		<li id="pt-login"><a href="http://en.wikibooks.org/w/index.php?title=Special:UserLogin&amp;returnto=LaTeX%2FIndexing" title="You are encouraged to log in; however, it is not mandatory [alt-shift-o]" accesskey="o">Log in</a></li>
+	</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="http://en.wikibooks.org/wiki/LaTeX/Indexing" title="View the content page [alt-shift-c]" accesskey="c">Book</a></span></li>
+					<li id="ca-talk"><span><a href="http://en.wikibooks.org/wiki/Talk:LaTeX/Indexing" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+	<h4>
+		</h4>
+	<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="collapsible"><span><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;stable=1">Read</a></span></li>
+					<li id="ca-current" class="collapsible collapsible selected"><span><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;stable=0&amp;redirect=no" title="View this page with the pending changes [alt-shift-v]" accesskey="v">Latest draft</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=edit" title="You can edit this page. Please use the preview button before saving [alt-shift-e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="/w/index.php" id="searchform">
+				<div id="simpleSearch">
+						<input autocomplete="off" placeholder="Search" tabindex="1" name="search" title="Search Wikibooks [alt-shift-f]" accesskey="f" id="searchInput" type="text">						<button type="submit" name="button" title="Search the pages for this text" id="searchButton" width="12" height="13"><img src="makeIndexing_files/search-ltr.png" alt="Search"></button>								<input name="title" value="Special:Search" type="hidden">
+		</div>
+	</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint collapsible-nav">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(&quot;//upload.wikimedia.org/wikibooks/en/b/bc/Wiki.png&quot;);" href="http://en.wikibooks.org/wiki/Main_Page" title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- Navigation -->
+<div class="portal first persistent" id="p-Navigation">
+	<h5>Navigation</h5>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage"><a href="http://en.wikibooks.org/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main Page</a></li>
+			<li id="n-help"><a href="http://en.wikibooks.org/wiki/Help:Contents" title="Find help on how to use and edit Wikibooks">Help</a></li>
+			<li id="n-Browse"><a href="http://en.wikibooks.org/wiki/Wikibooks:Card_Catalog_Office" title="Check out what Wikibooks has to offer">Browse</a></li>
+			<li id="n-Cookbook"><a href="http://en.wikibooks.org/wiki/Cookbook:Table_of_Contents" title="Learn recipes from around the world">Cookbook</a></li>
+			<li id="n-Wikijunior"><a href="http://en.wikibooks.org/wiki/Wikijunior" title="Books for children">Wikijunior</a></li>
+			<li id="n-Featured-books"><a href="http://en.wikibooks.org/wiki/Wikibooks:Featured_books" title="The best of Wikibooks">Featured books</a></li>
+			<li id="n-recentchanges"><a href="http://en.wikibooks.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+			<li id="n-sitesupport"><a href="http://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20120717SB001&amp;uselang=en" title="Support Wikibooks">Donations</a></li>
+			<li id="n-randomrootpage"><a href="http://en.wikibooks.org/wiki/Special:Randomrootpage">Random book</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /Navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- Community -->
+<div class="portal expanded" id="p-Community">
+	<h5 tabindex="2"><a href="#">Community</a></h5>
+	<div style="display: block;" class="body">
+		<ul>
+			<li id="n-Reading-room"><a href="http://en.wikibooks.org/wiki/Wikibooks:Reading_room" title="Discuss Wikibooks-related questions and concerns with others">Reading room</a></li>
+			<li id="n-portal"><a href="http://en.wikibooks.org/wiki/Wikibooks:Community_Portal" title="Find your way around the Wikibooks community">Community portal</a></li>
+			<li id="n-currentevents"><a href="http://en.wikibooks.org/wiki/Wikibooks:Reading_room/Bulletin_Board" title="Important community news">Bulletin Board</a></li>
+			<li id="n-maintenance"><a href="http://en.wikibooks.org/wiki/Wikibooks:Maintenance" title="Frequent tasks that you can help with">Help out!</a></li>
+			<li id="n-Policies-and-guidelines"><a href="http://en.wikibooks.org/wiki/Wikibooks:Policies_and_guidelines" title="Pages detailing important rules and procedures">Policies and guidelines</a></li>
+			<li id="n-contact"><a href="http://en.wikibooks.org/wiki/Wikibooks:Contact_us" title="Alternative methods of communication">Contact us</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /Community -->
+
+<!-- TOOLBOX -->
+<div class="portal collapsed" id="p-tb">
+	<h5 tabindex="3"><a href="#">Toolbox</a></h5>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://en.wikibooks.org/wiki/Special:WhatLinksHere/LaTeX/Indexing" title="A list of all wiki pages that link here [alt-shift-j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://en.wikibooks.org/wiki/Special:RecentChangesLinked/LaTeX/Indexing" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+			<li id="t-upload"><a href="http://commons.wikimedia.org/wiki/Commons:Upload" title="Upload files [alt-shift-u]" accesskey="u">Upload file</a></li>
+			<li id="t-specialpages"><a href="http://en.wikibooks.org/wiki/Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;oldid=2369361" title="Permanent link to this revision of the page">Permanent link</a></li>
+<li id="t-cite"><a href="http://en.wikibooks.org/w/index.php?title=Special:Cite&amp;page=LaTeX/Indexing&amp;id=2369361" title="Information on how to cite this page">Cite this page</a></li><li id="t-rating"><a href="http://en.wikibooks.org/w/index.php?title=Special:RatingHistory&amp;target=LaTeX/Indexing">Page rating</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+
+<!-- Sister projects -->
+<div class="portal collapsed" id="p-Sister_projects">
+	<h5 tabindex="4"><a href="#">Sister projects</a></h5>
+	<div class="body">
+		<ul>
+			<li id="n-Wikipedia"><a href="http://en.wikipedia.org/wiki/Main_Page">Wikipedia</a></li>
+			<li id="n-Wikiversity"><a href="http://en.wikiversity.org/wiki/Wikiversity:Main_Page">Wikiversity</a></li>
+			<li id="n-Wiktionary"><a href="http://en.wiktionary.org/wiki/Wiktionary:Main_Page">Wiktionary</a></li>
+			<li id="n-Wikiquote"><a href="http://en.wikiquote.org/wiki/Main_Page">Wikiquote</a></li>
+			<li id="n-Wikisource"><a href="http://en.wikisource.org/wiki/Main_Page">Wikisource</a></li>
+			<li id="n-Wikinews"><a href="http://en.wikinews.org/wiki/Main_Page">Wikinews</a></li>
+			<li id="n-Commons"><a href="http://commons.wikimedia.org/wiki/Main_Page">Commons</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /Sister projects -->
+
+<!-- coll-print_export -->
+<div class="portal collapsed" id="p-coll-print_export">
+	<h5 tabindex="5"><a href="#">Print/export</a></h5>
+	<div class="body">
+		<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="http://en.wikibooks.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=LaTeX%2FIndexing" title="Create a book or page collection" rel="nofollow">Create a collection</a></li><li id="coll-download-as-rl"><a href="http://en.wikibooks.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=LaTeX%2FIndexing&amp;oldid=2369361&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;printable=yes" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li></ul>	</div>
+</div>
+
+<!-- /coll-print_export -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 27 June 2012, at 12:43.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikibooks.org/wiki/Wikibooks:Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display: none;"></a>;
+additional terms may apply. See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikibooks.org/wiki/Wikibooks:Welcome" title="Wikibooks:Welcome">About Wikibooks</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikibooks.org/wiki/Wikibooks:General_disclaimer" title="Wikibooks:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikibooks.org/w/index.php?title=LaTeX/Indexing&amp;mobileaction=toggle_view_mobile" class="noprint">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://wikimediafoundation.org/"><img src="makeIndexing_files/wikimedia-button.png" alt="Wikimedia Foundation" height="31" width="88"></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="makeIndexing_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<script type="text/javascript">if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script src="makeIndexing_files/load_006.js" type="text/javascript"></script>
+<script type="text/javascript">if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready","mediawiki.legacy.mwsuggest","ext.gadget.extlinks","ext.vector.collapsibleNav","ext.vector.collapsibleTabs","ext.vector.editWarning","ext.vector.simpleSearch","ext.flaggedRevs.advanced"], null, true);
+}</script><script type="text/javascript" src="makeIndexing_files/load_002.js"></script><script type="text/javascript" src="makeIndexing_files/load_007.js"></script>
+<script src="makeIndexing_files/index_014.js" type="text/javascript"></script>
+<script src="makeIndexing_files/index_015.js" type="text/javascript"></script>
+<script src="makeIndexing_files/readerfeedback.js" type="text/javascript"></script>
+<script src="makeIndexing_files/index_008.js" type="text/javascript"></script>
+<script src="makeIndexing_files/load.js" type="text/javascript"></script>
+<script src="makeIndexing_files/geoiplookup.js" type="text/javascript"></script><!-- Served by srv279 in 0.136 secs. -->
+	
+
+<div class="suggestions" style="top: 73px; width: 204px; display: none; left: auto; right: 37px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

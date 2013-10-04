@@ -1,0 +1,1834 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 7.0.5.1025">
+    <meta name="TEMPLATEBASE" content="IDL Template">
+    <meta name="LASTUPDATED" content="Wed Jun 23 06:44:12 2004">
+    <meta name="PREV_PAGE" content="graphkeyw.html">
+    <meta name="NEXT_PAGE" content="tpoolkeyw.html">
+    <title>Graphics Keywords</title>
+    <link rel="StyleSheet" href="graphkeyw2_files/document.css" type="text/css">
+    <link rel="StyleSheet" href="graphkeyw2_files/catalog.css" type="text/css">
+    <script language="JScript" src="graphkeyw2_files/parser.js"></script>
+  </head><body><div class="CellBody"><a href="http://www.physics.nyu.edu/grierlab/idl_html_help/home.html">Home</a> | <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/funclisting.html">Categories</a> | <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/idl_alph.html">Alphabetical</a> | <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/idl_obj_class.html">Classes</a> | <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/idl_con.html">All Contents</a> | <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw.html">[ &lt; ]</a> | <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/tpoolkeyw.html">[ &gt; ]</a></div><hr>
+
+
+<a name="wp317209"> </a><h2 class="pNewHTMLPage">
+Graphics Keywords
+</h2>
+
+<hr>
+<a name="wp325160"> </a><p class="pBody">
+The IDL Direct Graphics routines, CURSOR, ERASE, PLOTS, POLYFILL, TV
+(and TVSCL), TVCRS, TVRD, and XYOUTS, and the plotting procedures,
+AXIS, CONTOUR, PLOT, OPLOT, SHADE_SURF, and SURFACE, accept a number of
+common keywords. Therefore, instead of describing each keyword along
+with the description of each routine, this section contains a brief
+summary of each graphics keyword. Routine-specific keywords are
+documented in the description of the routine.The graphics keywords are
+described below. The name of each keyword is followed by a list of
+routines that accept that keyword. Keywords that have a direct
+correspondence to fields in a system variable (usually <nobr>!P)</nobr> are also indicated.
+</p>
+
+<a name="wp325162"> </a><p class="pBody">
+The keywords that control the plot axes are prefixed with the character
+`X', `Y', or `Z' depending on the axis in question. These keywords
+correspond to fields in the axis system variables: <nobr>!X,</nobr> <nobr>!Y,</nobr> and <nobr>!Z,</nobr> and are described in more detail in <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp998699">Graphics System Variables</a>
+The axis keywords are shown in the form [XYZ]NAME. For example,
+[XYZ]CHARSIZE refers to the three keywords XCHARSIZE, YCHARSIZE, and
+ZCHARSIZE, which control the size of the characters annotating the
+three axes.
+</p>
+
+<a name="wp356816"> </a><p class="pBody">
+The system variable fields that control this are <nobr>!X.CHARSIZE,</nobr> <nobr>!Y.CHARSIZE,</nobr> and <nobr>!Z.CHARSIZE.</nobr>
+</p>
+
+<a name="wp358894"> </a><h3 class="pHeading2">
+Graphic Keywords List
+</h3>
+
+<a name="wp357030"> </a><p class="pBody">
+The following graphics keywords are discussed in this section:</p><div>
+<table cellpadding="8">
+  <caption></caption>
+  <tbody><tr>    <td><a name="wp356824"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp328424">BACKGROUND</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+
+</td>
+    <td><a name="wp356829"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp315964">ORIENTATION</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+
+</td>
+    <td><a name="wp356834"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332116">[XYZ]STYLE</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+
+</td>
+</tr>
+  <tr>    <td><a name="wp356839"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp315931">CHANNEL</a>
+</div>
+
+</td>
+    <td><a name="wp356844"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp316026">POSITION</a>
+</div>
+
+</td>
+    <td><a name="wp356849"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332298">[XYZ]THICK</a>
+</div>
+
+</td>
+</tr>
+  <tr>    <td><a name="wp356854"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp266973">CHARSIZE</a>
+</div>
+
+</td>
+    <td><a name="wp356859"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp316038">PSYM</a>
+</div>
+
+</td>
+    <td><a name="wp356864"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332321">[XYZ]TICK_GET</a>
+</div>
+
+</td>
+</tr>
+  <tr>    <td><a name="wp356869"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp331668">CHARTHICK</a>
+</div>
+
+</td>
+    <td><a name="wp356874"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp316057">SUBTITLE</a>
+</div>
+
+</td>
+    <td><a name="wp356879"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332347">[XYZ]TICKFORMAT</a>
+</div>
+
+</td>
+</tr>
+  <tr>    <td><a name="wp356884"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp315949">CLIP</a>
+</div>
+
+</td>
+    <td><a name="wp356889"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp316061">SYMSIZE</a>
+</div>
+
+</td>
+    <td><a name="wp356894"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332463">[XYZ]TICKINTERVAL</a>
+</div>
+
+</td>
+</tr>
+  <tr>    <td><a name="wp356899"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp315952">COLOR</a>
+</div>
+
+</td>
+    <td><a name="wp356904"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp315956">T3D</a>
+</div>
+
+</td>
+    <td><a name="wp356909"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332488">[XYZ]TICKLAYOUT</a>
+</div>
+
+</td>
+</tr>
+  <tr>    <td><a name="wp356914"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp315961">DATA</a>
+</div>
+
+</td>
+    <td><a name="wp356919"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp316006">THICK</a>
+</div>
+
+</td>
+    <td><a name="wp356924"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332513">[XYZ]TICKLEN</a>
+</div>
+
+</td>
+</tr>
+  <tr>    <td><a name="wp356929"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp315977">DEVICE</a>
+</div>
+
+</td>
+    <td><a name="wp356934"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332207">TICKLEN</a>
+</div>
+
+</td>
+    <td><a name="wp356939"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332536">[XYZ]TICKNAME</a>
+</div>
+
+</td>
+</tr>
+  <tr>    <td><a name="wp356944"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp331795">FONT</a>
+</div>
+
+</td>
+    <td><a name="wp356949"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332238">TITLE</a>
+</div>
+
+</td>
+    <td><a name="wp356954"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332559">[XYZ]TICKS</a>
+</div>
+
+</td>
+</tr>
+  <tr>    <td><a name="wp356959"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp331728">LINESTYLE</a>
+</div>
+
+</td>
+    <td><a name="wp356964"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp331699">[XYZ]CHARSIZE</a> 
+</div>
+
+</td>
+    <td><a name="wp356969"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332586">[XYZ]TICKUNITS</a>
+</div>
+
+</td>
+</tr>
+  <tr>    <td><a name="wp356974"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp323508">NOCLIP</a>
+</div>
+
+</td>
+    <td><a name="wp356979"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332009">[XYZ]GRIDSTYLE</a>
+</div>
+
+</td>
+    <td><a name="wp356984"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332628">[XYZ]TICKV</a>
+</div>
+
+</td>
+</tr>
+  <tr>    <td><a name="wp356989"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp316018">NODATA</a>
+</div>
+
+</td>
+    <td><a name="wp356994"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332038">[XYZ]MARGIN</a>
+</div>
+
+</td>
+    <td><a name="wp356999"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp316100">[XYZ]TITLE</a>
+</div>
+
+</td>
+</tr>
+  <tr>    <td><a name="wp357004"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp316024">NOERASE</a>
+</div>
+
+</td>
+    <td><a name="wp357009"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332061">[XYZ]MINOR</a>
+</div>
+
+</td>
+    <td><a name="wp357014"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332658">Z</a>
+</div>
+
+</td>
+</tr>
+  <tr>    <td><a name="wp357019"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp315963">NORMAL</a>
+</div>
+
+</td>
+    <td><a name="wp357024"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332090">[XYZ]RANGE</a>
+</div>
+
+</td>
+    <td><a name="wp357029"> </a><div class="pCellBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp316102">ZVALUE</a>
+</div>
+
+</td>
+</tr>
+</tbody></table>
+</div>
+<p class="pBody">
+</p>
+
+<a name="wp328424"> </a><h3 class="pHeading2">
+BACKGROUND
+</h3>
+
+<a name="wp267085"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. 
+</p>
+
+<a name="wp328546"> </a><p class="pBody">
+System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997554">BACKGROUND</a></nobr>.
+</p>
+
+<a name="wp315951"> </a><p class="pBody">The background color index to
+which all pixels are set when erasing the screen or page. The default
+is 0 (black). Not all devices support erasing the background to a
+specified color index.
+</p>
+
+<a name="wp315960"> </a><p class="pBody">
+For example, to produce a black plot with a white background on a color display:
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">PLOT, Y, BACKGROUND = 255, COLOR = 0 
+</pre></div>
+
+<a name="wp358917"> </a><p class="pBody">
+
+</p>
+
+<a name="wp345878"> </a><p class="pWarning">
+
+</p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td width="40"><b>Warning</b></td><td><hr></td>
+</tr></tbody></table>
+  <a name="345878"> </a>If the <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp316024">NOERASE</a> keyword (or <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997616">NOERASE</a></nobr>) is set, the value of the BACKGROUND keyword (or <nobr>!P.BACKGROUND)</nobr> is ignored.
+<hr>
+
+
+<a name="wp358936"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp315931"> </a><h3 class="pHeading2">
+CHANNEL
+</h3>
+
+<a name="wp267086"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/E9.html#wp1002847">ERASE</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/T31.html#wp679666">TV</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/T34.html#wp679774">TVRD</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997557">CHANNEL</a></nobr>.
+</p>
+
+<a name="wp266970"> </a><p class="pBody">This keyword specifies the
+memory channel for the operation. This parameter is ignored on display
+systems that have only one memory channel. When using a "decomposed"
+display system, the red channel is 1, the green channel is 2, and the
+blue channel is 3. Channel 0 indicates all channels. If omitted, <nobr>!P.CHANNEL</nobr> contains the default channel value.
+</p>
+
+<a name="wp269813"> </a><p class="pNote">
+
+</p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td width="40"><b>Note</b></td><td><hr></td>
+</tr></tbody></table>
+  <a name="269813"> </a>CONTOUR, PLOT, SHADE_SURF, and SURFACE also accept the CHANNEL keyword, but simply pass it to ERASE.
+<hr>
+
+
+<a name="wp358942"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp266973"> </a><h3 class="pHeading2">
+CHARSIZE
+</h3>
+
+<a name="wp267087"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/X24.html#wp971974">XYOUTS</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997560">CHARSIZE</a></nobr>.
+</p>
+
+<a name="wp322187"> </a><p class="pBody">
+The overall character size for the annotation when Hershey fonts are
+selected. This keyword does not apply when hardware (i.e. PostScript)
+fonts are selected. A CHARSIZE of 1.0 is normal. The size of the
+annotation on the axes may be set, relative to CHARSIZE, with <i class="cItalic">x</i>CHARSIZE, where <i class="cItalic">x</i> is X, Y, or Z. The main title is written with a character size of 1.25 times this parameter.
+</p>
+
+<a name="wp358948"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp331668"> </a><h3 class="pHeading2">
+CHARTHICK
+</h3>
+
+<a name="wp331687"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/X24.html#wp971974">XYOUTS</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997563">CHARTHICK</a></nobr>.
+</p>
+
+<a name="wp331691"> </a><p class="pBody">
+An integer value specifying the line thickness of the vector drawn font
+characters.This keyword has no effect when used with the hardware drawn
+fonts. The default value is 1.
+</p>
+
+<a name="wp358954"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp315949"> </a><h3 class="pHeading2">
+CLIP
+</h3>
+
+<a name="wp267090"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/D35.html#wp985299">DRAW_ROI</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/O12.html#wp889954">OPLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P10.html#wp678154">PLOTS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P19.html#wp678236">POLYFILL</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/X24.html#wp971974">XYOUTS</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997566">CLIP</a></nobr>.
+</p>
+
+<a name="wp315983"> </a><p class="pBody">
+The coordinates of a rectangle used to clip the graphics output. The rectangle is specified as a vector of the form [<i class="cItalic">X</i><sub class="cSubScript">0</sub>, <i class="cItalic">Y</i><sub class="cSubScript">0</sub>, <i class="cItalic">X</i><sub class="cSubScript">1</sub>, <i class="cItalic">Y</i><sub class="cSubScript">1</sub>],
+giving coordinates of the lower left and upper right corners,
+respectively. The default clipping rectangle is the plot window, the
+area enclosed within the axes of the most recent plot. Coordinates are
+specified in data units unless an overriding coordinate unit
+specification keyword is present (i.e., NORMAL or DEVICE). If the
+clipping is provided in data or normalized units, the actual clipping
+rectangle is computed by converting those values to device units. The
+clipping itself always occurs in device space.
+</p>
+
+<a name="wp274691"> </a><p class="pNote">
+
+</p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td width="40"><b>Note</b></td><td><hr></td>
+</tr></tbody></table>
+  <a name="274691"> </a>The default is not to
+clip the output of PLOTS and XYOUTS. To enable clipping include the
+keyword parameter NOCLIP = 0. With PLOTS, POLYFILL, and XYOUTS, this
+keyword controls the clipping of vectors and vector-drawn text.
+<hr>
+
+
+<a name="wp317216"> </a><p class="pBody">For example, to draw a vector
+using normalized coordinates with its contents clipped within a
+rectangle covering the upper left quadrant of the display:
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">PLOTS, X, Y, CLIP=[0.,.5,.5,1.0], /NORM, NOCLIP=0 
+</pre></div>
+
+<a name="wp358960"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp315952"> </a><h3 class="pHeading2">
+COLOR
+</h3>
+
+<a name="wp267091"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/D35.html#wp985299">DRAW_ROI</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/E9.html#wp1002847">ERASE</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/O12.html#wp889954">OPLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P10.html#wp678154">PLOTS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P19.html#wp678236">POLYFILL</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/X24.html#wp971974">XYOUTS</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997569">COLOR</a></nobr>.
+</p>
+
+<a name="wp316229"> </a><p class="pBody">
+The color index of the data, text, line, or solid polygon fill to be drawn. If this keyword is omitted, <nobr>!P.COLOR</nobr> specifies the color index.
+</p>
+
+<a name="wp315988"> </a><p class="pBody">When used with the PLOTS,
+POLYFILL, or XYOUTS procedure, this keyword parameter can be set to a
+vector to specify multiple color indices.
+</p>
+
+<a name="wp315993"> </a><p class="pBody">Gouraud shading of polygons is
+performed with the Z-buffer graphics output device and POLYFILL
+procedure when COLOR contains an array of color indices, one for each
+vertex.
+</p>
+
+<a name="wp358966"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp315961"> </a><h3 class="pHeading2">
+DATA
+</h3>
+
+<a name="wp267092"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C57.html#wp682999">CURSOR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/D35.html#wp985299">DRAW_ROI</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P10.html#wp678154">PLOTS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P19.html#wp678236">POLYFILL</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/T31.html#wp679666">TV</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/T32.html#wp679718">TVCRS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/X24.html#wp971974">XYOUTS</a>.
+</p>
+
+<a name="wp320217"> </a><p class="pBody">Set this keyword to indicate
+that the clipping and/or positioning coordinates supplied are specified
+in the data coordinate system. The default coordinate system is DATA if
+no other coordinate-system specifications are present.
+</p>
+
+<a name="wp358972"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp315977"> </a><h3 class="pHeading2">
+DEVICE
+</h3>
+
+<a name="wp322714"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C57.html#wp682999">CURSOR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/D35.html#wp985299">DRAW_ROI</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P10.html#wp678154">PLOTS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P19.html#wp678236">POLYFILL</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/T31.html#wp679666">TV</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/T32.html#wp679718">TVCRS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/X24.html#wp971974">XYOUTS</a>.
+</p>
+
+<a name="wp320221"> </a><p class="pBody">Set this keyword to indicate
+that the clipping and/or positioning coordinates supplied are specified
+in the device coordinate system. The default coordinate system is DATA
+if no other coordinate-system specifications are present.
+</p>
+
+<a name="wp317219"> </a><p class="pBody">For example, the following
+code displays an image contained in the variable A and then draws a
+contour plot of pixels [100:499, 100:399] over the correct section of
+the image:
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">;Display the image. 
+TV,A 
+ 
+;Draw the contour plot, specify the coordinates of the plot, in  
+;device coordinates, do not erase, set the X and Y axis styles to  
+;EXACT. 
+CONTOUR, A[100:499, 100:399], $ 
+&nbsp;&nbsp;&nbsp;&nbsp;POS = [100,100, 499,399], /DEVICE, $ 
+&nbsp;&nbsp;&nbsp;/NOERASE, XSTYLE=1, YSTYLE=1 
+</pre></div>
+
+<a name="wp315996"> </a><p class="pBody">
+Note that in the above example, the keyword specification /DEVICE is equivalent to DEVICE = 1.
+</p>
+
+<a name="wp359030"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp331795"> </a><h3 class="pHeading2">
+FONT
+</h3>
+
+<a name="wp331814"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/X24.html#wp971974">XYOUTS</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997572">FONT</a></nobr>.
+</p>
+
+<a name="wp331818"> </a><p class="pBody">An integer that specifies the
+graphics text font system to use. Set FONT equal to -1 to selects the
+Hershey character fonts, which are drawn using vectors. Set FONT equal
+to 0 (zero) to select the device font of the output device. Set FONT
+equal to 1 (one) to select the TrueType font system. See <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/fonts2.html#wp999809">Fonts</a> for a complete description of IDL's font systems.
+</p>
+
+<a name="wp359036"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp331728"> </a><h3 class="pHeading2">
+LINESTYLE
+</h3>
+
+<a name="wp331744"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/D35.html#wp985299">DRAW_ROI</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/O12.html#wp889954">OPLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P10.html#wp678154">PLOTS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997575">LINESTYLE</a></nobr>.
+</p>
+
+<a name="wp331749"> </a><p class="pBody">
+This keyword indicates the line style used to draw lines; it indicates
+the line style of the lines used to connect the data points. This
+keyword should be set to the appropriate index for the desired
+linestyle as described in the following table.</p><div>
+<table border="0" cellpadding="10" cellspacing="1">
+  <caption></caption>
+  <tbody><tr bgcolor="#d5d5de">    <th><a name="wp331752"> </a><div class="pCellHeading">
+Index
+</div>
+
+</th>
+    <th><a name="wp331754"> </a><div class="pCellHeading">
+Linestyle
+</div>
+
+</th>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp331756"> </a>
+0
+
+
+</td>
+    <td><a name="wp331758"> </a><div class="pCellBody">
+Solid
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp331760"> </a>
+1
+
+
+</td>
+    <td><a name="wp331762"> </a><div class="pCellBody">
+Dotted
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp331764"> </a>
+2
+
+
+</td>
+    <td><a name="wp331766"> </a><div class="pCellBody">
+Dashed
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp331768"> </a>
+3
+
+
+</td>
+    <td><a name="wp331770"> </a><div class="pCellBody">
+Dash Dot
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp331772"> </a>
+4
+
+
+</td>
+    <td><a name="wp331774"> </a><div class="pCellBody">
+Dash Dot Dot
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp331776"> </a>
+5
+
+
+</td>
+    <td><a name="wp331778"> </a><div class="pCellBody">
+Long Dashes
+</div>
+
+</td>
+</tr>
+</tbody></table>
+</div>
+<p class="pBody">
+</p>
+
+<a name="wp359042"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp323508"> </a><h3 class="pHeading2">
+NOCLIP
+</h3>
+
+<a name="wp323527"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/D35.html#wp985299">DRAW_ROI</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/O12.html#wp889954">OPLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P10.html#wp678154">PLOTS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P19.html#wp678236">POLYFILL</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/X24.html#wp971974">XYOUTS</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997613">NOCLIP</a></nobr>.
+</p>
+
+<a name="wp316016"> </a><p class="pBody">
+Set this keyword to suppress clipping of the plot. The clipping rectangle is contained in <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997566">CLIP</a></nobr>. By default, the plot is clipped within the plotting window.
+</p>
+
+<a name="wp316017"> </a><p class="pNote">
+
+</p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td width="40"><b>Note</b></td><td><hr></td>
+</tr></tbody></table>
+  <a name="316017"> </a>The default value is
+clipping-disabled for PLOTS, POLYFILL, and XYOUTS. For all other
+routines, the default is to enable clipping.
+<hr>
+
+
+<a name="wp316232"> </a><p class="pBody">With PLOTS, POLYFILL, and
+XYOUTS, this keyword controls the clipping of vectors and vector-drawn
+text. The default is to disable clipping, so to enable clipping include
+the parameter NOCLIP = 0. To explicitly disable clipping set this
+parameter to one.
+</p>
+
+<a name="wp359070"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp316018"> </a><h3 class="pHeading2">
+NODATA
+</h3>
+
+<a name="wp267113"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>.
+</p>
+
+<a name="wp316019"> </a><p class="pBody">
+If this keyword is set, only the axes, titles, and annotation are drawn. No data points are plotted.
+</p>
+
+<a name="wp317222"> </a><p class="pBody">
+For example, to draw an empty set of axes between some given values:
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">PLOT, [XMIN, XMAX],[YMIN, YMAX], /NODATA 
+</pre></div>
+
+<a name="wp359076"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp316024"> </a><h3 class="pHeading2">
+NOERASE
+</h3>
+
+<a name="wp267114"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997616">NOERASE</a></nobr>.
+</p>
+
+<a name="wp316025"> </a><p class="pBody">Specifies that the screen or
+page is not to be erased. By default, the screen is erased, or a new
+page is begun, before a plot is produced.
+</p>
+
+<a name="wp345857"> </a><p class="pWarning">
+
+</p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td width="40"><b>Warning</b></td><td><hr></td>
+</tr></tbody></table>
+  <a name="345857"> </a>If the NOERASE keyword (or <nobr>!P.NOERASE) is set, the value of the <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp328424">BACKGROUND</a> keyword (or </nobr><nobr>!P.<a></a></nobr><a>  href="sysvars7.html#wp997554"&gt;BACKGROUND</a>) is ignored.
+<hr>
+
+
+<a name="wp359082"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp315963"> </a><h3 class="pHeading2">
+NORMAL
+</h3>
+
+<a name="wp267115"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C57.html#wp682999">CURSOR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/D35.html#wp985299">DRAW_ROI</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P10.html#wp678154">PLOTS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P19.html#wp678236">POLYFILL</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/T31.html#wp679666">TV</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/T32.html#wp679718">TVCRS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/X24.html#wp971974">XYOUTS</a>.
+</p>
+
+<a name="wp320199"> </a><p class="pBody">Set this keyword to indicate
+that the clipping and/or positioning coordinates supplied are specified
+in the normalized coordinate system, and range from 0.0 to 1.0. The
+default coordinate system is DATA if no other coordinate-system
+specifications are present.
+</p>
+
+<a name="wp359088"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp315964"> </a><h3 class="pHeading2">
+ORIENTATION
+</h3>
+
+<a name="wp267116"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/D35.html#wp985299">DRAW_ROI</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P19.html#wp678236">POLYFILL</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/X24.html#wp971974">XYOUTS</a>.
+</p>
+
+<a name="wp316234"> </a><p class="pBody">Specifies the counterclockwise
+angle in degrees from horizontal of the text baseline and the lines
+used to fill polygons.When used with the POLYFILL procedure, this
+keyword forces the "linestyle" type of fill, rather than solid or
+patterned fill.
+</p>
+
+<a name="wp359094"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp316026"> </a><h3 class="pHeading2">
+POSITION
+</h3>
+
+<a name="wp267117"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/M15.html#wp887896">MAP_SET</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp1006945">POSITION</a></nobr>.
+</p>
+
+<a name="wp316027"> </a><p class="pBody">
+Allows direct specification of the plot window. POSITION is a 4-element vector giving, in order, the coordinates [(X<sub class="cSubScript">0</sub>, Y<sub class="cSubScript">0</sub>), (X<sub class="cSubScript">1</sub>, Y<sub class="cSubScript">1</sub>)],
+of the lower left and upper right corners of the data window.
+Coordinates are expressed in normalized units ranging from 0.0 to 1.0,
+unless the DEVICE keyword is present, in which case they are in actual
+device units. The value of POSITION is never specified in data units,
+even if the DATA keyword is present.
+</p>
+
+<a name="wp316030"> </a><p class="pBody">When setting the position of
+the window, be sure to allow space for the annotation, which resides
+outside the window. IDL outputs the message "% Warning: Plot
+truncated." if the plot region is larger than the screen or page size.
+The plot region is the rectangle enclosing the plot window and the
+annotation.
+</p>
+
+<a name="wp316031"> </a><p class="pBody">When plotting in three
+dimensions, the POSITION keyword is a 6-element vector with the first
+four elements describing, as above, the XY position, and with the last
+two elements giving the minimum and maximum Z coordinates. The Z
+specification is always in normalized coordinate units.
+</p>
+
+<a name="wp316032"> </a><p class="pBody">
+When making more than one plot per page it is more convenient to set <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp1004014">MULTI</a></nobr> than to manipulate the position of the plot directly with the POSITION keyword.
+</p>
+
+<a name="wp317225"> </a><p class="pBody">
+For example, the following statement produces a contour plot with data plotted in only the upper left quarter of the screen:
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">CONTOUR, Z, POS=[0., 0.5, 0.5, 1.0] 
+</pre></div>
+
+<a name="wp316037"> </a><p class="pBody">Because no space on the left
+or top edges was allowed for the axes or their annotation, the above
+described warning message results.
+</p>
+
+<a name="wp359100"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp316038"> </a><h3 class="pHeading2">
+PSYM
+</h3>
+
+<a name="wp267118"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/D35.html#wp985299">DRAW_ROI</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/O12.html#wp889954">OPLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P10.html#wp678154">PLOTS</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997627">PSYM</a></nobr>.
+</p>
+
+<a name="wp316321"> </a><p class="pBody">The symbol used to mark each
+data point. Normally, PSYM is 0, data points are connected by lines,
+and no symbols are drawn to mark the points. Set this keyword, or the
+system variable <nobr>!P.PSYM,</nobr>
+to the symbol index as shown in the table below to mark data points
+with symbols. The keyword SYMSIZE is used to set the size of the
+symbols.</p><div>
+<table border="0" cellpadding="10" cellspacing="1">
+  <caption></caption>
+  <tbody><tr bgcolor="#d5d5de">    <th><a name="wp316297"> </a><div class="pCellHeading">
+PSYM Value
+</div>
+
+</th>
+    <th><a name="wp316298"> </a><div class="pCellHeading">
+Plotting Symbol
+</div>
+
+</th>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp316299"> </a>
+1
+
+
+</td>
+    <td><a name="wp316300"> </a><div class="pCellBody">
+Plus sign (+)
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp316301"> </a>
+2
+
+
+</td>
+    <td><a name="wp316302"> </a><div class="pCellBody">
+Asterisk (*)
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp316303"> </a>
+3
+
+
+</td>
+    <td><a name="wp316304"> </a><div class="pCellBody">
+Period (.)
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp316305"> </a>
+4
+
+
+</td>
+    <td><a name="wp316306"> </a><div class="pCellBody">
+Diamond
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp316307"> </a>
+5
+
+
+</td>
+    <td><a name="wp316308"> </a><div class="pCellBody">
+Triangle
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp316309"> </a>
+6
+
+
+</td>
+    <td><a name="wp316310"> </a><div class="pCellBody">
+Square
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp316311"> </a>
+7
+
+
+</td>
+    <td><a name="wp316312"> </a><div class="pCellBody">
+X
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp316313"> </a>
+8
+
+
+</td>
+    <td><a name="wp316314"> </a><div class="pCellBody">
+User-defined. See <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/U12.html#wp966138">USERSYM</a> procedure.
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp316315"> </a>
+9
+
+
+</td>
+    <td><a name="wp316316"> </a><div class="pCellBody">
+Undefined
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp316317"> </a>
+10
+
+
+</td>
+    <td><a name="wp316318"> </a><div class="pCellBody">
+Histogram mode. Horizontal and vertical lines connect the plotted
+points, as opposed to the normal method of connecting points with
+straight lines.
+</div>
+
+</td>
+</tr>
+</tbody></table>
+</div>
+<p class="pBody">
+</p>
+
+<a name="wp316039"> </a><p class="pBody">Negative values of PSYM cause
+the symbol designated by PSYM to be plotted at each point with solid
+lines connecting the symbols. For example, a value of -5 plots
+triangles at each data point and connects the points with lines.
+Histogram mode is the exception to this rule; since the points are
+already connected when PSYM=10, specifying the value -10 is
+meaningless, and will result in an error.
+</p>
+
+<a name="wp317228"> </a><p class="pBody">
+The following IDL code plots an array using points, and then overplots the smoothed array, connecting the points with lines: 
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">;Plot using points. 
+PLOT, A, PSYM=3  
+ 
+;Overplot smoothed data. 
+OPLOT, SMOOTH(A,7) 
+</pre></div>
+
+<a name="wp359106"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp316057"> </a><h3 class="pHeading2">
+SUBTITLE
+</h3>
+
+<a name="wp267127"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997636">SUBTITLE</a></nobr>.
+</p>
+
+<a name="wp316058"> </a><p class="pBody">
+A text string to be used as a subtitle for the plot. Subtitles appear below the X axis.
+</p>
+
+<a name="wp359112"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp316061"> </a><h3 class="pHeading2">
+SYMSIZE
+</h3>
+
+<a name="wp267128"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/D35.html#wp985299">DRAW_ROI</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/O12.html#wp889954">OPLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P10.html#wp678154">PLOTS</a>.
+</p>
+
+<a name="wp316062"> </a><p class="pBody">Specifies the size of the
+symbols drawn when PSYM is set. The default size of 1.0 produces
+symbols approximately the same size as a character.
+</p>
+
+<a name="wp359118"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp315956"> </a><h3 class="pHeading2">
+T3D
+</h3>
+
+<a name="wp267129"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/D35.html#wp985299">DRAW_ROI</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/M15.html#wp887896">MAP_SET</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/O12.html#wp889954">OPLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P10.html#wp678154">PLOTS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P19.html#wp678236">POLYFILL</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/T31.html#wp679666">TV</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/T32.html#wp679718">TVCRS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/X24.html#wp971974">XYOUTS</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997642">T3D</a></nobr>.
+</p>
+
+<a name="wp316235"> </a><p class="pBody">
+Set this keyword to indicate that the generalized transformation matrix in <nobr>!P.T</nobr>
+is to be used. If not present, the user-supplied coordinates are simply
+scaled to screen coordinates. See the examples in the description of
+the SAVE keyword.
+</p>
+
+<a name="wp315975"> </a><p class="pNote">
+
+</p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td width="40"><b>Note</b></td><td><hr></td>
+</tr></tbody></table>
+  <a name="315975"> </a>Since T3D uses the transformation matrix in <nobr>!P.T,</nobr> it is important that <nobr>!P.T</nobr> contain a valid transformation matrix. This can be achieved in several ways:
+<hr>
+
+
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp315976"> </a><div class="pSmartList1"><li>Use the SAVE keyword to save the transformation matrix from an earlier graphics operation.</li></div>
+
+<a name="wp315985"> </a><div class="pSmartList1"><li>Establish a transformation matrix using the T3D, SURFR, or, SCALE3 procedures.</li></div>
+
+<a name="wp315987"> </a><div class="pSmartList1"><li>Set the value of <nobr>!P.T</nobr> directly.</li></div>
+
+</ul></div>
+ 
+<a name="wp359124"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp316006"> </a><h3 class="pHeading2">
+THICK
+</h3>
+
+<a name="wp267130"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/D35.html#wp985299">DRAW_ROI</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/O12.html#wp889954">OPLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P10.html#wp678154">PLOTS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P19.html#wp678236">POLYFILL</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997645">THICK</a></nobr>.
+</p>
+
+<a name="wp316236"> </a><p class="pBody">
+Indicates the line thickness. THICK overrides the setting of <nobr>!P.THICK.</nobr>
+</p>
+
+<a name="wp359130"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332207"> </a><h3 class="pHeading2">
+TICKLEN
+</h3>
+
+<a name="wp332223"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997651">TICKLEN</a></nobr>.
+</p>
+
+<a name="wp332227"> </a><p class="pBody">Controls the length of the
+axis tick marks, expressed as a fraction of the window size. The
+default value is 0.02. TICKLEN of 1.0 produces a grid, while a negative
+TICKLEN makes tick marks that extend outside the window, rather than
+inwards.
+</p>
+
+<a name="wp332228"> </a><p class="pBody">
+For example, to produce outward-going tick marks of the normal length:
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">PLOT, X, Y, TICKLEN = -0.02 
+</pre></div>
+
+<a name="wp332230"> </a><p class="pBody">
+To provide a new default tick length, set <nobr>!P.TICKLEN.</nobr>
+</p>
+
+<a name="wp359136"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332238"> </a><h3 class="pHeading2">
+TITLE
+</h3>
+
+<a name="wp332254"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>!P.<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997648">TITLE</a></nobr>.
+</p>
+
+<a name="wp332258"> </a><p class="pBody">Produces a main title centered
+above the plot window. The text size of this main title is larger than
+the other text by a factor of 1.25. For example:
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">PLOT, X, Y, TITLE = 'Final Results' 
+</pre></div>
+
+<a name="wp359142"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp331699"> </a><h3 class="pHeading2">
+[XYZ]CHARSIZE
+</h3>
+
+<a name="wp331715"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalents: <nobr>![XYZ].<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp1012787">CHARSIZE</a></nobr>.
+</p>
+
+<a name="wp331720"> </a><p class="pBody">The size of the characters
+used to annotate the axis and its title when Hershey fonts are
+selected. This keyword does not apply when hardware (i.e. PostScript)
+fonts are selected. This field is a scale factor applied to the global
+scale factor set by <nobr>!P.CHARSIZE</nobr> or the keyword CHARSIZE.
+</p>
+
+<a name="wp359148"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332009"> </a><h3 class="pHeading2">
+[XYZ]GRIDSTYLE
+</h3>
+
+<a name="wp332025"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>
+</p>
+
+<a name="wp332027"> </a><p class="pBody">
+The index of the linestyle to be used for plot tickmarks and grids (i.e., when [XYZ]TICKLEN is set to 1.0). See <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp331728">LINESTYLE</a> for a list of linestyles.
+</p>
+
+<a name="wp359154"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332038"> </a><h3 class="pHeading2">
+[XYZ]MARGIN
+</h3>
+
+<a name="wp332054"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>![XYZ].<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997689">MARGIN</a></nobr>.
+</p>
+
+<a name="wp332058"> </a><p class="pBody">
+A 2-element array specifying the margin on the left (bottom) and right
+(top) sides of the plot window, in units of character size. Default
+margins are 10 and 3 for the X axis, and 4 and 2 for the Y axis. The
+ZMARGIN keyword is present for consistency and is currently ignored.
+</p>
+
+<a name="wp359160"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332061"> </a><h3 class="pHeading2">
+[XYZ]MINOR
+</h3>
+
+<a name="wp332077"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>![XYZ].<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997699">MINOR</a></nobr>.
+</p>
+
+<a name="wp332082"> </a><p class="pBody">
+The number of minor tick mark intervals.
+</p>
+
+<a name="wp359166"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332090"> </a><h3 class="pHeading2">
+[XYZ]RANGE
+</h3>
+
+<a name="wp332106"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>![XYZ].<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997713">RANGE</a></nobr>.
+</p>
+
+<a name="wp332110"> </a><p class="pBody">The desired data range of the
+axis, a 2-element vector. The first element is the axis minimum, and
+the second is the maximum. IDL will frequently round this range. This
+override can be defeated using the [XYZ]STYLE keywords.
+</p>
+
+<a name="wp359172"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332116"> </a><h3 class="pHeading2">
+[XYZ]STYLE
+</h3>
+
+<a name="wp332132"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>![XYZ].<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997742">STYLE</a></nobr>.
+</p>
+
+<a name="wp332137"> </a><p class="pBody">This keyword allows
+specification of axis options such as rounding of tick values and
+selection of a box axis. Each option is described in the following
+table:</p><div>
+<table border="0" cellpadding="10" cellspacing="1">
+  <caption></caption>
+  <tbody><tr bgcolor="#d5d5de">    <th><a name="wp332140"> </a><div class="pCellHeading">
+Value
+</div>
+
+</th>
+    <th><a name="wp332142"> </a><div class="pCellHeading">
+Description
+</div>
+
+</th>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp332144"> </a>
+1
+
+
+</td>
+    <td><a name="wp332146"> </a><div class="pCellBody">
+Force exact axis range.
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp332148"> </a>
+2
+
+
+</td>
+    <td><a name="wp332150"> </a><div class="pCellBody">
+Extend axis range.
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp332152"> </a>
+4
+
+
+</td>
+    <td><a name="wp332154"> </a><div class="pCellBody">
+Suppress entire axis
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp332156"> </a>
+8
+
+
+</td>
+    <td><a name="wp332158"> </a><div class="pCellBody">
+Suppress box style axis (i.e., draw axis on only one side of plot)
+</div>
+
+</td>
+</tr>
+  <tr bgcolor="#e2e2e2">    <td><a name="wp332160"> </a>
+16
+
+
+</td>
+    <td><a name="wp332162"> </a><div class="pCellBody">
+Inhibit setting the Y axis minimum value to 0 (Y axis only)
+</div>
+
+</td>
+</tr>
+</tbody></table>
+</div>
+<p class="pBody">
+</p>
+
+<a name="wp332169"> </a><p class="pBody">
+Note that this keyword is set bitwise, so multiple effects can be set
+by adding values together. For example, to make an X axis that is both
+exact (value 1) and suppresses the box style (setting 8), set the XAXIS
+keyword to 1+8, or 9.
+</p>
+
+<a name="wp359178"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332298"> </a><h3 class="pHeading2">
+[XYZ]THICK
+</h3>
+
+<a name="wp332314"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>![XYZ].<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997798">THICK</a></nobr>.
+</p>
+
+<a name="wp332318"> </a><p class="pBody">
+This keyword controls the thickness of the lines forming the axis and tick marks. A value of 1.0 is the default.
+</p>
+
+<a name="wp359184"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332321"> </a><h3 class="pHeading2">
+[XYZ]TICK_GET
+</h3>
+
+<a name="wp332337"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>.
+</p>
+
+<a name="wp332338"> </a><p class="pBody">A named variable in which to
+return the values of the tick marks for the designated axis. The result
+is a double precision floating-point array with the same number of
+elements as ticks.
+</p>
+
+<a name="wp332342"> </a><p class="pBody">
+For example, to retrieve in the variable V the values of the tick marks selected by IDL for the Y axis:
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">PLOT, X, Y, YTICK_GET = V 
+</pre></div>
+
+<a name="wp359190"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332347"> </a><h3 class="pHeading2">
+[XYZ]TICKFORMAT
+</h3>
+
+<a name="wp332363"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>![XYZ].<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997801">TICKFORMAT</a></nobr>.
+</p>
+
+<a name="wp332367"> </a><p class="pBody">Set this keyword to a string
+or a vector of strings. If a vector is provided, each string
+corresponds to a level of the axis. The <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332586">[XYZ]TICKUNITS</a> keyword determines the number of levels for an axis.
+</p>
+
+<a name="wp332371"> </a><p class="pBody">
+Each string is one of the following:
+</p>
+
+<a name="wp332372"> </a><h4 class="pHeading3">
+A format code:
+</h4>
+
+<a name="wp332373"> </a><p class="pBody">
+If the string begins with an open parenthesis, it is treated as a standard format string. See <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/files13.html#wp168633">Format Codes</a> for more information on format codes.
+</p>
+
+<a name="wp332380"> </a><p class="pBody">
+<b class="cBold">Example 1</b>: Display the X axis tick values using a format of F6.2 (six characters, with 2 places after the decimal point):
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">PLOT, X, Y, XTICKFORMAT='(F6.2)' 
+</pre></div>
+
+<a name="wp332382"> </a><p class="pBody">
+<b class="cBold">Example 2</b>: Display the Y tick values using the "dollars and cents" format $<i class="cItalic">dddd.dd</i>:
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">PLOT, X, Y, YTICKFORMAT='("$", F7.2)' 
+</pre></div>
+
+<a name="wp332384"> </a><h4 class="pHeading3">
+The string 'LABEL_DATE' :
+</h4>
+
+<a name="wp332385"> </a><p class="pBody">
+Set [XYZ]TICKFORMAT to the string 'LABEL_DATE' to create axes with date
+labels. The formatting of the labels is specified by first calling
+LABEL_DATE with the DATE_FORMAT keyword. See <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/L25.html#wp958419">LABEL_DATE</a> for more information.
+</p>
+
+<a name="wp332389"> </a><p class="pBody">
+<b class="cBold">Example</b>: Use the LABEL_DATE function as the callback function to display the X tick values in a date/time format:
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">dummy = LABEL_DATE(DATE_FORMAT='%M %Z') 
+mytimes = TIMEGEN(12, UNITS='MONTHS', START=JULDAY(1,1,2000)) 
+y = FINDGEN(12) 
+PLOT, mytimes, y, XTICKUNITS='Time', XTICKFORMAT='LABEL_DATE' 
+</pre></div>
+
+<a name="wp332394"> </a><h4 class="pHeading3">
+The name of a user-defined function:
+</h4>
+
+<a name="wp332395"> </a><p class="pBody">
+If the string does not begin with an open parenthesis, it is
+interpreted as the name of a callback function to be used to generate
+tick mark labels. This function is defined with either three or four
+parameters, depending on whether [XYZ]TICKUNITS is specified:
+</p>
+
+<a name="wp332396"> </a><p class="pBody">
+If [XYZ]TICKUNITS is <i class="cItalic">not</i> specified, the callback function is called with three parameters, <i class="cItalic">Axis</i>, <i class="cItalic">Index</i>, and <i class="cItalic">Value</i>, where:
+</p>
+
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp332397"> </a><div class="pSmartList1"><li><i class="cItalic">Axis</i> is the axis number: 0 for X axis, 1 for Y axis, 2 for Z axis.</li></div>
+
+<a name="wp332398"> </a><div class="pSmartList1"><li><i class="cItalic">Index</i> is the tick mark index (indices start at 0).</li></div>
+
+<a name="wp332399"> </a><div class="pSmartList1"><li><i class="cItalic">Value</i> is the data value at the tick mark (a double-precision floating point value).</li></div>
+
+</ul></div>
+ 
+<a name="wp359195"> </a><p class="pBody">
+
+</p>
+
+<a name="wp332400"> </a><p class="pNote">
+
+</p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td width="40"><b>Note</b></td><td><hr></td>
+</tr></tbody></table>
+  <a name="332400"> </a><i class="cItalic">Value</i>
+is a double-precision floating-point value that represents the Julian
+date. The Julian date follows the astronomical convention, where Julian
+date 0.0d corresponds to 1 Jan 4713 B.C.E. at 12 pm.
+<hr>
+
+
+<a name="wp332401"> </a><p class="pBody">
+If [XYZ]TICKUNITS is specified, the callback function is called with four parameters, <i class="cItalic">Axis</i>, <i class="cItalic">Index</i>, <i class="cItalic">Value</i>, and <i class="cItalic">Level</i>, where:
+</p>
+
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp332402"> </a><div class="pSmartList1"><li><i class="cItalic">Axis</i>, <i class="cItalic">Index</i>, and <i class="cItalic">Value</i> are the same as described above.</li></div>
+
+<a name="wp332403"> </a><div class="pSmartList1"><li><i class="cItalic">Level</i> is the index of the axis level for the current tick value to be labeled (level indices start at 0).</li></div>
+
+</ul></div>
+ 
+<a name="wp332404"> </a><p class="pBody">
+<b class="cBold">Example 1</b>: Use a callback function to display the
+Y tick values as a percentage of a fixed value. Note that because we
+don't specify [XYZ]TICKUNITS, we do not include the <i class="cItalic">Level</i> parameter in our function definition:
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">FUNCTION YTICKS, axis, index, value 
+   fixvalue = 389.0d 
+   pvalue = (value/fixvalue) * 100.0d 
+   RETURN, STRING(pvalue, FORMAT='(D5.2,"%")') 
+END 
+ 
+PRO use_callback 
+&nbsp;&nbsp;&nbsp;Y = FINDGEN(10) 
+&nbsp;&nbsp;&nbsp;PLOT, Y, YTICKFORMAT='YTICKS' 
+END 
+</pre></div>
+
+<a name="wp332417"> </a><p class="pBody">
+<b class="cBold">Example 2</b>: Create a two-level X axis. Display the
+X tick values in a customized date/time format that shows the number of
+days open for business for each month on one level, and marks leap
+years with an asterisk on another level:
+</p>
+
+<div class="pPreformatted"><pre class="pPreformatted">FUNCTION XTICKS, axis, index, value, level 
+ 
+   CASE level OF 
+     0: BEGIN ; months 
+          ; Number of days open for business in given month: 
+          CALDAT, value, month 
+          open = [18,19,23,20,22,22,19,10,20,21,22,14] 
+          nbdays = open[month] 
+          ; Return a string containing the month name plus 
+          ; the number of business days in parentheses: 
+          RETURN, STRING(value, nbdays, $ 
+             FORMAT='(C(CMoA), "(", I2, ")")')  
+       END 
+     1: BEGIN ; years 
+          ; Generate a string for the year. 
+          yrStr = STRING(value, FORMAT='(C(CYI))') 
+          ; Determine if a leap year.  If so,  
+          ; append an asterisk to the string. 
+          CALDAT, value, mo, da, yr 
+          IF (yr MOD 4 EQ 0) THEN BEGIN 
+             IF (yr MOD 100 EQ 0) THEN $ 
+                isLeap = (yr MOD 400) EQ 0 $ 
+             ELSE $ 
+                IsLeap = 1b 
+          ENDIF ELSE $ 
+          isLeap = 0b 
+          IF (isLeap NE 0b) THEN $ 
+             yrStr = yrStr + '*' 
+             RETURN, yrStr  
+          END 
+     ENDCASE 
+      
+END 
+    
+PRO plot_sales 
+ 
+   myDates = TIMEGEN(12, UNITS='Months', START=JULDAY(1,1,2000)) 
+   sales = [180,190,230,200,220,220,190,100,200,210,220,140] 
+   PLOT, myDates, sales, XTICKUNITS=['Months', 'Years'], $ 
+      XTICKFORMAT='XTICKS', XTITLE = 'Date (* = Leap Year)', $ 
+      YTITLE='Sales (units)', POSITION = [0.2, 0.2, 0.9, 0.9] 
+ 
+END 
+</pre></div>
+
+<a name="wp359201"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332463"> </a><h3 class="pHeading2">
+[XYZ]TICKINTERVAL
+</h3>
+
+<a name="wp332479"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>
+</p>
+
+<a name="wp332483"> </a><p class="pBody">
+variable equivalent: <nobr>![XYZ].<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997808">TICKINTERVAL</a></nobr>
+</p>
+
+<a name="wp332484"> </a><p class="pBody">Set this keyword to a scalar
+indicating the interval between major tick marks for the first axis
+level. The default value is computed according to the axis range
+([XYZ]RANGE) and the number of major tick intervals ([XYZ]TICKS). This
+keyword takes precedence over [XYZ]TICKS.
+</p>
+
+<a name="wp332485"> </a><p class="pBody">For example, if
+TICKUNITS=["Seconds", "Hours", "Days"], and XTICKINTERVAL=30, then the
+interval between major ticks for the first axis level will be 30
+seconds.
+</p>
+
+<a name="wp359207"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332488"> </a><h3 class="pHeading2">
+[XYZ]TICKLAYOUT
+</h3>
+
+<a name="wp332504"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>![XYZ].TICKLAYOUT.</nobr>
+</p>
+
+<a name="wp332505"> </a><p class="pBody">
+Set this keyword to a scalar that indicates the tick layout style to be used to draw each level of the axis. 
+</p>
+
+<a name="wp332506"> </a><p class="pBody">
+Valid values include:
+</p>
+
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp332507"> </a><div class="pSmartList1"><li>0 = The axis line,
+major tick marks and tick labels are all included. Minor tick marks
+only appear on the first level of the axis. This is the default tick
+layout style.</li></div>
+
+<a name="wp332508"> </a><div class="pSmartList1"><li>1 = Only the labels for the major tick marks are drawn. The axis line, major tick marks, and minor tick marks are omitted. </li></div>
+
+<a name="wp332509"> </a><div class="pSmartList1"><li>2 = Each major
+tick interval is outlined by a box. The tick labels are positioned
+within that box (left-aligned). For the first axis level only, the
+major and minor tick marks will also be drawn.</li></div>
+
+</ul></div>
+ 
+<a name="wp359212"> </a><p class="pBody">
+
+</p>
+
+<a name="wp332510"> </a><p class="pNote">
+
+</p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td width="40"><b>Note</b></td><td><hr></td>
+</tr></tbody></table>
+  <a name="332510"> </a>For all tick layout
+styles, at least one tick label will appear on each level of the axis
+(even if no major tick marks fall along the axis line). If there are no
+major tick marks, the single tick label will be centered along the
+axis.
+<hr>
+
+
+<a name="wp359218"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332513"> </a><h3 class="pHeading2">
+[XYZ]TICKLEN
+</h3>
+
+<a name="wp332529"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>![XYZ].<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp1012793">TICKLEN</a></nobr>.
+</p>
+
+<a name="wp332533"> </a><p class="pBody">This keyword controls the
+lengths of tick marks (expressed in normal coordinates) for the
+individual axes. This keyword, if nonzero, overrides the global tick
+length specified in <nobr>!P.TICKLEN,</nobr> and/or the TICKLEN keyword parameter, which is expressed in terms of the window size.
+</p>
+
+<a name="wp359224"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332536"> </a><h3 class="pHeading2">
+[XYZ]TICKNAME
+</h3>
+
+<a name="wp332552"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>![XYZ].<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997811">TICKNAME</a></nobr>.
+</p>
+
+<a name="wp332556"> </a><p class="pBody">
+A string array of up to 30 elements that controls the annotation of each tick mark.
+</p>
+
+<a name="wp359230"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332559"> </a><h3 class="pHeading2">
+[XYZ]TICKS
+</h3>
+
+<a name="wp332575"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>![XYZ].<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp999577">TICKS</a></nobr>.
+</p>
+
+<a name="wp332579"> </a><p class="pBody">
+The number of major tick <i class="cItalic">intervals</i> to draw for the axis. If this keyword is omitted, IDL selects from three to six tick intervals. Setting this field to <i class="cItalic">n</i>, where <i class="cItalic">n</i> &gt; 1, produces exactly <i class="cItalic">n</i> tick intervals, and <i class="cItalic">n</i>+1 tick marks. Setting this field equal to 1 suppresses tick marks.
+</p>
+
+<a name="wp359236"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332586"> </a><h3 class="pHeading2">
+[XYZ]TICKUNITS
+</h3>
+
+<a name="wp332602"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>![XYZ].TICKUNITS.</nobr>
+</p>
+
+<a name="wp332603"> </a><p class="pBody">
+Set this keyword to a string or a vector of strings indicating the
+units to be used for axis tick labeling. If a vector of strings is
+provided, the axis will be drawn in multiple levels, where each string
+represents one level in the specified units.
+</p>
+
+<a name="wp332605"> </a><p class="pNote">
+
+</p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td width="40"><b>Note</b></td><td><hr></td>
+</tr></tbody></table>
+  <a name="332605"> </a>When creating multiple-level axes, you may need to adjust the plot positioning using the <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp316026">POSITION</a> or <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp332038">[XYZ]MARGIN</a> keywords in order to ensure that axis labels and titles are visible in the plot window.
+<hr>
+
+
+<a name="wp332612"> </a><p class="pBody">The order in which the strings
+appear in the vector determines the order in which the corresponding
+unit levels will be drawn. The first string corresponds to the first
+level (the level nearest to the primary axis line).
+</p>
+
+<a name="wp332613"> </a><p class="pBody">
+Valid unit strings include:
+</p>
+
+<div class="pSmartList1"><ul class="pSmartList1">
+<a name="wp332614"> </a><div class="pSmartList1"><li>'Numeric'</li></div>
+
+<a name="wp332615"> </a><div class="pSmartList1"><li>'Years'</li></div>
+
+<a name="wp332616"> </a><div class="pSmartList1"><li>'Months'</li></div>
+
+<a name="wp332617"> </a><div class="pSmartList1"><li>'Days'</li></div>
+
+<a name="wp332618"> </a><div class="pSmartList1"><li>'Hours'</li></div>
+
+<a name="wp332619"> </a><div class="pSmartList1"><li>'Minutes'</li></div>
+
+<a name="wp332620"> </a><div class="pSmartList1"><li>'Seconds'</li></div>
+
+<a name="wp332621"> </a><div class="pSmartList1"><li>'Time' - Use this
+value to indicate that the tick values are time values; IDL will
+determine the appropriate time intervals and tick label formats based
+upon the range of values covered by the axis.</li></div>
+
+<a name="wp332622"> </a><div class="pSmartList1"><li>''- Use the empty
+string to indicate that no tick units are being explicitly set. This
+implies that a single axis level will be drawn using the 'Numeric'
+unit. This is the default setting.</li></div>
+
+</ul></div>
+ 
+<a name="wp332623"> </a><p class="pBody">
+If any of the time units are utilized, the tick values are interpreted as Julian date/time values.
+</p>
+
+<a name="wp332624"> </a><p class="pBody">
+Note that the singular form of each of the time value strings is also
+acceptable (e.g, TICKUNITS='Day' is equivalent to TICKUNITS='Days').
+</p>
+
+<a name="wp332625"> </a><p class="pNote">
+
+</p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td width="40"><b>Note</b></td><td><hr></td>
+</tr></tbody></table>
+  <a name="332625"> </a>Julian values must be in
+the range -1095 to 1827933925, which corresponds to calendar dates 1
+Jan 4716 B.C.E. and 31 Dec 5000000, respectively.
+<hr>
+
+
+<a name="wp359242"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332628"> </a><h3 class="pHeading2">
+[XYZ]TICKV
+</h3>
+
+<a name="wp332644"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>![XYZ].<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997833">TICKV</a></nobr>.
+</p>
+
+<a name="wp332648"> </a><p class="pBody">
+The data values for each tick mark, an array of up to 60 elements.
+</p>
+
+<a name="wp332649"> </a><p class="pNote">
+
+</p><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td width="40"><b>Note</b></td><td><hr></td>
+</tr></tbody></table>
+  <a name="332649"> </a>To specify the number of ticks and their values exactly, set [XYZ]TICKS=<i class="cItalic">N(where N &gt; 1) </i>and [XYZ]TICKV=<i class="cItalic">Values</i>, where <i style="font-style: italic;" class="cItalic">Values </i><i style="font-style: normal;" class="cItalic">has</i><i class="cItalic"> N</i>+1 elements.
+<hr>
+
+
+<a name="wp359248"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp316100"> </a><h3 class="pHeading2">
+[XYZ]TITLE
+</h3>
+
+<a name="wp267168"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>. System variable equivalent: <nobr>![XYZ].<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/sysvars7.html#wp997839">TITLE</a></nobr>.
+</p>
+
+<a name="wp316101"> </a><p class="pBody">
+A string that contains a title for the specified axis.
+</p>
+
+<a name="wp359254"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp332658"> </a><h3 class="pHeading2">
+Z
+</h3>
+
+<a name="wp332674"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P10.html#wp678154">PLOTS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P19.html#wp678236">POLYFILL</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/T31.html#wp679666">TV</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/T32.html#wp679718">TVCRS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/X24.html#wp971974">XYOUTS</a>.
+</p>
+
+<a name="wp332675"> </a><p class="pBody">Provides the Z coordinate if a
+Z parameter is not present in the call. This is of use only if the
+three-dimensional transformation is in effect (i.e., the T3D keyword is
+set).
+</p>
+
+<a name="wp359260"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp316102"> </a><h3 class="pHeading2">
+ZVALUE
+</h3>
+
+<a name="wp267170"> </a><p class="pBody">
+Accepted by: <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/A20.html#wp675776">AXIS</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/C40.html#wp908085">CONTOUR</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/M15.html#wp887896">MAP_SET</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/O12.html#wp889954">OPLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/P6.html#wp678087">PLOT</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S16.html#wp678738">SHADE_SURF</a>, <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/S75.html#wp679201">SURFACE</a>.
+</p>
+
+<a name="wp267171"> </a><p class="pBody">Sets the Z coordinate, in
+normalized coordinates in the range of 0 to 1, of the axis and data
+output from PLOT, OPLOT, and CONTOUR.
+</p>
+
+<a name="wp316106"> </a><p class="pBody">
+This keyword has effect only if <nobr>!P.T3D</nobr> is set and the three-dimensional to two- dimensional transformation is stored in <nobr>!P.T.</nobr>
+If ZVALUE is not specified, CONTOUR will output each contour at its Z
+coordinate, and the axes and title at a Z coordinate of 0.0.
+</p>
+
+<a name="wp359266"> </a><p class="pBody">
+<a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw2.html#wp358894">Back to Keywords List</a>
+</p>
+
+<a name="wp335359"> </a><p class="pBody">
+
+</p>
+<hr><div class="CellBody"><a href="http://www.physics.nyu.edu/grierlab/idl_html_help/home.html">Home</a> | <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/funclisting.html">Categories</a> | <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/idl_alph.html">Alphabetical</a> | <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/idl_obj_class.html">Classes</a> | <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/idl_con.html">All Contents</a> | <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/graphkeyw.html">[ &lt; ]</a> | <a href="http://www.physics.nyu.edu/grierlab/idl_html_help/tpoolkeyw.html">[ &gt; ]</a></div>
+
+  </body></html>

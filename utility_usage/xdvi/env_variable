@@ -1,0 +1,9 @@
+# To stop mannually compiled xdvi from complaining
+
+#XDVI setting
+setenv TEXMF `kpsewhich --expand-path='$TEXMFMAIN'`
+#echo $TEXMF
+setenv LC_ALL C
+setenv XDVIINPUTS $TEXMF/xdvi
+
+# Important notice : If you do:  setenv LC_ALL C , the font will be set as C however, this may cause some issue for SVN, if the repository are not in English

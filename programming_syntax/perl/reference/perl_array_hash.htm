@@ -1,0 +1,818 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+ <title>[Chapter 11] References and Records</title> <meta name="DC.title" content="Perl Cookbook"><meta name="DC.creator" content="Tom Christiansen &amp; Nathan Torkington"><meta name="DC.publisher" content="O'Reilly &amp; Associates, Inc."><meta name="DC.date" content="1999-07-02T01:40:22Z"><meta name="DC.type" content="Text.Monograph"><meta name="DC.format" content="text/html" scheme="MIME"><meta name="DC.source" content="1-56592-243-3" scheme="ISBN"><meta name="DC.language" content="en-US"><meta name="generator" content="Jade 1.1/O'Reilly DocBook 3.0 to HTML 4.0"><link rev="made" href="mailto:online-books@oreilly.com" title="Online Books Comments"><link rel="up" href="http://docstore.mik.ua/orelly/perl/cookbook/index.htm" title="Perl Cookbook"><link rel="prev" href="http://docstore.mik.ua/orelly/perl/cookbook/ch10_18.htm" title="10.17. Program: Sorting Your Mail"><link rel="next" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_02.htm" title="11.1. Taking References to Arrays"></head><body margin="10" bgcolor="white">
+<center><script type="text/javascript">document.write('<a href=http://docstore.mik.ua/orelly/>O\'Reilly\'s CD bookshelfs</a> | <a href=http://docstore.mik.ua/manuals/freebsd.html>FreeBSD</a> |  <a href=http://docstore.mik.ua/manuals/linux.html>Linux</a> | <a href=http://docstore.mik.ua/univercd/cc/td/doc/product/>Cisco</a>  | <a href=http://www.e-reading.org.ua>e-Reading Library</a> <br>');</script><a href="http://docstore.mik.ua/orelly/">O'Reilly's CD bookshelfs</a> | <a href="http://docstore.mik.ua/manuals/freebsd.html">FreeBSD</a> |  <a href="http://docstore.mik.ua/manuals/linux.html">Linux</a> | <a href="http://docstore.mik.ua/univercd/cc/td/doc/product/">Cisco</a>  | <a href="http://www.e-reading.org.ua/">e-Reading Library</a> <br>
+</center><hr size="1" width="80%">
+<table width="95%" border="0"><tbody><tr><td style="vertical-align: top; width: 200px;">
+<br><br><br><br><br><br>
+<script type="text/javascript"><!--
+google_ad_client = "pub-0321943928525350";
+/* 160x600, o-rightfixed */
+google_ad_slot = "5248352378";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="perl_array_hash_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 600px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 160px;"><ins id="aswift_0_anchor" style="display: block; border: medium none; height: 600px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 160px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="600" scrolling="no" width="160"></iframe></ins></ins>
+</td><td style="vertical-align: top;" rowspan="2">
+<div class="htmlnav">
+<h1>
+<img src="perl_array_hash_files/smbanner.gif" alt="Perl Cookbook" usemap="#srchmap" border="0"></h1>
+<map name="srchmap">
+<area shape="RECT" coords="0,0,466,65" href="http://docstore.mik.ua/orelly/perl/cookbook/index.htm" alt="Perl Cookbook"><area shape="RECT" coords="467,0,514,18" href="http://docstore.mik.ua/orelly/perl/search/csrch.htm" alt="Search this book"></map>
+<table width="515" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="TOP" width="172" align="LEFT">
+<a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch10_18.htm" title="10.17. Program: Sorting Your Mail">
+<img src="perl_array_hash_files/txtpreva.gif" alt="Previous: 10.17. Program: Sorting Your Mail" border="0"></a>
+</td>
+<td valign="TOP" width="171" align="CENTER">
+<b>
+<font face="ARIEL,HELVETICA,HELV,SANSERIF" size="-1">
+Chapter 11</font>
+</b>
+</td>
+<td valign="TOP" width="172" align="RIGHT">
+<a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_02.htm" title="11.1. Taking References to Arrays">
+<img src="perl_array_hash_files/txtnexta.gif" alt="Next: 11.1. Taking References to Arrays" border="0"></a>
+</td>
+</tr>
+</tbody></table>
+&nbsp;<hr title="footer" width="515" align="LEFT"></div>
+<div class="chapter">
+<h1 class="chapter">
+<a class="title" name="ch11-17513">
+11. References and Records</a>
+</h1>
+<div class="htmltoc">
+<p>
+<b>
+Contents:</b>
+<br><a class="sect1" href="#ch11-31765" title="11.0. Introduction">
+Introduction</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_02.htm" title="11.1. Taking References to Arrays">
+Taking References to Arrays</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_03.htm" title="11.2. Making Hashes of Arrays">
+Making Hashes of Arrays</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_04.htm" title="11.3. Taking References to Hashes">
+Taking References to Hashes</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_05.htm" title="11.4. Taking References to Functions">
+Taking References to Functions</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_06.htm" title="11.5. Taking References to Scalars">
+Taking References to Scalars</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_07.htm" title="11.6. Creating Arrays of Scalar References">
+Creating Arrays of Scalar References</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_08.htm" title="11.7. Using Closures Instead of Objects">
+Using Closures Instead of Objects</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_09.htm" title="11.8. Creating References to Methods">
+Creating References to Methods</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_10.htm" title="11.9. Constructing Records">
+Constructing Records</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_11.htm" title="11.10. Reading and Writing Hash Records to Text Files">
+Reading and Writing Hash Records to Text Files</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_12.htm" title="11.11. Printing Data Structures">
+Printing Data Structures</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_13.htm" title="11.12. Copying Data Structures">
+Copying Data Structures</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_14.htm" title="11.13. Storing Data Structures to Disk">
+Storing Data Structures to Disk</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_15.htm" title="11.14. Transparently Persistent Data Structures">
+Transparently Persistent Data Structures</a>
+<br><a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_16.htm" title="11.15. Program: Binary Trees">
+Program: Binary Trees</a>
+</p>
+<p>
+</p>
+</div>
+<div class="epigraph" align="right">
+<p class="para" align="right">
+<i>
+With as little a web as this will I ensnare as great a fly as Cassio.</i>
+</p>
+<p class="attribution" align="right">
+-&nbsp;Shakespeare <cite class="citetitle">
+Othello, Act II, scene i </cite>
+</p>
+</div>
+<div class="sect1">
+<h2 class="sect1">
+<a class="title" name="ch11-31765">
+11.0. Introduction</a>
+</h2>
+<p class="para">
+Perl provides three fundamental data types: scalars, arrays, and hashes.
+ It's certainly possible to write many programs without recourse to 
+complex records, but most programs need something more complex than 
+simple variables and lists.</p>
+<p class="para">
+Perl's three built-in types combine with references to produce 
+arbitrarily complex and powerful data structures, the records that users
+ of ancient versions of Perl desperately yearned for. Selecting the 
+proper data structure and algorithm can make the difference between an 
+elegant program that does its job quickly and an ungainly concoction 
+that's glacially slow to execute and consumes system resources 
+voraciously.</p>
+<p class="para">
+The first part of this chapter shows how to create and use plain 
+references. The second part shows how to use references to create higher
+ order data structures.</p>
+<div class="sect2">
+<h3 class="sect2">
+<a class="title" name="ch11-chap11_references_1">
+References</a>
+</h3>
+<p class="para">
+<a class="indexterm" name="ch11-idx-1000004778-0">
+</a>
+To grasp the concept of references, you must first understand how Perl 
+stores values in variables. Each defined variable has a name and the 
+address of a chunk of memory associated with it. This idea of storing 
+addresses is fundamental to references because a reference is a value 
+that holds the location of another value. The scalar value that contains
+ the memory address is called a <em class="emphasis">
+reference</em>
+. Whatever value lives at that memory address is called a <em class="emphasis">
+referent</em>
+<a class="indexterm" name="ch11-idx-1000004785-0">
+</a>
+. (You may also call it a "thingie" if you prefer to live a whimsical existence.) See <a class="xref" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_01.htm#ch11-12670" title="Reference and referent">
+Figure 11.1</a>
+.</p>
+<p class="para">
+The referent could be any of Perl's built-in types (scalar, array, hash,
+ ref, code, or glob) or a user-defined type based on one of the built-in
+ ones.</p>
+<h4 class="figure">
+<a class="title" name="ch11-12670">
+Figure 11.1: Reference and referent</a>
+</h4>
+<img class="graphic" src="perl_array_hash_files/pcb_1101.gif" alt="Figure 11.1"><p class="para">
+Referents in Perl are <em class="emphasis">
+typed</em>
+<a class="indexterm" name="ch11-idx-1000004784-0">
+</a>
+. This means you can't treat a reference to an array as though it were a
+ reference to a hash, for example. Attempting to do so produces a 
+runtime exception. No mechanism for type casting exists in Perl. This is
+ considered a feature.</p>
+<p class="para">
+So far, it may look as though a reference were little more than a raw 
+address with strong typing. But it's far more than that. Perl takes care
+ of automatic memory allocation and deallocation (garbage collection) 
+for references, just as it does for everything else. Every chunk of 
+memory in Perl has a <em class="emphasis">
+reference count</em>
+<a class="indexterm" name="ch11-idx-1000004786-0">
+</a>
+ associated with it, representing how many places know about that 
+referent. The memory used by a referent is not returned to the process's
+ free pool until its reference count reaches zero. This ensures that you
+ never have a reference that isn't valid &nbsp;-  no more core dumps and
+ general protection faults from mismanaged pointers as in C.</p>
+<p class="para">
+Freed memory is returned to Perl for later use, but few operating 
+systems reclaim it and decrease the process's memory footprint. This is 
+because most memory allocators use a stack, and if you free up memory in
+ the middle of the stack, the operating system can't take it back 
+without moving the rest of the allocated memory around. That would 
+destroy the integrity of your pointers and blow XS code out of the 
+water.</p>
+<p class="para">
+To follow a reference to its referent, preface the reference with the 
+appropriate type symbol for the data you're accessing. For instance, if <code class="literal">
+$sref</code>
+ is a reference to a scalar, you can say:</p>
+<code>
+print $$sref;    # prints the scalar value that the reference $sref refers to $$sref = 3;      # assigns to $sref's referent</code>
+<p class="para">
+To access one element of an array or hash whose reference you have, use the <a class="indexterm" name="ch11-idx-1000004787-0">
+</a>
+<a class="indexterm" name="ch11-idx-1000004787-1">
+</a>
+<a class="indexterm" name="ch11-idx-1000004787-2">
+</a>
+infix pointer-arrow notation, as in <code class="literal">
+$rv-&gt;[37]</code>
+ or <code class="literal">
+$rv-&gt;{"wilma"}</code>
+. Besides dereferencing array references and hash references, the arrow 
+is also used to call an indirect function through its reference, as in <code class="literal">
+$code_ref-&gt;("arg1",</code>
+ <code class="literal">
+"arg2")</code>
+; this is discussed <a class="xref" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_05.htm" title="Taking References to Functions">
+Recipe 11.4</a>
+. If you're using an object, use an arrow to call a method, <code class="literal">
+$object-&gt;methodname("arg1",</code>
+<span class="acronym">
+ </span>
+<code class="literal">
+"arg2")</code>
+, as shown in <a class="xref" href="http://docstore.mik.ua/orelly/perl/cookbook/ch13_01.htm" title="Classes, Objects, and Ties">
+Chapter 13, <cite class="chapter">
+Classes, Objects, and Ties</cite>
+</a>
+.</p>
+<p class="para">
+Perl's syntax rules make dereferencing complex expressions tricky 
+&nbsp;-  it falls into the category of "hard things that should be 
+possible." Mixing right associative and left associative operators 
+doesn't work out well. For example, <code class="literal">
+$$x[4]</code>
+ is the same as <code class="literal">
+$x-&gt;[4]</code>
+; that is, it treats <code class="literal">
+$x</code>
+ as a reference to an array and then extracts element number four from that. This could also have been written <code class="literal">
+${$x}[4]</code>
+. If you really meant "take the fifth element of <code class="literal">
+@x</code>
+ and dereference it as a scalar reference," then you need to use <code class="literal">
+${$x[4]}</code>
+. You should avoid putting two type signs (<code class="literal">
+$@%&amp;</code>
+) side-by-side, unless it's simple and unambiguous like <code class="literal">
+%hash</code>
+ <code class="literal">
+=</code>
+ <code class="literal">
+%$hashref</code>
+.</p>
+<p class="para">
+In the simple cases using <code class="literal">
+$$sref</code>
+ above, you could have written:</p>
+<code>
+print ${$sref};             # prints the scalar $sref refers to ${$sref} = 3;               # assigns to $sref's referent</code>
+<p class="para">
+For safety, some programmers use this notation exclusively.</p>
+<p class="para">
+When passed a reference, the <code class="literal">
+ref</code>
+<a class="indexterm" name="ch11-idx-1000004788-0">
+</a>
+ function returns a string describing its referent. (It returns false if
+ passed a non-reference.) This string is usually one of SCALAR, ARRAY, 
+HASH, or CODE, although the other built-in types of GLOB, REF, IO, 
+Regexp, and LVALUE also occasionally appear. If you call <code class="literal">
+ref</code>
+ on a non-reference, it returns an empty string. If you call <code class="literal">
+ref</code>
+ on an object (a reference whose referent has been blessed), it returns 
+the class the object was blessed into: CGI, IO::Socket, or even 
+ACME::Widget.</p>
+<p class="para">
+You can create references in Perl by taking references to things that are already there or by using the <code class="literal">
+[</code>
+ <code class="literal">
+]</code>
+, <code class="literal">
+{</code>
+ <code class="literal">
+}</code>
+, and <code class="literal">
+sub</code>
+ <code class="literal">
+{</code>
+ <code class="literal">
+}</code>
+ composers. The backslash operator is simple to use: put it before the 
+thing you want a reference to. For instance, if you want a reference to 
+the contents of <code class="literal">
+@array</code>
+, just say:</p>
+<code>
+$aref = \@array;</code>
+<p class="para">
+You can even create references to constant values;  future attempts to 
+change the value of the referent will cause a runtime error:</p>
+<code>
+$pi = \3.14159; $$pi = 4;           # runtime error<a class="indexterm" name="ch11-idx-1000004779-0">
+</a>
+</code>
+</div>
+<div class="sect2">
+<h3 class="sect2">
+<a class="title" name="ch11-chap11_anonymous_0">
+Anonymous Data</a>
+</h3>
+<p class="para">
+<a class="indexterm" name="ch11-idx-1000004780-0">
+</a>
+Taking references to existing data is helpful when you're using 
+pass-by-reference in a function call, but for dynamic programming, it 
+becomes cumbersome. You need to be able to grow data structures at will,
+ to allocate new arrays and hashes (or scalars or functions) on demand. 
+You don't want to be bogged down with having to give them names each 
+time.</p>
+<p class="para">
+<a class="indexterm" name="ch11-idx-1000004789-0">
+</a>
+<a class="indexterm" name="ch11-idx-1000004789-1">
+</a>
+Perl can explicitly create anonymous arrays and hashes, which allocate a
+ new array or hash and return a reference to that memory:</p>
+<code>
+$aref = [ 3, 4, 5 ];                                # new anonymous 
+array $href = { "How" =&gt; "Now", "Brown" =&gt; "Cow" };       # new 
+anonymous hash</code>
+<p class="para">
+Perl can also create a reference implicitly by <em class="emphasis">
+autovivification</em>
+<a class="indexterm" name="ch11-idx-1000004790-0">
+</a>
+<a class="indexterm" name="ch11-idx-1000004790-1">
+</a>
+. This is what happens when you try to assign through an undefined 
+references and Perl automatically creates the reference you're trying to
+ use.</p>
+<code>
+undef $aref; @$aref = (1, 2, 3); print $aref; <code class="userinput">
+<b>
+<code class="replaceable">
+<i>
+ARRAY(0x80c04f0)</i>
+</code>
+</b>
+</code>
+</code>
+<p class="para">
+Notice how we went from an undefined variable to one with an array 
+reference in it without actually assigning anything? Perl filled in the 
+undefined reference for you. This is the property that permits something
+ like this to work as the first statement in your program:</p>
+<code>
+$a[4][23][53][21] = "fred"; print $a[4][23][53][21]; <code class="userinput">
+<b>
+<code class="replaceable">
+<i>
+fred</i>
+</code>
+</b>
+</code>
+ print $a[4][23][53]; <code class="userinput">
+<b>
+<code class="replaceable">
+<i>
+ARRAY(0x81e2494)</i>
+</code>
+</b>
+</code>
+ print $a[4][23]; <code class="userinput">
+<b>
+<code class="replaceable">
+<i>
+ARRAY(0x81e0748)</i>
+</code>
+</b>
+</code>
+ print $a[4]; <code class="userinput">
+<b>
+<code class="replaceable">
+<i>
+ARRAY(0x822cd40)</i>
+</code>
+</b>
+</code>
+</code>
+<p class="para">
+The following table shows mechanisms for producing references to both 
+named and anonymous scalars, arrays, hashes, and functions. (Anonymous 
+typeglobs are too scary to show &nbsp;-  and virtually never used. It's 
+best to use <code class="literal">
+Symbol::gensym()</code>
+ or <code class="literal">
+IO::Handle-&gt;new()</code>
+ for them.)</p>
+<table class="informaltable" border="1" cellpadding="3">
+<thead class="thead">
+<tr class="row" valign="TOP">
+<th class="entry" rowspan="1" colspan="1" align="LEFT">
+<p class="para">
+Reference to</p>
+</th>
+<th class="entry" rowspan="1" colspan="1" align="LEFT">
+<p class="para">
+Named</p>
+</th>
+<th class="entry" rowspan="1" colspan="1" align="LEFT">
+<p class="para">
+Anonymous</p>
+</th>
+</tr>
+</thead>
+<tbody class="tbody">
+<tr class="row" valign="TOP">
+<td class="entry" rowspan="1" colspan="1">
+<p class="para">
+Scalar</p>
+</td>
+<td class="entry" rowspan="1" colspan="1">
+<p class="para">
+<code class="literal">
+\$scalar</code>
+</p>
+</td>
+<td class="entry" rowspan="1" colspan="1">
+<p class="para">
+<code class="literal">
+\do{my $anon}</code>
+</p>
+</td>
+</tr>
+<tr class="row" valign="TOP">
+<td class="entry" rowspan="1" colspan="1">
+<p class="para">
+Array</p>
+</td>
+<td class="entry" rowspan="1" colspan="1">
+<p class="para">
+<code class="literal">
+\@array</code>
+</p>
+</td>
+<td class="entry" rowspan="1" colspan="1">
+<p class="para">
+<code class="literal">
+[ LIST ]</code>
+</p>
+</td>
+</tr>
+<tr class="row" valign="TOP">
+<td class="entry" rowspan="1" colspan="1">
+<p class="para">
+Hash</p>
+</td>
+<td class="entry" rowspan="1" colspan="1">
+<p class="para">
+<code class="literal">
+\%hash</code>
+</p>
+</td>
+<td class="entry" rowspan="1" colspan="1">
+<p class="para">
+<code class="literal">
+{ LIST }</code>
+</p>
+</td>
+</tr>
+<tr class="row" valign="TOP">
+<td class="entry" rowspan="1" colspan="1">
+<p class="para">
+Code</p>
+</td>
+<td class="entry" rowspan="1" colspan="1">
+<p class="para">
+<code class="literal">
+\&amp;function</code>
+</p>
+</td>
+<td class="entry" rowspan="1" colspan="1">
+<p class="para">
+<code class="literal">
+sub { CODE } </code>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="para">
+These diagrams illustrate the differences between named and anonymous values. <a class="xref" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_01.htm#ch11-17738" title="Named values">
+Figure 11.2</a>
+ shows named values.</p>
+<h4 class="figure">
+<a class="title" name="ch11-17738">
+Figure 11.2: Named values</a>
+</h4>
+<img class="graphic" src="perl_array_hash_files/pcb_1102.gif" alt="Figure 11.2"><p class="para">
+In other words, saying <code class="literal">
+$a</code>
+ <code class="literal">
+=</code>
+ <code class="literal">
+\$b</code>
+ makes <code class="literal">
+$$a</code>
+ and <code class="literal">
+$b</code>
+ the <em class="emphasis">
+same piece of memory</em>
+. If you say <code class="literal">
+$$a</code>
+ <code class="literal">
+=</code>
+ <code class="literal">
+3</code>
+, then the value of <code class="literal">
+$b</code>
+ is set to 3.</p>
+<p class="para">
+<a class="xref" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_01.htm#ch11-31355" title="Anonymous values">
+Figure 11.3</a>
+ shows anonymous values.</p>
+<h4 class="figure">
+<a class="title" name="ch11-31355">
+Figure 11.3: Anonymous values</a>
+</h4>
+<img class="graphic" src="perl_array_hash_files/pcb_1103.gif" alt="Figure 11.3"><p class="para">
+Every reference evaluates as true, by definition, so if you write a subroutine that returns a reference, you can return <code class="literal">
+undef</code>
+ on error and check for it with:</p>
+<code>
+$op_cit = cite($ibid)       or die "couldn't make a reference";</code>
+<p class="para">
+The <code class="literal">
+undef</code>
+<a class="indexterm" name="ch11-idx-1000004791-0">
+</a>
+ operator can be used on any variable or function in Perl to free its 
+memory. This does not necessarily free memory, call object destructors, 
+etc. It just decrements the reference count by one.<a class="indexterm" name="ch11-idx-1000004781-0">
+</a>
+ Without an argument, <code class="literal">
+undef</code>
+ produces an undefined value.</p>
+</div>
+<div class="sect2">
+<h3 class="sect2">
+<a class="title" name="ch11-chap11_records_0">
+Records</a>
+</h3>
+<p class="para">
+<a class="indexterm" name="ch11-idx-1000004782-0">
+</a>
+The classic use of references in Perl is to circumvent the restriction 
+that arrays and hashes may hold scalars only. References are scalars, so
+ to make an array of arrays, make an array of array <em class="emphasis">
+references</em>
+. Similarly, hashes of hashes are implemented as hashes of hash 
+references, arrays of hashes as arrays of hash references, hashes of 
+arrays as hashes of array references, and so on.</p>
+<p class="para">
+Once you have these complex structures, you can use them to implement 
+records. A record is a single logical unit composed of different 
+attributes. For instance, a name, an address, and a birthday might 
+comprise a record representing a person. C calls such things <em class="emphasis">
+structs</em>
+, and Pascal calls them <em class="emphasis">
+RECORDs</em>
+. Perl doesn't have a particular name for these because you can implement this notion in different ways.</p>
+<p class="para">
+The most common technique in Perl is to treat a hash as a record, where 
+the keys of the hash are the record's field names and the values of the 
+hash are those fields' values.</p>
+<p class="para">
+For instance, we might create a "person" record like this:</p>
+<code>
+$Nat = { "Name"     =&gt; "Leonhard Euler",          "Address"  =&gt; 
+"1729 Ramanujan Lane\nMathworld, PI 31416",          "Birthday" =&gt; 
+0x5bb5580,        };</code>
+<p class="para">
+Because <code class="literal">
+$Nat</code>
+ is a scalar, it can be stored in an array or hash element, thus 
+creating create groups of people. Now apply the array and hash 
+techniques from Chapters 4 and 5 to sort the sets, merge hashes, pick a 
+random record, and so on.</p>
+<p class="para">
+The attributes of a record, including the "person" record, are always 
+scalars. You can certainly use numbers as readily as strings there, but 
+that's no great trick. The real power play happens when you use even 
+more references for values in the record. <code class="literal">
+"Birthday"</code>
+, for instance, might be stored as an anonymous array with three elements: day, month, and year. You could then say <code class="literal">
+$person-&gt;{"Birthday"}-&gt;[0]</code>
+ to access just the day field. Or a date might be represented as a hash record, which would then lend itself to access such as <code class="literal">
+$person-&gt;{"Birthday"}-&gt;{"day"}</code>
+. Adding references to your collection of skills makes possible many more complex and useful programming strategies.</p>
+<p class="para">
+At this point, we've conceptually moved beyond simple records. We're now
+ creating elaborate data structures that represent complicated 
+relationships between the data they hold. Although we <em class="emphasis">
+can</em>
+ use these to implement traditional data structures like linked lists, 
+the recipes in the second half of this chapter don't deal specifically 
+with any particular structure. Instead, they give generic techniques for
+ loading, printing, copying, and saving generic data structures. The 
+final program example demonstrates how to manipulate binary trees.<a class="indexterm" name="ch11-idx-1000004783-0">
+</a>
+</p>
+</div>
+<div class="sect2">
+<h3 class="sect2">
+<a class="title" name="ch11-pgfId-180">
+See Also</a>
+</h3>
+<p class="para">
+<a class="olink" href="http://docstore.mik.ua/orelly/perl/prog/ch04_01.htm">
+Chapter 4</a>
+ of <a class="citetitle" href="http://docstore.mik.ua/orelly/perl/prog/index.htm" title="Programming Perl">
+<cite class="citetitle">
+Programming Perl</cite>
+</a>
+; <i class="filename">
+perlref </i>
+(1), <i class="filename">
+perllol</i>
+ (1), and <i class="filename">
+perldsc</i>
+ (1)</p>
+</div>
+</div>
+</div>
+<div class="htmlnav">
+<p>
+</p>
+<hr title="footer" width="515" align="LEFT"><table width="515" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="TOP" width="172" align="LEFT">
+<a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch10_18.htm" title="10.17. Program: Sorting Your Mail">
+<img src="perl_array_hash_files/txtpreva.gif" alt="Previous: 10.17. Program: Sorting Your Mail" border="0"></a>
+</td>
+<td valign="TOP" width="171" align="CENTER">
+<a class="book" href="http://docstore.mik.ua/orelly/perl/cookbook/index.htm" title="Perl Cookbook">
+<img src="perl_array_hash_files/txthome.gif" alt="Perl Cookbook" border="0"></a>
+</td>
+<td valign="TOP" width="172" align="RIGHT">
+<a class="sect1" href="http://docstore.mik.ua/orelly/perl/cookbook/ch11_02.htm" title="11.1. Taking References to Arrays">
+<img src="perl_array_hash_files/txtnexta.gif" alt="Next: 11.1. Taking References to Arrays" border="0"></a>
+</td>
+</tr>
+<tr>
+<td valign="TOP" width="172" align="LEFT">
+10.17. Program: Sorting Your Mail</td>
+<td valign="TOP" width="171" align="CENTER">
+<a class="index" href="http://docstore.mik.ua/orelly/perl/cookbook/index/idx_0.htm" title="Book Index">
+<img src="perl_array_hash_files/index.gif" alt="Book Index" border="0"></a>
+</td>
+<td valign="TOP" width="172" align="RIGHT">
+11.1. Taking References to Arrays</td>
+</tr>
+</tbody></table>
+<hr title="footer" width="515" align="LEFT"><p class="nav">
+<font size="-1">
+[ <a href="http://docstore.mik.ua/orelly/perl/index.htm" title="The Perl CD Bookshelf">
+Library Home</a>
+ | <a href="http://docstore.mik.ua/orelly/perl/perlnut/index.htm" title="Perl in a Nutshell">
+Perl in a Nutshell</a>
+ | <a href="http://docstore.mik.ua/orelly/perl/learn/index.htm" title="Learning Perl">
+Learning Perl</a>
+ | <a href="http://docstore.mik.ua/orelly/perl/learn32/index.htm" title="Learning Perl on Win32 Systems">
+Learning Perl on Win32</a>
+ | <a href="http://docstore.mik.ua/orelly/perl/prog/index.htm" title="Programming Perl">
+Programming Perl</a>
+ | <a href="http://docstore.mik.ua/orelly/perl/advprog/index.htm" title="Advanced Perl Programming">
+Advanced Perl Programming</a>
+ | <a href="http://docstore.mik.ua/orelly/perl/cookbook/index.htm" title="Perl Cookbook">
+Perl Cookbook</a>
+ ]</font>
+</p>
+</div>
+</td></tr><tr><td style="vertical-align: top; width: 200px;">
+<br><br>
+<script type="text/javascript"><!--
+google_ad_client = "pub-0321943928525350";
+/* 160x600, o-rightfixed */
+google_ad_slot = "5248352378";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="perl_array_hash_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 600px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 160px;"><ins id="aswift_1_anchor" style="display: block; border: medium none; height: 600px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 160px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="600" scrolling="no" width="160"></iframe></ins></ins>
+</td></tr>
+</tbody></table>
+
+<br>
+
+
+<center>
+<br>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-1271376699634376";
+/* 728x90, ds-footer */
+google_ad_slot = "3888117136";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="perl_array_hash_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><ins id="aswift_2_anchor" style="display: block; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_2" name="aswift_2" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins>
+</center>
+
+
+<br>
+<hr size="1">
+
+
+
+<!-- SpyLOG -->
+<script src="perl_array_hash_files/counter_cv.js" id="spylog_code" type="text/javascript" counter="1028713" part="docs" track_links="ext" page_level="0">
+</script><script language="javascript">window.spylog_js=1;</script><script language="javascript1.1">window.spylog_js=1.1;</script><script language="javascript1.2">window.spylog_js=1.2;</script><script language="javascript1.3">window.spylog_js=1.3;</script><script language="javascript1.4">window.spylog_js=1.4;</script><script language="javascript1.5">window.spylog_js=1.5;</script><script language="javascript1.6">window.spylog_js=1.6;</script><script language="javascript1.7">window.spylog_js=1.7;</script><script language="javascript1.8">window.spylog_js=1.8;</script><script language="javascript1.9">window.spylog_js=1.9;</script><script language="javascript"></script><a href="http://u10287.13.spylog.com/cnt?cid=1028713&amp;p=0&amp;c=1&amp;fr=1&amp;fl=10.3&amp;px=24&amp;sl=1.8&amp;wh=1680x1050&amp;j=N&amp;t=360&amp;h5=111110&amp;pg=http%3A//docstore.mik.ua/orelly/perl/cookbook/ch11_01.htm&amp;r=http%3A//docstore.mik.ua/orelly/perl/cookbook/ch10_06.htm&amp;partname=docs&amp;title=%5BChapter%2011%5D%20References%20and%20Records&amp;rn=0.09296213792486718&amp;f=3" target="_blank"><img src="perl_array_hash_files/cnt.gif" alt="SpyLOG" border="0"></a>
+<!--/ SpyLOG -->
+
+<!--bigmir)net TOP 100-->
+<script type="text/javascript" language="javascript"><!--
+function BM_Draw(oBM_STAT){
+document.write('<table cellpadding="0" cellspacing="0" border="0" style="display:inline;margin-right:4px;"><tr><td><div style="margin:0px;padding:0px;font-size:1px;width:88px;"><div style="background:url(\'http://i.bigmir.net/cnt/samples/diagonal/b59_top.gif\') no-repeat bottom;">&nbsp;</div><div style="font:10px Tahoma;background:url(\'http://i.bigmir.net/cnt/samples/diagonal/b59_center.gif\');"><div style="text-align:center;"><a href="http://www.bigmir.net/" target="_blank" style="color:#0000ab;text-decoration:none;font:10px Tahoma;">bigmir<span style="color:#ff0000;">)</span>net</a></div><div style="margin-top:3px;padding: 0px 6px 0px 6px;color:#003596;"><div style="float:left;font:10px Tahoma;">'+oBM_STAT.hosts+'</div><div style="float:right;font:10px Tahoma;">'+oBM_STAT.hits+'</div></div><br clear="all"/></div><div style="background:url(\'http://i.bigmir.net/cnt/samples/diagonal/b59_bottom.gif\') no-repeat top;">&nbsp;</div></div></td></tr></table>');
+}
+//-->
+</script>
+
+<script type="text/javascript" language="javascript"><!--
+bmN=navigator,bmD=document,bmD.cookie='b=b',i=0,bs=[],bm={o:1,v:126595,s:126595,t:0,c:bmD.cookie?1:0,n:Math.round((Math.random()* 1000000)),w:0};
+for(var f=self;f!=f.parent;f=f.parent)bm.w++;
+try{if(bmN.plugins&&bmN.mimeTypes.length&&(x=bmN.plugins['Shockwave Flash']))bm.m=parseInt(x.description.replace(/([a-zA-Z]|s)+/,''));
+else for(var f=3;f<20;f++)if(eval('new ActiveXObject("ShockwaveFlash.ShockwaveFlash.'+f+'")'))bm.m=f}catch(e){;}
+try{bm.y=bmN.javaEnabled()?1:0}catch(e){;}
+try{bmS=screen;bm.v^=bm.d=bmS.colorDepth||bmS.pixelDepth;bm.v^=bm.r=bmS.width}catch(e){;}
+r=bmD.referrer.slice(7);if(r&&r.split('/')[0]!=window.location.host){bm.f=escape(r);bm.v^=r.length}
+bm.v^=window.location.href.length;for(var x in bm) if(/^[ovstcnwmydrf]$/.test(x)) bs[i++]=x+bm[x];
+bmD.write('<sc'+'ript type="text/javascript" language="javascript" src="http://c.bigmir.net/?'+bs.join('&')+'"></sc'+'ript>');
+//-->
+</script><script type="text/javascript" language="javascript" src="perl_array_hash_files/a.js"></script><table style="display: inline; margin-right: 4px;" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><div style="margin: 0px; padding: 0px; font-size: 1px; width: 88px;"><div style="background: url(&quot;http://i.bigmir.net/cnt/samples/diagonal/b59_top.gif&quot;) no-repeat scroll center bottom transparent;">&nbsp;</div><div style="font: 10px Tahoma; background: url(&quot;http://i.bigmir.net/cnt/samples/diagonal/b59_center.gif&quot;) repeat scroll 0% 0% transparent;"><div style="text-align: center;"><a href="http://www.bigmir.net/" target="_blank" style="color: rgb(0, 0, 171); text-decoration: none; font: 10px Tahoma;">bigmir<span style="color: rgb(255, 0, 0);">)</span>net</a></div><div style="margin-top: 3px; padding: 0px 6px; color: rgb(0, 53, 150);"><div style="float: left; font: 10px Tahoma;">2457</div><div style="float: right; font: 10px Tahoma;">5092</div></div><br clear="all"></div><div style="background: url(&quot;http://i.bigmir.net/cnt/samples/diagonal/b59_bottom.gif&quot;) no-repeat scroll center top transparent;">&nbsp;</div></div></td></tr></tbody></table>
+<!--bigmir)net TOP 100-->
+
+<!--begin of Rambler's Top100 code -->
+<script type="text/javascript" language="javascript">
+document.write('<a href="http://top100.rambler.ru/top/"><img src="http://counter.rambler.ru/top100.cnt?692798" alt="" width=1 height=1 border=0></a>');
+</script><a href="http://top100.rambler.ru/top/"><img src="perl_array_hash_files/top100.gif" alt="" height="1" width="1" border="0"></a>
+<!--end of Top100 code-->
+
+<!--begin of Top100 logo-->
+<script type="text/javascript" language="javascript">
+document.write('<a href="http://top100.rambler.ru/top100/"><img src="http://top100-images.rambler.ru/top100/w1.gif" alt="Ramblers Top100" width=88 height=31 border=0></a>');
+</script><a href="http://top100.rambler.ru/top100/"><img src="perl_array_hash_files/w1.gif" alt="Ramblers Top100" height="31" width="88" border="0"></a>
+<!--end of Top100 logo -->
+
+<!-- hit.ua -->
+<script language="javascript" type="text/javascript"><!--
+document.write("<a href='http://hit.ua/?x=3601' target='_blank'>");
+Cd=document;Cr="&"+Math.random();Cp="&s=1";
+Cd.cookie="b=b";if(Cd.cookie)Cp+="&c=1";
+Cp+="&t="+(new Date()).getTimezoneOffset();
+if(self!=top)Cp+="&f=1";
+//--></script><a href="http://hit.ua/?x=3601" target="_blank">
+<script language="javascript1.1" type="text/javascript"><!--
+if(navigator.javaEnabled())Cp+="&j=1";
+//--></script>
+<script language="javascript1.2" type="text/javascript"><!--
+if(typeof(screen)!='undefined')Cp+="&w="+screen.width+"&h="+
+screen.height+"&d="+(screen.colorDepth?screen.colorDepth:screen.pixelDepth);
+//--></script>
+<script language="javascript" type="text/javascript"><!--
+Cd.write("<img src='http://c.hit.ua/hit?i=3601&g=0&x=1"+Cp+Cr+
+"&r="+escape(Cd.referrer)+"&u="+escape(window.location.href)+
+"' border='0' width='88' height='31' "+
+"alt='hit.ua: ñåé÷àñ íà ñàéòå, ïîñåòèòåëåé è ïðîñìîòðîâ çà ñåãîäíÿ' title='hit.ua: ñåé÷àñ íà ñàéòå, ïîñåòèòåëåé è ïðîñìîòðîâ çà ñåãîäíÿ'/>");
+document.write('</a>');
+//--></script><img src="perl_array_hash_files/hit.png" alt="hit.ua: ñåé÷àñ íà ñàéòå, ïîñåòèòåëåé è ïðîñìîòðîâ çà ñåãîäíÿ" title="hit.ua: ñåé÷àñ íà ñàéòå, ïîñåòèòåëåé è ïðîñìîòðîâ çà ñåãîäíÿ" height="31" width="88" border="0"></a>
+<!-- / hit.ua -->
+
+<script language="javascript">//<!--
+mtI="012408140822";mtG="45";mtT="4";mtS='http://012408140822.c.mystat-in.net/?';
+mtD=document;mtN=navigator.appName;mtR=escape(mtD.referrer);
+mtW="";mtC="";mtV="0";mtJ="1";
+//--></script><script language="javascript1.1">//<!--
+mtV="1";mtJ = (navigator.javaEnabled()?"1":"0");
+//--></script><script language="javascript1.2">//<!--
+mtE=screen;mtW=mtE.width;mtN!="Netscape"?mtC=mtE.colorDepth:mtC=mtE.pixelDepth;mtV="2";
+//--></script><script language="javascript1.3">//<!--
+mtV="3";
+//--></script><script language="javascript">//<!--
+mtUrl="";mtUrl+="\""+mtS+"i"+mtI+"&t"+mtT+"&g"+mtG+"&w"+mtW+"&c"+mtC+"&r"+mtR+"&v"+mtV+"&j"+mtJ+"\"";
+mtUrl="<a href=http://mytop-in.net/ target=_blank><img src="+mtUrl+"width=88 height=31 border=0 alt=\"Rated by MyTOP\"></a>";
+mtD.write(mtUrl);
+//--></script><a href="http://mytop-in.net/" target="_blank"><img src="perl_array_hash_files/a.png" alt="Rated by MyTOP" height="31" width="88" border="0"></a>
+
+<!--Rating@Mail.ru COUNTEr--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<a href="http://top.mail.ru/jump?from=1374183"'+
+' target=_top><img src="http://d7.cf.b4.a1.top.list.ru/counter'+
+'?id=1374183;t=48;js='+js+a+';rand='+Math.random()+
+'" alt="Ðåéòèíã@Mail.ru"'+' border=0 height=31 width=88/><\/a>')
+if(11<js)d.write('<'+'!-- ')//--></script><a href="http://top.mail.ru/jump?from=1374183" target="_top"><img src="perl_array_hash_files/counter.gif" alt="Ðåéòèíã@Mail.ru" height="31" width="88/" border="0"></a><!-- 
+<script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--><!--/COUNTER-->
+
+<script type="text/javascript">
+<!--
+Nnv=navigator;Nna=Nnv.appName;Nd=document;Nd.cookie="b=b";Nc=0;if(Nd.cookie)Nc=1;
+Nn=(Nna.substring(0,2)=="Mi")?0:1;Ns=screen;Npx=(Nn==0)?Ns.colorDepth:Ns.pixelDepth;
+str='<img src="http://c.uarating.com/199;'+Ns.width+'x'+Ns.height+';'+Npx+';'+Nc+';';
+str=str+escape(Nd.referrer)+';'+Math.random()+'" width="88" height="31" border="0">';
+document.write('<a href="http://www.uarating.com/" alt="uaRating" target="_blank">'+str+'<\/a>');
+// -->
+</script><a href="http://www.uarating.com/" alt="uaRating" target="_blank"><img src="perl_array_hash_files/ch10_06.gif" height="31" width="88" border="0"></a>
+
+</body></html>

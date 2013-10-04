@@ -1,0 +1,26 @@
+# Transform the dvi file into pdf
+	dvipdfm file[.dvi]
+
+# Create the some white space horizontally indisde of the text
+	\hspace{number+unit}
+        \hspace*{number+unit}
+
+# Create the some white space vertically inside of the text
+  	\vspace{number+unit}
+	\vspace*{number+unit}
+
+# Precent LaTex from indenting a paragraph by using sequence
+	\noindent
+
+# Some rules on spacing
+	Mr.\ Smith
+        etc.\ and
+   	Proc.\ Amer.\ Math.\ Soc.
+ 
+        Example~7
+        the length~$l$ of the rod
+
+# To include computer code
+    \begin{verbatim}
+       (insert literal text)
+    \end{verbatim}

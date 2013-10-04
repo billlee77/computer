@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <title>chuonthis.com - Maximum Extension - Thunderbird Extension: Folderpane Tools</title>
+  <link rel="stylesheet" type="text/css" href="folderpane.php_files/style.css">
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td align="center"><table id="maintable" width="670" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td align="center"><a href="http://www.chuonthis.com/extensions/"><img id="logo" src="folderpane.php_files/logo.png" title="Maximum Extension: Mozilla Firefox and Thunderbird extensions" alt="Maximum Extension: Mozilla Firefox and Thunderbird extensions" height="23" width="644"></a></td></tr>
+<tr><td id="toplinks"><span class="start"><a href="http://www.chuonthis.com/extensions/">Home</a> - <a href="http://www.chuonthis.com/extensions/#browser">Firefox Extensions</a> - <a href="http://www.chuonthis.com/extensions/#mailnews">Thunderbird Extensions</a> - <a href="http://www.chuonthis.com/extensions/translations.php">Translations</a> - </span><a href="http://www.chuonthis.com/extensions/#contact"><span class="start">Contac</span>t</a></td></tr>
+
+<tr><td colspan="1" class="content"><div class="heading">Thunderbird Extension: Folderpane Tools</div><div class="section">
+
+<div class="para">
+  <div class="exttitle">Folderpane Tools 0.0.5.1</div>
+  <div class="extupdate">Released on <a href="#history">2007.04.11</a>
+  for Thunderbird 1.0 - 3.0 on all operating systems</div>
+  This extension allows for customization of the folder pane.  Accounts can be rearranged and the startup folder can be chosen.
+</div>
+
+<!--<div class="para" style="text-align: center">
+  <img src="images/screen_folderpane.png" width="259" height="180" alt="Folderpane Tools" title="Folderpane Tools"/>
+</div>-->
+
+<div class="para">
+  <a href="http://www.chuonthis.com/extensions/tb/folderpane.xpi"><img class="installbutton" src="folderpane.php_files/button_download.png" title="Download" alt="Download" height="19" width="73"></a>
+  <a href="http://forums.mozillazine.org/viewtopic.php?t=100562"><img class="installbutton" src="folderpane.php_files/button_discuss.png" title="Discuss" alt="Discuss" height="19" width="62"></a><br>
+  <div class="extupdate">Translations available: en-US, de-DE, es-ES, fr-FR, it-IT, nl-NL, pl-PL, pt-BR, ru-RU, sk-SK</div>
+  To install this extension, click on the <span class="emphasize">Download</span> button above and save the file in a convenient location.  In Thunderbird, open the <span class="emphasize">Tools</span> menu and select <span class="emphasize">Extensions</span>.  Click on the <span class="emphasize">Install</span> button and open the saved extension file.
+</div>
+
+<div class="para">
+</div>
+
+</div><a name="contents"></a>
+<div class="heading"><div class="toplink"><a href="#">Top</a></div>
+Contents</div><div class="section">
+
+<div class="para">
+  <ul>
+    <li><a href="#options">Options</a></li>
+    <li><a href="#bugs">Bugs and Troubleshooting</a></li>
+    <li><a href="#history">Version History</a></li>
+  </ul>
+</div>
+
+</div><a name="options"></a>
+<div class="heading"><div class="toplink"><a href="#">Top</a></div>
+Options</div><div class="section">
+
+<div class="para">
+  This extension must be configured before use.  To open the options window, open the <span class="emphasize">Tools</span> menu, select <span class="emphasize">Extensions</span>, and double-click on the extension.
+</div>
+
+<!--<div class="para" style="text-align: center">
+<img src="images/screen_folderpane_options.png" width="244" height="317" alt="Folderpane Tools options window" title="Folderpane Tools options window" style="margin-left: 10px;"/>
+</div>-->
+
+<div class="para">
+<ul>
+  <li><b>Override startup folder:</b> Enable this option to override the folder that is displayed on startup.
+	  <ul><li><b>Select folder:</b> Select the folder to display at startup
+ from the dropdown menu.  To select a folder which has subfolders, open 
+its submenu and select <span class="emphasize">choose this folder</span>.</li></ul>
+  </li>
+  <li><b>Rearrange accounts:</b> Use the listbox and buttons in this section to rearrange the order that accounts are displayed.  The <span class="emphasize">Default account</span>
+ is always listed first.  Select an account from the listbox and click 
+on one of the buttons below to either set the account as the default, 
+move the account up in the list, or move the account down in the list.
+	  <ul><li>Email accounts and RSS accounts are always placed above the 
+Local Folders.  The Local Folders are always placed above Newsgroup 
+accounts.  If the Local Folders or a Newsgroup account is set as the 
+Default account, it will be placed at the top.</li></ul>
+  </li>
+</ul>
+
+</div>
+
+</div><a name="bugs"></a>
+<div class="heading"><div class="toplink"><a href="#">Top</a></div>
+Bugs and Troubleshooting</div><div class="section">
+
+<div class="para">
+
+<ul>
+  <li><b>WARNING:</b> If you are using version 0.0.2 and see the message
+ "58: fpAM.getAccount(accounts[i]).incomingServer has no properties" 
+when you open the options window, please click Cancel for the window 
+titled "Folderpane Tools Options".  Otherwise, some accounts may be 
+lost.  To those who have been affected by this bug, please <a href="http://www.chuonthis.com/extensions/#contact">send me an email</a> so I can help you recover your accounts.</li>
+  <li>If you see the message "Finishing Extension Installation..." after installing the extension, please read the <a href="http://www.chuonthis.com/extensions/troubleshoot.php">instructions on how to fix it</a>.</li>
+  <li>Currently, there is no option to select the root of an account as 
+the startup folder.  That feature will be implemented in a future 
+version.</li>
+</ul>
+</div>
+
+</div><a name="history"></a>
+<div class="heading"><div class="toplink"><a href="#">Top</a></div>
+Version History</div><div class="section">
+
+<div class="para">
+<table id="versiontable" width="100%" cellpadding="0" cellspacing="0">
+  <thead><tr><td>Date</td><td>Version</td><td>Notes</td></tr></thead>
+  <tbody><tr><td>2007.04.11</td><td><a href="http://www.chuonthis.com/extensions/tb/folderpane_0_0_5_1.xpi">0.0.5.1</a></td><td class="nocenter">Packaged translations into XPI.  Thanks <a href="http://www.babelzilla.org/">BabelZilla</a>!</td></tr>
+  <tr><td>2006.04.11</td><td><a href="http://www.chuonthis.com/extensions/tb/folderpane_0_0_5.xpi">0.0.5</a></td><td class="nocenter">Reverted behavior of accounts listbox in options window.</td></tr>
+  <tr><td>2006.04.10</td><td><a href="http://www.chuonthis.com/extensions/tb/folderpane_0_0_4.xpi">0.0.4</a></td><td class="nocenter">Can now select Saved Search folders for startup.  Updated maxVersion to 2.0.</td></tr>
+  <tr><td>2006.01.12</td><td><a href="http://www.chuonthis.com/extensions/tb/folderpane_0_0_3.xpi">0.0.3</a></td><td class="nocenter">Fixed lost accounts bug.  Updated for Thunderbird 1.5.</td></tr>
+  <tr><td>2005.04.28</td><td><a href="http://www.chuonthis.com/extensions/tb/folderpane_0_0_2.xpi">0.0.2</a></td><td class="nocenter">Improved
+ startup folder procedure.  Fixed blank lines in options window when 
+server name was not defined.  Fixed bugs in and improved behavior of 
+moving accounts in options window.  Added extension icon.  Increase 
+minVersion to 0.7.</td></tr>
+  <tr><td>2004.07.15</td><td><a href="http://www.chuonthis.com/extensions/tb/folderpane_0_0_1.xpi">0.0.1</a></td><td class="nocenter">Initial release</td></tr>
+</tbody></table>
+</div>
+</div>
+</td></tr>
+</tbody></table><a href="http://www.chuonthis.com/" class="bottomlink">chuonthis.com</a> | <a href="http://www.beautylish.com/" class="bottomlink">makeup reviews, beauty tips, and tutorials</a>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input name="cmd" value="_s-xclick" type="hidden">
+<input src="folderpane.php_files/x-click-but21.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" type="image" border="0">
+<input name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+" type="hidden">
+</form>
+</td></tr></tbody></table>
+
+</body></html>

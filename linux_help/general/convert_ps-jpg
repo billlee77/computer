@@ -1,0 +1,75 @@
+****************************
+**************************
+************************
+** WARNING:: the name of object file should not contain plot !! 
+**************************
+****************************
+
+# Convert ps to jpg using gs
+gs -dBATCH -sOutputFile=myfile.jpg -sDEVICE=jpeg myfile.ps
+
+# Convert ps to jpg using convert (Imagemajick)
+convert myfile.ps myfile.jpg
+
+SOME OPITIONS
+
+# Other ways with option
+gs -sDEVICE=jpeg -sOutputFile=testpage-a4.jpg - < testpage-a4.ps
+
+# better one
+gs -sDEVICE=jpeg -r300 -sPAPERSIZE=a4 -dBATCH -dNOPAUSE -sOutputFile=testpage-a4.jpg testpage-a4.ps
+
+(-r to specify dpi resolution, and the papersize maintains the a4 proportions)dBATCH and dNOPAUSE are useful for doing batches of postscripts
+
+scripting !
+**************************
+for image in ./images/*; do
+   gs -sDEVICE=jpeg -r300 -sPAPERSIZE=a4 -dBATCH -dNOPAUSE \
+      "-sOutputFile=${image%.ps}.jpg" "$image"
+done
+**************************
+
+
+
+
+
+
+
+# Shell scripting convert all jpg to gif 
+cd /home/noah
+for a in *.JPG;do echo $a && convert $a $a.gif; done
+
+
+
+
+
+
+********
+Get rid of the .jpg
+#!/bin/bash
+IFS="
+"
+for i in `ls *.jpg`; do
+convert $i ${i%.jpg}.gif
+done
+
+/////////////////////////////////
+gedit script.sh
+
+paste
+
+#!/bin/bash
+IFS="
+"
+for i in `ls *.jpg`; do
+convert $i ${i%.jpg}.gif
+done
+
+type:
+chmod +x script.sh (make the shell excutable)
+
+./script.sh (run shell)
+
+********
+
+

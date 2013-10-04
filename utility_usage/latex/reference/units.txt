@@ -1,0 +1,12 @@
+	
+
+	pt  point        (1 in = 72.27 pt)
+	pc  pica	 (1 pc = 12    pt)
+ 	in  inch	 (1 in = 25.4  mm)	 	
+	bp  big point	 (1 in = 72 bp)
+	cm  centimetre   (1 cm = 10 mm)
+  	mm  millimetre  
+	dd  didot point  (1157 dd = 1238 pt)
+	cc  cicero  	 (1 cc = 12 dd)
+        sp scaled  point (65536 sp = 1 pt)	
+

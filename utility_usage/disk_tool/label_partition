@@ -1,0 +1,3 @@
+# label partition & check parition name
+	e2label /dev/sdb1 DW160
+	e2label /dev/sdb1

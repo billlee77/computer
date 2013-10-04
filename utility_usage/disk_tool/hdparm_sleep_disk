@@ -1,0 +1,8 @@
+ 
+# hdparm will set disks to sleep!
+
+
+		$ /sbin/hdparm -Y /dev/sdc1
+		$ /sbin/hdparm -Y /dev/sdd1
+
+

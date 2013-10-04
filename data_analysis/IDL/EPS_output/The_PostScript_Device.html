@@ -1,0 +1,912 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN" "http://www.w3.org/MarkUp/Wilbur/HTML32.dtd">
+<html><head>
+
+
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="GENERATOR" content="Quadralay WebWorks AutoMap 2003 Platinum Edition for FrameMaker 8.5.4089.0">
+    <meta name="RSISYM" content="False">
+    <meta name="TEMPLATEBASE" content="DynHTML">
+    <meta name="LASTUPDATED" content="06/16/05 20:28:46">
+    <title>The PostScript Device</title>
+    <link rel="StyleSheet" href="The_PostScript_Device_files/document.css" type="text/css">
+    <link rel="StyleSheet" href="The_PostScript_Device_files/catalog.css" type="text/css">
+  </head><body bgcolor="#ffffff" text="#000000">
+
+<table valign="bottom" bgcolor="#e2e2e2" border="0" cellpadding="0" cellspacing="0" width="98%">
+  <tbody><tr> 
+    <td width="10%">
+<a href="http://star.pst.qub.ac.uk/idl/The_Printer_Device.html"><img src="The_PostScript_Device_files/prev.gif" alt="Previous" border="0"></a>    </td>
+    <td align="center" width="80%">
+<font size="-1"><i>IDL Reference Guide</i>: <a href="http://star.pst.qub.ac.uk/idl/IDL_Direct_Graphics_Devices.html">IDL Direct Graphics Devices</a></font>    </td>
+    <td align="right" width="10%">
+<a href="http://star.pst.qub.ac.uk/idl/The_Regis_Terminal_Device.html"><img src="The_PostScript_Device_files/next.gif" alt="Next" border="0"></a>    </td>
+  </tr>
+</tbody></table>
+
+<a name="wp451367"> </a><h2 class="pHeading1">
+The PostScript Device
+</h2>  
+
+
+
+                                                  <a name="wp487873"> </a><h4 class="pHeading3">
+Device Keywords Accepted by the PS Device:
+</h4>  
+
+<a name="wp487895"> </a><p class="pBody">
+<a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp482989">AVANTGARDE</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144308">BITS_PER_PIXEL</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp143940">BKMAN</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144497">BOLD</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144499">BOOK</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144158">CLOSE_FILE</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp732196">CMYK</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144479">COLOR</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144503">COURIER</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp143930">DEMI</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp143751">ENCAPSULATED</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp143748">FILENAME</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp143943">FONT_INDEX</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144522">FONT_SIZE</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144524">HELVETICA</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144166">INCHES</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144322">ISOLATIN1</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp143723">ITALIC</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp606950">LANDSCAPE</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp618160">LIGHT</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144529">MEDIUM</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp417784">NARROW</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp562813">OBLIQUE</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144538">OUTPUT</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144366">PALATINO</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144170">PORTRAIT</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144169">PRE_DEPTH</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp601831">PRE_XSIZE</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp597448">PRE_YSIZE</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp601886">PREVIEW</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144547">SCALE_FACTOR</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144551">SCHOOLBOOK</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp486143">SET_CHARACTER_SIZE</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp499045">SET_FONT</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144554">SYMBOL</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144557">TIMES</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp542703">TT_FONT</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp143719">XOFFSET</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144540">XSIZE</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144175">YOFFSET</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144568">YSIZE</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144513">ZAPFCHANCERY</a>, <a href="http://star.pst.qub.ac.uk/idl/Keywords_Accepted_by_the_IDL_Devices.html#wp144515">ZAPFDINGBATS</a>
+</p>  
+
+<a name="wp144484"> </a><p class="pBody">
+PostScript is a programming language designed to convey a description
+of a page containing text and graphics. Many laser printers and
+high-resolution, high-quality photo typesetters support PostScript.
+Color output or direct color separations can be produced with color
+PostScript. To direct graphics output to a PostScript file, issue the
+command:
+</p>  
+
+<div class="pPreformatted"><pre class="pPreformatted">SET_PLOT, 'PS'  
+</pre>
+</div>
+<a name="wp144486"> </a><p class="pBody">This causes IDL to use the
+PostScript driver for producing graphical output. Once the PostScript
+driver is enabled via SET_PLOT, the DEVICE procedure is used to control
+its actions, as described below. The default settings are given in the
+following table:</p><p class="Ignore">&nbsp;</p>
+<div>
+<p class="Ignore"><i><font size="-1"><center>
+<a name="wp144085"> </a><div class="pTableTitle">
+Table A-14: Default PostScript Driver Settings&nbsp;
+</div>  
+
+</center></font></i></p>
+<table id="wp144085table142893" border="0" cellpadding="10" cellspacing="1">
+  <caption><a name="wp144085"> </a><div class="pTableTitle">
+Table A-14: Default PostScript Driver Settings&nbsp;
+</div>  
+
+</caption>
+  <tbody><tr align="center" bgcolor="#d5d5de">    <th><a name="wp144063"> </a><div class="pCellHeading">
+Feature
+</div>  
+
+</th>
+    <th><a name="wp144058"> </a><div class="pCellHeading">
+Value
+</div>  
+
+</th>
+</tr>
+  <tr align="left" bgcolor="#e2e2e2">    <td><a name="wp144065"> </a><div class="pCellBody">
+File
+</div>  
+
+</td>
+    <td><a name="wp144062"> </a><div class="pCellBody">
+idl.ps
+</div>  
+
+</td>
+</tr>
+  <tr align="left" bgcolor="#e2e2e2">    <td><a name="wp144067"> </a><div class="pCellBody">
+Mode
+</div>  
+
+</td>
+    <td><a name="wp144064"> </a><div class="pCellBody">
+Portrait, non-encapsulated, no color
+</div>  
+
+</td>
+</tr>
+  <tr align="left" bgcolor="#e2e2e2">    <td><a name="wp144069"> </a><div class="pCellBody">
+Horizontal offset
+</div>  
+
+</td>
+    <td><a name="wp144066"> </a><div class="pCellBody">
+3/4 in.
+</div>  
+
+</td>
+</tr>
+  <tr align="left" bgcolor="#e2e2e2">    <td><a name="wp144071"> </a><div class="pCellBody">
+Vertical offset
+</div>  
+
+</td>
+    <td><a name="wp144068"> </a><div class="pCellBody">
+5 in.
+</div>  
+
+</td>
+</tr>
+  <tr align="left" bgcolor="#e2e2e2">    <td><a name="wp144073"> </a><div class="pCellBody">
+Width
+</div>  
+
+</td>
+    <td><a name="wp144070"> </a><div class="pCellBody">
+7 in.
+</div>  
+
+</td>
+</tr>
+  <tr align="left" bgcolor="#e2e2e2">    <td><a name="wp144075"> </a><div class="pCellBody">
+Height
+</div>  
+
+</td>
+    <td><a name="wp144072"> </a><div class="pCellBody">
+5 in.
+</div>  
+
+</td>
+</tr>
+  <tr align="left" bgcolor="#e2e2e2">    <td><a name="wp144077"> </a><div class="pCellBody">
+Scale factor
+</div>  
+
+</td>
+    <td><a name="wp144074"> </a><div class="pCellBody">
+1.0
+</div>  
+
+</td>
+</tr>
+  <tr align="left" bgcolor="#e2e2e2">    <td><a name="wp144079"> </a><div class="pCellBody">
+Font size
+</div>  
+
+</td>
+    <td><a name="wp144076"> </a><div class="pCellBody">
+12 points
+</div>  
+
+</td>
+</tr>
+  <tr align="left" bgcolor="#e2e2e2">    <td><a name="wp144081"> </a><div class="pCellBody">
+Font
+</div>  
+
+</td>
+    <td><a name="wp144078"> </a><div class="pCellBody">
+Helvetica
+</div>  
+
+</td>
+</tr>
+  <tr align="left" bgcolor="#e2e2e2">    <td><a name="wp144083"> </a><div class="pCellBody">
+# Bits / Image Pixel
+</div>  
+
+</td>
+    <td><a name="wp144080"> </a><div class="pCellBody">
+4
+</div>  
+
+</td>
+</tr>
+</tbody></table>
+</div>
+<p class="pBody">
+
+  
+
+
+<a name="wp144487"> </a><br>
+<table bgcolor="#e2e2e2" border="0" cellpadding="5" width="98%">
+   <tbody><tr><td><b>Note</b><br>
+Unlike monitors where white is the most visible color, PostScript
+writes black on white paper. Setting the output color index to 0, the
+default when PostScript output is selected, writes black. A color index
+of 255 writes white which is invisible on white paper. Color tables are
+not used with PostScript unless the color mode has been enabled using
+the DEVICE procedure. See <a href="http://star.pst.qub.ac.uk/idl/The_PostScript_Device.html#wp144611">Color Images</a></td></tr>
+</tbody></table>
+<br>  
+
+
+<a name="wp144488"> </a></p><p class="pBody">
+To obtain adequate resolution, the device coordinate system used for
+PostScript output is expressed in units of 0.001 centimeter (i.e., 1000
+pixels/cm).
+</p>  
+
+<a name="wp144489"> </a><p class="pBody">
+Use the <code class="cCode">HELP, /DEVICE</code> call to view the current font, file, and other options set for PostScript output.
+</p>  
+
+<a name="wp144577"> </a><h3 class="pHeading2">
+Using PostScript Fonts
+</h3>  
+
+
+<a name="wp144578"> </a><p class="pBody">Information necessary for
+rendering a set of 35 standard PostScript fonts are included with IDL.
+(The standard 35 fonts are the fonts found on the Apple Laserwriter II
+PostScript printer; the same fonts are found on almost any PostScript
+printer made in the time since the LaserWriter II appeared.) Use of
+PostScript fonts is discussed in detail in <a href="http://star.pst.qub.ac.uk/idl/About_Device_Fonts.html">About Device Fonts</a>.
+</p>  
+
+<a name="wp144605"> </a><h3 class="pHeading2">
+Color PostScript
+</h3>  
+
+
+<a name="wp144606"> </a><p class="pBody">
+If you have a color PostScript device you can enable the use of color with the statement:
+</p>  
+
+<div class="pPreformatted"><pre class="pPreformatted">DEVICE, /COLOR  
+</pre>
+</div>
+<a name="wp144608"> </a><p class="pBody">
+Enabling color also enables the color tables. Text and graphic color
+indices are translated to RGB by dividing the red, green and blue color
+table values by 255. As with most display devices, color indices range
+from 0 to 255. Zero is normally black and white is normally represented
+by an index of 255. For example, to create and load a color table with
+four elements, black, red, green and blue:
+</p>  
+
+<div class="pPreformatted"><pre class="pPreformatted">TVLCT, [0,255,0,0], [0,0,255,0], [0,0,0,255]  
+</pre>
+</div>
+<a name="wp144610"> </a><p class="pBody">
+Drawing text or graphics with a color index of 0 results in black, 1 in red, 2 in green, and 3 in blue.
+</p>  
+
+
+
+                                                  <a name="wp144611"> </a><h4 class="pHeading3">
+Color Images
+</h4>  
+
+<a name="wp144612"> </a><p class="pBody">As with black and white
+PostScript, images may be output with 1, 2, 4, or 8 bits, yielding 1,
+2, 16, or 256 possible colors. In addition, images are either
+pseudo-color or TrueColor. A pseudo-color image is a two dimensional
+image, each pixel of which is used to index the color table, thereby
+obtaining an RGB value for each possible pixel value. Pseudo-color
+images are similar to those displayed using the workstation monitor.
+</p>  
+
+
+<a name="wp144613"> </a><br>
+<table bgcolor="#e2e2e2" border="0" cellpadding="5" width="98%">
+   <tbody><tr><td><b>Note</b><br>
+In the case of pseudo-color images of fewer than 8 bits, the number of
+columns in the image should be an exact multiple of the number of
+pixels per byte (i.e., when displaying 4 bit images the number of
+columns should be even, and 2 bit images should have a column size that
+is a multiple of 4). If the image column size is not an exact multiple,
+extra pixels with a value of 255 are output at the end of each row.
+This causes no problems if the color white is loaded into the last
+color table entry, otherwise a stripe of the last (index 255) color is
+drawn to the right of the image.</td></tr>
+</tbody></table>
+<br>  
+
+
+
+
+                                                  <a name="wp144614"> </a><h4 class="pHeading3">
+TrueColor Images
+</h4>  
+
+<a name="wp846363"> </a><p class="pBody">
+A TrueColor image consists of an array with three dimensions, one of
+which has a size of three, containing the three color components. It
+may be considered as three two dimensional images, one each for the
+red, green and blue components. Use the TRUE keyword to the TV and
+TVSCL procedures to indicate that the image is a TrueColor image and to
+specify the dimension over which color is interleaved. RGB data can be
+interleaved by pixel, by line, or by image. Use the TRUE parameter to
+specify the method of interleaving. A <i>c</i> column by <i>l</i> line TrueColor image is dimensioned as follows:
+  </p>
+<div>
+<p class="Ignore"><i><font size="-1"><center>
+<a name="wp846391"> </a><div class="pTableTitle">
+Table A-15: Values for the TRUE Keyword
+</div>  
+
+</center></font></i></p>
+<table id="wp846391table846365" border="0" cellpadding="10" cellspacing="1">
+  <caption><a name="wp846391"> </a><div class="pTableTitle">
+Table A-15: Values for the TRUE Keyword
+</div>  
+
+</caption>
+  <tbody><tr align="center" bgcolor="#d5d5de">    <th><a name="wp846367"> </a><div class="pCellHeading">
+TRUE Value
+</div>  
+
+</th>
+    <th><a name="wp846369"> </a><div class="pCellHeading">
+Dimensions
+</div>  
+
+</th>
+    <th><a name="wp846371"> </a><div class="pCellHeading">
+Interleaving
+</div>  
+
+</th>
+</tr>
+  <tr align="left" bgcolor="#e2e2e2">    <td><a name="wp846373"> </a><div class="pCellBody">
+1
+</div>  
+
+</td>
+    <td><a name="wp846375"> </a><div class="pCellBody">
+(<i>3, c, l</i>)
+</div>  
+
+</td>
+    <td><a name="wp846377"> </a><div class="pCellBody">
+Pixel
+</div>  
+
+</td>
+</tr>
+  <tr align="left" bgcolor="#e2e2e2">    <td><a name="wp846379"> </a><div class="pCellBody">
+2
+</div>  
+
+</td>
+    <td><a name="wp846381"> </a><div class="pCellBody">
+(<i>c, 3, </i>l)
+</div>  
+
+</td>
+    <td><a name="wp846383"> </a><div class="pCellBody">
+Line or Row
+</div>  
+
+</td>
+</tr>
+  <tr align="left" bgcolor="#e2e2e2">    <td><a name="wp846385"> </a><div class="pCellBody">
+3
+</div>  
+
+</td>
+    <td><a name="wp846387"> </a><div class="pCellBody">
+(<i>c, l, 3</i>)
+</div>  
+
+</td>
+    <td><a name="wp846389"> </a><div class="pCellBody">
+Image
+</div>  
+
+</td>
+</tr>
+</tbody></table>
+</div>
+<p class="pBody">
+
+</p>  
+
+<a name="wp846396"> </a><p class="pBody">
+The following example writes a 24-bit image, interleaved over the third dimension, to a PostScript file:
+</p>  
+
+<div class="pPreformatted"><pre class="pPreformatted">SET_PLOT, 'PS'  
+;Set the PostScript device to *8* bits per color, not 24.  
+DEVICE, FILE='24bit.ps', /COLOR, BITS=8  
+TV, [[[r]], [[g]], [[b]]], TRUE=3  
+DEVICE, /CLOSE  
+; Return plotting to X windows:  
+SET_PLOT, 'X'  
+</pre>
+</div>
+<p class="Ignore">&nbsp;</p>
+<a name="wp870814"> </a><br>
+<table bgcolor="#e2e2e2" border="0" cellpadding="5" width="98%">
+   <tbody><tr><td><b>Note</b><br>
+   Currently, the PostScript device does not support TrueColor plots. Only TrueColor images are supported.</td></tr>
+</tbody></table>
+<br>  
+
+
+
+<a name="wp144616"> </a><p class="pBody">
+TrueColor images are also routed through the color tables. The red
+color table array contains the intensity translation table for the red
+image, and so forth. Assuming that the color tables have been loaded
+with the vectors <i style="font-style: oblique;">R</i>, <i style="font-style: oblique;">G</i>, and <i style="font-style: oblique;">B</i>, a pixel with a color value of (<i>r</i>, <i>g</i>, <i>b</i>) is displayed with a color of (<i style="font-style: italic;">R</i><sub style="font-style: normal;" class="cSubscript">r</sub>, <i style="font-style: italic;">G</i><sub style="font-style: normal;" class="cSubscript">g</sub>, <i style="font-style: italic;">B</i><sub style="font-style: normal;" class="cSubscript">b</sub>).
+As with other devices, a color table value of 255 represents maximum
+intensity, while 0 indicates an absence of the color. To pass the RGB
+pixel values without change, load the red, green and blue color tables
+with a ramp with a slope of 1.0:
+</p>  
+
+<div class="pPreformatted"><pre class="pPreformatted">TVLCT, INDGEN(256), INDGEN(256), INDGEN(256)  
+</pre>
+</div>
+<a name="wp144618"> </a><p class="pBody">
+or with the LOADCT procedure:
+</p>  
+
+<div class="pPreformatted"><pre class="pPreformatted">; Load standard black/white table:  
+LOADCT, 0  
+</pre>
+
+
+                                                  <a name="wp144621"> </a><h4 class="pHeading3">
+Image Background Color
+</h4>  
+
+<a name="wp144622"> </a><p class="pBody">Images that are displayed with
+a black background on a monitor frequently look better if the
+background is changed to white when displayed with PostScript. This is
+easily done with the statement:
+</p>  
+
+<div class="pPreformatted"><pre class="pPreformatted">a(WHERE(a EQ 0B)) = 255B  
+</pre>
+
+
+                                                  <a name="wp732257"> </a><h4 class="pHeading3">
+CMYK Output
+</h4>  
+
+<a name="wp732374"> </a><p class="pBody">When the CMYK keyword is set,
+IDL converts the PostScript output to the CMYK color model as a final
+step. The indexed or RGB data is mapped to the cyan, magenta, yellow,
+and black color model just prior to output. </p>  
+
+<a name="wp732377"> </a><p class="pBody">
+The CMYK format is a subtractive color model that is better suited for
+color printing. This color model allows some document processing
+applications and printer control software to easily adjust the overall
+brightness of an image by manipulating a single channel (K). PostScript
+files created with the CMYK color model must be processed by an
+interpreter capable of interpreting PostScript Language Level 2 or
+higher. </p>  
+
+<a name="wp143739"> </a><h3 class="pHeading2">
+PostScript Positioning
+</h3>  
+
+
+
+
+                                                  <a name="wp143744"> </a><h4 class="pHeading3">
+Using the XOFFSET and YOFFSET Keywords
+</h4>  
+
+<a name="wp143745"> </a><p class="pBody">
+Often, IDL users are confused by the use of the XOFFSET and YOFFSET
+keywords to the PostScript DEVICE routine. These keywords control the
+position of IDL plots on the page. XOFFSET specifies the "X" position
+of the lower left corner of the output generated by IDL. This offset is
+always taken relative to the lower left-hand corner of the page when
+viewed in portrait orientation. YOFFSET specifies the "Y" position of
+the lower left corner of the output generated by IDL. This offset is
+also taken relative to the lower left-hand corner of the page when
+viewed in portrait orientation.
+</p>  
+
+<a name="wp567241"> </a><p class="pBody">The following figure shows how
+the XOFFSET and YOFFSET keywords are interpreted by the PostScript
+device in the Portrait (left) and Landscape (right) modes. Note that
+the landscape plot uses the same origin for determining the effect of
+the XOFFSET and YOFFSET keywords, but that the output is rotated 270
+degrees clockwise.<span style="font-style: oblique;"> </span>
+  </p>
+<div>
+<p class="Ignore"><i><font size="-1"><center>
+<a name="wp634489"> </a>Figure A-1: Interpretation of the XOFFSET and YOFFSET Keywords   
+</center></font></i></p>
+<table id="wp634489table634446" border="0" cellpadding="5">
+  <caption><a name="wp634489"> </a>Figure A-1: Interpretation of the XOFFSET and YOFFSET Keywords   
+</caption>
+  <tbody><tr align="left">    <td><a name="wp634487"> </a><div class="pCellBody">
+</div>
+<div align="center"><img src="The_PostScript_Device_files/The_PostScript_Device-1.jpg" id="wp634449" border="0" vspace="0" width="498" height="250" hspace="0"></div><div class="pCellBody">
+
+</div>  
+
+</td>
+</tr>
+</tbody></table>
+</div>
+<p class="pBody">
+
+</p>  
+
+<a name="wp551341"> </a><p class="pBody">
+The page on the left shows an IDL plot printed in "portrait"
+orientation. Note that the X and Y offsets work just as we expect them
+to-increasing the XOFFSET moves the plot to the right and increasing
+the YOFFSET moves the plot up the page. The page on the right shows an
+IDL plot printed in "landscape" orientation. Here, the X and Y offsets
+are still taken relative to the same points even though the orientation
+of the plot has changed. This happens because IDL moves the origin of
+the plot <i style="font-style: oblique;">before </i>rotating the PostScript coordinate system 270 degrees clockwise for the landscape plot. 
+</p>  
+
+
+<a name="wp144320"> </a><br>
+<table bgcolor="#e2e2e2" border="0" cellpadding="5" width="98%">
+   <tbody><tr><td><b>Note</b><br>
+   The XOFFSET and YOFFSET keywords have no effect when you generate ENCAPSULATED PostScript output.</td></tr>
+</tbody></table>
+<br>  
+
+
+
+
+                                                  <a name="wp144321"> </a><h4 class="pHeading3">
+Encapsulated PostScript Output
+</h4>  
+
+<a name="wp144343"> </a><p class="pBody">
+Another form of PostScript output is Encapsulated PostScript. This is
+the format used to import PostScript files into page layout and desktop
+publishing programs. An Encapsulated PostScript (EPS) file is similar
+to a regular PostScript file except that it contains only one page of
+PostScript output contained in a "bounding box" that is used to tell
+other programs about the size and aspect ratio of the encapsulated
+image.
+</p>  
+
+<a name="wp144393"> </a><p class="pBody">Most of the time, output from
+IDL to an EPS file is properly scaled into the EPS bounding box because
+commands such as PLOT take full advantage of the plotting area made
+available to them. Sometimes, however, the default bounding box is
+inappropriate for the image being displayed.
+</p>  
+
+<a name="wp144447"> </a><p class="pBody">As an example, suppose you
+have an image that is narrow and tall that, when TV'ed to an IDL
+window, fills only a small portion of the plotting window. Similarly,
+when output to an EPS file, this image will only fill a small portion
+of the bounding box. When the resulting EPS file is brought into a
+desktop publishing program, it becomes very hard to properly scale the
+image since the aspect ratio of the bounding box bears no relation to
+the aspect ratio of the image itself.
+</p>  
+
+<a name="wp144448"> </a><p class="pBody">To solve this problem, use the
+XSIZE and YSIZE keywords to the DEVICE procedure to make the bounding
+box just large enough to contain the image. Since IDL uses a resolution
+of 1000 dots per centimeter with the PostScript device, the correct
+XSIZE and YSIZE (in centimeters) can be computed as:
+</p>  
+
+<div class="pSmartList1"><ul class="pSmartList1">
+
+<a name="wp144449"> </a><div class="pSmartList1"><li>XSIZE = Width of image in pixels/1000.0 pixels per cm</li></div>  
+
+<p class="Ignore">&nbsp;</p>
+<a name="wp144490"> </a><div class="pSmartList1"><li>YSIZE = Height of image in pixels/1000.0 pixels per cm</li></div>  
+
+<p class="Ignore">&nbsp;</p>
+<a name="wp812644"> </a><br>
+<table bgcolor="#e2e2e2" border="0" cellpadding="5" width="98%">
+   <tbody><tr><td><b>Note</b><br>
+The values of XSIZE and YSIZE for this device are effectively limited
+to a maximum of 11 inches due to the size of the memory map employed to
+render the graphics information.</td></tr>
+</tbody></table>
+<br>  
+
+
+</ul></div>
+<a name="wp144492"> </a><p class="pBody">
+The following IDL procedure demonstrates this technique. This procedure
+reads an X Windows Dump file and writes it back out as a
+properly-sized, 8-bit-color Encapsulated PostScript file:
+</p>  
+
+<div class="pPreformatted"><pre class="pPreformatted">PRO XWDTOEPS, filename  
+; Read the XWD file. Pixel intensity information is stored   
+; in the variable 'array'. Values to reconstruct the color   
+; table are stored in 'r', 'g', and 'b':  
+array = READ_XWD(filename, r, g, b)  
+; Reconstruct the color table:  
+TVLCT, r,g,b  
+; Display the image in an IDL window:  
+TV, array  
+; Find the size of the picture. The width of the picture   
+; (in pixels) is stored in s[1]. The height of the picture   
+; is stored in s[2]:  
+s = SIZE(array)  
+; Take the 'xwd' (for X Windows Dump) extension off of  
+; the old filename and replace it with 'eps':  
+fl = STRLEN(filename)  
+filename = STRMID(filename, 0, fl-4)  
+filename = filename + '.eps'  
+PRINT, 'Making file: ', filename  
+PRINT, s  
+; Set the plotting device to PostScript:  
+SET_PLOT, 'ps'  
+; Use the DEVICE procedure to make the output encapsulated,   
+; 8 bits, color, and only as wide and high as it needs to   
+; be to contain the XWD image:  
+DEVICE, /ENCAPSUL, BITS_PER_PIXEL=8, /COLOR, $  
+&nbsp;&nbsp;&nbsp;FILENAME=filename, XSIZE=S[1]/1000., $  
+&nbsp;&nbsp;&nbsp;YSIZE=S[2]/1000.  
+; Write the image to the file:  
+TV, array  
+; Close the file:  
+DEVICE, /CLOSE  
+; Return plotting to X Windows:  
+SET_PLOT, 'x'  
+END  
+</pre>
+
+
+                                                  <a name="wp144728"> </a><h4 class="pHeading3">
+Multiple Plots on the Same Page
+</h4>  
+
+<a name="wp447491"> </a><p class="pBody">
+To put multiple plots on the same PostScript page, use the !P.MULTI system variable (described in more detail in <a href="http://star.pst.qub.ac.uk/idl/Graphics_System_Variables.html#wp997551">!P</a>).
+!P.MULTI is a 5-element integer array that controls the number of rows
+and columns of plots to make on a page or in a graphics window. </p>  
+
+<a name="wp447588"> </a><p class="pBody">
+The first element of !P.MULTI is a counter that reports how many plots
+remain on the page. The second element of !P.MULTI is the number of
+columns per page. The third element is the number of rows per page.
+</p>  
+
+<a name="wp447595"> </a><p class="pBody">
+For example, the following lines of code create a PostScript file, <code class="cCode">multi.ps</code>, with 6 different plots arranged as 2 columns and 3 rows:
+</p>  
+
+<div class="pPreformatted"><pre class="pPreformatted">; Set plotting to PostScript:  
+SET_PLOT, 'PS'  
+; Set the filename:  
+DEVICE, FILENAME='multi.ps'  
+; Make IDL's plotting area hold 2 columns and 3 rows of plots:  
+!P.MULTI = [0, 2, 3]  
+; Create a simple dataset:  
+A = FINDGEN(10)  
+; Make 6 different plots:  
+PLOT, A  
+PLOT, SIN(A)  
+PLOT, COS(A)  
+PLOT, TAN(A)  
+PLOT, TANH(A)  
+PLOT, SINH(A)  
+; Close the file:  
+DEVICE, /CLOSE  
+; Return plotting to Windows:  
+SET_PLOT, 'win'  
+; Reset plotting to 1 plot per page:  
+!P.MULTI = 0  
+</pre>
+</div>
+<a name="wp567481"> </a><p class="pBody">
+The resulting file produces a set of plots as shown in the following figure:</p><p class="Ignore">&nbsp;</p>
+<div>
+<p class="Ignore"><i><font size="-1"><center>
+<a name="wp634502"> </a>Figure A-2: Multiple plots on a single page produced by setting the !P.MULTI system variable.  
+</center></font></i></p>
+<table id="wp634502table634495" border="0" cellpadding="5">
+  <caption><a name="wp634502"> </a>Figure A-2: Multiple plots on a single page produced by setting the !P.MULTI system variable.  
+</caption>
+  <tbody><tr align="left">    <td><a name="wp634500"> </a><div class="pCellBody">
+</div>
+<div align="center"><img src="The_PostScript_Device_files/devices1.gif" id="wp634498" border="0" vspace="0" hspace="0"></div><div class="pCellBody">
+
+</div>  
+
+</td>
+</tr>
+</tbody></table>
+</div>
+<p class="pBody">
+
+  
+
+<a name="wp143720"> </a></p><h3 class="pHeading2">
+Importing IDL Plots into Other Documents
+</h3>  
+
+
+<a name="wp567612"> </a><p class="pBody">This section shows how to
+generate IDL PostScript graphics so that they can be inserted into
+other documents. It also provides several examples of how the
+PostScript graphics device is used. Simply omit the ENCAPSULATED
+keyword from the calls to DEVICE if you wish to produce plots that can
+be printed directly. The following figure is an encapsulated PostScript
+file suitable for inclusion in other documents. The figure was produced
+with the following IDL statements. Note the use of the ENCAPSULATED
+keyword in the call to DEVICE:
+</p>  
+
+<div class="pPreformatted"><pre class="pPreformatted">; Select the PostScript driver:  
+SET_PLOT, 'PS'  
+; Note use of ENCAPSULATED keyword:  
+DEVICE, /ENCAPSULATED, FILENAME = 'pic1.ps'  
+x = FINDGEN(200)  
+; Plot the sine wave:  
+PLOT, 10000 * SIN(x/5) / EXP(x/100), $  
+&nbsp;&nbsp;&nbsp;&nbsp;LINESTYLE = 2, TITLE = 'IDL PostScript Plot', $  
+&nbsp;&nbsp;&nbsp;&nbsp;XTITLE = 'Point Number', YTITLE='Y Axis Title', $  
+&nbsp;&nbsp;&nbsp;&nbsp;FONT = 0  
+; Add the cosine:  
+OPLOT, 10000 * COS(x/5) / EXP(x/100), LINESTYLE = 4  
+; Annotate the plot:  
+XYOUTS, 100, -6000, 'Sine', FONT = 0  
+OPLOT, [120, 180], [-6000, -6000], LINESTYLE = 2  
+XYOUTS, 100, -8000, 'Cosine', FONT = 0  
+OPLOT, [120, 180], [-8000, -8000], LINESTYLE = 4  
+</pre>
+</div>
+<a name="wp790232"> </a><p class="pBody">
+</p><p class="Ignore">&nbsp;</p>
+<div>
+<p class="Ignore"><i><font size="-1"><center>
+<a name="wp634520"> </a>Figure A-3: Sample PostScript plot using Helvetica font.  
+</center></font></i></p>
+<table id="wp634520table634513" border="0" cellpadding="5">
+  <caption><a name="wp634520"> </a>Figure A-3: Sample PostScript plot using Helvetica font.  
+</caption>
+  <tbody><tr align="left">    <td><a name="wp634518"> </a><div class="pCellBody">
+</div>
+<div align="center"><img src="The_PostScript_Device_files/devices2.gif" id="wp634516" border="0" vspace="0" width="393" height="268" hspace="0"></div><div class="pCellBody">
+
+</div>  
+
+</td>
+</tr>
+</tbody></table>
+</div>
+<p class="pBody">
+
+  
+
+<a name="wp567600"> </a></p><p class="pBody">The following figure is a
+more complicated plot. It demonstrates some of the three-dimensional
+plotting capabilities of IDL. It was produced with the following IDL
+statements:
+</p>  
+
+<div class="pPreformatted"><pre class="pPreformatted">; Select the PostScript driver:  
+SET_PLOT, 'PS'  
+; Note use of ENCAPSULATED keyword:  
+DEVICE, /ENCAPSULATED, FILENAME = 'pic2.ps'  
+; Access the data:  
+OPENR, 1, FILEPATH('abnorm.dat', SUBDIR=['examples', 'data'])  
+aa = ASSOC(1, BYTARR(64, 64))  
+; Get a smoothed version:  
+a = SMOOTH(aa[0], 3)  
+; Generate the surface:  
+SURFACE, a, /SAVE, ZAXIS = 1, XSTYLE = 1, YSTYLE = 1  
+; Add the contour:  
+CONTOUR, a, /T3D, /NOERASE, ZVALUE = 1, $  
+&nbsp;&nbsp;&nbsp;XSTYLE = 1, YSTYLE = 1, C_LINESTYLE = [0,1,2], $  
+&nbsp;&nbsp;&nbsp;TITLE = 'IDL PostScript Plot'  
+CLOSE, 1   
+</pre>
+</div>
+<a name="wp867347"> </a><p class="pBody">
+</p><p class="Ignore">&nbsp;</p>
+<div>
+<p class="Ignore"><i><font size="-1"><center>
+<a name="wp634533"> </a>Figure A-4: Three-Dimensional Plot with Vector-Drawn Characters  
+</center></font></i></p>
+<table id="wp634533table634526" border="0" cellpadding="5">
+  <caption><a name="wp634533"> </a>Figure A-4: Three-Dimensional Plot with Vector-Drawn Characters  
+</caption>
+  <tbody><tr align="left">    <td><a name="wp634531"> </a><div class="pCellBody">
+</div>
+<div align="center"><img src="The_PostScript_Device_files/devices3.gif" id="wp634529" border="0" vspace="0" width="416" height="328" hspace="0"></div><div class="pCellBody">
+
+</div>  
+
+</td>
+</tr>
+</tbody></table>
+</div>
+<p class="pBody">
+
+  
+
+<a name="wp567792"> </a></p><p class="pBody">
+The following figure illustrates polygon filling. It was produced with the following IDL statements:
+</p>  
+
+<div class="pPreformatted"><pre class="pPreformatted">SET_PLOT, 'PS'  
+DEVICE, /ENCAPSULATED, FILENAME = 'pic3.ps'  
+x = FINDGEN(200)  
+; Upper sine wave:  
+a = 10000 * sin(x / 5) / exp(x / 100)  
+PLOT, a, /NODATA, TITLE = 'IDL PostScript Plot', $  
+&nbsp;&nbsp;&nbsp;XTITLE='Point Number', YTITLE='Y Axis Title', $  
+&nbsp;&nbsp;&nbsp;FONT = 0  
+; Vector of X vertices for polygon filling. Note that the  
+; ROTATE(V,2) function call returns the vector V in reverse order:  
+C = [X, ROTATE(X, 2)]  
+; Vector of Y vertices for polygon filling:  
+D = [A, ROTATE(A-2000, 2)]  
+; Fill the region using an intensity of about 75% white:  
+POLYFILL, C, D, COLOR=192  
+</pre>
+</div>
+<a name="wp867940"> </a><p class="pBody">
+</p><p class="Ignore">&nbsp;</p>
+<div>
+<p class="Ignore"><i><font size="-1"><center>
+<a name="wp634546"> </a>Figure A-5: Polygon Filling Example  
+</center></font></i></p>
+<table id="wp634546table634539" border="0" cellpadding="5">
+  <caption><a name="wp634546"> </a>Figure A-5: Polygon Filling Example  
+</caption>
+  <tbody><tr align="left">    <td><a name="wp634544"> </a><div class="pCellBody">
+</div>
+<div align="center"><img src="The_PostScript_Device_files/devices4.gif" id="wp634542" border="0" vspace="0" width="372" height="261" hspace="0"></div><div class="pCellBody">
+
+</div>  
+
+</td>
+</tr>
+</tbody></table>
+</div>
+<p class="pBody">
+
+  
+
+<a name="wp567799"> </a></p><p class="pBody">The following figure
+illustrates IDL PostScript images. In this case, the same image is
+reproduced four times. In each case, a different number of bits are
+used per image pixel. It was produced with the following IDL
+statements:
+</p>  
+
+<div class="pPreformatted"><pre class="pPreformatted">SET_PLOT, 'PS'  
+DEVICE, /ENCAPSULATED, FILENAME = 'pic4.ps'  
+; Open image file:  
+OPENR, 1, FILEPATH('people.dat', SUBDIR = ['examples','data'])  
+; Variable to hold image:  
+a = BYTARR(192, 192, /NOZERO)  
+; Input the image:  
+READU, 1, a  
+; Done with the file:  
+CLOSE, 1  
+; Add a color table ramp to the bottom of the image:  
+A[0,0] = BYTSCL(INDGEN(192))#REPLICATE(1,16)  
+; Output the image four times:  
+FOR i = 0,3 DO BEGIN  
+&nbsp;&nbsp;&nbsp;; Use 1, 2, 4, and 8 bits per pixel:  
+&nbsp;&nbsp;&nbsp;DEVICE, BITS_PER_PIXEL=2^i  
+&nbsp;&nbsp;&nbsp;; Output using TV with position numbers 0, 1, 2, and 3:  
+&nbsp;&nbsp;&nbsp;TV, a, i, XSIZE=2.5, YSIZE=2.5, /INCHES  
+ENDFOR   
+</pre>
+</div>
+<a name="wp867951"> </a><p class="pBody">
+</p><p class="Ignore">&nbsp;</p>
+<div>
+<p class="Ignore"><i><font size="-1"><center>
+<a name="wp634559"> </a>Figure A-6: 1, 2, 4, and 8-bit PostScript Images  
+</center></font></i></p>
+<table id="wp634559table634552" border="0" cellpadding="5">
+  <caption><a name="wp634559"> </a>Figure A-6: 1, 2, 4, and 8-bit PostScript Images  
+</caption>
+  <tbody><tr align="left">    <td><a name="wp634557"> </a><div class="pCellBody">
+</div>
+<div align="center"><img src="The_PostScript_Device_files/devices5.gif" id="wp634555" border="0" vspace="0" width="349" height="344" hspace="0"></div><div class="pCellBody">
+
+</div>  
+
+</td>
+</tr>
+</tbody></table>
+</div>
+<p class="pBody">
+
+</p><p></p>
+<p></p>
+<p><font color="gray" size="-3">&nbsp;&nbsp;IDL Online Help (June 16, 2005)</font></p>
+  </div></div></div></body></html>

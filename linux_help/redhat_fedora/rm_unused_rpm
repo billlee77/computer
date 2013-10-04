@@ -1,0 +1,12 @@
+# List and remove old kernel
+	$cat /etc/yum.conf
+	$rpm -qa |grep kernel
+	$rpm -e 'old_kernel'
+
+# Remove old kernel
+	$package-cleanup --oldkernels
+
+
+# Remove unused rpms
+	$package-cleanup --quiet --leaves --exclude-bin | xargs yum remove -y
+

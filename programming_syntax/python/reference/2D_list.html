@@ -1,0 +1,700 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+
+    
+    <title>Python 2D list has weird behavor when trying to modify a single value... - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <script src="2D_list_files/ga.js" async="" type="text/javascript"></script><script src="2D_list_files/adzerk1_2_4_43adzerk2_2_17_45adzerk3_2_4_44.html" async="" type="text/javascript"></script><script type="text/javascript" src="2D_list_files/jquery.js"></script>
+    <script type="text/javascript" src="2D_list_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="2D_list_files/all.css">
+    
+    <link rel="canonical" href="http://stackoverflow.com/questions/2739552/python-2d-list-has-weird-behavor-when-trying-to-modify-a-single-value">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'Python 2D list has weird behavor when trying to modify a single value...'" href="http://stackoverflow.com/feeds/question/2739552">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+
+            StackExchange.question.init({showAnswerHelp:true,questionId:2739552});
+
+            styleCode();
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"http://stackauth.com","serverTime":1309186463,"styleCode":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers"},"user":{"isAnonymous":true,"fkey":"6d07991ff926b2578401d94723b94d68","inboxUnviewedCount":-1}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"dcf6d862901d","js/moderator.js":"8e87c1c40b0e","js/full-anon.js":"e03725643238","js/full.js":"df59e292a370","js/wmd.js":"28bd1c0690e0","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"bfe226d206e9","js/help.js":"62b20e89a785"});
+    </script>
+
+</head><body style="margin-top: 2.5em;" class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"><div id="notify--1" style=""><span class="notify-close"><a title="dismiss this notification">×</a></span><span class="notify-text">Welcome to Q&amp;A for professional and enthusiast programmers — check out the <a onclick="StackExchange.notify.closeFirstTime(); return false;" href="http://stackoverflow.com/faq">FAQ</a>!</span></div></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+     
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    <span id="hlinks-user">
+                  
+                  </span>
+                  <span id="hlinks-nav">
+                  <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f2739552%2fpython-2d-list-has-weird-behavor-when-trying-to-modify-a-single-value">log in</a>
+ <span class="lsep">|</span>
+ <a href="http://blog.stackoverflow.com/">blog</a>
+ <span class="lsep">|</span>
+<a href="http://careers.stackoverflow.com/">careers</a>
+ <span class="lsep">|</span>
+
+                  </span>
+                  <span id="hlinks-custom">
+                  <a href="http://chat.stackoverflow.com/">chat</a>
+ <span class="lsep">|</span>
+<a href="http://meta.stackoverflow.com/">meta</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/about">about</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/faq">faq</a>
+                  </span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get">
+                    <div>
+                        <input name="q" class="textbox" tabindex="1" onfocus="if (this.value=='search') this.value = ''" maxlength="140" size="28" value="search" type="text">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            
+
+
+
+<div id="question-header">
+    <h1><a href="http://stackoverflow.com/questions/2739552/python-2d-list-has-weird-behavor-when-trying-to-modify-a-single-value" class="question-hyperlink">Python 2D list has weird behavor when trying to modify a single value…</a></h1>
+</div>
+<div id="mainbar">
+
+
+<div id="question">
+
+    <div class="everyonelovesstackoverflow" id="adzerk1"><a href="http://engine.adzerk.net/redirect/0/2568/2444/8277/b49fc2f673724ba6ab929b497cf058df/43/1178/2292/634447832646223925?keywords=python%2clist%2c2d" rel="nofollow" target="_blank" title=""><img src="2D_list_files/2568.bin" title="" alt="" height="90" width="728" border="0"></a></div>
+
+    
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+<div class="vote">
+    <input value="2739552" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">7</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>    
+
+</div>
+
+    </td>
+    <td class="postcell">
+        <div>          
+            <div class="post-text">
+                <p>So I am relatively new to Python and I am having trouble working with 2D Lists.</p>
+
+<p>Here's my code:</p>
+
+<pre class="default prettyprint"><code><span class="pln">data </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[[</span><span class="kwd">None</span><span class="pun">]*</span><span class="lit">5</span><span class="pun">]*</span><span class="lit">5</span><span class="pln"><br>data</span><span class="pun">[</span><span class="lit">0</span><span class="pun">][</span><span class="lit">0</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Cell A1'</span><span class="pln"><br></span><span class="kwd">print</span><span class="pln"> data<br></span></code></pre>
+
+<p>and here is the output (formatted for readability):</p>
+
+<pre class="default prettyprint"><code><span class="pun">[[</span><span class="str">'Cell A1'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">],</span><span class="pln"><br>&nbsp;</span><span class="pun">[</span><span class="str">'Cell A1'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">],</span><span class="pln"><br>&nbsp;</span><span class="pun">[</span><span class="str">'Cell A1'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">],</span><span class="pln"><br>&nbsp;</span><span class="pun">[</span><span class="str">'Cell A1'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">],</span><span class="pln"><br>&nbsp;</span><span class="pun">[</span><span class="str">'Cell A1'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">]]</span><span class="pln"><br></span></code></pre>
+
+<p>Why does every row get assigned the value?</p>
+
+            </div>            
+            <div class="post-taglist">
+                <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag" title="show questions tagged 'python'" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/list" class="post-tag" title="show questions tagged 'list'" rel="tag">list</a> <a href="http://stackoverflow.com/questions/tagged/2d" class="post-tag" title="show questions tagged '2d'" rel="tag">2d</a> 
+            </div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/q/2739552" title="short permalink to this question" id="link-post-2739552">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2739552/edit">improve this question</a></div>
+            </td>
+            <td class="post-signature" align="right">
+<div class="user-info"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/2739552/revisions" title="show all edits to this post"><span title="2010-04-29 18:50:02Z" class="relativetime">Apr 29 '10 at 18:50</span></a></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/12855/silentghost"><img src="2D_list_files/e6488132d206883770017ba97d0f521f.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/12855/silentghost">SilentGhost</a><br><span class="reputation-score" title="reputation score 40444">40.4k</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="44 silver badges"><span class="badge2"></span><span class="badgecount">44</span></span><span title="101 bronze badges"><span class="badge3"></span><span class="badgecount">101</span></span></div></div>            </td>
+                        
+
+            <td class="post-signature owner">
+            <div class="user-info"><div class="user-action-time">asked <span title="2010-04-29 17:48:14Z" class="relativetime">Apr 29 '10 at 17:48</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/329165/brian"><img src="2D_list_files/1b99edae70d657f2fe2890f7030045cf.jpeg" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/329165/brian">Brian</a><br><span class="reputation-score" title="reputation score">109</span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span></div></div>
+                <br class="cbt">
+                <div class="accept-rate cool" title="this user has accepted an answer for 4 of 7 eligible questions">57% accept rate</div>
+            </td>
+            </tr>
+            </tbody></table>
+        </div>
+    </td>
+    </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-2739552" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-2768291" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Oh boy, was I stuck on this same problem back in the day .. :)</span> –&nbsp;<a href="http://stackoverflow.com/users/276627/kaloyan" title="773 reputation" class="comment-user">kaloyan</a> <span class="comment-date"><span title="2010-04-29 18:09:31Z">Apr 29 '10 at 18:09</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>    </tbody></table>    
+</div>
+
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>3 Answers</h2>
+            <div id="tabs">
+                <a href="http://stackoverflow.com/questions/2739552/python-2d-list-has-weird-behavor-when-trying-to-modify-a-single-value?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://stackoverflow.com/questions/2739552/python-2d-list-has-weird-behavor-when-trying-to-modify-a-single-value?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://stackoverflow.com/questions/2739552/python-2d-list-has-weird-behavor-when-trying-to-modify-a-single-value?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>
+    </div>
+
+
+  
+    <a name="2739564"></a>
+    <div id="answer-2739564" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="2739564" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">9</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>This makes a list with five references to the <strong>same</strong> list:</p>
+
+<pre class="default prettyprint"><code><span class="pln">data </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[[</span><span class="kwd">None</span><span class="pun">]*</span><span class="lit">5</span><span class="pun">]*</span><span class="lit">5</span><span class="pln"><br></span></code></pre>
+
+<p>Use something like this instead which creates five separate lists:</p>
+
+<pre class="default prettyprint"><code><span class="pun">&gt;&gt;&gt;</span><span class="pln"> data </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[[</span><span class="kwd">None</span><span class="pun">]*</span><span class="lit">5</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> _ </span><span class="kwd">in</span><span class="pln"> range</span><span class="pun">(</span><span class="lit">5</span><span class="pun">)]</span><span class="pln"><br></span></code></pre>
+
+<p>Now it does what you expect:</p>
+
+<pre class="default prettyprint"><code><span class="pun">&gt;&gt;&gt;</span><span class="pln"> data</span><span class="pun">[</span><span class="lit">0</span><span class="pun">][</span><span class="lit">0</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'Cell A1'</span><span class="pln"><br></span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="kwd">print</span><span class="pln"> data<br></span><span class="pun">[[</span><span class="str">'Cell A1'</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">],</span><span class="pln"><br>&nbsp;</span><span class="pun">[</span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">],</span><span class="pln"><br>&nbsp;</span><span class="pun">[</span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">],</span><span class="pln"><br>&nbsp;</span><span class="pun">[</span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">],</span><span class="pln"><br>&nbsp;</span><span class="pun">[</span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">None</span><span class="pun">]]</span><span class="pln"><br></span></code></pre>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/2739552/python-2d-list-has-weird-behavor-when-trying-to-modify-a-single-value/2739564#2739564" title="permalink to this answer" id="link-post-2739564">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2739564/edit">improve this answer</a></div>
+            </td>
+            
+
+            <td class="post-signature" align="right">   
+       
+
+            <div class="user-info"><div class="user-action-time">answered <span title="2010-04-29 17:49:49Z" class="relativetime">Apr 29 '10 at 17:49</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/61974/mark-byers"><img src="2D_list_files/ad240ed5cc406759f0fd72591dc8ca47.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/61974/mark-byers">Mark Byers</a><br><span class="reputation-score" title="reputation score 130832">131k</span><span title="15 gold badges"><span class="badge1"></span><span class="badgecount">15</span></span><span title="191 silver badges"><span class="badge2"></span><span class="badgecount">191</span></span><span title="360 bronze badges"><span class="badge3"></span><span class="badgecount">360</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-2739564" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+    <div class="everyonelovesstackoverflow" id="adzerk3"><a href="http://engine.adzerk.net/redirect/0/2565/2444/8277/c6acf69d8a724b6a9120547c4e741bd4/44/1178/4215/634447832646223925?keywords=python%2clist%2c2d" rel="nofollow" target="_blank" title=""><img src="2D_list_files/2565.bin" title="" alt="" height="90" width="728" border="0"></a></div>
+
+    
+  
+    <a name="2739597"></a>
+    <div id="answer-2739597" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="2739597" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">3</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>As the <a href="http://docs.python.org/library/stdtypes.html#sequence-types-str-unicode-list-tuple-buffer-xrange" rel="nofollow">python library reference on * for lists</a> says</p>
+
+<blockquote>
+  <p>Note also that the copies are shallow; nested structures are not copied. This often haunts new Python programmers; consider:</p>
+</blockquote>
+
+<pre class="default prettyprint"><code><span class="pun">&gt;&gt;&gt;</span><span class="pln"> lists </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[[]]</span><span class="pln"> </span><span class="pun">*</span><span class="pln"> </span><span class="lit">3</span><span class="pln"><br></span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> lists<br>&nbsp; </span><span class="pun">[[],</span><span class="pln"> </span><span class="pun">[],</span><span class="pln"> </span><span class="pun">[]]</span><span class="pln"><br></span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> lists</span><span class="pun">[</span><span class="lit">0</span><span class="pun">].</span><span class="pln">append</span><span class="pun">(</span><span class="lit">3</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> lists<br>&nbsp; </span><span class="pun">[[</span><span class="lit">3</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">3</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">3</span><span class="pun">]]</span><span class="pln"><br></span></code></pre>
+
+<blockquote>
+  <p>What has happened is that [[]] is a one-element list containing an 
+empty list, so all three elements of [[]] * 3 are (pointers to) this 
+single empty list. Modifying any of the elements of lists modifies this 
+single list. You can create a list of different lists this way:</p>
+</blockquote>
+
+<pre class="default prettyprint"><code><span class="pun">&gt;&gt;&gt;</span><span class="pln"> lists </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[[]</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> i </span><span class="kwd">in</span><span class="pln"> range</span><span class="pun">(</span><span class="lit">3</span><span class="pun">)]</span><span class="pln"> &nbsp;<br></span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> lists</span><span class="pun">[</span><span class="lit">0</span><span class="pun">].</span><span class="pln">append</span><span class="pun">(</span><span class="lit">3</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> lists</span><span class="pun">[</span><span class="lit">1</span><span class="pun">].</span><span class="pln">append</span><span class="pun">(</span><span class="lit">5</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> lists</span><span class="pun">[</span><span class="lit">2</span><span class="pun">].</span><span class="pln">append</span><span class="pun">(</span><span class="lit">7</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> lists<br>&nbsp; </span><span class="pun">[[</span><span class="lit">3</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">5</span><span class="pun">],</span><span class="pln"> </span><span class="pun">[</span><span class="lit">7</span><span class="pun">]]</span><span class="pln"><br></span></code></pre>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/2739552/python-2d-list-has-weird-behavor-when-trying-to-modify-a-single-value/2739597#2739597" title="permalink to this answer" id="link-post-2739597">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2739597/edit">improve this answer</a></div>
+            </td>
+            
+
+            <td class="post-signature" align="right">   
+       
+
+            <div class="user-info"><div class="user-action-time">answered <span title="2010-04-29 17:55:13Z" class="relativetime">Apr 29 '10 at 17:55</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/151019/mark"><img src="2D_list_files/aa7b036426d4e7cd2a97596d7e02a9d3.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/151019/mark">Mark</a><br><span class="reputation-score" title="reputation score">9,884</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="19 bronze badges"><span class="badge3"></span><span class="badgecount">19</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-2739597" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="2739575"></a>
+    <div id="answer-2739575" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="2739575" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>In python every variable is an 
+object, and so a reference. You first created an array of 5 Nones, and 
+then you build an array with 5 times the same object.</p>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/2739552/python-2d-list-has-weird-behavor-when-trying-to-modify-a-single-value/2739575#2739575" title="permalink to this answer" id="link-post-2739575">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2739575/edit">improve this answer</a></div>
+            </td>
+            
+
+            <td class="post-signature" align="right">   
+       
+
+            <div class="user-info"><div class="user-action-time">answered <span title="2010-04-29 17:51:32Z" class="relativetime">Apr 29 '10 at 17:51</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/327812/lfagundes"><img src="2D_list_files/0b03f557aa47aff3cdb4b7ce69645d80.jpeg" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/327812/lfagundes">lfagundes</a><br><span class="reputation-score" title="reputation score">168</span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-2739575" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+    
+    <a name="new-answer"></a>
+    <form id="post-form" action="/questions/2739552/answer/submit" method="post">
+        <h2 class="space">Your Answer</h2>
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+     
+        initTagRenderer("".split(" "), "".split(" "));
+
+        
+            prepareEditor({
+                
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                onDemand: true
+                ,autoShowMarkdownHelp:true
+            });
+        
+    });  
+</script>
+
+
+
+
+<div id="post-editor">  
+
+    
+    <div id="wmd-container">
+        <div id="wmd-button-bar"><ul id="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+        <textarea id="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height: 24px;">&nbsp;</div>
+    <div id="draft-saved" class="community-option fl" style="margin-top: 8px; height: 24px; display: none;">draft saved</div>
+
+
+    <div id="wmd-preview"></div>
+    <div id="wmd-final"></div>
+
+
+    <div id="edit-block">
+        <input id="fkey" name="fkey" value="6d07991ff926b2578401d94723b94d68" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>   
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+        <td class="vm open-id-login">
+            <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f2739552%2fpython-2d-list-has-weird-behavor-when-trying-to-modify-a-single-value">log in</a>
+            <script type="text/javascript">
+                StackExchange.ready(function () {
+                    StackExchange.helpers.onClickDraftSave('#login-link');
+                });
+            </script>
+        </td>
+
+    
+        <td class="orcell">
+            <div class="orword">or</div>
+            <div class="orline"></div>
+        </td>
+        <td class="vm">
+            <div>
+                <label for="display-name">Name</label>
+                <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+            </div>
+            <div>
+                <label for="m-address">Email</label>
+                <input id="m-address" name="m-address" size="40" maxlength="100" tabindex="106" type="text">
+                <span class="edit-field-overlay">required, but never shown</span>
+            </div>
+            <div>
+                <label for="home-page">Home Page</label>
+                <input id="home-page" name="home-page" size="40" maxlength="200" tabindex="107" type="text">
+            </div>
+        </td>
+    
+        </tr>
+        </tbody></table>
+    </div>
+               
+        <div class="form-submit cbt"><input id="submit-button" value="Post Your Answer" tabindex="110" type="submit"></div>
+    </form>
+    <h2 class="bottom-notice">
+        Not the answer you're looking for? 
+        Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag" title="show questions tagged 'python'" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/list" class="post-tag" title="show questions tagged 'list'" rel="tag">list</a> <a href="http://stackoverflow.com/questions/tagged/2d" class="post-tag" title="show questions tagged '2d'" rel="tag">2d</a> 
+        or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.
+    </h2>
+</div>
+</div>
+<div id="sidebar">
+
+<div class="module newuser newuser-greeting" style="">
+    <h4>Hello World!</h4>
+    <div>
+        <p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p>
+        <p class="ar"><a href="http://stackoverflow.com/about">about »</a>&nbsp;&nbsp;&nbsp;<a href="http://stackoverflow.com/faq">faq »</a></p>
+    </div>
+</div>    <div class="module">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://stackoverflow.com/questions/tagged/python" class="post-tag" title="show questions tagged 'python'" rel="tag">python</a>&nbsp;<span class="item-multiplier">×&nbsp;63487</span><br>
+<a href="http://stackoverflow.com/questions/tagged/list" class="post-tag" title="show questions tagged 'list'" rel="tag">list</a>&nbsp;<span class="item-multiplier">×&nbsp;6293</span><br>
+<a href="http://stackoverflow.com/questions/tagged/2d" class="post-tag" title="show questions tagged '2d'" rel="tag">2d</a>&nbsp;<span class="item-multiplier">×&nbsp;739</span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left: 10px;"><p class="label-key" title="2010-04-29 17:48:14Z"><b>1 year ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left: 10px;"><p class="label-key"><b>293 times</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left: 10px;"><p class="label-key"><b><a href="http://stackoverflow.com/questions/2739552/python-2d-list-has-weird-behavor-when-trying-to-modify-a-single-value?lastactivity" class="lastactivity-link" title="2010-04-29 18:50:02Z">1 year ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+    
+        <script type="text/javascript">
+            var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine2.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44?keywords=python,list,2d"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);
+        </script>
+    
+    <div class="everyonelovesstackoverflow" id="adzerk2"><a href="http://engine.adzerk.net/redirect/0/5077/6014/8277/15fb1939acc3462ba621b4e08e186705/45/1178/7158/634447832646223925?keywords=python%2clist%2c2d" rel="nofollow" target="_blank" title=""><img src="2D_list_files/34b9464edb8444fdac86c8307591616b.gif" title="" alt="" height="250" width="220" border="0"></a></div>
+
+    
+    <div>
+        <script type="text/javascript">
+            (function(){var q="http://careers.stackoverflow.com/ad/js",g=location.search=="?golarge",a,d=100,c=location.hash.indexOf("#ninjas")>-1,f="Pretty",h="#adzerk2",b="#adzerk1",i="#herebeninjas";(function(){var b="min-height:220px;margin:15px 0",c=$("<div>").addClass("hireme").attr("style",b),a=$("<div>").html(c);document.write(a.html())})();$(function(){setTimeout(r,2e3);a=setTimeout(e,d)});var e=function(){clearTimeout(a);if(m()&&!k()){a=setTimeout(e,d);return}c=c||n();c&&$(b).css("height",$(b).outerHeight()).attr("id","stop-adzerk");if(l()&&!j()){a=setTimeout(e,d);return}g=g||o();f=g?"Large":f;p()},r=function(){clearTimeout(a);var b=$("div.hireme, "+i);b.each(function(){var a=$(this),d=a.html().replace(/\s+/g,"").length==0;if(d){var c=a,b=a.parents(".everyonelovesstackoverflow").first();if(b.length>0)c=b;c.remove()}})},l=function(){return $(h).length>0},j=function(){var a=$(h);return a.length==0?false:a.html().replace(/\s+/g,"").length>0},o=function(){return $("#careersadsdoublehigh").length>0},m=function(){return $(b).length>0},k=function(){var a=$(b);return a.length==0?false:a.html().replace(/\s+/g,"").length>0},n=function(){return $(i).length>0},p=function(){$.ajax({url:s(),dataType:"script",cache:true})},s=function(){return q+"?style="+f+"&gobanner="+c.toString()}})();
+        </script><div style="min-height: 220px; margin: 15px 0pt;" class="hireme"> <style type="text/css"> div.hireme { border:1px solid #B5B5B5; color: #333; font-family: Arial, Helvetica, sans-serif; font-size:12px; text-align:left; line-height:130%; padding:0; margin:10px 0; width:218px; } div.hireme > p { display:block; margin:12px; } div.hireme > p > a { cursor:pointer; text-decoration:none; } div.hireme > p > a > span { color:#666; } div.hireme > p > a > span.company { font-weight:bold; } div.hireme > img.impression { display:none; } div.hireme > a > img.careers-hed { width:218px; min-height:50px; border:0; } div.hireme > p.bottom { margin-top:15px; text-align:center; } div.hireme > p.bottom > a { height: 16px; color: #FEF4E9; border: solid 1px #DA7C0C; background: #F78D1D url(http://careers.stackoverflow.com/Content/Img/orange-submit-bg.png) repeat-x top left; background: -webkit-gradient(linear, left top, left bottom, from(#FAA51A), to(#F47A20)); background: -moz-linear-gradient(top, #FAA51A, #F47A20); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; font-size: 13px; color: white; line-height: 16px; text-decoration: none; display: inline-block; -moz-border-radius: 12px; -webkit-border-radius: 12px; border-radius: 12px; padding: 4px 15px; cursor: pointer; -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2); -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2); box-shadow: 0 1px 2px rgba(0, 0, 0, .2); text-shadow: 0 1px 1px rgba(0, 0, 0, .3); } </style> <a href="http://careers.stackoverflow.com/?campaign=PrettyHeader" target="_blank"> <img alt="Careers 2.0" class="careers-hed" src="2D_list_files/careers2-ad-header-so.png"></a> <p> <a href="http://careers.stackoverflow.com/jobs/11902/php-web-developer-milcord?campaign=PrettyTopspot" target="_blank" title="PHP Web Developer at Milcord. Click to learn more."> PHP Web Developer<br> <span class="company">Milcord</span><br> <span class="location">Waltham, MA</span> </a> </p> <p> <a href="http://careers.stackoverflow.com/jobs/11870/experienced-software-engineer-abebooks-com?campaign=PrettyClassic" target="_blank" title="Experienced Software Engineer at AbeBooks.com. Click to learn more."> Experienced Software Engineer<br> <span class="company">AbeBooks.com</span><br> <span class="location">Victoria, BC, Canada</span> </a> </p> <p class="bottom"><a href="http://careers.stackoverflow.com/jobs?campaign=PrettyFooter" target="_blank"> view more jobs </a></p> <img src="2D_list_files/jobimpression.gif" alt="impression" class="impression"> </div>
+    </div>
+
+      
+
+    <div class="module">
+    <h4 id="h-related">Related</h4>
+    <div class="related">
+    <div class="spacer">
+<a href="http://stackoverflow.com/questions/169810/2d-animation-in-python" class="question-hyperlink">2D animation in Python</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1082187/2d-vector-projection-in-python" class="question-hyperlink">2D vector projection in Python</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1470446/create-new-list-object-in-python" class="question-hyperlink">Create new List object in python</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1675860/comparing-elements-in-a-list-in-pythons-for-loop" class="question-hyperlink">Comparing elements in a list in Python's for -loop</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1914883/python-list-to-ints-to-a-single-number" class="question-hyperlink">Python: List to ints to a single number?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1983902/remove-row-or-column-from-2d-list-if-all-values-in-that-row-or-column-are-none" class="question-hyperlink">Remove row or column from 2D list if all values (in that row or column) are None</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2597794/automatically-generate-a-flowchart-in-python" class="question-hyperlink">Automatically Generate a FlowChart in Python</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2770038/python-create-a-function-to-modify-a-list-by-reference-not-value" class="question-hyperlink">Python: create a function to modify a list by reference not value</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2785954/creating-a-list-in-python-with-multiple-copies-of-a-given-object-in-a-single-line" class="question-hyperlink">Creating a list in Python with multiple copies of a given object in a single line.</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2793324/has-any-simply-way-to-delete-a-value-in-list-of-python" class="question-hyperlink">has any simply way to delete a value in list of python</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3428536/python-list-subtraction-operation" class="question-hyperlink">Python list subtraction operation</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3483807/help-with-printing-a-single-item-from-list-inside-list-in-python" class="question-hyperlink">Help With Printing a single item from list inside list in python</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3675148/why-is-python-inconsistent-when-interpreting-a-subtraction-when-making-a-list" class="question-hyperlink">why is python inconsistent when interpreting a subtraction when making a list?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3902977/error-message-when-populating-cell-in-2d-numpy-array" class="question-hyperlink">error message when populating cell in 2d numpy array</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3965507/about-python-list-step-issue-when-the-element-is-long-type" class="question-hyperlink">about python list step issue when the element is long type</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4006794/python-list-manipulation" class="question-hyperlink">Python list manipulation</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4064277/2d-array-of-lists-in-python" class="question-hyperlink">2d array of lists in python</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4230000/creating-a-2d-matrix-in-python" class="question-hyperlink">Creating a 2d matrix in python</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4446380/python-check-the-occurrences-in-a-list-against-a-value" class="question-hyperlink">Python: Check the occurrences in a list against a value</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5162494/python-list-syntax-help" class="question-hyperlink">Python list syntax help</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5481087/generate-a-polygon-of-landmasses-in-python" class="question-hyperlink">Generate a polygon of landmasses in python</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5617547/removing-every-occurrence-of-some-value-from-a-python-list" class="question-hyperlink">Removing every occurrence of some value from a Python list?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5770944/basic-python-2d-graphics" class="question-hyperlink">Basic Python 2D graphics?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5957341/python-list-confusion" class="question-hyperlink">Python list confusion</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6037556/add-specific-columns-to-a-single-row-list-might-be-a-little-basic" class="question-hyperlink">Add specific columns to a single row list (might be a little basic)</a>
+</div>
+
+    </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/2739552" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript" src="2D_list_files/af90.asc"></script>
+<noscript>
+    <div><img src="/posts/2739552/ivc/af90" class="dno" alt=""></div>
+</noscript>
+<div style="display: none;" id="prettify-lang">default</div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://stackoverflow.com/about">about</a> |
+                <a href="http://stackoverflow.com/faq">faq</a> |
+                 <a href="http://blog.stackoverflow.com/">blog</a> |
+                    <a href="http://chat.stackoverflow.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://blog.stackoverflow.com/category/podcasts/">podcast</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+                <b><a href="mailto:team@stackoverflow.com">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com/">feedback always welcome</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color: rgb(254, 122, 21); font-size: 140%;">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color: rgb(254, 122, 21); font-size: 140%;">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color: rgb(254, 122, 21); font-size: 140%;">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color: rgb(232, 39, 44); font-size: 140%;">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color: rgb(0, 175, 239); font-size: 140%;">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color: rgb(150, 150, 150); font-size: 140%;">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color: rgb(70, 147, 125); font-size: 140%;">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color: rgb(192, 208, 220); font-size: 140%;">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color: rgb(0, 0, 0); font-size: 140%;">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color: rgb(221, 72, 20); font-size: 140%;">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color: rgb(156, 228, 254); font-size: 140%;">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color: rgb(207, 77, 63); font-size: 140%;">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color: rgb(244, 242, 141); font-size: 140%;">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color: rgb(15, 53, 89); font-size: 140%;">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color: rgb(242, 242, 242); font-size: 140%;">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color: rgb(3, 113, 135); font-size: 140%;">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color: rgb(241, 231, 204); font-size: 140%;">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color: rgb(225, 205, 174); font-size: 140%;">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color: rgb(162, 217, 246); font-size: 140%;">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color: rgb(27, 62, 108); font-size: 140%;">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color: rgb(41, 58, 93); font-size: 140%;">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color: rgb(190, 192, 203); font-size: 140%;">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color: rgb(147, 145, 133); font-size: 140%;">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color: rgb(181, 205, 164); font-size: 140%;">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>&nbsp;
+                        <span style="color: rgb(65, 118, 171); font-size: 140%;">■</span>&nbsp;<a href="http://diy.stackexchange.com/">home&nbsp;improvement</a>&nbsp;
+                        <span style="color: rgb(209, 216, 215); font-size: 140%;">■</span>&nbsp;<a href="http://gis.stackexchange.com/">gis</a>&nbsp;
+                        <span style="color: rgb(229, 226, 211); font-size: 140%;">■</span>&nbsp;<a href="http://electronics.stackexchange.com/">electronics</a>&nbsp;
+                        <span style="color: rgb(164, 198, 57); font-size: 140%;">■</span>&nbsp;<a href="http://android.stackexchange.com/">android</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2011.6.27.3</div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2011 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+        </div>
+    </div>
+    
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src='http://www.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();_qoptions={qacct:"p-c1rF4kxgLUzNc"};</script>
+    <script type="text/javascript" src="2D_list_files/quant.js"></script>
+    
+
+</body></html>

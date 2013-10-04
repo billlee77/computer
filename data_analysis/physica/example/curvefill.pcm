@@ -1,0 +1,21 @@
+!
+! script curvefill.pcm
+!
+! from p.51 of Physica User's Guide
+! typed in by gh, 00.05.10
+!
+cx0=?1
+cy0=?2
+set lintyp ?3
+!   100 < lintyp <= 110   --- use hatch pattern number lintyp-100
+!	  lintyp >  200	  --- use dot pattern lintyp-200
+ccl=len(cx0)
+cx0[2:ccl+1]=cx0[1:ccl]
+cx0[ccl+2]=cx0[ccl+1]
+cy0[2:ccl+1]=cy0[1:ccl]
+cy0[1]=0
+cy0[ccl+2]=0
+graph\noaxes cx0 cy0
+zerolines\horizontal	! draw horizontal line through (0,0)
+!defaults
+!destroy cx0 cy0 ccl		! eliminate dummy variables

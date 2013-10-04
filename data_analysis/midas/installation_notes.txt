@@ -1,0 +1,237 @@
+
+Author: Wenliang Li
+Email: li479@uregina.ca
+
+Date: 13/09/2012
+
+
+******************************
+
+Midas Installation notes
+
+******************************
+
+Note:
+The basic steps of midas installation is explained under:
+https://www.triumf.info/wiki/DAQwiki/index.php/Setup_MIDAS_experiment
+
+This documentation will summarize the procedure. 
+
+
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+Step 1: Setup environment variable 
+
+Edit .cshrc file and add the following
+
+##############################
+
+setenv LANG C
+
+setenv CVS_RSH ssh
+setenv MIDASSYS $HOME/packages/midas
+setenv ROOTSYS  $HOME/packages/root
+setenv MIDAS_EXPTAB $HOME/experiment/exptab
+
+# setup the MIDAS mserver
+
+switch (`hostname`)
+case larch*:
+    unsetenv MIDAS_SERVER_HOST
+    breaksw
+default:
+    setenv MIDAS_SERVER_HOST larch.phys.uregina.ca:7071
+endsw
+
+# select 64-bit or 32-bit MIDAS and ROOT
+
+@ switch (`uname -i`)
+@ case i386:
+@    #export ROOTSYS=/triumfcs/trshare/olchansk/root/root_v5.20.00_SL45_32
+@    setenv ROOTSYS /triumfcs/trshare/olchansk/root/root_v5.28.00_SL55_32
+@    setenv PATH .:$MIDASSYS/linux-m32/bin:$PATH
+@    breaksw
+@ default:
+@    #export ROOTSYS=/triumfcs/trshare/olchansk/root/root_v5.26.00b_SL54_64
+@    #setenv ROOTSYS /triumfcs/trshare/olchansk/root/root_v5.28.00_SL55_64
+@    setenv ROOTSYS $HOME/packages/root
+@    setenv PATH .:$MIDASSYS/linux/bin:$PATH
+@ endsw
+
+*setenv PATH .:$HOME/online/bin:$HOME/packages/roody/bin:$ROOTSYS/bin:$PATH
+*setenv PATH .:$HOME/packages/roody/bin
+
+#end
+
+
+*setenv SVN_EDITOR "emacs -nw"
+*setenv GIT_EDITOR "emacs -nw"
+
+##############################
+
+@ option will set according to the root directory installation, PLEASE DO NOT set $ROOTSYS this way if the root is installed from the distribution, i.e RPMs.
+
+* options are optional depending on user preferences. 
+
+
+
+
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+Step 2: Packages checkout and compilation 
+
+Note: Root installation will not be covered here
+
+******************************
+Install MIDAS
+
+$ cd $HOME/packages
+$ svn co svn+ssh://svn@savannah.psi.ch/repos/meg/midas/trunk midas 
+(Password "svn"). (password has to be entered twice)
+$ svn co svn+ssh://svn@savannah.psi.ch/repos/meg/mxml/trunk mxml
+$ cd midas
+$ make
+$ check that linux/bin/odbedit has been created
+
+
+******************************
+Install ROOTANA
+    
+$ cd $HOME/packages
+$ svn checkout https://ladd00.triumf.ca/svn/rootana/trunk rootana 
+(say "p" to accept the ladd00 ssl certificate, use username "svn", password "svn")
+$ cd rootana
+$ make
+
+
+******************************
+Install ROODY
+
+$ cd $HOME/packages
+$ svn checkout https://ladd00.triumf.ca/svn/roody/trunk roody
+$ cd roody
+$ make
+$ $HOME/packages/roody/bin/roody
+
+
+
+
+******************************
+Compilation ROOT library Issue regarding the root-config command
+
+If the root is installed with the RPM form the linux distribution, command in Makefile:
+
+shell  $(ROOTSYS)/bin/root-config --libs
+
+will not be able to load the root library path. Change this line to 
+shell  /root-config --libs
+
+and then problem fixed.
+
+User may or may not install extra root packages from the distribution.
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
+
+
+Step 3: Configurations & Trouble shoot
+
+Note: this section is most important.
+
+******************************
+There are many ways to setup experiments 
+
+I would introduce our way of setting up.
+
+The main experiment directory is in:
+$HOME/experiment
+
+And there are many sub experiments under this dir.
+There is main exptab file under
+$HOME/experiment 
+to collect the information for all sub experiments, and each sub experiments have their own exptab which only contain sub experiments info. 
+ 
+
+******************************
+exptab file
+
+exptab file setting is extremely important.
+
+It contains the experiments information of Experiment name, Experiment Dir and User name 	  
+
+Example: 
+	gaintest      /home/midasdaq2/experiment/gaintest    midasdaq2
+	simpletest    /home/midasdaq2/experiment/simple_test midasdaq2
+	muon-test     /home/midasdaq2/experiment/muon08-test midasdaq2
+
+The main exptab file (under $HOME/experiment/) should have information for all sub experiments, the exptab file in sub experiments should only contain its information.
+
+
+
+
+******************************
+File sourcing when ./start_daq.sh
+
+When data acquisition system starts, the start_daq.sh script will try to source the setup.sh, one MUST check if the setup.sh is set up correctly. 
+
+Please always set $MIDAS_EXPTAB to:
+	export MIDAS_EXPTAB=./exptab
+
+
+Other setting are optional.
+
+
+******************************
+Resolve the root privilege issue
+
+With CAMAC crate, in order to access the controlle, one need to use
+$dio ./frontend
+command to bypass the driver. If Midas is not install on root account, dio owner must be changed to root.
+
+If 64 bits do:
+$ su -c "chown root $MIDASSYS/linux/bin/dio"
+$ su -c "chgrp root $MIDASSYS/linux/bin/dio"
+
+and 32 bits do:
+$ su -c "chown root $MIDASSYS/linux-m32/bin/dio"
+$ su -c "chgrp root $MIDASSYS/linux-m32/bin/dio"
+
+Then set user or group ID on execution
+$ su -c "chmod a+s $MIDASSYS/linux/bin/dio"
+or 
+$ su -c "chmod a+s $MIDASSYS/linux-m32/bin/dio"
+
+Warning! If this procedure is not done, dio will require root privilege to execute. Which implies no other user is able to run frontend and collect data!
+
+
+
+
+
+
+******************************
+Step 4: Get started with an example experiment
+
+1. Copy $MIDASSYS/examples/experiment/ to $HOME/experiment/testexperiment
+
+2. Edit both exptab files,
+
+3. check setup.sh (IMPORTANT)
+
+4. make
+
+5. ./startdaq
+
+6. firefox localhost:8081
+
+

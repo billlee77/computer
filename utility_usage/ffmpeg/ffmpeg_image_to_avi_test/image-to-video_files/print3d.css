@@ -1,0 +1,106 @@
+/* HTML body */
+body {
+	background: #e7eeff; 
+	padding: 0; 
+	margin: 0;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+/* -- Header -- */
+#header {
+	height:80px;
+	margin: 0;
+	padding: 0;
+}
+#header .logo {
+	margin: 15px 0 0 13px;
+	float: left;
+}
+#headerStrap {
+	visibility: hidden;
+}
+
+	  
+/* The main document */
+#centerDoc {	
+   	margin-left: 10px;
+   	margin-right:10px;
+	
+	/* background:#fff; border:1px solid #000; */
+	/*
+	IE5x PC mis-implements the box model.
+	*/
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	margin-left: 10px;
+	margin-right:10px;
+text-align:justify;
+}
+html>body #centercontent {
+	margin-left: 10px;
+	margin-right:10px;
+	text-align:justify;
+}
+#centerDoc a         { color: #000000; }
+#centerDoc a:link    { color: #000000; }
+#centerDoc a:visited { color: #000000; }
+#centerDoc a:hover   { color: #120070; }
+
+#centerDoc h1 {
+	text-align:center;
+}
+
+/* Images in content */
+#imageBox {
+	padding: 0;
+	margin: 0 0px 20px 0px;
+	font-style: italic;
+	font-size: 80%;
+	text-align:center;
+}
+#imageBox img {
+	border-style:groove;
+	border-color:navy;
+	border-width:3px;
+}
+
+/* Font style for code snippets */
+.code {
+
+	font-size: 120%;
+	font-family:monospace;
+	color: #f3f3f3;
+}
+.stdout {
+
+	font-size: 120%;
+	font-family:monospace;
+	color: #9a9a9a;
+}
+
+#leftDoc {
+	visibility: hidden;
+}
+
+/* Adverts */
+#rightDoc {
+	visibility: hidden;
+}
+
+/* -- Footer -- */#footer {
+	clear: all;
+	margin: 0;
+	color: #666;
+	text-align:center;
+	font-size: 80%;
+}
+#footerBar {
+	background: #3D3D3D;
+	
+}
+#footerbarInternal {
+	padding: 2px;	
+}
+
+
+

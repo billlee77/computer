@@ -1,0 +1,1008 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-US" xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<title>String To Char* - C And C++ | Dream.In.Code</title>
+<meta name="keywords" content="string,char,have,program,working,one,point,need,from,format,pre-allocated">
+<meta name="description" content="string to char*: Need to go from string to char*">
+<meta name="identifier-url" content="http://www.dreamincode.net/forums/topic/13228-string-to-char/">
+<link rel="canonical" href="http://www.dreamincode.net/forums/topic/13228-string-to-char/">
+<link rel="up" href="http://www.dreamincode.net/forums/forum/15-c-and-c/">
+<link rel="author" href="http://www.dreamincode.net/forums/user/7206-mrafcho001/">
+<link rel="alternate feed" type="application/rss+xml" title="Dream.In.Code Blogs RSS feed" href="http://www.dreamincode.net/forums/rss/blog/">
+<link rel="alternate feed" type="application/rss+xml" title="Programming Forums" href="http://www.dreamincode.net/forums/rss/forums/1-programming-forums/">
+<link rel="stylesheet" type="text/css" media="print" href="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/ipb_print.css">
+<link rel="stylesheet" type="text/css" media="screen" href="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/index.css">
+<!--[if lte IE 7]>
+	<link rel="stylesheet" type="text/css" title='Main' media="screen" href="http://cdn3.dreamincode.net/dreamincode/forums/public/style_css/css_4/ipb_ie.css?v=57" />
+<![endif]-->
+<meta http-equiv="X-UA-Compatible" content="IE=8">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://www.dreamincode.net/home/favicon.ico">
+<link rel="alternate" title="dream.in.code Forums" href="http://www.dreamincode.net/rss/featured.php" type="application/rss+xml">
+<link rel="stylesheet" type="text/css" href="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/home_templates2_styles_7.css">
+<meta property="fb:page_id" content="62219401412">
+<script src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/ping.asc" async="" type="text/javascript"></script><script src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/jquery.js"></script>
+<script type="text/javascript">
+		jQuery.noConflict();
+		</script>
+<script type="text/javascript">
+		  //<![CDATA[
+		  function loginToggle() {
+			var target = document.getElementById("login").getElementsByTagName("div")[0];
+			!target.className.match(/ visible/) ? target.className += " visible" : target.className = target.className.replace(/ visible/, "");
+			}
+		  //]]>
+		</script>
+<script type="text/javascript">
+      jsDebug = 0; /* Must come before JS includes */
+      USE_RTE = 0;
+      inACP   = false;
+    </script>
+<script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/index_002.js"></script>
+<script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/index.js" charset="iso-8859-1"></script>
+<script type="text/javascript">
+	var isRTL	= false;
+	var rtlIe	= '';
+	var rtlFull	= '';
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+		/* ---- URLs ---- */
+		ipb.vars['base_url'] 			= 'http://www.dreamincode.net/forums/index.php?&';
+		ipb.vars['board_url']			= 'http://www.dreamincode.net/forums';
+		ipb.vars['loading_img'] 		= 'http://cdn2.dreamincode.net/dreamincode/forums/public/style_images/DIC/loading.gif';
+		ipb.vars['active_app']			= 'forums';
+		ipb.vars['upload_url']			= 'http://www.dreamincode.net/forums/uploads';
+		/* ---- Member ---- */
+		ipb.vars['member_id']			= parseInt( 0 ),
+		ipb.vars['is_supmod']			= parseInt( 0 ),
+		ipb.vars['is_admin']			= parseInt( 0 ),
+		ipb.vars['secure_hash'] 		= '880ea6a14ea49e853634fbdc5015a024';
+		ipb.vars['session_id']			= '4ee7120611dd70ea5dad5086f4a37f61';
+		ipb.vars['can_befriend']		= true;
+		/* ---- cookies ----- */
+		ipb.vars['cookie_id'] 			= 'dic_';
+		ipb.vars['cookie_domain'] 		= '.dreamincode.net';
+		ipb.vars['cookie_path']			= '/';
+		/* ---- Rate imgs ---- */
+		ipb.vars['rate_img_on']			= 'http://cdn2.dreamincode.net/dreamincode/forums/public/style_images/DIC/bullet_star.png';
+		ipb.vars['rate_img_off']		= 'http://cdn2.dreamincode.net/dreamincode/forums/public/style_images/DIC/bullet_star_off.png';
+		ipb.vars['rate_img_rated']		= 'http://cdn2.dreamincode.net/dreamincode/forums/public/style_images/DIC/bullet_star_rated.png';
+		/* ---- Uploads ---- */
+		ipb.vars['swfupload_swf']		= 'http://www.dreamincode.net/forums/public/js/3rd_party/swfupload/swfupload.swf';
+		ipb.vars['swfupload_enabled']	= true;
+		ipb.vars['use_swf_upload']		= ( '' == 'flash' ) ? true : false;
+		ipb.vars['swfupload_debug']		= false; /* SKINNOTE: Turn off for production */
+		/* ---- other ---- */
+		ipb.vars['use_live_search'] 	= 0;
+		ipb.vars['live_search_limit'] 	= 4;
+		ipb.vars['highlight_color']		= "#ade57a";
+		ipb.vars['charset']				= "iso-8859-1";
+		ipb.vars['use_rte']				= 1;
+		ipb.vars['image_resize']		= 1;
+		ipb.vars['image_resize_force']  = 500;
+		ipb.vars['seo_enabled']			= 1;
+		
+		ipb.vars['seo_params']			= {"start":"-","end":"\/","varBlock":"\/page__","varSep":"__"};
+		
+		/* Templates/Language */
+		ipb.templates['ajax_loading'] 	= "<div id='ajax_loading'>" + ipb.lang['loading'] + "</div>";
+		ipb.templates['close_popup']	= "<img src='http://cdn2.dreamincode.net/dreamincode/forums/public/style_images/DIC/close_popup.png' alt='x' />";
+		ipb.templates['rss_shell']		= new Template("<ul id='rss_menu'>#{items}</ul>");
+		ipb.templates['rss_item']		= new Template("<li><a href='#{url}' title='#{title}'>#{title}</a></li>");
+		ipb.templates['resized_img']	= new Template("<span>Resized to #{percent}% (was #{width} x #{height}) - Click image to enlarge</span>");
+		ipb.templates['m_add_friend']	= new Template("<a href='http://www.dreamincode.net/forums/index.php?app=members&amp;module=profile&amp;section=friends&amp;do=add&amp;member_id=#{id}' title='Add as Friend'><img src='http://cdn2.dreamincode.net/dreamincode/forums/public/style_images/DIC/user_add.png' alt='Add as Friend' /></a>");
+		ipb.templates['m_rem_friend']	= new Template("<a href='http://www.dreamincode.net/forums/index.php?app=members&amp;module=profile&amp;section=friends&amp;do=remove&amp;member_id=#{id}' title='Remove Friend'><img src='http://cdn2.dreamincode.net/dreamincode/forums/public/style_images/DIC/user_delete.png' alt='Remove Friend' /></a>");
+		ipb.templates['autocomplete_wrap'] = new Template("<ul id='#{id}' class='ipb_autocomplete' style='width: 250px;'></ul>");
+		ipb.templates['autocomplete_item'] = new Template("<li id='#{id}'><img src='#{img}' alt='' width='#{img_w}' height='#{img_h}' />&nbsp;&nbsp;#{itemvalue}</li>");
+		ipb.templates['page_jump']		= new Template("<div id='#{id}_wrap' class='ipbmenu_content'><h3 class='bar'>Jump to page</h3><input type='text' class='input_text' id='#{id}_input' size='8' /> <input type='submit' value='Go' class='input_submit add_folder' id='#{id}_submit' /></div>");
+	//]]>
+	</script>
+<script type="text/javascript">
+      Loader.boot();
+    </script>
+<style type="text/css">
+pre { overflow: scroll; max-height:500px; background: white; border: 1px solid #66666; padding: 5px; }
+</style>
+<script src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/a.js" type="text/javascript"></script></head><body itemscope="" itemtype="http://schema.org/WebPage">
+<div id="header">
+<h1 id="logo" style="width: 600px;"><a href="http://www.dreamincode.net/" rel="home"><img alt="&lt;/Dream.In.Code&gt;: Programming &amp; Web Development Community" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/logo_2011.gif" height="110" width="264"></a><a href="https://www.travelhq.com/events/2012devsummit/pretrip/home.mtc?utm_campaign=ATTDev2012&amp;utm_medium=Textlink&amp;utm_source=NetShelter&amp;utm_content=728x25&amp;utm_term=DreamInCode"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/att_dev_summit_2012.png" border="0" height="109"></a></h1>
+<div style="height: 110px;">
+<div style="padding-top: 30px; padding-right: 10px; float: right;">
+<form style="margin: 0pt;" id="cse-search-box">
+<span style="float: left; font-size: 24px; padding-top: 5px; padding-right: 5px; color: white; font-weight: bolder; text-shadow: 1px 1px 1px rgb(0, 0, 0);">Search:</span>
+<input name="q" id="query" size="18" style="font-size: 20px; margin-top: 5px; border: 1px solid; -moz-border-radius: 5px 5px 5px 5px;" value="c   string to char" type="text">
+<input name="sa" value="Search" style="color: white; background: none repeat scroll 0% 0% rgb(48, 48, 48); font-weight: bolder; border: 1px solid black; margin: 0px 0px 0px 5px; padding: 5px; -moz-border-radius: 5px 5px 5px 5px; position: relative; top: -3px;" type="submit">
+</form>
+<script type="text/javascript">
+ 					var f = document.getElementById('cse-search-box');
+					var q = f.q;
+					    var b = function() {
+						  if (q.value == '') {
+							q.style.background = '#FFFFFF url(http:\x2F\x2Fwww.google.com\x2Fcse\x2Fintl\x2Fen\x2Fimages\x2Fgoogle_custom_search_watermark.gif) left no-repeat';
+						  }
+						};
+
+						var f = function() {
+						  q.style.background = '#ffffff';
+						};
+						window.onload = b;
+						q.onfocus = f;
+						q.onblur = b;
+
+					</script>
+<div style="text-align: right; clear: both;">
+<a href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=search" style="text-decoration: none;"><span style="font-size: 11px; color: rgb(255, 255, 255); font-weight: bold; text-decoration: underline; text-align: right;">Advanced Forum Search</span></a>
+</div>
+</div>
+</div>
+<div id="navigation-login-register">
+<ul class="navigation">
+<li class="first"><a href="http://www.dreamincode.net/forums/">Forums</a></li>
+<li>
+<a href="http://www.dreamincode.net/forums/forum/76-programming-help/">Programming</a>
+</li>
+<li>
+<a href="http://www.dreamincode.net/forums/forum/74-web-development/">Web Development</a>
+</li>
+<li><a href="http://www.dreamincode.net/forums/forum/25-computer-support-operating-systems/">Computers</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/78-programming-tutorials/">Tutorials</a></li>
+<li><a href="http://www.dreamincode.net/code/">Snippets</a></li>
+<li><a href="http://www.dreamincode.net/forums/?automodule=blog">Dev Blogs</a></li>
+<li class="last">
+<a rel="nofollow" href="http://www.dreamincode.net/forums/forum/1-caffeine-lounge/">Lounge</a>
+</li>
+</ul>
+<ul id="login-register">
+<li id="login"><a rel="nofollow" href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=global&amp;section=login">Login</a></li>
+<li id="register"><a rel="nofollow" href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=global&amp;section=register&amp;coppa_user=&amp;termsread=1&amp;coppa_pass=1&amp;agree_to_terms=1">Join!</a></li>
+<li id="todaystopics"><a href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=search&amp;do=active">Today's Topics</a></li>
+</ul>
+</div>
+</div>
+<script type="text/javascript" language="JavaScript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/google_service.js">
+	</script>
+<script type="text/javascript" language="JavaScript">
+	  GS_googleAddAdSenseService("ca-pub-9822709549810875");
+	  GS_googleEnableAllServices();
+	</script><script src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/google_ads.js"></script>
+<script type="text/javascript" language="JavaScript">
+	  GA_googleUseIframeRendering(true);    // This indicates iframe rendering for all slots
+	</script><script src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/cookie.js"></script>
+<div id="ad_header" style="margin: 5px auto; width: 728px; height: 90px; text-align: center;">
+</div>
+<div style="background: none repeat scroll 0% 0% rgb(255, 255, 255); max-width: 1225px; margin: 0px auto; border-left: 1px solid rgb(255, 255, 255); border-right: 1px solid rgb(255, 255, 255);">
+<div id="main_content">
+<div id="content_hold" class="with_sidebar">
+<div id="content_inner" class="content">
+<div id="ipbwrapper">
+<ul id="breadcrumb" itemprop="breadcrumb" class="left"><li class="first"><a href="http://www.dreamincode.net/forums/index">Dream.In.Code</a></li>
+<li><span class="nav_sep">&gt;</span> <a href="http://www.dreamincode.net/forums/forum/76-programming-help/" title="Return to Programming Help">Programming Help</a></li>
+<li><span class="nav_sep">&gt;</span> <a href="http://www.dreamincode.net/forums/forum/15-c-and-c/" title="Return to C and C++">C and C++</a></li>
+</ul><br>
+<div id="content" class="clear">
+<a id="j_content"></a>
+<script type="text/javascript">
+//<![CDATA[
+	ipb.topic.inSection = 'topicview';
+	ipb.topic.topic_id  = 13228;
+	ipb.topic.forum_id  = 15;
+	ipb.topic.start_id  = 0;
+	// Editor JS: Only needs to be done once per page
+	ipb.editor_values.get('templates')['link'] = new Template("<label for='#{id}_url'>URL</label><input type='text' class='input_text' id='#{id}_url' value='http://' tabindex='10' /><label for='#{id}_urltext'>Link text</label><input type='text' class='input_text _select' id='#{id}_urltext' value='My link' tabindex='11' /><input type='submit' class='input_submit' value='Insert Link' tabindex='12' />");
+ipb.editor_values.get('templates')['image'] = new Template("<label for='#{id}_img'>Image URL</label><input type='text' class='input_text' id='#{id}_img' value='http://' tabindex='10' /><input type='submit' class='input_submit' value='Insert Image' tabindex='11' />");
+ipb.editor_values.get('templates')['email'] = new Template("<label for='#{id}_email'>Email Address</label><input type='text' class='input_text' id='#{id}_email' tabindex='10' /><label for='#{id}_emailtext'>Link text</label><input type='text' class='input_text _select' id='#{id}_emailtext' value='Email me' tabindex='11' /><input type='submit' class='input_submit' value='Insert Email' tabindex='12' />");
+ipb.editor_values.get('templates')['media'] = new Template("<label for='#{id}_media'>Media URL</label><input type='text' class='input_text' id='#{id}_media' value='http://' tabindex='10' /><input type='submit' class='input_submit' value='Insert Media' tabindex='11' />");
+ipb.editor_values.get('templates')['generic'] = new Template("<div class='rte_title'>#{title}</div><strong>Example</strong><pre>#{example}</pre><label for='#{id}_option' class='optional'>#{option_text}</label><input type='text' class='input_text optional' id='#{id}_option' tabindex='10' /><label for='#{id}_text'>#{value_text}</label><input type='text' class='input_text _select' id='#{id}_text' tabindex='11' /><input type='submit' class='input_submit' value='Add' tabindex='12' />");
+ipb.editor_values.get('templates')['togglesource'] = new Template("<fieldset id='#{id}_ts_controls' class='submit' style='text-align: left'><input type='button' class='input_submit' value='Update' id='#{id}_ts_update' />&nbsp;&nbsp;&nbsp; <a href='#' id='#{id}_ts_cancel' class='cancel'>Cancel Source Edit</a></fieldset>");
+	
+ipb.editor_values.get('templates')['toolbar'] = new Template("<ul id='#{id}_toolbar_#{toolbarid}' class='toolbar' style='display: none'>#{content}</ul>");
+ipb.editor_values.get('templates')['button'] = new Template("<li><span id='#{id}_cmd_custom_#{cmd}' class='rte_control rte_button specialitem' title='#{title}'><img src='http://cdn2.dreamincode.net/dreamincode/forums/public/style_images/DIC/rte_icons/#{img}' alt='Icon' /></span></li>");
+ipb.editor_values.get('templates')['menu_item'] = new Template("<li id='#{id}_cmd_custom_#{cmd}' class='specialitem clickable'>#{title}</li>");
+ipb.editor_values.get('templates')['togglesource'] = new Template("<fieldset id='#{id}_ts_controls' class='submit' style='text-align: left'><input type='button' class='input_submit' value='Update' id='#{id}_ts_update' />&nbsp;&nbsp;&nbsp; <a href='#' id='#{id}_ts_cancel' class='cancel'>Cancel Source Edit</a></fieldset>");
+ipb.editor_values.get('templates')['emoticons_showall'] = new Template("<input class='input_submit emoticons' type='button' id='#{id}_all_emoticons' value='Show all emoticons' />");
+ipb.editor_values.get('templates')['emoticon_wrapper'] = new Template("<h4><span>Emoticons</span></h4><div id='#{id}_emoticon_holder' class='emoticon_holder'></div>");
+
+// Add smilies into the mix
+ipb.editor_values.set( 'show_emoticon_link', false );
+
+ipb.editor_values.set( 'bbcodes', $H({"snapback":{"id":"1","title":"Post Snap Back","desc":"This tag displays a little linked image which links back to a post - used when quoting posts from the board. Opens in same window by default.","tag":"snapback","useoption":"0","example":"[snapback]100[/snapback]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"topic":{"id":"5","title":"Topic Link","desc":"This tag provides an easy way to link to a topic","tag":"topic","useoption":"1","example":"[topic=1]Click me![/topic]","switch_option":"0","menu_option_text":"Enter the topic ID","menu_content_text":"Enter the title for this link","single_tag":"0","optional_option":"0","image":""},"post":{"id":"6","title":"Post Link","desc":"This tag provides an easy way to link to a post.","tag":"post","useoption":"1","example":"[post=1]Click me![/post]","switch_option":"0","menu_option_text":"Enter the Post ID","menu_content_text":"Enter the title for this link","single_tag":"0","optional_option":"0","image":""},"spoiler":{"id":"7","title":"Spoiler","desc":"Spoiler tag","tag":"spoiler","useoption":"0","example":"[spoiler]Some hidden text[/spoiler]","switch_option":"0","menu_option_text":"","menu_content_text":"Enter the text to be masked","single_tag":"0","optional_option":"0","image":""},"acronym":{"id":"8","title":"Acronym","desc":"Allows you to make an acronym that will display a description when moused over","tag":"acronym","useoption":"1","example":"[acronym='Laugh Out Loud']lol[/acronym]","switch_option":"0","menu_option_text":"Enter the description for this acronym (EG: Laugh Out Loud)","menu_content_text":"Enter the acronym (EG: lol)","single_tag":"0","optional_option":"0","image":""},"hr":{"id":"12","title":"Horizontal Rule","desc":"Adds a horizontal rule to separate text","tag":"hr","useoption":"0","example":"[hr]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"1","optional_option":"0","image":""},"php":{"id":"14","title":"PHP Code","desc":"Allows you to enter PHP code into a formatted/highlighted syntax box","tag":"php","useoption":"0","example":"[php]$variable = true;\n\nprint_r($variable);[/php]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"html":{"id":"15","title":"HTML Code","desc":"Allows you to enter formatted/syntax-highlighted HTML code","tag":"html","useoption":"0","example":"[html]<body>\n <div class='outer'>\n  <p>Hello World</p>\n </div>\n</body>[/html]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"sql":{"id":"16","title":"SQL Code","desc":"Allows you to enter formatted/syntax-highlighted SQL code","tag":"sql","useoption":"0","example":"[sql]SELECT p.*, t.* FROM posts p LEFT JOIN topics t ON t.tid=p.topic_id WHERE t.tid=7[/sql]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"xml":{"id":"17","title":"XML Code","desc":"Allows you to enter formatted/syntax-highlighted XML code","tag":"xml","useoption":"0","example":"[xml]<outer>\n <inner>\n  <tag param='1'>Test</tag>\n </inner>\n</outer>[/xml]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"member":{"id":"31","title":"Member","desc":"Given a member name, a link is automatically generated to the member's profile","tag":"member","useoption":"1","example":"[member=skyhawk133] runs this site.","switch_option":"0","menu_option_text":"Input Username of Member","menu_content_text":"","single_tag":"1","optional_option":"0","image":"memberbbcode.png"},"extract":{"id":"33","title":"Extract Blog Entry","desc":"This will allow users to define an extract for an entry. Only this piece of the entry will be displayed on the main blog page and will show up in the RSS feed.","tag":"extract","useoption":"0","example":"[extract]This is an example![/extract]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"blog":{"id":"34","title":"Blog Link","desc":"This tag provides an easy way to link to a blog.","tag":"blog","useoption":"1","example":"[blog=100]Click me![/blog]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"entry":{"id":"35","title":"Blog Entry Link","desc":"This tag provides an easy way to link to a blog entry.","tag":"entry","useoption":"1","example":"[entry=100]Click me![/entry]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"twitter":{"id":"36","title":"Twitter","desc":"A tag to link to a user's twitter account","tag":"twitter","useoption":"0","example":"[twitter]userName[/twitter]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":"twitter.png"},"inline":{"id":"37","title":"Inline Code","desc":"Formats code inline instead of in a seperate code box. ","tag":"inline","useoption":"0","example":"[inline]style=\"font-size: 12px;\"[/inline]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":""},"il":{"id":"38","title":"Abbreviated Inline (IL)","desc":"Abbreviated version of the [inline] tag. ","tag":"il","useoption":"0","example":"[il]Code Here[/il]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"0","image":"il2.png"},"code":{"id":"41","title":"Code","desc":"Allows you to enter general code","tag":"code","useoption":"1","example":"[code]$text = 'Some long code here';[/code]","switch_option":"0","menu_option_text":"","menu_content_text":"","single_tag":"0","optional_option":"1","image":""}}) );
+	ipb.vars['emoticon_url'] = "http://cdn2.dreamincode.net/dreamincode/forums/public/style_emoticons/default";
+	//Search Setup
+	ipb.vars['search_type']			= 'forum';
+	ipb.vars['search_type_id']		= 15;
+	ipb.vars['search_type_2']		= 'topic';
+	ipb.vars['search_type_id_2']	= 13228;
+//]]>
+</script>
+<div class="topic_controls">
+<h1 style="font-size: 20px; font-weight: bolder; text-transform: capitalize; margin-top: -15px; margin-bottom: 10px;"><a href="http://www.dreamincode.net/forums/topic/13228-string-to-char/" style="text-decoration: none;">string to char*</a></h1><h2 style="margin-top: -10px; text-transform: capitalize;">Need to go from string to char*</h2>
+<span class="pagination no_pages left">Page 1 of 1</span>
+<ul class="topic_buttons">
+<li><a href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=global&amp;section=register&amp;coppa_user=&amp;termsread=1&amp;coppa_pass=1&amp;agree_to_terms=1" title="New Topic/Question" accesskey="n"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/page_white_add.png" alt=""> New Topic/Question</a></li>
+<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=15&amp;t=13228" title="Reply" accesskey="r"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/arrow_rotate_clockwise.png" alt="Reply"> Reply</a></li>
+</ul>
+</div>
+<div class="topic hfeed">
+<h2 class="maintitle">
+<span style="color: rgb(204, 204, 204); font-weight: bold; font-size: 14px;">4 Replies - 130747 Views - Last Post: 10 November 2005 - 07:06 PM</span>
+<span class="rating">Rate Topic:
+<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=13228&amp;rating=1" id="topic_rate_1" title="Rate topic 1 star"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/bullet_star_off.png" alt="-" class="rate_img"></a><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=13228&amp;rating=2" id="topic_rate_2" title="Rate topic 2 stars"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/bullet_star_off.png" alt="-" class="rate_img"></a><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=13228&amp;rating=3" id="topic_rate_3" title="Rate topic 3 stars"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/bullet_star_off.png" alt="-" class="rate_img"></a><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=13228&amp;rating=4" id="topic_rate_4" title="Rate topic 4 stars"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/bullet_star_off.png" alt="-" class="rate_img"></a><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=extras&amp;section=rating&amp;t=13228&amp;rating=5" id="topic_rate_5" title="Rate topic 5 stars"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/bullet_star_off.png" alt="-" class="rate_img"></a>
+<span id="rating_text">
+</span>
+<script type="text/javascript">
+				//<![CDATA[
+					rating = new ipb.rating( 'topic_rate_', { 
+										url: 'http://www.dreamincode.net/forums/index.php?app=forums&module=ajax&section=topics&do=rateTopic&t=13228&md5check=' + ipb.vars['secure_hash'],
+										cur_rating: 0,
+										rated: 0,
+										allow_rate: 0,
+										multi_rate: 1,
+										show_rate_text: true
+									  } );
+				//]]>
+				</script>
+<br>
+</span>
+</h2>
+<div class="post_block hentry clear  with_rep" id="post_id_132928">
+<a id="entry132928"></a>
+<div class="post_wrap">
+<h3>
+<span class="post_id">
+<a href="http://www.dreamincode.net/forums/topic/13228-string-to-char/page__view__findpost__p__132928" rel="bookmark" title="Link to post #1">#1</a>
+</span>
+<span class="author vcard">
+<a class="url fn" href="http://www.dreamincode.net/forums/user/7206-mrafcho001/">Mrafcho001</a>
+&nbsp;<a href="http://www.dreamincode.net/forums/user/7206-mrafcho001/page__f__15" class="__user __id7206 __fid15" title="View Profile"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/user_popup.png" alt="Icon"></a>
+<img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/user_off.png" alt="User is offline" title="User is offline">
+</span>
+</h3>
+<div class="author_info">
+<ul class="user_details">
+<li class="avatar"><a href="http://www.dreamincode.net/forums/user/7206-mrafcho001/" title="View Profile"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/av-7206.jpg" alt="" height="64" width="64"></a></li>
+<li class="title">D.I.C Addict</li>
+<li class="group_icon">
+<img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/contributor_group.gif" alt="member icon">
+</li>
+</ul>
+<br>
+<div class="reputation positive">
+<span class="number">Reputation: 35</span>
+</div>
+<div style="margin: 0pt auto;">
+<ul class="user_controls clear">
+<li><a href="http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=7206" title="View blog"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/book_open.png" alt="View blog"></a></li>
+</ul>
+</div>
+<ul class="user_fields">
+<li>
+<span class="ft">Posts:</span>
+<span class="fc">769</span>
+</li>
+<li>
+<span class="ft">Joined:</span>
+<span class="fc">01-November 05</span>
+</li>
+</ul>
+</div>
+<div class="post_body">
+<h1 class="entry-title">string to char*</h1>
+<p class="posted_info">
+Posted <abbr class="published updated" title="2005-11-11T00:19:01+00:00">10 November 2005 - 05:19 PM</abbr>
+</p>
+<div id="" class="post entry-content">
+I have a program where im working with a string and at one point i need to go from the string format to a char*.<br>
+<br>
+I have pre-allocated enough space for the content of the string to be stored in it.<br>
+<br>
+right now i have<br>
+<br>
+<div class="syntaxhighlighter  cpp" id="highlighter_815981"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_815981_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_815981" menu="false" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="cpp comments">//buf is of type char*</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="cpp comments">//str is of type string</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content"><code class="cpp keyword bold">for</code><code class="cpp plain">(</code><code class="cpp color1 bold">size_t</code> <code class="cpp plain">i = 0; i &lt; str.</code><code class="cpp functions bold">size</code><code class="cpp plain">(); i++)</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="cpp plain">{</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="spaces">&nbsp;&nbsp; &nbsp;</code><code class="cpp plain">buf[i] = str[i];</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>7</code></td><td class="content"><code class="cpp plain">}</code></td></tr></tbody></table></div></div></div><br>
+<br>
+This cannot be the most efficient way to do this, is it?
+<br>
+</div>
+<div style="padding-left: 15px;">
+<script type="text/javascript">
+//<![CDATA[
+ord = window.ord || Math.floor(Math.random()*1E16);
+document.write('<script type="text/javascript" src="http://ad2.netshelter.net/adj/ns.dreamincode/general;ppos=btf;kw=;tile=2;sz=300x250;ord=' + ord + '?"><\/script>');
+//]]>
+</script><script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/general_004.js"></script><script type="text/javascript">document.write('<scr'+'ipt language="javascript" src="http://ad.doubleclick.net/adj/ns.dreamincode/general;net=ns;u=,ns-30323667523_1326336400,124f3912b807528,itdeweb,;;ppos=btf;kw=;tile=2;sz=300x250;ctx=none;net=ns;cmw=owl;contx=itdeweb;dc=s;btg=;ord=8423708121136170??"></scr'+'ipt>');</script><script language="Javascript">CollectiveMedia.createAndAttachAd("ns-30323667523_1326336400","http://ad.doubleclick.net/adj/ns.dreamincode/general;net=ns;u=,ns-30323667523_1326336400,124f3912b807528,itdeweb,;;ppos=btf;kw=;tile=2;sz=300x250;ctx=none;net=ns;cmw=owl;contx=itdeweb;dc=s;btg=;ord=8423708121136170??","300","250",false);</script><script language="javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/general.js"></script><script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/300x250_BTF_NetShelter_Backup.js"></script><div id="google_ads_div_DIC_300x250_FirstPost_Default"><ins style="position: relative; width: 300px; height: 250px; border: medium none; display: inline-table;"><ins style="position: relative; width: 300px; height: 250px; border: medium none; display: block;"><iframe id="google_ads_iframe_DIC_300x250_FirstPost_Default" name="google_ads_iframe_DIC_300x250_FirstPost_Default" vspace="0" hspace="0" allowtransparency="true" marginwidth="0" marginheight="0" style="border: 0px none; left: 0pt; position: absolute; top: 0pt;" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/ads.html" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins></div>
+<noscript><a href="http://ad2.netshelter.net/jump/ns.dreamincode/general;ppos=btf;kw=;tile=2;sz=300x250;ord=123456789?" target="_blank"><img src="http://ad2.netshelter.net/ad/ns.dreamincode/general;ppos=btf;kw=;tile=2;sz=300x250;ord=123456789?" border="0" alt=""/></a></noscript>
+</div>
+<br>
+</div>
+<div class="rep_bar clear right" id="rep_post_132928"><span style="float: left; margin-top: 10px; font-weight: bold;">
+Is This A Good Question/Topic?
+</span>
+<span class="reputation zero rep_show clickable" title="Reputation" onclick="ipb.topic.repPopUp( this, 132928 );">
+0
+</span>
+<ul>
+<li><a href="#" class="rep_up" title="Vote this post up"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/add.png" alt="+"></a></li>
+</ul>
+</div>
+<script type="text/javascript">
+					ipb.global.registerReputation( 'rep_post_132928', { app: 'forums', type: 'pid', typeid: '132928' }, parseInt('0') );
+				</script>
+<ul class="post_controls">
+<li class="top hide"><a href="#top" class="top" title="Back to top">Back to top</a></li>
+<li class="multiquote" id="multiq_132928" style="">
+<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=15&amp;t=13228&amp;qpid=132928" title="Quote this post with Multi-Quote"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> MultiQuote</a>
+</li>
+<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=15&amp;t=13228&amp;qpid=132928" title="Reply directly to this post"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> Quote + Reply</a></li>
+</ul>
+<script type="text/javascript">
+					// Show multiquote for JS browsers
+					$('multiq_132928').show();
+					
+					if( $('toggle_post_132928') )
+					{
+						$('toggle_post_132928').show();
+					}
+				</script>
+</div>
+</div>
+<hr>
+<h2 class="maintitle">
+<strong>Replies To:</strong> string to char*
+</h2>
+<div class="post_block hentry clear  with_rep" id="post_id_132929">
+<a id="entry132929"></a>
+<div class="post_wrap">
+<h3>
+<span class="post_id">
+<a href="http://www.dreamincode.net/forums/topic/13228-string-to-char/page__view__findpost__p__132929" rel="bookmark" title="Link to post #2">#2</a>
+</span>
+<span class="author vcard">
+<a class="url fn" href="http://www.dreamincode.net/forums/user/3093-dorknexus/">dorknexus</a>
+&nbsp;<a href="http://www.dreamincode.net/forums/user/3093-dorknexus/page__f__15" class="__user __id3093 __fid15" title="View Profile"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/user_popup.png" alt="Icon"></a>
+<img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/user_off.png" alt="User is offline" title="User is offline">
+</span>
+</h3>
+<div class="author_info">
+<ul class="user_details">
+<li class="avatar"><a href="http://www.dreamincode.net/forums/user/3093-dorknexus/" title="View Profile"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/av-3093.gif" alt="" height="48" width="64"></a></li>
+<li class="title">or something bad...real bad.</li>
+<li class="group_icon">
+<img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/alumni_group.gif" alt="member icon"><br> <img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/forum_leader.png">
+</li>
+</ul>
+<br>
+<div class="reputation positive">
+<span class="number">Reputation: 880</span>
+</div>
+<div style="margin: 0pt auto;">
+<ul class="user_controls clear">
+<li><a href="http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=3093" title="View blog"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/book_open.png" alt="View blog"></a></li>
+</ul>
+</div>
+<ul class="user_fields">
+<li>
+<span class="ft">Posts:</span>
+<span class="fc">4,394</span>
+</li>
+<li>
+<span class="ft">Joined:</span>
+<span class="fc">02-May 04</span>
+</li>
+</ul>
+</div>
+<div class="post_body">
+<h2 class="entry-title">Re: string to char*</h2>
+<p class="posted_info">
+Posted <abbr class="published updated" title="2005-11-11T00:24:04+00:00">10 November 2005 - 05:24 PM</abbr>
+</p>
+<div id="" class="post entry-content">
+assuming you allocated the proper space to buf, that should work, but also note, this would work just as well<br>
+<br>
+<div class="syntaxhighlighter  cpp" id="highlighter_344021"><div class="bar"><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_344021_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_344021" menu="false" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="cpp color1 bold">char</code> <code class="cpp plain">*buf = </code><code class="cpp keyword bold">new</code> <code class="cpp color1 bold">char</code><code class="cpp plain">[</code><code class="cpp functions bold">strlen</code><code class="cpp plain">(str)];</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>3</code></td><td class="content"><code class="cpp functions bold">strcpy</code><code class="cpp plain">(buf,str);</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>4</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>5</code></td><td class="content"><code class="cpp comments">//...When you are done with buf...</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>6</code></td><td class="content"><code class="cpp keyword bold">delete</code> <code class="cpp plain">[]buf;</code></td></tr></tbody></table></div></div></div> <br>
+<br>
+the strlen(...) and strcpy(...) functions can be found in string.h
+<br>
+</div>
+</div>
+<div class="rep_bar clear right" id="rep_post_132929"><span style="float: left; margin-top: 10px; font-weight: bold;">
+Was This Post Helpful?
+</span>
+<span class="reputation zero rep_show clickable" title="Reputation" onclick="ipb.topic.repPopUp( this, 132929 );">
+0
+</span>
+<ul>
+<li><a href="#" class="rep_up" title="Vote this post up"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/add.png" alt="+"></a></li>
+<li><a href="#" class="rep_down" title="Vote this post down"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/delete.png" alt="-"></a></li>
+</ul>
+</div>
+<script type="text/javascript">
+					ipb.global.registerReputation( 'rep_post_132929', { app: 'forums', type: 'pid', typeid: '132929' }, parseInt('0') );
+				</script>
+<ul class="post_controls">
+<li class="top hide"><a href="#top" class="top" title="Back to top">Back to top</a></li>
+<li class="multiquote" id="multiq_132929" style="">
+<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=15&amp;t=13228&amp;qpid=132929" title="Quote this post with Multi-Quote"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> MultiQuote</a>
+</li>
+<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=15&amp;t=13228&amp;qpid=132929" title="Reply directly to this post"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> Quote + Reply</a></li>
+</ul>
+<script type="text/javascript">
+					// Show multiquote for JS browsers
+					$('multiq_132929').show();
+					
+					if( $('toggle_post_132929') )
+					{
+						$('toggle_post_132929').show();
+					}
+				</script>
+</div>
+</div>
+<hr>
+<div class="post_block hentry clear  with_rep" id="post_id_132930">
+<a id="entry132930"></a>
+<div class="post_wrap">
+<h3>
+<span class="post_id">
+<a href="http://www.dreamincode.net/forums/topic/13228-string-to-char/page__view__findpost__p__132930" rel="bookmark" title="Link to post #3">#3</a>
+</span>
+<span class="author vcard">
+<a class="url fn" href="http://www.dreamincode.net/forums/user/7206-mrafcho001/">Mrafcho001</a>
+&nbsp;<a href="http://www.dreamincode.net/forums/user/7206-mrafcho001/page__f__15" class="__user __id7206 __fid15" title="View Profile"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/user_popup.png" alt="Icon"></a>
+<img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/user_off.png" alt="User is offline" title="User is offline">
+</span>
+</h3>
+<div class="author_info">
+<ul class="user_details">
+<li class="avatar"><a href="http://www.dreamincode.net/forums/user/7206-mrafcho001/" title="View Profile"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/av-7206.jpg" alt="" height="64" width="64"></a></li>
+<li class="title">D.I.C Addict</li>
+<li class="group_icon">
+<img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/contributor_group.gif" alt="member icon">
+</li>
+</ul>
+<br>
+<div class="reputation positive">
+<span class="number">Reputation: 35</span>
+</div>
+<div style="margin: 0pt auto;">
+<ul class="user_controls clear">
+<li><a href="http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=7206" title="View blog"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/book_open.png" alt="View blog"></a></li>
+</ul>
+</div>
+<ul class="user_fields">
+<li>
+<span class="ft">Posts:</span>
+<span class="fc">769</span>
+</li>
+<li>
+<span class="ft">Joined:</span>
+<span class="fc">01-November 05</span>
+</li>
+</ul>
+</div>
+<div class="post_body">
+<h2 class="entry-title">Re: string to char*</h2>
+<p class="posted_info">
+Posted <abbr class="published updated" title="2005-11-11T00:26:56+00:00">10 November 2005 - 05:26 PM</abbr>
+</p>
+<div id="" class="post entry-content">
+Thanks, works great!<br>
+<br>
+<div class="syntaxhighlighter  cpp" id="highlighter_725940"><div class="bar     "><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_725940_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_725940" menu="false" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="cpp comments">//forgot .c_str()?</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>2</code></td><td class="content"><code class="cpp functions bold">strcpy</code><code class="cpp plain">(buf, str.c_str());</code></td></tr></tbody></table></div></div></div><br>
+<img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/tongue.gif" class="bbc_emoticon" alt=":P">
+<br>
+<p class="edit">
+This post has been edited by <b>Mrafcho001</b>: 10 November 2005 - 05:27 PM
+</p>
+</div>
+</div>
+<div class="rep_bar clear right" id="rep_post_132930"><span style="float: left; margin-top: 10px; font-weight: bold;">
+Was This Post Helpful?
+</span>
+<span class="reputation zero rep_show clickable" title="Reputation" onclick="ipb.topic.repPopUp( this, 132930 );">
+0
+</span>
+<ul>
+<li><a href="#" class="rep_up" title="Vote this post up"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/add.png" alt="+"></a></li>
+<li><a href="#" class="rep_down" title="Vote this post down"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/delete.png" alt="-"></a></li>
+</ul>
+</div>
+<script type="text/javascript">
+					ipb.global.registerReputation( 'rep_post_132930', { app: 'forums', type: 'pid', typeid: '132930' }, parseInt('0') );
+				</script>
+<ul class="post_controls">
+<li class="top hide"><a href="#top" class="top" title="Back to top">Back to top</a></li>
+<li class="multiquote" id="multiq_132930" style="">
+<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=15&amp;t=13228&amp;qpid=132930" title="Quote this post with Multi-Quote"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> MultiQuote</a>
+</li>
+<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=15&amp;t=13228&amp;qpid=132930" title="Reply directly to this post"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> Quote + Reply</a></li>
+</ul>
+<script type="text/javascript">
+					// Show multiquote for JS browsers
+					$('multiq_132930').show();
+					
+					if( $('toggle_post_132930') )
+					{
+						$('toggle_post_132930').show();
+					}
+				</script>
+</div>
+</div>
+<hr>
+<div class="post_block hentry clear  with_rep" id="post_id_132931">
+<a id="entry132931"></a>
+<div class="post_wrap">
+<h3>
+<span class="post_id">
+<a href="http://www.dreamincode.net/forums/topic/13228-string-to-char/page__view__findpost__p__132931" rel="bookmark" title="Link to post #23">#23</a>
+</span>
+<span class="author vcard">
+<a class="url fn" href="http://www.dreamincode.net/forums/user/3093-dorknexus/">dorknexus</a>
+&nbsp;<a href="http://www.dreamincode.net/forums/user/3093-dorknexus/page__f__15" class="__user __id3093 __fid15" title="View Profile"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/user_popup.png" alt="Icon"></a>
+<img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/user_off.png" alt="User is offline" title="User is offline">
+</span>
+</h3>
+<div class="author_info">
+<ul class="user_details">
+<li class="avatar"><a href="http://www.dreamincode.net/forums/user/3093-dorknexus/" title="View Profile"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/av-3093.gif" alt="" height="48" width="64"></a></li>
+<li class="title">or something bad...real bad.</li>
+<li class="group_icon">
+<img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/alumni_group.gif" alt="member icon"><br> <img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/forum_leader.png">
+</li>
+</ul>
+<br>
+<div class="reputation positive">
+<span class="number">Reputation: 880</span>
+</div>
+<div style="margin: 0pt auto;">
+<ul class="user_controls clear">
+<li><a href="http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=3093" title="View blog"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/book_open.png" alt="View blog"></a></li>
+</ul>
+</div>
+<ul class="user_fields">
+<li>
+<span class="ft">Posts:</span>
+<span class="fc">4,394</span>
+</li>
+<li>
+<span class="ft">Joined:</span>
+<span class="fc">02-May 04</span>
+</li>
+</ul>
+</div>
+<div class="post_body">
+<h2 class="entry-title">Re: string to char*</h2>
+<p class="posted_info">
+Posted <abbr class="published updated" title="2005-11-11T00:51:17+00:00">10 November 2005 - 05:51 PM</abbr>
+</p>
+<div id="" class="post entry-content">
+i believe c_str() will return a pointer to memory managed by "str". if you actually just said<br>
+<br>
+<div class="syntaxhighlighter  cpp" id="highlighter_889275"><div class="bar  "><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_889275_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_889275" menu="false" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>1</code></td><td class="content"><code class="cpp plain">buf = str.c_str();</code></td></tr></tbody></table></div></div></div><br>
+<br>
+that would assign buf to that memory and allow you to modify str 
+directly, rather than a copy which is what we did previously. all of 
+this assuming you wanted to modify it directly.
+<br>
+</div>
+</div>
+<div class="rep_bar clear right" id="rep_post_132931"><span style="float: left; margin-top: 10px; font-weight: bold;">
+Was This Post Helpful?
+</span>
+<span class="reputation positive rep_show clickable" title="Reputation" onclick="ipb.topic.repPopUp( this, 132931 );">
+1
+</span>
+</div>
+<script type="text/javascript">
+					ipb.global.registerReputation( 'rep_post_132931', { app: 'forums', type: 'pid', typeid: '132931' }, parseInt('1') );
+				</script>
+<ul class="post_controls">
+<li class="top hide"><a href="#top" class="top" title="Back to top">Back to top</a></li>
+<li class="multiquote" id="multiq_132931" style="">
+<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=15&amp;t=13228&amp;qpid=132931" title="Quote this post with Multi-Quote"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> MultiQuote</a>
+</li>
+<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=15&amp;t=13228&amp;qpid=132931" title="Reply directly to this post"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> Quote + Reply</a></li>
+</ul>
+<script type="text/javascript">
+					// Show multiquote for JS browsers
+					$('multiq_132931').show();
+					
+					if( $('toggle_post_132931') )
+					{
+						$('toggle_post_132931').show();
+					}
+				</script>
+</div>
+</div>
+<hr>
+<div class="post_block hentry clear  with_rep" id="post_id_132934">
+<a id="entry132934"></a>
+<div class="post_wrap">
+<h3>
+<span class="post_id">
+<a href="http://www.dreamincode.net/forums/topic/13228-string-to-char/page__view__findpost__p__132934" rel="bookmark" title="Link to post #24">#24</a>
+</span>
+<span class="author vcard">
+<a class="url fn" href="http://www.dreamincode.net/forums/user/7206-mrafcho001/">Mrafcho001</a>
+&nbsp;<a href="http://www.dreamincode.net/forums/user/7206-mrafcho001/page__f__15" class="__user __id7206 __fid15" title="View Profile"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/user_popup.png" alt="Icon"></a>
+<img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/user_off.png" alt="User is offline" title="User is offline">
+</span>
+</h3>
+<div class="author_info">
+<ul class="user_details">
+<li class="avatar"><a href="http://www.dreamincode.net/forums/user/7206-mrafcho001/" title="View Profile"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/av-7206.jpg" alt="" height="64" width="64"></a></li>
+<li class="title">D.I.C Addict</li>
+<li class="group_icon">
+<img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/contributor_group.gif" alt="member icon">
+</li>
+</ul>
+<br>
+<div class="reputation positive">
+<span class="number">Reputation: 35</span>
+</div>
+<div style="margin: 0pt auto;">
+<ul class="user_controls clear">
+<li><a href="http://www.dreamincode.net/forums/index.php?app=blog&amp;module=display&amp;section=blog&amp;mid=7206" title="View blog"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/book_open.png" alt="View blog"></a></li>
+</ul>
+</div>
+<ul class="user_fields">
+<li>
+<span class="ft">Posts:</span>
+<span class="fc">769</span>
+</li>
+<li>
+<span class="ft">Joined:</span>
+<span class="fc">01-November 05</span>
+</li>
+</ul>
+</div>
+<div class="post_body">
+<h2 class="entry-title">Re: string to char*</h2>
+<p class="posted_info">
+Posted <abbr class="published updated" title="2005-11-11T02:06:53+00:00">10 November 2005 - 07:06 PM</abbr>
+</p>
+<div id="" class="post entry-content">
+Well what im really doing is editing the string (Youll find out in a few days why <img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/wink2.gif" class="bbc_emoticon" alt=";)"> ) in a fuction and then return a pointer to the memory where the string is stored<br>
+<br>
+<div class="syntaxhighlighter  cpp" id="highlighter_724008"><div class="bar                                           "><div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><div class="item copyToClipboard"><embed id="highlighter_724008_clipboard" type="application/x-shockwave-flash" title="copy to clipboard" allowscriptaccess="always" wmode="transparent" flashvars="highlighterId=highlighter_724008" menu="false" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/clipboard.swf" height="16" width="16"></div><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div></div><div class="lines"><div class="line alt1"><table><tbody><tr><td class="number"><code>01</code></td><td class="content"><code class="cpp color1 bold">char</code> <code class="cpp plain">*Function(string STR)</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>02</code></td><td class="content"><code class="cpp plain">{</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>03</code></td><td class="content"><code class="cpp comments">//somewhere up here str has been defined an contains data</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>04</code></td><td class="content"><code class="cpp color1 bold">char</code> <code class="cpp plain">*buf;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>05</code></td><td class="content"><code class="cpp plain">buf = (</code><code class="cpp color1 bold">char</code><code class="cpp plain">*)GobalAlloc(GPTR, str.</code><code class="cpp functions bold">size</code><code class="cpp plain">());</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>06</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>07</code></td><td class="content"><code class="cpp functions bold">strcpy</code><code class="cpp plain">(buf, str.c_str());</code></td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>08</code></td><td class="content"><code class="cpp comments">//strcpy(buf, str) returns an error :-\</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>09</code></td><td class="content">&nbsp;</td></tr></tbody></table></div><div class="line alt2"><table><tbody><tr><td class="number"><code>10</code></td><td class="content"><code class="cpp keyword bold">return</code> <code class="cpp plain">buf;</code></td></tr></tbody></table></div><div class="line alt1"><table><tbody><tr><td class="number"><code>11</code></td><td class="content"><code class="cpp plain">}</code></td></tr></tbody></table></div></div></div>
+<br>
+</div>
+</div>
+<div class="rep_bar clear right" id="rep_post_132934"><span style="float: left; margin-top: 10px; font-weight: bold;">
+Was This Post Helpful?
+</span>
+<span class="reputation zero rep_show clickable" title="Reputation" onclick="ipb.topic.repPopUp( this, 132934 );">
+0
+</span>
+<ul>
+<li><a href="#" class="rep_up" title="Vote this post up"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/add.png" alt="+"></a></li>
+<li><a href="#" class="rep_down" title="Vote this post down"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/delete.png" alt="-"></a></li>
+</ul>
+</div>
+<script type="text/javascript">
+					ipb.global.registerReputation( 'rep_post_132934', { app: 'forums', type: 'pid', typeid: '132934' }, parseInt('0') );
+				</script>
+<ul class="post_controls">
+<li class="top hide"><a href="#top" class="top" title="Back to top">Back to top</a></li>
+<li class="multiquote" id="multiq_132934" style="">
+<a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=15&amp;t=13228&amp;qpid=132934" title="Quote this post with Multi-Quote"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> MultiQuote</a>
+</li>
+<li><a href="http://www.dreamincode.net/forums/index.php?app=forums&amp;module=post&amp;section=post&amp;do=reply_post&amp;f=15&amp;t=13228&amp;qpid=132934" title="Reply directly to this post"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/comment_add.png" alt="Reply Icon"> Quote + Reply</a></li>
+</ul>
+<script type="text/javascript">
+					// Show multiquote for JS browsers
+					$('multiq_132934').show();
+					
+					if( $('toggle_post_132934') )
+					{
+						$('toggle_post_132934').show();
+					}
+				</script>
+</div>
+</div>
+<hr>
+<ul class="topic_jump right clear">
+<li class="previous"><a href="http://www.dreamincode.net/forums/topic/13228-string-to-char/page__view__old">&#8592; Previous Topic</a></li>
+<li><strong><a href="http://www.dreamincode.net/forums/forum/15-c-and-c/" title="Return to C and C++">C and C++</a></strong></li>
+<li class="next"><a href="http://www.dreamincode.net/forums/topic/13228-string-to-char/page__view__new">Next Topic &#8594;</a></li>
+</ul>
+<div class="topic_controls clear">
+<span class="pagination no_pages left">Page 1 of 1</span>
+</div>
+</div>
+<br class="clear">
+</div>
+<table align="center" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td align="center" valign="top">
+<script language="JavaScript">
+				  GA_googleFillSlotWithSize("ca-pub-9822709549810875", "DIC_300x250_Footer_Default", 300, 250 ); 
+				  // Notice the pub ID and slot size added to the call
+				</script><div id="google_ads_div_DIC_300x250_Footer_Default"><ins style="position: relative; width: 300px; height: 250px; border: medium none; display: inline-table;"><ins style="position: relative; width: 300px; height: 250px; border: medium none; display: block;"><iframe id="google_ads_iframe_DIC_300x250_Footer_Default" name="google_ads_iframe_DIC_300x250_Footer_Default" vspace="0" hspace="0" allowtransparency="true" marginwidth="0" marginheight="0" style="border: 0px none; left: 0pt; position: absolute; top: 0pt;" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/ads_002.html" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins></div>
+</td>
+<td align="left" valign="top" width="100%">
+<div id="related" style="margin-top: -25px;">
+<style>
+		.related ul { list-style-type: circle; font-size: 12px; font-weight: bold; }
+        .related li { margin-bottom: 5px; background-position: left 7px !important; margin-left: -35px; }
+		.related h2 { font-size: 18px; font-weight: bold; }
+		.related a { color: blue; }
+		</style>
+<div class="related">
+<h2>Related C++ Topics<sup>beta</sup></h2><ul><li><a href="http://www.dreamincode.net/forums/topic/32859-convert-system-string-to-char-or-int/" title="3 Replies - Topic Started: September 7, 2007, 10:26 pm">Convert System String To Char Or Int - Convert Sting^ To Char[]</a> </li><li><a href="http://www.dreamincode.net/forums/topic/178829-convert-string-to-char/" title="5 Replies - Topic Started: June 23, 2010, 8:39 pm">Convert String To Char</a> </li><li><a href="http://www.dreamincode.net/forums/topic/124070-string-to-char-array/" title="4 Replies - Topic Started: September 5, 2009, 1:32 pm">STRING TO CHAR ARRAY</a> </li><li><a href="http://www.dreamincode.net/forums/topic/141926-convert-from-string-to-char/" title="3 Replies - Topic Started: November 28, 2009, 1:49 am">Convert From String To Char</a> </li><li><a href="http://www.dreamincode.net/forums/topic/102593-convert-string-to-char/" title="3 Replies - Topic Started: April 30, 2009, 5:59 pm">Convert String To Char</a> </li><li><a href="http://www.dreamincode.net/forums/topic/140750-help-finding-a-char-in-a-string/" title="6 Replies - Topic Started: November 22, 2009, 7:43 am">Help Finding A Char In A String - Finding A Char In A String Of Char's</a> </li><li><a href="http://www.dreamincode.net/forums/topic/16975-string-to-char/" title="1 Replies - Topic Started: July 1, 2006, 9:24 am">String To Char* - How Do I Convert A String To A Char* (non Const)</a> </li><li><a href="http://www.dreamincode.net/forums/topic/134439-mfc-string/" title="1 Replies - Topic Started: October 26, 2009, 9:57 am">MFC String ^ - Converting String ^ To Char Array</a> </li><li><a href="http://www.dreamincode.net/forums/topic/147841-function-takes-char-pass-string/" title="18 Replies - Topic Started: January 1, 2010, 8:55 pm">Function Takes Char *, Pass String?</a> </li><li><a href="http://www.dreamincode.net/forums/topic/157377-passing-string-to-char-in-function/" title="18 Replies - Topic Started: February 21, 2010, 6:17 pm">Passing String To Char * In Function</a> </li></ul></div>	</div>
+</td>
+</tr>
+</tbody></table>
+<script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/lightbox.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+	// Lightbox Configuration
+	LightboxOptions = Object.extend({
+	    fileLoadingImage:        'http://cdn2.dreamincode.net/dreamincode/forums/public/style_images/DIC/lightbox/loading.gif',     
+	    fileBottomNavCloseImage: 'http://cdn2.dreamincode.net/dreamincode/forums/public/style_images/DIC/lightbox/closelabel.gif',
+	    overlayOpacity: 0.8,   // controls transparency of shadow overlay
+	    animate: true,         // toggles resizing animations
+	    resizeSpeed: 7,        // controls the speed of the image resizing animations (1=slowest and 10=fastest)
+	    borderSize: 10,         //if you adjust the padding in the CSS, you will need to update this variable
+		// When grouping images this is used to write: Image # of #.
+		// Change it for non-english localization
+		labelImage: "Image",
+		labelOf: "of"
+	}, window.LightboxOptions || {});
+/* Watch for a lightbox image and set up our downloadbutton watcher */
+document.observe('click', (function(event){
+    var target = event.findElement('a[rel^=lightbox]') || event.findElement('area[rel^=lightbox]');
+    if (target) {
+        event.stop();
+        gbl_addDownloadButton();
+    }
+}).bind(this));
+var _to    = '';
+var _last  = '';
+function gbl_addDownloadButton()
+{
+	if ( typeof( ipsLightbox.lightboxImage ) != 'undefined' && ipsLightbox.lightboxImage.src )
+	{
+		if ( _last != ipsLightbox.lightboxImage.src )
+		{
+			if ( ! $('gbl_d') )
+			{
+				$('bottomNav').insert( { top: "<div id='gbl_d' style='text-align:right;padding-bottom:4px;'></div>" } );
+			}
+			
+			$('gbl_d').update( "<a href='"+ ipsLightbox.lightboxImage.src + "' target='_blank'><img src='http://cdn2.dreamincode.net/dreamincode/forums/public/style_images/DIC/lightbox/download-icon.png' /></a>" );
+			
+			_last = ipsLightbox.lightboxImage.src;
+		}
+	}
+	
+	/* Check for init and then keep checking for new image */
+	_to = setTimeout( "gbl_addDownloadButton()", 1000 );
+}
+//]]>
+</script>
+</div>
+</div>
+</div>
+<div id="sidebar">
+<div style="margin-left: 35px; padding-top: 10px; text-align: center;">
+<a href="http://www.dreamincode.net/forums/index.php?app=core&amp;module=global&amp;section=register&amp;coppa_user=&amp;termsread=1&amp;coppa_pass=1&amp;agree_to_terms=1"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/ask_a_question_336.png"></a>
+<br><br>
+<div style="width: 300px; height: 250px; margin-left: 25px;">
+<script type="text/javascript">
+//<![CDATA[
+ord = window.ord || Math.floor(Math.random()*1E16);
+document.write('<script type="text/javascript" src="http://ad2.netshelter.net/adj/ns.dreamincode/general;ppos=atf;kw=;tile=2;sz=300x250;ord=' + ord + '?"><\/script>');
+//]]>
+</script><script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/general_003.js"></script><script type="text/javascript">document.write('<scr'+'ipt language="javascript" src="http://ib.adnxs.com/ptj?member=988&inv_code=ns.dreamincode&size=300x250&imp_id=ns-30205121143_1326336401,124f3912b807528&referrer=www.dreamincode.net&redir=http%3A%2F%2Fad.doubleclick.net%2Fadj%2Fns.dreamincode%2Fgeneral%3Bnet%3Dns%3Bu%3D%2Cns-30205121143_1326336401%2C124f3912b807528%2Citdeweb%2Cax.{PRICEBUCKET}%3B%3Bppos%3Datf%3Bkw%3D%3Btile%3D2%3Bsz%3D300x250%3Bctx%3Dnone%3Bnet%3Dns%3Bcmw%3Dowl%3Bcontx%3Ditdeweb%3Ban%3D{PRICEBUCKET}%3Bbu%3D{BUYER_MEMBER_ID}%3Bbr%3D{BRAND_ID}%3Bdc%3Ds%3Bbtg%3D%3Bord%3D8423708121136170%3F%3F"></scr'+'ipt>');</script><script language="Javascript">CollectiveMedia.createAndAttachAd("ns-30205121143_1326336401","http://ib.adnxs.com/ptj?member=988&inv_code=ns.dreamincode&size=300x250&imp_id=ns-30205121143_1326336401,124f3912b807528&referrer=www.dreamincode.net&redir=http%3A%2F%2Fad.doubleclick.net%2Fadj%2Fns.dreamincode%2Fgeneral%3Bnet%3Dns%3Bu%3D%2Cns-30205121143_1326336401%2C124f3912b807528%2Citdeweb%2Cax.{PRICEBUCKET}%3B%3Bppos%3Datf%3Bkw%3D%3Btile%3D2%3Bsz%3D300x250%3Bctx%3Dnone%3Bnet%3Dns%3Bcmw%3Dowl%3Bcontx%3Ditdeweb%3Ban%3D{PRICEBUCKET}%3Bbu%3D{BUYER_MEMBER_ID}%3Bbr%3D{BRAND_ID}%3Bdc%3Ds%3Bbtg%3D%3Bord%3D8423708121136170%3F%3F","300","250",false);</script><script language="javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/ptj_002.js"></script><script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/300x250_ATF_NetShelter_Backup.js"></script><div id="google_ads_div_DIC_300x250_TopCenter_Default"><ins style="position: relative; width: 300px; height: 250px; border: medium none; display: inline-table;"><ins style="position: relative; width: 300px; height: 250px; border: medium none; display: block;"><iframe id="google_ads_iframe_DIC_300x250_TopCenter_Default" name="google_ads_iframe_DIC_300x250_TopCenter_Default" vspace="0" hspace="0" allowtransparency="true" marginwidth="0" marginheight="0" style="border: 0px none; left: 0pt; position: absolute; top: 0pt;" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/ads_003.html" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins></div>
+<noscript><a href="http://ad2.netshelter.net/jump/ns.dreamincode/general;ppos=atf;kw=;tile=2;sz=300x250;ord=123456789?" target="_blank"><img src="http://ad2.netshelter.net/ad/ns.dreamincode/general;ppos=atf;kw=;tile=2;sz=300x250;ord=123456789?" border="0" alt=""/></a></noscript>
+</div>
+</div>
+<div id="sidebar_inner">
+<div class="column1">
+<div class="navigation">
+<h2><a href="http://www.dreamincode.net/forums/forum/72-general-discussion/">General Discussion</a></h2>
+<ul class="navigation">
+<li><a href="http://www.dreamincode.net/forums/forum/1-caffeine-lounge/" title="This is our off-topic forum for discussions related to non-programming topics including: sports, current events, games, music, movies, food, drink, TV, geek related (toys &amp; technology), debates, life events, rants, and occasionally religion and politics. ">Caffeine Lounge</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/93-corner-cubicle/" title="Off-Topic discussion of IT related topics. This is the forum for professionals and those interested in serious discussion of topics related to the world of IT. It all happens here in the corner cubicle. ">Corner Cubicle</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/110-student-campus/" title="A forum just for students. Talk about colleges, classes, resources for students, homework, and other topics related to life in school. ">Student Campus</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/82-software-development/" title="Discuss topics related to developing software. Including architecture, design patterns, documentation, software industry, and other non-language specific programming topics. ">Software Development</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/83-industry-news/" title="A place for topics that announce various news from the web/software development industry (product release announcements, updates, new services etc.)">Industry News</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/65-introduce-yourself/" title="A place where you can introduce yourself to the community and greet other new members.">Introduce Yourself</a></li>
+</ul>
+<h2><a href="http://www.dreamincode.net/forums/forum/76-programming-help/">Programming Help</a></h2>
+<ul class="navigation">
+<li><a href="http://www.dreamincode.net/forums/forum/15-c-and-c/" title="Expert programming help for C, and C++! Ask questions about homework assignments, or any other C/C++ related problems. C++ is a great language when beginning programming. ">C and C++</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/21-vb6/" title="Our Visual Basic experts are happy to help with homework assignments, commercial applications, or any other VB question you may have! Visual Basic is good to learn programming. ">VB6</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/32-java/" title="Post your Java questions in here. We're happy to help with homework assignments, work projects, or any other java related questions. Java is common when beginning computer programming.">Java</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/67-vbnet/" title="Ask questions about Microsoft's VB.NET programming language.">VB.NET</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/84-c/" title="Object Oriented Programming at its finest. Encompassing power with ease of use, C# has become one of the top programming languages of the new age.">C#</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/30-aspnet/" title="Having some problems with ASP.NET programming? Pop in here and ask your question!">ASP.NET</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/142-net-framework/" title="">.NET Framework</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/28-php/" title="Having some PHP problems? Need some help with a few functions? This is the place to ask! ">PHP</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/70-ruby/" title="This up-and-coming language is easy to learn, fast to develop, and very powerful. Get help with the Ruby on Rails framework or any other Ruby questions you have!">Ruby</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/29-python/" title="">Python</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/31-coldfusion/" title="It's the other white meat... a rapid application development language that will have you hooked in no time! From cfoutput to components, we can help you out!">ColdFusion</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/14-databases/" title="mySQL, PostgreSQL, Access, SQL, and Oracle... you've got a database question... we've got database answers!">Databases</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/62-other-languages/" title="Discuss languages that don't have a specific forum. Including COBOL, Fortran, ADA, Basic, etc. ">Other Languages</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/69-game-programming/" title="Get help with all things game programming related. OpenGL, DirectX, 3D Engines, etc.">Game Programming</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/109-mobile-development/" title="Discuss developing applications for mobile phones. Including Android, iPhone, and other mobile platforms. ">Mobile Development</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/126-52-weeks-of-code/" title="">52 Weeks Of Code</a></li>
+</ul>
+<h2><a href="http://www.dreamincode.net/forums/forum/74-web-development/">Web Development</a></h2>
+<ul class="navigation">
+<li><a href="http://www.dreamincode.net/forums/forum/63-web-development/" title="Discuss anything that doesn't fit in the other web development forums.">Web Development</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/4-html-css/" title="Have questions about HTML, XHTML, CSS? We'll get you headed in the right direction! ">HTML &amp; CSS</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/90-javascript/" title="JavaScript and AJAX, it's what Web 2.0 is all about. Post your JavaScript related questions here!">JavaScript</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/3-graphic-design/" title="Photoshop and Corel gurus come on in! Can't figure out how to do that cool effect? Have some questions or cool web images you've made? Post em' here">Graphic Design</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/8-flash-actionscript/" title="Let our Flash and ActionScript experts answer your questions. From simple tweens to advanced flash remoting, we're happy to help!">Flash &amp; ActionScript</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/89-blogging/" title="Wordpress, Blogger, Plugins, Themes, Skins, Pay Per Post, and anything else related to the Blogging industry. ">Blogging</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/59-seo-advertising/" title="Advertising, SEO, AdSense, AdWords, Link Trades, and more! Now that you've created your website, you've gotta drive traffic to it. Discuss current trends and techniques here. ">SEO &amp; Advertising</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/88-web-servers-hosting/" title="Apache, IIS, Shared Hosting, Dedicated Hosting, Colocation. We'll make sure you get your site online and keep it online!">Web Servers &amp; Hosting</a></li>
+<li><a href="http://www.dreamincode.net/forums/forum/5-site-check/" title="Post your web site to be reviewed by fellow dream.in.code members. ">Site Check</a></li>
+</ul>
+<script language="JavaScript">
+				  GA_googleFillSlotWithSize("ca-pub-9822709549810875", "DIC_160x600_Left_Default", 160, 600 ); 
+				  // Notice the pub ID and slot size added to the call
+				</script><div id="google_ads_div_DIC_160x600_Left_Default"><ins style="position: relative; width: 160px; height: 600px; border: medium none; display: inline-table;"><ins style="position: relative; width: 160px; height: 600px; border: medium none; display: block;"><iframe id="google_ads_iframe_DIC_160x600_Left_Default" name="google_ads_iframe_DIC_160x600_Left_Default" vspace="0" hspace="0" allowtransparency="true" marginwidth="0" marginheight="0" style="border: 0px none; left: 0pt; position: absolute; top: 0pt;" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/ads_004.html" frameborder="0" height="600" scrolling="no" width="160"></iframe></ins></ins></div>
+<br>
+</div>
+</div><div class="column2">
+
+<div class="tutorials" style="margin-top: -15px;">
+<h2>Follow &amp; Share</h2>
+<a href="http://www.dreamincode.net/rss/featured.php" rel="alternate"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/feed-icon32x32.png" alt="Dream.In.Code RSS Feed" style="border: 0pt none; margin: 2px;" height="32" width="32"></a>
+<a href="http://www.linkedin.com/e/gis/1506187" rel="alternate"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/linkedin-icon32x32.png" alt="Dream.In.Code LinkedIn Group" style="border: 0pt none; margin: 2px;" height="32" width="32"></a>
+<a href="http://www.twitter.com/dreamincode" rel="alternate"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/twitter-icon32x32.png" alt="Follow Us On Twitter" style="border: 0pt none; margin: 2px;" height="32" width="32"></a>
+<a href="http://www.facebook.com/pages/DreamInCode/62219401412" rel="alternate"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/facebook.png" alt="Fan Us On Facebook" style="border: 0pt none; margin: 2px;" height="32" width="32"></a>
+<p><a href="http://feeds.feedburner.com/dic_featured"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/dic_featured.gif" style="border: 0pt none; margin-top: 2px; margin-left: 3px;" alt="" height="26" width="88"></a></p>
+<h2>Celebrate &amp; Win!</h2>
+<a href="http://www.dreamincode.net/forums/topic/247091-dreamincode-10th-birthday500k-members-contest/"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/10yr_170x200.jpg"></a>
+<h2><a href="http://www.dreamincode.net/forums/showforum48.htm">C++ Tutorials</a></h2>
+<ul>
+<li><a href="http://www.dreamincode.net/forums/topic/258176-putting-a-program-icon-in-the-system-tray-with-c/">Putting a Program Icon in the System Tray with C++</a></li>
+<li><a href="http://www.dreamincode.net/forums/topic/258025-how-to-put-bitmaps-onto-menus-in-c/">How to put BitMaps onto Menu's In C++</a></li>
+<li><a href="http://www.dreamincode.net/forums/topic/249042-for-loops-conditional-loops/">FOR loops (conditional loops)</a></li>
+<li><a href="http://www.dreamincode.net/forums/topic/245665-c0xmemory-management-and-smart-pointers/">[C++0x]Memory management and Smart pointers</a></li>
+<li><a href="http://www.dreamincode.net/forums/topic/244215-introduction-to-creating-a-php-extension-for-windows/">Introduction to : Creating a Php extension for windows</a></li>
+<li><a href="http://www.dreamincode.net/forums/topic/243971-do-while0;/">do {} while(0);</a></li>
+<li><a href="http://www.dreamincode.net/forums/topic/242608-detect-windows-version-with-win-api/">Detect Windows Version With WIN API</a></li>
+<li><a href="http://www.dreamincode.net/forums/topic/239347-static-functions-and-variables-in-c/">Static Functions and Variables in C</a></li>
+<li><a href="http://www.dreamincode.net/forums/topic/238977-c-memory-management-techniques/">C Memory Management Techniques</a></li>
+<li><a href="http://www.dreamincode.net/forums/topic/236592-c-introduction-to-references/">C++ : Introduction to References</a></li>
+<li><a href="http://www.dreamincode.net/forums/showforum48.htm"><strong>319 More C++ Tutorials...</strong></a></li>	</ul>
+<h2>Reference Sheets</h2>
+<a href="http://www.dreamincode.net/forums/showtopic17947.htm"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/refsheets5.png" height="157" width="151"></a>
+<h2><a href="http://www.dreamincode.net/code/browse.php?cid=2">C++ Snippets</a></h2>
+<ul>
+<li><a href="http://www.dreamincode.net/code/snippet82.htm">Linked List Class</a></li>
+<li><a href="http://www.dreamincode.net/code/snippet279.htm">Insertion Sort Example</a></li>
+<li><a href="http://www.dreamincode.net/code/snippet80.htm">Recursive Fibonacci Sequence</a></li>
+<li><a href="http://www.dreamincode.net/code/snippet693.htm">integer to string conversion</a></li>
+<li><a href="http://www.dreamincode.net/code/snippet693.htm">C++ Int to String</a></li>
+<li><a href="http://www.dreamincode.net/code/snippet39.htm">Convert cases of strings</a></li>
+<li><a href="http://www.dreamincode.net/code/snippet244.htm">Finding Square Root without using sqrt()</a></li>
+<li><a href="http://www.dreamincode.net/code/snippet884.htm">C++ calculator</a></li>
+<li><a href="http://www.dreamincode.net/code/snippet77.htm">Getting Current Directory</a></li>
+<li><a href="http://www.dreamincode.net/code/snippet313.htm">Shortest Function to Reverse a String ( Uses Recursion )</a></li>
+<li><a href="http://www.dreamincode.net/code/browse.php?cid=2"><strong>916 More C++ Snippets...</strong></a></li></ul>
+<h2><a rel="nofollow" href="http://www.dreamincode.net/?p=chat">DIC Chatroom</a></h2>
+<ul><li><a rel="nofollow" href="http://www.dreamincode.net/?p=chat">Join our IRC Chat</a></li></ul>
+<h2>Bye Bye Ads</h2>
+<a rel="nofollow" href="http://www.dreamincode.net/forums/index.php?act=paysubs&amp;CODE=index"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/dicpp.gif" height="32" width="141"></a>
+<h2>Monthly Drawing</h2>
+<a href="http://www.dreamincode.net/forums/index.php?showtopic=19383" rel="nofollow"><img alt="Thumb Drive" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/monthlygiveaway.gif" height="77" width="130"></a>
+</div>
+</div><div style="padding-left: 50px; position: relative; clear: both;">
+<iframe src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/likebox.html" style="border: medium none; overflow: hidden; width: 300px; height: 287px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<br><br>
+<a href="http://lakequincy.com/" title="Advertise on this site through Lake Quincy Media" target="_blank"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/LQM_advertise_here_button.html" alt="Advertise on this site through Lake Quincy Media" style="float: right;" align="right" border="0" height="90" width="135"></a>
+<div align="center">
+<strong><a href="http://www.dreamincode.net/forums/index.php?showannouncement=22">FAQ</a> | <a href="http://www.dreamincode.net/forums/blog/1081-dreamincode-team-blog/">Team Blog</a> | <a href="http://www.dreamincode.net/forums/forum/106-site-questions-support/">Feedback/Support</a> | <a href="http://www.dreamincode.net/downloads/MediaKit.pdf" rel="nofollow">Advertising</a><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/pdf.gif" valign="middle" border="0"> | <a href="http://www.dreamincode.net/?p=tos" rel="nofollow">Terms of Use</a> | <a href="http://www.dreamincode.net/?p=privacy" rel="nofollow">Privacy Policy</a> | <a href="http://www.dreamincode.net/?p=about" rel="nofollow">About Us</a>
+</strong></div>
+<strong><br>
+<br>
+</strong><div align="center"><strong>Copyright 2001-2012 <a href="http://www.mediagroup1.com/" rel="nofollow"><b>MediaGroup1 LLC</b></a>, All Rights Reserved<br>A <a href="http://www.mediagroup1.com/" rel="nofollow"><b>MediaGroup1 LLC</b></a> Production - Version 6.0.2.1.36<br>Server: secure3</strong></div>
+</div>
+<script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/thickbox.js"></script>
+<script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/jsapi.js"></script>
+<script type="text/javascript">
+google.load('search', '1',{nocss: true});
+jQuery(document).ready(function() {
+	jQuery("#cse-search-box").submit(function () {
+	var customSearchControl = new google.search.CustomSearchControl('000872085005376217422:zamd_7elal4');
+	customSearchControl.setLinkTarget(google.search.Search.LINK_TARGET_SELF);
+	tb_show("Dream.In.Code Search Results - Powered By <img src='http://www.google.com/cse/images/google_custom_search_smwide.gif'>", "#TB_inline?height=480&width=800");
+	var drawOptions = new google.search.DrawOptions();
+	customSearchControl.draw(document.getElementById("TB_ajaxContent"), drawOptions);
+	customSearchControl.execute(document.getElementById("query").value);
+	return false;
+	});
+});
+</script><script src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/a_002.js" type="text/javascript"></script><script src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/defaulten.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-69851-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+_qoptions={
+qacct:"p-d4Szpdj6xMw-o"
+};
+</script>
+<script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/quant.js"></script>
+<noscript><strong>
+<img src="http://pixel.quantserve.com/pixel/p-d4Szpdj6xMw-o.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+</strong></noscript>
+<script src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/a_003.js" type="text/javascript"></script>
+<script type="text/javascript" language="Javascript" src="ads_data/m.js"></script>
+<script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/dreamincode.js"></script><script src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/beacon.js"></script><script type="text/javascript">_qoptions={ qacct:"p-f1jRpKGceiDVc" };</script><script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/quant.js"></script><script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/start-b0979864e7.js"></script><script type="text/javascript">var ns_k_siteid=240;</script><script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/k_extract.js"></script><script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/k_log.html"></script><script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/dreamincode_002.js"></script><script type="text/javascript">COMSCORE.beacon({c1:2,c2:6036316,c3:"",c4:"",c5:"",c6:"",c15:""});</script>
+<div style="top: 160px; left: 468.5px; position: absolute;" id="ad_728_pre">
+<script type="text/javascript">
+	//<![CDATA[
+	ord = window.ord || Math.floor(Math.random()*1E16);
+	document.write('<script type="text/javascript" src="http://ad2.netshelter.net/adj/ns.dreamincode/general;ppos=atf;kw=;tile=1;dcopt=ist;sz=728x90;ord=' + ord + '?"><\/script>');
+	//]]>
+	</script><script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/general_005.js"></script><script type="text/javascript">document.write('<scr'+'ipt language="javascript" src="http://ib.adnxs.com/ptj?member=988&inv_code=ns.dreamincode&size=728x90&imp_id=ns-30319689176_1326336405,124f3912b807528&referrer=www.dreamincode.net&redir=http%3A%2F%2Fad.doubleclick.net%2Fadj%2Fns.dreamincode%2Fgeneral%3Bnet%3Dns%3Bu%3D%2Cns-30319689176_1326336405%2C124f3912b807528%2Citdeweb%2Cax.{PRICEBUCKET}-ns.itdeweb_l%3B%3Bppos%3Datf%3Bkw%3D%3Btile%3D1%3Bdcopt%3Dist%3Bsz%3D728x90%3Bctx%3Dnone%3Bnet%3Dns%3Bcmw%3Dowl%3Bcontx%3Ditdeweb%3Ban%3D{PRICEBUCKET}%3Bbu%3D{BUYER_MEMBER_ID}%3Bbr%3D{BRAND_ID}%3Bdc%3Ds%3Bbtg%3Dns.itdeweb_l%3Bord%3D8423708121136170%3F%3F"></scr'+'ipt>');</script><script language="Javascript">CollectiveMedia.createAndAttachAd("ns-30319689176_1326336405","http://ib.adnxs.com/ptj?member=988&inv_code=ns.dreamincode&size=728x90&imp_id=ns-30319689176_1326336405,124f3912b807528&referrer=www.dreamincode.net&redir=http%3A%2F%2Fad.doubleclick.net%2Fadj%2Fns.dreamincode%2Fgeneral%3Bnet%3Dns%3Bu%3D%2Cns-30319689176_1326336405%2C124f3912b807528%2Citdeweb%2Cax.{PRICEBUCKET}-ns.itdeweb_l%3B%3Bppos%3Datf%3Bkw%3D%3Btile%3D1%3Bdcopt%3Dist%3Bsz%3D728x90%3Bctx%3Dnone%3Bnet%3Dns%3Bcmw%3Dowl%3Bcontx%3Ditdeweb%3Ban%3D{PRICEBUCKET}%3Bbu%3D{BUYER_MEMBER_ID}%3Bbr%3D{BRAND_ID}%3Bdc%3Ds%3Bbtg%3Dns.itdeweb_l%3Bord%3D8423708121136170%3F%3F","728","90",false);</script><script language="javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/ptj.js"></script><script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/general_002.js"></script><iframe src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/12308-143237-21584-2.html" marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" frameborder="0" height="90" scrolling="no" width="728">
+  &lt;script type="text/javascript" 
+src="http://altfarm.mediaplex.com/ad/!js/12308-143237-21584-2?mpt=8213191&amp;mpvc=http://ad.doubleclick.net/click%3Bh%3Dv8/3bfa/3/0/%2a/g%3B251245571%3B0-0%3B1%3B52709661%3B3454-728/90%3B45949511/45966729/1%3Bu%3D%2Cns-30319689176_1326336405%2C124f3912b807528%2Citdeweb%2Cax.10-ns.itdeweb_l%3B%7Eokv%3D%3Bnet%3Dns%3Bu%3D%2Cns-30319689176_1326336405%2C124f3912b807528%2Citdeweb%2Cax.10-ns.itdeweb_l%3B%3Bppos%3Datf%3Bkw%3D%3Btile%3D1%3Bdcopt%3Dist%3Bsz%3D728x90%3Bctx%3Dnone%3Bnet%3Dns%3Bcmw%3Dowl%3Bcontx%3Ditdeweb%3Ban%3D10%3Bbu%3D177%3Bbr%3D4953%3Bdc%3Ds%3Bbtg%3Dns.itdeweb_l%3B%7Eaopt%3D3/0/ff/0%3B%7Esscs%3D%3f"&gt;
+
+  &lt;/script&gt;
+  &lt;noscript&gt;
+    &lt;a 
+href="http://ad.doubleclick.net/click%3Bh%3Dv8/3bfa/3/0/%2a/g%3B251245571%3B0-0%3B1%3B52709661%3B3454-728/90%3B45949511/45966729/1%3Bu%3D%2Cns-30319689176_1326336405%2C124f3912b807528%2Citdeweb%2Cax.10-ns.itdeweb_l%3B%7Eokv%3D%3Bnet%3Dns%3Bu%3D%2Cns-30319689176_1326336405%2C124f3912b807528%2Citdeweb%2Cax.10-ns.itdeweb_l%3B%3Bppos%3Datf%3Bkw%3D%3Btile%3D1%3Bdcopt%3Dist%3Bsz%3D728x90%3Bctx%3Dnone%3Bnet%3Dns%3Bcmw%3Dowl%3Bcontx%3Ditdeweb%3Ban%3D10%3Bbu%3D177%3Bbr%3D4953%3Bdc%3Ds%3Bbtg%3Dns.itdeweb_l%3B%7Eaopt%3D3/0/ff/0%3B%7Esscs%3D%3fhttp://altfarm.mediaplex.com/ad/nc/12308-143237-21584-2?mpt=8213191"&gt;
+
+      &lt;img 
+src="http://altfarm.mediaplex.com/ad/nb/12308-143237-21584-2?mpt=8213191"
+
+        alt="Click Here" border="0"&gt;
+    &lt;/a&gt;
+  &lt;/noscript&gt;
+</iframe>
+
+<noscript><strong><a href="http://ad2.netshelter.net/jump/ns.dreamincode/general;ppos=atf;kw=;tile=1;sz=728x90;ord=123456789?" target="_blank"><img src="http://ad2.netshelter.net/ad/ns.dreamincode/general;ppos=atf;kw=;tile=1;sz=728x90;ord=123456789?" border="0" alt=""/></a></strong></noscript>
+</div>
+<script type="text/javascript">
+function showAds() {
+if (jQuery("#ad_header").length > 0) {
+var divHold = jQuery("#ad_header");
+var position = divHold.offset();
+jQuery("#ad_728_pre").css(
+{'top' : position.top + 'px', 'left' : position.left+'px', 'position' : 'absolute'}
+);
+jQuery("#ad_728_pre").show();
+};
+} 
+
+jQuery(document).ready(function(){
+showAds();
+});
+</script>
+</div><iframe style="display: none;" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/partners.html" name="stSegmentFrame" id="stSegmentFrame" frameborder="0" height="0px" scrolling="no" width="0px"></iframe>
+<script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/shCore.js"></script>
+<script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/shBrushBash.js"></script>
+<script type="text/javascript">
+jQuery(function(){
+  jQuery('pre').removeClass('brush: bash').addClass('brush: cpp');
+});
+</script>
+<script type="text/javascript" src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/shBrushCpp.js"></script>
+<strong><link rel="stylesheet" type="text/css" href="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/shCore.css">
+<script type="text/javascript">
+                SyntaxHighlighter.config.clipboardSwf = 'http://cdn2.dreamincode.net/dreamincode/syntax/scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+</strong><div style="display: none;" id="overlay"></div><div style="display: none;" id="lightbox"><div style="width: 250px; height: 250px;" id="outerImageContainer"><div id="imageContainer"><img id="lightboxImage"><div id="hoverNav"><a id="prevLink" href="#"></a><a id="nextLink" href="#"></a></div><div id="loading"><a id="loadingLink" href="#"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/loading.gif"></a></div></div></div><div id="imageDataContainer"><div id="imageData"><div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span></div><div id="bottomNav"><a id="bottomNavClose" href="#"><img src="String%20To%20Char*%20-%20C%20And%20C++%20%7C%20Dream.In.Code_files/closelabel.gif"></a></div></div></div></div></body></html>

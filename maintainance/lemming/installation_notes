@@ -1,0 +1,123 @@
+Date: 30/04/2012
+
+Lemming is the research laptop purchased in Feb 2013, the model is Dell inspron 15r special edition. This machine has dual-boot configuration consists of: 
+	Windows 7 
+	Fedora 18
+
+
+/*--------------------------------------------------
+Hardware comfiguration
+CPU: Intel(R) Core(TM) i7-36320 CPU @ 2.20GHz x 8
+Memory: 8 GB
+Hard Drive: 1 TB (Primiry) + 30 GB (Secondary)
+Video Card: Radeon HD 7700M
+----------------------------------------------------*/
+
+
+Step 1: BIOS Setup Modification
+The following steps must be implemented before lemming can be installed with linux system.
+
+Check/Apply the following changes to the BIOS setup.
+
+Advance Menu:
+	SATA Opetion					<ATA> 
+
+BOOT Menu:
+	Secure Boot 					<Disabled>
+	Load Legacy Option Rom 			<Enabled>
+	Boot List Option				<UEFI>
+
+
+
+Step 2: Disk Patitioning
+Name		  		Size	      File Type        Mounting
+sda (931.51 GB) 
+	sda1 		    100 MB        ntfs              
+	sda2		    97.56 GB      ntfs             /windows 
+	sda3		    500 MB        ext4             /boot    
+	sda4		                  extended      
+	sda5		    833.37 GB     lvm2 pv          Fedora
+
+sdb (30 GB)
+	sdb1			29.82         lvm2 pv          Fedora
+
+
+
+Step 3: Create Users and Groups
+
+Huberg
+Garth Huberg
+UserID:	 500
+GroupID: 500
+
+Billlee
+Bill Li
+UserID:  510
+GroupId: 510
+
+g4user
+G4 user
+UserID:  501
+GroupID: 501
+
+acqu
+AcquRoot
+UserID:  504
+GroupID: 504
+
+dpaudyal
+Dilli Paudyal
+User:	 514
+GroupID: 514
+
+
+Step 3: Configuration
+		
+		Restoreing hosts_denny, hosts_allow, aliases into /etc/
+
+		Configuring /etc/ssh/ssh_config, by adding 
+			X11FORWARDING yes
+		
+		Tick in the terminal configuration: run command as login shell
+		
+
+Step 4: Package Installed
+		skype vim-x11 gv gimp pine pdftool skype latex gvim emacs vnc openoffice vncserver tkdiff xfig java tgif svn flash icewm unrar alacarte policycoreutils-gui xcircuit qcad x11vnc pdf-tool a2ps logwatch php apcupsd filezilla gparted vnc-server logwatch vim-X11 gcc cmake atrpms-repo ruby python qt texlive
+
+
+Step 5: Setting Firewall
+		
+ 		User Firewall configuration tool in: Main Manu-> System-> Administration-> Firewall
+		Allow SSH 							22/tcp  
+		Allow WWW (HTTP)					80/tcp
+		Allow Network Printing Client(IPP)	631/udp
+
+Step 6: SELinux Setting Change
+		In order to allow httpd access /home/user/public_html file, selinux mode need to be changed from Enforcing mode to permissive.
+		To do this we need to configure in
+
+		/etc/selinux/config
+		change SELINUX=enforcing to SELINUX=permissive
+		
+		Then /home/user/public_html is accessable
+
+Step 7: Edit /etc/Hosts to allow easy ssh access from other research computers. 
+
+Step 8: Note that logwatch is installed in step 4, however, the logwatch need to be verified to be working. The executable is under /etc/cron.daily/
+
+
+Step 9: Configure Printer
+	Add printer on loon.
+	
+
+
+
+
+
+
+
+
+
+
+
+

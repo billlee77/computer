@@ -1,0 +1,11 @@
+Many NVIDIA does not draw detector frame in the Opengl visualization
+
+To resolve this, the latest Driver from NVIDIA need to be installed following the steps below:
+
+1. logout the session
+2. ctrl+alt+F1
+3. \sbin\init 3 (as root)
+4. sh NVIDIA-Linux-x86-260.19.44.run
+5. following the step of installasion
+6. reboot
+

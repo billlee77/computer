@@ -1,0 +1,26 @@
+********************************************************************************
+***                                                                          ***
+*** PHYSICA                      VERSION # 2.77               November  2005 ***
+*** Copyright (C) 1992,...,2005                              Joseph L. Chuma ***
+***                           All rights reserved                            ***
+***                                                                          ***
+***  Enter NEWS to get the latest information on new commands and features   ***
+***  Latest news added on November 21, 2005                                  ***
+***  Journal file: physica.journal                                           ***
+***                                                                          ***
+***            UNAUTHORIZED COMMERCIAL USE IS STRICTLY PROHIBITED            ***
+***                                                                          ***
+*** Physica 3.0 for the Windows environment has been released under the name ***
+*** Extrema. See www.extremasoftware.com                                     ***
+***                                                                          ***
+********************************************************************************
+User: billlee   Date: 06-Aug-2012 16:07:24
+ Default graphics hardcopy device: PostScript: colour, paper size A
+ HYSICA: execute conic_section.pcm 
+ *** ERROR in expression evaluator
+  
+ xx=(i-50)/1.2
+ the above line in conic_section.pcm caused the error
+  
+     I is undefined: not a function or a variable
+ HYSICA: exit

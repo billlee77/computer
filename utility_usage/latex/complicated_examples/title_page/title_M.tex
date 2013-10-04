@@ -1,0 +1,77 @@
+\documentclass[letterpaper, 12pt]{report}
+
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{url}
+\usepackage[svgnames]{xcolor}
+%% check if using xelatex rather than pdflatex
+%\usepackage{fontspec}
+\usepackage{graphicx}
+%%\usepackage{hyperref}
+%% drawing package
+\usepackage{tikz}
+%% for dingbats
+\usepackage{pifont}
+%\providecommand{\HUGE}{\Huge}% if not using memoir
+\newlength{\drop}% for my convenience
+% %% specify the Webomints family
+% %% select a (FontSite) font by its font family ID
+% \newcommand*{\FSfont}[1]{\fontencoding{T1}\fontfamily{#1}\selectfont}
+% %% if you don’t have the FontSite fonts either \renewcommand*{\FSfont}[1]{}
+% %% or use your own choice of family.
+% %% select a (TeX Font) font by its font family ID
+% \newcommand*{\TXfont}[1]{\fontencoding{T1}\fontfamily{#1}\selectfont}
+% %% Generic publisher’s logo
+% \newcommand*{\plogo}{\fbox{$\mathcal{PL}$}}
+% % 
+% %% Some shades
+% %%%% Additional font series macros
+% \makeatletter
+% %%%% light series
+% %% e.g., kernel doc, section s: line 12 or thereabouts
+% \DeclareRobustCommand\ltseries
+% {\not@math@alphabet\ltseries\relax
+% \fontseries\ltdefault\selectfont}
+% %% e.g., kernel doc, section t: line 32 or thereabouts
+% \newcommand{\ltdefault}{l}
+% %% e.g., kernel doc, section v: line 19 or thereabouts
+% \DeclareTextFontCommand{\textlt}{\ltseries}
+% % heavy(bold) series
+% \DeclareRobustCommand\hbseries
+% {\not@math@alphabet\hbseries\relax
+% \fontseries\hbdefault\selectfont}
+% \newcommand{\hbdefault}{hb}
+% \DeclareTextFontCommand{\texthb}{\hbseries}
+% \makeatother
+
+
+
+\begin{document}
+\pagestyle{empty}
+\clearpage
+
+
+\newcommand*{\titleMS}{\begingroup% MS Thesis
+\drop=0.1\textheight
+\vspace*{\drop}
+\centering
+{\LARGE THE UNIVERSITY}\\[2\baselineskip]
+{\LARGE\sffamily Conundrums: \\ puzzles for the mind}\par
+\vfill
+{\LARGE THESIS}\par
+\vspace{\drop}
+{\large some remarks concerning the supervisor \\
+and the time and place of the examination \\
+and other administrative details}\par
+\vfill
+{\large\bfseries The Candidate}\par
+\vspace*{\drop}
+\endgroup}
+
+\titleMS
+
+
+
+
+\end{document}

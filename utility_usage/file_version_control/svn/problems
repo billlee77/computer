@@ -1,0 +1,19 @@
+#**************************************** 
+# Error
+?     C Ubuntu_tip
+      >   local edit, incoming delete upon update
+
+# soluition:
+svn resolve --accept working Ubuntu_tip
+
+
+
+#**************************************** 
+# Error
+$ svn svn-commit.tmp
+Unknown command: 'svn-commit.tmp'
+Type 'svn help' for usage.
+
+# Solution
+export SVN_EDITOR=svn
+

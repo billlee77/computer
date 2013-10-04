@@ -1,0 +1,29 @@
+######################	raytr   ######################
+
+ raytr:  raytr.o set_main_mirror.o draw_mirror.o get_next_ray.o intersect_main_mirror.o \
+ follow_ray_out.o hit_PMT.o reposition_fpoint.o 
+	cc -lm -o raytr raytr.o set_main_mirror.o draw_mirror.o get_next_ray.o intersect_main_mirror.o follow_ray_out.o hit_pmt.o reposition_fpoint.o 
+
+raytr.o: raytr.c
+	cc -c raytr.c
+	
+set_main_mirror.o: set_main_mirror.c
+	cc -c set_main_mirror.c
+	
+draw_mirror.o: draw_mirror.c
+	cc -c draw_mirror.c
+	
+get_next_ray.o: get_next_ray.c
+	cc -c get_next_ray.c
+	
+intersect_main_mirror.o: intersect_main_mirror.c
+	cc -c intersect_main_mirror.c
+	
+follow_ray_out.o: follow_ray_out.c
+	cc -c follow_ray_out.c
+	
+hit_PMT.o: hit_pmt.c
+	cc -c hit_pmt.c
+	
+reposition_fpoint.o: reposition_fpoint.c
+	cc -c reposition_fpoint.c

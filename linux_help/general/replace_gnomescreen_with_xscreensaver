@@ -1,0 +1,3315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="generator" content="vBulletin 3.8.4">
+
+<meta name="keywords" content=" HOWTO: Replace gnome-screensaver with xscreensaver, ubuntu forums,ubuntu linux,ubuntu,linux forum,ubuntu forum,linux ubuntu,ubuntu support,ubuntu help,ubuntu linux help">
+<meta name="description" content=" HOWTO: Replace gnome-screensaver with xscreensaver Tutorials &amp; Tips">
+
+
+<!-- CSS Stylesheet -->
+<style type="text/css" id="vbulletin_css">
+/**
+* vBulletin 3.8.4 CSS
+* Style: 'CleanV2'; Style ID: 98
+*/
+@import url("clientscript/vbulletin_css/style-eeef40f9-00098.css");
+</style>
+<link rel="stylesheet" type="text/css" href="replace_gnomescreen_with_xscreensaver_files/vbulletin_important.css">
+
+
+<!-- / CSS Stylesheet -->
+
+<script type="text/javascript" src="replace_gnomescreen_with_xscreensaver_files/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="replace_gnomescreen_with_xscreensaver_files/connection-min.js"></script>
+<script type="text/javascript">
+<!--
+var SESSIONURL = "s=df705712c540cd49852a750b10c4690d&";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "images/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</script>
+<script type="text/javascript" src="replace_gnomescreen_with_xscreensaver_files/vbulletin_global.js"></script>
+<script type="text/javascript" src="replace_gnomescreen_with_xscreensaver_files/vbulletin_menu.js"></script>
+
+
+	<link rel="alternate" type="application/rss+xml" title="Ubuntu Forums RSS Feed" href="http://ubuntuforums.org/external.php?type=RSS2">
+	
+		<link rel="alternate" type="application/rss+xml" title="Ubuntu Forums - Tutorials &amp; Tips - RSS Feed" href="http://ubuntuforums.org/external.php?type=RSS2&amp;forumids=100">
+	
+
+<meta name="verify-v1" content="t926SUC4SSJh1e95C+UKAk9XhKuZbCP/ArLrracPVgw=">
+	<title> HOWTO: Replace gnome-screensaver with xscreensaver - Ubuntu Forums</title>
+	<script type="text/javascript" src="replace_gnomescreen_with_xscreensaver_files/vbulletin_post_loader.js"></script>
+	<style type="text/css" id="vbulletin_showthread_css">
+	<!--
+	
+	#links div { white-space: nowrap; }
+	#links img { vertical-align: middle; }
+	-->
+	</style>
+</head><body onload="">
+<br>
+<div align="center">
+  <b class="vbclean_top">
+  <b class="vbclean_top1"><b></b></b>
+  <b class="vbclean_top2"><b></b></b>
+  <b class="vbclean_top3"></b>
+  <b class="vbclean_top4"></b>
+  <b class="vbclean_top5"></b></b>
+
+  <div class="vbclean_topfg">
+</div>
+<!-- logo -->
+<a name="top"></a>
+<table class="vbclean_topfg" width="99%" align="center" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	<td class="vbclean_topfg" align="left"><a href="http://ubuntuforums.org/index.php?s=df705712c540cd49852a750b10c4690d"><img title="Ubuntu Forums" src="replace_gnomescreen_with_xscreensaver_files/ubuntulogo.png" alt="Ubuntu Forums" border="0"></a></td>
+	<td class="vbclean_topfg" id="header_right_cell" align="right">
+<a href="http://ubuntu.com/">ubuntu.com</a> - <a href="http://launchpad.net/">launchpad.net</a> - <a href="https://help.ubuntu.com/">ubuntu help</a>
+<div id="searchbox">
+
+				<form action="search.php?do=process" method="post">
+					<p>
+						<label for="q" accesskey="s"><span class="mnemonic">S</span>earch</label>
+						<input name="query" id="q" type="text">
+								<input name="s" value="df705712c540cd49852a750b10c4690d" type="hidden">
+	<input name="securitytoken" value="guest" type="hidden">
+								<input name="do" value="process" type="hidden">
+								<input name="forumchoice[]" value="100" type="hidden">
+								<input name="childforums" value="1" type="hidden">
+								<input name="exactname" value="1" type="hidden">
+						<button type="submit" name="op"><span>go</span></button>
+					</p> 
+				</form>
+			</div>
+		&nbsp;
+	</td>
+</tr>
+</tbody></table>
+<!-- /logo -->
+
+<!-- content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 99%; text-align: left;">
+		<div style="padding: 0px 25px;" align="left">
+
+
+
+
+<div style="float: right; margin-top: 20px;" id="launchpad_login"><small>Or,
+    <a href="http://ubuntuforums.org/launchpad_login.php">Sign in using your Launchpad ID</a></small></div>
+<br>
+
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+<tbody><tr>
+	<td class="alt1" width="100%">
+		
+			<table border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr valign="bottom">
+				<td><a href="#" onclick="history.back(1); return false;"><img title="Go Back" src="replace_gnomescreen_with_xscreensaver_files/navbits_start.gif" alt="Go Back" border="0"></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a href="http://ubuntuforums.org/index.php?s=df705712c540cd49852a750b10c4690d" accesskey="1">Ubuntu Forums</a></span> 
+	<span class="navbar">&gt; <a href="http://ubuntuforums.org/forumdisplay.php?s=df705712c540cd49852a750b10c4690d&amp;f=130">The Ubuntu Forum Community</a></span>
+
+
+	<span class="navbar">&gt; <a href="http://ubuntuforums.org/forumdisplay.php?s=df705712c540cd49852a750b10c4690d&amp;f=125">Other Community Discussions</a></span>
+
+
+	<span class="navbar">&gt; <a href="http://ubuntuforums.org/forumdisplay.php?s=df705712c540cd49852a750b10c4690d&amp;f=100">Tutorials &amp; Tips</a></span>
+
+</td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size: 10pt; padding-top: 1px;" colspan="3"><a href="http://ubuntuforums.org/showthread.php?t=195557"><img title="Reload this Page" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/navbits_finallink_ltr.gif" alt="Reload this Page" border="0"></a> <strong>
+	 HOWTO: Replace gnome-screensaver with xscreensaver
+
+</strong></td>
+			</tr>
+			</tbody></table>
+		
+	</td>
+
+	<td class="alt2" style="padding: 0px;" nowrap="nowrap">
+		<!-- login form -->
+		<form action="login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+		<script type="text/javascript" src="replace_gnomescreen_with_xscreensaver_files/vbulletin_md5.js"></script>
+		<table border="0" cellpadding="0" cellspacing="3">
+		<tbody><tr>
+			<td class="smallfont"><label for="navbar_username">User Name</label></td>
+			<td><input class="bginput" style="font-size: 11px;" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name" onfocus="if (this.value == 'User Name') this.value = '';" type="text"></td>
+			<td class="smallfont" nowrap="nowrap"><label for="cb_cookieuser_navbar"><input name="cookieuser" value="1" tabindex="103" id="cb_cookieuser_navbar" accesskey="c" type="checkbox">Remember Me?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont"><label for="navbar_password">Password</label></td>
+			<td><input class="bginput" style="font-size: 11px;" name="vb_login_password" id="navbar_password" size="10" tabindex="102" type="password"></td>
+			<td><input class="button" value="Log in" tabindex="104" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" type="submit"></td>
+		</tr>
+		</tbody></table>
+		<input name="s" value="df705712c540cd49852a750b10c4690d" type="hidden">
+	<input name="securitytoken" value="guest" type="hidden">
+		<input name="do" value="login" type="hidden">
+		<input name="vb_login_md5password" type="hidden">
+		<input name="vb_login_md5password_utf" type="hidden">
+		</form>
+		<!-- / login form -->
+	</td>
+
+</tr>
+</tbody></table>
+<!-- / breadcrumb, login, pm info -->
+<div>
+  <b class="vblcean_navbar">
+  <b class="vblcean_navbar1"><b></b></b>
+  <b class="vblcean_navbar2"><b></b></b>
+  <b class="vblcean_navbar3"></b>
+  <b class="vblcean_navbar4"></b>
+  <b class="vblcean_navbar5"></b></b>
+
+  <div class="vblcean_navbarfg">
+
+<!-- nav buttons bar -->
+	<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+	<tbody><tr align="center">
+		
+		
+			<td class="vbclean_navbar_bg"><a href="http://ubuntuforums.org/register.php?s=df705712c540cd49852a750b10c4690d" rel="nofollow">Register</a></td>
+<td class="vbclean_navbar_bg"><a href="http://ubuntuforums.org/login.php?do=lostpw" rel="nofollow">Reset Password</a></td>
+		
+
+		
+		
+        <td style="cursor: pointer;" id="helpmenu" class="vbclean_navbar_bg"><a href="http://ubuntuforums.org/showthread.php?t=195557&amp;nojs=1#helpmenu">Forum Help</a> <script type="text/javascript"> vbmenu_register("helpmenu"); </script> <img alt="" title="" src="replace_gnomescreen_with_xscreensaver_files/menu_open.gif" border="0"></td>
+	<td style="cursor: pointer;" id="fcmenu" class="vbclean_navbar_bg"><a href="http://ubuntuforums.org/showthread.php?t=195557&amp;nojs=1#fcmenu">Forum Council</a> <script type="text/javascript"> vbmenu_register("fcmenu"); </script> <img alt="" title="" src="replace_gnomescreen_with_xscreensaver_files/menu_open.gif" border="0"></td>
+		
+			
+				
+				<td class="vbclean_navbar_bg"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=getdaily" accesskey="2">Today's Posts</a></td>
+				
+				<td id="navbar_search" class="vbclean_navbar_bg"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d" accesskey="4" rel="nofollow">Search</a> </td>
+			
+			
+		
+		
+		
+		</tr>
+	</tbody></table>
+<!-- / nav buttons bar -->
+</div>
+
+  <b class="vblcean_navbar">
+  <b class="vblcean_navbar5"></b>
+  <b class="vblcean_navbar4"></b>
+  <b class="vblcean_navbar3"></b>
+  <b class="vblcean_navbar2"><b></b></b>
+  <b class="vblcean_navbar1"><b></b></b></b>
+</div>
+
+<br>
+
+
+
+
+<div>
+  <b class="vbclean_forumdesc">
+  <b class="vbclean_forumdesc1"><b></b></b>
+  <b class="vbclean_forumdesc2"><b></b></b>
+  <b class="vbclean_forumdesc3"></b>
+  <b class="vbclean_forumdesc4"></b>
+  <b class="vbclean_forumdesc5"></b></b>
+
+  <div class="vbclean_forumdescfg">
+	<table width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+
+	<tbody><tr>
+		<td width="100%">
+<strong>Tutorials &amp; Tips</strong><br> <span class="smallfont">The place to find Ubuntu related Tips &amp; Tricks.</span>
+</td>
+	</tr>
+
+
+	</tbody></table>
+  </div>
+
+  <b class="vbclean_forumdesc">
+  <b class="vbclean_forumdesc5"></b>
+  <b class="vbclean_forumdesc4"></b>
+  <b class="vbclean_forumdesc3"></b>
+  <b class="vbclean_forumdesc2"><b></b></b>
+  <b class="vbclean_forumdesc1"><b></b></b></b>
+</div>
+	<br>
+
+
+
+<!-- NAVBAR POPUP MENUS -->
+
+	
+	<!-- header quick search form -->
+	<div class="vbmenu_popup" id="navbar_search_menu" style="display: none;" align="left">
+		<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr>
+			<td class="thead">Search Forums</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+				<form action="search.php?do=process" method="post">
+
+					<input name="do" value="process" type="hidden">
+					<input name="quicksearch" value="1" type="hidden">
+					<input name="childforums" value="1" type="hidden">
+					<input name="exactname" value="1" type="hidden">
+					<input name="s" value="df705712c540cd49852a750b10c4690d" type="hidden">
+	<input name="securitytoken" value="guest" type="hidden">
+					<div><input class="bginput" name="query" size="25" tabindex="1001" type="text"><input class="button" value="Go" tabindex="1004" type="submit"></div>
+					<div style="margin-top: 6px;">
+						<label for="rb_nb_sp0"><input name="showposts" value="0" id="rb_nb_sp0" tabindex="1002" checked="checked" type="radio">Show Threads</label>
+						&nbsp;
+						<label for="rb_nb_sp1"><input name="showposts" value="1" id="rb_nb_sp1" tabindex="1003" type="radio">Show Posts</label>
+					</div>
+				</form>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="vbmenu_option"><a href="http://ubuntuforums.org/tags.php?s=df705712c540cd49852a750b10c4690d" rel="nofollow">Tag Search</a></td>
+		</tr>
+		
+		<tr>
+			<td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d" accesskey="4" rel="nofollow">Advanced Search</a></td>
+		</tr>
+<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=getnew&amp;exclude=121" accesskey="2">Get All New Posts</a></td></tr>
+<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=getdaily&amp;minutes=15&amp;exclude=121" accesskey="2">Last 15 Minutes</a></td></tr>
+<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=getdaily&amp;minutes=30&amp;exclude=121" accesskey="2">Last 30 Minutes</a></td></tr>
+<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=getdaily&amp;hours=1&amp;exclude=121" accesskey="2">Last Hour</a></td></tr>
+<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=getdaily&amp;hours=2&amp;exclude=121" accesskey="2">2 Hours</a></td></tr>
+<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=getdaily&amp;hours=4&amp;exclude=121" accesskey="2">4 Hours</a></td></tr>
+<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=getdaily&amp;hours=8&amp;exclude=121" accesskey="2">8 Hours</a></td></tr>
+<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=getdaily&amp;hours=12&amp;exclude=121" accesskey="2">12 Hours</a></td></tr>
+<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=getdaily&amp;days=1&amp;exclude=121" accesskey="2">1 Day</a></td></tr>
+<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=getdaily&amp;days=2&amp;exclude=121" accesskey="2">2 Days</a></td></tr>
+<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=process&amp;showposts=0&amp;starteronly=1&amp;exactname=1&amp;searchuser=">Find All Your Threads</a></td></tr>
+<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=finduser&amp;u=0">Find All Your Posts</a></td></tr>
+		
+		</tbody></table>
+	</div>
+	<!-- / header quick search form -->
+	
+
+	
+<!-- / NAVBAR POPUP MENUS -->
+
+<!-- PAGENAV POPUP -->
+	<div class="vbmenu_popup" id="pagenav_menu" style="display: none; position: absolute; z-index: 50;">
+		<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr>
+			<td class="thead" nowrap="nowrap">Go to Page...</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="">
+			<form action="index.php" method="get" onsubmit="return this.gotopage()" id="pagenav_form">
+				<input class="bginput" id="pagenav_itxt" style="font-size: 11px;" size="4" type="text">
+				<input class="button" id="pagenav_ibtn" value="Go" type="button">
+			</form>
+			</td>
+		</tr>
+		</tbody></table>
+	</div>
+<!-- / PAGENAV POPUP -->
+
+
+
+<!-- help menu -->
+
+<!-- / help menu -->
+
+<div class="vbmenu_popup" id="helpmenu_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr><td class="thead">Ubuntu Forums Help</td></tr>	
+	<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/index.php?page=about">About Ubuntu Forums</a></td></tr>
+	<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/index.php?page=policy">Ubuntu Forums Code of Conduct</a></td></tr>
+	<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/announcement.php?f=48">Forum FAQ</a></td></tr>
+
+	</tbody></table>
+</div>
+<div class="vbmenu_popup" id="fcmenu_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr><td class="thead">Forum Council Information</td></tr>	
+	<tr><td class="vbmenu_option"><a href="https://wiki.ubuntu.com/ForumCouncil">Who we are</a></td></tr>
+	<tr><td class="vbmenu_option"><a href="https://wiki.ubuntu.com/ForumCouncilAgenda">Forum Council Agenda</a></td></tr>
+	<tr><td class="vbmenu_option"><a href="https://wiki.ubuntu.com/ForumsGovernance">Forum Governance</a></td></tr>
+
+	</tbody></table>
+</div>
+
+
+
+
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table style="margin-bottom: 3px;" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr valign="bottom">
+		
+		<td>
+				<div>
+  <b class="vbclean_newthread">
+  <b class="vbclean_newthread1"><b></b></b>
+  <b class="vbclean_newthread2"><b></b></b>
+  <b class="vbclean_newthread3"></b>
+  <b class="vbclean_newthread4"></b>
+  <b class="vbclean_newthread5"></b></b>
+
+  <div class="vbclean_newthreadfg" align="center">
+		<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;noquote=1&amp;p=1133304" rel="nofollow">New Reply
+	  </a></div>
+
+<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;noquote=1&amp;p=1133304" rel="nofollow">  <b class="vbclean_newthread">
+  <b class="vbclean_newthread5"></b>
+  <b class="vbclean_newthread4"></b>
+  <b class="vbclean_newthread3"></b>
+  <b class="vbclean_newthread2"><b></b></b>
+  <b class="vbclean_newthread1"><b></b></b></b>
+</a></div><a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;noquote=1&amp;p=1133304" rel="nofollow">	
+		</a></td>
+	
+	<td align="right"><div class="pagenav" align="right">
+<table class="tborder" border="0" cellpadding="3" cellspacing="1">
+<tbody><tr>
+	<td class="vbmenu_control" style="font-weight: normal;">Page 1 of 10</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Showing results 1 to 10 of 96"><strong>1</strong></span></td>
+ <td class="alt1"><a class="smallfont" href="http://ubuntuforums.org/showthread.php?s=df705712c540cd49852a750b10c4690d&amp;t=195557&amp;page=2" title="Show results 11 to 20 of 96">2</a></td><td class="alt1"><a class="smallfont" href="http://ubuntuforums.org/showthread.php?s=df705712c540cd49852a750b10c4690d&amp;t=195557&amp;page=3" title="Show results 21 to 30 of 96">3</a></td>
+	<td class="alt1"><a rel="next" class="smallfont" href="http://ubuntuforums.org/showthread.php?s=df705712c540cd49852a750b10c4690d&amp;t=195557&amp;page=2" title="Next Page - Results 11 to 20 of 96">&gt;</a></td>
+	<td class="alt1" nowrap="nowrap"><a class="smallfont" href="http://ubuntuforums.org/showthread.php?s=df705712c540cd49852a750b10c4690d&amp;t=195557&amp;page=10" title="Last Page - Results 91 to 96 of 96">Last <strong>»</strong></a></td>
+	<td style="cursor: pointer;" id="pagenav.55" class="vbmenu_control" title=""> <img alt="" title="" src="replace_gnomescreen_with_xscreensaver_files/menu_open.gif" border="0"></td>
+</tr>
+</tbody></table>
+</div></td>
+</tr>
+</tbody></table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" style="border-bottom-width: 0px;" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+<tbody><tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+	<td style="cursor: pointer;" class="vbmenu_control" id="threadtools" nowrap="nowrap">
+		<a href="http://ubuntuforums.org/showthread.php?t=195557&amp;nojs=1#goto_threadtools">Thread Tools</a>
+		<script type="text/javascript"> vbmenu_register("threadtools"); </script> <img alt="" title="" src="replace_gnomescreen_with_xscreensaver_files/menu_open.gif" border="0">
+	</td>
+	
+	
+	
+	<td style="cursor: pointer;" class="vbmenu_control" id="displaymodes" nowrap="nowrap">
+		<a href="http://ubuntuforums.org/showthread.php?t=195557&amp;nojs=1#goto_displaymodes">Display Modes</a>
+		<script type="text/javascript"> vbmenu_register("displaymodes"); </script> <img alt="" title="" src="replace_gnomescreen_with_xscreensaver_files/menu_open.gif" border="0">
+	</td>
+	
+
+	
+
+</tr>
+</tbody></table>
+<!-- / toolbar -->
+
+
+
+<!-- end content table -->
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+
+
+<div id="posts"><!-- post #1131894 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 99%; text-align: left;">
+		<div style="padding: 0px 25px;" align="left">
+
+	<div id="edit1131894" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+<div>
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg1"><b></b></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg5"></b></b>
+
+  <div class="vbclean_postbitlegfg">
+				<div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg1"><b></b></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg5"></b></b>
+
+  <div class="vbclean_postbitmsgfg">
+
+<table id="post1131894" class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr>
+	
+		<td class="alt4">
+			<!-- status icon and date -->
+			<a name="post1131894"><img title="Old" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/post_old.gif" alt="Old" border="0"></a>
+			June 13th, 2006
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="alt4" align="right">
+			&nbsp;
+			#<a href="http://ubuntuforums.org/showpost.php?s=df705712c540cd49852a750b10c4690d&amp;p=1131894&amp;postcount=1" target="new" rel="nofollow" id="postcount1131894" name="1"><strong>1</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt3" width="175">
+
+			<div id="postmenu_1131894">
+				
+				<a class="bigusername" href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=11472">23meg</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_1131894", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Ubuntu QA Team</div>
+			<div class="smallfont"><img src="replace_gnomescreen_with_xscreensaver_files/rank_ubuntumember.png" alt="" border=""></div>
+			
+
+			
+
+			<div class="smallfont">
+				&nbsp;<br>
+				<div>Join Date: Mar 2005</div>
+				
+				
+	
+<div>
+					Beans: 6,539
+				</div>
+			
+
+
+				
+				
+				
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td id="td_post_1131894" style="border-right: 1px solid rgb(255, 255, 255);">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>HOWTO: Replace gnome-screensaver with xscreensaver</strong>
+			</div>
+			<hr style="color: rgb(255, 255, 255); background-color: rgb(255, 255, 255);" size="1">
+			<!-- / icon and title -->
+		
+
+
+		
+		<!-- message -->
+		<div class="vbclean_msgtext" id="post_message_1131894"><font color="DarkSlateBlue">Note: I have <a href="http://www.ubuntuforums.org/showthread.php?t=198809" target="_blank">another guide</a> for adjusting screensaver settings in Dapper without replacing gnome-screensaver. <b>I prefer the method described in that guide to this one</b>, but your mileage may vary. Both have their pros and cons so make sure you check out both before applying the instructions.<br>
+</font><br>
+<font size="2"><b><font color="Red">Problem:</font></b></font> Dapper 
+ships with gnome-screensaver instead of xscreensaver, which gives the 
+user no option to set individual screensaver settings. <br>
+<br>
+<font size="2"><b><font color="Red">Details:</font></b></font> In Dapper
+ display power management functions were decoupled from the screensaver 
+with the introduction of Gnome Power Manager. xscreensaver provides both
+ functions, thus became partially redundant. Refer to <a href="http://live.gnome.org/GnomeScreensaver/FrequentlyAskedQuestions" target="_blank">the gnome-screensaver FAQ</a>, <a href="http://bugzilla.gnome.org/show_bug.cgi?id=316654" target="_blank">the upstream bugzilla discussion</a> and <a href="https://launchpad.net/distros/ubuntu/+source/gnome-screensaver/+bug/22007" target="_blank">the Launchpad discussion</a> for more details if interested. <br>
+<br>
+Ubuntu has a tendency to stick with the GNOME suite of applications 
+unless absolutely necessary, and the GNOME developers do have reasons 
+for doing what they're doing, so gnome-screensaver does have its longer 
+term use, but in immediate practical terms we need a way of configuring 
+screensaver options; otherwise most of them are either unusable or have 
+crippled functionality. The following isn't a very elegant modification,
+ but one that works nevertheless. Refer to the "Drawbacks" part at the 
+bottom for possible dysfunctions after applying this. <br>
+<br>
+<font size="2"><b><font color="Red">Solution:</font></b></font> Get xscreensaver back, disable gnome-screensaver.<br>
+<br>
+<font size="3"><b>1.</b></font> To configure gnome-screensaver not to function, go to System / Preferences / Screensaver and uncheck both checkboxes. <br>
+<br>
+<font size="3"><b>2.</b></font> To totally stop gnome-screensaver from running, kill its process<div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Code:</div>
+	<pre class="alt2" dir="ltr" style="margin: 0px; padding: 6px; border: 1px inset; width: 640px; height: 34px; text-align: left; overflow: auto;">sudo killall gnome-screensaver</pre>
+</div>and prevent it from being launched on startup <div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Code:</div>
+	<pre class="alt2" dir="ltr" style="margin: 0px; padding: 6px; border: 1px inset; width: 640px; height: 34px; text-align: left; overflow: auto;">gconftool-2 --type boolean -s /apps/gnome_settings_daemon/screensaver/start_screensaver false</pre>
+</div><b>If</b> the latter doesn't seem to be working persistently for some reason, resort to making gnome-screensaver unexecutable:<br>
+<div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Code:</div>
+	<pre class="alt2" dir="ltr" style="margin: 0px; padding: 6px; border: 1px inset; width: 640px; height: 34px; text-align: left; overflow: auto;">sudo chmod -x /usr/bin/gnome-screensaver</pre>
+</div><font size="3"><b>3. </b></font> Install xscreensaver. <div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Code:</div>
+	<pre class="alt2" dir="ltr" style="margin: 0px; padding: 6px; border: 1px inset; width: 640px; height: 34px; text-align: left; overflow: auto;">sudo apt-get install xscreensaver</pre>
+</div><font size="3"><b>4.</b></font> <font color="Gray">Optional:</font> Install the extra screensavers in the repositories that don't come installed as default. <div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Code:</div>
+	<pre class="alt2" dir="ltr" style="margin: 0px; padding: 6px; border: 1px inset; width: 640px; height: 34px; text-align: left; overflow: auto;">sudo apt-get install xscreensaver-data-extra xscreensaver-gl-extra</pre>
+</div><font size="3"><b>5. </b></font>Add the xscreensaver daemon to 
+your list of startup programs. Go to System / Preferences / Sessions / 
+Startup Programs, click "Add" and type "<b>xscreensaver -no-splash</b>".<br>
+<br>
+<font size="3"><b>6.</b></font> Modify the System / Preferences / 
+Screensaver menu entry to launch the xscreensaver configuration window 
+instead of the gnome-screensaver one: <div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Code:</div>
+	<pre class="alt2" dir="ltr" style="margin: 0px; padding: 6px; border: 1px inset; width: 640px; height: 34px; text-align: left; overflow: auto;">gksudo gedit /usr/share/applications/gnome-screensaver-preferences.desktop</pre>
+</div>Locate the following line:<div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Code:</div>
+	<pre class="alt2" dir="ltr" style="margin: 0px; padding: 6px; border: 1px inset; width: 640px; height: 34px; text-align: left; overflow: auto;">Exec=gnome-screensaver-preferences</pre>
+</div>and change it to <div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Code:</div>
+	<pre class="alt2" dir="ltr" style="margin: 0px; padding: 6px; border: 1px inset; width: 640px; height: 34px; text-align: left; overflow: auto;">Exec=xscreensaver-demo</pre>
+</div>and comment out the last four lines to make them look like this:<div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Code:</div>
+	<pre class="alt2" dir="ltr" style="margin: 0px; padding: 6px; border: 1px inset; width: 640px; height: 82px; text-align: left; overflow: auto;">#X-GNOME-Bugzilla-Bugzilla=GNOME
+#X-GNOME-Bugzilla-Product=gnome-screensaver
+#X-GNOME-Bugzilla-Component=general
+#X-Ubuntu-Gettext-Domain=gnome-screensaver</pre>
+</div><font size="3"><b>7. </b></font>Click System / Preferences / Screensaver to launch the xscreensaver configuration window, go to the "Advanced" tab and <b>uncheck the "Power Management Enabled" checkbox</b>. This should stop xscreensaver's power saving features from conflicting with Gnome Power Manager.<br>
+<br>
+<font size="3"><b>8.</b></font> <font color="Gray">Optional:</font> 
+Create a launcher to lock the screen manually. Right click your desktop,
+ choose "Create Launcher", and enter the following as the command: "<b>xscreensaver-command -lock</b>".<br>
+<br>
+<font size="2"><font color="Red"><b>Drawbacks:</b></font></font> <br>
+<br>
+- System / Quit / Lock Screen doesn't function after applying this, 
+since it locks the screen via gnome-screensaver. I'm looking for a fix 
+to this; in the meantime you can use the launcher you created in step 8 
+as a workaround. (<font color="Red">Update</font>: See <a href="http://ubuntuforums.org/showpost.php?p=1518635&amp;postcount=32" target="_blank">this post</a> for a suggested fix. I haven't tried it yet)<br>
+ <br>
+<br>
+- In my experience the screen won't get locked when closing the laptop 
+lid but this may be due to my (mis)configuration; I'll report back on 
+this after experimenting a bit.<br>
+<br>
+- You get the standard xscreensaver unlock dialog when unlocking the 
+screen instead of the Dapper one, which detracts from the overall polish
+ a bit, if you mind such things.</div>
+		<!-- / message -->
+                
+
+		
+
+		
+
+		
+		<!-- sig -->
+			<div class="vbclean_msgtext">
+				__________________<br>
+				<font size="1">Previously known as <i>23meg</i></font>
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+		<!-- edit note -->
+			<div class="smallfont">
+				<hr style="color: rgb(255, 255, 255); background-color: rgb(255, 255, 255);" size="1">
+				<em>
+					
+						Last edited by 23meg; June 11th, 2009 at <span class="time">02:22 AM</span>..
+					
+					
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt3">
+		<img title="23meg is offline" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/user_offline.gif" alt="23meg is offline" border="0">
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px 0px; border-style: none solid solid none; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+	
+		<!-- controls -->
+
+		
+		
+		
+			<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;p=1131894" rel="nofollow"><img title="Reply With Quote" src="replace_gnomescreen_with_xscreensaver_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 1131894 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1131894_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">23meg</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=11472">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/private.php?s=df705712c540cd49852a750b10c4690d&amp;do=newpm&amp;u=11472" rel="nofollow">Send a private message to 23meg</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=finduser&amp;u=11472" rel="nofollow">Find More Posts by 23meg</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1131894 popup menu -->
+	</div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg5"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg1"><b></b></b></b>
+</div>
+  </div>
+
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg5"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg1"><b></b></b></b>
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1131894 --><!-- post #1132341 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 99%; text-align: left;">
+		<div style="padding: 0px 25px;" align="left">
+
+	<div id="edit1132341" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+<div>
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg1"><b></b></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg5"></b></b>
+
+  <div class="vbclean_postbitlegfg">
+				<div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg1"><b></b></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg5"></b></b>
+
+  <div class="vbclean_postbitmsgfg">
+
+<table id="post1132341" class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr>
+	
+		<td class="alt4">
+			<!-- status icon and date -->
+			<a name="post1132341"><img title="Old" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/post_old.gif" alt="Old" border="0"></a>
+			June 13th, 2006
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="alt4" align="right">
+			&nbsp;
+			#<a href="http://ubuntuforums.org/showpost.php?s=df705712c540cd49852a750b10c4690d&amp;p=1132341&amp;postcount=2" target="new" rel="nofollow" id="postcount1132341" name="2"><strong>2</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt3" width="175">
+
+			<div id="postmenu_1132341">
+				
+				<a class="bigusername" href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=117517">bulldog</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_1132341", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Ubuntu addict and loving it</div>
+			<div class="smallfont"><img src="replace_gnomescreen_with_xscreensaver_files/rank_27.png" alt="" border=""></div>
+			
+
+			
+				<div class="smallfont">
+					&nbsp;<br><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=117517"><img title="bulldog's Avatar" src="replace_gnomescreen_with_xscreensaver_files/avatar117517_2.gif" alt="bulldog's Avatar" height="90" width="79" border="0"></a>
+				</div>
+			
+
+			<div class="smallfont">
+				&nbsp;<br>
+				<div>Join Date: Jun 2006</div>
+				<div>Location: The Netherlands</div>
+				
+	
+<div>My beans are hidden!</div>
+			
+
+
+    Ubuntu 9.10 Karmic Koala
+
+				
+				
+				
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td id="td_post_1132341" style="border-right: 1px solid rgb(255, 255, 255);">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>Re: HOWTO: Replace gnome-screensaver with xscreensaver</strong>
+			</div>
+			<hr style="color: rgb(255, 255, 255); background-color: rgb(255, 255, 255);" size="1">
+			<!-- / icon and title -->
+		
+
+
+		
+		<!-- message -->
+		<div class="vbclean_msgtext" id="post_message_1132341">Thank you for this HowTo.<br>
+All worked fine and no messing up so far<img src="replace_gnomescreen_with_xscreensaver_files/icon_smile.gif" alt="" title="Smile" class="inlineimg" border="0"></div>
+		<!-- / message -->
+                
+
+		
+
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt3">
+		<img title="bulldog is offline" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/user_offline.gif" alt="bulldog is offline" border="0">
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px 0px; border-style: none solid solid none; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+	
+		<!-- controls -->
+
+		
+		
+		
+			<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;p=1132341" rel="nofollow"><img title="Reply With Quote" src="replace_gnomescreen_with_xscreensaver_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 1132341 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1132341_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">bulldog</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=117517">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/private.php?s=df705712c540cd49852a750b10c4690d&amp;do=newpm&amp;u=117517" rel="nofollow">Send a private message to bulldog</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=finduser&amp;u=117517" rel="nofollow">Find More Posts by bulldog</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1132341 popup menu -->
+	</div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg5"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg1"><b></b></b></b>
+</div>
+  </div>
+
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg5"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg1"><b></b></b></b>
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1132341 --><!-- post #1132917 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 99%; text-align: left;">
+		<div style="padding: 0px 25px;" align="left">
+
+	<div id="edit1132917" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+<div>
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg1"><b></b></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg5"></b></b>
+
+  <div class="vbclean_postbitlegfg">
+				<div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg1"><b></b></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg5"></b></b>
+
+  <div class="vbclean_postbitmsgfg">
+
+<table id="post1132917" class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr>
+	
+		<td class="alt4">
+			<!-- status icon and date -->
+			<a name="post1132917"><img title="Old" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/post_old.gif" alt="Old" border="0"></a>
+			June 13th, 2006
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="alt4" align="right">
+			&nbsp;
+			#<a href="http://ubuntuforums.org/showpost.php?s=df705712c540cd49852a750b10c4690d&amp;p=1132917&amp;postcount=3" target="new" rel="nofollow" id="postcount1132917" name="3"><strong>3</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt3" width="175">
+
+			<div id="postmenu_1132917">
+				
+				<a class="bigusername" href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=122327">ayoli</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_1132917", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Fresh Brewed Ubuntu</div>
+			<div class="smallfont"><img src="replace_gnomescreen_with_xscreensaver_files/rank_20.png" alt="" border=""></div>
+			
+
+			
+				<div class="smallfont">
+					&nbsp;<br><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=122327"><img title="ayoli's Avatar" src="replace_gnomescreen_with_xscreensaver_files/avatar122327_11.gif" alt="ayoli's Avatar" height="55" width="90" border="0"></a>
+				</div>
+			
+
+			<div class="smallfont">
+				&nbsp;<br>
+				<div>Join Date: Jun 2006</div>
+				<div>Location: Millau, France</div>
+				
+	
+<div>
+					Beans: 1,492
+				</div>
+			
+
+
+    Ubuntu 10.04 Lucid Lynx
+
+				
+				
+				
+				
+				<div>   <a href="#" onclick="imwindow('yahoo', '122327', 400, 200); return false;"><img title="Send a message via Yahoo to ayoli" src="replace_gnomescreen_with_xscreensaver_files/im_yahoo.gif" alt="Send a message via Yahoo to ayoli" border="0"></a> </div>
+			</div>
+
+	</td>
+	
+	<td id="td_post_1132917" style="border-right: 1px solid rgb(255, 255, 255);">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>Re: HOWTO: Replace gnome-screensaver with xscreensaver</strong>
+			</div>
+			<hr style="color: rgb(255, 255, 255); background-color: rgb(255, 255, 255);" size="1">
+			<!-- / icon and title -->
+		
+
+
+		
+		<!-- message -->
+		<div class="vbclean_msgtext" id="post_message_1132917">yes, that's 
+work, but i prefer to use alacarte to add a new menu entry for 
+xscreensaver-demo, this way keep everything to restore easily gnome 
+screensaver, and btw why edit manually conf file when the graphical way 
+works <img src="replace_gnomescreen_with_xscreensaver_files/icon_wink.gif" alt="" title="Wink" class="inlineimg" border="0"></div>
+		<!-- / message -->
+                
+
+		
+
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt3">
+		<img title="ayoli is offline" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/user_offline.gif" alt="ayoli is offline" border="0">
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px 0px; border-style: none solid solid none; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+	
+		<!-- controls -->
+
+		
+		
+		
+			<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;p=1132917" rel="nofollow"><img title="Reply With Quote" src="replace_gnomescreen_with_xscreensaver_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 1132917 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1132917_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">ayoli</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=122327">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/private.php?s=df705712c540cd49852a750b10c4690d&amp;do=newpm&amp;u=122327" rel="nofollow">Send a private message to ayoli</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.ayozone.org/">Visit ayoli's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=finduser&amp;u=122327" rel="nofollow">Find More Posts by ayoli</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1132917 popup menu -->
+	</div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg5"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg1"><b></b></b></b>
+</div>
+  </div>
+
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg5"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg1"><b></b></b></b>
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1132917 --><!-- post #1132977 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 99%; text-align: left;">
+		<div style="padding: 0px 25px;" align="left">
+
+	<div id="edit1132977" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+<div>
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg1"><b></b></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg5"></b></b>
+
+  <div class="vbclean_postbitlegfg">
+				<div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg1"><b></b></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg5"></b></b>
+
+  <div class="vbclean_postbitmsgfg">
+
+<table id="post1132977" class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr>
+	
+		<td class="alt4">
+			<!-- status icon and date -->
+			<a name="post1132977"><img title="Old" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/post_old.gif" alt="Old" border="0"></a>
+			June 13th, 2006
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="alt4" align="right">
+			&nbsp;
+			#<a href="http://ubuntuforums.org/showpost.php?s=df705712c540cd49852a750b10c4690d&amp;p=1132977&amp;postcount=4" target="new" rel="nofollow" id="postcount1132977" name="4"><strong>4</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt3" width="175">
+
+			<div id="postmenu_1132977">
+				
+				<a class="bigusername" href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=11472">23meg</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_1132977", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Ubuntu QA Team</div>
+			<div class="smallfont"><img src="replace_gnomescreen_with_xscreensaver_files/rank_ubuntumember.png" alt="" border=""></div>
+			
+
+			
+
+			<div class="smallfont">
+				&nbsp;<br>
+				<div>Join Date: Mar 2005</div>
+				
+				
+	
+<div>
+					Beans: 6,539
+				</div>
+			
+
+
+				
+				
+				
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td id="td_post_1132977" style="border-right: 1px solid rgb(255, 255, 255);">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>Re: HOWTO: Replace gnome-screensaver with xscreensaver</strong>
+			</div>
+			<hr style="color: rgb(255, 255, 255); background-color: rgb(255, 255, 255);" size="1">
+			<!-- / icon and title -->
+		
+
+
+		
+		<!-- message -->
+		<div class="vbclean_msgtext" id="post_message_1132977"><div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Quote:</div>
+	<table width="100%" border="0" cellpadding="6" cellspacing="0">
+	<tbody><tr>
+		<td class="ubuntu_quotebackground">
+			
+				<div>
+					Originally Posted by <strong>ayoli</strong>
+					
+				</div>
+				<div style="font-style: italic;">yes, that's work, but i prefer to 
+use alacarte to add a new menu entry for xscreensaver-demo, this way 
+keep everything to restore easily gnome screensaver,</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Having menu items for both doesn't make sense when 
+gnome-screensaver is completely disabled; that's why I suggested 
+replacing the existing menu item instead of adding another. <div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Quote:</div>
+	<table width="100%" border="0" cellpadding="6" cellspacing="0">
+	<tbody><tr>
+		<td class="ubuntu_quotebackground">
+			
+				and btw why edit manually conf file when the graphical way works <img src="replace_gnomescreen_with_xscreensaver_files/icon_wink.gif" alt="" title="Wink" class="inlineimg" border="0">
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>It's easier and less error prone to describe the non-graphical way in a guide, and you can't comment out lines with Alacarte.</div>
+		<!-- / message -->
+                
+
+		
+
+		
+
+		
+		<!-- sig -->
+			<div class="vbclean_msgtext">
+				__________________<br>
+				<font size="1">Previously known as <i>23meg</i></font>
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt3">
+		<img title="23meg is offline" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/user_offline.gif" alt="23meg is offline" border="0">
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px 0px; border-style: none solid solid none; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+	
+		<!-- controls -->
+
+		
+		
+		
+			<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;p=1132977" rel="nofollow"><img title="Reply With Quote" src="replace_gnomescreen_with_xscreensaver_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 1132977 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1132977_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">23meg</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=11472">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/private.php?s=df705712c540cd49852a750b10c4690d&amp;do=newpm&amp;u=11472" rel="nofollow">Send a private message to 23meg</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=finduser&amp;u=11472" rel="nofollow">Find More Posts by 23meg</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1132977 popup menu -->
+	</div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg5"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg1"><b></b></b></b>
+</div>
+  </div>
+
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg5"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg1"><b></b></b></b>
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1132977 --><!-- post #1133051 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 99%; text-align: left;">
+		<div style="padding: 0px 25px;" align="left">
+
+	<div id="edit1133051" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+<div>
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg1"><b></b></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg5"></b></b>
+
+  <div class="vbclean_postbitlegfg">
+				<div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg1"><b></b></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg5"></b></b>
+
+  <div class="vbclean_postbitmsgfg">
+
+<table id="post1133051" class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr>
+	
+		<td class="alt4">
+			<!-- status icon and date -->
+			<a name="post1133051"><img title="Old" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/post_old.gif" alt="Old" border="0"></a>
+			June 13th, 2006
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="alt4" align="right">
+			&nbsp;
+			#<a href="http://ubuntuforums.org/showpost.php?s=df705712c540cd49852a750b10c4690d&amp;p=1133051&amp;postcount=5" target="new" rel="nofollow" id="postcount1133051" name="5"><strong>5</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt3" width="175">
+
+			<div id="postmenu_1133051">
+				
+				<a class="bigusername" href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=122327">ayoli</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_1133051", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Fresh Brewed Ubuntu</div>
+			<div class="smallfont"><img src="replace_gnomescreen_with_xscreensaver_files/rank_20.png" alt="" border=""></div>
+			
+
+			
+				<div class="smallfont">
+					&nbsp;<br><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=122327"><img title="ayoli's Avatar" src="replace_gnomescreen_with_xscreensaver_files/avatar122327_11.gif" alt="ayoli's Avatar" height="55" width="90" border="0"></a>
+				</div>
+			
+
+			<div class="smallfont">
+				&nbsp;<br>
+				<div>Join Date: Jun 2006</div>
+				<div>Location: Millau, France</div>
+				
+	
+<div>
+					Beans: 1,492
+				</div>
+			
+
+
+    Ubuntu 10.04 Lucid Lynx
+
+				
+				
+				
+				
+				<div>   <a href="#" onclick="imwindow('yahoo', '122327', 400, 200); return false;"><img title="Send a message via Yahoo to ayoli" src="replace_gnomescreen_with_xscreensaver_files/im_yahoo.gif" alt="Send a message via Yahoo to ayoli" border="0"></a> </div>
+			</div>
+
+	</td>
+	
+	<td id="td_post_1133051" style="border-right: 1px solid rgb(255, 255, 255);">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>Re: HOWTO: Replace gnome-screensaver with xscreensaver</strong>
+			</div>
+			<hr style="color: rgb(255, 255, 255); background-color: rgb(255, 255, 255);" size="1">
+			<!-- / icon and title -->
+		
+
+
+		
+		<!-- message -->
+		<div class="vbclean_msgtext" id="post_message_1133051"><div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Quote:</div>
+	<table width="100%" border="0" cellpadding="6" cellspacing="0">
+	<tbody><tr>
+		<td class="ubuntu_quotebackground">
+			
+				<div>
+					Originally Posted by <strong>23meg</strong>
+					
+				</div>
+				<div style="font-style: italic;">Having menu items for both doesn't 
+make sense when gnome-screensaver is completely disabled; that's why I 
+suggested replacing the existing menu item instead of adding another.</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>menu items can be hide/shown and if ppl totally don't want gnome-screensaver why don't just apt-get remove it ?<br>
+<div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Quote:</div>
+	<table width="100%" border="0" cellpadding="6" cellspacing="0">
+	<tbody><tr>
+		<td class="ubuntu_quotebackground">
+			
+				<div>
+					Originally Posted by <strong>23meg</strong>
+					
+				</div>
+				<div style="font-style: italic;">It's easier and less error prone to describe the non-graphical way in a guide...</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>i agree with that <img src="replace_gnomescreen_with_xscreensaver_files/icon_wink.gif" alt="" title="Wink" class="inlineimg" border="0"></div>
+		<!-- / message -->
+                
+
+		
+
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt3">
+		<img title="ayoli is offline" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/user_offline.gif" alt="ayoli is offline" border="0">
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px 0px; border-style: none solid solid none; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+	
+		<!-- controls -->
+
+		
+		
+		
+			<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;p=1133051" rel="nofollow"><img title="Reply With Quote" src="replace_gnomescreen_with_xscreensaver_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 1133051 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1133051_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">ayoli</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=122327">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/private.php?s=df705712c540cd49852a750b10c4690d&amp;do=newpm&amp;u=122327" rel="nofollow">Send a private message to ayoli</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.ayozone.org/">Visit ayoli's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=finduser&amp;u=122327" rel="nofollow">Find More Posts by ayoli</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1133051 popup menu -->
+	</div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg5"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg1"><b></b></b></b>
+</div>
+  </div>
+
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg5"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg1"><b></b></b></b>
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1133051 --><!-- post #1133089 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 99%; text-align: left;">
+		<div style="padding: 0px 25px;" align="left">
+
+	<div id="edit1133089" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+<div>
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg1"><b></b></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg5"></b></b>
+
+  <div class="vbclean_postbitlegfg">
+				<div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg1"><b></b></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg5"></b></b>
+
+  <div class="vbclean_postbitmsgfg">
+
+<table id="post1133089" class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr>
+	
+		<td class="alt4">
+			<!-- status icon and date -->
+			<a name="post1133089"><img title="Old" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/post_old.gif" alt="Old" border="0"></a>
+			June 13th, 2006
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="alt4" align="right">
+			&nbsp;
+			#<a href="http://ubuntuforums.org/showpost.php?s=df705712c540cd49852a750b10c4690d&amp;p=1133089&amp;postcount=6" target="new" rel="nofollow" id="postcount1133089" name="6"><strong>6</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt3" width="175">
+
+			<div id="postmenu_1133089">
+				
+				<a class="bigusername" href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=11472">23meg</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_1133089", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Ubuntu QA Team</div>
+			<div class="smallfont"><img src="replace_gnomescreen_with_xscreensaver_files/rank_ubuntumember.png" alt="" border=""></div>
+			
+
+			
+
+			<div class="smallfont">
+				&nbsp;<br>
+				<div>Join Date: Mar 2005</div>
+				
+				
+	
+<div>
+					Beans: 6,539
+				</div>
+			
+
+
+				
+				
+				
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td id="td_post_1133089" style="border-right: 1px solid rgb(255, 255, 255);">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>Re: HOWTO: Replace gnome-screensaver with xscreensaver</strong>
+			</div>
+			<hr style="color: rgb(255, 255, 255); background-color: rgb(255, 255, 255);" size="1">
+			<!-- / icon and title -->
+		
+
+
+		
+		<!-- message -->
+		<div class="vbclean_msgtext" id="post_message_1133089"><div style="margin: 5px 20px 20px;">
+	<div class="smallfont" style="margin-bottom: 2px;">Quote:</div>
+	<table width="100%" border="0" cellpadding="6" cellspacing="0">
+	<tbody><tr>
+		<td class="ubuntu_quotebackground">
+			
+				<div>
+					Originally Posted by <strong>ayoli</strong>
+					
+				</div>
+				<div style="font-style: italic;">menu items can be hide/shown and if ppl totally don't want gnome-screensaver why don't just apt-get remove it ?</div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Because removing it also removes ubuntu-desktop; just disabling it
+ is a less aggressive method and makes it easier to revert back to it if
+ desired.</div>
+		<!-- / message -->
+                
+
+		
+
+		
+
+		
+		<!-- sig -->
+			<div class="vbclean_msgtext">
+				__________________<br>
+				<font size="1">Previously known as <i>23meg</i></font>
+			</div>
+		<!-- / sig -->
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt3">
+		<img title="23meg is offline" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/user_offline.gif" alt="23meg is offline" border="0">
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px 0px; border-style: none solid solid none; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+	
+		<!-- controls -->
+
+		
+		
+		
+			<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;p=1133089" rel="nofollow"><img title="Reply With Quote" src="replace_gnomescreen_with_xscreensaver_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 1133089 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1133089_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">23meg</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=11472">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/private.php?s=df705712c540cd49852a750b10c4690d&amp;do=newpm&amp;u=11472" rel="nofollow">Send a private message to 23meg</a></td></tr>
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=finduser&amp;u=11472" rel="nofollow">Find More Posts by 23meg</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1133089 popup menu -->
+	</div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg5"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg1"><b></b></b></b>
+</div>
+  </div>
+
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg5"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg1"><b></b></b></b>
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1133089 --><!-- post #1133136 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 99%; text-align: left;">
+		<div style="padding: 0px 25px;" align="left">
+
+	<div id="edit1133136" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+<div>
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg1"><b></b></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg5"></b></b>
+
+  <div class="vbclean_postbitlegfg">
+				<div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg1"><b></b></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg5"></b></b>
+
+  <div class="vbclean_postbitmsgfg">
+
+<table id="post1133136" class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr>
+	
+		<td class="alt4">
+			<!-- status icon and date -->
+			<a name="post1133136"><img title="Old" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/post_old.gif" alt="Old" border="0"></a>
+			June 13th, 2006
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="alt4" align="right">
+			&nbsp;
+			#<a href="http://ubuntuforums.org/showpost.php?s=df705712c540cd49852a750b10c4690d&amp;p=1133136&amp;postcount=7" target="new" rel="nofollow" id="postcount1133136" name="7"><strong>7</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt3" width="175">
+
+			<div id="postmenu_1133136">
+				
+				<a class="bigusername" href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=122327">ayoli</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_1133136", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Fresh Brewed Ubuntu</div>
+			<div class="smallfont"><img src="replace_gnomescreen_with_xscreensaver_files/rank_20.png" alt="" border=""></div>
+			
+
+			
+				<div class="smallfont">
+					&nbsp;<br><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=122327"><img title="ayoli's Avatar" src="replace_gnomescreen_with_xscreensaver_files/avatar122327_11.gif" alt="ayoli's Avatar" height="55" width="90" border="0"></a>
+				</div>
+			
+
+			<div class="smallfont">
+				&nbsp;<br>
+				<div>Join Date: Jun 2006</div>
+				<div>Location: Millau, France</div>
+				
+	
+<div>
+					Beans: 1,492
+				</div>
+			
+
+
+    Ubuntu 10.04 Lucid Lynx
+
+				
+				
+				
+				
+				<div>   <a href="#" onclick="imwindow('yahoo', '122327', 400, 200); return false;"><img title="Send a message via Yahoo to ayoli" src="replace_gnomescreen_with_xscreensaver_files/im_yahoo.gif" alt="Send a message via Yahoo to ayoli" border="0"></a> </div>
+			</div>
+
+	</td>
+	
+	<td id="td_post_1133136" style="border-right: 1px solid rgb(255, 255, 255);">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>Re: HOWTO: Replace gnome-screensaver with xscreensaver</strong>
+			</div>
+			<hr style="color: rgb(255, 255, 255); background-color: rgb(255, 255, 255);" size="1">
+			<!-- / icon and title -->
+		
+
+
+		
+		<!-- message -->
+		<div class="vbclean_msgtext" id="post_message_1133136">ah yes, true. but weird to have a dep that force to keep unwanted/unused  apps.</div>
+		<!-- / message -->
+                
+
+		
+
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt3">
+		<img title="ayoli is offline" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/user_offline.gif" alt="ayoli is offline" border="0">
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px 0px; border-style: none solid solid none; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+	
+		<!-- controls -->
+
+		
+		
+		
+			<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;p=1133136" rel="nofollow"><img title="Reply With Quote" src="replace_gnomescreen_with_xscreensaver_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 1133136 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1133136_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">ayoli</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=122327">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/private.php?s=df705712c540cd49852a750b10c4690d&amp;do=newpm&amp;u=122327" rel="nofollow">Send a private message to ayoli</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.ayozone.org/">Visit ayoli's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=finduser&amp;u=122327" rel="nofollow">Find More Posts by ayoli</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1133136 popup menu -->
+	</div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg5"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg1"><b></b></b></b>
+</div>
+  </div>
+
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg5"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg1"><b></b></b></b>
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1133136 --><!-- post #1133183 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 99%; text-align: left;">
+		<div style="padding: 0px 25px;" align="left">
+
+	<div id="edit1133183" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+<div>
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg1"><b></b></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg5"></b></b>
+
+  <div class="vbclean_postbitlegfg">
+				<div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg1"><b></b></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg5"></b></b>
+
+  <div class="vbclean_postbitmsgfg">
+
+<table id="post1133183" class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr>
+	
+		<td class="alt4">
+			<!-- status icon and date -->
+			<a name="post1133183"><img title="Old" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/post_old.gif" alt="Old" border="0"></a>
+			June 13th, 2006
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="alt4" align="right">
+			&nbsp;
+			#<a href="http://ubuntuforums.org/showpost.php?s=df705712c540cd49852a750b10c4690d&amp;p=1133183&amp;postcount=8" target="new" rel="nofollow" id="postcount1133183" name="8"><strong>8</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt3" width="175">
+
+			<div id="postmenu_1133183">
+				
+				<a class="bigusername" href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=62048">NoWhereMan</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_1133183", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Ubuntu Extra Shot</div>
+			<div class="smallfont"><img src="replace_gnomescreen_with_xscreensaver_files/rank_4.png" alt="" border=""></div>
+			
+
+			
+				<div class="smallfont">
+					&nbsp;<br><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=62048"><img title="NoWhereMan's Avatar" src="replace_gnomescreen_with_xscreensaver_files/avatar62048_1.gif" alt="NoWhereMan's Avatar" height="90" width="90" border="0"></a>
+				</div>
+			
+
+			<div class="smallfont">
+				&nbsp;<br>
+				<div>Join Date: Dec 2005</div>
+				<div>Location: Milano, Italy</div>
+				
+	
+<div>
+					Beans: 224
+				</div>
+			
+
+
+    Ubuntu 7.10 Gutsy Gibbon
+
+				
+				
+				
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td id="td_post_1133183" style="border-right: 1px solid rgb(255, 255, 255);">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>Re: HOWTO: Replace gnome-screensaver with xscreensaver</strong>
+			</div>
+			<hr style="color: rgb(255, 255, 255); background-color: rgb(255, 255, 255);" size="1">
+			<!-- / icon and title -->
+		
+
+
+		
+		<!-- message -->
+		<div class="vbclean_msgtext" id="post_message_1133183">it's only me, or "fade to black" option doesn't work?</div>
+		<!-- / message -->
+                
+
+		
+
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt3">
+		<img title="NoWhereMan is offline" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/user_offline.gif" alt="NoWhereMan is offline" border="0">
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px 0px; border-style: none solid solid none; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+	
+		<!-- controls -->
+
+		
+		
+		
+			<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;p=1133183" rel="nofollow"><img title="Reply With Quote" src="replace_gnomescreen_with_xscreensaver_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 1133183 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1133183_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">NoWhereMan</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=62048">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/private.php?s=df705712c540cd49852a750b10c4690d&amp;do=newpm&amp;u=62048" rel="nofollow">Send a private message to NoWhereMan</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.nowhereland.it/">Visit NoWhereMan's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=finduser&amp;u=62048" rel="nofollow">Find More Posts by NoWhereMan</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1133183 popup menu -->
+	</div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg5"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg1"><b></b></b></b>
+</div>
+  </div>
+
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg5"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg1"><b></b></b></b>
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1133183 --><!-- post #1133194 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 99%; text-align: left;">
+		<div style="padding: 0px 25px;" align="left">
+
+	<div id="edit1133194" style="padding: 0px 0px 6px;">
+	<!-- this is not the last post shown on the page -->
+
+
+<div>
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg1"><b></b></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg5"></b></b>
+
+  <div class="vbclean_postbitlegfg">
+				<div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg1"><b></b></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg5"></b></b>
+
+  <div class="vbclean_postbitmsgfg">
+
+<table id="post1133194" class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr>
+	
+		<td class="alt4">
+			<!-- status icon and date -->
+			<a name="post1133194"><img title="Old" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/post_old.gif" alt="Old" border="0"></a>
+			June 13th, 2006
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="alt4" align="right">
+			&nbsp;
+			#<a href="http://ubuntuforums.org/showpost.php?s=df705712c540cd49852a750b10c4690d&amp;p=1133194&amp;postcount=9" target="new" rel="nofollow" id="postcount1133194" name="9"><strong>9</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt3" width="175">
+
+			<div id="postmenu_1133194">
+				
+				<a class="bigusername" href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=122327">ayoli</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_1133194", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Fresh Brewed Ubuntu</div>
+			<div class="smallfont"><img src="replace_gnomescreen_with_xscreensaver_files/rank_20.png" alt="" border=""></div>
+			
+
+			
+				<div class="smallfont">
+					&nbsp;<br><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=122327"><img title="ayoli's Avatar" src="replace_gnomescreen_with_xscreensaver_files/avatar122327_11.gif" alt="ayoli's Avatar" height="55" width="90" border="0"></a>
+				</div>
+			
+
+			<div class="smallfont">
+				&nbsp;<br>
+				<div>Join Date: Jun 2006</div>
+				<div>Location: Millau, France</div>
+				
+	
+<div>
+					Beans: 1,492
+				</div>
+			
+
+
+    Ubuntu 10.04 Lucid Lynx
+
+				
+				
+				
+				
+				<div>   <a href="#" onclick="imwindow('yahoo', '122327', 400, 200); return false;"><img title="Send a message via Yahoo to ayoli" src="replace_gnomescreen_with_xscreensaver_files/im_yahoo.gif" alt="Send a message via Yahoo to ayoli" border="0"></a> </div>
+			</div>
+
+	</td>
+	
+	<td id="td_post_1133194" style="border-right: 1px solid rgb(255, 255, 255);">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>Re: HOWTO: Replace gnome-screensaver with xscreensaver</strong>
+			</div>
+			<hr style="color: rgb(255, 255, 255); background-color: rgb(255, 255, 255);" size="1">
+			<!-- / icon and title -->
+		
+
+
+		
+		<!-- message -->
+		<div class="vbclean_msgtext" id="post_message_1133194">xscreensaver "fade to black" option works perfectly on my laptop <img src="replace_gnomescreen_with_xscreensaver_files/icon_smile.gif" alt="" title="Smile" class="inlineimg" border="0"></div>
+		<!-- / message -->
+                
+
+		
+
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt3">
+		<img title="ayoli is offline" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/user_offline.gif" alt="ayoli is offline" border="0">
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px 0px; border-style: none solid solid none; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+	
+		<!-- controls -->
+
+		
+		
+		
+			<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;p=1133194" rel="nofollow"><img title="Reply With Quote" src="replace_gnomescreen_with_xscreensaver_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 1133194 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1133194_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">ayoli</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=122327">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/private.php?s=df705712c540cd49852a750b10c4690d&amp;do=newpm&amp;u=122327" rel="nofollow">Send a private message to ayoli</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.ayozone.org/">Visit ayoli's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=finduser&amp;u=122327" rel="nofollow">Find More Posts by ayoli</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1133194 popup menu -->
+	</div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg5"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg1"><b></b></b></b>
+</div>
+  </div>
+
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg5"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg1"><b></b></b></b>
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1133194 --><!-- post #1133304 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 99%; text-align: left;">
+		<div style="padding: 0px 25px;" align="left">
+
+	<div id="edit1133304" style="padding: 0px 0px 6px;">
+	
+
+
+<div>
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg1"><b></b></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg5"></b></b>
+
+  <div class="vbclean_postbitlegfg">
+				<div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg1"><b></b></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg5"></b></b>
+
+  <div class="vbclean_postbitmsgfg">
+
+<table id="post1133304" class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr>
+	
+		<td class="alt4">
+			<!-- status icon and date -->
+			<a name="post1133304"><img title="Old" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/post_old.gif" alt="Old" border="0"></a>
+			June 13th, 2006
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="alt4" align="right">
+			&nbsp;
+			#<a href="http://ubuntuforums.org/showpost.php?s=df705712c540cd49852a750b10c4690d&amp;p=1133304&amp;postcount=10" target="new" rel="nofollow" id="postcount1133304" name="10"><strong>10</strong></a>
+			
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt3" width="175">
+
+			<div id="postmenu_1133304">
+				
+				<a class="bigusername" href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=62048">NoWhereMan</a>
+				<script type="text/javascript"> vbmenu_register("postmenu_1133304", true); </script>
+				
+			</div>
+
+			<div class="smallfont">Ubuntu Extra Shot</div>
+			<div class="smallfont"><img src="replace_gnomescreen_with_xscreensaver_files/rank_4.png" alt="" border=""></div>
+			
+
+			
+				<div class="smallfont">
+					&nbsp;<br><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=62048"><img title="NoWhereMan's Avatar" src="replace_gnomescreen_with_xscreensaver_files/avatar62048_1.gif" alt="NoWhereMan's Avatar" height="90" width="90" border="0"></a>
+				</div>
+			
+
+			<div class="smallfont">
+				&nbsp;<br>
+				<div>Join Date: Dec 2005</div>
+				<div>Location: Milano, Italy</div>
+				
+	
+<div>
+					Beans: 224
+				</div>
+			
+
+
+    Ubuntu 7.10 Gutsy Gibbon
+
+				
+				
+				
+				
+				<div>    </div>
+			</div>
+
+	</td>
+	
+	<td id="td_post_1133304" style="border-right: 1px solid rgb(255, 255, 255);">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong>Re: HOWTO: Replace gnome-screensaver with xscreensaver</strong>
+			</div>
+			<hr style="color: rgb(255, 255, 255); background-color: rgb(255, 255, 255);" size="1">
+			<!-- / icon and title -->
+		
+
+
+		
+		<!-- message -->
+		<div class="vbclean_msgtext" id="post_message_1133304">d'oh. that's strange...</div>
+		<!-- / message -->
+                
+
+		
+
+		
+
+		
+
+		
+
+		
+
+	</td>
+</tr>
+<tr>
+	<td class="alt3">
+		<img title="NoWhereMan is offline" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/user_offline.gif" alt="NoWhereMan is offline" border="0">
+
+
+		
+		
+		
+		
+		&nbsp;
+	</td>
+	
+	<td class="alt1" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px 0px; border-style: none solid solid none; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+	
+		<!-- controls -->
+
+		
+		
+		
+			<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;p=1133304" rel="nofollow"><img title="Reply With Quote" src="replace_gnomescreen_with_xscreensaver_files/quote.gif" alt="Reply With Quote" border="0"></a>
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 1133304 popup menu -->
+<div class="vbmenu_popup" id="postmenu_1133304_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">NoWhereMan</td>
+	</tr>
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/member.php?s=df705712c540cd49852a750b10c4690d&amp;u=62048">View Public Profile</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/private.php?s=df705712c540cd49852a750b10c4690d&amp;do=newpm&amp;u=62048" rel="nofollow">Send a private message to NoWhereMan</a></td></tr>
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.nowhereland.it/">Visit NoWhereMan's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://ubuntuforums.org/search.php?s=df705712c540cd49852a750b10c4690d&amp;do=finduser&amp;u=62048" rel="nofollow">Find More Posts by NoWhereMan</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 1133304 popup menu -->
+	</div>
+  <b class="vbclean_postbitmsg">
+  <b class="vbclean_postbitmsg5"></b>
+  <b class="vbclean_postbitmsg4"></b>
+  <b class="vbclean_postbitmsg3"></b>
+  <b class="vbclean_postbitmsg2"><b></b></b>
+  <b class="vbclean_postbitmsg1"><b></b></b></b>
+</div>
+  </div>
+
+  <b class="vbclean_postbitleg">
+  <b class="vbclean_postbitleg5"></b>
+  <b class="vbclean_postbitleg4"></b>
+  <b class="vbclean_postbitleg3"></b>
+  <b class="vbclean_postbitleg2"><b></b></b>
+  <b class="vbclean_postbitleg1"><b></b></b></b>
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #1133304 --><div id="lastpost"></div></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 99%; text-align: left;">
+		<div style="padding: 0px 25px;" align="left">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table style="margin-top: -3px;" width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr valign="top">
+			
+		<td>
+				<div>
+  <b class="vbclean_newthread">
+  <b class="vbclean_newthread1"><b></b></b>
+  <b class="vbclean_newthread2"><b></b></b>
+  <b class="vbclean_newthread3"></b>
+  <b class="vbclean_newthread4"></b>
+  <b class="vbclean_newthread5"></b></b>
+
+  <div class="vbclean_newthreadfg" align="center">
+		<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;noquote=1&amp;p=1133304" rel="nofollow">New Reply
+	  </a></div>
+
+<a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;noquote=1&amp;p=1133304" rel="nofollow">  <b class="vbclean_newthread">
+  <b class="vbclean_newthread5"></b>
+  <b class="vbclean_newthread4"></b>
+  <b class="vbclean_newthread3"></b>
+  <b class="vbclean_newthread2"><b></b></b>
+  <b class="vbclean_newthread1"><b></b></b></b>
+</a></div><a href="http://ubuntuforums.org/newreply.php?s=df705712c540cd49852a750b10c4690d&amp;do=newreply&amp;noquote=1&amp;p=1133304" rel="nofollow">	
+		</a></td>
+	
+	
+		<td align="right"><div class="pagenav" align="right">
+<table class="tborder" border="0" cellpadding="3" cellspacing="1">
+<tbody><tr>
+	<td class="vbmenu_control" style="font-weight: normal;">Page 1 of 10</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Showing results 1 to 10 of 96"><strong>1</strong></span></td>
+ <td class="alt1"><a class="smallfont" href="http://ubuntuforums.org/showthread.php?s=df705712c540cd49852a750b10c4690d&amp;t=195557&amp;page=2" title="Show results 11 to 20 of 96">2</a></td><td class="alt1"><a class="smallfont" href="http://ubuntuforums.org/showthread.php?s=df705712c540cd49852a750b10c4690d&amp;t=195557&amp;page=3" title="Show results 21 to 30 of 96">3</a></td>
+	<td class="alt1"><a rel="next" class="smallfont" href="http://ubuntuforums.org/showthread.php?s=df705712c540cd49852a750b10c4690d&amp;t=195557&amp;page=2" title="Next Page - Results 11 to 20 of 96">&gt;</a></td>
+	<td class="alt1" nowrap="nowrap"><a class="smallfont" href="http://ubuntuforums.org/showthread.php?s=df705712c540cd49852a750b10c4690d&amp;t=195557&amp;page=10" title="Last Page - Results 91 to 96 of 96">Last <strong>»</strong></a></td>
+	<td style="cursor: pointer;" id="pagenav.178" class="vbmenu_control" title=""> <img alt="" title="" src="replace_gnomescreen_with_xscreensaver_files/menu_open.gif" border="0"></td>
+</tr>
+</tbody></table>
+</div>
+		
+		</td>
+	
+</tr>
+</tbody></table>
+<!-- / controls below postbits -->
+
+
+
+
+<!-- social bookmarking links -->
+	<br>
+	<table class="tborder" width="100%" align="center" border="0" cellpadding="6" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Bookmarks</td>
+	</tr>
+	<tr>
+		<td class="alt2" style="padding-top: 0px;"><div style="clear: both;"></div><ul style="list-style-type: none; margin: 0px; padding: 0px;"><li class="smallfont" style="width: 25%; min-width: 160px; float: left; margin-top: 6px;">
+	
+		<a href="http://digg.com/submit?phrase=2&amp;url=http%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D195557&amp;title=HOWTO%3A+Replace+gnome-screensaver+with+xscreensaver" target="socialbookmark"><img title="Submit Thread to Digg" src="replace_gnomescreen_with_xscreensaver_files/bookmarksite_digg.gif" alt="Submit Thread to Digg" class="inlineimg" border="0"></a>
+	
+	<a href="http://digg.com/submit?phrase=2&amp;url=http%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D195557&amp;title=HOWTO%3A+Replace+gnome-screensaver+with+xscreensaver" target="socialbookmark" style="text-decoration: none;">Digg</a>
+</li><li class="smallfont" style="width: 25%; min-width: 160px; float: left; margin-top: 6px;">
+	
+		<a href="http://del.icio.us/post?url=http%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D195557&amp;title=HOWTO%3A+Replace+gnome-screensaver+with+xscreensaver" target="socialbookmark"><img title="Submit Thread to del.icio.us" src="replace_gnomescreen_with_xscreensaver_files/bookmarksite_delicious.gif" alt="Submit Thread to del.icio.us" class="inlineimg" border="0"></a>
+	
+	<a href="http://del.icio.us/post?url=http%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D195557&amp;title=HOWTO%3A+Replace+gnome-screensaver+with+xscreensaver" target="socialbookmark" style="text-decoration: none;">del.icio.us</a>
+</li><li class="smallfont" style="width: 25%; min-width: 160px; float: left; margin-top: 6px;">
+	
+		<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D195557&amp;title=HOWTO%3A+Replace+gnome-screensaver+with+xscreensaver" target="socialbookmark"><img title="Submit Thread to StumbleUpon" src="replace_gnomescreen_with_xscreensaver_files/bookmarksite_stumbleupon.gif" alt="Submit Thread to StumbleUpon" class="inlineimg" border="0"></a>
+	
+	<a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D195557&amp;title=HOWTO%3A+Replace+gnome-screensaver+with+xscreensaver" target="socialbookmark" style="text-decoration: none;">StumbleUpon</a>
+</li><li class="smallfont" style="width: 25%; min-width: 160px; float: left; margin-top: 6px;">
+	
+		<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D195557&amp;title=HOWTO%3A+Replace+gnome-screensaver+with+xscreensaver" target="socialbookmark"><img title="Submit Thread to Google" src="replace_gnomescreen_with_xscreensaver_files/bookmarksite_google.gif" alt="Submit Thread to Google" class="inlineimg" border="0"></a>
+	
+	<a href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fubuntuforums.org%2Fshowthread.php%3Ft%3D195557&amp;title=HOWTO%3A+Replace+gnome-screensaver+with+xscreensaver" target="socialbookmark" style="text-decoration: none;">Google</a>
+</li></ul><div style="clear: both;"></div></td>
+	</tr>
+	</tbody></table>
+<!-- / social bookmarking links -->
+
+
+
+
+
+
+
+<!-- lightbox scripts -->
+	<script type="text/javascript" src="replace_gnomescreen_with_xscreensaver_files/vbulletin_lightbox.js"></script>
+	<script type="text/javascript">
+	<!--
+	vBulletin.register_control("vB_Lightbox_Container", "posts", 1);
+	//-->
+	</script>
+<!-- / lightbox scripts -->
+
+
+
+
+
+
+
+
+
+
+<!-- next / previous links -->
+	<br>
+	<div class="smallfont" align="center">
+		<strong>«</strong>
+			<a href="http://ubuntuforums.org/showthread.php?s=df705712c540cd49852a750b10c4690d&amp;t=195557&amp;goto=nextoldest" rel="nofollow">Previous Thread</a>
+			|
+			<a href="http://ubuntuforums.org/showthread.php?s=df705712c540cd49852a750b10c4690d&amp;t=195557&amp;goto=nextnewest" rel="nofollow">Next Thread</a>
+		<strong>»</strong>
+	</div>
+<!-- / next / previous links -->
+
+
+
+
+
+<!-- popup menu contents -->
+<br>
+
+<!-- thread tools menu -->
+<div class="vbmenu_popup" id="threadtools_menu" style="display: none;">
+<form action="postings.php?t=195557&amp;pollid=" method="post" name="threadadminform">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Thread Tools<a name="goto_threadtools"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><img title="Show Printable Version" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/printer.gif" alt="Show Printable Version"> <a href="http://ubuntuforums.org/printthread.php?s=df705712c540cd49852a750b10c4690d&amp;t=195557" accesskey="3" rel="nofollow">Show Printable Version</a></td>
+	</tr>
+
+	
+	
+	
+			
+	
+	
+	</tbody></table>
+</form>
+</div>
+<!-- / thread tools menu -->
+
+<!-- **************************************************** -->
+
+<!-- thread display mode menu -->
+<div class="vbmenu_popup" id="displaymodes_menu" style="display: none;">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Display Modes<a name="goto_displaymodes"></a></td>
+	</tr>
+	<tr>
+	
+		<td class="vbmenu_option" title="nohilite"><img title="Linear Mode" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/mode_linear.gif" alt="Linear Mode"> <strong>Linear Mode</strong></td>
+	
+	</tr>
+	<tr>
+	
+		<td class="vbmenu_option"><img title="Hybrid Mode" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/mode_hybrid.gif" alt="Hybrid Mode"> <a href="http://ubuntuforums.org/showthread.php?s=df705712c540cd49852a750b10c4690d&amp;mode=hybrid&amp;t=195557">Switch to Hybrid Mode</a></td>
+	
+	</tr>
+	<tr>
+	
+		<td class="vbmenu_option"><img title="Threaded Mode" class="inlineimg" src="replace_gnomescreen_with_xscreensaver_files/mode_threaded.gif" alt="Threaded Mode"> <a href="http://ubuntuforums.org/showthread.php?s=df705712c540cd49852a750b10c4690d&amp;p=1131894&amp;mode=threaded#post1131894">Switch to Threaded Mode</a></td>
+	
+	</tr>
+	</tbody></table>
+</div>
+<!-- / thread display mode menu -->
+
+<!-- **************************************************** -->
+
+
+
+<!-- **************************************************** -->
+
+
+
+<!-- / popup menu contents -->
+
+
+<!-- forum rules and admin links -->
+<table width="100%" align="center" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr valign="bottom">
+	<td valign="top" width="100%">
+		<table class="tborder" width="210" border="0" cellpadding="6" cellspacing="1">
+<thead>
+<tr>
+	<td class="thead">
+		<a style="float: right;" href="#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="replace_gnomescreen_with_xscreensaver_files/collapse_thead.gif" alt="" border="0"></a>
+		Posting Rules
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div>You <strong>may not</strong> post new threads</div>
+		<div>You <strong>may not</strong> post replies</div>
+		<div>You <strong>may not</strong> post attachments</div>
+		<div>You <strong>may not</strong> edit your posts</div>
+		<hr>
+		
+		<div><a href="http://ubuntuforums.org/misc.php?s=df705712c540cd49852a750b10c4690d&amp;do=bbcode" target="_blank">BB code</a> is <strong>On</strong></div>
+		<div><a href="http://ubuntuforums.org/misc.php?s=df705712c540cd49852a750b10c4690d&amp;do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></div>
+		<div><a href="http://ubuntuforums.org/misc.php?s=df705712c540cd49852a750b10c4690d&amp;do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>On</strong></div>
+		<div>HTML code is <strong>Off</strong></div>
+		<hr>
+		<div><a href="http://ubuntuforums.org/misc.php?s=df705712c540cd49852a750b10c4690d&amp;do=showrules" target="_blank">Forum Rules</a></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table border="0" cellpadding="0" cellspacing="0">
+		
+		<tbody><tr>
+			<td>
+			<div class="smallfont" style="text-align: left; white-space: nowrap;">
+	<form action="forumdisplay.php" method="get">
+	<input name="s" value="df705712c540cd49852a750b10c4690d" type="hidden">
+	<input name="daysprune" value="" type="hidden">
+	<strong>Forum Jump</strong><br>
+	<select name="f" onchange="this.form.submit();">
+		<optgroup label="Site Areas">
+			<option value="cp">User Control Panel</option>
+			<option value="pm">Private Messages</option>
+			<option value="subs">Subscriptions</option>
+			<option value="wol">Who's Online</option>
+			<option value="search">Search Forums</option>
+			<option value="home">Forums Home</option>
+		</optgroup>
+		
+		<optgroup label="Forums">
+		<option value="130" class="fjdpth0"> The Ubuntu Forum Community</option>
+<option value="326" class="fjdpth1">&nbsp; &nbsp;  Absolute Beginner Talk</option>
+<option value="327" class="fjdpth1">&nbsp; &nbsp;  Main Support Categories</option>
+<option value="331" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  General Help</option>
+<option value="329" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Desktop Environments</option>
+<option value="13" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Community Announcements &amp; News</option>
+<option value="328" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Apple Users</option>
+<option value="333" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Installation &amp; Upgrades</option>
+<option value="334" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Multimedia &amp; Video</option>
+<option value="332" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Hardware &amp; Laptops</option>
+<option value="335" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Studio</option>
+<option value="342" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Dell Ubuntu Support</option>
+<option value="338" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Security Discussions</option>
+<option value="336" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Networking &amp; Wireless</option>
+<option value="341" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  System76 Support</option>
+<option value="339" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Server Platforms</option>
+<option value="367" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu One</option>
+<option value="376" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Moblin Remix</option>
+<option value="325" class="fjdpth1">&nbsp; &nbsp;  Forum Archive</option>
+<option value="73" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Absolute Beginner Talk</option>
+<option value="173" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Main Support Categories</option>
+<option value="211" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Apple Intel Users</option>
+<option value="133" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Apple PPC Users</option>
+<option value="132" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Desktop Environments</option>
+<option value="223" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Desktop Effects &amp; Customization</option>
+<option value="131" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  General Help</option>
+<option value="135" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Hardware &amp; Laptops</option>
+<option value="140" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Installation &amp; Upgrades</option>
+<option value="138" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Multimedia &amp; Video</option>
+<option value="254" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Multimedia Production</option>
+<option value="136" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Networking &amp; Wireless</option>
+<option value="323" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Partner Repository</option>
+<option value="322" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Security Discussions</option>
+<option value="7" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Server Platforms</option>
+<option value="146" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Sun Sparc Users</option>
+<option value="158" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  System76 Support</option>
+<option value="348" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Team Forums</option>
+<option value="256" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Dell  Ubuntu Support</option>
+<option value="75" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  BUM - Boot Up Manager</option>
+<option value="134" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  x86 64-bit Users (Pre April '08)</option>
+<option value="343" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  x86 64-bit Users</option>
+<option value="180" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  ehcp Control Panel</option>
+<option value="156" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu System Panel</option>
+<option value="159" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Customization Guide</option>
+<option value="125" class="fjdpth1">&nbsp; &nbsp;  Other Community Discussions</option>
+<option value="46" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  3rd Party Projects</option>
+<option value="249" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Projects</option>
+<option value="270" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Full Circle Magazine</option>
+<option value="76" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Women</option>
+<option value="168" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Christian Edition</option>
+<option value="251" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Ubuntuzilla</option>
+<option value="301" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Mythbuntu</option>
+<option value="145" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Assistive Technology &amp; Accessibility</option>
+<option value="16" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Art &amp; Design</option>
+<option value="93" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Gaming &amp; Leisure</option>
+<option value="169" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Education &amp; Science</option>
+<option value="100" class="fjsel" selected="selected">&nbsp; &nbsp; &nbsp; &nbsp;  Tutorials &amp; Tips</option>
+<option value="255" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Outdated Tutorials &amp; Tips</option>
+<option value="183" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu LoCo Team Forums</option>
+<option value="245" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Americas LoCo Teams</option>
+<option value="284" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  US LoCo Teams</option>
+<option value="232" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Alabama Team - US</option>
+<option value="280" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Alaska Team - US</option>
+<option value="209" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Arizona Team - US</option>
+<option value="208" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Arkansas Team - US</option>
+<option value="188" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  California Team - US</option>
+<option value="207" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Colorado Team - US</option>
+<option value="189" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Argentina Team</option>
+<option value="349" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Software</option>
+<option value="350" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Hardware</option>
+<option value="351" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Comunidad</option>
+<option value="248" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Connecticut Team</option>
+<option value="225" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Florida Team - US</option>
+<option value="210" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Georgia Team - US</option>
+<option value="314" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Hawaii Team - US</option>
+<option value="197" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Colombia Team - Colombia</option>
+<option value="247" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Illinois Team</option>
+<option value="213" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Indiana - US</option>
+<option value="275" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Kansas Team - US</option>
+<option value="203" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Kentucky Team - US</option>
+<option value="288" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Louisiana Team - US</option>
+<option value="292" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Maine Team - US</option>
+<option value="224" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Maryland Team - US</option>
+<option value="260" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Massachusetts Team</option>
+<option value="271" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Michigan Team - US</option>
+<option value="282" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Minnesota Team - US</option>
+<option value="276" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Mississippi Team - US</option>
+<option value="277" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Missouri Team - US</option>
+<option value="229" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Montana Team - US</option>
+<option value="262" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Costa Rica Team</option>
+<option value="283" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Nevada Team - US</option>
+<option value="289" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  New Hampshire Team - US</option>
+<option value="185" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  New Jersey Team - US</option>
+<option value="187" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  New Mexico Team - US</option>
+<option value="212" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  New York - US</option>
+<option value="273" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Paraguay Team</option>
+<option value="278" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  North Carolina Team - US</option>
+<option value="281" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Panama Team</option>
+<option value="191" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Ohio Team - US</option>
+<option value="290" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Ecuador Team</option>
+<option value="286" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Oklahoma Team - US</option>
+<option value="345" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Oregon Team - US</option>
+<option value="228" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Pennsylvania Team - US</option>
+<option value="300" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Venezuela Team</option>
+<option value="287" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Rhode Island Team - US</option>
+<option value="311" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  South Carolina Team - US</option>
+<option value="285" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  South Dakota Team - US</option>
+<option value="259" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Tennessee Team - US</option>
+<option value="184" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Utah Team - US</option>
+<option value="236" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Virginia Team - US</option>
+<option value="362" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Chile Team</option>
+<option value="363" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Comunidad</option>
+<option value="364" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Hardware</option>
+<option value="365" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Software</option>
+<option value="366" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Instalación y Actualización</option>
+<option value="312" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  West Virginia Team - US</option>
+<option value="369" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Honduras Team</option>
+<option value="263" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Wisconsin Team</option>
+<option value="373" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Bolivia Team</option>
+<option value="252" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Washington DC Team - US</option>
+<option value="374" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  El Salvador Team</option>
+<option value="190" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Northeastern Team - US</option>
+<option value="375" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Quebec Team</option>
+<option value="371" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Nebraska Team - US</option>
+<option value="379" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Texas Team - US</option>
+<option value="380" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Washington State Team - US</option>
+<option value="381" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Iowa Team - US</option>
+<option value="386" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Trinidad &amp; Tobago Team</option>
+<option value="393" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Peru Team</option>
+<option value="395" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Canada Team</option>
+<option value="397" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Centroamerica Team</option>
+<option value="398" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Idaho Team - US</option>
+<option value="389" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Asia and Oceania LoCo Teams</option>
+<option value="186" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Tamil Team - India</option>
+<option value="202" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Andhra Pradesh Team - India</option>
+<option value="303" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Philippine Team</option>
+<option value="309" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Bangalore Team</option>
+<option value="347" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Delhi Team</option>
+<option value="382" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Hong Kong Team</option>
+<option value="399" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Australia Team</option>
+<option value="388" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Europe, Middle East, and African (EMEA) LoCo Teams</option>
+<option value="193" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Kenyan Team - Kenya</option>
+<option value="194" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Za Team - South Africa</option>
+<option value="195" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Ireland Team - Ireland</option>
+<option value="196" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Kurdish Team - Kurdistan</option>
+<option value="206" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Catalan Team</option>
+<option value="227" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Tunisia Team</option>
+<option value="250" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Senegal Team</option>
+<option value="258" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Egypt Team</option>
+<option value="261" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Sudan Team</option>
+<option value="264" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Saudi Arabia Team</option>
+<option value="272" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Lebanon Team</option>
+<option value="274" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  United Kingdom Team</option>
+<option value="291" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Cameroon Team</option>
+<option value="299" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Zimbabwe Team</option>
+<option value="304" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Georgia Team</option>
+<option value="319" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Switzerland Team</option>
+<option value="320" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Jordan Team</option>
+<option value="356" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Galician LoCo Team</option>
+<option value="360" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Wales Team</option>
+<option value="372" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Albania Team</option>
+<option value="378" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Libya Team</option>
+<option value="383" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Algerian Team</option>
+<option value="384" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Uganda Team</option>
+<option value="387" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Yemen Team</option>
+<option value="390" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Morocco Team</option>
+<option value="396" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Afghanistan Team</option>
+<option value="204" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Other Forums &amp; Teams</option>
+<option value="103" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Testimonials &amp; Experiences</option>
+<option value="243" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Weekly Newsletter</option>
+<option value="310" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Development &amp; Programming</option>
+<option value="394" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Natty Narwhal Testing and Discussion</option>
+<option value="44" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Packaging and Compiling Programs</option>
+<option value="201" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Development CD/DVD Image Testing</option>
+<option value="306" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Brainstorm</option>
+<option value="307" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Dev Link Forum</option>
+<option value="39" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Programming Talk</option>
+<option value="41" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Repositories &amp; Backports</option>
+<option value="47" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Backports</option>
+<option value="82" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Bug Reports / Support</option>
+<option value="237" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Forum Archives</option>
+<option value="346" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Intrepid Ibex Testing and Discussion (CLOSED)</option>
+<option value="352" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Jaunty Jackalope Testing and Discussion (CLOSED)</option>
+<option value="359" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Karmic Koala Testing and Discussion (CLOSED)</option>
+<option value="377" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Lucid Lynx Testing and Discussion (CLOSED)</option>
+<option value="385" class="fjdpth4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Maverick Meerkat Testing and Discussion (CLOSED)</option>
+<option value="308" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Virtualization</option>
+<option value="391" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Translations</option>
+<option value="392" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Ubuntu Cloud / UEC</option>
+<option value="313" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Wine</option>
+<option value="175" class="fjdpth1">&nbsp; &nbsp;  Forum Community Discussions</option>
+<option value="11" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  The Community Cafe</option>
+<option value="302" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Recurring Discussions</option>
+<option value="298" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Community Cafe Games</option>
+<option value="38" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Community Market</option>
+<option value="48" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Forum Feedback &amp; Help</option>
+<option value="181" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Request a LoCo forum</option>
+<option value="123" class="fjdpth3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Resolution Center</option>
+<option value="357" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  Forum Council Agenda</option>
+<option value="122" class="fjdpth2">&nbsp; &nbsp; &nbsp; &nbsp;  The Fridge Discussions</option>
+
+		</optgroup>
+		
+	</select><input class="button" value="Go" type="submit">
+	</form>
+</div>
+			</td>
+		</tr>
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+<!-- /forum rules and admin links -->
+
+<br>
+
+
+
+<div class="vbclean_bottom">
+<div class="vbclean_bottomfg">
+
+
+<br>
+<div class="smallfont" align="center">All times are GMT -4. The time now is <span class="time">04:04 PM</span>.</div>
+<br>
+
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+
+<form action="index.php" method="get">
+
+<table class="vbclean_bottomfg" width="99%" align="center" border="0">
+<tbody><tr>
+	
+		<td class="tfoot">
+			<select name="styleid" onchange="switch_id(this, 'style')">
+				<optgroup label="Quick Style Chooser">
+					<option value="98" class="" selected="selected">-- CleanV2</option>
+<option value="109" class="">-- Cleanv3</option>
+
+				</optgroup>
+			</select>
+		</td>
+	
+	
+	<td class="tfoot" width="100%" align="right">
+		<div class="smallfont">
+			<strong>
+				
+				<a href="http://ubuntuforums.org/">Ubuntu Forums</a> -
+				
+				
+				<a href="http://ubuntuforums.org/archive/index.php">Archive</a> -
+				
+				<a href="#top" onclick="self.scrollTo(0, 0); return false;">Top</a>
+			</strong>
+		</div>
+	</td>
+</tr>
+</tbody></table>
+
+<br>
+
+<div align="center">
+	
+	<!-- Do not remove this copyright notice -->
+	vBulletin  ©2000 - 2011, Jelsoft Enterprises Ltd. Ubuntu Logo, Ubuntu 
+and Canonical © Canonical Ltd. Tango Icons © Tango Desktop Project. 
+bilberry
+	<!-- Do not remove this copyright notice -->
+	
+
+	
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove  or your scheduled tasks will cease to function -->
+
+	
+	
+</div>
+
+</form>
+
+
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script>
+</div>
+
+  <b class="vbclean_bottom">
+  <b class="vbclean_bottom5"></b>
+  <b class="vbclean_bottom4"></b>
+  <b class="vbclean_bottom3"></b>
+  <b class="vbclean_bottom2"><b></b></b>
+  <b class="vbclean_bottom1"><b></b></b></b>
+</div>
+<br>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="replace_gnomescreen_with_xscreensaver_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-361826-29");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+<!-- temp -->
+<div style="display: none;">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</div>
+
+</div></body></html>

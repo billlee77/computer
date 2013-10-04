@@ -1,0 +1,4 @@
+# scaning the port activity of the local host
+	netstat
+	netstat -e -e
+	netstat -pant

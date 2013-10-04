@@ -1,0 +1,7 @@
+	
+Ordinary compiling:
+  gfortran -o foo foo.f90
+
+Compile foo.f90 file with FORTRAN 77 compiler. (eg to recorgnise intrinsic function such as SIN, COS and TAN etc):
+  gfortran -F77 -p -o foo.f90
+

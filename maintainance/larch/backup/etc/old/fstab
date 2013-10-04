@@ -1,0 +1,19 @@
+# This file is edited by fstab-sync - see 'man fstab-sync' for details
+LABEL=/                 /                       ext3    defaults        1 1
+LABEL=/boot             /boot                   ext3    defaults        1 2
+/dev/sda7               /home                   ext3    defaults
+LABEL=SWAP-sda6         swap                    swap    defaults        0 0
+/dev/sda1               /dsk1/prt1              msdos   defaults
+/dev/sda2               /dsk1/prt2              msdos   defaults
+none                    /dev/pts                devpts  gid=5,mode=620  0 0
+none                    /dev/shm                tmpfs   defaults        0 0
+none                    /proc                   proc    defaults        0 0
+none                    /sys                    sysfs   defaults        0 0
+/dev/sdb5               /dsk2/                  ext3    defaults        1 1
+/dev/sdb3               /dsk2/boot              ext3    defaults        1 2
+/dev/sdb6               /dsk2/home              ext3    defaults
+/dev/sdb7               swap                    swap    defaults        0 0
+/dev/sdb8               /data                   ext3    defaults
+/dev/sdb1               /dsk2/prt1              ext3    defaults
+/dev/sdb2               /dsk2/prt2              ext3    defaults
+/dev/hda                /media/cdrecorder       auto    pamconsole,fscontext=system_u:object_r:removable_t,exec,noauto,managed 0 0

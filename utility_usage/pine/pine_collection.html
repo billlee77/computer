@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title>Folder Collections in Alpine</title>
+<meta name="description" content="Advanced information about collections of folders in Alpine">
+<link rel="stylesheet" href="Folder%20Collections%20in%20Alpine_files/pine-info.css" type="text/css">
+</head><body>
+
+<table width="98%" cellpadding="5" cellspacing="0">
+<tbody><tr>
+<td class="diff" width="30%" align="right">
+<b class="purple">Help for Alpine - Collections</b>
+</td>
+</tr>
+<tr>
+<td class="remark" width="70%">
+You are in 
+<a class="special" href="http://staff.washington.edu/chappa/alpine/alpine-info/">Home</a> &gt; Collections
+</td>
+</tr>
+</tbody></table>
+
+
+
+<h4>Introduction</h4>
+
+<p> A collection in Alpine is a group of folders, or in the case of news, of
+newsgroups. The idea of a collection is that you can group your folders
+according to the functions that they serve or their location or both.
+
+</p><p> The main collections of folders, are Incoming-Folders, which are used
+to receive new mail, which contains the INBOX folder, the Mail collection
+which contains folders like sent-mail, or saved-messages, and the News
+collection, which contains all the Usenet newsgroup that you are
+subscribed to. All these collections are described in more detail below.
+
+</p><p><table class="special" width="98%" cellpadding="5" cellspacing="-2">
+<tbody><tr>
+<td><a class="special" href="http://staff.washington.edu/chappa/alpine/alpine-info/collections/incoming-folders/">Incoming-Folders</a></td>
+<td align="center">-</td>
+<td>Information about Incoming-Folders.</td>
+</tr>
+<tr>
+<td><a class="special" href="http://staff.washington.edu/chappa/alpine/alpine-info/collections/Mail/">Mail</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td align="center">-</td>
+<td>Information about the Mail collection.</td>
+</tr>
+<tr>
+<td><a class="special" href="http://staff.washington.edu/chappa/alpine/alpine-info/collections/News/">News</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td align="center">-</td>
+<td>Information about the News collection.</td>
+</tr>
+</tbody></table>
+
+</p><h4>How to Add a Collection</h4>
+
+<p> Adding collections is easy, just press <b class="remark">M S L</b> and
+you will be able to add one. Once you get to this screen press 
+<b class="remark">A</b> to add a collection, and fill in the information.
+Here's an example:
+
+</p><p><table cellpadding="1" cellspacing="1">
+<tbody><tr>
+<td>Nickname
+</td>
+<td align="center">:
+</td>
+<td>Anything
+</td>
+</tr>
+<tr>
+<td>Server&nbsp;&nbsp;
+</td>
+<td align="center">:
+</td>
+<td>name.server.com/user=userid
+</td>
+</tr>
+<tr>
+<td>Path&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td align="center">:
+</td>
+<td>/full/path/to/location/of/collection
+</td>
+</tr>
+<tr>
+<td>View&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td align="center">:
+</td>
+<td>&nbsp;
+</td>
+</tr>
+</tbody></table>
+
+</p><p> In some servers like <b class="remark">Gmail</b> you can leave the path 
+empty, but if you want to see only folders under the <b class="remark">[Gmail]</b> directory, try setting the path to <b class="remark">[[Gmail]/</b> (yes, two left square brackets). Another variation
+of this configuration is <b class="remark">[[Google Mail]/</b>, for those
+that need access to <b class="remark">[Google Mail]</b>, rather than 
+<b class="remark">[Gmail]</b>. Since version 2.0, you can avoid writing the
+double left square bracket, and simply write <b class="remark">[Gmail]/</b>
+or <b class="remark">[Google Mail]/</b> for the path.
+
+</p><p>The last field <b class="remark">(View)</b> must be left empty if you want
+to see all folders, but you can use it to restrict which folders in the
+collection you want to have displayed. You can add "archive", say, to
+display only folders that contain the string "archive" in it. You can also
+use the "<b class="remark">*</b>" wildcard for matching strings. For example
+</p><ul>
+<li><b class="remark">*s</b> is a folder that ends in "s", like "saved-messages"
+</li><li><b class="remark">s</b> is a foder that contains the string "s", like "test"
+</li><li><b class="remark">s*</b> does what is expected, matches "sent-mail"
+</li><li><b class="remark">s*s</b> does what is expected, matches "saved-messages" but not "sent-mail"
+</li><li><b class="remark">s*-m*</b> matches sent-mail, sent-mail-sept-2002 and saved-messages
+</li></ul>
+note also that case matters, so "S*" and "s*" match two different groups of
+folders.
+<br>&nbsp;<br>
+<h4>The above instructions do not work for my server!</h4>
+You are either using Cyrus or Courier. In this case, the Path field is tricky.
+In these servers folders are subfolders of INBOX, so sometimes you must
+define
+<br>&nbsp;<br>
+Path : INBOX.
+<br>&nbsp;<br>
+(note the trailing dot) and in some other opportunities 
+<br>&nbsp;<br>
+Path : INBOX/
+<br>&nbsp;<br>
+If for some reason this does not work, then you will need to edit your
+.pinerc file and add directly there the following information:
+<br>&nbsp;<br>
+folder-collections="Something here" {some.server.com}INBOX.[]
+<br>&nbsp;<br>
+or
+<br>&nbsp;<br>
+folder-collections="Something here" {some.server.com}INBOX/[]
+<br>&nbsp;<br>
+One of them should work. (Note: in some browsers the display of the last 
+two characters of the definitions of the folder collection looks like a 
+rectangle. The last two characters are "[" and "]").
+
+<br>&nbsp;<br>
+<table width="98%" cellpadding="5" cellspacing="0">
+<tbody><tr><td class="remark" width="%80">
+You are in 
+<a class="special" href="http://staff.washington.edu/chappa/alpine/alpine-info/">Home</a> &gt; Collections
+</td>
+</tr>
+</tbody></table>
+</body></html>

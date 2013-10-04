@@ -1,0 +1,568 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=GB2312">
+<title>wine中文乱码的解决方法,Linux技术文章,Linux系列教程,Linux</title>
+<meta name="keywords" content="wine中文乱码的解决方法,Linux技术文章,Linux系列教程,Linux,操作系统">
+<meta name="description" content="wine中文乱码的解决方法新装的wine中文全是乱码，需要修改一下几个配置文件，找到一篇比较详细的配置说明，分享一下：“ wine下中文的配置方案步骤：1. 初始设置运行 winecfg，把模拟的 Windows 系统设置为 Windows XP 或者 Windo">
+<meta name="robots" content="index,follow">
+<meta name="GOOGLEBOT" content="INDEX,FOLLOW">
+<link href="137672_files/main.css" rel="stylesheet">
+<link href="137672_files/ad.css" rel="stylesheet">
+<link href="137672_files/SpageNew.css" rel="stylesheet">
+<script src="137672_files/jquery-1.js" type="text/javascript"></script>
+<script language="javascript" src="137672_files/spage.js"></script>
+<script type="text/javascript" language="javascript" src="137672_files/header1.js"></script>
+<script src="137672_files/ArticleHtml.js" type="text/javascript"></script>
+</head><body><script src="137672_files/rmda.html" id="tixa_rm_jsp"></script><mmdiv id="tixa_bad_div"></mmdiv>
+<!--header start-->
+<div class="top PageW">
+  <ul>
+            <li><a href="http://www.diybl.com/" target="_blank">网站首页</a></li>
+            <li><a href="http://bbs.diybl.com/" target="_blank">社区首页</a></li>
+            <li><a href="http://bbs.diybl.com/newslist.html" target="_blank">新闻首页</a></li>
+            <li><a href="http://ebook.diybl.com/" target="_blank">书籍教程</a></li>
+            <li><a href="http://video.diybl.com/" target="_blank">视频教程</a></li>
+            <li><a href="http://www.diybl.com/java.shtml" target="_blank">JAVA技术</a></li>
+            <li><a href="http://www.diybl.com/donet.shtml" target="_blank">.NET开发</a></li>
+            <li><a href="http://www.diybl.com/c.shtml" target="_blank">C/C++</a></li>
+            <li><a href="http://www.diybl.com/list/107.shtml" target="_blank">数据库</a></li>
+            <li><a href="http://www.diybl.com/list/104.shtml" target="_blank">WEB开发</a></li>
+            <li><a href="http://www.diybl.com/linux.shtml" target="_blank">linux</a></li>
+            <li><a href="http://bbs.diybl.com/diybltd/2009c75.html" target="_blank">软件测试</a></li>
+            <li><a href="http://test.diybl.com/" target="_blank">在线试题</a></li>
+            <li><a href="http://blog.diybl.com/" target="_blank">博 客</a></li>
+            <li><a href="http://bbs.diybl.com/" target="_blank">进入论坛</a></li>
+            <br class="clear">
+        </ul>
+</div>
+
+
+
+
+
+<!--------------------------------------------------修改区------------------------------------------>
+<div class="PageW">
+<div class="logo floatL">
+  <ul>
+   <li class="floatL"><a href="http://www.diybl.com/linux.shtml"><img src="137672_files/linux.gif" style="margin-top: 10px; margin-right: 40px;" border="0"></a></li>
+    <li class="floatL"><script src="137672_files/ad_ftop.js"></script><a href="http://www.cnithr.com/" target="_blank"><img src="137672_files/468x60.gif" border="0"></a>
+</li>
+    </ul>
+    <div class="menu">
+    <ul>
+                          <li><a href="http://www.diybl.com/list/106.shtml" target="_blank"><span>操作系统</span></a></li>
+	                      <li><a href="http://www.diybl.com/list/10601.shtml" target="_blank"><span>Linux</span></a></li>
+	                      <li><a href="http://www.diybl.com/list/10602.shtml" target="_blank"><span>Windows xp</span></a></li>
+	                      <li><a href="http://www.diybl.com/list/10603.shtml" target="_blank"><span>Windows 2003</span></a></li>
+	                      <li><a href="http://www.diybl.com/list/10604.shtml" target="_blank"><span>Windows 2000/NT</span></a></li>
+	                      <li><a href="http://www.diybl.com/list/10605.shtml" target="_blank"><span>DOS</span></a></li>
+	                      <li><a href="http://www.diybl.com/list/10606.shtml" target="_blank"><span>Mac OS X</span></a></li>
+	                      <li><a href="http://www.diybl.com/list/10607.shtml" target="_blank"><span>Vista</span></a></li>
+	                      <li><a href="http://www.diybl.com/list/10608.shtml" target="_blank"><span>FreeBSD</span></a></li>
+	                      <li><a href="http://www.diybl.com/list/10609.shtml" target="_blank"><span>Solaris</span></a></li>
+	                      <li><a href="http://www.diybl.com/list/10610.shtml" target="_blank"><span>SCO UNIX</span></a></li>
+	                      <li><a href="http://www.diybl.com/list/10611.shtml" target="_blank"><span>AIX</span></a></li>
+	                      <li><a href="http://www.diybl.com/list/10612.shtml" target="_blank"><span>Windows 2008</span></a></li>
+	     </ul>	 
+  </div>
+<div class="fc"></div>
+</div>
+
+<div class="login floatL border" id="divLoginHolder"> 
+	<form id="mylogin" action="http://user.diybl.com/webSiteLogin.ashx?action=login" method="post" style="margin: 0pt; padding: 0pt;">用户名：
+        <input name="txtUserName" id="txtUserName" size="10" class="input" type="text"><br>
+        密&nbsp;&nbsp;码：
+        <input name="txtUserPwd" id="txtUserPwd" size="10" class="input" type="password"> <br>验证码：
+        <input name="txtValNum" id="txtValNum" size="10" class="input" type="text"><br>
+		 <input id="btnChen" value="登录" class="input ptop2" style="width: 45px; height: 20px; margin-top: 3px;" type="submit">&nbsp;
+		 <span id="displayArea"><img style="border: 0px none ; display: none; top: 0px; position: absolute;" id="valNumImg" onclick="this.src=this.src+'?'">
+     <input name="Submit2" id="Submit2" value="注册" onclick="location.href='http://user.diybl.com/register.aspx'" class="input ptop2" style="width: 45px; height: 20px;" type="button"></span>
+     </form>
+  </div>
+  
+</div>
+<div class="fc"></div>
+<!--------------------------------------------------修改区------------------------------------------>
+
+
+
+
+<div class="tab1" id="header_b">
+  <div class="header_b mtop3">
+            <a href="http://www.diybl.com/java.shtml" target="_blank"><span id="menu_a">JAVA</span></a>
+            <a href="http://bbs.diybl.com/diybltd/2009c54.html" target="_blank">J2EE</a> <a href="http://bbs.diybl.com/diybltd/2009c11.html" target="_blank">J2ME</a> <a href="http://bbs.diybl.com/diybltd/2009c12.html" target="_blank">
+                    J2SE</a> <a href="http://www.diybl.com/list/10405.shtml" target="_blank">JSP</a>
+            <a href="http://www.diybl.com/c.shtml" target="_blank"><span id="menu_a">C/C++</span></a>
+            <a href="http://www.diybl.com/list/10301.shtml" target="_blank">C语言</a> <a href="http://www.diybl.com/list/10302.shtml" target="_blank">C++</a> <a href="http://www.diybl.com/list/10312.shtml" target="_blank">
+                    VC</a> <a href="http://bbs.diybl.com/diybltd/2009c70.html" target="_blank">MFC</a>
+            <a href="http://www.diybl.com/list/101.shtml" target="_blank"><span id="menu_a">Web前台</span></a>
+            <a href="http://www.diybl.com/list/10104.shtml" target="_blank">Html</a> <a href="http://www.diybl.com/list/10105.shtml" target="_blank">css</a> <a href="http://www.diybl.com/list/10108.shtml" target="_blank">
+                    JavaScript</a> <a href="http://bbs.diybl.com/diybltd/2009c75.html" target="_blank"><span id="menu_a">软件测试</span></a> <a href="http://bbs.diybl.com/diybltd/2009c76.html" target="_blank">
+                            软件测试入门</a> <a href="http://bbs.diybl.com/diybltd/2009c80.html" target="_blank">LoadRunner</a>
+            <a href="http://bbs.diybl.com/diybltd/2009c7.html" target="_blank"><span id="menu_a">Windows</span></a>
+            <a href="http://www.diybl.com/list/10612.shtml" target="_blank">Win2008</a> <a href="http://www.diybl.com/list/10603.shtml" target="_blank">Win2003</a> <a href="http://www.diybl.com/list/10602.shtml" target="_blank">
+                    WinXP</a>
+        </div>
+        <div class="header_b mbom3">
+            <a href="http://www.diybl.com/donet.shtml" target="_blank"><span id="menu_a">.NET</span></a>
+            <a href="http://www.diybl.com/list/10404.shtml" target="_blank">ASP.NET</a> <a href="http://bbs.diybl.com/diybltd/2009c17.html" target="_blank">VB.NET</a> <a href="http://bbs.diybl.com/diybltd/2009c61.html" target="_blank">
+                    MVC</a> <a href="http://www.diybl.com/linux.shtml" target="_blank"><span id="menu_a">
+                        Linux/Unix</span></a> <a href="http://www.diybl.com/list/10601.shtml" target="_blank">
+                            Linux</a> <a href="http://www.diybl.com/list/10610.shtml" target="_blank">Unix</a>
+            <a href="http://www.diybl.com/list/10313.shtml" target="_blank">Shell</a> <a href="http://www.diybl.com/list/104.shtml" target="_blank"><span id="menu_a">Web开发</span></a> <a href="http://www.diybl.com/php.shtml" target="_blank">PHP</a> <a href="http://www.diybl.com/list/10403.shtml" target="_blank">
+                        ASP</a> <a href="http://bbs.diybl.com/diybltd/2009c24.html" target="_blank">Ajax</a>
+            <a href="http://bbs.diybl.com/diybltd/2009c26.html" target="_blank">IIS</a> <a href="http://bbs.diybl.com/diybltd/2009c63.html" target="_blank">Apache</a> <a href="http://bbs.diybl.com/diybltd/2009c6.html" target="_blank">
+                    <span id="menu_a">编程语言</span></a> <a href="http://www.diybl.com/c.shtml" target="_blank">
+                        C</a> <a href="http://www.diybl.com/list/10304.shtml" target="_blank">VB</a>
+            <a href="http://www.diybl.com/list/10305.shtml" target="_blank">Delphi</a> <a href="http://www.diybl.com/list/10307.shtml" target="_blank">汇编</a> <a href="http://www.diybl.com/list/107.shtml" target="_blank">
+                    <span id="menu_a">数据库</span></a> <a href="http://www.diybl.com/list/10703.shtml" target="_blank">MSSQL</a> <a href="http://www.diybl.com/list/10702.shtml" target="_blank">
+                            Mysql</a> <a href="http://www.diybl.com/list/10704.shtml" target="_blank">Oracle</a></div>
+</div>
+<div id="ad_ftop" class="ad_ftop PageW"><script src="137672_files/ad_ftopa.js"></script></div>
+<div class="banner border ad_ftop2" id="ad_ftop2"><script src="137672_files/ad_ftopb.js"></script><ul>
+<li><a href="http://www.diybl.com/help/cd1.html" target="_blank">·.Net视频教程DVD7张 26G 120元</a></li>
+<li><a href="http://bbs.diybl.com/Notice/3.html" target="_blank">·DIY部落社区招募版主中</a> </li>
+<li><a href="http://www.diybl.com/help/contact.html" target="_blank">·达内培训视频教学光盘DVD11张 150元</a></li>
+<li><a href="http://www.diybl.com/help/contact.html" target="_blank">·DIY部落文字广告200/月</a></li>
+</ul>
+</div>
+<div class="fc"></div>
+<!--header end-->
+   <div class="PageW">
+  <div class="subNav">
+    <div class="floatR">
+   <iframe id="Iframe1" marginwidth="0" marginheight="0" framespacing="0" vspace="0" hspace="0" src="137672_files/bdun_003.html" scrolling="no" width="280" frameborder="0" height="21">
+</iframe>
+    </div>
+    <span> <a href="http://www.diybl.com/" target="_blank">DIY部落</a>
+            &gt;&gt;&nbsp;<a href="http://www.diybl.com/linux.shtml" target="_blank">linux</a>
+          &gt;&gt;&nbsp;<a href="http://www.diybl.com/list/1060103.shtml" target="_blank">Linux技术文章</a>
+      &gt;&gt;&nbsp; 正文</span> </div>
+</div>
+
+<div class="fc"></div>
+<div class="PageW">
+  <div class="left-width1 floatL">
+  <!--content area start!-->
+    <div class="left floatL qlan">
+      <h3 class="text-center">wine中文乱码的解决方法</h3>
+	  <div class="from_info"> www.diybl.com　时间：2008-08-26　作者:佚名 编辑:本站
+               点击：　<span id="articleTimes">1796</span>
+               <a href="#comment">[评论]</a></div>
+      <div class="left-width hui b14"><div id="ad_f2" class="ad_f2"><script src="137672_files/ad_f2.js"></script><script type="text/javascript"> 
+cpro_client='diybl_cpr';
+cpro_at='text_image'; 
+cpro_161=2; 
+cpro_flush=4; 
+cpro_w=300; 
+cpro_h=120; 
+cpro_template='text_default_300_120'; 
+cpro_cbd='#F5FAFE'; 
+cpro_cbg='#F5FAFE'; 
+cpro_ctitle='#940F04'; 
+cpro_cdesc='#333333'; 
+cpro_curl='#333333'; 
+cpro_cflush='#e10900'; 
+cpro_uap=1;
+cpro_cad=1;
+cpro_channel=8898;
+</script>
+<script language="JavaScript" type="text/javascript" src="137672_files/cp.js"></script><div style="display: none;">-</div><iframe marginwidth="0" marginheight="0" allowtransparency="" src="137672_files/uijs.html" align="center,center" scrolling="no" width="300" frameborder="0" height="120"></iframe>
+</div><div id="ad_f3" class="ad_f3"><script src="137672_files/ad_f3.js"></script><script type="text/javascript"> 
+cpro_client='diybl_cpr';
+cpro_at='text_image'; 
+cpro_161=3; 
+cpro_flush=4; 
+cpro_w=300; 
+cpro_h=280; 
+cpro_template='text_default_300_280'; 
+cpro_cbd='#F5FAFE'; 
+cpro_cbg='#F5FAFE'; 
+cpro_ctitle='#11593C'; 
+cpro_cdesc='#333333'; 
+cpro_curl='#333333'; 
+cpro_cflush='#e10900'; 
+cpro_uap=1;
+cpro_cad=1;
+cpro_channel=8899;
+</script>
+<script language="JavaScript" type="text/javascript" src="137672_files/cp.js"></script><div style="display: none;">-</div><iframe marginwidth="0" marginheight="0" allowtransparency="" src="137672_files/uijs_002.html" align="center,center" scrolling="no" width="300" frameborder="0" height="280"></iframe>
+</div><div id="ad_f7" class="ad_f7"><script src="137672_files/ad_f7.js"></script><iframe id="baiduframe" marginwidth="0" marginheight="0" framespacing="0" vspace="0" hspace="0" src="137672_files/bdun_002.html" scrolling="no" width="300" frameborder="0" height="30"></iframe>
+</div>
+        <br>
+新装的wine中文全是乱码，需要修改一下几个配置文件，找到一篇比较详细的配置说明，分享一下：<br>
+“ wine下中文的配置方案<br>
+步骤：
+<p>1. 初始设置</p>
+<p>运行 winecfg，把模拟的 Windows 系统设置为 Windows XP 或者 Windows 2000。</p>
+<p>2. 准备字体</p>
+<p>为了让 Windows 应用程序看上去更美观，所以需要 Windows 下面的字体。</p>
+<p>由于我已经将 simsun.ttc 复制到 /usr/share/fonts/windows/ 目录中了。所以我只需要在 ~/.wine/drive_c/windows/fonts/ 目录中为 simsun.ttc 创建一个符号连接：</p>
+<p>cd ~/.wine/drive_c/windows/fonts<br>
+ln -s /usr/share/fonts/windows/simsun.ttc simsun.ttc<br>
+ln -s /usr/share/fonts/windows/simsun.ttc simfang.ttc</p>
+<p>创建一个 simfang.ttc 是许多 Windows 应用默认使用 simfang.ttc 字体。<br>
+3. 修改 ~/.wine/system.reg</p>
+<p>装好字体后，还要修改一下 Wine 的注册表设置，指定与字体相关的设置：</p>
+<p>gedit ~/.wine/system.reg</p>
+<p>（一定要使用 gedit 或其他支持 gb2312/utf8 编码的编辑器修改这些文件，否则文件中的中文可能变乱码）</p>
+<p>搜索： LogPixels<br>
+找到的行应该是：[System\\CurrentControlSet\\Hardware Profiles\\Current\\Software\\Fonts]<br>
+将其中的：<br>
+"LogPixels"=dword:00000060</p>
+<p>改为：<br>
+"LogPixels"=dword:00000070</p>
+<p>搜索： FontSubstitutes<br>
+找到的行应该是：[Software\\Microsoft\\Windows NT\\CurrentVersion\\FontSubstitutes]<br>
+将其中的：<br>
+"MS Shell Dlg"="Tahoma"<br>
+"MS Shell Dlg 2″="Tahoma"</p>
+<p>改为：<br>
+"MS Shell Dlg"="SimSun"<br>
+"MS Shell Dlg 2″="SimSun"</p>
+<p>4. 修改 ~/.wine/drive_c/windows/win.ini</p>
+<p>gedit ~/.wine/drive_c/windows/win.ini<br>
+在文件末尾加入：</p>
+<p>[Desktop]<br>
+menufontsize=13<br>
+messagefontsize=13<br>
+statusfontsize=13<br>
+IconTitleSize=13</p>
+<br>
+<p> </p>
+<p><span>&nbsp;&nbsp;  5.  <font color="#ff0000">最关键的一步，网上很多文章中没有提到的一步</font>──把下面的代码保存为zh.reg，然后终端执行regedit zh.reg。从Windows目录下的Fonts里的simsun.ttc复制到/home/user/.wine/drive_c/windows/fonts里面。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  代码:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  REGEDIT4<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Arial"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Arial CE,238"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Arial CYR,204"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Arial Greek,161"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Arial TUR,162"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Courier New"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Courier New CE,238"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Courier New CYR,204"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Courier New Greek,161"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Courier New TUR,162"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "FixedSys"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Helv"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Helvetica"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "MS Sans Serif"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "MS Shell Dlg"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "MS Shell Dlg 2"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "System"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Tahoma"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Times"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Times New Roman CE,238"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Times New Roman CYR,204"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Times New Roman Greek,161"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Times New Roman TUR,162"="simsun"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  "Tms Rmn"="simsun"</span></p>
+<p>之后，中文正常显示哈哈！如图：</p>
+<img style="max-width: 800px;" src="137672_files/medium.jpg">
+		
+		
+		
+
+
+        <p> <!--<A href="#">http://msnpiki.msnfanatic.com/index.php/Main_Page</A>--></p>
+		<div id="ad_f4" class="ad_f4"><script src="137672_files/ad_f4.js"></script><a href="http://bbs.diybl.com/" target="_blank"><font color="#990000"><strong>问题没解决？到论坛提问求助</strong></font></a>
+</div>
+      <div id="ad_f10" class="ad_f10"><script src="137672_files/ad_f10.js"></script><script type="text/javascript"> 
+cpro_client='diybl_cpr';
+cpro_at='text_image'; 
+cpro_161=4; 
+cpro_flush=4; 
+cpro_w=360; 
+cpro_h=300; 
+cpro_template='text_default_360_300'; 
+cpro_cbd='#F5FAFE'; 
+cpro_cbg='#F5FAFE'; 
+cpro_ctitle='#940F04'; 
+cpro_cdesc='#333333'; 
+cpro_curl='#333333'; 
+cpro_cflush='#e10900'; 
+cpro_uap=1;
+cpro_cad=1;
+cpro_channel=8900;
+</script>
+<script language="JavaScript" type="text/javascript" src="137672_files/cp.js"></script><div style="display: none;">-</div><iframe marginwidth="0" marginheight="0" allowtransparency="" src="137672_files/uijs_003.html" align="center,center" scrolling="no" width="360" frameborder="0" height="300"></iframe>
+</div><div id="ad_f11" class="ad_f11"><script src="137672_files/ad_f11.html"></script></div>
+	  </div>
+      <div class="pager w635px" align="center"></div>
+      <div class="fh b14 w635px"> 如果图片或页面不能正常显示请<a onclick="#" onmouseover="this.style.cursor='hand';" class="redlink"><font color="#990000"><strong>点击这里</strong></font></a>　站内搜索：
+     <iframe id="baiduframe" marginwidth="0" marginheight="0" framespacing="0" vspace="0" hspace="0" src="137672_files/bdun_003.html" scrolling="no" width="280" frameborder="0" height="21">
+</iframe>
+      </div>
+      <div class="toollinks hui"> 【<a href="javascript:window.external.addFavorite(window.location,'MSN%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90-DIY%E9%83%A8%E8%90%BD');">收藏此页</a>】【<a href="http://www.diybl.com/course/webjsh/osgl/5589fdssd.html" target="_blank">BBS社区</a>】【<a href="#comment">发表评论</a>】【<a href="#">返回顶部</a>】【<a href="javascript:window.close()">关闭</a>】 </div>
+      <div class="p_bottom">
+                  
+                     <a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008826/137671.html">上一篇文章:SUSE下最简单安装IE的方法</a>
+                                      <br>
+                                        <a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008826/137673.html">下一篇文章:在uboot的运行状态下，如何响应外部硬件的中断？</a>
+                         </div>
+    </div>
+    <!--content area end!-->
+    <div class="fc"></div>
+    <div class="left-contect mtop blue border">
+      <div class="b14 bold fh left-width">推荐文章</div>
+    </div>
+    <div class="left-contect white border recommend">
+      <div class="tj_l fh20 white"> 
+       <ul>
+            
+                                              <li>  <a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008930/147122.html" target="_blank">Linux 时钟处理机制（转载）</a></li>
+                              <li>  <a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008717/133343.html" target="_blank">Ubuntu Linux 8.04 下修复..</a></li>
+                              <li>  <a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200899/141129.html" target="_blank">ssh系列</a></li>
+                              <li>  <a href="http://www.diybl.com/course/6_system/linux/Linuxjs/20090905/173978.html" target="_blank">linux软件包管理器杂谈</a></li>
+                              <li>  <a href="http://www.diybl.com/course/6_system/linux/Linuxjs/20081217/154207.html" target="_blank">hi3510dvs平台上insmod se..</a></li>
+                              <li>  <a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200865/122234.html" target="_blank">debian看书笔记</a></li>
+                              <li>  <a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008923/144847.html" target="_blank">GCC常用选项 </a></li>
+                              <li>  <a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008727/134120.html" target="_blank">Linux下/dev/mem和/dev/km..</a></li>
+                 </ul></div>
+      <div class="tj_r fh20 white"> 
+      <ul>
+                                               <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/20090326/163535.html" target="_blank">如何修改LINUX的默认字符集</a></li>
+                                <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/20071019/78275.html" target="_blank">Linux是怎样炼成的？</a></li>
+                                <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008927/146144.html" target="_blank">dhcp客户端请求dhcp服务..</a></li>
+                                <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/20091110/181917.html" target="_blank">如何查看linux的日志</a></li>
+                                <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/20090922/176424.html" target="_blank">在Linux上玩转磁盘阵列</a></li>
+                                <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008712/132972.html" target="_blank">linux内核阅读书籍总结</a></li>
+                                <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200888/135108.html" target="_blank">[RHCE笔记3-7]System Moni..</a></li>
+                                <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008929/146578.html" target="_blank">java与C语言相似一二</a></li>
+                        </ul> 
+      </div>
+    </div>
+    <div class="fc"></div>
+    <div class="left-contect mtop gray border-hui">
+      <div class="b14 bold fh left-width"><a name="comment"></a>文章评论</div>
+    </div>
+    <div class="left-contect border-hui">
+	  <div id="divComment" class="left-width fh">暂无数据！</div>
+    </div>
+    <div class="fc"></div>
+    <div class="comment_1 mtop border w_l">
+      <div class="blue fh b14 bold pleft">请您留言</div>
+      <div class="cleanblock fh22">
+        昵称：
+        &nbsp;<input name="tbName" id="tbName" class="input input_comment" size="15" value="" onclick="this.focus();this.select()" maxlength="20" type="text">        
+        <br>
+		<span style="float: left;">验证码：<input name="tbCode" id="tbCode" class="input input_comment" size="6" type="text"></span><span id="spanCode" style="float: left; clear: right;"><img id="Img2" onclick="this.src=this.src" style="display: none;"></span>
+        <a href="http://user.diybl.com/register.aspx" target="_blank"><font color="red"><br>
+        注册会员</font></a> <a href="http://user.diybl.com/login.aspx" target="_blank">会员登陆</a> <br>
+        <textarea name="tbContent" id="tbContent" rows="6" class="input" style="vertical-align: text-top; width: 290px; height: 7em;"></textarea>
+        
+        <input value="发表评论 " id="btnCommit" name="btnCommit" class="ptop2 input" style="width: 70px; height: 22px; margin-top: 3px;" type="button">
+      </div>
+    </div>
+    <div class="comment_1 mtop border w_r">
+      <div class="blue fh b14 bold pleft">BBS问题帖</div>
+      <div class="cleanblock">
+        <table class="fh20" cellpadding="0" cellspacing="0" width="100%">
+          <tbody>
+            <tr>
+              <td style="padding-right: 15px;"><div class="content right-contact mbom"><ul>
+                               <li><a href="http://bbs.diybl.com/dview19t1087.html" target="_blank"> NHibernate和LINQ哪个好 <font color="red">[10分] </font></a></li>
+                
+                          <li><a href="http://bbs.diybl.com/dview30t12812.html" target="_blank"> mysqld-nt.exe，版本 0.0.0.. <font color="red">[20分] </font></a></li>
+                
+                          <li><a href="http://bbs.diybl.com/dview13t4772.html" target="_blank"> java怎么引入下载的包 snm.. <font color="red">[10分] </font></a></li>
+                
+                          <li><a href="http://bbs.diybl.com/dview30t18715.html" target="_blank"> 用PHPMyAdmin的MYSQL中遇.. <font color="red">[20分] </font></a></li>
+                
+                          <li><a href="http://bbs.diybl.com/dview54t17205.html" target="_blank"> 求snmp4j-agentx的使用经.. <font color="red">[20分] </font></a></li>
+                
+                          <li><a href="http://bbs.diybl.com/dview30t27564.html" target="_blank"> sql 语名不能得能期望的.. <font color="red">[100分] </font></a></li>
+                
+                          <li><a href="http://bbs.diybl.com/dview23t12757.html" target="_blank"> 哪位高人有PHP生成word的.. <font color="red">[20分] </font></a></li>
+                
+                            
+                </ul></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fc"></div>
+    </div>
+  </div>
+  <div class="right floatL">
+    <div class="right mbom"><div id="ad_f6" class="ad_f6"><script src="137672_files/ad_f6.js"></script></div></div>
+    <div class="right">
+      <div class="border-hui">
+        <div class="right-contact gray fh b14 bold pleft"> BBS社区热帖 </div>        
+        <div class="content right-contact mbom">
+          <ul>
+                            <li><a href="http://bbs.diybl.com/dview61t21796.html" target="_blank">谁有《循序渐进学VC  .NET..<font color="red">[100分] </font></a></li>
+                
+                            <li><a href="http://bbs.diybl.com/dview30t23627.html" target="_blank">ERROR 1030: Got error 12..<font color="red">[5分] </font></a></li>
+                
+                            <li><a href="http://bbs.diybl.com/dview30t25714.html" target="_blank">java调用存储过程错误,怎..<font color="red">[20分] </font></a></li>
+                
+                            <li><a href="http://bbs.diybl.com/dview23t15753.html" target="_blank">php代码不能访问MYSQL<font color="red">[40分] </font></a></li>
+                
+                            <li><a href="http://bbs.diybl.com/dview42t23432.html" target="_blank">delphi远程调用weblogic..<font color="red">[20分] </font></a></li>
+                
+                            <li><a href="http://bbs.diybl.com/dview30t24562.html" target="_blank">连接不了MYSQL<font color="red">[20分] </font></a></li>
+                
+                            <li><a href="http://bbs.diybl.com/dview54t14821.html" target="_blank">&lt;s:param name="p..<font color="red">[25分] </font></a></li>
+                
+                            <li><a href="http://bbs.diybl.com/dview37t13011.html" target="_blank">solaris的找不到网卡<font color="red">[100分] </font></a></li>
+                
+                            <li><a href="http://bbs.diybl.com/dview54t17241.html" target="_blank">Linux下如何配置RESIN3随..<font color="red">[55分] </font></a></li>
+                
+                            <li><a href="http://bbs.diybl.com/dview15t17863.html" target="_blank">socket 服务器用同步，异步..<font color="red">[50分] </font></a></li>
+                
+                      </ul>
+        </div>
+      </div>
+    </div>
+<div class="fc"></div>
+    <div class="right">
+      <div class="border">
+        <div class="right-contact blue fh b14 bold pleft"> 相关教程文章 </div>
+        <div class="content right-contact mbom lan">
+        <ul>
+                                                   <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200798/70561.html" target="_blank">Linux那些事儿之我是Hub(17)八大..</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200798/70537.html" target="_blank">网站数据库结构调整补充文档</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200798/70557.html" target="_blank">KDriver在嵌入式Linux中的实现</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200798/70567.html" target="_blank">The Most Important Open-Source ..</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200798/70543.html" target="_blank">linux下工具集（转）</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200798/70540.html" target="_blank">微软OOXML为什么彻底失败了？</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200798/70534.html" target="_blank">ISO 宣布：微软OOXML未获批准</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200798/70566.html" target="_blank">tftp 的安装，配置与使用</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200798/70554.html" target="_blank">gdb调试需要使用到的一些知识（心..</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200798/70522.html" target="_blank">LPC2104启动代码之Vectors.s注释</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008826/137697.html" target="_blank">转网站构架</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008826/137685.html" target="_blank">firefox About protocol links</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008827/137834.html" target="_blank">使用sysrq查看系统状态</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008826/137700.html" target="_blank">linux查看网口流量的脚本 stream</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008826/137704.html" target="_blank">制作cramfs文件系统__待补充</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008826/137682.html" target="_blank">dd命令使用详解</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008826/137692.html" target="_blank">cache_peer_access中配置同IP不..</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008826/137688.html" target="_blank">修改主机名/修改成静态IP/安装VMw..</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008826/137713.html" target="_blank">《学习bash shell 第3版》§0	序言</a></li> 
+                                        <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008827/137832.html" target="_blank">包缓冲区操作的几个内嵌函数</a></li> 
+                             </ul>
+        </div>
+      </div>
+    </div>
+<div class="fc"></div>
+    <div class="right">
+      <div class="border">
+        <div class="right-contact blue fh b14 bold pleft"> 本栏目热门教程 </div>
+        <div class="content fh20 right-contact">
+        <ul>
+                                                 <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/20071226/94136.html" target="_blank">vmware workstation 6.0之vmware-..</a></li>   
+                             <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008627/128744.html" target="_blank">基于S3C2410平台移植Linux 2.6内..</a></li>   
+                             <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/200863/120830.html" target="_blank">两篇很牛的vim使用技巧（2）</a></li>   
+                             <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008813/135847.html" target="_blank">路由器从DD-WRT固件刷到Tomato(..</a></li>   
+                             <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008923/144856.html" target="_blank">VM中Linux虚拟机下安装VMware Too..</a></li>   
+                             <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008810/135499.html" target="_blank">Fedora 9 中文输入法</a></li>   
+                             <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2008622/127482.html" target="_blank">oracle网络配置listener.ora、sqln..</a></li>   
+                             <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/20071226/94155.html" target="_blank">Grub Error 17 问题之简单解决</a></li>   
+                             <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/20090901/173312.html" target="_blank">Android init 启动过程分析</a></li>   
+                             <li><a href="http://www.diybl.com/course/6_system/linux/Linuxjs/2007930/75458.html" target="_blank">Linux进程间通信</a></li>   
+                  </ul>
+        </div>
+      </div>
+    </div>
+    <div class="fc"></div>
+    <div class="right">
+      <div class="border">
+        <div class="right-contact blue fh b14 bold pleft"> 频道地图 </div>
+        <div class="content fh20 right-contact">
+                <ul><li>　<a href="http://www.diybl.com/list/10601.shtml" target="_blank">Linux</a></li>
+                <ul><li>
+                                   </li><li>　&nbsp;&nbsp;&nbsp;<a href="http://www.diybl.com/list/1060101.shtml" target="_blank">Linux系列教程</a></li>
+                                  <li>　&nbsp;&nbsp;&nbsp;<a href="http://www.diybl.com/list/1060102.shtml" target="_blank">Linux应用技巧</a></li>
+                                  <li>　&nbsp;&nbsp;&nbsp;<a href="http://www.diybl.com/list/1060103.shtml" target="_blank">Linux技术文章</a></li>
+                                </ul>
+                <li><ul>
+                                  <li>　<a href="http://www.diybl.com/list/10601.shtml" target="_blank">Linux</a></li>
+                                  <li>　<a href="http://www.diybl.com/list/10602.shtml" target="_blank">Windows xp</a></li>
+                                  <li>　<a href="http://www.diybl.com/list/10603.shtml" target="_blank">Windows 2003</a></li>
+                                  <li>　<a href="http://www.diybl.com/list/10604.shtml" target="_blank">Windows 2000/NT</a></li>
+                                  <li>　<a href="http://www.diybl.com/list/10605.shtml" target="_blank">DOS</a></li>
+                                  <li>　<a href="http://www.diybl.com/list/10606.shtml" target="_blank">Mac OS X</a></li>
+                                  <li>　<a href="http://www.diybl.com/list/10607.shtml" target="_blank">Vista</a></li>
+                                  <li>　<a href="http://www.diybl.com/list/10608.shtml" target="_blank">FreeBSD</a></li>
+                                  <li>　<a href="http://www.diybl.com/list/10609.shtml" target="_blank">Solaris</a></li>
+                                  <li>　<a href="http://www.diybl.com/list/10610.shtml" target="_blank">SCO UNIX</a></li>
+                                  <li>　<a href="http://www.diybl.com/list/10611.shtml" target="_blank">AIX</a></li>
+                                  <li>　<a href="http://www.diybl.com/list/10612.shtml" target="_blank">Windows 2008</a></li>
+                </ul></li></ul>
+                </div>
+      </div>
+    </div>
+  </div>
+  <br class="clear">
+</div>
+
+   <div class="footer" align="center">
+  <a href="http://www.diybl.com/help/introduce.html" target="_blank">DIY部落简介</a> | <a href="http://www.diybl.com/help/ad.html" target="_blank">广告联系</a> | <a href="http://www.diybl.com/help/contact.html" target="_blank">联系我们</a> | <a href="javascript:window.external.addFavorite('http://www.diybl.com/','DIY%E9%83%A8%E8%90%BD');">收藏本站</a> | <a href="http://www.diybl.com/help/about.html" target="_blank">版权声明</a> | <a href="http://www.diybl.com/map.html" target="_blank">网站地图</a> | <a href="http://bbs.diybl.com/Thread/9.html" target="_blank">问题报告</a> | <a href="http://bbs.diybl.com/" target="_blank">社区交流</a><br>
+  <br>
+  <script src="137672_files/art_bot.js"></script>本站文章均为网上网友上传，如果有非法内容请联系我们，我们会在第一时间删除
+
+  <br>
+  <br>
+  Copyright @ 2006-2009 陕ICP备06011157号
+  <div id="ad_f9" class="ad_f9">
+    <script src="137672_files/ad_f9.js"></script><link href="137672_files/message.css" rel="stylesheet" type="text/css">
+<div style="display: block;" id="_popup_msg_container">
+<div class="im_popupWindow" id="im_popupWindow_miniMsg" wistate="max" style="display: block; height: 244px;">
+	<h6 class="wi_draggable"><a href="#" onclick="_message_tips_pop(" down\return="" false;=""><img src="137672_files/x.gif" class="founctionpic3" alt="colse">    </a></h6>
+	<div class="wi_content" id="im_popupWindow_miniMsgContent">
+	<div class="kuai">
+	  <div class="tuijian">
+			<ul>
+											<li>
+				<a target="_blank" href="http://bbs.diybl.com/dview108t8330.html">
+				<font color="">社区现招收各大版主中 </font></a>				</li>
+				            								<li>
+				<a target="_blank" href="http://bbs.diybl.com/dview108t8330.html">
+				<font color="">C++版块招募大版主</font></a>				</li>
+				            								<li>
+				<a target="_blank" href="http://bbs.diybl.com/dview108t8330.html">
+				<font color="">Java版块招募大版主</font></a>				</li>
+				            								<li>
+				<a target="_blank" href="http://bbs.diybl.com/dview108t8330.html">
+				<font color="">.NET版块招募大版主</font></a></li>
+				            
+				                                            <li>
+				<a target="_blank" href="http://bbs.diybl.com/help.html">DIY部落社区新手指南</a></li>
+			</ul>
+
+			<a title=" Hero2009 " target="_blank" href="http://bbs.diybl.com/"><img src="137672_files/mini.jpg" class="tuijian" width="80" height="100"></a>		</div>
+
+			<ul class="list">
+				<li> <a href="http://bbs.diybl.com/dview10t7942.html">语法集锦 Java</a></li>
+
+												<li><a target="_blank" href="http://bbs.diybl.com/dview15t9431.html"><span id="ctl00_ContentPlaceHolder1_lblTitle">C#各种排序算法</span></a></li>
+																<li><a target="_blank" href="http://bbs.diybl.com/dview16t6272.html"><span id="ctl00_ContentPlaceHolder1_lblTitle">ASP.NET常用语句20条</span></a></li>
+																<li><a target="_blank" href="http://bbs.diybl.com/dview28t7099.html"><span id="ctl00_ContentPlaceHolder1_lblTitle">107个JS基础知识</span></a></li>
+								
+		   										<li>
+				<a target="_blank" href="http://bbs.diybl.com/dview23t7436.html"><span id="ctl00_ContentPlaceHolder1_lblTitle">PHP时间函数高级应用</span></a>				</li>
+																<li><a target="_blank" href="http://bbs.diybl.com/dview64t5780.html"><span id="ctl00_ContentPlaceHolder1_lblTitle">sql语句大全</span></a></li>
+																<li>
+				<a target="_blank" href="http://bbs.diybl.com/dview37t5578.html">
+				<font color="">Linux命令和技巧</font></a>				</li>
+								
+				                                                <li><a target="_blank" href="http://bbs.diybl.com/dview114t11332.html">Erlang,走进它的神秘世界</a></li>
+			</ul>
+	</div></div></div></div>
+<script>var tixa_bad_mm_flag=true;</script>
+<script>var tixa_bad_mm_pos=1;</script>
+<script>var tixa_bad_mm_style='style_1-1';</script>
+<script>var tixa_bad_mm_info=1;</script>
+<script src="137672_files/bhvad.html"></script>
+<script src="137672_files/spage_bot.js"></script><script src="137672_files/c.html" language="JavaScript" charset="gb2312"></script><img src="137672_files/stat.gif" border="0" width="0" height="0">
+
+  </div>
+</div>
+<input id="ajaxUrl" value="/Ajax/Comment.ashx" type="hidden">
+<input id="articleID" value="137672" type="hidden">
+</body></html>

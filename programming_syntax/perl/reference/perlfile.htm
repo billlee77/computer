@@ -1,0 +1,824 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head>
+  <title>Perl File Input, Output and Sorting</title>
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+  <meta name="description" content="Debugging and Troubleshooting Source Code including MS Access, C++, Delphi, FoxPro, MFC, SQL, Visual Basic">
+
+  <meta name="keywords" content="debugging, troubleshooting, Source Code, Access, C++, Delphi, FoxPro, MFC, Microsoft Foundation Classes, SQL, Visual Basic">
+
+  <meta name="FORMATTER" content="Microsoft FrontPage 1.1">
+
+  <meta name="Author" content="Steve Litt">
+
+  <meta name="Description" content="File access in Perl">
+
+  <meta name="KeyWords" content="Perl,File,Input,Output,Sorting">
+
+  <meta name="GENERATOR" content="Mozilla/3.01Gold (Win95; U) [Netscape]">
+
+</head>
+
+
+<body style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 240); background-image: url(&quot;../../tcbk.gif&quot;);" vlink="#551a8b" alink="#ff0000" link="#0000ee">
+
+<h2 align="center"><a name="top"></a><a href="http://www.troubleshooters.com/troubleshooters.htm">Troubleshooters.Com</a>
+and <a href="http://www.troubleshooters.com/codecorn/index.htm">Code Corner</a> Present</h2>
+
+<h1 align="center"><a href="http://www.troubleshooters.com/codecorn/littperl/index.htm">Steve
+Litt's Perls of Wisdom</a>:<br>
+
+<font size="+4">Perl File Input, Output and Sorting<br>
+
+</font>(With Snippets)</h1>
+
+<center>
+<p><a href="http://www.troubleshooters.com/cpyright.htm">Copyright (C)
+1998-2003 by Steve Litt</a></p>
+
+</center>
+
+<hr><br>
+
+<div style="text-align: left;"><font><font><a href="http://www.troubleshooters.com/debug_like_ninja.htm"><font style="font-weight: bold;" size="-1"><font size="+3">Debug like a Ninja</font></font></a></font></font></div>
+
+<h1><a name="Contents"></a>Contents</h1>
+
+<li><a href="#Introduction">Introduction</a></li>
+
+<li><a href="#FileOutputInPERL">File Output In Perl</a></li>
+
+<li><a href="#FileInputinPERL">File Input in Perl</a></li>
+
+<li><a href="#FileConversionExample">File Conversion
+Example</a></li>
+
+<li><a href="#Passing_Files_as_Arguments">Passing
+Files as Arguments</a></li>
+
+<li><a href="#Piping">Piping</a></li>
+
+<li><a href="#Other_File_Algorithms">Other File
+Algorithms</a></li>
+
+<br>
+
+<br>
+
+<h1><a name="Introduction"></a>Introduction</h1>
+
+<p>File input and output is an integral part of every programming
+language.
+Perl has complete file input and output capabilities, but it has
+especially
+handy syntax for line-at-a-time sequential input. Since Perl's
+strengths are
+in text manipulation/parsing, this is especially important, and will be
+well
+covered on this web page. Also covered will be sequential file output.
+This
+website will not discuss fixed record reads or random i/o.</p>
+
+<p>Because writing files in Perl is actually simpler, we'll start
+with output,
+then move to input.</p>
+
+<h1><a name="FileOutputInPERL"></a>File Output
+In Perl</h1>
+
+<table bgcolor="#ccffff" border="1">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <pre>$append = 0;<br>if ($append)<br> {<br> open(MYOUTFILE, "&gt;filename.out"); #open for write, overwrite<br> }<br>else<br> {<br> open(MYOUTFILE, "&gt;&gt;filename.out"); #open for write, append<br> }<br>print MYOUTFILE "Timestamp: "; #write text, no newline<br>print MYOUTFILE &amp;timestamp(); #write text-returning fcn<br>print MYOUTFILE "\n"; #write newline</pre>
+
+      <pre>#*** Print freeform text, semicol required ***<br>print MYOUTFILE &lt;&lt;"MyLabel";<br>Steve was here<br>and now is gone<br>but left his name<br>to carry on.<br>MyLabel</pre>
+
+      <pre>#*** Close the file ***<br>close(MYOUTFILE);</pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<h1><a name="FileInputinPERL"></a>File Input
+in Perl</h1>
+
+<p>Opening for Read requires no angle brackets in the filename.
+If you wish,
+you can put in a left angle bracket &lt;, which means "input file".
+It's
+good practice to close any files you open. Files can be read line by
+line,
+or the entire contents of the file can be dumped into a list, with each
+list
+element being a line. Here is an example of a program that reads a
+file,
+capitalizes each line, and prints it to the screen:</p>
+
+<h2>Reading a File a Line at a Time</h2>
+
+<table bgcolor="#ccffff" border="1">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <pre>open(MYINPUTFILE, "&lt;filename.out");<br>while(&lt;MYINPUTFILE&gt;)<br> {<br> # Good practice to store $_ value because<br> # subsequent operations may change it.<br> my($line) = $_;<br><br> # Good practice to always strip the trailing<br> # newline from the line.<br> chomp($line);<br><br> # Convert the line to upper case.<br> $line =~ tr/[a-z]/[A-Z]/;<br><br> # Print the line to the screen and add a newline<br> print "$line\n";<br> }</pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<h2>Reading a Whole File at Once</h2>
+
+<p>Sometimes it's easier to read a whole file into a list,
+especially with
+complex break logic, read-ahead totals, or sorting. Here's a program
+that
+reads a file and prints it in sorted order:</p>
+
+<table bgcolor="#ccffff" border="1">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <pre>open(MYINPUTFILE, "&lt;filename.out"); # open for input<br>my(@lines) = &lt;MYINPUTFILE&gt;; # read file into list<br>@lines = sort(@lines); # sort the list<br>my($line);<br>foreach $line (@lines) # loop thru list<br> {<br> print "$line"; # print in sort order<br> }<br>close(MYINPUTFILE);</pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<h1><a name="FileConversionExample"></a>File
+Conversion Example</h1>
+
+<p>Perl is exceptionally good at file conversion. Here's an
+example where
+each line in the file has 3 fields (in this order): A 5 digit zip code,
+a
+20 char name (first last) and a mm/dd/yy birth date. You want to change
+it
+to a 16 char last name, a 10 char first name, a mm/dd/yyyy birth date,
+and
+a 5 digit zip. For simplicity, assume names have no spaces (no Mary
+Anns,
+no Van Gelders). Here's a 21 line program to do the conversion:</p>
+
+<table bgcolor="#ccffff" border="1">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <pre>open(MYINPUTFILE, "&lt;filename.in");<br>open(MYOUTPUTFILE, "&gt;filename.out");<br>while(&lt;MYINPUTFILE&gt;)<br> {<br> my($line) = $_;<br> chomp($line);<br> if($line =~ m|(\d{5})(.{20})(\d\d)/(\d\d)/(\d\d)|)<br> {<br> my($zip,$name,$mm,$dd,$yy) = ($1,$2,$3,$4,$5);<br> if($yy &gt; 10)<br> {$yy += 1900}<br> else<br> {$yy += 2000}<br> my($first, $last) = split(/ /, $name);<br> $line = sprintf("%-16s%-10s%02d/%02d/%04d%5d",<br> $last,$first,$mm,$dd,$yy,$zip);<br> print MYOUTPUTFILE "$line\n";<br> }<br> }<br>close(MYINPUTFILE);<br>close(MYOUTPUTFILE);</pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<p></p>
+
+<div align="left">
+<h1><a name="Non_Line_Oriented_File_IO"></a>File
+Slurping</h1>
+
+You might occasionally want to grab an entire file without paying
+attention
+to line termination. You can do that by undefing the <tt>$/</tt>
+built in
+variable, and then assigning the &lt;file&gt; to a scalar. This
+is called
+"slurping" the file.<br>
+
+<br>
+
+The following code slurps the STDIN file, then splits it into lines,
+then
+reassembles the lines into a single string, and prints the string:<br>
+
+<br>
+
+x<br>
+
+<table bgcolor="#ccffff" border="1">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <pre>#!/usr/bin/perl -w<br>use strict;<br><br>my $holdTerminator = $/;<br>undef $/;<br>my $buf = &lt;STDIN&gt;;<br>$/ = $holdTerminator;<br>my @lines = split /$holdTerminator/, $buf;<br>$buf = "init";<br>$buf = join $holdTerminator, @lines;<br>print $buf;<br>print "\n";<br></pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<br>
+
+The preceding code works like this:<br>
+
+<ul>
+
+  <li>First we store the terminator character, which by default
+on Linux
+systems is linefeed -- "\n".</li>
+
+  <li>Now we undef the line terminator character</li>
+
+  <li>Now we slurp the entirety of STDIN</li>
+
+  <li>Now we restore the line terminator character</li>
+
+  <li>Now we split the string we read using the termator as a
+border</li>
+
+  <li>Now we join the array back into a string</li>
+
+  <li>We print the string</li>
+
+  <li>Last but not least, we print an extra newline to fix a
+picket fence
+condition</li>
+
+</ul>
+
+Slurping isn't as handy as it might seem. If you're a C programmer
+accustomed
+to using the <tt>read()</tt> and <tt>write()</tt>
+functions with a large
+buffer to accomplish incredibly fast I/O, you might think
+file-at-a-time
+I/O would be much faster than line oriented I/O. Not in Perl! For
+whatever
+reason, line oriented is faster.<br>
+
+<br>
+
+One reason is the need for huge amounts of memory, which on UNIX
+systems
+translates into huge disk usage as swap file space is used. But this
+doesn't
+account for the whole thing, as you'll see in the test following
+program:<br>
+
+<br>
+
+<table bgcolor="#ccffff" border="1">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <pre>#!/usr/bin/perl -w<br>use strict;<br><br>my $bigfileName = "/scratch/bigfile.txt";<br>my $sipfileName = "/scratch/sip.out";<br>my $arrayfileName = "/scratch/array.out";<br>my $slurpfileName = "/scratch/slurp.out";<br><br>sub slurp()<br>	{<br>	my $inf;<br>	my $ouf;<br>	my $holdTerminator = $/;<br>	undef $/;<br>	open $inf, "&lt;" . $bigfileName;<br>	my $buf = &lt;$inf&gt;;<br>	close $inf;<br>	$/ = $holdTerminator;<br>	my @lines = split /$holdTerminator/, $buf;<br>	$buf = "init";<br>	$buf = join $holdTerminator, @lines;<br>	open $ouf, "&gt;" . $slurpfileName;<br>	print $ouf $buf;<br>	print $ouf "\n";<br>	close $ouf;<br>	}<br><br>sub sip()<br>	{<br>	my $inf;<br>	my $ouf;<br>	open $inf, "&lt;" . $bigfileName;<br>	open $ouf, "&gt;" . $sipfileName;<br>	while(&lt;$inf&gt;)<br>	{<br>	my $line = $_;<br>	chomp $line;<br>	print $ouf $line, "\n";<br>	}<br>	close $ouf;<br>	close $inf;<br>	}<br><br>sub buildarray()<br>	{<br>	my $inf;<br>	my $ouf;<br>	my @array;<br>	open $inf, "&lt;" . $bigfileName;<br>	while(&lt;$inf&gt;)<br>	{<br>	my $line = $_;<br>	chomp $line;<br>	push @array, ($line);<br>	}<br>	<br>	close $inf;<br>	open $ouf, "&gt;" . $arrayfileName;<br>	foreach my $line (@array)<br>	{<br>	print $ouf $line, "\n";<br>	}<br>	close $ouf;<br>	}<br><br>sub main()<br>	{<br>	my $time1 = time();<br><br>	print "Starting sip\n";<br>	sip();<br>	print "End sip\n";<br><br>	my $time2 = time();<br><br>	print "Starting array\n";<br>	buildarray();<br>	print "End array\n";<br><br>	my $time3 = time();<br><br>	print "Starting slurp\n";<br>	slurp();<br>	print "End slurp\n";<br><br>	my $time4 = time();<br><br>	print "Sip time is ", $time2-$time1, " seconds\n";<br>	print "Array time is ", $time3-$time2, " seconds\n";<br>	print "Slurp time is ", $time4-$time3, " seconds\n";<br>	}<br><br>main();<br></pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<br>
+
+The preceding program creates the following output:<br>
+
+x<br>
+
+<table bgcolor="#ffffcc" border="1">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <pre>[slitt@mydesk littperl]$ ./slurp.pl<br>Starting sip<br>End sip<br>Starting array<br>End array<br>Starting slurp<br>End slurp<br>Sip time is 14 seconds<br>Array time is 74 seconds<br>Slurp time is 279 seconds<br>[slitt@mydesk littperl]<br></pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<br>
+
+As you can see in the preceding program and output, the line in, line
+out
+method copied 50 a MB file in 14 seconds. A line at a time input that
+pushed
+on an array and then outputted it a line at a time took 74 seconds.
+Note
+that this stores the full file in memory. The slurp method, which reads
+the
+file into a string and then copies it to an array, takes 279 seconds.
+Looking
+more closely, the slurp version actually has two copies of the file in
+memory
+-- one in the array and one in the scalar. Indeed, if you add the
+following
+line to the array method, right after the building of the array is
+complete,
+array runtime more closely approximates that of the slurp method:<br>
+
+<pre>my @arraycopy = @array;<br></pre>
+
+Adding the preceding statement means storing 2 copies of the file in
+memory,
+just like the slurp method. Here are the run results with the extra
+copy:<br>
+
+<br>
+
+<table bgcolor="#ffffcc" border="1">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <pre>[slitt@mydesk littperl]$ ./slurp.pl<br>Starting sip<br>End sip<br>Starting array<br>End array<br>Starting slurp<br>End slurp<br>Sip time is 14 seconds<br>Array time is 304 seconds<br>Slurp time is 258 seconds<br>[slitt@mydesk littperl]$<br></pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<h2>The Moral of the Story</h2>
+
+The moral of the story is clear. Large buffer I/O is not efficient the
+way
+it is in C. If the file is large enough to save time by whole file
+reads,
+then it's so large as to exhaust electronic RAM memory, thus incurring
+swap
+penalties.<br>
+
+<br>
+
+The most efficient algorithm reads a line, writes a line, and stores
+nothing.
+That's not always practical, and it's certainly not the easiest way to
+design
+code.<br>
+
+<br>
+
+A further advantage of read a line, write a line occurs when dealing
+with
+pipes. This is &nbsp;in the <a href="#Piping">Piping</a>
+section, later in
+this document.<br>
+
+<br>
+
+If you really want to get faster I/O in Perl, you might experiment with
+the
+<tt>sysopen()</tt>, <tt>sysread()</tt>, <tt>sysseek()</tt>,
+and <tt>syswrite()</tt>
+functions. But beware, they interact quirkily with normal Perl I/O
+functions.<br>
+
+<h1><a name="Passing_Files_as_Arguments"></a>Passing
+Files as Arguments</h1>
+
+Given the Perl syntax, it's inobvious how to pass files as arguments.
+There
+are three methods, as Globs, as filehandles, and as variables.<br>
+
+<h2>Globs</h2>
+
+The Glob method of passing files is very Perlistic, and as such appears
+incredibly
+inobvious to general purpose programmers not using Perl on a regular
+basis.
+The Glob method is useful when retrofitting file passing in programs
+using
+Perl's &lt;FILENAME&gt; syntax. If you're starting fresh,
+consider filehandles.<br>
+
+<br>
+
+Here's the Glob method:<br>
+
+<table bgcolor="#ccffff" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+
+    <tr>
+
+      <td valign="top">
+      <pre>sub printFile($)<br>	{<br>	my $fileHandle = $_[0];<br>	while (&lt;$fileHandle&gt;)<br>	{<br>	my $line = $_;<br>	chomp($line);<br>	print "$line\n";<br>	}<br>	}<br><br>open(MYINPUTFILE, "&lt;filename.in");<br>printFile(\*MYINPUTFILE);<br>close(MYINPUTFILE);<br></pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<br>
+
+Output files work similarly.<br>
+
+<br>
+
+If you need to assign the glob to an actual variable, you can do that
+also.
+The code in the subroutine remains the same, and the following is the
+code
+doing the passing:<br>
+
+<table bgcolor="#ccffff" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+
+    <tr>
+
+      <td valign="top">
+      <pre>open(MYINPUTFILE, "&lt;filename.in");<br>my $fileGlob = \*MYINPUTFILE;<br>printFile($fileGlob);<br>close(MYINPUTFILE);<br></pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<br>
+
+Use of an actual variable makes the code much more obvious to the
+programmer
+with only casual Perl experience.<br>
+
+<br>
+
+Once again, Globs are the old method, and they're compatible with older
+Perl
+file methods, but for new construction you'll probably prefer to use
+the FileHandle
+module.<br>
+
+<br>
+
+<h2>FileHandles</h2>
+
+This is the modern, preferred way. With the FileHandle module you can
+assign
+a file handle to a variable that can be passed, just like in C. Unlike
+Globs,
+its use is obvious to any experienced programmer.<br>
+
+<br>
+
+<table bgcolor="#ccffff" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+
+    <tr>
+
+      <td valign="top">
+      <pre>use FileHandle;<br><br>sub printFile($)<br>	{<br>	my $fileHandle = $_[0];<br>	while (&lt;$fileHandle&gt;)<br>	{<br>	my $line = $_;<br>	chomp($line);<br>	print "$line\n";<br>	}<br>	}<br><br>my $fh = new FileHandle;<br>$fh-&gt;open("&lt;filename.in") or die "Could not open file\n";<br>printFile($fh);<br>$fh-&gt;close(); # automatically closes file<br></pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<br>
+
+The FileHandle class also has methods like gets(), print(), printf().
+This
+gives the programmer much better control, and helps in OOP programs.<br>
+
+<h2>Variables</h2>
+
+We usually see files expressed as uppercase bare text, as in <tt>&lt;INF&gt;</tt>,
+but it can also be a variable, such as <tt>&lt;$inf&gt;</tt>.
+As such, the
+variable can be passed between subroutines. Usually the FileHandle
+method
+is preferred, but if you're an oldschool perl guy who wants to use the
+oldschool
+syntax but be able to pass open files without resorting to cumbersome
+globs,
+variables are just what's needed. Watch this:<br>
+
+<br>
+
+<table bgcolor="#ccffff" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+
+    <tr>
+
+      <td valign="top">
+      <pre>#!/usr/bin/perl -w<br>use strict;<br><br>sub printFile($)<br>	{<br>	my $fileHandle = $_[0];<br>	while (&lt;$fileHandle&gt;)<br>	{<br>	my $line = $_;<br>	chomp($line);<br>	print "$line\n";<br>	}<br>	}<br><br>my $fh;<br>open($fh,"&lt;filename.in") or die "Could not open file\n";<br>printFile($fh);<br>close($fh);<br></pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<h1><a name="Piping"></a>Piping</h1>
+
+One really quick, modular and high quality method of program
+design/coding
+is to build the program out of small executables connected with pipes.
+For
+instance, the following CGI shellscript, let's call it <tt>showrpt.cgi</tt>,
+illustrates such a piping situation:<br>
+
+<pre>#!/bin/bash<br>./get_mainframe_data.pl | ./zap_extraneous_text.pl | ./parse_data.pl | ./make_into_web_page.pl<br></pre>
+
+In the preceding, <tt>zap_extraneous_text.pl</tt>, <tt>parse_data.pl</tt>
+, and <tt>make_into_web_page.pl</tt> are perl scripts
+receiving their data
+through STDIN and outputting data through STDOUT. They're what is called<i>filters</i>
+in the UNIX world. The <tt>get_mainframe_data.pl</tt>,
+program generates its
+own data and passes it out through STDOUT. The pipeline route is
+defined by<tt>showrpt.cgi</tt>,
+which calls all four in a pipe.<br>
+
+<br>
+
+Now ask yourself this: What if a perl program had to decide the pipe
+route.
+This is a very real question. Perhaps a parsing program starts with a
+complex
+parse to determine which parser units to use, and then assembles the
+pipe,
+and then pipes data into it? You do that with a Perl Pipe:<br>
+
+<table bgcolor="#ccffff" border="1">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <pre>my pipestring;<br>if(report_type eq 'ar')<br>	{<br>	$pipestring = "|./zap_extraneous_data_ar_report.pl | ./parse_ar_report | ./make_into_web_page.pl;<br>	}<br>elsif(report_type eq 'journal')<br>	{<br>	$pipestring = "|./parse_journal_report | ./sort_journal_by_account.pl | ./make_into_web_page.pl;<br>	}<br>my $pipe;<br>open $pipe, $pipestring;<br>foreach my $environment_line (@environment_lines)<br>	{<br>	print $pipe $environment_line, "\n";<br>	}<br>while(&lt;STDIN&gt;)<br>	{<br>	my $line = $_;<br>	chomp ($line);<br>	print $pipe $line, "\n";<br>	}<br></pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<br>
+
+In the preceding code, the <tt>open $pipe, $pipestring</tt>
+sets it up so
+anything printed to <tt>$pipe</tt> is sent to the STDIN of
+the pipe laid out
+in <tt>$pipestring</tt>. From there, the environment lines
+are sent to that
+pipe, and then this program's STDIN is sent to that pipe.<br>
+
+<h2>Piping Efficiency Issues<br>
+
+</h2>
+
+Small executables piped together are a great way to rapidly develop an
+application.
+They're a great way to quickly rearrange an application. Applications
+built
+with piped executables are so modular that bugs are few, shallow, and
+easy
+to test for. The main problem with piped executables, especially those
+made
+with Perl, is that piping data is slow. Perl programs handle STDIN and
+STDOUT
+about half the speed of <tt>awk</tt>, and about 1/5 the
+speed of equivalently
+written C programs.<br>
+
+<br>
+
+Beyond that, assuming you're running a Linux, UNIX or BSD box, order
+counts.
+Ideally, you read a little, process a little, write a little:<br>
+
+<br>
+
+<table bgcolor="#ccffff" border="1">
+
+  <tbody>
+
+    <tr>
+
+      <td>
+      <pre>while(&lt;STDIN&gt;)<br>	{<br>	my $line = $_;<br>	chomp($line);<br>	$line = process_one_line($line);<br>	print $pipe $line, "\n";<br>	}<br></pre>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<br>
+
+The preceding code implements a true bucket brigade, where each process
+on
+the pipeline has something to do, and they can all work concurrently.
+This
+is especially important on multiprocessor machines.<br>
+
+<br>
+
+Often, however, you cannot output until all the input has been read and
+processed.
+This means that the next stage must wait until completion of the
+previous
+stage, and only then begin. Compound that by several stages, and
+processing
+time balloons. Unfortunately, it's often very difficult to write an
+executable
+so that it outputs before completion of input.<br>
+
+<h1><a name="Other_File_Algorithms"></a>Other
+File Algorithms</h1>
+
+<h2>truncate()</h2>
+
+This is a way of emptying a file without deleting it. This is wonderful
+for
+web apps, where the Apache user can be given write rights to the file,
+but
+not write rights to the whole directory. As a priveleged user, create
+the
+file with touch, and then change its permissions to be writeable by the
+Apache
+user. From there, it never gets deleted, so it's always modifiable by
+the
+Apache user.<br>
+
+<h2>unlink()</h2>
+
+This deletes a file.<br>
+
+<h2>rename()</h2>
+
+This renames a file, like the UNIX mv command.<br>
+
+<h2>mkdir, rmdir, chdir, chmod, chown, chroot</h2>
+
+These perform identical functions to their UNIX counterparts.<br>
+
+<h2>-X</h2>
+
+In this case the "X" is actually one of the following letters:<br>
+
+<table bgcolor="#cccccc" border="1">
+
+  <tbody>
+
+    <tr>
+
+      <td><big><b>-r</b></big></td>
+
+      <td><big><b>File is readable by effective
+uid/gid.</b></big></td>
+
+    </tr>
+
+    <tr>
+
+      <td><big><b>-w</b></big></td>
+
+      <td><big><b>File is writable by effective
+uid/gid.</b></big></td>
+
+    </tr>
+
+    <tr>
+
+      <td><big><b>-x</b></big></td>
+
+      <td><big><b>File is executable by effective
+uid/gid.</b></big></td>
+
+    </tr>
+
+    <tr>
+
+      <td><big><b>-o</b></big></td>
+
+      <td><big><b>File is owned by effective uid.</b></big></td>
+
+    </tr>
+
+    <tr>
+
+      <td><big><b> </b></big><br>
+
+      </td>
+
+      <td><big><b> </b></big><br>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td><big><b>-R</b></big></td>
+
+      <td><big><b>File is readable by real uid/gid.</b></big></td>
+
+    </tr>
+
+    <tr>
+
+      <td><big><b>-W</b></big></td>
+
+      <td><big><b>File is writable by real uid/gid.</b></big></td>
+
+    </tr>
+
+    <tr>
+
+      <td><big><b>-X</b></big></td>
+
+      <td><big><b>File is executable by real uid/gid.</b></big></td>
+
+    </tr>
+
+    <tr>
+
+      <td><big><b>-O</b></big></td>
+
+      <td><big><b>File is owned by real uid.</b></big></td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<h2>sysopen(), sysread(), sysseek(), and syswrite()</h2>
+
+These are low level calls corresponding to C's open(), read() and
+write()
+functions. Due to lack of buffering, they interact strangely with calls
+to
+Perl's buffered file I/O. But if you really want to speed up Perl's
+I/O,
+this might (or might not) be a way to do it. This is beyond the scope
+of
+this document.<br>
+
+<br>
+
+</div>
+
+<hr>
+<p></p>
+
+<p>&nbsp;[ <a href="http://www.troubleshooters.com/troubleshooters.htm">Troubleshooters.com</a>|
+<a href="http://www.troubleshooters.com/codecorn/index.htm">Code Corner</a> | <a href="http://www.troubleshooters.com/email_steve_litt.htm">Email Steve Litt</a>
+] </p>
+
+<p><a href="http://www.troubleshooters.com/cpyright.htm#top"><img src="perlfile_files/biglcpyr.gif" width="30" border="0" height="30"></a><a href="http://www.troubleshooters.com/cpyright.htm#top">Copyright
+(C)1998-2003 by Steve Litt</a> --<a href="http://www.troubleshooters.com/cpyright.htm#top">Legal</a></p>
+
+<br>
+
+<br>
+
+<br>
+
+
+
+</body></html>

@@ -1,0 +1,59 @@
+# Remove the Booting logo
+sudo apt-get remove usplash-theme-ubuntu
+
+
+# Remove save session
+rm .cache/sessions/*
+
+
+# Stop the hard disk booting checking
+sudo tune2fs -c 0 /dev/disk
+or
+change the trailing on the boot partition in /etc/fstab to a 0
+
+
+# Shut the system Beep 
+xset b off
+xset b 0 0 0
+or
+
+rmmod pcspkr       (for off)
+modprobe pcspkr    (for on )
+
+
+
+
+# Restart any application
+sudo /etc/init.d/application restart
+
+# Type in Chinese
+Install the following packages:
+ scim scim-chinese scim-config-socket scim-frontend-socket scim-gtk2-immodule scim-server-socket scim-tables-zh xfonts-intl-chinese xfonts-intl-chinese-big ttf-arphic-gbsn00lp ttf-arphic-gkai00mp ttf-arphic-bkai00mp ttf-arphic-bsmi00lp
+
+ *********************************
+ $gvim .xsession
+ *********************************
+ scim -d
+ export XMODIFIERS=@im=scim
+ export GTK_IM_MODULE=scim
+ gnome-session
+ *********************************
+ $chmod +x .xsession
+
+# install VLC 1.0, the version that stops going mad
+ADD /etc/apt/source.list
+
+deb http://ppa.launchpad.net/c-korn/vlc/ubuntu jaunty main
+deb-src http://ppa.launchpad.net/c-korn/vlc/ubuntu jaunty main
+
+# Checking bios information
+sudo dmidecode
+
+# View the mounted disk
+sudo fdisk -l
+
+# Remove things from main manu
+rm ~/.local/share/applications/things
+
+# Change terminal promot
+.bashrc

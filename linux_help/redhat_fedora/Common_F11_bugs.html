@@ -1,0 +1,1029 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta name="generator" content="MediaWiki 1.14.1">
+		<meta name="keywords" content="Common F11 bugs,Common F11 bugs,Anaconda/Updates,BugsAndFeatureRequests,Bugs and feature requests,Common kernel problems,Flash,How to create and use Live USB,How to create xorg.conf,How to use PreUpgrade,QA">
+		<link rel="shortcut icon" href="http://fedoraproject.org/favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" href="http://fedoraproject.org/w/opensearch_desc.php" title="FedoraProject (en)">
+		<link rel="copyright" href="http://fedoraproject.org/wiki/Legal:Main">
+		<link rel="alternate" type="application/rss+xml" title="FedoraProject RSS Feed" href="https://fedoraproject.org/w/index.php?title=Special:RecentChanges&amp;feed=rss">
+		<link rel="alternate" type="application/atom+xml" title="FedoraProject Atom Feed" href="https://fedoraproject.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+		<title>Common F11 bugs - FedoraProject</title>
+		<link rel="stylesheet" href="Common_F11_bugs_files/shared.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="Common_F11_bugs_files/commonPrint.css" type="text/css" media="print">
+		<link rel="stylesheet" href="Common_F11_bugs_files/index_003.php" type="text/css">
+		<link rel="stylesheet" href="Common_F11_bugs_files/index_002.php" type="text/css" media="print">
+		<link rel="stylesheet" href="Common_F11_bugs_files/index.php" type="text/css">
+		<link rel="stylesheet" href="Common_F11_bugs_files/index.css" type="text/css">
+  <link rel="stylesheet" type="text/css" media="all" href="Common_F11_bugs_files/fedora.css">
+  <link rel="stylesheet" type="text/css" media="print" href="Common_F11_bugs_files/print.css">
+
+		<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "/w/skins/fedora/main.css?195"; /*]]>*/</style>
+		<link rel="stylesheet" type="text/css" media="print" href="Common_F11_bugs_files/commonPrint.css">
+		<link rel="stylesheet" type="text/css" media="handheld" href="Common_F11_bugs_files/handheld.css">
+		<!--[if lt IE 5.5000]><style type="text/css">@import "/w/skins/fedora/IE50Fixes.css?195";</style><![endif]-->
+		<!--[if IE 5.5000]><style type="text/css">@import "/w/skins/fedora/IE55Fixes.css?195";</style><![endif]-->
+		<!--[if IE 6]><style type="text/css">@import "/w/skins/fedora/IE60Fixes.css?195";</style><![endif]-->
+		<!--[if IE 7]><style type="text/css">@import "/w/skins/fedora/IE70Fixes.css?195";</style><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/w/skins/common/IEFixes.js?195"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		<script type="text/javascript">/*<![CDATA[*/
+		var skin = "fedora";
+		var stylepath = "/w/skins";
+		var wgArticlePath = "/wiki/$1";
+		var wgScriptPath = "/w";
+		var wgScript = "/w/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "https://fedoraproject.org";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Common_F11_bugs";
+		var wgTitle = "Common F11 bugs";
+		var wgAction = "view";
+		var wgArticleId = "21415";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = "138470";
+		var wgVersion = "1.14.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+                
+		<script type="text/javascript" src="Common_F11_bugs_files/wikibits.js"><!-- wikibits js --></script>
+		<script type="text/javascript" src="Common_F11_bugs_files/index.js"><!-- site js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="Common_F11_bugs_files/ajax.js"></script>
+	</head><body class="mediawiki  ltr ns-0 ns-subject page-Common_F11_bugs">
+	<div id="wrapper">
+        <div id="head">
+        <h1><a href="http://fedoraproject.org/wiki/Fedora_Project_Wiki" title="Visit the main page [z]" accesskey="z">Fedora</a></h1>
+	<div id="p-personal">
+		<h5>Personal tools</h5>
+			<ul>
+				<li id="pt-login"><a href="http://fedoraproject.org/w/index.php?title=Special:UserLogin&amp;returnto=Common_F11_bugs" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+	</div>
+
+<!-- Top actions bar -->
+	<div id="p-cactions">
+		<h5>Views</h5>
+			<ul>
+					 <li id="ca-nstab-main" class="selected"><a href="http://fedoraproject.org/wiki/Common_F11_bugs" title="View the content page [c]" accesskey="c">Page</a></li>
+					 <li id="ca-talk"><a href="http://fedoraproject.org/wiki/Talk:Common_F11_bugs" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+					 <li id="ca-viewsource"><a href="http://fedoraproject.org/w/index.php?title=Common_F11_bugs&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></li>
+					 <li id="ca-history"><a href="http://fedoraproject.org/w/index.php?title=Common_F11_bugs&amp;action=history" title="Past versions of this page [h]" accesskey="h">History</a></li>
+				</ul>
+	</div>
+
+        </div>
+<div id="sidebar">
+<div id="nav">
+<!-- Sidebar -->
+		<div id="p-wiki">
+		<h2>wiki</h2>
+			<ul>
+				<li id="n-mainpage"><a href="http://fedoraproject.org/wiki/Fedora_Project_Wiki" title="Visit the main page [z]" accesskey="z">Fedora Project Wiki</a></li>
+				<li id="n-News"><a href="http://fedoraproject.org/wiki/FWN/LatestIssue">News</a></li>
+				<li id="n-Events"><a href="http://fedoraproject.org/wiki/FedoraEvents">Events</a></li>
+				<li id="n-Features"><a href="http://fedoraproject.org/wiki/Features">Features</a></li>
+				<li id="n-recentchanges"><a href="http://fedoraproject.org/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://fedoraproject.org/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-Help"><a href="http://fedoraproject.org/wiki/Help">Help</a></li>
+			</ul>
+	</div>
+		<div id="p-navigation">
+		<h2>Navigation</h2>
+			<ul>
+				<li id="n-Home"><a href="http://fedoraproject.org/">Home</a></li>
+				<li id="n-Get-Fedora"><a href="http://get.fedoraproject.org/">Get Fedora</a></li>
+				<li id="n-Join-Fedora"><a href="http://join.fedoraproject.org/">Join Fedora</a></li>
+			</ul>
+	</div>
+		<div id="p-sub-projects">
+		<h2>sub-projects</h2>
+			<ul>
+				<li id="n-Ambassadors"><a href="http://fedoraproject.org/wiki/Ambassadors">Ambassadors</a></li>
+				<li id="n-Bug-Zappers"><a href="http://fedoraproject.org/wiki/BugZappers">Bug Zappers</a></li>
+				<li id="n-Design"><a href="http://fedoraproject.org/wiki/Design">Design</a></li>
+				<li id="n-Documentation"><a href="http://fedoraproject.org/wiki/DocsProject">Documentation</a></li>
+				<li id="n-EPEL"><a href="http://fedoraproject.org/wiki/EPEL">EPEL</a></li>
+				<li id="n-Infrastructure"><a href="http://fedoraproject.org/wiki/Infrastructure">Infrastructure</a></li>
+				<li id="n-Internationalization"><a href="http://fedoraproject.org/wiki/I18N">Internationalization</a></li>
+				<li id="n-Localization"><a href="http://fedoraproject.org/wiki/L10N">Localization</a></li>
+				<li id="n-Marketing"><a href="http://fedoraproject.org/wiki/Marketing">Marketing</a></li>
+				<li id="n-Package-Maintainers"><a href="http://fedoraproject.org/wiki/PackageMaintainers">Package Maintainers</a></li>
+				<li id="n-Websites"><a href="http://fedoraproject.org/wiki/Websites">Websites</a></li>
+				<li id="n-Weekly-News"><a href="http://fedoraproject.org/wiki/FWN">Weekly News</a></li>
+				<li id="n-All-projects"><a href="http://fedoraproject.org/wiki/Projects">All projects</a></li>
+			</ul>
+	</div>
+		<div id="p-search">
+		<h2><label for="searchInput">Search</label></h2>
+			<form action="/wiki/Special:Search" id="searchform"><div>
+				<input id="searchInput" name="search" title="Search FedoraProject [alt-shift-f]" accesskey="f" type="text"><br>
+				<input name="go" class="searchButton" id="searchGoButton" value="Go" type="submit">&nbsp;
+				<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" type="submit">
+			</div></form>
+	</div>
+	<div id="p-tb">
+		<h2>Toolbox</h2>
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://fedoraproject.org/wiki/Special:WhatLinksHere/Common_F11_bugs" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://fedoraproject.org/wiki/Special:RecentChangesLinked/Common_F11_bugs" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://fedoraproject.org/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://fedoraproject.org/w/index.php?title=Common_F11_bugs&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://fedoraproject.org/w/index.php?title=Common_F11_bugs&amp;oldid=138470" title="Permanent link to this version of the page">Permanent link</a></li>			</ul>
+	</div>
+</div>
+</div><!-- end of the left (by default at least) column -->
+
+	<div id="content">
+				<h2>Common F11 bugs</h2>
+			<h3 id="siteSub">From FedoraProject</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<p>This page documents common bugs in Fedora 11 and, if available, 
+fixes or workarounds for these problems.  If you find your problem in 
+this page, <i>do not file a bug for it, unless otherwise instructed.</i>  Where appropriate, a reference to the current bug(s) in Bugzilla is included.
+</p>
+<table id="toc" class="toc" summary="Contents"><tbody><tr><td><div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1"><a href="#Release_Notes"><span class="tocnumber">1</span> <span class="toctext">Release Notes</span></a></li>
+<li class="toclevel-1"><a href="#My_bug_is_not_listed"><span class="tocnumber">2</span> <span class="toctext">My bug is not listed</span></a></li>
+<li class="toclevel-1"><a href="#Resolved_issues"><span class="tocnumber">3</span> <span class="toctext">Resolved issues</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Some_fingerprint_readers_do_not_work_with_non-zero_bytes_in_cmd_response_error"><span class="tocnumber">3.1</span> <span class="toctext">Some fingerprint readers do not work with non-zero bytes in cmd response error</span></a></li>
+<li class="toclevel-2"><a href="#Installation_fails_with_DeviceError:_cannot_commit_to_disk_sda_after_5_attempts"><span class="tocnumber">3.2</span> <span class="toctext">Installation fails with DeviceError: cannot commit to disk sda after 5 attempts</span></a></li>
+<li class="toclevel-2"><a href="#Update_notification_doesn.27t_disappear"><span class="tocnumber">3.3</span> <span class="toctext">Update notification doesn't disappear</span></a></li>
+<li class="toclevel-2"><a href="#Booting_Fedora_11_live_media_created_with_livecd-iso-to-disk_from_a_Fedora_9_system_fails_to_boot"><span class="tocnumber">3.4</span> <span class="toctext">Booting Fedora 11 live media created with livecd-iso-to-disk from a Fedora 9 system fails to boot</span></a></li>
+<li class="toclevel-2"><a href="#QEMU.2FKVM_DVD_installs_under_a_Fedora_11_host_hang_when_attempting_to_eject_DVD"><span class="tocnumber">3.5</span> <span class="toctext">QEMU/KVM DVD installs under a Fedora 11 host hang when attempting to eject DVD</span></a></li>
+<li class="toclevel-2"><a href="#Sound_Blaster_Live.21_cards_.28and_other_emu10k1-based_cards.29_do_not_work"><span class="tocnumber">3.6</span> <span class="toctext">Sound Blaster Live! cards (and other emu10k1-based cards) do not work</span></a></li>
+<li class="toclevel-2"><a href="#Display_goes_blank_briefly.2C_apparently_at_random"><span class="tocnumber">3.7</span> <span class="toctext">Display goes blank briefly, apparently at random</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Issues_when_upgrading_from_previous_releases"><span class="tocnumber">4</span> <span class="toctext">Issues when upgrading from previous releases</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Upgrade_fails_while_editing_existing_bootloader_entry"><span class="tocnumber">4.1</span> <span class="toctext">Upgrade fails while editing existing bootloader entry</span></a></li>
+<li class="toclevel-2"><a href="#Can.27t_find_.i686_kernel"><span class="tocnumber">4.2</span> <span class="toctext">Can't find .i686 kernel</span></a></li>
+<li class="toclevel-2"><a href="#The_installer_does_not_honor_skip_bootloader_choice"><span class="tocnumber">4.3</span> <span class="toctext">The installer does not honor skip bootloader choice</span></a></li>
+<li class="toclevel-2"><a href="#Yum_doesn.27t_work_after_upgrading_from_F10"><span class="tocnumber">4.4</span> <span class="toctext">Yum doesn't work after upgrading from F10</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Installation_issues"><span class="tocnumber">5</span> <span class="toctext">Installation issues</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Documentation_for_ISO_images_is_faulty"><span class="tocnumber">5.1</span> <span class="toctext">Documentation for ISO images is faulty</span></a></li>
+<li class="toclevel-2"><a href="#Live_image_installations_fail_with_FSError:_filesystem_has_not_been_created"><span class="tocnumber">5.2</span> <span class="toctext">Live image installations fail with FSError: filesystem has not been created</span></a></li>
+<li class="toclevel-2"><a href="#Booting_Fedora_11_live_media_created_with_liveusb-creator_from_a_Fedora_9_or_Fedora_10_system_fails_to_boot"><span class="tocnumber">5.3</span> <span class="toctext">Booting Fedora 11 live media created with liveusb-creator from a Fedora 9 or Fedora 10 system fails to boot</span></a></li>
+<li class="toclevel-2"><a href="#Installation_fails_with_PartitionException:_Can.27t_have_overlapping_partitions"><span class="tocnumber">5.4</span> <span class="toctext">Installation fails with PartitionException: Can't have overlapping partitions</span></a></li>
+<li class="toclevel-2"><a href="#Installation_fails_while_editing_previously_encrypted_partition_-_IndexError:_list_index_out_of_range"><span class="tocnumber">5.5</span> <span class="toctext">Installation fails while editing previously encrypted partition - IndexError: list index out of range</span></a></li>
+<li class="toclevel-2"><a href="#Kickstart_installations_cannot_reuse_existing_RAID_arrays"><span class="tocnumber">5.6</span> <span class="toctext">Kickstart installations cannot reuse existing RAID arrays</span></a></li>
+<li class="toclevel-2"><a href="#Kickstart_installations_cannot_reuse_existing_LVM_volume_groups"><span class="tocnumber">5.7</span> <span class="toctext">Kickstart installations cannot reuse existing LVM volume groups</span></a></li>
+<li class="toclevel-2"><a href="#Kickstart_installations_fail_when_using_partition_options_--ondisk_or_--biosdisk"><span class="tocnumber">5.8</span> <span class="toctext">Kickstart installations fail when using partition options --ondisk or --biosdisk</span></a></li>
+<li class="toclevel-2"><a href="#Installer_sees_no_hard_drives_on_ppc970_systems"><span class="tocnumber">5.9</span> <span class="toctext">Installer sees no hard drives on ppc970 systems</span></a></li>
+<li class="toclevel-2"><a href="#Installation_fails_with_LVMError:_lvcreate_failed_for_vg_gx2701.2Flv_root"><span class="tocnumber">5.10</span> <span class="toctext">Installation fails with LVMError: lvcreate failed for vg_gx2701/lv_root</span></a></li>
+<li class="toclevel-2"><a href="#Writing_installation_failure_tracebacks_to_a_USB_key_does_not_work"><span class="tocnumber">5.11</span> <span class="toctext">Writing installation failure tracebacks to a USB key does not work</span></a></li>
+<li class="toclevel-2"><a href="#Installer_ignores_incomplete_BIOS_RAID_array_disks.2C_nodmraid_kernel_parameter_not_honored"><span class="tocnumber">5.12</span> <span class="toctext">Installer ignores incomplete BIOS RAID array disks, nodmraid kernel parameter not honored</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Hardware-related_issues"><span class="tocnumber">6</span> <span class="toctext">Hardware-related issues</span></a>
+<ul>
+<li class="toclevel-2"><a href="#General_note_about_updating_system_BIOS_and_device_firmware"><span class="tocnumber">6.1</span> <span class="toctext">General note about updating system BIOS and device firmware</span></a></li>
+<li class="toclevel-2"><a href="#Miscellaneous_problems_with_Intel_graphics_adapters"><span class="tocnumber">6.2</span> <span class="toctext">Miscellaneous problems with Intel graphics adapters</span></a></li>
+<li class="toclevel-2"><a href="#Miscellaneous_problems_with_ATI_.2F_AMD_graphics_adapters"><span class="tocnumber">6.3</span> <span class="toctext">Miscellaneous problems with ATI / AMD graphics adapters</span></a></li>
+<li class="toclevel-2"><a href="#Resume_from_suspend_fails_with_NVIDIA_graphics_adapters"><span class="tocnumber">6.4</span> <span class="toctext">Resume from suspend fails with NVIDIA graphics adapters</span></a></li>
+<li class="toclevel-2"><a href="#Graphical_desktop_failing_to_start_or_crashing_with_AGP_NVIDIA_graphics_cards"><span class="tocnumber">6.5</span> <span class="toctext">Graphical desktop failing to start or crashing with AGP NVIDIA graphics cards</span></a></li>
+<li class="toclevel-2"><a href="#Grey_lines_appear_in_Firefox_location_bar_and_terminal_windows_with_Intel_i845_graphics_adapters"><span class="tocnumber">6.6</span> <span class="toctext">Grey lines appear in Firefox location bar and terminal windows with Intel i845 graphics adapters</span></a></li>
+<li class="toclevel-2"><a href="#Enabling_desktop_effects_causes_system_hang_with_Intel_i845_graphics_adapters"><span class="tocnumber">6.7</span> <span class="toctext">Enabling desktop effects causes system hang with Intel i845 graphics adapters</span></a></li>
+<li class="toclevel-2"><a href="#Garbage_displayed_in_several_applications_on_systems_with_Intel_i845_.2F_i855_graphics_adapters"><span class="tocnumber">6.8</span> <span class="toctext">Garbage displayed in several applications on systems with Intel i845 / i855 graphics adapters</span></a></li>
+<li class="toclevel-2"><a href="#Corrupted_display_in_Google_Earth_on_Intel_i855_graphics_adapters"><span class="tocnumber">6.9</span> <span class="toctext">Corrupted display in Google Earth on Intel i855 graphics adapters</span></a></li>
+<li class="toclevel-2"><a href="#Screen_stays_black_when_returning_from_idle_mode_on_Thinkpad_X41T"><span class="tocnumber">6.10</span> <span class="toctext">Screen stays black when returning from idle mode on Thinkpad X41T</span></a></li>
+<li class="toclevel-2"><a href="#Graphical_installation_.2F_desktop_fails_to_start_on_Asus_Eee_Top"><span class="tocnumber">6.11</span> <span class="toctext">Graphical installation / desktop fails to start on Asus Eee Top</span></a></li>
+<li class="toclevel-2"><a href="#Graphical_installation_.2F_desktop_fails_to_start_on_Mac_systems_with_Intel_945_graphics_adapter_8086:27A2"><span class="tocnumber">6.12</span> <span class="toctext">Graphical installation / desktop fails to start on Mac systems with Intel 945 graphics adapter 8086:27A2</span></a></li>
+<li class="toclevel-2"><a href="#Graphical_installation_.2F_desktop_fails_to_start_on_Toshiba_Port.C3.A9ge_M100"><span class="tocnumber">6.13</span> <span class="toctext">Graphical installation / desktop fails to start on Toshiba Portége M100</span></a></li>
+<li class="toclevel-2"><a href="#Graphical_installation_fails_to_start_on_ATI_.2F_AMD_graphics_adapters_.28especially_onboard_graphics.29"><span class="tocnumber">6.14</span> <span class="toctext">Graphical installation fails to start on ATI / AMD graphics adapters (especially onboard graphics)</span></a></li>
+<li class="toclevel-2"><a href="#Slow_3D_performance_on_ATI_.2F_AMD_graphics_adapters"><span class="tocnumber">6.15</span> <span class="toctext">Slow 3D performance on ATI / AMD graphics adapters</span></a></li>
+<li class="toclevel-2"><a href="#Garbage_displayed_in_some_3D_games_and_applications_on_ATI_.2F_AMD_graphics_adapters"><span class="tocnumber">6.16</span> <span class="toctext">Garbage displayed in some 3D games and applications on ATI / AMD graphics adapters</span></a></li>
+<li class="toclevel-2"><a href="#Installer_crashes_when_Xorg_is_launched_due_to_ACPI"><span class="tocnumber">6.17</span> <span class="toctext">Installer crashes when Xorg is launched due to ACPI</span></a></li>
+<li class="toclevel-2"><a href="#PulseAudio-based_volume_control_cannot_adjust_volume_satisfactorily"><span class="tocnumber">6.18</span> <span class="toctext">PulseAudio-based volume control cannot adjust volume satisfactorily</span></a></li>
+<li class="toclevel-2"><a href="#Sound_Blaster_Live.21_cards_.28and_other_emu10k1-based_cards.29_default_to_digital_.28S.2FPDIF.29_output"><span class="tocnumber">6.19</span> <span class="toctext">Sound Blaster Live! cards (and other emu10k1-based cards) default to digital (S/PDIF) output</span></a></li>
+<li class="toclevel-2"><a href="#Xorg_fails_to_start_when_using_the_nvidia_kernel_module"><span class="tocnumber">6.20</span> <span class="toctext">Xorg fails to start when using the nvidia kernel module</span></a></li>
+<li class="toclevel-2"><a href="#Synaptics_touchpad_edge_scrolling_fails_to_work_on_Acer_Aspire_One"><span class="tocnumber">6.21</span> <span class="toctext">Synaptics touchpad edge scrolling fails to work on Acer Aspire One</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Software_issues"><span class="tocnumber">7</span> <span class="toctext">Software issues</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Network_doesn.27t_connect"><span class="tocnumber">7.1</span> <span class="toctext">Network doesn't connect</span></a></li>
+<li class="toclevel-2"><a href="#Resume_from_suspend_fails.2C_kernel_oops_notification_appears_on_reboot"><span class="tocnumber">7.2</span> <span class="toctext">Resume from suspend fails, kernel oops notification appears on reboot</span></a></li>
+<li class="toclevel-2"><a href="#System_pauses_during_boot_for_over_a_minute_at_.27Starting_udev.27"><span class="tocnumber">7.3</span> <span class="toctext">System pauses during boot for over a minute at 'Starting udev'</span></a></li>
+<li class="toclevel-2"><a href="#ALSA_sequencer_unavailable_by_default"><span class="tocnumber">7.4</span> <span class="toctext">ALSA sequencer unavailable by default</span></a></li>
+<li class="toclevel-2"><a href="#Non-Fedora_Mozilla.2FFirefox_binaries_may_crash"><span class="tocnumber">7.5</span> <span class="toctext">Non-Fedora Mozilla/Firefox binaries may crash</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#References"><span class="tocnumber">8</span> <span class="toctext">References</span></a></li>
+</ul>
+</td></tr></tbody></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Release_Notes" id="Release_Notes"></a><h2> <span class="mw-headline"> Release Notes </span></h2>
+<p>Read the <a href="http://docs.fedoraproject.org/release-notes/f11/" class="external text" title="http://docs.fedoraproject.org/release-notes/f11/">Fedora 11 release notes</a> for specific information about changes in Fedora 11, known issues, and other general information.
+</p>
+<a name="My_bug_is_not_listed" id="My_bug_is_not_listed"></a><h2> <span class="mw-headline"> My bug is not listed </span></h2>
+<p>Not every bug is listed in this page, but <a href="http://bugzilla.redhat.com/" class="external text" title="http://bugzilla.redhat.com">Bugzilla</a>
+ should be a comprehensive database of known bugs.  This page is a 
+sampling of the bugs most commonly discussed on our mailing lists and 
+forums.
+</p><p>To see if your bug has already been reported, you can <a href="http://bugzilla.redhat.com/" class="external text" title="http://bugzilla.redhat.com">search Bugzilla</a>.  If it has not yet been reported, we encourage you to do so to help improve Fedora for yourself and others.  A guide to <a href="http://fedoraproject.org/wiki/Bugs_and_feature_requests" title="Bugs and feature requests">Bugs and feature requests</a> has been prepared to assist you.
+</p><p>If you believe an already-reported bug report should be added to <i>this</i> page because it is commonly encountered, you can:
+</p>
+<ul><li> Add it yourself, if you have wiki access. Remember to try and 
+follow the style and guidelines explained in the comments in the page 
+source.
+</li><li> Add the CommonBugs keyword to the bug report, and contact the 
+Fedora QA team with the Bugzilla report number explaining why you 
+believe that particular report qualifies as a common issue. You can 
+contact Fedora QA through any of the methods listed <a href="http://fedoraproject.org/wiki/QA#Communicate" title="QA">here</a>.
+</li></ul>
+<p><br>
+</p>
+<a name="Resolved_issues" id="Resolved_issues"></a><h2> <span class="mw-headline"> Resolved issues </span></h2>
+<p><span id="libfprint-nonzero"></span>
+</p>
+<a name="Some_fingerprint_readers_do_not_work_with_non-zero_bytes_in_cmd_response_error" id="Some_fingerprint_readers_do_not_work_with_non-zero_bytes_in_cmd_response_error"></a><h3> <span class="mw-headline"> Some fingerprint readers do not work with <i>non-zero bytes in cmd response</i> error </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#libfprint-nonzero" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=500460" class="extiw" title="rhbug:500460">Bugzilla: #500460</a></small>
+</p><p>Some fingerprint reader models (including at least the ones in 
+some Thinkpad T43 laptop models) failed to work at all in Fedora 11. If 
+you ran an application which attempts to use the fingerprint reader from
+ a console, the following error messages were observed:
+</p>
+<pre>upekts:warning [__handle_incoming_msg] non-zero bytes in cmd response: fb ff
+</pre>
+<p>An updated <a href="http://admin.fedoraproject.org/updates/libfprint-0.1.0-7.pre2.fc11.1" class="external text" title="http://admin.fedoraproject.org/updates/libfprint-0.1.0-7.pre2.fc11.1">libfprint</a>
+ package has been released to address this issue. Update your system as 
+usual to receive this update, if you do not yet already have it.
+</p><p><span id="491754"></span>
+</p>
+<a name="Installation_fails_with_DeviceError:_cannot_commit_to_disk_sda_after_5_attempts" id="Installation_fails_with_DeviceError:_cannot_commit_to_disk_sda_after_5_attempts"></a><h3> <span class="mw-headline"> Installation fails with <i>DeviceError: cannot commit to disk sda after 5 attempts</i> </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#491754" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=491754" class="extiw" title="rhbug:491754">Bugzilla: #491754</a></small>
+</p><p>Several users reported a failure during installation of Fedora 
+11. While partitioning your disk(s), the anaconda installer might fail 
+and present an error message indicating <i>DeviceError: cannot commit to disk sda after 5 attempts</i>.
+ Subsequent attempts to install the system using the same steps appear 
+to be successful in some, but not all, cases. In other cases, changing 
+the chosen partition layout seemed to avoid the problem. 
+</p><p>An <a href="http://dcantrel.fedorapeople.org/491754.img" class="external text" title="http://dcantrel.fedorapeople.org/491754.img">updates.img</a>
+ file is available to work around the defect. This image is provided 
+through the Fedora project space of David Cantrell, one of the Anaconda 
+maintainers. For additional information on using an <code>updates.img</code> with the installer, see <a href="http://fedoraproject.org/wiki/Anaconda/Updates" title="Anaconda/Updates">Anaconda/Updates</a>.
+</p><p><span id="updates-pending-star"></span>
+</p>
+<a name="Update_notification_doesn.27t_disappear" id="Update_notification_doesn.27t_disappear"></a><h3> <span class="mw-headline"> Update notification doesn't disappear </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#updates-pending-star" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=492005" class="extiw" title="rhbug:492005">Bugzilla: #492005</a></small>
+</p><p>After updating using PackageKit, the updates notice may reappear even when there are no package updates left to receive.
+</p><p>An updated <a href="https://admin.fedoraproject.org/updates/F11/FEDORA-2009-5748" class="external text" title="https://admin.fedoraproject.org/updates/F11/FEDORA-2009-5748">gnome-packagekit</a>
+ package has been released to address this issue. Update your system as 
+usual to receive this update, if you do not yet already have it.
+</p><p><span id="498155"></span>
+</p>
+<a name="Booting_Fedora_11_live_media_created_with_livecd-iso-to-disk_from_a_Fedora_9_system_fails_to_boot" id="Booting_Fedora_11_live_media_created_with_livecd-iso-to-disk_from_a_Fedora_9_system_fails_to_boot"></a><h3> <span class="mw-headline"> Booting Fedora 11 live media created with livecd-iso-to-disk from a Fedora 9 system fails to boot </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#498155" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=498155" class="extiw" title="rhbug:498155">Bugzilla: #498155</a></small>
+</p><p>Fedora 11 live media created from a Fedora 9 system using livecd-iso-to-disk may fail during boot with a message, <i>Unable to find root filesystem</i> or a grey screen.
+</p><p>An updated <a href="http://admin.fedoraproject.org/updates/livecd-tools-017.3-1.fc9" class="external text" title="http://admin.fedoraproject.org/updates/livecd-tools-017.3-1.fc9">livecd-tools</a>
+ package has been released to address this issue. Update your system as 
+usual to receive this update, if you do not yet already have it.
+</p><p><span id="501412"></span>
+</p>
+<a name="QEMU.2FKVM_DVD_installs_under_a_Fedora_11_host_hang_when_attempting_to_eject_DVD" id="QEMU.2FKVM_DVD_installs_under_a_Fedora_11_host_hang_when_attempting_to_eject_DVD"></a><h3> <span class="mw-headline"> QEMU/KVM DVD installs under a Fedora 11 host hang when attempting to eject DVD </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#501412" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=501412" class="extiw" title="rhbug:501412">Bugzilla: #501412</a></small>
+</p><p>KVM users may experience that Fedora 11 DVD installs hang prior 
+to ejecting the virtual optical DVD media.  This issue is the result of 
+interactions in QEMU's IDE CDROM emulation for
+eject and tray locking.  Users may work around this issue by restarting 
+the hung guest.
+</p><p>An updated <a href="http://admin.fedoraproject.org/updates/qemu-0.10.5-2.fc11" class="external text" title="http://admin.fedoraproject.org/updates/qemu-0.10.5-2.fc11">qemu</a>
+ package has been released to address this issue. Update your system as 
+usual to receive this update, if you do not yet already have it.
+</p><p><span id="emu10k1-digital-fail"></span>
+</p>
+<a name="Sound_Blaster_Live.21_cards_.28and_other_emu10k1-based_cards.29_do_not_work" id="Sound_Blaster_Live.21_cards_.28and_other_emu10k1-based_cards.29_do_not_work"></a><h3> <span class="mw-headline"> Sound Blaster Live! cards (and other emu10k1-based cards) do not work </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#emu10k1-digital-fail" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=502698" class="extiw" title="rhbug:502698">Bugzilla: #502698</a></small>
+</p><p>Multiple users reported that emu10k1-based sound cards does not 
+work in Fedora 11. This includes many Sound Blaster Live! sound cards, 
+and several others. When trying to play a sound file, no sound was 
+heard, and the system recorded several failure messages from the kernel,
+ similar to this:
+</p>
+<pre>ALSA sound/core/pcm_lib.c:166: BUG: stream = 0, pos = 0x2000, buffer size = 0x2000, period size = 0x2000
+</pre>
+<p>This issue was fixed with the upgrade to the 2.6.30 kernel series. 
+Any 2.6.30-versioned Fedora 11 kernel should be free from this issue. 
+Update your system as usual to receive this update, if you do not yet 
+already have it.
+</p><p><span id="random-display-blank"></span>
+</p>
+<a name="Display_goes_blank_briefly.2C_apparently_at_random" id="Display_goes_blank_briefly.2C_apparently_at_random"></a><h3> <span class="mw-headline"> Display goes blank briefly, apparently at random </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#random-display-blank" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=501601" class="extiw" title="rhbug:501601">Bugzilla: #501601</a></small>
+</p><p>Several users have reported that their display will sometimes 
+suddenly go blank for a brief period - a second or two - before coming 
+back. This is caused by problems in how X handles idle time counting.
+</p><p>Most users report that this issue is fixed with updated <a href="http://admin.fedoraproject.org/updates/xorg-x11-server-1.6.3-4.fc11" class="external text" title="http://admin.fedoraproject.org/updates/xorg-x11-server-1.6.3-4.fc11">xorg-x11-server</a> and <a href="http://admin.fedoraproject.org/updates/gnome-power-manager-2.26.4-3.fc11" class="external text" title="http://admin.fedoraproject.org/updates/gnome-power-manager-2.26.4-3.fc11">gnome-power-manager</a> packages. Update your system as usual to receive these updates, if you do not yet already have them.
+</p>
+<a name="Issues_when_upgrading_from_previous_releases" id="Issues_when_upgrading_from_previous_releases"></a><h2> <span class="mw-headline"> Issues when upgrading from previous releases </span></h2>
+<p>As usual, the supported methods for upgrading from previous Fedora 
+releases are to do an 'upgrade install' from the regular installation 
+media, or to use preupgrade (see <a href="http://fedoraproject.org/wiki/How_to_use_PreUpgrade" title="How to use PreUpgrade">How_to_use_PreUpgrade</a>). Upgrading by using yum directly is not supported, but may in practice work. For known issues when upgrading via yum, see <a href="http://fedoraproject.org/wiki/Upgrading_Fedora_using_yum#10-11" title="Upgrading Fedora using yum">the page on this upgrade method</a>.
+</p><p><span id="501057"></span>
+</p>
+<a name="Upgrade_fails_while_editing_existing_bootloader_entry" id="Upgrade_fails_while_editing_existing_bootloader_entry"></a><h3> <span class="mw-headline"> Upgrade fails while editing existing bootloader entry </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#501057" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=501057" class="extiw" title="rhbug:501057">Bugzilla: #501057</a></small>
+</p>
+While upgrading your system using anaconda, the Fedora installer, you 
+are given the option to update your bootloader configuration, create a 
+new bootloader configuration or skip any bootloader configuration 
+changes.  When choosing to create a new bootloader configuration, the 
+installer may fail while attempting to edit the default bootloader 
+target created by the installer.  To work around this issue, edit the 
+default bootloader configuration after the upgrade completes and your 
+system reboots.  If changes are needed prior to a system reboot, you may
+ manually edit the configuration by pressing <code>&lt;ctrl&gt;&lt;alt&gt;F2</code> and edit the bootloader configuration file by typing: <pre> vi /mnt/sysimage/etc/grub.conf</pre>
+<a name="Can.27t_find_.i686_kernel" id="Can.27t_find_.i686_kernel"></a><h3> <span class="mw-headline">Can't find .i686 kernel</span></h3>
+<p>The kernel.i686 RPM is no longer produced.  All .i386 and .i486 
+packages have been rebuilt as .i586 (Pentium class). These designations 
+represent the <i>minimum</i> supported architecture version; Fedora 11 is <i>optimized</i>
+ for Pentium 4-compatible and later processors.  Fedora has never 
+officially supported pre-Pentium architectures, and dropping any 
+remaining backwards compatibility with these chips further improves 
+performance and allows for code simplification.
+</p><p>The following kernels are available instead:
+</p>
+<ul><li> kernel.i586, for those requiring compatibility with a 
+Pentium-class architecture or who do not have a PAE and NX capable 
+processor.
+</li><li> kernel-PAE.i686, which requires a PAE and NX capable processor with Pentium PRO-class or later architecture.
+</li></ul>
+<p>After analyzing the differences between the i585 and i686 
+architectures, dropping the non-PAE i686 kernel is not expected to have a
+ negative performance impact for those required to use the kernel.i586 
+package. The kernel-PAE.i686 RPM has additional capabilities, such as 
+support for ExecShield security and the ability to address up to 64GB of
+ RAM (the standard kernel can address only 4GB).  Note that the 
+architecture designations in RPM names represent the <i>minimum</i> supported architecture version; Fedora 11 is <i>optimized</i> for Pentium 4-compatible and later processors.
+</p><p>Anaconda (the recommended install method) will automatically choose the best kernel for your hardware.
+</p><p>If you are using the "yum upgrade" method (not recommended), you 
+may receive the kernel.i586 package even if your processor would support
+ the kernel-PAE.i686 package. To determine this, run the command:
+</p>
+<pre>grep 'flags.* pae' /proc/cpuinfo | grep -wq nx &amp;&amp; echo 'kernel-PAE'
+</pre>
+<p>If you see "kernel-PAE" in the output, then your CPU is capable of 
+using this package, and you can manually "yum install kernel-PAE".
+</p><p><span id="501063"></span>
+</p>
+<a name="The_installer_does_not_honor_skip_bootloader_choice" id="The_installer_does_not_honor_skip_bootloader_choice"></a><h3> <span class="mw-headline"> The installer does not honor <i>skip bootloader</i> choice </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#501063" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=501063" class="extiw" title="rhbug:501063">Bugzilla: #501063</a></small>
+</p>
+While upgrading your system using anaconda, the Fedora installer, you 
+are given the option to update your bootloader configuration, create a 
+new bootloader configuration or skip any bootloader configuration 
+changes.  When choosing to '<i>skip</i> any bootloader configuration 
+changes, the installer will ignore this select and update any existing 
+bootloader configuration.  To work around this issue, save the existing 
+bootloader configuration prior to upgrade, and restore that 
+configuration after the upgrade completes and your system reboots.  If 
+changes are needed prior to a system reboot, you may manually edit the 
+configuration by pressing <code>&lt;ctrl&gt;&lt;alt&gt;F2</code> and edit the bootloader configuration file by typing: <pre> vi /mnt/sysimage/etc/grub.conf</pre>
+<p><span id="506685"></span>
+</p>
+<a name="Yum_doesn.27t_work_after_upgrading_from_F10" id="Yum_doesn.27t_work_after_upgrading_from_F10"></a><h3> <span class="mw-headline"> Yum doesn't work after upgrading from F10 </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#506685" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=506685" class="extiw" title="rhbug:506685">Bugzilla: #506685</a></small>
+</p><p>When upgrading from an updated F10 install, yum ends up not working - outputting an error about no yum module found.
+</p><p>The version of yum in f10-updates was newer than the one in 
+F11-GA  - it caused yum to not be updated during the anaconda upgrade 
+process. There is a simple one-time work around as root:
+</p>
+<pre>export PYTHONPATH=/usr/lib/python2.5/site-packages
+
+yum clean all
+
+yum update yum
+
+</pre>
+<p>That should update you to the current yum from F11-updates and you'll be all set.
+</p>
+<a name="Installation_issues" id="Installation_issues"></a><h2> <span class="mw-headline"> Installation issues </span></h2>
+<p><span id="Hash-update"></span>
+<span id="504228"></span>
+</p>
+<a name="Documentation_for_ISO_images_is_faulty" id="Documentation_for_ISO_images_is_faulty"></a><h3> <span class="mw-headline"> Documentation for ISO images is faulty </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#Hash-update" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=504228" class="extiw" title="rhbug:504228">Bugzilla: #504228</a></small>
+</p><p>The <code>README-BURNING-ISOS</code> file distributed on mirrors 
+along with the CD and DVD images contains an incorrect filename for the 
+checksum file, which is now <code>Fedora-11-&lt;arch&gt;-CHECKSUM</code>.
+  Additionally, it refers to SHA-1 checksums instead of SHA-256 
+checksums.  To check the contents of a downloaded ISO image using an 
+existing Linux operating system, use the <code>sha256sum</code> command instead of <code>sha1sum</code>.
+  As stated correctly in the document, the BitTorrent download method 
+automatically performs checksums during download, so no additional 
+procedure is required in that case.
+</p><p>The Documentation team <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=504228" class="extiw" title="rhbug:504228"> is aware of this bug</a>.  Although the file cannot be easily changed after mirror distribution, this issue will be fixed for the next release.
+</p><p><span id="498553"></span>
+</p>
+<a name="Live_image_installations_fail_with_FSError:_filesystem_has_not_been_created" id="Live_image_installations_fail_with_FSError:_filesystem_has_not_been_created"></a><h3> <span class="mw-headline"> Live image installations fail with <i>FSError: filesystem has not been created</i> </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#498553" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=498553" class="extiw" title="rhbug:498553">Bugzilla: #498553</a></small>
+</p><p>Several users have reported a failure occurring during 
+installation from a Fedora 11 live media environment.  During the disk 
+partitioning phase of the installer, a window focus interaction issue 
+between the <i>metacity</i>, the GNOME window manager, and the Fedora installer may allow the user to click the <code>Next</code> button of the installer before partitioning has completed.  Doing so will result in a failure message, <i>FSError: filesystem has not been created</i>.
+  To workaround this issue, it is recommended that users verify that no 
+installer partitioning progress dialogs are present before clicking the <i>Next</i>
+ button until all partitioning operations have completed.  Due to the 
+windowing environment that the live image installer runs from, it is 
+possible that a partitioning progress dialog does not have focus and is 
+behind the main installer window.  Before proceeding to the <i>Next</i> phase of the installation, verify that no installer partitioning progress dialogs are present.
+</p><p><span id="494000"></span>
+</p>
+<a name="Booting_Fedora_11_live_media_created_with_liveusb-creator_from_a_Fedora_9_or_Fedora_10_system_fails_to_boot" id="Booting_Fedora_11_live_media_created_with_liveusb-creator_from_a_Fedora_9_or_Fedora_10_system_fails_to_boot"></a><h3> <span class="mw-headline"> Booting Fedora 11 live media created with liveusb-creator from a Fedora 9 or Fedora 10 system fails to boot </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#494000" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=494000" class="extiw" title="rhbug:494000">Bugzilla: #494000</a></small>
+</p><p>Fedora 11 live media created from a Fedora 9 system using liveusb-creator may fail during boot with a message, <i>Unable to find root filesystem</i>
+ or a grey screen. The recommended workaround for this issue is to use 
+livecd-iso-to-disk - the command line tool - instead, with reference to <a href="http://fedoraproject.org/wiki/Common_F11_bugs#498155" title="Common F11 bugs">issue 498155 above</a> for Fedora 9 users, and to the <a href="http://fedoraproject.org/wiki/How_to_create_and_use_Live_USB#Command_Line_Method_-_Linux_only" title="How to create and use Live USB">instructions for using this tool</a>. Fedora 10 may be able to work around the issue by installing the Fedora 11 version of the <i>syslinux</i> package, but that may have unpredictable results for other operations and is hence not recommended.
+</p><p><span id="499544"></span>
+</p>
+<a name="Installation_fails_with_PartitionException:_Can.27t_have_overlapping_partitions" id="Installation_fails_with_PartitionException:_Can.27t_have_overlapping_partitions"></a><h3> <span class="mw-headline"> Installation fails with <i>PartitionException: Can't have overlapping partitions</i> </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#499544" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=499544" class="extiw" title="rhbug:499544">Bugzilla: #499544</a></small>
+</p><p>Several users have reported installation failures while 
+attempting to re-use or resize existing disk partitions during an 
+install.  The most common reproducer occurs while resizing existing 
+partitions under the <i>Create custom layout</i> partitioning option.  
+If you encounter this failure and the use of existing partitions is 
+required, it is recommended that you resize your partitions prior to 
+performing the installation.  This page will be updated when more 
+information is available.
+</p><p><span id="502310"></span>
+</p>
+<a name="Installation_fails_while_editing_previously_encrypted_partition_-_IndexError:_list_index_out_of_range" id="Installation_fails_while_editing_previously_encrypted_partition_-_IndexError:_list_index_out_of_range"></a><h3> <span class="mw-headline"> Installation fails while editing previously encrypted partition - <i>IndexError: list index out of range</i> </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#502310" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=502310" class="extiw" title="rhbug:502310">Bugzilla: #502310</a></small>
+</p><p>Several users have reported installation failures while 
+attempting to edit previously encrypted disk partitions during an 
+install.  When the installer discovers encrypted volumes, it will prompt
+ the user for a passphrase needed to unlock the encrypted partitions.  
+If the user does not enter a passphrase, and later attempts to edit a 
+previously encrypted partition under the <i>Create custom layout</i> partitioning option, the installer will fail with a message, <i>IndexError: list index out of range</i>.
+  To work around this issue, users are advised to enter a passphrase 
+when prompted for any previously encrypted disk partitions.  If the 
+passphrase is not known, you are advised to let the installer partition 
+your disks using the <i>Use entire drive</i> option, or edit any previously encrypted disk partitions by hand prior to installation.
+</p><p><span id="503310"></span>
+</p>
+<a name="Kickstart_installations_cannot_reuse_existing_RAID_arrays" id="Kickstart_installations_cannot_reuse_existing_RAID_arrays"></a><h3> <span class="mw-headline"> Kickstart installations cannot reuse existing RAID arrays </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#503310" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=503310" class="extiw" title="rhbug:503310">Bugzilla: #503310</a></small>
+</p><p>Kickstart installations which attempt to reuse existing RAID 
+arrays (raid --useexisting) will fail with an error that the array name 
+is not recognized.  Anaconda does recognize (and can use) the RAID 
+autostart partitions, but cannot reuse their assembly in any existing 
+arrays.  Semi-automatic kickstart installations with manual layout also 
+exhibit the issue.
+</p><p>An installer patch <code>updates.img</code> image is (presently) available which should fix this problem. You can find it <a href="http://rvykydal.fedorapeople.org/updates.clearpart.img" class="external text" title="http://rvykydal.fedorapeople.org/updates.clearpart.img">here</a>. That is the personal space of one of the Anaconda developers. For additional information on using an <code>updates.img</code> with the installer, see <a href="http://fedoraproject.org/wiki/Anaconda/Updates" title="Anaconda/Updates">Anaconda/Updates</a>.
+</p><p>If you cannot use the installer patch, to work around the issue, 
+you must either rebuild the array, losing all existing data in the 
+array, or perform the installation without kickstart.  Fully manual 
+installations do not exhibit the issue.  The inability to reuse existing
+ arrays is limited to kickstart installations only.
+</p><p><span id="503681"></span>
+</p>
+<a name="Kickstart_installations_cannot_reuse_existing_LVM_volume_groups" id="Kickstart_installations_cannot_reuse_existing_LVM_volume_groups"></a><h3> <span class="mw-headline"> Kickstart installations cannot reuse existing LVM volume groups </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#503681" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=503681" class="extiw" title="rhbug:503681">Bugzilla: #503681</a></small>
+</p><p>Kickstart installations which attempt to reuse existing LVM 
+volume groups (volgroup --useexisting) will fail with an error that the 
+volume group name is not recognized.  Anaconda does recognize (and can 
+use) LVM physical volume partitions, but cannot reuse their membership 
+in any existing volume groups.  Semi-automatic kickstart installations 
+with manual layout also exhibit the issue.
+</p><p>An installer patch <code>updates.img</code> image is (presently) available which should fix this problem. You can find it <a href="http://rvykydal.fedorapeople.org/updates.clearpart.img" class="external text" title="http://rvykydal.fedorapeople.org/updates.clearpart.img">here</a>. That is the personal space of one of the Anaconda developers. For additional information on using an <code>updates.img</code> with the installer, see <a href="http://fedoraproject.org/wiki/Anaconda/Updates" title="Anaconda/Updates">Anaconda/Updates</a>.
+</p><p>If you cannot use the installer patch, to work around the issue, 
+you must either recreate the group, losing all its existing logical 
+volumes and the data they contain, or perform the installation without 
+kickstart.  Fully manual installations do not exhibit the issue.  The 
+inability to reuse existing volume groups is limited to kickstart 
+installations only.
+</p><p><span id="504687"></span>
+</p>
+<a name="Kickstart_installations_fail_when_using_partition_options_--ondisk_or_--biosdisk" id="Kickstart_installations_fail_when_using_partition_options_--ondisk_or_--biosdisk"></a><h3> <span class="mw-headline"> Kickstart installations fail when using partition options --ondisk or --biosdisk </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#504687" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=504687" class="extiw" title="rhbug:504687">Bugzilla: #504687</a></small>
+</p><p>Kickstart installations which use either the <code>--ondisk</code> or <code>--biosdisk</code> options to the <code>part</code>
+ kickstart command will not work.  A workaround for Fedora 11 is to 
+avoid using either kickstart options.  If use of the options <code>--ondisk</code> or <code>--biosdisk</code> is required, an <a href="http://clumens.fedorapeople.org/504687.img" class="external text" title="http://clumens.fedorapeople.org/504687.img">updates.img</a> is available to work around the defect.  For additional information on using an updates.img with the installer, see <a href="http://fedoraproject.org/wiki/Anaconda/Updates" title="Anaconda/Updates">Anaconda/Updates</a>.
+</p><p><span id="ppc970-no-hd"></span>
+</p>
+<a name="Installer_sees_no_hard_drives_on_ppc970_systems" id="Installer_sees_no_hard_drives_on_ppc970_systems"></a><h3> <span class="mw-headline"> Installer sees no hard drives on ppc970 systems </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#ppc970-no-hd" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=504040" class="extiw" title="rhbug:504040">Bugzilla: #504040</a></small>
+</p><p>There is a problem with yaboot on ppc970-based systems which 
+causes the installer to be unable to find the system's hard drives. This
+ prevents installation or upgrade from working.
+</p><p>There is a fix for yaboot, but the fixed package is not present on the Fedora 11 media. However, an <a href="http://jwboyer.fedorapeople.org/boot.iso" class="external text" title="http://jwboyer.fedorapeople.org/boot.iso">updated installer image</a>
+ with this bug fixed is available. The image was built by Fedora 
+contributor and Red Hat employee Josh Boyer and is hosted on his space 
+on the Fedora People server. You can use the image as you would any 
+other <code>boot.iso</code> image, to install from a network source or from a Fedora 11 image or disc. See the <a href="http://docs.fedoraproject.org/install-guide/f11/" class="external text" title="http://docs.fedoraproject.org/install-guide/f11/">installation guide</a> for more details. 
+</p><p><span id="496760"></span>
+</p>
+<a name="Installation_fails_with_LVMError:_lvcreate_failed_for_vg_gx2701.2Flv_root" id="Installation_fails_with_LVMError:_lvcreate_failed_for_vg_gx2701.2Flv_root"></a><h3> <span class="mw-headline"> Installation fails with <i>LVMError: lvcreate failed for vg_gx2701/lv_root </i> </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#496760" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=496760" class="extiw" title="rhbug:496760">Bugzilla: #496760</a></small>
+</p><p>There is a problem while creating logical volumes during 
+installation.  The steps to reproduce this failure were originally 
+verified prior to release of Fedora 11.  Since the release, it appears 
+there may be new failure vectors for this same issue.  If you are 
+experiencing this failure, you will need to reboot your system and retry
+ the installation.  Root cause for this issue is being investigated.
+</p><p><span id="usb-traceback-anaconda"></span>
+</p>
+<a name="Writing_installation_failure_tracebacks_to_a_USB_key_does_not_work" id="Writing_installation_failure_tracebacks_to_a_USB_key_does_not_work"></a><h3> <span class="mw-headline"> Writing installation failure tracebacks to a USB key does not work </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#usb-traceback-anaconda" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=491700" class="extiw" title="rhbug:491700">Bugzilla: #491700</a></small>
+</p><p>In some circumstances, when installation fails and the installer 
+(Anaconda) offers to write the traceback to a USB key for debugging 
+purposes, this does not work properly. Even after inserting a key, it 
+may not be shown in the list Anaconda presents. If you experience this 
+problem, try removing and re-inserting the USB key; this may circumvent 
+the problem.
+</p><p>This bug was fixed after the release of Fedora 11. As it is an installer bug, an update to fix it cannot be provided.
+</p><p><span id="dmraid-nodmraid"></span>
+</p>
+<a name="Installer_ignores_incomplete_BIOS_RAID_array_disks.2C_nodmraid_kernel_parameter_not_honored" id="Installer_ignores_incomplete_BIOS_RAID_array_disks.2C_nodmraid_kernel_parameter_not_honored"></a><h3> <span class="mw-headline"> Installer ignores incomplete BIOS RAID array disks, nodmraid kernel parameter not honored </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#dmraid-nodmraid" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=499733" class="extiw" title="rhbug:499733">Bugzilla: #499733</a></small>
+</p><p>In Fedora 11, a deliberate change was made to the installer 
+(Anaconda) in the case where a BIOS RAID array is present but the 
+metadata for the array is incomplete. In past releases, the individual 
+disks from the array would be available in the installer. In Fedora 11, 
+they are ignored. This change is intentional. However, a kernel 
+parameter - <i>nodmraid</i> - which should override this behaviour in 
+the case where you wish to install to the disks is supposed to be 
+available, but does not work. This is a bug.
+</p><p>Another way to address the problem - actually preferred to using <i>nodmraid</i> - is to remove the incomplete metadata by running the command <code>dmraid -rE</code>
+ on the array in question. Please backup your data before attempting to 
+do this. Please see the bug report for further discussion of this issue.
+</p>
+<a name="Hardware-related_issues" id="Hardware-related_issues"></a><h2> <span class="mw-headline"> Hardware-related issues </span></h2>
+<p><span id="BIOS-firmware-updates"></span>
+</p>
+<a name="General_note_about_updating_system_BIOS_and_device_firmware" id="General_note_about_updating_system_BIOS_and_device_firmware"></a><h3> <span class="mw-headline"> General note about updating system BIOS and device firmware </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#BIOS-firmware-updates" title="Common F11 bugs">link to this item</a></small>
+</p><p>Some bugs can be resolved by updating the system BIOS and the 
+firmware on some devices. Always make sure you have the latest versions 
+applied before reporting a bug. Examples of devices which may have 
+firmware updates available include CD/DVD drives and external storage 
+devices such as firewire drive enclosures.
+</p><p><span id="intel-misc-gfx"></span>
+</p>
+<a name="Miscellaneous_problems_with_Intel_graphics_adapters" id="Miscellaneous_problems_with_Intel_graphics_adapters"></a><h3> <span class="mw-headline"> Miscellaneous problems with Intel graphics adapters </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#intel-misc-gfx" title="Common F11 bugs">link to this item</a></small>
+</p><p>Many users are already aware from coverage in the press that 
+significant changes have recently been made to the driver for Intel 
+graphics adapters (and the supporting code in Mesa/DRI and the kernel), 
+and that these have caused some functionality regressions. If you are 
+suffering from problems with an Intel graphics adapter such as failure 
+of X to start at all, hangs or freezes or crashes in the graphical 
+environment, display corruption, failure of 3D accelerated applications 
+to work properly or similar problems, and your issue is not specifically
+ covered elsewhere on this page, the following general advice may be of 
+use.
+</p><p>Several such issues may be worked around by disabling kernel mode setting. To do this, add
+</p>
+<pre>nomodeset
+</pre>
+<p>as a kernel parameter. If this solves your problem, please check whether a bug has already been reported for it, and if not, <a href="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-intel&amp;version=11" class="external text" title="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-intel&amp;version=11">file a new bug report</a> on the <i>xorg-x11-drv-intel</i> component, explaining your symptoms, and providing <a href="http://fedoraproject.org/wiki/BugsAndFeatureRequests#Xorg" title="BugsAndFeatureRequests" class="mw-redirect">all the usual information required for X.org bug reports</a>.
+ In future kernel mode setting will be the only available method, and so
+ we wish to ensure all problems caused by kernel mode setting are fixed.
+</p><p>If this does not resolve your issue, one other potential 
+workaround is to change to a different acceleration method. To do this, 
+add a line:
+</p>
+<pre>Option "AccelMethod" "EXA"
+</pre>
+<p>or:
+</p>
+<pre>Option "AccelMethod" "XAA"
+</pre>
+<p>to the Device section of <code>/etc/X11/xorg.conf</code>. If that file does not exist, see <a href="http://fedoraproject.org/wiki/How_to_create_xorg.conf" title="How to create xorg.conf">How_to_create_xorg.conf</a>
+ for instructions on how to create it. Again, if doing this works around
+ the problem you are experiencing, please check whether a bug report on 
+the problem has already been filed, and if not, please <a href="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-intel&amp;version=11" class="external text" title="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-intel&amp;version=11">file a new bug report</a> on the <i>xorg-x11-drv-intel</i> component, explaining your symptoms, and providing <a href="http://fedoraproject.org/wiki/BugsAndFeatureRequests#Xorg" title="BugsAndFeatureRequests" class="mw-redirect">all the usual information required for X.org bug reports</a>.
+ These legacy acceleration methods will be removed in future, so any 
+bugs in the new acceleration method (UXA) need to be fixed.
+</p><p><span id="radeon-misc-gfx"></span>
+</p>
+<a name="Miscellaneous_problems_with_ATI_.2F_AMD_graphics_adapters" id="Miscellaneous_problems_with_ATI_.2F_AMD_graphics_adapters"></a><h3> <span class="mw-headline"> Miscellaneous problems with ATI / AMD graphics adapters </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#radeon-misc-gfx" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=498457" class="extiw" title="rhbug:498457">Bugzilla: #498457</a></small>
+</p><p>As with the Intel driver, the Radeon driver for ATI / AMD 
+graphics adapters is going through substantial changes, and it is worth 
+noting some configuration options that may help address various problems
+ with such adapters. If you are experiencing failure to start the 
+graphical desktop, hanging or freezing, corruption, or slow performance 
+with an ATI / AMD graphics adapter, you may try the following.
+</p><p>Some issues may be worked around by disabling kernel mode setting. To do this, add
+</p>
+<pre>nomodeset
+</pre>
+<p>as a kernel parameter. If this solves your problem, please check whether a bug has already been reported for it, and if not, <a href="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-ati&amp;version=11" class="external text" title="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-ati&amp;version=11">file a new bug report</a> on the <i>xorg-x11-drv-ati</i> component, explaining your symptoms, and providing <a href="http://fedoraproject.org/wiki/BugsAndFeatureRequests#Xorg" title="BugsAndFeatureRequests" class="mw-redirect">all the usual information required for X.org bug reports</a>.
+ In future kernel mode setting will be the only available method, and so
+ we wish to ensure all problems caused by kernel mode setting are fixed.
+</p><p>If this does not resolve your issue, one other potential 
+workaround is to change to a different acceleration method. To do this, 
+add a line:
+</p>
+<pre>Option "AccelMethod" "XAA"
+</pre>
+<p>to the Device section of <code>/etc/X11/xorg.conf</code>. If that file does not exist, see <a href="http://fedoraproject.org/wiki/How_to_create_xorg.conf" title="How to create xorg.conf">How_to_create_xorg.conf</a>
+ for instructions on how to create it. Again, if doing this works around
+ the problem you are experiencing, please check whether a bug report on 
+the problem has already been filed, and if not, please <a href="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-ati&amp;version=11" class="external text" title="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-ati&amp;version=11">file a new bug report</a> on the <i>xorg-x11-drv-ati</i> component, explaining your symptoms, and providing <a href="http://fedoraproject.org/wiki/BugsAndFeatureRequests#Xorg" title="BugsAndFeatureRequests" class="mw-redirect">all the usual information required for X.org bug reports</a>.
+ These legacy acceleration methods will be removed in future, so any 
+bugs in the new acceleration method (EXA) need to be fixed.
+</p><p>If this does not resolve your issue, there is another configuration option to try. Add a line:
+</p>
+<pre>Option "AccelDFS" "off"
+</pre>
+<p>to the Device section of <code>/etc/X11/xorg.conf</code>. If that file does not exist, see <a href="http://fedoraproject.org/wiki/How_to_create_xorg.conf" title="How to create xorg.conf">How_to_create_xorg.conf</a>
+ for instructions on how to create it. Again, if doing this works around
+ the problem you are experiencing, please check whether a bug report on 
+the problem has already been filed, and if not, please <a href="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-ati&amp;version=11" class="external text" title="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-ati&amp;version=11">file a new bug report</a> on the <i>xorg-x11-drv-ati</i> component, explaining your symptoms, and providing <a href="http://fedoraproject.org/wiki/BugsAndFeatureRequests#Xorg" title="BugsAndFeatureRequests" class="mw-redirect">all the usual information required for X.org bug reports</a>.
+</p><p>Finally, if this still does not resolve your issue, try adding this line:
+</p>
+<pre>Option "DRI" "off"
+</pre>
+<p>to the Device section of <code>/etc/X11/xorg.conf</code>. Again, if 
+doing this works around the problem you are experiencing, please check 
+whether a bug report on the problem has already been filed, and if not, 
+please <a href="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-ati&amp;version=11" class="external text" title="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-ati&amp;version=11">file a new bug report</a> on the <i>xorg-x11-drv-ati</i> component, explaining your symptoms, and providing <a href="http://fedoraproject.org/wiki/BugsAndFeatureRequests#Xorg" title="BugsAndFeatureRequests" class="mw-redirect">all the usual information required for X.org bug reports</a>.
+</p><p><span id="nouveau-suspend"></span>
+</p>
+<a name="Resume_from_suspend_fails_with_NVIDIA_graphics_adapters" id="Resume_from_suspend_fails_with_NVIDIA_graphics_adapters"></a><h3> <span class="mw-headline"> Resume from suspend fails with NVIDIA graphics adapters </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#nouveau-suspend" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=459323" class="extiw" title="rhbug:459323">Bugzilla: #459323</a></small>
+</p><p>Resuming from suspend fails to restore the graphical display when
+ using the nouveau video driver, which is now the default for all NVIDIA
+ video adapters in Fedora 11. Unfortunately, there is no workaround for 
+this problem, and it is not likely to be fixed within the Fedora 11 
+timeframe. If you have a system with an NVIDIA video adapter on which 
+you need suspend/resume functionality, you must use an alternative 
+driver. The old <i>nv</i> free driver will work for some cards, but for others, only the proprietary <i>nvidia</i> driver will work. To switch to the <i>nv</i> driver, you can use the <i>system-config-display</i> utility - on the <i>Hardware</i> tab, click the <i>Configure...</i> button next to <b>Video Card</b> and select the <i>nv</i> driver from the list.
+</p><p><span id="nouveau-agp"></span>
+</p>
+<a name="Graphical_desktop_failing_to_start_or_crashing_with_AGP_NVIDIA_graphics_cards" id="Graphical_desktop_failing_to_start_or_crashing_with_AGP_NVIDIA_graphics_cards"></a><h3> <span class="mw-headline"> Graphical desktop failing to start or crashing with AGP NVIDIA graphics cards </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#nouveau-agp" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=490358" class="extiw" title="rhbug:490358">Bugzilla: #490358</a>, <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=487456" class="extiw" title="rhbug:487456">Bugzilla: #487456</a>, <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=498579" class="extiw" title="rhbug:498579">Bugzilla: #498579</a>, <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=499730" class="extiw" title="rhbug:499730">Bugzilla: #499730</a></small>
+</p><p>Problems have been reported with several NVIDIA AGP graphics cards, with the new <i>nouveau</i>
+ graphics driver used in Fedora 11. AGP is a tricky case that the driver
+ does not yet handle well for several cards. If you experience failure 
+to start the graphical desktop (X server), or hanging or crashing of the
+ graphical desktop, and you have an NVIDIA-based AGP graphics card, you 
+may want to try the following workaround. Add the kernel parameter <code>nouveau.noagp=1</code>. For many reporters, this resolves the problem.
+</p><p>Some NVIDIA onboard graphics chipsets use AGP, as well as 
+expansion cards that fit in an AGP slot. To check whether your onboard 
+chipset is an AGP one, run this command:
+</p>
+<pre>grep -i agp /var/log/Xorg.0.log
+</pre>
+<p>if it returns anything, your chip is an AGP one. If not, it isn't.
+</p><p>If you experience a problem of this kind, and your graphics card 
+is not the same model as in any of the existing reports listed above, 
+please <a href="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-nouveau&amp;version=11" class="external text" title="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=xorg-x11-drv-nouveau&amp;version=11">file a new bug report</a> on the <i>xorg-x11-drv-nouveau</i> component, explaining your symptoms, and providing <a href="http://fedoraproject.org/wiki/BugsAndFeatureRequests#Xorg" title="BugsAndFeatureRequests" class="mw-redirect">all the usual information required for X.org bug reports</a>.
+</p><p><span id="845-corruption"></span>
+</p>
+<a name="Grey_lines_appear_in_Firefox_location_bar_and_terminal_windows_with_Intel_i845_graphics_adapters" id="Grey_lines_appear_in_Firefox_location_bar_and_terminal_windows_with_Intel_i845_graphics_adapters"></a><h3> <span class="mw-headline"> Grey lines appear in Firefox location bar and terminal windows with Intel i845 graphics adapters </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#845-corruption" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=502096" class="extiw" title="rhbug:502096">Bugzilla: #502096</a></small>
+</p><p>In a default configuration, on systems with Intel i845 graphics 
+adapters, you may notice graphical corruption of the Firefox location 
+bar, GNOME terminal windows, and possibly other applications. The 
+corruption manifests as one pixel tall, dotted light grey lines of 
+varying widths in random locations, appearing and disappearing. 
+Disabling kernel modesetting, using the <code>nomodeset</code> parameter, works around this issue.
+</p><p><span id="845-no-compiz"></span>
+</p>
+<a name="Enabling_desktop_effects_causes_system_hang_with_Intel_i845_graphics_adapters" id="Enabling_desktop_effects_causes_system_hang_with_Intel_i845_graphics_adapters"></a><h3> <span class="mw-headline"> Enabling desktop effects causes system hang with Intel i845 graphics adapters </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#845-no-compiz" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=490005" class="extiw" title="rhbug:490005">Bugzilla: #490005</a></small>
+</p><p>On systems with Intel i845 graphics chipsets, attempting to 
+enable accelerated desktop effects (Compiz) via the System / Preferences
+ / Desktop Effects menu entry causes the system to hang (in fact, X is 
+stuck, but if you have the appropriate network setup, you should be able
+ to ssh into the affected machine to shut it down in an orderly 
+fashion). There is no known workaround for this issue, therefore we 
+advise not trying to enable desktop effects on this graphics chipset for
+ now.
+</p><p><span id="8x5-app-garbage"></span>
+</p>
+<a name="Garbage_displayed_in_several_applications_on_systems_with_Intel_i845_.2F_i855_graphics_adapters" id="Garbage_displayed_in_several_applications_on_systems_with_Intel_i845_.2F_i855_graphics_adapters"></a><h3> <span class="mw-headline"> Garbage displayed in several applications on systems with Intel i845 / i855 graphics adapters </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#8x5-app-garbage" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=505962" class="extiw" title="rhbug:505962">Bugzilla: #505962</a></small>
+</p><p>Multiple users have reported garbage being displayed in various 
+applications - including but probably not limited to cheese, eog, 
+gthumb, xmgrace, mplayer, emacs, gthumb, blender and inkscape. It seems 
+to be applications that render images or video which are problematic. To
+ workaround this issue, edit <code>/etc/X11/xorg.conf</code> - see <a href="http://fedoraproject.org/wiki/How_to_create_xorg.conf" title="How to create xorg.conf">this page</a> for instructions on how to create it if it does not exist - and add this line to the Device section:
+</p>
+<pre>Option "Tiling"        "False"
+</pre>
+<p>Then restart the system (or just X).
+</p><p><span id="855-gl-corruption"></span>
+</p>
+<a name="Corrupted_display_in_Google_Earth_on_Intel_i855_graphics_adapters" id="Corrupted_display_in_Google_Earth_on_Intel_i855_graphics_adapters"></a><h3> <span class="mw-headline"> Corrupted display in Google Earth on Intel i855 graphics adapters </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#855-gl-corruption" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=XXXXXX" class="extiw" title="rhbug:XXXXXX">Bugzilla: #XXXXXX</a></small>
+</p><p>In a default configuration, on systems with Intel i855 graphics 
+adapters, Google Earth does not display properly, rendering only a 
+small, empty black rectangle (and hence obviously being useless). 
+Disabling kernel modesetting with the <code>nomodeset</code> kernel parameter may work around this issue.
+</p><p><span id="x41t-dpms-die"></span>
+</p>
+<a name="Screen_stays_black_when_returning_from_idle_mode_on_Thinkpad_X41T" id="Screen_stays_black_when_returning_from_idle_mode_on_Thinkpad_X41T"></a><h3> <span class="mw-headline"> Screen stays black when returning from idle mode on Thinkpad X41T </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#x41t-dpms-die" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=489907" class="extiw" title="rhbug:489907">Bugzilla: #489907</a></small>
+</p><p>On the Lenovo / IBM Thinkpad X41T model laptop, with default 
+settings, the screen will fail to turn back on once it has gone into 
+power-saving idle mode (either on a timeout, or on closing and 
+re-opening the lid). Disabling kernel modesetting via the <code>nomodeset</code>
+ kernel parameter works around this problem, but may cause other 
+problems to occur instead. Another workaround is to create a file with 
+the following contents:
+</p>
+<pre>#!/bin/bash
+xrandr --output LVDS1 --off
+xrandr --output LVDS1 --auto
+</pre>
+<p>Make it executable, and set a shortcut key combination to launch it. 
+Running the script via the shortcut should restore the display. Fedora 
+developers are currently working on a fix for this problem.
+</p><p><span id="eee-top-no-video"></span>
+</p>
+<a name="Graphical_installation_.2F_desktop_fails_to_start_on_Asus_Eee_Top" id="Graphical_installation_.2F_desktop_fails_to_start_on_Asus_Eee_Top"></a><h3> <span class="mw-headline"> Graphical installation / desktop fails to start on Asus Eee Top </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#eee-top-no-video" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=491627" class="extiw" title="rhbug:491627">Bugzilla: #491627</a></small>
+</p><p>It has been reported that with a default configuration, Fedora 11
+ fails to initialize the graphical desktop (X server) properly on the 
+Asus Eee Top system. You can work around this issue by downloading <a href="https://fedoraproject.org/w/uploads/9/97/Eee-top-xorg.conf" class="external text" title="https://fedoraproject.org/w/uploads/9/97/Eee-top-xorg.conf">this file</a> and installing it as <code>/etc/X11/xorg.conf</code>. With this file in place, the X server should start correctly at the native resolution of the system.
+</p><p><span id="mac-no-video"></span>
+</p>
+<a name="Graphical_installation_.2F_desktop_fails_to_start_on_Mac_systems_with_Intel_945_graphics_adapter_8086:27A2" id="Graphical_installation_.2F_desktop_fails_to_start_on_Mac_systems_with_Intel_945_graphics_adapter_8086:27A2"></a><h3> <span class="mw-headline"> Graphical installation / desktop fails to start on Mac systems with Intel 945 graphics adapter 8086:27A2 </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#mac-no-video" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=494390" class="extiw" title="rhbug:494390">Bugzilla: #494390</a></small>
+</p><p>Several users of various Apple Mac systems, including some 
+generations of the Mac Mini and Macbook, which all use an Intel 945 
+graphics adapter with the PCI ID 8086:27A2, have reported that the 
+graphical installation / desktop (X server) fail to start correctly. 
+Some users report that disabling kernel modesetting, with the kernel 
+parameter <code>nomodeset</code>, works around this issue.
+</p><p>This issue has also been reported as <a href="http://bugs.freedesktop.org/show_bug.cgi?id=21710" class="external text" title="http://bugs.freedesktop.org/show_bug.cgi?id=21710">freedesktop.org bug #21710</a>,
+ and was subsequently resolved in kernel 2.6.31 (as the problem is in 
+part of the driver that comes within the kernel). We are investigating 
+the possibility of backporting this patch for a future Fedora 11 kernel 
+update.
+</p><p><span id="toshiba-m100-hang"></span>
+</p>
+<a name="Graphical_installation_.2F_desktop_fails_to_start_on_Toshiba_Port.C3.A9ge_M100" id="Graphical_installation_.2F_desktop_fails_to_start_on_Toshiba_Port.C3.A9ge_M100"></a><h3> <span class="mw-headline"> Graphical installation / desktop fails to start on Toshiba Portége M100  </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#toshiba-m100-hang" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=500544" class="extiw" title="rhbug:500544">Bugzilla: #500544</a></small>
+</p><p>It has been reported that starting the graphical environment 
+(either during installation or on boot of an installed system) fails 
+entirely with default configuration on the Toshiba Portége M100 system. 
+To work around this issue, add the <code>nomodeset</code> kernel parameter, which disables kernel modesetting. With this parameter set, things should work fine.
+</p><p><span id="radeon-igp-install-vesa"></span>
+</p>
+<a name="Graphical_installation_fails_to_start_on_ATI_.2F_AMD_graphics_adapters_.28especially_onboard_graphics.29" id="Graphical_installation_fails_to_start_on_ATI_.2F_AMD_graphics_adapters_.28especially_onboard_graphics.29"></a><h3> <span class="mw-headline"> Graphical installation fails to start on ATI / AMD graphics adapters (especially onboard graphics) </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#radeon-igp-install-vesa" title="Common F11 bugs">link to this item</a></small>
+</p><p>On some ATI / AMD graphics adapters - especially onboard adapters
+ (IGPs) - graphical installation may fail to work even if you disable 
+kernel modesetting according to the <a href="http://fedoraproject.org/wiki/Common_F11_bugs#radeon-misc-gfx" title="Common F11 bugs">general ATI / AMD instructions above</a>. In this case, try switching to the fallback <b>vesa</b> driver, by adding <code>xdriver=vesa</code>
+ as a kernel parameter for the installer. If this issue affects you, you
+ will likely need to both disable kernel modesetting and switch to the 
+XAA acceleration method, according to the <a href="http://fedoraproject.org/wiki/Common_F11_bugs#radeon-misc-gfx" title="Common F11 bugs">general ATI / AMD instructions above</a>,
+ if you wish to use the native driver on the installed system (you can 
+switch from vesa to the native driver once the installation has 
+completed using the <code>system-config-display</code> tool).
+</p><p><span id="radeon-slow-3d"></span>
+</p>
+<a name="Slow_3D_performance_on_ATI_.2F_AMD_graphics_adapters" id="Slow_3D_performance_on_ATI_.2F_AMD_graphics_adapters"></a><h3> <span class="mw-headline"> Slow 3D performance on ATI / AMD graphics adapters </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#radeon-slow-3d" title="Common F11 bugs">link to this item</a></small>
+</p><p>The use of kernel modesetting is known to have an adverse impact 
+on 3D performance for ATI / AMD graphics adapters. If you notice poor 3D
+ performance (and better 3D performance is more important to you than 
+smooth graphical boot), disabling kernel modesetting should improve this
+ somewhat. To disable kernel modesetting, add <code>nomodeset</code> as a kernel parameter.
+</p><p><span id="radeon-garbage-3d"></span>
+</p>
+<a name="Garbage_displayed_in_some_3D_games_and_applications_on_ATI_.2F_AMD_graphics_adapters" id="Garbage_displayed_in_some_3D_games_and_applications_on_ATI_.2F_AMD_graphics_adapters"></a><h3> <span class="mw-headline"> Garbage displayed in some 3D games and applications on ATI / AMD graphics adapters </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#radeon-garbage-3d" title="Common F11 bugs">link to this item</a> - <a href="http://www.mail-archive.com/xorg@lists.freedesktop.org/msg02000.html" class="external text" title="http://www.mail-archive.com/xorg@lists.freedesktop.org/msg02000.html">external reference</a></small>
+</p><p>The GL_EXT_framebuffer_object OpenGL extension is not currently 
+implemented by the 3D driver for ATI / AMD adapters in Fedora 11. This 
+will result in garbage rendering in any game or application which uses 
+this extension. This is a known limitation of the current implementation
+ of the driver: it is being worked on by the driver developers and 
+future updates may make this extension available again.
+</p><p><span id="xorg-crashes-installer"></span>
+</p>
+<a name="Installer_crashes_when_Xorg_is_launched_due_to_ACPI" id="Installer_crashes_when_Xorg_is_launched_due_to_ACPI"></a><h3> <span class="mw-headline"> Installer crashes when Xorg is launched due to ACPI </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#xorg-crashes-installer" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=507715" class="extiw" title="rhbug:507715">Bugzilla: #507715</a></small>
+</p><p>ACPI problems are known to cause a crash when Xorg is launched by the installer. Using the kernel parameter <code>acpi=off</code> disables ACPI.
+</p><p><span id="alsa-volume"></span>
+</p>
+<a name="PulseAudio-based_volume_control_cannot_adjust_volume_satisfactorily" id="PulseAudio-based_volume_control_cannot_adjust_volume_satisfactorily"></a><h3> <span class="mw-headline"> PulseAudio-based volume control cannot adjust volume satisfactorily </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#alsa-volume" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=497966" class="extiw" title="rhbug:497966">Bugzilla: #497966</a> (tracker)</small>
+</p><p>Fedora 11 introduces a simplified, PulseAudio-based GNOME volume control applet and Sound Preferences application: see the <a href="http://docs.fedoraproject.org/release-notes/f11/" class="external text" title="http://docs.fedoraproject.org/release-notes/f11/">release notes</a>, section 4.5 Multimedia, for more details on this. 
+</p><p>This, and other PA-based volume controls like pavucontrol, rely 
+on PulseAudio to set the volume level. In some cases where the 
+underlying ALSA volumes do not default to sensible values, 
+PulseAudio-based volume control applications cannot properly adjust the 
+volume: for instance, you hear no sound even with the control set to 
+max, or setting the control to its lowest level still results in audible
+ sound. 
+</p><p>In these cases, you can use the legacy volume control application
+ installed by default in Fedora 11 to control the underlying ALSA 
+volumes directly. It can be found in the menus under System / 
+Preferences, with the name Advanced Volume Control. If you upgrade from 
+Fedora 10 to Fedora 11, this volume control application may not be 
+installed: install the package <code><a href="http://fedoraproject.org/wiki/File:Package-x-generic-16.png" class="image" title="image:Package-x-generic-16.png"><img alt="image:Package-x-generic-16.png" src="Common_F11_bugs_files/Package-x-generic-16.png" height="16" width="16" border="0"></a><span class="plainlinks"><a href="https://admin.fedoraproject.org/pkgdb/acls/name/gst-mixer" class="external text" title="https://admin.fedoraproject.org/pkgdb/acls/name/gst-mixer">gst-mixer</a></span></code> to gain access to it. 
+</p><p>If you find yourself in this situation, please <a href="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=pulseaudio&amp;version=11" class="external text" title="https://bugzilla.redhat.com/enter_bug.cgi?product=Fedora&amp;component=pulseaudio&amp;version=11">file a new bug report</a> on the <i>pulseaudio</i> component, according to <a href="https://bugzilla.redhat.com/show_bug.cgi?id=497966#c1" class="external text" title="https://bugzilla.redhat.com/show_bug.cgi?id=497966#c1">these instructions</a>, and set it to block the bug AlsaVolume.
+</p><p><span id="emu10k1-digital"></span>
+</p>
+<a name="Sound_Blaster_Live.21_cards_.28and_other_emu10k1-based_cards.29_default_to_digital_.28S.2FPDIF.29_output" id="Sound_Blaster_Live.21_cards_.28and_other_emu10k1-based_cards.29_default_to_digital_.28S.2FPDIF.29_output"></a><h3> <span class="mw-headline"> Sound Blaster Live! cards (and other emu10k1-based cards) default to digital (S/PDIF) output </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#emu10k1-digital" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=496320" class="extiw" title="rhbug:496320">Bugzilla: #496320</a></small>
+</p><p>Due to an oversight in the logic for deciding what input/output 
+profile is best, PulseAudio defaults to digital (S/PDIF) output for 
+emu10k1-based sound cards in Fedora 11. This includes many Sound Blaster
+ Live! sound cards, and several others. For many users this will result 
+in the card apparently not working - you will hear nothing when playing 
+back sound. This is because most users use analog rather than digital 
+connections for their speakers or headphones. To switch to analog 
+output, install the <i>pavucontrol</i> package, and run the program (you can run <i>pavucontrol</i>
+ directly, or look in the system menus under Sound &amp; Video for 
+PulseAudio Volume Control). Go to the Configuration tab, and in the 
+drop-down menu for the affected sound card, change to the 'Output Analog
+ Stereo + Input Analog Mono' option. This should cause sound playback to
+ work correctly. The PulseAudio developers are currently working on an 
+update to fix this issue, which should be available shortly after Fedora
+ 11 is released.
+</p><p><span id="nvidia-vmalloc"></span>
+</p>
+<a name="Xorg_fails_to_start_when_using_the_nvidia_kernel_module" id="Xorg_fails_to_start_when_using_the_nvidia_kernel_module"></a><h3> <span class="mw-headline"> Xorg fails to start when using the nvidia kernel module </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#nvidia-vmalloc" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=489078" class="extiw" title="rhbug:489078">Bugzilla: #489078</a></small>
+</p><p>Some users have reported that when attempting to use the "nvidia"
+ kernel module (either the official installer or kmod-nvidia*) Xorg will
+ fail to start properly. The end result, Fedora 11 boots to a black 
+screen. Inspection of dmesg may reveal many messages similar to:
+</p>
+<pre>$ dmesg | grep vmap
+vmap allocation for size 4198400 failed: use vmalloc=&lt;size&gt; to increase size.
+vmap allocation for size 4198400 failed: use vmalloc=&lt;size&gt; to increase size.
+</pre>
+<p>A workaround is to add an entry to your kernel line in /etc/grub.conf
+ that includes the amount of video memory on your nVidia card, for 
+example for a 128 MB Geforce 8400 GS you would append the following:
+</p>
+<pre>vmalloc=128MB
+</pre>
+<p><span id="synaptics-aspire-one"></span>
+</p>
+<a name="Synaptics_touchpad_edge_scrolling_fails_to_work_on_Acer_Aspire_One" id="Synaptics_touchpad_edge_scrolling_fails_to_work_on_Acer_Aspire_One"></a><h3> <span class="mw-headline"> Synaptics touchpad edge scrolling fails to work on Acer Aspire One </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#synaptics-aspire-one" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=502548" class="extiw" title="rhbug:502548">Bugzilla: #502548</a></small>
+</p><p>Acer Aspire One laptop users have reported a regression in 
+regards to the touchpad edge-scrolling feature. There is no known 
+workaround for this problem.
+</p><p>An updated <a href="http://admin.fedoraproject.org/updates/xorg-x11-drv-synaptics-1.1.2-2.fc11" class="external text" title="http://admin.fedoraproject.org/updates/xorg-x11-drv-synaptics-1.1.2-2.fc11">xorg-x11-drv-synaptics</a>
+ package has been submitted to the updates-testing repository for 
+testing. Users experiencing this problem are encouraged to test this 
+update and <a href="http://admin.fedoraproject.org/updates/xorg-x11-drv-synaptics-1.1.2-2.fc11" class="external text" title="http://admin.fedoraproject.org/updates/xorg-x11-drv-synaptics-1.1.2-2.fc11">report to Bodhi</a> whether it solves the problem. To test the update, run this command:
+</p>
+<pre>su -c 'yum --enablerepo=updates-testing xorg-x11-drv-synaptics'</pre>
+<a name="Software_issues" id="Software_issues"></a><h2> <span class="mw-headline"> Software issues </span></h2>
+<p><span id="network-doesnt-connect"></span>
+</p>
+<a name="Network_doesn.27t_connect" id="Network_doesn.27t_connect"></a><h3> <span class="mw-headline"> Network doesn't connect </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#network-doesnt-connect" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=498207" class="extiw" title="rhbug:498207">Bugzilla: #498207</a></small>
+</p><p>After installation, it might be noticed that programs requiring 
+the network can not connect to the network. If this is the case, the <i>NetworkManager</i>
+ icon may show a red X indicating that the machine is not currently 
+connected. While all networking hardware is correctly wired, and device 
+indicators show the network to be properly connected, a change in 
+default install behaviour means that the network does not immediately 
+connect.
+</p><p>The required procedure from this point is to click the <i>NetworkManager</i> icon, and activate the System eth0 or similar connection. If the red X disappears from the <i>NetworkManager</i> icon, then this was the issue that was stopping the connection from being activated.
+</p><p>However, the above change is only for the current login. To make this change permanent, right click the <i>NetworkManager</i>
+ icon, Edit connections, select the System eth0 or similar, click Edit, 
+provide the root password, check the Connect automatically item at the 
+top of the dialog box, Apply and Close.
+</p><p>Please also see the <a href="https://fedoraproject.org/wiki/Documentation_Networking_Beat#Ethernet_connections_are_not_started_at_first_boot" class="external text" title="https://fedoraproject.org/wiki/Documentation_Networking_Beat#Ethernet_connections_are_not_started_at_first_boot">future release note</a> describing this, and a <a href="http://fedorasolved.org/Members/khaytsus/go-online-automatically-at-boot" class="external text" title="http://fedorasolved.org/Members/khaytsus/go-online-automatically-at-boot">graphical description of the steps to take to make this setting</a>.
+</p><p><span id="suspend-oops"></span>
+</p>
+<a name="Resume_from_suspend_fails.2C_kernel_oops_notification_appears_on_reboot" id="Resume_from_suspend_fails.2C_kernel_oops_notification_appears_on_reboot"></a><h3> <span class="mw-headline"> Resume from suspend fails, kernel oops notification appears on reboot </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#suspend-oops" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=499651" class="extiw" title="rhbug:499651">Bugzilla: #499651</a></small>
+</p><p>Several users have reported a failure to resume from suspend on 
+various systems. On some systems this happens every time, on others it 
+is quasi-random. When attempting to resume from suspend, the system 
+hangs at a black screen. On rebooting, you are asked to report a kernel 
+oops - ending with <i>[&lt;c040945f&gt;] sysenter_do_call+0x12/0x34</i> - to the kernel bug tracking system (unless you have this feature disabled).
+</p><p>A workaround for this issue is discussed in the bug report. Create a file <code>/etc/pm/sleep.d/00-cpuspeed.sh</code> with the following contents:
+</p>
+<pre>#!/bin/bash
+if [ "$1" == "suspend" ]; then
+  service cpuspeed stop
+  modprobe -r acpi_cpufreq
+fi
+if [ "$1" == "resume" ]; then
+  service cpuspeed start
+fi
+</pre>
+<p>Make sure it is executable. This should work around the problem on 
+future suspend cycles. We are working to investigate a fix for this 
+issue.
+</p><p><span id="udev-floppy"></span>
+</p>
+<a name="System_pauses_during_boot_for_over_a_minute_at_.27Starting_udev.27" id="System_pauses_during_boot_for_over_a_minute_at_.27Starting_udev.27"></a><h3> <span class="mw-headline"> System pauses during boot for over a minute at 'Starting udev' </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#udev-floppy" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=513448" class="extiw" title="rhbug:513448">Bugzilla: #513448</a></small>
+</p><p>If you have a floppy drive controller in your system that is 
+enabled in the BIOS, but no actual floppy drive, you may be affected by 
+an issue where the boot process pauses for a significant time (at least a
+ minute). If you hit the Escape key to see verbose boot messages, you 
+will see that it hangs at the 'Starting udev' stage. There are two known
+ workarounds for this issue. Either disable the floppy drive controller 
+in your system BIOS, or blacklist the 'floppy' module in Fedora: create a
+ file named <code>/etc/modprobe.d/floppy.conf</code>, with the contents:
+</p>
+<pre>blacklist floppy
+</pre>
+<p><span id="alsa-sequencer"></span>
+</p>
+<a name="ALSA_sequencer_unavailable_by_default" id="ALSA_sequencer_unavailable_by_default"></a><h3> <span class="mw-headline"> ALSA sequencer unavailable by default </span></h3>
+<p><small><a href="http://fedoraproject.org/wiki/Common_F11_bugs#alsa-sequencer" title="Common F11 bugs">link to this item</a> - <a href="https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=505421" class="extiw" title="rhbug:505421">Bugzilla: #505421</a></small>
+</p><p>Due to a misconfiguration, in Fedora 11, the <i>snd-seq</i> 
+module - which provides the ALSA sequencer interface - is not loaded by 
+default. This affects applications which use the sequencer, such as <code><a href="http://fedoraproject.org/wiki/File:Package-x-generic-16.png" class="image" title="image:Package-x-generic-16.png"><img alt="image:Package-x-generic-16.png" src="Common_F11_bugs_files/Package-x-generic-16.png" height="16" width="16" border="0"></a><span class="plainlinks"><a href="https://admin.fedoraproject.org/pkgdb/acls/name/qjackctl" class="external text" title="https://admin.fedoraproject.org/pkgdb/acls/name/qjackctl">qjackctl</a></span></code> - "Could not open ALSA sequencer as a client", "ALSA MIDI patchbay will not be available" - and <code><a href="http://fedoraproject.org/wiki/File:Package-x-generic-16.png" class="image" title="image:Package-x-generic-16.png"><img alt="image:Package-x-generic-16.png" src="Common_F11_bugs_files/Package-x-generic-16.png" height="16" width="16" border="0"></a><span class="plainlinks"><a href="https://admin.fedoraproject.org/pkgdb/acls/name/tuxguitar" class="external text" title="https://admin.fedoraproject.org/pkgdb/acls/name/tuxguitar">tuxguitar</a></span></code>.
+</p><p>To work around this problem, create a file with the following contents:
+</p>
+<pre>install snd-pcm /sbin/modprobe --ignore-install snd-pcm &amp;&amp; /sbin/modprobe snd-seq
+</pre>
+<p>and save it as <code>/etc/modprobe.d/dist-alsa.conf</code>.
+</p><p>An updated <a href="http://admin.fedoraproject.org/updates/module-init-tools-3.7-10.fc11" class="external text" title="http://admin.fedoraproject.org/updates/module-init-tools-3.7-10.fc11">module-init-tools</a>
+ package has been submitted to the updates-testing repository for 
+testing. Users experiencing this problem are encouraged to test this 
+update and <a href="http://admin.fedoraproject.org/updates/module-init-tools-3.7-10.fc11" class="external text" title="http://admin.fedoraproject.org/updates/module-init-tools-3.7-10.fc11">report to Bodhi</a> whether it solves the problem. To test the update, run this command:
+</p>
+<pre>su -c 'yum --enablerepo=updates-testing module-init-tools'</pre>
+<p><span id="firefox-upstream-binary"></span>
+</p>
+<a name="Non-Fedora_Mozilla.2FFirefox_binaries_may_crash" id="Non-Fedora_Mozilla.2FFirefox_binaries_may_crash"></a><h3> <span class="mw-headline"> Non-Fedora Mozilla/Firefox binaries may crash </span></h3>
+<p>There is a conflict between binary software downloaded from Mozilla 
+and software included in Fedora which may lead to a crash, often seen 
+when using <a href="http://fedoraproject.org/wiki/Flash" title="Flash">Flash</a>. See <a href="https://fedoraproject.org/wiki/Mozilla_NSS_Conflict" class="external text" title="https://fedoraproject.org/wiki/Mozilla_NSS_Conflict">details and workarounds</a>.
+</p>
+<a name="References" id="References"></a><h2> <span class="mw-headline"> References </span></h2>
+<ul><li> <a href="http://fedoraproject.org/wiki/Common_kernel_problems" title="Common kernel problems">Common kernel problems</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 1082/1000000
+Post-expand include size: 3737/2097152 bytes
+Template argument size: 1238/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key fpo-mediawiki-en_:pcache:idhash:21415-0!1!0!!en!2!edit=0 and timestamp 20101002124143 -->
+<div class="printfooter">
+Retrieved from "<a href="https://fedoraproject.org/wiki/Common_F11_bugs">https://fedoraproject.org/wiki/Common_F11_bugs</a>"</div>
+			<div id="catlinks"><div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://fedoraproject.org/wiki/Special:Categories" title="Special:Categories">Category</a>: <span dir="ltr"><a href="http://fedoraproject.org/wiki/Category:Bugs" title="Category:Bugs">Bugs</a></span></div></div></div>			<!-- end content -->
+	</div>
+
+<!-- Top login, etc. bar -->
+<!-- #p-personal moved to inside #content so the text color says the same -->
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+</div>
+			<div id="bottom">
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="Common_F11_bugs_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki"></a></div>
+      <p class="copy">
+      Copyright © 2010 Red Hat, Inc. and others.  All Rights Reserved.  For comments or queries, please <a href="http://fedoraproject.org/contact">contact us</a>.
+      </p>
+      <p class="disclaimer">
+      The Fedora Project is maintained and driven by the community and 
+sponsored by Red Hat.  This is a community maintained site.  Red Hat is 
+not responsible for content.
+      </p>
+			<ul>
+				<li class="first" id="lastmod"> This page was last modified on 24 November 2009, at 17:57.</li>
+				<li id="copyright">Content is available under <a href="http://fedoraproject.org/wiki/Legal:Main" title="Legal:Main">Attribution-Share Alike 3.0 Unported</a>.</li>
+			</ul>
+			<ul>
+				<li class="first" id="privacy"><a href="http://fedoraproject.org/wiki/FedoraProject:Privacy_policy" title="FedoraProject:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="http://fedoraproject.org/wiki/FedoraProject:About" title="FedoraProject:About">About FedoraProject</a></li>
+				<li id="disclaimer"><a href="http://fedoraproject.org/wiki/FedoraProject:General_disclaimer" title="FedoraProject:General disclaimer">Disclaimers</a></li>
+        <li><a href="http://fedoraproject.org/en/sponsors">Sponsors</a></li>
+        <li><a href="http://fedoraproject.org/wiki/Legal:Main">Legal</a></li>
+        <li><a href="http://fedoraproject.org/wiki/Legal:Trademark_guidelines">Trademark Guidelines</a></li>
+      </ul>
+		</div>
+		</div>
+		
+	
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.078 secs. --></body></html>

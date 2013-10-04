@@ -1,0 +1,9 @@
+You got "DocumentRoot must be a directory" error even it is really a
+directory because of SELinux extensions. Run
+system-config-securitylevel (or redhat-config-securitylevel) to
+disable SELinux for httpd or give SELinux permissions to that
+directory:
+
+chcon -R -h -t httpd_sys_content_t /path/to/directory 
+
+

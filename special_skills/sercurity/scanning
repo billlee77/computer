@@ -1,0 +1,2 @@
+sudo iptables -L
+netstat -l -n

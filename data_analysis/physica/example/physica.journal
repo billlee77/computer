@@ -1,0 +1,64 @@
+********************************************************************************
+***                                                                          ***
+*** PHYSICA                      VERSION # 2.77               November  2005 ***
+*** Copyright (C) 1992,...,2005                              Joseph L. Chuma ***
+***                           All rights reserved                            ***
+***                                                                          ***
+***  Enter NEWS to get the latest information on new commands and features   ***
+***  Latest news added on November 21, 2005                                  ***
+***  Journal file: physica.journal                                           ***
+***                                                                          ***
+***            UNAUTHORIZED COMMERCIAL USE IS STRICTLY PROHIBITED            ***
+***                                                                          ***
+*** Physica 3.0 for the Windows environment has been released under the name ***
+*** Extrema. See www.extremasoftware.com                                     ***
+***                                                                          ***
+********************************************************************************
+User: billlee   Date: 26-Nov-2010 15:44:37
+ Default graphics hardcopy device: PostScript: colour, paper size A
+ executing initialization file: /home/billlee/.physicarc
+ HYSICA: 2
+     invalid command
+ HYSICA: 23
+     invalid command
+ HYSICA: 1
+     invalid command
+ HYSICA: 3
+ x y z ipen { colr }
+ HYSICA: 1
+     invalid command
+ HYSICA: 2
+     invalid command
+ HYSICA: 3
+ x y z ipen { colr }
+ PHYSICA: 4
+     independent (x) vector is constant
+ HYSICA: 4
+     invalid command
+ HYSICA: 4
+     invalid command
+ HYSICA: 4
+     invalid command
+ HYSICA: 1234
+     invalid command
+ HYSICA: 12
+     invalid command
+ HYSICA: 4
+     invalid command
+ HYSICA: 12
+     invalid command
+ HYSICA: 423
+     invalid command
+ HYSICA: 15
+     invalid command
+ HYSICA: 15
+     invalid command
+ HYSICA: ls
+     invalid command
+ HYSICA: .q
+     invalid command
+ HYSICA: ls
+     invalid command
+ HYSICA: ls
+     invalid command
+ HYSICA: exit

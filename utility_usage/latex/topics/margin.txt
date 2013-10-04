@@ -1,0 +1,8 @@
+
+\usepackage{fullpage}
+
+\usepackage[cm]{fullpage}
+
+# Geometry 
+\usepackage[a4paper]{geometry}
+\usepackage[top=tlength, bottom=blength, left=llength, right=rlength]{geometry}

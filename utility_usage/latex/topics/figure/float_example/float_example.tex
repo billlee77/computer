@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{pstricks}
+\usepackage{pst-node}
+\usepackage{pst-blur}
+\definecolor{Pink}{rgb}{1.,0.75,0.8}
+\pagestyle{empty}
+\begin{document}
+
+
+\vspace{0.5cm}
+
+\small
+\begin{psmatrix}[rowsep=0.6,colsep=0.5]
+\psovalbox[fillstyle=solid,fillcolor=yellow,shadow=true]{Begin} \\
+\psdblframebox[framearc=.4,fillstyle=solid,fillcolor=pink]{row2col1}\\
+\psframebox[shadow=true]{row3col1}&\psframebox[shadow=true]{row3col2} \\
+\psdiabox[shadow=true]{row4col1}&\psframebox[shadow=true]{row4col2} \\
+\psframebox[shadow=true]{row5col1}&\psframebox[shadow=true]{row5col2}\\
+\psframebox[shadow=true]{row6col1}&\psframebox[shadow=true]{\bf row6col2}&row6col3 \\
+\psdblframebox[framearc=.4,fillstyle=solid,fillcolor=pink]{row7col1}&\psframebox[shadow=true]{\bf row7col2}&row7col3\\
+
+%top frame
+\psframe[linestyle=dashed](-1,5.3)(2.35,2)
+\rput{0}(-1.3,4.5){\rotateleft{TopFrame}}
+\psframebox[shadow=true]{row8col1}&\psframebox[shadow=true]{\bf row8col2}&row6col3\\
+\psframebox[shadow=true]{\begin{tabular}{c}row9col1-line1\\row9col1-line2\end{tabular}}&\psframebox[shadow=true]{\bf row9col2}&row9col3\\
+\psframebox[shadow=true]{row10col1}&\psframebox[shadow=true]{row10col2}\\
+row11col1\\
+\psovalbox[fillstyle=solid,fillcolor=yellow,shadow=true]{end} \\
+
+\ncline{->}{1,1}{2,1}
+\ncline{->}{2,1}{3,1}
+
+\ncline{->}{3,1}{4,1}{3,1}{3,2}
+\ncline{->}{4,2}{5,2}
+\ncline{->}{4,1}{4,2}
+\ncline{->}{4,1}{5,1}
+\ncline{->}{5,1}{6,1}
+\ncline{->}{5,1}{6,2}
+
+\ncline{->}{6,1}{7,1}
+\ncline{->}{6,1}{6,2}
+\ncline{->}{7,1}{8,1}
+\ncline{->}{8,1}{9,1}
+\ncline{->}{9,1}{10,1}
+\ncline{->}{10,1}{11,1}
+\ncline{->}{11,1}{12,1}
+
+\ncline{->}{12,1}{12,2}
+
+\ncline{->}{7,2}{8,2}
+\ncline{->}{8,2}{9,2}
+\ncline{->}{9,2}{10,2}
+
+\psline[linecolor=blue]{->}(5.2,7)(6.5,7)
+\psline[linecolor=blue]{->}(6.5,8.3)(6.5,5.8)(5.2, 5.8 )
+\psline[linecolor=blue]{->}(6.5,5.8)(6.5,4.4)(5.2,4.4)
+
+\end{psmatrix}
+\end{document}
+

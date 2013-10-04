@@ -1,0 +1,26 @@
+# Source BASH configuration
+source /home/*/computer/config_files/bashrc
+source ~/computer/config_files/bashrc
+
+# Source VIM configuration
+:so ~/computer/config_files/vimrc
+
+# Source ROOT configuration
+gROOT->ProcessLine(".X ~/computer/config_files/rootlogon.C");
+
+# Source PYROOT configuration
+from ROOT import gStyle, gROOT
+gROOT.Macro('~/computer/config_files/rootlogon.C')
+
+# Linking the pinerc and addressbook
+ln -s computer/config_files/pinerc ~/.pinerc
+ln -s computer/config_files/addressbook ~/.addressbook
+
+# Linking the public_html
+ln -s /home/billlee/computer/network/web_wenliangli/ /home/billlee/public_html
+
+# cshrc file
+source ~/computer/config_files/cshrc
+
+# login file
+source ~/computer/config_files/login

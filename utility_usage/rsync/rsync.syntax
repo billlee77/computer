@@ -1,0 +1,6 @@
+# rsync with ssh
+rsync -avP -e ssh file1 file2
+$ rsync -v -e ssh /www/backup.tar.gz jerry@openbsd.nixcraft.in:~
+
+# locak rsync
+

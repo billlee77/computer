@@ -1,0 +1,308 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+<title>Perl split Function</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="Description" content="Learn through examples how to use Perl split function to break up a string into an array or a list, by using a specific pattern.">
+<meta name="Keywords" content="perl split, perl split function, perl join, perl join function">
+
+<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+
+<link rel="canonical" href="http://www.misc-perl-info.com/perl-split.html">
+
+<script language="JavaScript" type="text/javascript">
+<!--
+
+function MM_swapImgRestore() 
+{
+    var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() 
+{
+    var d=document; 
+    if(d.images)
+    { 
+	if(!d.MM_p) d.MM_p=new Array();
+	var i,j=d.MM_p.length,a=MM_preloadImages.arguments; 
+	for(i=0; i<a.length; i++)
+	    if (a[i].indexOf("#")!=0)
+	    { 
+		d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];
+	    }
+    }
+}
+
+function MM_swapImage() 
+{
+    var i,j=0,x,a=MM_swapImage.arguments; 
+    document.MM_sr=new Array; 
+    for(i=0;i<(a.length-2);i+=3)
+	if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_openBrWindow(theURL,winName,features) 
+{
+    window.open(theURL,winName,features);
+}
+
+function MM_findObj(n, d) 
+{
+    var p,i,x;  
+    if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) 
+    {
+	d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);
+    }
+    if(!(x=d[n])&&d.all) 
+	x=d.all[n]; 
+    for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+    for(i=0;!x&&d.layers&&i<d.layers.length;i++) 
+	x=MM_findObj(n,d.layers[i].document);
+    if(!x && d.getElementById) 
+	x=d.getElementById(n); 
+    return x;
+			
+}
+//-->
+</script>
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_displayStatusMsg(msgStr) { //v1.0
+  status=msgStr;
+  document.MM_returnValue = true;
+}
+//-->
+</script>
+
+
+
+<style type="text/css" media="all">
+body, td
+{
+	font:13px Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color:#000;
+	margin: 0px;
+	}
+</style>
+</head><body onload="  MM_preloadImages('http://www.misc-perl-info.com/imgs/index-over.gif', 'http://www.misc-perl-info.com/imgs/pcds-ezine-over.gif', 'http://www.misc-perl-info.com/imgs/perl-howto-tutorials-over.gif', 'http://www.misc-perl-info.com/imgs/perl-books-over.gif', 'http://www.misc-perl-info.com/imgs/perl-basics-over.gif', 'http://www.misc-perl-info.com/imgs/perl-editors-over.gif', 'http://www.misc-perl-info.com/imgs/perl-modules-over.gif', 'http://www.misc-perl-info.com/imgs/perl-database-programming-over.gif', 'http://www.misc-perl-info.com/imgs/internet-programming-perl-over.gif', 'http://www.misc-perl-info.com/imgs/sitemap-over.gif', 'http://www.misc-perl-info.com/imgs/about-me-over.gif', 'http://www.misc-perl-info.com/imgs/contact-me-over.gif', 'http://www.misc-perl-info.com/imgs/blog-over.gif')" link="Blue" vlink="Purple" alink="Red" background="perl-split_files/BACK.gif" bgcolor="#ffffff">
+<table width="725" align="center" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td colspan="2"><img src="perl-split_files/logo.gif"></td>
+</tr>
+
+<tr>
+<td valign="top" width="130" background="perl-split_files/LEFT.gif">
+<div id="Layer1" style="position: absolute; width: 130px; z-index: 1; top: 120px;">
+
+
+
+
+
+<style type="text/css">
+.navheader {
+display: block;
+width: 130px;
+font-family: Verdana;
+font-size: 14px;
+font-weight: bold;
+
+color: #000000;
+text-align: left;
+
+
+border-top-width: 0px;
+border-right-width: 0px;
+border-bottom-width: 0px;
+border-left-width: 0px;
+background-color: #FFFFFF
+}
+</style>
+   
+
+<a href="http://www.misc-perl-info.com/index.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('index','','http://www.misc-perl-info.com/imgs/index-over.gif',1)"><img name="index" src="perl-split_files/index.gif" alt="Home" border="0"></a><br>
+<a href="http://www.misc-perl-info.com/pcds-ezine.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image0','','http://www.misc-perl-info.com/imgs/pcds-ezine-over.gif',1)"><img name="Image0" src="perl-split_files/pcds-ezine.gif" alt="FREE Newsletter" border="0"></a><br>
+<a href="http://www.misc-perl-info.com/perl-howto-tutorials.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image1','','http://www.misc-perl-info.com/imgs/perl-howto-tutorials-over.gif',1)"><img name="Image1" src="perl-split_files/perl-howto-tutorials.gif" alt="Perl How To" border="0"></a><br>
+<a href="http://www.misc-perl-info.com/perl-books.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image2','','http://www.misc-perl-info.com/imgs/perl-books-over.gif',1)"><img name="Image2" src="perl-split_files/perl-books.gif" alt="Perl Books" border="0"></a><br>
+<a href="http://www.misc-perl-info.com/perl-basics.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image3','','http://www.misc-perl-info.com/imgs/perl-basics-over.gif',1)"><img name="Image3" src="perl-split_files/perl-basics.gif" alt="Perl Basics" border="0"></a><br>
+<a href="http://www.misc-perl-info.com/perl-editors.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image4','','http://www.misc-perl-info.com/imgs/perl-editors-over.gif',1)"><img name="Image4" src="perl-split_files/perl-editors.gif" alt="Perl Editors" border="0"></a><br>
+<a href="http://www.misc-perl-info.com/perl-modules.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image5','','http://www.misc-perl-info.com/imgs/perl-modules-over.gif',1)"><img name="Image5" src="perl-split_files/perl-modules.gif" alt="Perl Modules" border="0"></a><br>
+<a href="http://www.misc-perl-info.com/perl-database-programming.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image6','','http://www.misc-perl-info.com/imgs/perl-database-programming-over.gif',1)"><img name="Image6" src="perl-split_files/perl-database-programming.gif" alt="Perl Database" border="0"></a><br>
+<a href="http://www.misc-perl-info.com/internet-programming-perl.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image7','','http://www.misc-perl-info.com/imgs/internet-programming-perl-over.gif',1)"><img name="Image7" src="perl-split_files/internet-programming-perl.gif" alt="Net Programming" border="0"></a><br>
+<a href="http://www.misc-perl-info.com/sitemap.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image8','','http://www.misc-perl-info.com/imgs/sitemap-over.gif',1)"><img name="Image8" src="perl-split_files/sitemap.gif" alt="Sitemap" border="0"></a><br>
+<a href="http://www.misc-perl-info.com/about-me.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image9','','http://www.misc-perl-info.com/imgs/about-me-over.gif',1)"><img name="Image9" src="perl-split_files/about-me.gif" alt="About Me" border="0"></a><br>
+<a href="http://www.misc-perl-info.com/contact-me.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image10','','http://www.misc-perl-info.com/imgs/contact-me-over.gif',1)"><img name="Image10" src="perl-split_files/contact-me.gif" alt="Contact Me" border="0"></a><br>
+<a href="http://www.misc-perl-info.com/blog.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image11','','http://www.misc-perl-info.com/imgs/blog-over.gif',1)"><img name="Image11" src="perl-split_files/blog.gif" alt="Blog" border="0"></a><br>
+
+
+</div>
+<img src="perl-split_files/LEFT.gif"></td>
+<td valign="top" width="595">
+<table width="550" border="0" cellpadding="8" cellspacing="0">
+<tbody><tr>
+<td width="15">&nbsp;</td>
+<td>
+<h2 style="text-align: center;"><font color="DARKBLUE" face="Verdana, Arial, Helvetica, sans-serif"> Perl split Function</font></h2>
+<p></p><center><script type="text/javascript"><!--
+google_ad_client = "pub-6471827809108620";
+/* link 468x15, created 6/17/09 */
+google_ad_slot = "7325001721";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script><script type="text/javascript" src="perl-split_files/show_ads.js"></script><script src="perl-split_files/show_ads_impl.js"></script><script src="perl-split_files/expansion_embed.js"></script><script src="perl-split_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display: inline-table; border: medium none; height: 15px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 468px;"><ins id="google_ads_frame1_anchor" style="display: block; border: medium none; height: 15px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 468px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="perl-split_files/ads.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="15" scrolling="no" width="468"></iframe></ins></ins></center><br>
+<hr size="1" width="100%" align="Left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="2">  <b>    <font style="color: rgb(255, 0, 0);"> NEW!!!    </font>  </b>  <br><br>  <i>    <font style="background-color: rgb(248, 253, 172);">Check my new resource:    </font> &nbsp;&nbsp;    <b><a href="http://www.misc-perl-info.com/perl-howto-tutorials.html">Perl How To Tutorial eBooks</a>    </b>  </i></font><br><br>
+<hr size="1" width="100%" align="Left">
+<table align="right"><tbody><tr><td><script type="text/javascript"><!--
+google_ad_client = "pub-6471827809108620";
+/* Ad 3 120x240 */
+google_ad_slot = "7875894009";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script><script type="text/javascript" src="perl-split_files/show_ads.js"></script><script src="perl-split_files/show_ads_impl.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display: inline-table; border: medium none; height: 240px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 120px;"><ins id="google_ads_frame2_anchor" style="display: block; border: medium none; height: 240px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 120px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" src="perl-split_files/ads_002.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="240" scrolling="no" width="120"></iframe></ins></ins></td></tr></tbody></table>
+<font face="Verdana, Arial, Helvetica, sans-serif" size="2">Perl <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>split</b></font>
+ function allows you to break up a string into an array or a list, by 
+using a specific pattern. The pattern can be either a single character 
+or a more sophisticated regular expression. In this last case you need 
+to know a bit about the regexp language alphabet. </font><p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Anyway,
+ in this short free tutorial I&#8217;ll give you all the necessary information
+ to understand the provided snippet code and I&#8217;ll show you some ways 
+about how you can use Perl <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>split</b></font> function in your scripts.</font></p><p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Please note that Perl <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>split</b></font> function is the opposite of Perl <a href="http://www.misc-perl-info.com/perl-join.html">join</a> function, and there are a lot of situations where they are used together. While Perl <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>join</b></font> function connects the elements of a list into a string, Perl <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>split</b></font> function breaks apart a string into a list of substrings and returns that list.</font></p><p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The general syntax form of the Perl <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>split</b></font> function is as follows:</font></p><p></p><div style="background-color: rgb(247, 247, 247); color: rgb(0, 0, 190); width: 535px; border: 1px solid darkgray;"><code></code><pre><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font face="Courier New, Courier, mono" size="2"><b>LIST = split(/PATTERN/, EXPR, LIMIT);</b>
+</font></font></pre></div><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>where:</font><ul><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><li><font color="#0000be" face="Courier New, Courier, mono" size="2"><b>LIST</b></font> &#8211; is a list, array or hash that is returned by the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>split</b></font> function; if it is omitted, the Perl <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>split</b></font> function will be called in a scalar context and the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>EXPR</b></font> will be split in the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>@_</b></font> array &#8211; in this case the function will return the number of fields in which the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>EXPR</b></font> will be split (anyway, be aware if your call to <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>split</b></font> function is inside the body of a subroutine because it alters the value of <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>@_</b></font>)</li><li><font color="#0000be" face="Courier New, Courier, mono" size="2"><b>PATTERN</b></font> &#8211; usually is a regular expression but could be a single character or a string; the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>EXPR</b></font> is split on every occurrence of the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>PATTERN</b></font>, if <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>LIMIT</b></font> is not specified; if the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>PATTERN</b></font> parameter is omitted, the Perl split function will split on whitespace, skipping any leading ones.</li><li><font color="#0000be" face="Courier New, Courier, mono" size="2"><b>EXPR</b></font>
+ &#8211; is the string expression that will be split into an array or a list; 
+if this parameter is omitted, the content of the special scalar variable
+ <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>$_</b></font> will be split</li><li><font color="#0000be" face="Courier New, Courier, mono" size="2"><b>LIMIT</b></font> is the maximum number of fields the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>EXPR</b></font> will be split into</li></font></ul><font face="Verdana, Arial, Helvetica, sans-serif" size="2">You can omit the parenthesis, the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>LIST</b></font> that will be returned and any of the third arguments presented above &#8211; only the word split is compulsory.</font><p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Please note that if you use inside the pattern a metacharacter as:</font></p><p></p><div style="background-color: rgb(247, 247, 247); color: rgb(0, 0, 170); width: 535px; border: 1px solid darkgray;"><code></code><pre><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font face="Courier New, Courier, mono" size="2"><b> ^ $ ( ) \ | @ [ { ? . + *</b>
+</font></font></pre></div><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>you need to escape it by using the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>\</b></font>
+ (backslash character) to indicate that this character is to be regarded
+ as something to match and not some fancy character. For instance, if 
+you want to split your string using the pattern <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>/&amp;&amp;/</b></font> you need to write it as <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>/\&amp;\&amp;/</b></font>, otherwise you certainly won&#8217;t get what you expect.</font><p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> I hope that the following examples will clear up some of the features described above.<br><br>
+</font></p><hr size="1" width="100%" align="Left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font style="background-color: rgb(248, 253, 172);"><i>Check my <font style="color: rgb(255, 0, 0);"> <b>new</b></font> How To Tutorial eBooks (PDF format):</i></font></font><p></p><ul><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font style="background-color: rgb(248, 253, 172);"><li><i><a href="http://www.misc-perl-info.com/perl-str-func-howto.html#pssftoc"><b>"Perl Scalar and String Functions - How To Tutorial"</b></a></i></li><li><i><a href="http://www.misc-perl-info.com/perl-func-real-arrays-howto.html#pfrahttoc"><b>"Perl Functions for Real Arrays - How to Tutorial"</b></a></i></li></font></font><p></p></ul><p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font style="background-color: rgb(248, 253, 172);"><i>to see a lot of fully commented examples that help you use the Perl built-in functions in your scripts. </i></font>
+</font></p><hr size="1" width="100%" align="Left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br><table align="left" border="0"> <tbody><tr>  <td bgcolor="#444488"><font color="#efeff8"><b>Using split without parameters and in a scalar context</b></font>  </td> </tr></tbody></table><br><br></font><p></p><div style="background-color: rgb(247, 247, 247); color: rgb(0, 0, 170); width: 535px; border: 1px solid darkgray;"><code></code><pre><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font face="Courier New, Courier, mono" size="2"><b># initialize $_
+$_ = "Perl array functions";
+split;
+print "@_\n";
+# it displays: Perl array functions</b>
+</font></font></pre></div><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>In this example, all the parameters are omitted:</font><ul><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><li><font color="#0000be" face="Courier New, Courier, mono" size="2"><b>EXPR</b></font> is omitted, therefore the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b><font color="#0000be" face="Courier New, Courier, mono" size="2"><b>$_</b></font></b></font> will be used</li> <li><font color="#0000be" face="Courier New, Courier, mono" size="2"><b>PATTERN</b></font> is omitted, so whitespace will be used</li> <li><font color="#0000be" face="Courier New, Courier, mono" size="2"><b>LIMIT</b></font> is omitted, so there are no limits for the number of elements returned in the list</li><li><font color="#0000be" face="Courier New, Courier, mono" size="2"><b>LIST</b></font> is omitted, hence we are in a scalar context and the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>@_</b></font> special array will be used</li></font></ul><font face="Verdana, Arial, Helvetica, sans-serif" size="2">In order to print the elements of the special variable array <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>@_</b></font> delimitated by space, we use the print function with quotes.<br><br>
+<table align="left" border="0"> <tbody><tr>  <td bgcolor="#444488"><font color="#efeff8"><b>Using Perl split function when the delimiter is a string</b></font>  </td> </tr></tbody></table><br><br></font><p></p><div style="background-color: rgb(247, 247, 247); color: rgb(0, 0, 170); width: 535px; border: 1px solid darkgray;"><code></code><pre><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font face="Courier New, Courier, mono" size="2"><b>my $string = 'brown || red || yellow || white';
+my @colors = split(' \|\| ', $string);
+print "@colors\n";
+#it displays: brown red yellow white</b>
+</font></font></pre></div><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>In the above example, the string separator <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>' || '</b></font> consists of 4 characters, from which two are metacharacters, so we must escape them. </font><p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">There are situations where the separator consists of a single character, like in the following example:</font></p><p></p><div style="background-color: rgb(247, 247, 247); color: rgb(0, 0, 170); width: 535px; border: 1px solid darkgray;"><code></code><pre><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font face="Courier New, Courier, mono" size="2"><b>$string = 'brown:red:yellow:white';
+@colors = split(':', $string);</b>
+</font></font></pre></div><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>If we&#8217;ll print the array like in the previous example, we&#8217;ll get the same result.<br><br>
+<table align="left" border="0"> <tbody><tr>  <td bgcolor="#444488"><font color="#efeff8"><b>Using split with different characters within the pattern</b></font>  </td> </tr></tbody></table><br><br>We
+ define a set of characters and we want to split a string whenever we 
+found a character from our set. For example, let&#8217;s say our set contains 
+the characters:</font><p></p><table align="center" border="1"> <tbody><tr>  <td>&nbsp;-&nbsp;</td>  <td>&nbsp;dash&nbsp;</td> </tr> <tr>  <td>&nbsp;,&nbsp;</td>  <td>&nbsp;comma&nbsp;</td> </tr> <tr>  <td>&nbsp;.&nbsp;</td>  <td>&nbsp;dot&nbsp;</td> </tr> <tr>  <td>&nbsp;&nbsp;&nbsp;</td>  <td>&nbsp;space&nbsp;</td> </tr> <tr>  <td>&nbsp;:&nbsp;</td>  <td>&nbsp;colon&nbsp;</td> </tr> <tr>  <td>&nbsp;;&nbsp;</td>  <td>&nbsp;semicolon&nbsp;</td> </tr> <tr>  <td>&nbsp;!&nbsp;</td>  <td>&nbsp;exclamation mark&nbsp;</td> </tr> <tr>  <td>&nbsp;?&nbsp;</td>  <td>&nbsp;question mark&nbsp;</td> </tr> <tr>  <td>&nbsp;()&nbsp;</td>  <td>&nbsp;round brackets&nbsp;</td> </tr> <tr>  <td>&nbsp;[]&nbsp;</td>  <td>&nbsp;square brackets&nbsp;</td> </tr> <tr>  <td>&nbsp;{}&nbsp;</td>  <td>&nbsp;curly braces&nbsp;</td> </tr></tbody></table><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br><br>I think there are enough characters in our set. Now we want to use Perl <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>split</b></font> function to split a string using the above set as a pattern. Please have a look at the following snippet code:</font><p></p><div style="background-color: rgb(247, 247, 247); color: rgb(0, 0, 170); width: 535px; border: 1px solid darkgray;"><code></code><pre><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font face="Courier New, Courier, mono" size="2"><b>my $string = "This ?is! a  [short]-(sentence)! Why?";
+my @array = split (/[\-,. :;!?()[\]{}]+/, $string);
+print $_, " " foreach @array;
+print "\n";
+#it displays: This is a short sentence Why</b>
+</font></font></pre></div><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>We
+ enclose our characters from the set in square brackets to specify that 
+we want to match any of these characters and we use the + metacharacter 
+to specify that any character can be repeated more than once. If we 
+enclose some characters in square brackets, we say that we define a <u>character class</u>. Inside a character class the characters <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>] ^ -</b></font> are special so we must precede them by a backslash. In our example we escape the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>]</b></font> and <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>&#8211;</b></font> characters.<br><br>
+<table align="left" border="0"> <tbody><tr>  <td bgcolor="#444488"><font color="#efeff8"><b>Use Perl split function to read data from a csv file</b></font>  </td> </tr></tbody></table><br><br></font><p></p><table align="right"><tbody><tr><td><script type="text/javascript"><!--
+google_ad_client = "pub-6471827809108620";
+/* Ad 3 120x240 */
+google_ad_slot = "7875894009";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script><script type="text/javascript" src="perl-split_files/show_ads.js"></script><script src="perl-split_files/show_ads_impl.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display: inline-table; border: medium none; height: 240px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 120px;"><ins id="google_ads_frame3_anchor" style="display: block; border: medium none; height: 240px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 120px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame3" marginheight="0" marginwidth="0" name="google_ads_frame" src="perl-split_files/ads_003.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="240" scrolling="no" width="120"></iframe></ins></ins></td></tr></tbody></table><p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">A
+ csv file is a comma delimited text data file and has the extension 
+".csv". There are a lot of applications such as Excel and MS Access that
+ allows you to save the data in a csv format. It&#8217;s very easy to create a
+ csv file yourself, by delimiting the data with commas and ending each 
+line with a newline character. The "persons.csv" file presented below is
+ an example:</font></p><p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>Persons.csv</b><br>Raw structure: firstname, lastname, age, eyecolor</font></p><p></p><div style="background-color: rgb(247, 247, 247); color: rgb(0, 0, 170); width: 400px; border: 1px solid darkgray;"><code></code><pre><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font face="Courier New, Courier, mono" size="2"><b>John, Silva, 25, blue
+Mary, Brown, 32, brown
+Paul, Williams, 52, green</b>
+</font></font></pre></div><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>We intend to read this file and create the bidimensional <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>@records</b></font> array with the records of the file. Each element of the array is a reference of the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>@columns</b></font> array that has as elements the items from the file raw:</font><p></p><div style="background-color: rgb(247, 247, 247); color: rgb(0, 0, 170); width: 535px; border: 1px solid darkgray;"><code></code><pre><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font face="Courier New, Courier, mono" size="2"><b>use warnings;
+use strict;
+
+my @records;
+open FILE, "persons.csv" or die $!;
+#we will read the file line by line 
+while(&lt;FILE&gt;)
+{
+  # read each line in $_  
+  # chomp the trailing newline from $_ 
+  chomp;
+  my @columns = split ", ", $_;
+  push @records, \@columns;
+}
+
+# print the array
+foreach my $record(@records) {
+  foreach my $column(@{$record}) {
+
+    # test the last column 
+
+    if(\$column == \$$record[-1]) {
+      print "$column";
+    }
+    else {
+      print "$column:";
+    }
+  }
+  print "\n";
+}</b>
+</font></font></pre></div><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>The output produced after running this snippet code is as follows:</font><p></p><div style="background-color: rgb(247, 247, 247); color: rgb(0, 0, 170); width: 535px; border: 1px solid darkgray;"><code></code><pre><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font face="Courier New, Courier, mono" size="2"><b>John:Silva:25:blue
+Mary:Brown:32:brown
+Paul:Williams:52:green</b>
+</font></font></pre></div><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>Please note the line:</font><p></p><div style="background-color: rgb(247, 247, 247); color: rgb(0, 0, 170); width: 535px; border: 1px solid darkgray;"><code></code><pre><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font face="Courier New, Courier, mono" size="2"><b>if(\$column == \$$record[-1])</b>
+</font></font></pre></div><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>where I tested if I reached the last element of the array in the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>foreach</b></font> loop. See the next simple example if you need to find the last element of an array in a <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>foreach</b></font> loop:</font><p></p><div style="background-color: rgb(247, 247, 247); color: rgb(0, 0, 170); width: 535px; border: 1px solid darkgray;"><code></code><pre><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font face="Courier New, Courier, mono" size="2"><b>@array = qw(one two three four);
+foreach $item (@array) {
+  if(\$item == \$array[-1]) {
+    print "Last element of the array = $item\n";
+  }
+}  
+#it displays: Last element of the array = four</b>
+</font></font></pre></div><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>And of course, don&#8217;t forget to look at the way you can use the <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>split</b></font> function to split the record of the file in columns.</font><p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Please click <a href="http://www.misc-perl-info.com/support-files/split.zip">here</a> to download the Perl <font color="#0000be" face="Courier New, Courier, mono" size="2"><b>split</b></font> script with all the above examples included.<br><br>
+</font></p><hr size="1" width="100%" align="Left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font style="background-color: rgb(248, 253, 172);"><i>Check my <font style="color: rgb(255, 0, 0);"> <b>new</b></font> How To Tutorial eBooks (PDF format):</i></font></font><p></p><ul><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font style="background-color: rgb(248, 253, 172);"><li><i><a href="http://www.misc-perl-info.com/perl-str-func-howto.html#pssftoc"><b>"Perl Scalar and String Functions - How To Tutorial"</b></a></i></li><li><i><a href="http://www.misc-perl-info.com/perl-func-real-arrays-howto.html#pfrahttoc"><b>"Perl Functions for Real Arrays - How to Tutorial"</b></a></i></li></font></font><p></p></ul><p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font style="background-color: rgb(248, 253, 172);"><i>to see a lot of fully commented examples that help you use the Perl built-in functions in your scripts. </i></font>
+</font></p><hr size="1" width="100%" align="Left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br><table align="center"><tbody><tr><td><script type="text/javascript"><!--
+google_ad_client = "pub-6471827809108620";
+/* Ad 336x280 */
+google_ad_slot = "9806448455";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script><script type="text/javascript" src="perl-split_files/show_ads.js"></script><script src="perl-split_files/show_ads_impl.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display: inline-table; border: medium none; height: 280px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 336px;"><ins id="google_ads_frame4_anchor" style="display: block; border: medium none; height: 280px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 336px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame4" marginheight="0" marginwidth="0" name="google_ads_frame" src="perl-split_files/ads_004.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="280" scrolling="no" width="336"></iframe></ins></ins></td></tr></tbody></table><br><br>
+</font><hr size="1" width="100%" align="Left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><font style="color: rgb(255, 0, 0);">NEW!!!</font></b><br><br><font style="background-color: rgb(248, 253, 172);"><i>Do you want more information about the basic Perl topics? <br><br>Check my new <b>"Perl How To"</b> Tutorial eBooks page where I'll answer the most frequent questions regarding some topics :</i></font><br><br></font><center><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b><a href="http://www.misc-perl-info.com/perl-howto-tutorials.html">Perl How To Tutorial eBooks</a></b></font></center><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+</font><hr size="1" width="100%" align="Left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>Table of Contents:</b><br clear="all"><br clear="all"><a href="http://www.misc-perl-info.com/perl-script.html">A Perl Script</a><br clear="all"><a href="http://www.misc-perl-info.com/install-perl.html">Install Perl</a><br clear="all"><a href="http://www.misc-perl-info.com/running-perl.html">Running Perl</a><br clear="all"><a href="http://www.misc-perl-info.com/perl-data-types.html">Perl Data Types</a><br clear="all"><a href="http://www.misc-perl-info.com/perl-variables.html">Perl Variables</a><br clear="all"><a href="http://www.misc-perl-info.com/perl-operators.html">Perl Operators</a><br clear="all"><a href="http://www.misc-perl-info.com/perl-lists.html">Perl Lists</a><br clear="all"><a href="http://www.misc-perl-info.com/perl-arrays.html">Perl Arrays</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-array-size.html">Array Size</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-array-length.html">Array Length</a><br clear="all"><a href="http://www.misc-perl-info.com/perl-hashes.html">Perl Hashes</a><br clear="all"><a href="http://www.misc-perl-info.com/perl-statements.html">Perl Statements</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-if.html">Perl if</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-unless.html">Perl unless</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-switch.html">Perl switch</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-while.html">Perl while</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-do-while.html">Perl do-while</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-until.html">Perl until</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-do-until.html">Perl do-until</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-for.html">Perl for</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-foreach.html">Perl foreach</a><br clear="all"><a href="http://www.misc-perl-info.com/perl-functions.html">Built-in Perl Functions</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-categ-functions.html">Functions by Category</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-string-functions.html">String Functions</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-list-functions.html">List Functions</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-array-functions.html">Array Functions</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-hash-functions.html">Hash Functions</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-miscellaneous-functions.html">Miscellaneous Functions</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-index-functions.html">Functions in alphabetical order</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-chomp.html">chomp</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-chop.html">chop</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-chr.html">chr</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-crypt.html">crypt</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-defined.html">defined</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-delete.html">delete</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-each.html">each</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-grep.html">grep</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-hex.html">hex</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-index.html">index</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-join.html">join</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-lc.html">lc</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-lcfirst.html">lcfirst</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-length.html">length</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-map.html">map</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-oct.html">oct</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-ord.html">ord</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-pack.html">pack</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-pop.html">pop</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-push.html">push</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-q.html">q</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-qq.html">qq</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-qw.html">qw</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-reverse.html">reverse</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-rindex.html">rindex</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-scalar.html">scalar</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-shift.html">shift</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-sort.html">sort</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-splice.html">splice</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-split.html">split</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-sprintf.html">sprintf</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-substr.html">substr</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-tr.html">tr</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-uc.html">uc</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-ucfirst.html">ucfirst</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-undef.html">undef</a><br clear="all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.misc-perl-info.com/perl-unshift.html">unshift</a><br clear="all"><br clear="all">
+<a href="http://www.misc-perl-info.com/perl-basics.html">return from Perl split Function to Perl Basics</a><br clear="all"></font><br>
+<hr size="1" width="100%" align="Left">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br><center>Would you like to create your own website like this one?<br> Hit the Alarm Clock!<br><br><a href="http://quicktour.sitesell.com/gnm.html" target="_blank"><img src="perl-split_files/hp3-468x60.gif" alt="Site Build It!" height="60" width="468" border="0"></a></center></font><br>
+<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="perl-split_files/ga.js" type="text/javascript"></script><script type="text/javascript">var pageTracker = _gat._getTracker("UA-6550585-1");
+pageTracker._trackPageview();
+</script>
+<style type="text/css"> <!-- body{background-image:url(http://www.misc-perl-info.com/images/back-image-1.gif); background-attachment:fixed;background-repeat:repeat-y; background-position:top center;}--> </style>
+<br>
+<script src="perl-split_files/socializeit.js" type="text/javascript"></script>
+                 <script type="text/javascript">socializeit({domain:'misc-perl-info.com', payItText:'Enjoy this page?  Please pay it forward. Here\'s how...', szColor:'',whatIsThisUrl:'http://www.misc-perl-info.com/help/whats-this.html'});
+                 </script><table style="border: 1px solid rgb(204, 204, 204); padding: 2px; width: 480px;" align="center"><tbody><tr><td rowspan="2" style="white-space: nowrap;"><strong>Share this page:&nbsp;</strong><br><div id="whatsthis" style="font-size: 11px;"><a href="#" onclick="window.open('http://www.misc-perl-info.com/help/whats-this.html','sharer','toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes'); return false;">What's This?</a></div></td><td><a href="#share_on_Google" onclick="window.open(socializeit.getURL('Google'), 'sharer', 'toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes');return false;"><img src="perl-split_files/google.gif" alt="Google" style="border: 0pt none;"></a></td><td><a href="#share_on_Buzz" onclick="window.open(socializeit.getURL('Buzz'), 'sharer', 'toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes');return false;"><img src="perl-split_files/yahoobuzz1.gif" alt="Buzz" style="border: 0pt none;"></a></td><td><a href="#share_on_Facebook" onclick="window.open(socializeit.getURL('Facebook'), 'sharer', 'toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes');return false;"><img src="perl-split_files/Facebook.jpg" alt="Facebook" style="border: 0pt none;"></a></td><td><a href="#share_on_Myspace" onclick="window.open(socializeit.getURL('Myspace'), 'sharer', 'toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes');return false;"><img src="perl-split_files/myspace.gif" alt="Myspace" style="border: 0pt none;"></a></td></tr><tr><td><a href="#share_on_StumbleUpon" onclick="window.open(socializeit.getURL('StumbleUpon'), 'sharer', 'toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes');return false;"><img src="perl-split_files/StumbleUpon.jpg" alt="StumbleUpon" style="border: 0pt none;"></a></td><td><a href="#share_on_Technorati" onclick="window.open(socializeit.getURL('Technorati'), 'sharer', 'toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes');return false;"><img src="perl-split_files/Technorati.jpg" alt="Technorati" style="border: 0pt none;"></a></td><td><a href="#share_on_del.icio.us" onclick="window.open(socializeit.getURL('del.icio.us'), 'sharer', 'toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes');return false;"><img src="perl-split_files/del.jpg" alt="del.icio.us" style="border: 0pt none;"></a></td><td><a href="#share_on_Twitter" onclick="window.open(socializeit.getURL('Twitter'), 'sharer', 'toolbar=0,status=0,width=700,height=500,resizable=yes,scrollbars=yes');return false;"><img src="perl-split_files/twitter.gif" alt="Twitter" style="border: 0pt none;"></a></td></tr><tr><td colspan="5" style="padding: 1em;"><p style="text-align: center; margin-top: 0pt; margin-bottom: 0pt;"><a href="#pay_it_forward" onclick="document.getElementById('socializeit12989381940765460757').style.display='block';return false;">Enjoy this page?  Please pay it forward. Here's how...</a></p><div style="display: none;" id="socializeit12989381940765460757"><p>Would you prefer to share this page with others by linking to it?</p><ol><li>Click on the HTML link code below.</li><li>Copy
+ and paste it, adding a note of your own, into your blog, a Web page, 
+forums, a blog comment, your Facebook account, or anywhere that someone 
+would find this page valuable.</li></ol><form action="#"><div style="text-align: center;"><textarea cols="50" rows="2" onclick="this.select();">&lt;a href="http://www.misc-perl-info.com/perl-split.html"&gt;Perl split Function&lt;/a&gt;</textarea></div></form></div></td></tr></tbody></table>
+<p align="Center"><img src="perl-split_files/FOOTER.gif" alt="footer for perl split page" height="80" width="500" border="0"><br></p>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</body></html>

@@ -1,0 +1,10 @@
+if you know or find out the width of the table, let's say 5cm -
+if you're using a KOMA-Script class:
+\setcapwidth[c]{5cm}
+if you're using the caption package:
+\captionsetup{width=5cm}
+
+Both may be applied inside the table environment.
+
+An automatically calculating solution is more complicated, but could be done using the \settowidth command.
+

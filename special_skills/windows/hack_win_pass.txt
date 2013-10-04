@@ -1,0 +1,10 @@
+   1. Install a program called chntpw
+      $ sudo apt-get install chntpw
+   2. After successfully installing chntpw, you have to access the Windows NTFS partition by mounting it and allowing read/write support. A good tutorial on how to do this can be found HERE.
+   3. After that, use your command line skills by navigating to WINDOWS/system32/config
+   4. Once inside the config directory, issue this command:
+      $ sudo chntpw SAM
+   5. A long display of information will follow. Just ignore them.
+   6. Once you are prompted to reset the password, it is recommended to leave the password blank with an asterisk (*).
+   7. Reboot, and you can now login to Windows with full administrative access.
+

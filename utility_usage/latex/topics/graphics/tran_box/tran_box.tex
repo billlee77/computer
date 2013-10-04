@@ -1,0 +1,43 @@
+\documentclass{article}
+
+%\usepackage{color}
+%\usepackage{xcolor}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage{pstricks}
+\usepackage{pstricks-add}
+\usepackage{color}
+
+% Transparent circle!! example
+
+\begin{document}
+
+%\psset{fillstyle=transparent,linestyle=none}
+
+% \begin{pspicture}(0,0)(5,5)
+% \psframe[linewidth=2mm,%
+% linecolor=Red,%
+% dimen=outer]%
+% (1,1)(2,2)
+% \psframe[linewidth=2mm,%
+% linecolor=Blue,%
+% dimen=middle]%
+% (2,3)(3,4)
+% \psframe[linewidth=2mm,%
+% linecolor=Green,%
+% dimen=inner]%
+% (3,1)(4,2)
+% \end{pspicture}
+% 
+% 
+\begin{pspicture}(4,4)
+  \pscircle[fillstyle=solid,fillcolor=blue!60]{2}
+  \pscircle[fillstyle=solid,fillcolor=red,opacity=0.4](-1.5,-1.5){2}
+  \pscircle[fillstyle=solid,fillcolor=cyan,opacity=0.6](-1.5,1.5){2}
+  \pscircle[fillstyle=solid,fillcolor=black!40,opacity=0.3](1.5,1.5){2}
+  \pscircle[fillstyle=solid,fillcolor=yellow,opacity=0.7](1.5,-1.5){2}
+\end{pspicture}
+
+
+\end{document}
+
+

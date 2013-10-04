@@ -1,0 +1,2 @@
+# This is one of the best example of split
+ls -d */ | perl -e 'print "$_" for map {split /\//, $_} <STDIN>'

@@ -1,0 +1,44 @@
+
+# Difference method of defining array
+
+# /*--------------------------------------------------
+# 
+my @x_coord = ();
+my @y_coord = ();
+my @z_coord = ();
+
+foreach my $i ( 0 .. 3) {
+	$x_coord[$i] = 0;
+	$y_coord[$i] = 0;
+	$z_coord[$i] = 0;
+}
+
+print "@x_coord", "\n";
+print "@y_coord", "\n";
+print "@z_coord", "\n";
+
+print "\n";
+
+
+
+# @coins = ("Quarter","Dime","Nickel");
+# print "@coins";
+# print "<br />";
+# print @coins;
+
+@array = (0 .. 20);
+print "@array", "\n"
+
+
+# my @array = (0, 0, 0);
+# print "first ", @array[2], "\n";
+
+# 2D Array Definition
+#
+# my @array = ();
+# foreach my $i ( 0 .. 10 ) {
+#   foreach my $j ( 0 .. 10 ) {
+#     push @{ $array[$i] }, $j;
+#   }
+# }
+# 

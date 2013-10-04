@@ -1,0 +1,7 @@
+#Program terminate
+	import sys
+	sys.exit()
+
+#string to number convertion
+
+

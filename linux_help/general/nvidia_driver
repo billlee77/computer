@@ -1,0 +1,28 @@
+
+Installing the New nvidia Driving and top using nouveau driver
+
+Step 1:
+	$ yum install yum-conf-elrepo
+
+Step 2: 
+	$ yum --enablerepo=elrepo install knod-nvidia
+
+Step 3: Modify /etc/X11/xorg.conf file
+	Add 
+
+	# added by gh, 03.02.07
+	# to keep paw++ and physica window from being overwritten by other jobs
+        Option "backingstore"
+
+	to the Section "Screen"
+
+
+To check nouveau is replace by nvidia drivier
+
+	$ ps auwx | grep nouveau
+	$ lsmod
+
+
+To check the information for GPU
+	$ nvidia-smi  -a
+

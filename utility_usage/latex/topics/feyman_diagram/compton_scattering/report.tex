@@ -1,0 +1,25 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{feynmf}
+
+\begin{document}
+
+\setlength{\unitlength}{1mm}
+
+
+
+% My first my drawn Feynman digram
+\begin{fmffile}{comptonfey}
+\centering
+\begin{fmfgraph*}(40,25)
+\fmfleft{Z}
+\fmf{photon,label=$\gamma$}{Z,Zff}
+\fmf{fermion,label=$e^{-}$}{Zff,fb}
+\fmf{photon,label=$\gamma^{\prime}$}{Zff,f}
+\fmfright{fb,f}
+\fmfdot{Zff}
+\end{fmfgraph*}
+\end{fmffile}
+
+\end{document}
+

@@ -1,0 +1,13 @@
+# Installing Packages
+apt-get install mailutils
+apt-get install heirloom-mailx
+
+# Configuration Command
+
+sudo dpkg-reconfigure exim4-config
+
+Choose 	
+	*internet site; mail is sent and received directly using SMTP
+
+MTA Deamon will start automatically
+

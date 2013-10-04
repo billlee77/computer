@@ -1,0 +1,48 @@
+#  Units are cm, degree, atmosphere, GeV Inner tank diameter 158cm
+#  Focal plane at 1810 cm front of Cerenkov at 1880 cm 
+#  Front of gas at 1885.2cm accounting for a 5.2cm lip on either side
+Output file in text of binary (t or b): t
+Front of Cerenkov Tank: 75.2 
+Cerenkov Tank length: 117.1
+Tank inner diameter: 170.0
+#  
+#  Enter the values from the center outwards 
+Mirror shape spherical or parabolic (s or p): s
+Mirror corner or middle (c or m): m
+Mirror focal length: 55
+Positive X Positive Y Mirror Start (x,z): 5,87.5
+Positive X Positive Y Mirror End (x,z): 60,107.5
+Positive X Positive Y Mirror Width: 55
+Positive X Negative Y Mirror Start (x,z): 5,91
+Positive X Negative Y Mirror End (x,z): 60,111
+Positive X Negative Y Mirror Width: 55
+Negative X Positive Y Mirror Start (x,z): 6,90.5
+Negative X Positive Y Mirror End (x,z): -49,106.5
+Negative X Positive Y Mirror Width: 55
+Negative X Negative Y Mirror Start (x,z): 6,94
+Negative X Negative Y Mirror End (x,z): -49,110
+Negative X Negative Y Mirror Width: 55
+Y-axis Mirror Overlap: 1
+#
+# PMT
+PMT turned on (y or n): n
+PMT radius: 6
+PMT 1 position (x,y,z): 67.2,26.5,63.9
+PMT 2 position (x,y,z): 67.1,-26.7,67.4
+PMT 3 position (x,y,z): -51.6,27.6,58.3
+PMT 4 position (x,y,z): -50.7,-27.4,62.8
+PMT 1 angle: 46
+PMT 2 angle: 46
+PMT 3 angle: 52
+PMT 4 angle: 52
+# 
+# Planes
+Number of Planes: 7
+Plane separation (cm): 2.0 
+# RADIATOR GAS
+# Central momentum (GeV)
+Radiator gas, OctaFluoroTetraHydroFuran: C4F8O
+Gas pressure: 0.95
+SHMS central momentum: 7.0
+Particle pion or kaon (p or k): p
+Particle charge (+ or -): + 

@@ -1,0 +1,9 @@
+# find out login users
+	$ who
+ 
+# Wirite messege, and display at terminal
+ 	$ write user tty1
+	
+# Type Messege
+
+# Ctrl+c to finish 

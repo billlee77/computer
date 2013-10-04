@@ -1,0 +1,5 @@
+  
+	:%/\d\+\s\+\s\*$//
+ 
+    	rename 's/\.idl/.pro/' *.idl
+

@@ -1,0 +1,2 @@
+/usr/local/lib/python2.6/dist-packages/pyx/text.py:888: DeprecationWarning: os.popen4 is deprecated.  Use the subprocess module.
+  self.texinput, self.texoutput = os.popen4("%s%s %s" % (self.mode, ipcflag, self.texfilename), "t", 0)

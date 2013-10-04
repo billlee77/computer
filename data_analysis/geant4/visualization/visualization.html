@@ -1,0 +1,417 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>
+</title>
+
+<!-- Changed by: Katsuya Amako, 30-Nov-1998 -->
+<!-- Changed by: Satoshi Tanaka,  1-Jun-2000 -->
+<!-- Changed by: Dennis Wright, 29-Nov-2001 -->
+<!-- Proof read by: Joe Chuma,  15-Jun-1999 -->
+
+</head><body>
+<table width="100%"><tbody><tr>
+<td>
+<a href="http://geant4.web.cern.ch/geant4/G4UsersDocuments/Overview/html/index.html">
+<img src="visualization_files/Overview.gif" alt="Overview"></a>
+<a href="http://geant4.web.cern.ch/geant4/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/GettingStarted/index.html">
+<img src="visualization_files/Contents.gif" alt="Contents"></a>
+<a href="http://geant4.web.cern.ch/geant4/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/GettingStarted/executeProgram.html">
+<img src="visualization_files/Previous.gif" alt="Previous"></a>
+<img src="visualization_files/NextGR.gif" alt="Next">
+</td>
+<td align="Right">
+<font color="#238e23" size="-1">
+<b>Geant4 User's Guide</b>
+<br>
+<b>For Application Developers</b>
+<br>
+<b>Getting Started with Geant4</b>
+</font>
+</td>
+</tr></tbody></table>
+<br><br>
+
+<p align="Center">
+<font color="#238e23" size="+3">
+<b>2.10 How to Visualize the Detector and Events</b>
+</font>
+<br><br>
+
+</p><hr size="7%" align="Center">
+<p>
+
+<a name="2.10.1">
+<h2>2.10.1 Introduction</h2></a>
+
+This section briefly explains how to perform Geant4 Visualization.  The 
+description here is based on the sample program <tt>examples/novice/N03</tt>. 
+More details are given in 
+<a href="http://geant4.web.cern.ch/geant4/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization/index.html">Section 8</a> "Visualization".  Example
+macro files can be found in 
+<tt>examples/novice/N03/visTutor/exN03VisX.mac</tt>. 
+</p><p>
+
+</p><hr>
+<a name="2.10.2">
+<h2>2.10.2 Visualization Drivers</h2></a>
+ The Geant4 visualization system was developed in response to a diverse set of requirements:
+  <ol>
+  <li>Quick response to study geometries, trajectories and hits
+  </li><li>High-quality output for publications
+  </li><li>Flexible camera control to debug complex geometries
+  </li><li>Tools to show volume overlap errors in detector geometries
+  </li><li>Interactive picking to get more information on visualized objects
+ </li></ol>
+<p>
+ No one graphics system is ideal for all of these requirements, and many of the large
+ software frameworks into which Geant4 has been incorporated already have their own
+ visualization systems, so Geant4 visualization was designed around an abstract interface that
+ supports a diverse family of graphics systems.
+ Some of these graphics systems use a graphics library compiled with Geant4, such as OpenGL,
+ while others involve a separate application, such as WIRED or DAWN.
+</p><p>
+ You need not use all visualization drivers. You can select those suitable
+ to your purposes. In the following, for simplicity, we assume that the
+ Geant4 libraries are built (installed) with the "OpenGL-Xlib driver" and 
+ the "DAWNFILE driver" incorporated.
+</p><p>
+In order to use the DAWNFILE driver, you need Fukui Renderer DAWN, which is
+obtainable from the following Web site:
+<a href="http://geant4.kek.jp/GEANT4/vis">http://geant4.kek.jp/GEANT4/vis</a>.
+</p><p>
+In order to use the the OpenGL drivers, you need the OpenGL library, 
+which is installed in many platforms by default.  You also need to 
+set an environmental variable <tt>G4VIS_BUILD_OPENGLX_DRIVER</tt> to <tt>1</tt>
+in building (installing) Genat4 libraries, 
+and also set another environmental variable
+<tt>G4VIS_USE_OPENGLX </tt> to <tt>1</tt> in compiling your Geant4 executable.
+You may also have to set an environmental variable <tt>OGLHOME</tt> to the 
+OpenGL root directory.
+For example, 
+</p><pre>     setenv G4VIS_BUILD_OPENGLX_DRIVER 1
+     setenv G4VIS_USE_OPENGLX 1
+     setenv OGLHOME /usr/X11R6
+</pre>
+Some other visualization drivers depending on external libraries are 
+also required to set the similar environmental variables, 
+<tt>G4VIS_BUILD_DRIVERNAME_DRIVER</tt> and <tt>G4VIS_USE_DRIVERNAME</tt>,
+to <tt>1</tt>.
+All visualization drivers independent of external libraries,
+e.g. DAWNFILE and VRMLFILE drivers, need not such setting. 
+(But you must prepare a proper visualization manager class and a proper 
+<tt>main()</tt> function, anyway. See below.)
+<p>
+For all visualization drivers available in your Geant4 executable,   
+the C-pre-processor flags <tt>G4VIS_USE_DRIVERNAME</tt> 
+are automatically set by <tt>config/G4VIS_USE.gmk</tt> in compilation.
+Similarly, for all visualization drivers incorporated 
+into the Geant4 libraries,
+the C-pre-processor flags <tt>G4VIS_BUILD_DRIVERNAME_DRIVER</tt> 
+are automatically set by <tt>config/G4VIS_BUILD.gmk</tt> in installation.
+
+</p><hr>
+<a name="2.10.3">
+<h2>2.10.3 How to Incorporate Visualization Drivers into an Executable</h2></a>
+
+ You can realize (use) visualization driver(s) you want 
+ in your Geant4 executable.
+ These can only be from the set installed in the Geant4 libraries. You
+ will be warned if the one you request is not available. 
+ <p>
+ In order to realize visualization drivers, you must instantiate
+ and initialize a subclass of <tt>G4VisManager</tt> that implements
+ the pure virtual function <tt>RegisterGraphicsSystems()</tt>.  This
+ subclass must be compiled in the user's domain to force the loading
+ of appropriate libraries in the right order.  The easiest way to do
+ this is to use <tt>G4VisExecutive</tt>, a provided class with
+ included implementation.  <tt>G4VisExecutive</tt> is sensitive to the
+ <tt>G4VIS_USE...</tt> variables mentioned above.
+</p><p>If you do wish to write your own subclass, you may do so.  You will
+see how to do this by looking at <tt>G4VisExecutive.icc</tt>.  A
+typical extract is:
+
+</p><pre>     ...
+       RegisterGraphicsSystem (new G4DAWNFILE);
+     ...
+     #ifdef G4VIS_USE_OPENGLX
+       RegisterGraphicsSystem (new G4OpenGLImmediateX);
+       RegisterGraphicsSystem (new G4OpenGLStoredX);
+     #endif
+     ...
+</pre>
+<p>If you wish to use <tt>G4VisExecutive</tt> but register an
+additional graphics system, <tt>XXX</tt> say, you may do so either
+before or after initializing:
+</p><pre>     visManager-&gt;RegisterGraphicsSytem(new XXX);
+     visManager-&gt;Initialize();
+</pre>
+<p>An example of a typical <tt>main()</tt> function is given below.
+
+</p><hr>
+<a name="2.10.4">
+<h2>2.10.4 Writing the <tt>main()</tt> Method to Include Visualization</h2></a>
+
+ Now we explain how to write a visualization manager and the <tt>main()</tt>
+ function for Geant4 visualization.
+ In order that your Geant4 executable is able to perform visualization,
+ you must instantiate and initialize <i>your</i> Visualization Manager in
+ the <tt>main()</tt> function. 
+ The typical <tt>main()</tt> function available for visualization 
+ is written in the following style:
+<p>
+</p><center>
+<table border="2" cellpadding="10">
+<tbody><tr>
+<td>
+<pre> //----- C++ source codes: main() function for visualization
+ #ifdef G4VIS_USE
+ #include "G4VisExecutive.hh"
+ #endif
+
+ .....
+
+ int main(int argc,char** argv) {
+
+ .....
+
+   // Instantiation and initialization of the Visualization Manager
+ #ifdef G4VIS_USE
+   // visualization manager
+   G4VisManager* visManager = new G4VisExecutive;
+   visManager-&gt;Initialize();
+ #endif
+
+ .....
+
+   // Job termination
+ #ifdef G4VIS_USE
+   delete visManager;
+ #endif
+
+ .....
+
+   return 0;
+ }
+
+ //----- end of C++
+</pre>
+</td>
+</tr>
+<tr>
+<td align="center">
+ Source listing 2.10.1<br>
+ The typical <tt>main()</tt> routine available for visualization.
+</td>
+</tr>
+</tbody></table></center>
+<p>
+ In the instantiation, initialization, and deletion of the
+ Visualization Manager, the use of the macro <tt>G4VIS_USE</tt> is
+ recommended. This is set unless the environment variable
+ <tt>G4VIS_NONE</tt> is set.  This allows one easily to build an
+ executable without visualization, if required, without changing the
+ code (but remember you have to force recompilation whenever you
+ change the environment). Note that it is your responsibility to
+ delete the instantiated Visualization Manager by yourself.  A
+ complete description of a sample <tt>main()</tt> function is
+ described in <tt>examples/novice/N03/exampleN03.cc</tt>.
+</p><p>
+
+</p><hr>
+<a name="2.10.5">
+<h2>2.10.5 Sample Visualization Sessions </h2></a>
+
+In this section we present typical sessions of 
+Geant4 visualization. 
+You can test them with the sample program geant4/examples/novice/N03.
+Run a binary executable "exampleN03" without an argument,
+and then execute the commands below in the "Idle&gt;" state. 
+Explanation of each command will be described later.
+(Note that the OpenGL-Xlib driver and the DAWNFILE driver are 
+ incorporated into the executable, and that 
+ Fukui Renderer DAWN is installed in your machine. )
+
+<h2>2.10.5.1 <tt>Visualization of detector components</tt></h2>
+
+The following session visualizes detector components with 
+the OpenGL-Xlib driver and then with the DAWNFILE driver.
+The former exhibits minimal visualization commands to visualize 
+detector geometry, while the latter exhibits customized visualization
+(visualization of a selected physical volume, coordinate axes, texts, etc).
+<p>
+
+</p><pre>###################################################
+#  vis1.mac:
+#    A Sample macro to demonstrate visualization 
+#    of detector geometry.
+#
+#  USAGE: 
+#   Save the commands below as a macro file, say, 
+#   "vis1.mac", and execute it as follows:
+#
+#   % $(G4BINDIR)/exampleN03
+#   Idle&gt; /control/execute vis1.mac
+#############################################
+
+#############################################
+# Visualization of detector geometry 
+#  with the OGLIX (OpenGL Immediate X) driver
+#############################################
+
+# Invoke the OGLIX driver: 
+#  Create a scene handler and a viewer for the OGLIX driver
+/vis/open OGLIX
+
+# Visualize the whole detector geometry 
+#  with the default camera parameters.
+#  Command "/vis/drawVolume" visualizes the detector geometry,
+#  and command "/vis/viewer/flush" declares the end of visualization.
+#  (The command /vis/viewer/flush  can be omitted for the OGLIX 
+#   and OGLSX drivers.)
+#  The default argument of "/vis/drawVolume" is "world".
+/vis/drawVolume
+/vis/viewer/flush
+
+#########################################
+# Visualization with the DAWNFILE driver
+#########################################
+
+# Invoke the DAWNFILE driver 
+#  Create a scene handler and a viewer for the DAWNFILE driver
+/vis/open DAWNFILE
+
+# Bird's-eye view of a detector component (Absorber)
+#  drawing style: hidden-surface removal
+#  viewpoint  : (theta,phi) = (35*deg, 45*deg), 
+#  zoom factor: 1.1 of the full screen size
+#  coordinate axes:
+#     x-axis:red,  y-axis:green,  z-axis:blue
+#     origin: (0,0,0),  length: 500 mm
+#
+/vis/viewer/reset
+/vis/viewer/set/style          surface
+/vis/viewer/zoom               1.1 
+/vis/viewer/set/viewpointThetaPhi  35 45
+/vis/drawVolume                Absorber 
+/vis/scene/add/axes            0 0 0 500 mm
+/vis/scene/add/text            0 0 0 mm  40 -100 -140   Absorber 
+/vis/viewer/flush
+
+# Bird's-eye view of the whole detector components
+#  * "/vis/viewer/set/culling global false" makes the invisible 
+#    world volume visible.
+#    (The invisibility of the world volume is set 
+#     in ExN03DetectorConstruction.cc.)
+/vis/viewer/set/style     wireframe
+/vis/viewer/set/culling   global false
+/vis/drawVolume
+/vis/scene/add/axes       0 0 0 500 mm
+/vis/scene/add/text       0 0 0 mm 50 -50 -200   world
+/vis/viewer/flush
+################### END of vis1.mac ###################
+</pre>
+<br>
+
+<h2>2.10.5.2 <tt>Visualization of events</tt></h2>
+
+The following session visualizes events (tajectories) 
+with the OpenGL-Xlib driver and then with the DAWNFILE driver.
+The former exhibits minimal visualization commands to visualize events,
+while the latter exhibits customized visualization. 
+Note that the run action and event action classes should be
+described properly. (See, for example, the following classes:<br>
+"examples/novice/N03/src/ExN03RunAction.cc", 
+"examples/novice/N03/src/ExN03EventAction.cc").
+
+<p>
+
+</p><pre>###################################################
+#  vis2.mac:
+#    A Sample macro to demonstrate visualization 
+#    of events (trajectories).
+#
+#  USAGE: 
+#   Save the commands below as a macro file, say, 
+#   "vis2.mac", and execute it as follows:
+#
+#   % $(G4BINDIR)/exampleN03
+#   Idle&gt; /control/execute vis1.mac
+#############################################
+
+#####################################################
+# Store particle trajectories for visualization
+/tracking/storeTrajectory 1
+#####################################################
+
+########################################################
+# Visualization with the OGLSX (OpenGL Stored X) driver
+########################################################
+
+# Invoke the OGLSX driver 
+#  Create a scene handler and a viewer for the OGLSX driver
+/vis/open OGLSX
+
+# Create an empty scene and add detector components to it
+/vis/drawVolume
+
+# Add trajectories to the current scene
+#  Note: This command is not necessary in, e.g., 
+#        examples/novice/N03, since the C++ method DrawTrajectory() 
+#        is described in the event action.
+#/vis/scene/add/trajectories
+
+# Set viewing parameters
+/vis/viewer/reset
+/vis/viewer/set/viewpointThetaPhi  10 20
+
+# Visualize one it.
+/run/beamOn 1
+
+##########################################################
+# Visualization with the DAWNFILE driver
+##########################################################
+
+# Invoke the DAWNFILE driver 
+#  Create a scene handler and a viewer for the DAWNFILE driver
+/vis/open DAWNFILE
+
+# Create an empty scene and add detector components to it
+/vis/drawVolume
+
+# Add trajectories to the current scene
+#  Note: This command is not necessary in exampleN03,
+#        since the C++ method DrawTrajectory() is 
+#        described in the event action.
+#/vis/scene/add/trajectories
+
+# Visualize plural events (bird's eye view)
+#  drawing style: wireframe
+#  viewpoint  : (theta,phi) = (45*deg, 45*deg) 
+#  zoom factor: 1.5 x (full screen size)
+/vis/viewer/reset
+/vis/viewer/set/style  wireframe
+/vis/viewer/set/viewpointThetaPhi   45 45
+/vis/viewer/zoom        1.5
+/run/beamOn             2
+
+# Set the drawing style to "surface" 
+#  Candidates: wireframe, surface
+/vis/viewer/set/style  surface
+
+# Visualize plural events (bird's eye view) again
+#  with another drawing style (surface)
+/run/beamOn             2
+
+################### END of vis2.mac ###################
+</pre>
+<br>
+<hr>
+<a name="2.10.6">
+<h2>2.10.6 For More Information on Geant4 Visualization </h2></a>
+See the <a href="http://geant4.web.cern.ch/geant4/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization/index.html">Visualization</a> part of this user guide.
+
+<br>
+<hr>
+<a href="http://geant4.web.cern.ch/geant4/G4UsersDocuments/Authors/html/subjectsToAuthors.html">
+<i>About the authors</i></a><i></i>
+</body></html>

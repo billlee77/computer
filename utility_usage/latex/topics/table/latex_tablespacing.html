@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>LaTeX Table Spacing and Caption Control</title>
+<link rel="stylesheet" type="text/css" href="latex_tablespacing_files/default.css">
+</head><body bgcolor="#ffffee">
+<h1 class="headline">
+LaTeX; left justifying table captions and controlling vertical
+ space (especially around \hline commands)
+</h1>
+<ul>
+<li>Vertical spacing in LaTeX tables</li>
+<li>Left Justifying and Handling Space Around LaTeX Table Captions</li>
+</ul>
+<h3>
+Vertical spacing in LaTeX tables
+</h3>
+<p>
+<i>This is based on information I found at
+<a href="http://www.tug.org/tugboat/hiw/hey-2n3.ps">
+http://www.tug.org/tugboat/hiw/hey-2n3.ps</a> (credit Charles Wells,
+ 2003).  I would recommend reading this document for a more
+thorough description.</i>
+</p>
+<p>
+How to control spacing around LaTeX's \hline command in a table?
+This is my abbreviated tutorial on this question.
+</p>
+<p>
+Without doing anything, you wind up with a table like this:
+</p>
+<pre>% Example LaTeX document 1
+% table with no spacing around hline
+\documentclass[12pt,letterpaper]{report}
+\begin{document}
+\begin{table}[h!b!p!]
+\caption{Table (default)}
+\begin{tabular}{lll}
+\hline
+Alphabet Character &amp; Vowel &amp; Number \\
+\hline
+A &amp; Yes &amp; 1 \\
+B &amp; No &amp; 2 \\
+C &amp; No &amp; 3 \\
+\hline
+\end{tabular}
+\label{table1}
+\end{table}
+\end{document}
+</pre>
+<img src="latex_tablespacing_files/latex_tablespacing1.png" alt="table with no spacing around hline" border="1">
+<p>
+Using syntax like \\[3pt], you can do a bit more.  Yet, note that the
+vertical space after the \hline command does not work as you might
+expect.
+</p>
+<pre>% Example LaTeX document 2
+% table with 3pt newline spacing around hline
+\documentclass[12pt,letterpaper]{report}
+\begin{document}
+\setcounter{table}{1}
+\begin{table}[h!b!p!]
+\caption{Table (3pt newline spacing)}
+\begin{tabular}{lll}
+\hline
+\\[3pt]
+Alphabet Character &amp; Vowel &amp; Number \\[3pt]
+\hline
+\\[3pt]
+A &amp; Yes &amp; 1 \\
+B &amp; No &amp; 2 \\
+C &amp; No &amp; 3 \\[3pt]
+\hline
+\end{tabular}
+\label{table2}
+\end{table}
+\end{document}
+</pre>
+<img src="latex_tablespacing_files/latex_tablespacing2.png" alt="table with 3pt newline spacing around hline" border="1">
+<p>
+The real problem, and something that requires some awarenesse of
+LaTeX's advanced syntax, you can do a bit more.  (Be sure to place
+the strut commands inside a table cell!)
+</p>
+<pre>% Example LaTeX document 3
+% table with strut spacing around hline
+\documentclass[12pt,letterpaper]{report}
+
+% These commands can be placed in the preamble (to be a global definition)
+% or locally inside the \begin{table}...\end{table} syntax.
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+
+\begin{document}
+\setcounter{table}{2}
+\begin{table}[h!b!p!]
+\caption{Table (strut spacing around hline)}
+\begin{tabular}{lll}
+\hline
+% \T and \B would not work if it is placed here (needs to go inside cell)
+Alphabet Character \T \B &amp; Vowel &amp; Number \\
+\hline
+A \T &amp; Yes &amp; 1 \\
+B &amp; No &amp; 2 \\
+C \B &amp; No &amp; 3 \\
+\hline
+\end{tabular}
+\label{table3}
+\end{table}
+\end{document}
+</pre>
+<img src="latex_tablespacing_files/latex_tablespacing3.png" alt="table with strut spacing around hline" border="1">
+
+<h3>
+Left Justifying and Handling Space Around LaTeX Table Captions</h3>
+<p>
+<i>This is based on information I found at
+<a href="http://www.texnik.de/floats/caption.phtml">
+http://www.texnik.de/floats/caption.phtml</a> (credit LaTeX@TeXnik.de,
+ 2004).  I would recommend reading this document for a more
+thorough description on these and other issues concerning
+table captions.</i>
+</p>
+<p>Without vertical spacing and left justification around
+a LaTeX Table Caption (default placement of caption):</p>
+<pre>% Example LaTeX document 4
+% table with strut spacing around hline
+\documentclass[12pt,letterpaper]{report}
+
+% These commands can be placed in the preamble (to be a global definition)
+% or locally inside the \begin{table}...\end{table} syntax.
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+
+\begin{document}
+\setcounter{table}{3}
+\begin{table}[h!b!p!]
+\caption{Table (default placement of caption)}
+\begin{tabular}{lll}
+\hline
+% \T and \B would not work if it is placed here (needs to go inside cell)
+Alphabet Character \T \B &amp; Vowel &amp; Number \\
+\hline
+A \T &amp; Yes &amp; 1 \\
+B &amp; No &amp; 2 \\
+C \B &amp; No &amp; 3 \\
+\hline
+\end{tabular}
+\label{table4}
+\end{table}
+\end{document}
+</pre>
+<img src="latex_tablespacing_files/latex_tablespacing4.png" alt="table with default placement
+of caption" border="1">
+<p>With modified vertical spacing and left justification around
+a LaTeX Table Caption:</p>
+<pre>% Example LaTeX document 5
+% table with modified placement of caption
+\documentclass[12pt,letterpaper]{report}
+
+% These commands can be placed in the preamble (to be a global definition)
+% or locally inside the \begin{table}...\end{table} syntax.
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+
+% Here it is: the code that adjusts justification and spacing around caption.
+\makeatletter
+% http://www.texnik.de/floats/caption.phtml
+% This does spacing around caption.
+\setlength{\abovecaptionskip}{6pt}   % 0.5cm as an example
+\setlength{\belowcaptionskip}{6pt}   % 0.5cm as an example
+% This does justification (left) of caption.
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{#1: #2}%
+  \ifdim \wd\@tempboxa &gt;\hsize
+    #1: #2\par
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother
+
+\begin{document}
+\setcounter{table}{4}
+\begin{table}[h!b!p!]
+\caption{Table (modified placement of caption)}
+\begin{tabular}{lll}
+\hline
+% \T and \B would not work if it is placed here (needs to go inside cell)
+Alphabet Character \T \B &amp; Vowel &amp; Number \\
+\hline
+A \T &amp; Yes &amp; 1 \\
+B &amp; No &amp; 2 \\
+C \B &amp; No &amp; 3 \\
+\hline
+\end{tabular}
+\label{table5}
+\end{table}
+\end{document}
+</pre>
+<img src="latex_tablespacing_files/latex_tablespacing5.png" alt="table with modified placement
+of caption" border="1">
+<p>
+<i>Scott Harrison, last updated 2004-10-19</i><br>
+<a href="http://validator.w3.org/check/referer"><img src="latex_tablespacing_files/valid-xhtml10.asc" alt="Valid XHTML 1.0!" height="31" width="88"></a>
+<a href="http://jigsaw.w3.org/css-validator/"><img src="latex_tablespacing_files/vcss.asc" alt="Valid CSS 2" height="31" width="88"></a>
+
+</p>
+</body></html>

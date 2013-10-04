@@ -1,0 +1,36 @@
+ =====================================================
+ Average fitting results
+  CHISQ/(degrees of freedom) = 1.0997718E-05
+ PARAMETER            VALUE               E1             E2
+  R                    12.927               31.123        0.10321
+  A                    6.1345               8.5416        2.83263E-02
+  B                   -11.375               30.354        0.10066
+ =====================================================
+ 0 Degree fitting results
+  CHISQ/(degrees of freedom) = 1.18657083E-05
+ PARAMETER            VALUE               E1             E2
+  R                    12.912               31.045        0.10694
+  A                    6.1313               8.5232        2.93597E-02
+  B                   -11.359               30.278        0.10430
+ =====================================================
+ 90 Degree fitting results
+  CHISQ/(degrees of freedom) = 2.14106066E-05
+ PARAMETER            VALUE               E1             E2
+  R                    12.724               30.121        0.13938
+  A                    6.0766               8.2715        3.82735E-02
+  B                   -11.174               29.390        0.13599
+ =====================================================
+ 180 Degree fitting results
+  CHISQ/(degrees of freedom) = 1.02947655E-05
+ PARAMETER            VALUE               E1             E2
+  R                    12.940               31.188        0.10007
+  A                    6.1380               8.5586        2.74606E-02
+  B                   -11.387               30.417        9.75950E-02
+ =====================================================
+ 270 Degree fitting results
+  CHISQ/(degrees of freedom) = 4.68946858E-06
+ PARAMETER            VALUE               E1             E2
+  R                    13.138               32.187        6.97025E-02
+  A                    6.1941               8.8265        1.91141E-02
+  B                   -11.584               31.380        6.79545E-02
+

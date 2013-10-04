@@ -1,0 +1,23 @@
+# There is a real issue to make footnote in the table or figure caption 
+
+#This is what we have to do
+   set the footnotemark in the caption via
+       \setcounter{footnote}{\value{footnote}}\protect\footnotemark
+   set the footnotetext via
+       \footnotetext{This is the footnote text.}
+
+Example
+#******************************************************  
+\begin{figure}[th!]
+\centering
+\includegraphics[width=0.5\textwidth]{probe}
+\caption{Schematic diagram for $\times$ 10 probe. \setcounter{footnote}{\value{footnote}}\protect\footnotemark}
+\label{probe}
+\end{figure}
+
+%\footnotetext{asdd asd}
+
+\addtocounter{footnote}{-1}
+\stepcounter{footnote}\footnotetext{This is the text of the first footnote.}
+#******************************************************  
+

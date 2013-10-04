@@ -1,0 +1,16 @@
+127.0.0.1	billleee	localhost.localdomain localhost 
+::1	localhost6.localdomain6	localhost6
+
+24.72.133.39    polaris.xw.ca   polaris
+142.3.164.185   lichen.phys.uregina.ca  lichen
+#142.3.165.170   lynx.phys.uregina.ca    lynx
+
+142.3.200.10    gridiron.sci.uregina.ca gridiron
+# Note: this is the IP address of larch at first floor
+#142.3.165.150   larch.phys.uregina.ca   larch
+
+# Note: this is the IP address of larch at second floor
+142.3.164.150   larch.phys.uregina.ca   larch
+#142.3.165.40	bombadil.phys.uregina.ca  bombadil	
+142.3.165.40	lynx.phys.uregina.ca  lynx	
+142.3.165.28	loon.phys.uregina.ca loon

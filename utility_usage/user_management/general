@@ -1,0 +1,7 @@
+User information is stored in 
+/etc/passwd
+/etc/group
+
+Any change of the User ID or Group ID, the /home/user owner and group must be changed as well
+
+

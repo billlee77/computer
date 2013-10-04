@@ -1,0 +1,19 @@
+#!/bin/csh
+
+#PBS -N hvgascer
+#PBS -r n
+#PBS -e /nobackup/gridiron/hadron/li479/log/shms_err.err
+#PBS -o /nobackup/gridiron/hadron/li479/log/shms_output.log
+#PBS -m abe
+#PBS -M wenliang.billlee@gmail.com
+#PBS -q hadron
+#PBS -l walltime=60:00:00
+## the limitation of our geat4 simulation is 500000 particles
+## 60 hour CPU time is the average running period
+
+date
+
+cd /backedup/gridiron/hadron/li479/geant4/SHMS_HeavyGasCershms_hvgascer batch_5000.mac
+
+date
+exit

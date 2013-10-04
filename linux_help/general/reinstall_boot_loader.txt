@@ -1,0 +1,14 @@
+Re-install Scientific Linux:
+
+Step 1: Insert and boot the device, enter the Rescue Mode.
+
+Step 2: Enter the Prompt mode.
+    $ chroot /mnt/sysimage
+
+Step 3: Reinstall the GRUB boot loader, where /dev/hda is the boot partition.
+    $ /sbin/grub-install /dev/hda 
+	Check /boot/grub/grub.conf file    
+	
+Step 4: Reboot the system.
+
+

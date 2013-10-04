@@ -1,0 +1,25 @@
+
+% Incert a empty line
+\null
+
+
+% Increase the width of the horizontal rule 
+\noalign{\hrule height 3pt}
+
+
+% Define a customized horizontal rule
+\newcommand{\mytoprule}{\specialrule{1pt}{0em}{0em}}
+\mytoprule
+
+
+
+
+% Caption plancement
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+% Here it is: the code that adjusts justification and spacing around caption.
+\makeatletter
+% http://www.texnik.de/floats/caption.phtml
+% This does spacing around caption.
+\setlength{\abovecaptionskip}{6pt}   % 0.5cm as an example
+\setlength{\belowcaptionskip}{6pt}   % 0.5cm as an example

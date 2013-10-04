@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="author" content="Bob Peers" />
+<meta name="description" content="Setting up and configuring a VNC server and viewer in Fedora core, as well as configuring the iptables to allow remote connections" />
+<meta name="keywords" content="vnc,vncserver,vncviewer,vino,remote desktop,virtual,iptables,fedora,gnome,Linux,fedora" />
+<meta name="revisit-after" content="15 days" />
+<meta name="rating" content="general" />
+<link rel="shortcut Icon" href="http://bobpeers.com/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="vnc.php_files/main.css" title="Default style" />
+<link rel="stylesheet" type="text/css" href="vnc.php_files/print.css" media="print" />
+<title>Configuring a VNC server in Linux :: bobpeers.com</title>
+
+</head>
+<body>
+<div id="main">
+<div id="header">
+<a title="Home" href="http://bobpeers.com/">&lt;bobpeers.com /&gt;</a>
+</div>
+<div id="locn">
+<ul><li><a href="http://bobpeers.com/">Home</a></li><li><a href="http://bobpeers.com/linux/">Linux</a></li><li><span>Configuring a VNC server in Linux</span></li></ul></div>
+<div id="menu">
+<h3><a href="http://blog.bobpeers.com/" title="Click for index page">Blog</a></h3>
+<h3><a href="http://bobpeers.com/linux/" title="Click for index page">Linux pages</a></h3>
+<ul>
+<li><a href="http://bobpeers.com/linux/mount_logical_volumes" title="Mounting external LVM volumes">Mounting external LVM volumes</a></li>
+<li><a href="http://bobpeers.com/linux/oracle_xe" title="Installing Oracle XE">Installing Oracle XE</a></li>
+<li><a href="http://bobpeers.com/linux/kernel_compiling" title="Kernel compiling">Kernel compiling</a></li>
+<li><a href="http://bobpeers.com/linux/firefox_nightly_on_fedora" title="Firefox nightly builds on Fedora">Firefox nightly builds on Fedora</a></li>
+<li><a href="http://bobpeers.com/linux/firefox2_on_fedora_core_6" title="Firefox 2 on Fedora Core 6">Firefox 2 on Fedora Core 6</a></li>
+<li><a href="http://bobpeers.com/linux/apache_virtual_hosts" title="Apache Virtual Hosts">Apache Virtual Hosts</a></li>
+<li><a href="http://bobpeers.com/linux/hard_drive_install" title="Installing Linux from the hard drive">Installing Linux from the hard drive</a></li>
+<li><a href="http://bobpeers.com/linux/install" title="Installing Linux">Installing Linux</a></li>
+<li><a href="http://bobpeers.com/linux/vnc" title="Configure a VNC server in Linux">Configure a VNC server in Linux</a></li>
+<li><a href="http://bobpeers.com/linux/vnc_ssh" title="Using VNC connections over SSH">Using VNC connections over SSH</a></li>
+<li><a href="http://bobpeers.com/linux/mount" title="Mounting drives and boot options in Linux">Mounting drives and boot options in Linux</a></li>
+<li><a href="http://bobpeers.com/linux/services" title="Managing services in Linux">Managing services in Linux</a></li>
+<li><a href="http://bobpeers.com/linux/mysql_ooffice" title="Using MySQL with OpenOffice">Using MySQL with OpenOffice</a></li>
+<li><a href="http://bobpeers.com/linux/hp_printing" title="HP network printer setup">HP network printer setup</a></li>
+<li><a href="http://bobpeers.com/linux/gnome_menu" title="Adding menus in Gnome">Adding menus in Gnome</a></li>
+<li><a href="http://bobpeers.com/linux/awstats" title="Installing AWStats">Installing AWStats</a></li>
+</ul>
+<h3><a href="http://bobpeers.com/technical/" title="Click for index page">Technical pages</a></h3>
+<ul>
+<li><a href="http://bobpeers.com/technical/build_thunderbird" title="Building Mozilla Thunderbird">Building Mozilla Thunderbird</a></li>
+<li><a href="http://bobpeers.com/technical/telnet_smtp" title="Send emails using telnet">Send emails using telnet</a></li>
+<li><a href="http://bobpeers.com/technical/telnet_pop" title="Access POP email accounts with telnet">Access POP email accounts with telnet</a></li>
+<li><a href="http://bobpeers.com/technical/telnet_imap" title="Access IMAP email accounts with telnet">Access IMAP email accounts with telnet</a></li>
+<li><a href="http://bobpeers.com/technical/domains" title="Domain and DNS guide">Domain and DNS guide</a></li>
+<li><a href="http://bobpeers.com/technical/dhtml1" title="DHTML 1">DHTML 1</a></li>
+<li><a href="http://bobpeers.com/technical/dhtml2" title="DHTML 2">DHTML 2</a></li>
+<li><a href="http://bobpeers.com/technical/404_redirection" title="Redirection using PHP and 404 error pages">Redirection using PHP and 404 error pages</a></li>
+<li><a href="http://bobpeers.com/technical/php" title="PHP tips">PHP tips</a></li>
+</ul>
+<h3><a href="http://bobpeers.com/photos/" title="Click for index page">Photos</a></h3>
+<ul>
+<li><a href="http://bobpeers.com/photos/greece03/" title="Greece 03">Greece 03</a></li>
+<li><a href="http://bobpeers.com/photos/greece05/" title="Greece 05">Greece 05</a></li>
+<li><a href="http://bobpeers.com/photos/spain/" title="Spain">Spain</a></li>
+<li><a href="http://bobpeers.com/photos/denmark/" title="Denmark">Denmark</a></li>
+<li><a href="http://bobpeers.com/photos/sweden/" title="Sweden">Sweden</a></li>
+<li><a href="http://bobpeers.com/photos/uk/" title="UK">UK</a></li>
+</ul>
+<h3><a href="http://bobpeers.com/about/" title="Click for index page">About</a></h3>
+<ul>
+<li><a href="http://bobpeers.com/about/contact" title="Contact">Contact</a></li>
+<li><a href="http://bobpeers.com/about/news" title="News">News</a></li>
+<li><a href="http://bobpeers.com/about/links" title="Links">Links</a></li>
+<li><a href="http://bobpeers.com/about/contents" title="Site map">Site map</a></li>
+</ul>
+<p>
+<a href="http://validator.w3.org/check/referer">
+<img width="80px" height="15px" src="vnc.php_files/valid-xhtml11.gif" title="Valid XHTML 1.1!" alt="Valid XHTML 1.1!" /></a>
+</p>
+<p>
+<a href="http://jigsaw.w3.org/css-validator/">
+<img width="80px" height="15px" src="vnc.php_files/valid-css.gif" title="Valid CSS!" alt="Valid CSS!" /></a>
+</p>
+<p>
+<a href="http://www.mozilla.com/firefox/">
+<img width="80px" height="15px" title="Get Firefox - The Browser, Reloaded" alt="Get Firefox" src="vnc.php_files/firefox.png" /></a>
+</p>		
+<p>
+<a href="http://www.mozilla.com/thunderbird/">
+<img width="94px" height="15px" title="Get Thunderbird - Reclaim Your Inbox" alt="Get Thunderbird" src="vnc.php_files/thunderbird.png" /></a>
+</p>
+<p>
+<a href="http://www.mysql.com/">
+<img width="80px" height="15px" title="MySQL - The world's most popular open source database" alt="MySQL powered" src="vnc.php_files/mysql.png" /></a>
+</p>
+<p>
+<a href="http://www.php.net/">
+<img width="80px" height="15px" title="Get PHP" alt="PHP homepage" src="vnc.php_files/php.png" /></a>
+</p>
+<p>
+<a href="http://fedora.redhat.com/">
+<img width="80px" height="15px" title="Get Fedora Core 6" alt="Fedora homepage" src="vnc.php_files/fedora.png" /></a>
+</p>
+<p>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">
+<img width="88px" height="31px" title="Creative Commons License" alt="Creative Commons License" src="vnc.php_files/somerights20.png" /></a>
+</p>
+</div>
+<div id="pagebody">
+		
+
+<h1>Configuring the VNC server/viewer in Linux.</h1>
+<div id="contents">
+<h3>Page contents</h3>
+<ul>
+<li><a href="#overview" class="dark">Overview of VNC</a></li>
+<li><a href="#grd" class="dark">Gnome Remote Desktop (vino)</a></li>
+<li><a href="#vncserver" class="dark">vncserver and viewer</a></li>
+<li><a href="#remote" class="dark">Allowing remote connections</a></li>
+</ul>
+</div>
+<h2 id="overview">Overview of VNC</h2>
+<p>VNC, or Virtual Networked Computing, is a way of controlling a remote
+ computer just as though you are sitting in front of it. In the Windows 
+world it 
+is also known as remote desktop but it's normally referred to as VNC in 
+the Linux world. All that happens is that you connect using a VNC client
+ to a 
+remote computer running the VNC server, then an image of the remote 
+desktop is transmitted to your local computer and you can see and 
+control the desktop 
+just as though you are there since all keyboard and mouse commands are 
+sent from your client machine to the server.</p>
+<h2 id="grd">Gnome Remote Desktop</h2>
+<p>If you are running the Gnome desktop on Fedora Core then you already 
+have a VNC server built in. Click on the Fedora icon &gt; Desktop &gt; 
+Preferences &gt; 
+Remote Desktop to open the dialog shown.</p>
+<p class="center"><img width="389px" height="361px" src="vnc.php_files/rd.png" alt="Gnome remote desktop" /></p>
+<p>The screen is pretty self explanatory but basically when set up this 
+way another computer can connect to your computer using the command 
+listed on 
+the dialog. There are a few important things to note, you must open port
+ 5900 on the server for this to work since by default the Gnome Remote 
+Desktop (called vino) listens on this port, also the person connecting 
+will see the same session that you are currently logged in as. This 
+means that 
+any programs you have open will also be visible to the client, of course
+ this is very useful if you are helping someone remotely.</p>
+<p>A more flexible way to use VNC is to install the VNC server and client software via yum, these are rpm's based on 
+<a href="http://www.realvnc.com/" title="RealVNC website">RealVNC</a>.</p>
+
+<h2 id="vncserver">vncserver and vncviewer</h2>
+<h3>Check what's installed</h3>
+<p>First check if you already have them installed on your system, open a terminal and type:</p>
+<pre>$ rpm -qa|grep vnc
+vnc-server-4.1.1-36
+vnc-4.1.1-36
+</pre>
+<p>If you get an output something like this then you're all ready, if not you need to install them via yum.</p>
+<h3>Add a user(s)</h3>
+<p>Next we need to add at least 1 VNC user, open the file /etc/sysconfig/vncservers as root and add the information shown:</p>
+<pre>$ vi /etc/sysconfig/vncservers
+
+# The VNCSERVERS variable is a list of display:user pairs.
+#
+# Uncomment the lines below to start a VNC server on display :2
+# as my 'myusername' (adjust this to your own).  You will also
+# need to set a VNC password; run 'man vncpasswd' to see how
+# to do that.
+#
+# DO NOT RUN THIS SERVICE if your local area network is
+# untrusted!  For a secure way of using VNC, see
+# &lt;URL:http://www.uk.research.att.com/archive/vnc/sshvnc.html&gt;.
+
+# Use "-nolisten tcp" to prevent X connections to your VNC server via TCP.
+
+# Use "-nohttpd" to prevent web-based VNC clients connecting.
+
+# Use "-localhost" to prevent remote VNC clients connecting except when
+# doing so through a secure tunnel.  See the "-via" option in the
+# `man vncviewer' manual page.
+
+VNCSERVERS="1:bobpeers"
+VNCSERVERARGS[1]="-geometry 1024x768 -depth 16"
+</pre>
+<p>The important part is the VNCSERVERS="1:bobpeers", this sets up a 
+users for the vnc server, you can add as many as you like here. The 
+VNCSERVERARGS[1] 
+line refers to the arguments for user 1, in this case the only user. 
+Geometry sets the size and depth sets the colour depth, you can adjust 
+these to 
+suit your preferences but in my case the client machine has a resolution
+ of 1024x768 and the depth 16 makes the connection a bit faster since 
+the less
+information that needs to be sent the more responsive the session will 
+feel.</p>
+<h3>Knowing which port to use</h3>
+<p>It's also important to note the session number user as this will tell
+ us which port vncserver will listen on. Remember the Gnome Remote 
+Desktop 
+asked us to use computername:0 as the connection string, the number 
+needs to be added to 5900 to get the listening port. In this case we 
+need to use 
+port 5901 since we are using session 1. In the same way we could use any
+ number, for example:</p>
+<pre class="qt">VNCSERVERS="2000:bobpeers"
+VNCSERVERARGS[2000]="-geometry 1024x768 -depth 16"
+</pre>
+<p>In this case we need to use port 5900+2000 so port 7900.</p>
+<h3>Setting a password</h3>
+<p>To add some security we need to add a password that must be given 
+before a connection can be established, open a terminal and type:</p>
+<pre>$ vncpasswd
+Password:
+Verify:
+</pre>
+<p>This creates a hidden folder called .vnc in your home folder containing the password file.</p>
+<h3>Starting the server and startup options</h3>
+<p>To start the server we type the command 'vncserver' and the session 
+you wish to start (if you have set up more than 1 entry in the 
+/etc/sysconfig/vncservers file:</p>
+<pre>$ vncserver :1
+Starting VNC server: 1:bobpeers
+New 'linux.bobpeers:1 (bobpeers)' desktop is linux.bobpeers:1
+
+Starting applications specified in /home/bobuser/.vnc/xstartup
+Log file is /home/bobuser/.vnc/linux.bobpeers:1.log
+
+                                                           [  OK  ]
+</pre>
+<p>Now the server is started and a user could connect, however they will
+ get a plain grey desktop by default as the connection will not cause a 
+new 
+session of X to start by default, to fix this we need to edit the 
+startup script in the .vnc folder in your home directory.</p>
+<pre>$ vi ~/.vnc/xstartup
+
+#!/bin/sh
+
+# Uncomment the following two lines for normal desktop:
+unset SESSION_MANAGER
+exec /etc/X11/xinit/xinitrc
+
+[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources
+xsetroot -solid grey
+vncconfig -iconic &amp;
+xterm -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &amp;
+twm &amp;
+</pre>
+<p>As the file says make sure the two lines at the top are uncommented 
+by removing the leading # sign. Next we need to restart vncserver to 
+pick up 
+the changed we just made. To restart the vncserver we need to kill the 
+process and start a new one as root:</p>
+<pre>$ vncserver -kill :1
+Killing Xvnc process ID 13728
+</pre>
+<pre>$ vncserver :1
+Starting VNC server: 1:bobpeers
+New 'linux.bobpeers:1 (bobpeers)' desktop is linux.bobpeers:1
+
+Starting applications specified in /home/bobuser/.vnc/xstartup
+Log file is /home/bobuser/.vnc/linux.bobpeers:1.log
+
+                                                           [  OK  ]
+</pre>
+<h3>Using vncviewer</h3>
+<p>To start the viewer type:</p>
+<pre>$ vncviewer localhost:5901</pre>
+<p>This open a dialog as shown for us to enter our password we set 
+earlier, enter the password and you should now see a copy of your 
+desktop. Note 
+that unlike the Gnome Remote Desktop this has started a new session of X
+ so any applications open on the host machine are not visible to the new
+ 
+session, it's basically a whole new logon running at the same time.</p>
+<p>If you just type 'vncviewer' at the prompt then you will asked for 
+the host to connect to, then you can type localhost:5901 for example. 
+Remember to use the correct port number when connecting, if you set your
+ VNCSERVERS to be 2000:myname then you would need to connect on 
+localhost:7900.</p>
+<p class="center"><img width="330px" height="129px" src="vnc.php_files/vncviewer.png" alt="VNCVIEWER logon" /></p>
+<h3>Stopping the vncserver</h3>
+<p>There are two ways to stop the server, either as root:</p>
+<pre>$ /sbin/service vncserver stop
+Shutting down VNC server: 1:bobpeers                        [  OK  ]
+</pre>
+<p>or you can explicitly kill a particular session without being root:</p>
+<pre>$ vncserver -kill :1
+Killing Xvnc process ID 13728
+</pre>
+<p>Just replace the 1 with the vnc session you wish to stop.</p>
+<h2 id="remote">Allowing remote connections</h2>
+<p>So far we have only connected to our own computer using localhost so 
+we have not needed to open any ports in the firewall, however if we want
+ to 
+allow remote connection we will have to do the following. This can 
+either be done from the command line or using system-config-security if 
+you have 
+it installed.</p>
+<h3>Using system-config-security to opens ports.</h3>
+<p>First we'll look into the GUI system-config-security. Go to the Fedora start menu &gt; Desktop &gt; Administration &gt; 
+Security Level and Firewall, then type your root password when prompted to see this:</p>
+<p class="center"><img width="354px" height="389px" src="vnc.php_files/firewall1.png" alt="system-config-security" /></p>
+<p>Click on other ports at the bottom and enter the port you wish to 
+open, 5901 in my case, select tcp, then click OK and OK again to save 
+your 
+settings. That's all there is to it, but remember to close the port 
+again when you are finished.</p>
+<p class="center"><img width="231px" height="150px" src="vnc.php_files/port.png" alt="Select the port to open" /></p>
+<h3>Editing the iptables manually to opens ports.</h3>
+<p>To do the same from the command line add the line in bold to the file /etc/sysconfig/iptables while logged in as root:</p>
+<pre class="qt"># Firewall configuration written by system-config-securitylevel
+# Manual customization of this file is not recommended.
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:RH-Firewall-1-INPUT - [0:0]
+-A INPUT -j RH-Firewall-1-INPUT
+-A FORWARD -j RH-Firewall-1-INPUT
+-A RH-Firewall-1-INPUT -i lo -j ACCEPT
+-A RH-Firewall-1-INPUT -p icmp --icmp-type any -j ACCEPT
+-A RH-Firewall-1-INPUT -p 50 -j ACCEPT
+-A RH-Firewall-1-INPUT -p 51 -j ACCEPT
+-A RH-Firewall-1-INPUT -p udp --dport 5353 -d 224.0.0.251 -j ACCEPT
+-A RH-Firewall-1-INPUT -p udp -m udp --dport 631 -j ACCEPT
+-A RH-Firewall-1-INPUT -p tcp -m tcp --dport 631 -j ACCEPT
+-A RH-Firewall-1-INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+<b>-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 5901 -j ACCEPT</b>
+-A RH-Firewall-1-INPUT -j REJECT --reject-with icmp-host-prohibited
+COMMIT
+</pre>
+<p>Finally we need to restart the iptables service to reload the changes.</p>
+<pre>$ sudo /sbin/service iptables restart
+Flushing firewall rules:                                   [  OK  ]
+Setting chains to policy ACCEPT: filter                    [  OK  ]
+Unloading iptables modules:                                [  OK  ]
+Applying iptables firewall rules:                          [  OK  ]
+Loading additional iptables modules: ip_conntrack_netbios_n[  OK  ]
+</pre>
+<h3>Connecting from the remote machine.</h3>
+<p>Now from the remote client computer start up vncviewer but this time 
+use the IP address of the host computer followed by the port number. So 
+on my 
+home network this might be:</p>
+<pre>$ vncviewer 192.168.1.105:5901</pre>
+<p>You should see a copy of the hosts desktop, if things seem a bit slow
+ you can try adjusting the colour depth or screen resolution on the 
+vncserver 
+to see if that helps.</p>
+ </div>
+<div id="footer">
+<span>Last modified on Sat, 05 Sep 2009 12:27:47  GMT 
+<br /><a title="Contact Bob Peers" href="http://bobpeers.com/about/contact">Bob Peers</a>         
+</span>
+<div style="clear: both;"></div>
+</div>
+</div>
+</body>
+</html>

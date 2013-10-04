@@ -1,0 +1,1042 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<script type="text/javascript">(function() { var a=window;function c(b){this.t={};this.tick=function(b,i,d){d=d!=void 0?d:(new Date).getTime();this.t[b]=[d,i]};this.tick("start",null,b)}var e=new c;a.jstiming={Timer:c,load:e};try{var g=null;a.chrome&&a.chrome.csi&&(g=Math.floor(a.chrome.csi().pageT));g==null&&a.gtbExternal&&(g=a.gtbExternal.pageT());g==null&&a.external&&(g=a.external.pageT);g&&(a.jstiming.pt=g)}catch(h){};a.tickAboveFold=function(b){var f=0;if(b.offsetParent){do f+=b.offsetTop;while(b=b.offsetParent)}b=f;b<=750&&a.jstiming.load.tick("aft")};var j=false;function k(){j||(j=true,a.jstiming.load.tick("firstScrollTime"))}a.addEventListener?a.addEventListener("scroll",k,false):a.attachEvent("onscroll",k);
+ })();</script>
+<meta content='true' name='MSSmartTagsPreventParsing'/>
+<meta content='blogger' name='generator'/>
+<link href='http://linuxhelp.blogspot.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="All about Linux - Atom" href="http://linuxhelp.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="All about Linux - RSS" href="http://linuxhelp.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="All about Linux - Atom" href="http://www.blogger.com/feeds/7693232/posts/default" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=7693232" />
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<!-- change of title start -->
+<title>Enabling and disabling services during start up in GNU/Linux | All about Linux</title>
+<!-- change of title end -->
+<meta content='q+G6rr6gojjFZNmdc16BOlRXFDWeK5Osj8EpPFGreQ0=' name='verify-v1'/>
+<META content='b5bd3a825202b11f' name='y_key'></META>
+<META content='Linux Distributions, OS Reviews, Book Reviews,Tips and Tricks, Linux Support, Software Reviews, Help Videos, Open Source News, Desktop' name='Keywords'></META>
+<META content='General' name='rating'></META>
+<link href='http://yui.yahooapis.com/2.7.0/build/reset/reset-min.css' rel='stylesheet' type='text/css'/>
+<link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/1690079772-widget_css_bundle.css' />
+ <link rel="stylesheet" type="text/css" href="http://www.blogger.com/dyn-css/authorization.css?targetBlogID=7693232&zx=721b5cf5-7742-48ce-a250-fabd96f1a9c9"/>
+<style type="text/css">#navbar-iframe { display:block }
+</style>
+
+<style id='page-skin-1' type='text/css'><!--
+
+body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small; color:#222222;}
+body{text-align: center;}
+/* Structure of Layout */
+#wrap{position: relative; width:974px; margin:0 auto; /*border:1px solid #ccc;*/}
+#topnavbar{clear:both; height:25px; border-bottom:0px solid #ccc; text-align:right;}
+#header{clear:both; height:100px; text-align:left; line-height:3em;}
+#navbarmenu{clear:both; height:25px; border:1px solid #ccc; background-color:#f0f6fc;}
+#content{clear:both;}
+#contentleft{float:left; width:610px; height:auto;padding:0 5px 0 5px;}
+#sidebar1{float:right; width:350px; min-height:600px;}
+#sidebartop{clear:both; width:auto; height:auto; border:1px solid #ccc; margin:5px 0 5px 5px; padding:5px;}
+#sidebarbottom{clear:both; width:auto; height:auto; border:0px solid #ccc; margin:5px 0 5px 5px; padding:5px;}
+#sidebarleft{float:left; margin-left:4px; width:165px; height:auto; border:1px solid #ccc; padding:2px;}
+#sidebarright{float:right; /*margin-right:4px;*/ width:165px; height:auto; border:1px solid #ccc; padding:2px;}
+#footer1{clear:both; border-top:1px dotted #bbbbbb; background-color:#eeeeee;margin-top:10px;}
+#footer1 .footer div{text-align:center;}
+/* Navbar Menu List CSS */
+#navbarmenu{line-height:1;font-family:Verdana,Arial,helvetica,clean,sans-serif;}
+#navbarmenu ul{margin:0; padding-left:0;float:left;background-color:#f0f6fc;}
+#navbarmenu ul li{display:inline;}
+#navbarmenu li a{padding: 2px 10px; float:left; font-weight:normal; line-height:21px; border-right:2px solid #c6dfea;}
+#navbarmenu li a:hover{border-right:2px solid #c6dfea;}
+/* Basic Styles */
+h1,h2,h3,h4,h5,h6{font-family:Georgia,"Times New Roman",Times,serif; text-align: left; text-transform: capitalize; color:#111111;}
+h1{font-size:250%;}
+h2{font-size:200%}
+h3{font-size: 150%;}
+h4{font-size: 150%}
+h5{font-size: 125%}
+h6{font-size: 100%}
+a{color:#003399; text-decoration:none;}
+a:hover{color:#dd003a;}
+p,div{text-align:left;}
+pre,code,kbd,samp,tt{font-family:"Courier New",Courier,monospace;*font-size:108%;line-height:100%; background-color:#f0f6fc;}
+pre{overflow:auto;margin:15px 0;padding:5px; color:#000000; font-weight:bold;}
+blockquote{margin:15px;background: url('http://img240.imageshack.us/img240/9130/blockquote.png') no-repeat;background-position:top left; padding-left:17px;padding-top:5px;}
+b,strong{font-weight:bold;}
+i,em{font-style:italic;}
+/* Blogger specific class styles */
+div.descriptionwrapper{margin-top:20px;}
+div.date-header{font-size:90%;color:#666;}
+.post-body{font-size:13px;font-family:verdana,,helvetica,clean,sans-serif;}
+.post-body p, .post-body div{margin-bottom:10px;}
+.post-body ol,.post-body ul{margin:10px;}
+.post-body ol li{list-style:decimal inside;padding-bottom:10px;}
+.post-body ul li{list-style:disc outside; margin-left:30px;padding-left:5px;padding-bottom:10px;/*list-style-image:url(http://img8.imageshack.us/img8/6855/liststar.png);*/}
+.description{line-height:normal; margin-top:5px;}
+div.horizontalspacer {height:10px;} /* Used to give a small horizontal gap between blocks */
+h2.post-title,h1.post-title{margin-bottom:10px;}
+h2.post-title a,h1.post-title a{color:#111111;}
+h1.post-title,h2.post-title{font-size:200%;}
+/* nplink class provides a background image to the "older post", "newer post" and "home" at bottom of page */
+div.blog-pager{margin-bottom:10px;}
+div.blog-pager a.nplink {background:url(http://img10.imageshack.us/img10/2372/buttonbackground.png) no-repeat; padding:5px;}
+div#blog-pager {text-align:center;}
+.post-footer{border-top:1px dotted #ccc; margin-top:10px;margin-bottom:20px; padding-top:5px;}
+h1.title, h2.title{font-size:250%;}
+h1.title a,h2.title a{color:#000000;}
+h1.title a:hover, h2.title a:hover{color:#000000;}
+.post-footer-line-2 {padding-top: 6px;} /*used to provide social bookmarklets */
+/* Comments section */
+#comments h4{font-size:90%;}
+#comment-post-message{font-size:100%;}
+span.post-comment-link a.comment-link{background:url(http://img172.imageshack.us/img172/8201/commentse.png) no-repeat; padding: 0 15px 0 20px;border-right: 1px solid #ccc;}
+span.post-author span.fn{border-right: 1px solid #ccc;padding: 0 15px 0 0;}
+span.post-icons span.item-action{border-right: 1px solid #ccc;}
+#comments-block{line-height:2;border-top:1px dotted #ccc; border-bottom:1px dotted #ccc;margin:10px 0;padding:10px 5px;}
+/*Styles to be used  inside posts*/
+.msgboxblue{width:150px;padding-top:30px;padding-left:4px; padding-right:4px; padding-bottom:4px;border:1px solid #5990ff; margin-left:2px;font:15px Georgia,"Times New Roman",Times,serif; color:#000000; background:url(http://img15.imageshack.us/img15/6381/doyouknow.png) no-repeat top center; margin-left:5px;}
+.msgboxblue a,.msgboxbig a{font-weight:bold; font-size:13px;}
+.msgboxblue strong,.msgboxbig strong{font-weight:normal;}
+.msgboxbig{clear:both;margin:0 auto;border:1px solid #ff5500; width:90%; font:15px Georgia,"Times New Roman",Times,serif; line-height:1.5;}
+.msgboxbig h3{display:block;color:#ffffff; font:16px Georgia,"Times New Roman",Times,serif;background-color:#ff7700;margin:0;padding:3px;font-weight:bold;}
+/*Styles for text with images*/
+div.bigbox{border:1px solid #5990ff;padding:5px;}
+div.bigbox h3{border-bottom:1px dotted #5990ff;}
+div.bigbox a{font:15px Georgia,"Times New Roman",Times,serif;}
+.img-float-left{float:left;width:103px;height:140px;margin-right:7px;}
+.img-float-right{float:right;width:103px;height:140px;margin-left:7px;}
+/*Styles for text in div tables*/
+.btable{border:2px solid #007cbb;display:table;width:400px;}
+.brow{display: table-row;}
+.bcol{display: table-cell; width:200px; padding: 5px;border-bottom:1px dotted #007cbb;}
+/*Tables using Divs - can be used in posts*/
+.t-aal{display:table;border-collapse:collapse; margin-top:5px;margin:0 auto;}
+.tcell-aal{display:table-cell; width:150px; border:1px solid #008ae3; padding:2px;}
+.trow-aal{display:table-row;}
+.tcaption-aal{display:table-caption;font-weight:bold; text-align:center;}
+/* Jump Link */
+div.jump-link {height:25px; width:90px;float:right; margin-top:5px;} /* CSS for Read more link */
+/* Image Gallery using Lists */
+#gallery{ }
+#gallery ul{list-style-type: none;}
+#gallery li {width: 110px;height:200px;float:left;margin:5px;padding:10px; font-size:0.8em;list-style-image:url();}
+/* Related posts CSS START */
+/* Widget Div */
+#related-posts{border-top: 1px solid #000000;margin-top:5px;}
+/* Widget H2 heading */
+#related-posts h2{font-size: 1.5em;}
+/* Widget UL list */
+#related-posts ul{ }
+#related-posts ul li{list-style: none;border-bottom:1px dotted #007f00;font-family:arial;font-size:1.1em;}
+/* Widget loading text */
+#related-posts-loadingtext{color:green;}
+/* Widget loading class set on UL until it is loaded */
+/* you will need set the option: 'loadingClass':'related-posts-loading' */
+.related-posts-loading {background:transparent url(Load.gif) no-repeat right top;}
+/* Style links based on relevancy */
+/* you will need set the option: 'postScoreClass':'related-post' */
+.related-post1{ font-size:90%}
+.related-post2{ font-size:90%}
+.related-post3{ font-size:100%}
+.related-post4{ font-size:110%}
+.related-post5{ font-size:120%}
+/* Related posts CSS END */
+/*Hide the navbar*/
+#navbar-iframe {height:0px;visibility:hidden;display:none;}
+
+--></style>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script></head>
+<body>
+<div class='navbar section' id='navbar'><div class='widget Navbar' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener("load",
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<iframe src="http://www.blogger.com/navbar.g?targetBlogID=7693232&amp;blogName=All+about+Linux&amp;publishMode=PUBLISH_MODE_BLOGSPOT&amp;navbarType=BLUE&amp;layoutType=LAYOUTS&amp;searchRoot=http://linuxhelp.blogspot.com/search&amp;blogLocale=en_US&amp;homepageUrl=http://linuxhelp.blogspot.com/&amp;targetPostID=114391704358155329&amp;vt=-1909798934449942685" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="30px" width="100%" id="navbar-iframe" allowtransparency="true" title="Blogger Navigation and Search"></iframe>
+<div></div></div></div>
+<div id='wrap'>
+<div id='topnavbar'>
+</div>
+<div id='header'>
+<div class='header section' id='header'><div class='widget Header' id='Header1'>
+<div id='header-inner'>
+<a href='http://linuxhelp.blogspot.com/' style='display: block'>
+<img alt='All about Linux' height='100px; ' id='Header1_headerimg' src='http://2.bp.blogspot.com/_EypLYtbgUbs/SrHphIDiUwI/AAAAAAAAABg/raYOBvT_6OE/S1600-R/allaboutlinux-header.png' style='display: block' width='974px; '/>
+</a>
+</div>
+</div></div>
+</div>
+<div id='navbarmenu'>
+<ul>
+<li><a href='http://linuxhelp.blogspot.com/2006/06/book-reviews-linux-programming-web.html'>Book Reviews</a></li>
+<li><a href='http://linuxhelp.blogspot.com/2006/06/operating-system-reviews.html'>OS Reviews</a></li>
+<li><a href='http://linuxhelp.blogspot.com/2008/09/ubuntu-articles.html'>Ubuntu</a></li>
+<li><a href='http://linuxhelp.blogspot.com/p/contact.html'>Contact Me</a></li>
+</ul>
+</div>
+<div class='horizontalspacer'></div>
+<div id='content'>
+<div id='contentleft'>
+<div class='main section' id='main'><div class='widget Blog' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!-- google_ad_section_start -->
+<div class='date-header'>April 01, 2006</div>
+<div class='post hentry'>
+<a name='114391704358155329'></a>
+<h1 class='post-title entry-title'>
+<a href=''>Enabling and disabling services during start up in GNU/Linux</a>
+</h1>
+<div class='post-header-line-1'>
+</div>
+<div class='post-body entry-content'>
+<div style='text-align:center;'><iframe src="http://rcm.amazon.com/e/cm?t=ravikumarsweb-20&o=1&p=13&l=ur1&category=outlet&banner=1KA700EB7TH3DJSRA6R2&f=ifr" width="468" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe></div>
+<div class='KonaBody'>
+<div style="text-align: justify;"><span style="font-size:180%;">I</span>n any Linux distribution, some services are enabled to start at boot up by default. For example, on my machine, I have <span style="font-family:courier new;">pcmcia</span>, <span style="font-family:courier new;">cron</span> daemon, <span style="font-family:courier new;">postfix</span> mail transport agent ... just to name a few, which start during boot up. Usually, it is prudent to disable all services that are not needed as they are potential security risks and also they unnecessarily waste hardware resources. For example, my machine does not have any pcmcia cards so I can safely disable it. Same is the case with postfix which is also not used.<br /></div><br /><div style="text-align: justify;"><span style="font-weight: bold;">So how do you disable these services so that they are not started at boot time?</span><br /></div><br /><div style="text-align: justify;">The answer to that depends on the type of Linux distribution you are using. True, many Linux distributions including Ubuntu bundle with them a GUI front end to accomplish the task which makes it easier to enable and disable the system services. But there is no standard GUI utility common across all Linux distributions. And this makes it worth while to learn how to enable and disable the services via the command line.<br /></div><br /><div style="text-align: justify;">But one thing is common for all Linux distributions which is that all the start-up scripts are stored in the '<span style="font-weight: bold;font-family:courier new;" >/etc/init.d/</span>' directory. So if you want to say, enable apache webserver in different run levels, then you should have a script related to the apache webserver in the <span style="font-family:courier new;">/etc/init.d/</span> directory. It is usually created at the time of installing the software. And in my machine (which runs Ubuntu), it is named apache2. Where as in Red Hat, it is named httpd. Usually, the script will have the same name as the process or daemon.<br /></div><br />Here I will explain different ways of enabling and disabling the system services.<br /><br /><span style="color: rgb(0, 0, 153);font-size:130%;" >1) Red Hat Method</span><br /><br /><div style="text-align: justify;"> Red Hat and Red Hat based Linux distributions make use of the script called <span style="font-weight: bold;font-family:courier new;" >chkconfig</span> to enable and disable the system services running in Linux.<br /></div><br /><div style="text-align: justify;">For example, to enable the apache webserver to start in certain run levels, you use the chkconfig script to enable it in the desired run levels as follows:<br /></div><pre><code># <span style="font-weight: bold;">chkconfig <span style="color: rgb(0, 0, 153);">httpd</span> <span style="color: rgb(153, 0, 0);">--add</span></span><br /># <span style="font-weight: bold;">chkconfig  httpd  <span style="color: rgb(153, 0, 0);">on</span> <span style="color: rgb(0, 0, 153);">--level</span> 2,3,5</span></code></pre>This will enable the apache webserver to automatically start in the run levels 2, 3 and 5. You can check this by running the command:<br /><pre><code># <span style="font-weight: bold;">chkconfig <span style="color: rgb(0, 0, 153);">--list</span> httpd</span></code></pre>One can also disable the service by using the off flag as shown below:<br /><pre><code># <span style="font-weight: bold;">chkconfig httpd <span style="color: rgb(153, 0, 0);">off</span></span><br /># <span style="font-weight: bold;">chkconfig httpd <span style="color: rgb(153, 0, 0);">--del</span></span></code></pre>Red Hat also has a useful script called service which can be used to start or stop any service. Taking the previous example, to start apache webserver, you execute the command:<br /><pre><code># <span style="font-weight: bold;"><span style="color: rgb(0, 0, 153);">service</span> httpd start</span></code></pre>and to stop the service...<br /><pre><code># <span style="font-weight: bold;">service httpd stop</span></code></pre>The options being start, stop and restart which are self explanatory.<br /><br /><span style="color: rgb(0, 0, 153);font-size:130%;" >2) Debian Method</span><br /><br /><div style="text-align: justify;">Debian Linux has its own script to enable and disable services across runlevels. It is called <span style="font-weight: bold;font-family:courier new;" >update-rc.d</span>. Going by the above example, you can enable apache webserver as follows:<br /></div><pre><code># <span style="font-weight: bold;"><span style="color: rgb(0, 0, 153);">update-rc.d</span> apache2 <span style="color: rgb(153, 0, 0);">defaults</span></span></code></pre><div style="text-align: justify;">... this will enable the apache webserver to start in the default run levels of 2,3,4 and 5. Of course, you can do it explicitly by giving the run levels instead of the "defaults" keyword as follows:<br /></div><pre><code># <span style="font-weight: bold;">update-rc.d apache2 start 20 2 3 4 5 . stop 80 0 1 6 .</span></code></pre><div style="text-align: justify;">The above command modifies the sym-links in the respective <span style="font-family:courier new;">/etc/rcX.d</span> directories to start or stop the service in the destined runlevels. Here X stands for a value of 0 to 6 depending on the runlevel. One thing to note here is the dot (.) which is used to terminate the set which is important. Also 20 and 80 are the sequence codes which decides in what order of precedence the scripts in the /etc/init.d/ directory should be started or stopped.<br /></div><br />And to disable the service in all the run levels, you execute the command:<br /><pre><code># <span style="font-weight: bold;">update-rc.d <span style="color: rgb(153, 0, 0);">-f</span> apache2 <span style="color: rgb(0, 0, 153);">remove</span></span></code></pre>Here <span style="font-weight: bold;font-family:courier new;" >-f</span> option which stands for force is mandatory.<br /><br /><div style="text-align: justify;">But if you want to enable the service only in runlevel 5, you do this instead:<br /></div><pre><code># <span style="font-weight: bold;">update-rc.d apache2  start 20 5 . stop 80 0 1 2 3 4 6 .</span></code></pre><span style="color: rgb(0, 0, 153);font-size:130%;" >3) Gentoo Method</span><br /><div style="text-align: justify;">Gentoo also uses a script to enable or disable services during boot-up. The name of the script is <span style="font-weight: bold;font-family:courier new;" >rc-update</span> . Gentoo has three default runlevels. Them being: <span style="font-family:courier new;">boot</span>, <span style="font-family:courier new;">default</span> and <span style="font-family:courier new;">nonetwork</span>. Suppose I want to add the apache webserver to start in the <span style="font-family:courier new;">default</span> runlevel, then I run the command:<br /></div><pre><code># <span style="font-weight: bold;"><span style="color: rgb(0, 0, 153);">rc-update</span> <span style="color: rgb(153, 0, 0);">add</span> apache2 <span style="color: rgb(153, 0, 0);">default</span></span></code></pre>... and to remove the webserver, it is as simple as :<br /><pre><code># <span style="font-weight: bold;">rc-update <span style="color: rgb(153, 0, 0);">del</span> apache2</span></code></pre>To see all the running applications at your runlevel and their status, similar to what is achieved by chkconfig --list, you use the rc-status command.<br /><pre><code># <span style="font-weight: bold;"><span style="color: rgb(0, 0, 153);">rc-status</span> --all</span></code></pre><span style="color: rgb(0, 0, 153);font-size:130%;" >4) The old fashioned way</span><br /><div style="text-align: justify;">I remember the first time I started using Linux, there were no such scripts to aid the user in enabling or disabling the services during start-up. You did it the old fashioned way which was creating or deleting symbolic links in the respective <span style="font-weight: bold;font-family:courier new;" >/etc/rcX.d/</span> directories. Here X in rcX.d is a number which stands for the runlevel. There can be two kinds of symbolic links in the <span style="font-family:courier new;">/etc/rcX.d/</span> directories. One starts with the character '<span style="font-weight: bold;">S</span>' followed by a number between 0 and 99 to denote the priority, followed by the name of the service you want to enable. The second kind of symlink has a name which starts with a '<span style="font-weight: bold;">K</span>' followed by a number and then the name of the service you want to disable. <span style="font-weight: bold;">So in any runlevel, at any given time, for each service, there should be only one symlink of the 'S' or 'K' variety but not both</span>.<br /></div><br /><div style="text-align: justify;">So taking the above example,  suppose I want to enable apache webserver in the runlevel 5 but want to disable it in all other runlevels, I do the following:<br /></div><br /><div style="text-align: justify;">First to enable the service for run level 5, I move into <span style="font-family:courier new;">/etc/rc5.d/</span> directory and create a symlink to the apache service script residing in the <span style="font-family:courier new;">/etc/init.d/</span> directory as follows:<br /></div><pre><code># <span style="font-weight: bold;">cd /etc/rc5.d/</span><br /># <span style="font-weight: bold;">ln -s /etc/init.d/apache2 <span style="color: rgb(0, 0, 153);">S20apache2</span></span></code></pre><div style="text-align: justify;">This creates a symbolic link in the <span style="font-family:courier new;">/etc/rc5.d/</span> directory which the system interprets as - start (<span style="font-weight: bold; color: rgb(0, 0, 153);">S</span>) the apache service before all the services which have a priority number greater than <span style="color: rgb(0, 0, 153); font-weight: bold;">20</span>.<br /></div><br /><div style="text-align: justify;">If you do a long listing of the directory <span style="font-family:courier new;">/etc/rc5.d</span> in your system, you can find a lot of symlinks similar to the one below.<br /></div><pre>lrwxrwxrwx  1 root root 17 Mar 31 13:02 <span style="font-weight: bold;">S20apache2 </span>-> ../init.d/apache2<br /></pre><div style="text-align: justify;">Now if I start a service, I will want to stop the service while rebooting or while moving to single user mode and so on. So in those run levels I have to create the symlinks starting with character 'K'. So going back to the apache2 service example, if I want to automatically stop the service when the system goes into runlevel 0, 1 or 6, I will have to create the symlinks as follows in the /etc/rc0.d, /etc/rc1.d/, /etc/rc6.d/ directories.<br /></div><pre><code># <span style="font-weight: bold;">ln -s /etc/init.d/apache2 <span style="color: rgb(0, 0, 153);">K80apache2</span></span></code></pre><div style="text-align: justify;">One interesting aspect here is the priority. Lower the number, the higher is the priority. So since the starting priority of apache2 is 20 - that is apache starts way ahead of other services during startup, we give it a stopping priority of 80. There is no hard and fast rule for this but usually, you follow the formula as follows:<br /></div><br /><div style="text-align: justify;">If you have 'N' as the priority number for starting a service, you use the number (100-N) for the stopping priority number and vice versa.<br /></div>
+</div>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Ravi</span>
+</span>
+<span class='post-comment-link'>
+</span><span class='post-labels'>
+</span>
+<span class='post-icons'>
+<span class='item-control blog-admin pid-767740562'>
+<a href='http://www.blogger.com/post-edit.g?blogID=7693232&postID=114391704358155329&from=pencil' title='Edit Post'>
+<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+</a>
+</span>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-2'>
+
+      Share on - 
+      
+<a href='#' onclick='var e=document.createElement("script");e.setAttribute("type","text/javascript");e.setAttribute("src","http://friendfeed.com/share/bookmarklet/javascript?url=http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html&title=Enabling and disabling services during start up in GNU/Linux");document.body.appendChild(e); return false;'><img alt='Share on FriendFeed' src='http://friendfeed.com/static/images/chiclet.png'/></a>
+<span style='border-left:1px solid #ccc;padding:5px 0 0 5px;'><script type='text/javascript'>
+        tweetmeme_url = 'http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html';
+        tweetmeme_style = 'compact';
+      </script>
+<script src='http://tweetmeme.com/i/scripts/button.js' type='text/javascript'>
+</script></span>
+<span style='border-left:1px solid #ccc;padding:5px 0 0 5px;'>
+<a name="fb_share" type="button_count" href="http://www.facebook.com/sharer.php">Share</a><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+</span>
+<span style='border-left:1px solid #ccc;padding:5px 0 0 5px;'><a class='a2a_dd' href='http://www.addtoany.com/share_save'><img alt='Share/Save/Bookmark' border='0' height='16' src='http://static.addtoany.com/buttons/share_save_171_16.png' width='171'/><p class='a2a_linkname_escape' style='display:none'>Enabling and disabling services during start up in GNU/Linux</p></a><script type='text/javascript'>a2a_linkname_escape=1;a2a_linkurl="http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html";</script><script src='http://static.addtoany.com/menu/page.js' type='text/javascript'></script></span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>
+26
+comments:
+        
+</h4>
+<dl id='comments-block'>
+<dt class='comment-author ' id='c114398179972082434'>
+<a name='c114398179972082434'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>thank you, this is useful<BR/>on SuSE 10.0, chkconfig method works</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1143981780000#c114398179972082434' title='comment permalink'>
+4/02/2006 06:13:00 PM
+</a>
+<span class='item-control blog-admin pid-1356027221'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114398179972082434' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114400453280467087'>
+<a name='c114400453280467087'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>You missed CRUX/Archlinux's way of doing this:<BR/>startup scripts are <B>not</B> stored in /etc/init.d, but rather in /etc/rc.d. A list of the services you want started is put into /etc/rc.conf and each is started in the order listed (and shutdown in the reverse order in which they were started); it looks like "SERVICES=(net inetd crond named sshd apache)" on my server running an old copy of CRUX for example. It will also run the script /etc/rc.local which can manually start services if you don't want to bother writing a special script; this is much more BSD-like than the SYSV-like init systems you've described. There are no runlevels (or rather, only one runlevel).<BR/><BR/>Also, I'm not really sure what the startup scripts of various distributions have to do with either GNU or Linux (as referenced in the title of the post), since I don't think either provides or even recommends one sort of startup script or another (well, I suppose Hurd must have something, but I don't know if it is packaged seperately).</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144004520000#c114400453280467087' title='comment permalink'>
+4/03/2006 12:32:00 AM
+</a>
+<span class='item-control blog-admin pid-362637821'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114400453280467087' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114400996287446773'>
+<a name='c114400996287446773'></a>
+<a href='http://www.ubuntu-in.org' rel='nofollow'>Soumyadip Modak</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>Well, re: Debian, you could perhaps consider the use of rcconf. While not as granular as the method that you listed here, it is nevertheless easier for newcomers. <BR/><BR/>apt-get install rcconf</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144009920000#c114400996287446773' title='comment permalink'>
+4/03/2006 02:02:00 AM
+</a>
+<span class='item-control blog-admin pid-1964516951'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114400996287446773' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114401149621571487'>
+<a name='c114401149621571487'></a>
+<a href='http://www.blogger.com/profile/00941870272574570851' rel='nofollow'>HackMan</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>There is one other type of system initialization which is also used. For example in Slackware all startup scripts are located at /etc/rc.d/ and there is no /etc/init.d directory. For most of the services there are separate rc files such as /etc/rc.d/rc.httpd or /etc/rc.d/rc.inetd. There are 2 tings that you can do to disable a service.<BR/>1. You can chmod 644 /etc/rc.d/rc.servicename<BR/>2. You can remove or comment the lines which call this file. Depending when the things are called you can find the lines calling the applications in:<BR/>rc.S - system initialization<BR/>rc.M - multy user mode(including grafics mode) <BR/>rc.K - single user mode<BR/><BR/>In Slackware you can start pkgtool and use the Setup option to reset the default configurations which also include what should be started at boot time.<BR/><BR/>Regards<BR/>  Marian Marinov</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144011480000#c114401149621571487' title='comment permalink'>
+4/03/2006 02:28:00 AM
+</a>
+<span class='item-control blog-admin pid-247750262'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114401149621571487' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114401671712329234'>
+<a name='c114401671712329234'></a>
+Rugmonster
+said...
+</dt>
+<dd class='comment-body'>
+<p>You're generalization about all distros using /etc/init.d is false. Slackware and it's derivatives use the BSD style /etc/rc.d for it's init scripts.</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144016700000#c114401671712329234' title='comment permalink'>
+4/03/2006 03:55:00 AM
+</a>
+<span class='item-control blog-admin pid-1312960886'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114401671712329234' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114401696517635174'>
+<a name='c114401696517635174'></a>
+<a href='http://www.blogger.com/profile/11692895766950078516' rel='nofollow'>tommahu</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>slackware method :<BR/><BR/>chmod a-x /etc/rc.d/rc.yourservicename</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144016940000#c114401696517635174' title='comment permalink'>
+4/03/2006 03:59:00 AM
+</a>
+<span class='item-control blog-admin pid-828009798'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114401696517635174' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114401725483617196'>
+<a name='c114401725483617196'></a>
+<a href='http://www.blogger.com/profile/09718411870108558125' rel='nofollow'>Komakino</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>It is not true to say that "all linux distributions have startup scripts in /etc/init.d as Slackware (the oldest distro still going) uses BSD style init scripts which are in /etc/rc.d and are FAR easier to work with than the sys-v style used by the other distros, as disabling them only requires making them non-executable.</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144017240000#c114401725483617196' title='comment permalink'>
+4/03/2006 04:04:00 AM
+</a>
+<span class='item-control blog-admin pid-424621301'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114401725483617196' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114403409007234867'>
+<a name='c114403409007234867'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>> But one thing is common for all Linux distributions which is that all the start-up scripts are stored in the '/etc/init.d/' directory.<BR/><BR/>One word:  Slackware.</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144034040000#c114403409007234867' title='comment permalink'>
+4/03/2006 08:44:00 AM
+</a>
+<span class='item-control blog-admin pid-215623884'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114403409007234867' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114405673669290058'>
+<a name='c114405673669290058'></a>
+<a href='http://www.blogger.com/profile/16103375316300948662' rel='nofollow'>ashterix</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>good explanation!<BR/>just to add, for RH you can list out all services by typing:<BR/># chkconfig --list<BR/><BR/>by default if you type:<BR/># chkconfig httpd on<BR/>it will enable httpd in runlevel 2,3,5</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144056720000#c114405673669290058' title='comment permalink'>
+4/03/2006 03:02:00 PM
+</a>
+<span class='item-control blog-admin pid-2062631087'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114405673669290058' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114406313222682173'>
+<a name='c114406313222682173'></a>
+Iulian
+said...
+</dt>
+<dd class='comment-body'>
+<p>Slackware doesn't conform with what you are saying ( /etc/rc.d )<BR/><BR/>Cheers !</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144063080000#c114406313222682173' title='comment permalink'>
+4/03/2006 04:48:00 PM
+</a>
+<span class='item-control blog-admin pid-2006502880'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114406313222682173' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114406354621473940'>
+<a name='c114406354621473940'></a>
+<a href='http://www.blogger.com/profile/11102357728008540159' rel='nofollow'>Stealth</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>You know, you could take an easier route by installing a program called: sysv-rc-conf<BR/><BR/>Its a slightly more graphical command-line utility (ncurses? idk) that allows you see the list of possible start up scripts, and disable what you please. :)</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144063500000#c114406354621473940' title='comment permalink'>
+4/03/2006 04:55:00 PM
+</a>
+<span class='item-control blog-admin pid-700199561'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114406354621473940' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114406554225014374'>
+<a name='c114406554225014374'></a>
+Luka Marinko
+said...
+</dt>
+<dd class='comment-body'>
+<p>Slackware way:<BR/><BR/>all the scripts are in /etc/rc.d/  directory.<BR/>The ones you wanted started at boot just make them executable ie.<BR/><BR/>code:<BR/>chmod +x /etc/rc.d/rc.httpd<BR/>/code<BR/><BR/>You can also start/stop/restart services manualy:<BR/>ie. <BR/><BR/>code:<BR/>sh /etc/rc.d/rc.httpd start<BR/>/code<BR/><BR/>If you check you will find this are wery simple shellscripts, that you can easily create/modify for your own purposes.</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144065540000#c114406554225014374' title='comment permalink'>
+4/03/2006 05:29:00 PM
+</a>
+<span class='item-control blog-admin pid-1056247071'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114406554225014374' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114406970309717690'>
+<a name='c114406970309717690'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>Slackware (and derivatives) don't use /etc/init.d. Instead, they use /etc/rc.d and there reside every init script (BSD style). To enable/desable you just set/reset the executable bit for the script.</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144069680000#c114406970309717690' title='comment permalink'>
+4/03/2006 06:38:00 PM
+</a>
+<span class='item-control blog-admin pid-1770523304'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114406970309717690' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114407678634036017'>
+<a name='c114407678634036017'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>For SuSE use the insserv(8) function.<BR/><BR/>-d, --default Use  default runlevels a defined in the scripts.  This may restore an edited runlevel link scheme.<BR/><BR/>-r, --remove Remove the listed scripts from all runlevels.</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144076760000#c114407678634036017' title='comment permalink'>
+4/03/2006 08:36:00 PM
+</a>
+<span class='item-control blog-admin pid-1316779919'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114407678634036017' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114407696934952013'>
+<a name='c114407696934952013'></a>
+<a href='http://www.blogger.com/profile/16668524860004821457' rel='nofollow'>Jeff</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>A quick note.  Some distributions, notably Slackware and derivatives still use the older <B>/etc/rc.d/</B> directory as the container for their startup scripts.  It's really simple to enable / disable services on these distributions.  <BR/>The files in this directory are ususally named "<B>rc.<I>SERVICE</I></B>".  ie. "<B>rc.sendmail</B>" for the sendmail service.  <BR/>To enable / disable the service, simply add / remove the execute bit on the script.  <BR/>For apache: "<B>chmod -x /etc/rc.d/rc.httpd</B>" to <I><B>disable</B></I> Apache from loading at startup or "<B>chmod +x /etc/rc.d/rc.httpd</B>" to <I><B>enable</B></I> it.  Simple no?</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144076940000#c114407696934952013' title='comment permalink'>
+4/03/2006 08:39:00 PM
+</a>
+<span class='item-control blog-admin pid-1066699666'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114407696934952013' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114414527630527677'>
+<a name='c114414527630527677'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>Great! Thanks for the info. Just a small detail between "3) Gentoo Method" and "5) The Old .." there was no "4)". :)</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1144145220000#c114414527630527677' title='comment permalink'>
+4/04/2006 03:37:00 PM
+</a>
+<span class='item-control blog-admin pid-2049228720'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114414527630527677' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114521613450597467'>
+<a name='c114521613450597467'></a>
+breun
+said...
+</dt>
+<dd class='comment-body'>
+<p>I prefer running ntsysv under Red Hat-style systems (or run 'setup' and choose Services) and just selecting there which services should and shouldn't start automatically. If you don't want to differentiate between runlevels I think this is the easiest way.</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1145216100000#c114521613450597467' title='comment permalink'>
+4/17/2006 01:05:00 AM
+</a>
+<span class='item-control blog-admin pid-2030691506'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114521613450597467' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114575366251047956'>
+<a name='c114575366251047956'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>Excellent...thanks Ravi</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1145753640000#c114575366251047956' title='comment permalink'>
+4/23/2006 06:24:00 AM
+</a>
+<span class='item-control blog-admin pid-683127530'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114575366251047956' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114598436363045228'>
+<a name='c114598436363045228'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>It would be nice to also know how to run these services as a different user</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1145984340000#c114598436363045228' title='comment permalink'>
+4/25/2006 10:29:00 PM
+</a>
+<span class='item-control blog-admin pid-898088816'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114598436363045228' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c114721603452498137'>
+<a name='c114721603452498137'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>It would be nice indeed. I use to do that in KDE using SysV-Init Editor but that application won't start anymore for some reason. So I need a way to set the user runnning a service from the command line :)</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1147216020000#c114721603452498137' title='comment permalink'>
+5/10/2006 04:37:00 AM
+</a>
+<span class='item-control blog-admin pid-202652046'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=114721603452498137' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c116517434646026636'>
+<a name='c116517434646026636'></a>
+<a href='http://www.blogger.com/profile/8542118' rel='nofollow'>rajat swarup</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>BootUpManager (a.k.a bum) is also a good tool to do this configuration.<BR/><BR/>sudo apt-get install bum<BR/>sudo bum<BR/><BR/>Then simply check or uncheck the services you want to remove.</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1165174320000#c116517434646026636' title='comment permalink'>
+12/04/2006 01:02:00 AM
+</a>
+<span class='item-control blog-admin pid-2106526385'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=116517434646026636' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c116803731889472687'>
+<a name='c116803731889472687'></a>
+<a href='http://www.fastdump.net' rel='nofollow'>Free File Hosting</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>Hi,<BR/><BR/>In Centos there is RunLevels for single user mode and Multi User Mode, what are difference and in which time do I need to use Single User Mode?<BR/><BR/>P.S: Cool website.</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1168037280000#c116803731889472687' title='comment permalink'>
+1/06/2007 04:18:00 AM
+</a>
+<span class='item-control blog-admin pid-1378070784'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=116803731889472687' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c7657637568861512967'>
+<a name='c7657637568861512967'></a>
+<a href='http://www.blogger.com/profile/11396701629988453226' rel='nofollow'>Kevin</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>In response to what Free File Hosting said...<BR/><BR/>Since centos is just a free distribuation of RHEL.<BR/><BR/>Just follow what ashterix  said...<BR/><BR/>by default if you type:<BR/># chkconfig httpd on<BR/>it will enable httpd in runlevel 2,3,5</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1186097280000#c7657637568861512967' title='comment permalink'>
+8/03/2007 04:58:00 AM
+</a>
+<span class='item-control blog-admin pid-1593341976'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=7657637568861512967' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c3342562202435015490'>
+<a name='c3342562202435015490'></a>
+Madhav
+said...
+</dt>
+<dd class='comment-body'>
+<p>Hey Thanks man, very useful !</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1204719900000#c3342562202435015490' title='comment permalink'>
+3/05/2008 05:55:00 PM
+</a>
+<span class='item-control blog-admin pid-2096349312'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=3342562202435015490' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c1783693921474298163'>
+<a name='c1783693921474298163'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>Thanks for the info. Keep Up the good work.</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1207029900000#c1783693921474298163' title='comment permalink'>
+4/01/2008 11:35:00 AM
+</a>
+<span class='item-control blog-admin pid-394349582'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=1783693921474298163' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c4939993963340344307'>
+<a name='c4939993963340344307'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>For CentOs5, you have to change<br />chkconfig  httpd  on --level 2,3,5<br /><br />to <br /><br />chkconfig --level 235  httpd  on</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html?showComment=1292284388030#c4939993963340344307' title='comment permalink'>
+12/14/2010 05:23:00 AM
+</a>
+<span class='item-control blog-admin pid-384631964'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7693232&postID=4939993963340344307' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+</dl>
+<p class='comment-footer'>
+<a href='http://www.blogger.com/comment.g?blogID=7693232&postID=114391704358155329&isPopup=true' onclick='javascript:window.open(this.href, "bloggerPopup", "toolbar=0,location=0,statusbar=1,menubar=0,scrollbars=yes,width=400,height=450"); return false;'>Post a Comment</a>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+</div>
+</div>
+</div>
+<div id="latency-114391704358155329"></div><script type="text/javascript">if (window['tickAboveFold']) {window['tickAboveFold'](document.getElementById("latency-114391704358155329")); } </script>
+<!-- google_ad_section_end -->
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link nplink' href='http://linuxhelp.blogspot.com/2006/04/configuring-wifi-card-to-work-in.html' id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+</span>
+<a class='home-link nplink' href='http://linuxhelp.blogspot.com/'>Home</a>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link nplink' href='http://linuxhelp.blogspot.com/2006/03/throwing-light-on-drm.html' id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+</span>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+</div>
+</div></div>
+</div>
+<div id='sidebar1'>
+<div id='sidebartop'>
+<div class='sidebar section' id='sidebar'><div class='widget HTML' id='HTML11'>
+<div class='widget-content'>
+<div style="text-align:center;">
+<iframe src="http://rcm.amazon.com/e/cm?t=ravikumarsweb-20&o=1&p=12&l=ur1&category=kindlerotating&f=ifr" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+</div>
+<br/>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7693232&widgetType=HTML&widgetId=HTML11&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML11"));' target='configHTML11' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML4'>
+<h5 class='title'>Search this blog</h5>
+<div class='widget-content'>
+<br/>
+<div style="text-align:center;"><iframe src="http://duckduckgo.com/search.html?width=250&site=linuxhelp.blogspot.com&kn=1&kh=1" style="overflow:hidden;margin:0;padding:0;width:300px;height:38px;" frameborder="0"></iframe></div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7693232&widgetType=HTML&widgetId=HTML4&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML4"));' target='configHTML4' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+<div id='sidebarleft'>
+<div class='sidebarleft-widget section' id='sidebarleft-widget'><div class='widget HTML' id='HTML8'>
+<h5 class='title'>Get Posts via email</h5>
+<div class='widget-content'>
+<form action="http://feedburner.google.com/fb/a/mailverify" style="border:1px solid #ccc;padding:3px;text-align:center;" target="popupwindow" method="post" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=AllAboutLinux', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p><input style="width:90px" value="Enter Email ID" name="email" type="text"/><input value="AllAboutLinux" name="uri" type="hidden"/><input value="en_US" name="loc" type="hidden"/>&nbsp;<input value="Sign Up" type="submit"/></p></form>
+
+<div style="text-align:center;">
+<a href="http://twitter.com/aboutlinux" target="_blank"><img alt="Follow me on twitter" src="http://img194.imageshack.us/img194/3544/twitty.png" /></a>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7693232&widgetType=HTML&widgetId=HTML8&action=editWidget&sectionId=sidebarleft-widget' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML8"));' target='configHTML8' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+<div id='sidebarright'>
+<div class='sidebarright-widget section' id='sidebarright-widget'><div class='widget HTML' id='HTML10'>
+<div class='widget-content'>
+<div style="text-align:center;margin-top:3px;">
+<a href="http://feeds.feedburner.com/AllAboutLinux"><img src="http://feeds.feedburner.com/~fc/AllAboutLinux?bg=FF9900&amp;fg=000000&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a><br />
+<a href="http://feeds.feedburner.com/AllAboutLinux" target="_blank"><img src="http://img148.imageshack.us/img148/7646/rssicon50x50.png" /></a></div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7693232&widgetType=HTML&widgetId=HTML10&action=editWidget&sectionId=sidebarright-widget' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML10"));' target='configHTML10' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+<div id='sidebarbottom'><!-- my code start -->
+<div class='sidebar-bottom section' id='sidebarbottom-widget'><div class='widget HTML' id='HTML1'>
+<div class='widget-content'>
+<div style="text-align:center;">
+<script type="text/javascript">
+var fb = Math.random();
+if (fb < .5){
+document.write('<iframe src="http://www.facebook.com/plugins/activity.php?site=http%3A%2F%2Flinuxhelp.blogspot.com&amp;width=320&amp;height=300&amp;header=true&amp;colorscheme=light&amp;recommendations=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:320px; height:300px;" allowTransparency="true"></iframe>');
+} else {
+document.write('<iframe src="http://www.facebook.com/plugins/recommendations.php?site=http%3A%2F%2Flinuxhelp.blogspot.com&amp;width=320&amp;height=300&amp;header=true&amp;colorscheme=light" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:320px; height:300px;" allowTransparency="true"></iframe>');
+}
+</script>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7693232&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebarbottom-widget' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML9'>
+<div class='widget-content'>
+<div style="text-align:center;margin-top:3px;">
+<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US" type="text/javascript"></script><script type="text/javascript">FB.init("66fec8977a41b7bd929d6a563033eab3");</script><fb:fan connections="10" width="300" profile_id="181544222145" stream=""></fb:fan><div style="font-size:8px; padding-left:10px"><a href="http://www.facebook.com/pages/All-about-Linux/181544222145">All about Linux on Facebook</a> </div></div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7693232&widgetType=HTML&widgetId=HTML9&action=editWidget&sectionId=sidebarbottom-widget' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML9"));' target='configHTML9' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div><!-- my code end -->
+</div>
+<!-- End of sidebar id -->
+</div>
+<!-- End of content id -->
+<div id='footer1'>
+<div class='footer section' id='footer'><div class='widget HTML' id='HTML6'>
+<div class='widget-content'>
+<!-- Infolinks Code -->
+<script type="text/javascript">
+   var infolink_pid = 28749;
+   var infolink_wsid = 0;
+</script>
+<script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7693232&widgetType=HTML&widgetId=HTML6&action=editWidget&sectionId=footer' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML6"));' target='configHTML6' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML5'>
+<div class='widget-content'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+<script src="http://blogger-related-posts.googlecode.com/files/related-posts-widget-1.0.js" type="text/javascript"></script>
+<script type="text/javascript">
+relatedPostsWidget({
+   'containerSelector':'div.post-body'
+   ,'loadingText':'loading...'
+});</script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7693232&widgetType=HTML&widgetId=HTML5&action=editWidget&sectionId=footer' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML5"));' target='configHTML5' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML2'>
+<div class='widget-content'>
+<!-- Rupee Symbol start -->
+<script src="http://cdn.webrupee.com/js" type="text/javascript"></script>
+<!-- Rupee Symbol end -->
+
+<!--WEBBOT bot="HTMLMarkup" startspan ALT="Site Meter" -->
+<script language="JavaScript" type="text/javascript">var site="sm9ravi2005"</script>
+<script language="JavaScript1.2" src="http://sm9.sitemeter.com/js/counter.js?site=sm9ravi2005" type="text/javascript">
+</script>
+<noscript>
+<a href="http://sm9.sitemeter.com/stats.asp?site=sm9ravi2005" target="_top">
+<img border="0" alt="Site Meter" src="http://sm9.sitemeter.com/meter.asp?site=sm9ravi2005" /></a>
+</noscript>
+<!-- Copyright (c)2005 Site Meter -->
+<!--WEBBOT bot="HTMLMarkup" Endspan -->
+
+<!-- Google Analytics code -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-285699-1";
+urchinTracker();
+</script>
+
+<!-- Mybloglog statistics -->
+<script src="http://track2.mybloglog.com/js/jsserv.php?mblID=2007042108124397" type="text/javascript"></script>
+
+<!-- Quantcast.com statistics -->
+<!-- Start Quantcast tag -->
+<script src="http://edge.quantserve.com/quant.js" type="text/javascript"></script>
+<script type="text/javascript">
+_qacct="p-efFKMNMw0ykaw";quantserve();</script>
+<noscript>
+<a href="http://www.quantcast.com/p-efFKMNMw0ykaw" target="_blank"><img border="0" style="display: none" width="1" alt="Quantcast" src="http://pixel.quantserve.com/pixel/p-efFKMNMw0ykaw.gif" height="1" /></a></noscript>
+<!-- End Quantcast tag -->
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7693232&widgetType=HTML&widgetId=HTML2&action=editWidget&sectionId=footer' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML2"));' target='configHTML2' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML3'>
+<div class='widget-content'>
+Content Copyright &copy; 2004-2009 <a href="http://linuxhelp.blogspot.com">All about Linux</a> - A site on Linux, Open Source and Free software.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7693232&widgetType=HTML&widgetId=HTML3&action=editWidget&sectionId=footer' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML3"));' target='configHTML3' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+<!-- End of footer id -->
+</div>
+<!-- End of wrap id -->
+<!-- +disqus -->
+<!-- -disqus -->
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="http://www.blogger.com/static/v1/widgets/1609106493-widgets.js"></script>
+<script type='text/javascript'>
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '7693232';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('http://www.blogger.com/rearrange?blogID=7693232','http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html','7693232');
+_WidgetManager._SetPageActionUrl('http://www.blogger.com/display?blogID=7693232','APq4FmAJ-LzQSc5_oz-4ikZSTtlyXI1obukY-2e4oYB-lHbmqvJGAFNuF2TLlQdIUvkrSKnaoGGqeXUQzJLps0iH-Z_O-nBZlg==','AOuZoY4w7IMJkQG5cTTY1-PrbEkgm7kw9Q:1318558398889');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'title': 'All about Linux', 'pageType': 'item', 'url': 'http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html', 'canonicalUrl': 'http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html', 'homepageUrl': 'http://linuxhelp.blogspot.com/', 'blogspotFaviconUrl': 'http://linuxhelp.blogspot.com/favicon.ico', 'enabledCommentProfileImages': true, 'searchLabel': '', 'searchQuery': '', 'pageName': 'Enabling and disabling services during start up in GNU/Linux', 'pageTitle': 'All about Linux: Enabling and disabling services during start up in GNU/Linux', 'encoding': 'UTF-8', 'locale': 'en-US', 'isPrivate': false, 'isMobile': false, 'mobileClass': '', 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42All about Linux - Atom\42 href\75\42http://linuxhelp.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42All about Linux - RSS\42 href\75\42http://linuxhelp.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42All about Linux - Atom\42 href\75\42http://www.blogger.com/feeds/7693232/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\0757693232\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'imageSrcTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window;function c(b){this.t\75{};this.tick\75function(b,i,d){d\75d!\75void 0?d:(new Date).getTime();this.t[b]\75[d,i]};this.tick(\42start\42,null,b)}var e\75new c;a.jstiming\75{Timer:c,load:e};try{var g\75null;a.chrome\46\46a.chrome.csi\46\46(g\75Math.floor(a.chrome.csi().pageT));g\75\75null\46\46a.gtbExternal\46\46(g\75a.gtbExternal.pageT());g\75\75null\46\46a.external\46\46(g\75a.external.pageT);g\46\46(a.jstiming.pt\75g)}catch(h){};a.tickAboveFold\75function(b){var f\0750;if(b.offsetParent){do f+\75b.offsetTop;while(b\75b.offsetParent)}b\75f;b\74\075750\46\46a.jstiming.load.tick(\42aft\42)};var j\75false;function k(){j||(j\75true,a.jstiming.load.tick(\42firstScrollTime\42))}a.addEventListener?a.addEventListener(\42scroll\42,k,false):a.attachEvent(\42onscroll\42,k);\n })();\74/script\076', 'mobileHeadScript': '', 'analyticsAccountNumber': ''}}]);
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML6', 'footer', null, document.getElementById('HTML6'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML5', 'footer', null, document.getElementById('HTML5'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'footer', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'footer', null, document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebarbottom-widget', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML9', 'sidebarbottom-widget', null, document.getElementById('HTML9'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML8', 'sidebarleft-widget', null, document.getElementById('HTML8'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML10', 'sidebarright-widget', null, document.getElementById('HTML10'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML11', 'sidebar', null, document.getElementById('HTML11'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML4', 'sidebar', null, document.getElementById('HTML4'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'http://www.blogger.com/static/v1/jsbin/2444540184-lbx.js', 'lightboxCssUrl': 'http://www.blogger.com/static/v1/v-css/3471120812-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'null', null, document.getElementById('PageList1'), {}, 'displayModeFull'));
+</script>
+</body>
+</html>

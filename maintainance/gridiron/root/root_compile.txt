@@ -1,0 +1,21 @@
+/usr/bin/ld: skipping incompatible /opt/d-cache/dcap/lib/libdcap.a when searching for -ldcap
+/usr/bin/ld: cannot find -ldcap
+collect2: ld returned 1 exit status
+make: *** [lib/libDCache.so] Error 1
+rm core/utils/src/rootcint_tmp.cxx core/utils/src/RStl_tmp.cxx
+
+
+## Package list
+
+Enabled support for asimage, astiff, builtin_afterimage, builtin_ftgl, builtin_glew, cintex, editline, dcache, exceptions, fftw3, genvector, gfal, krb5, memstat, mysql, odbc, opengl, pgsql, pythia6, python, reflex, shadowpw, shared, ssl, tmva, x11, xft, xml, xrootd.
+
+
+## first attempt
+./configure
+make
+
+## second attempt
+./configure --disable-dcache --disable-asimage --disable-reflex --disable-xrootd 
+## third attempt
+./configure --disable-dcache --disable-asimage --disable-reflex --disable-xrootd --disable-gfal
+

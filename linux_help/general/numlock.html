@@ -1,0 +1,685 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="How [to] make NumLock be on at start?" />
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum" />
+	<script language="JavaScript" type="text/javascript" src="http://forum.xfce.org/Themes/default/script.js?fin11"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "http://forum.xfce.org/Themes/default";
+		var smf_images_url = "http://forum.xfce.org/Themes/default/images";
+		var smf_scripturl = "http://forum.xfce.org/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>How [to] make NumLock be on at start?</title>
+	<link rel="stylesheet" type="text/css" href="http://forum.xfce.org/Themes/default/style.css?fin11" />
+	<link rel="stylesheet" type="text/css" href="http://forum.xfce.org/Themes/default/print.css?fin11" media="print" />
+	<link rel="help" href="http://forum.xfce.org/index.php?action=help" target="_blank" />
+	<link rel="search" href="http://forum.xfce.org/index.php?action=search" />
+	<link rel="contents" href="http://forum.xfce.org/index.php" />
+	<link rel="alternate" type="application/rss+xml" title="Xfce Community - RSS" href="http://forum.xfce.org/index.php?type=rss;action=.xml" />
+	<link rel="prev" href="http://forum.xfce.org/index.php?topic=3270.0;prev_next=prev" />
+	<link rel="next" href="http://forum.xfce.org/index.php?topic=3270.0;prev_next=next" />
+	<link rel="index" href="http://forum.xfce.org/index.php?board=4.0" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+				<link rel="icon" href="http://www.xfce.org/favicon.png" type="image/png" />
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+			document.getElementById("upshrinkHeader2").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			var current_header_ic = false;
+
+			function shrinkHeaderIC(mode)
+			{
+				document.cookie = "upshrinkIC=" + (mode ? 1 : 0);
+				document.getElementById("upshrink_ic").src = smf_images_url + (mode ? "/expand.gif" : "/collapse.gif");
+
+				document.getElementById("upshrinkHeaderIC").style.display = mode ? "none" : "";
+
+				current_header_ic = mode;
+			}
+		// ]]></script>
+</head>
+<body>
+	<div class="tborder" >
+		<table width="100%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td class="catbg" height="32">
+					<img src="http://blog.xfce.org/gfx/forums.gif" style="margin: 4px;" alt="Xfce Community" />
+				</td>
+				<td align="right" class="catbg">
+					<img src="http://forum.xfce.org/Themes/default/images/smflogo.gif" style="margin: 2px;" alt="" />
+				</td>
+			</tr>
+		</table>
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" >
+			<tr>
+				<td class="titlebg2" height="32" align="right">
+					<span class="smalltext">September 17, 2010, 11:02pm</span>
+					<a href="#" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="http://forum.xfce.org/Themes/default/images/upshrink.gif" alt="*" title="Shrink or expand the header." align="bottom" style="margin: 0 1ex;" /></a>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top" colspan="2">
+					<table width="100%" class="bordercolor" cellpadding="8" cellspacing="1" border="0" style="margin-top: 1px;">
+						<tr>
+							<td colspan="2" width="100%" valign="top" class="windowbg2"><span class="middletext">Welcome, <b>Guest</b>. Please <a href="http://forum.xfce.org/index.php?action=login">login</a> or <a href="http://forum.xfce.org/index.php?action=register">register</a>.<br />Did you miss your <a href="http://forum.xfce.org/index.php?action=activate">activation email?</a>				</span>
+								<script language="JavaScript" type="text/javascript" src="http://forum.xfce.org/Themes/default/sha1.js"></script>
+
+								<form action="http://forum.xfce.org/index.php?action=login2" method="post" accept-charset="ISO-8859-1" class="middletext" style="margin: 3px 1ex 1px 0;" onsubmit="hashLoginPassword(this, '583a4c55013d32536b9d87147b503936');">
+									<input type="text" name="user" size="10" /> <input type="password" name="passwrd" size="10" />
+									<select name="cookielength">
+										<option value="60">1 Hour</option>
+										<option value="1440">1 Day</option>
+										<option value="10080">1 Week</option>
+										<option value="43200">1 Month</option>
+										<option value="-1" selected="selected">Forever</option>
+									</select>
+									<input type="submit" value="Login" /><br />
+									<span class="middletext">Login with username, password and session length</span>
+									<input type="hidden" name="hash_passwrd" value="" />
+								</form>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table id="upshrinkHeader2" width="100%" cellpadding="4" cellspacing="0" border="0">
+			<tr>
+				<td width="90%" class="titlebg2">
+					<span class="smalltext"><b>News</b>: Remember, its <i>not</i> XFCE.. its Xfce!</span>
+				</td>
+				<td class="titlebg2" align="right" nowrap="nowrap" valign="top">
+					<form action="http://forum.xfce.org/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<a href="http://forum.xfce.org/index.php?action=search;advanced"><img src="http://forum.xfce.org/Themes/default/images/filter.gif" align="middle" style="margin: 0 1ex;" alt="" /></a>
+						<input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+	<select name="search_selection">
+			<option value="entireforum" selected="selected">Entire Forum </option>
+			<option value="thisbrd">This board </option>
+			<option value="thistopic">This topic </option>
+			<option value="members">Members </option>
+			<option value="entiresite">Entire Site </option>
+	</select>&nbsp;<input type="submit" name="submit" value="Search" style="width: 11ex;" />
+						<input type="hidden" name="advanced" value="0" />
+						<input type="hidden" name="acttopic" value="3270" />
+						<input type="hidden" name="actbrd" value="4" />
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+			<table cellpadding="0" cellspacing="0" border="0" style="margin-left: 10px;">
+				<tr>
+					<td class="maintab_first">&nbsp;</td><td class="maintab_active_first">&nbsp;</td>
+				<td valign="top" class="maintab_active_back">
+					<a href="http://forum.xfce.org/index.php">Home</a>
+				</td><td class="maintab_active_last">&nbsp;</td>
+				<td valign="top" class="maintab_back">
+					<a href="http://forum.xfce.org/index.php?action=help">Help</a>
+				</td>
+				<td valign="top" class="maintab_back">
+					<a href="http://forum.xfce.org/index.php?action=login">Login</a>
+				</td>
+				<td valign="top" class="maintab_back">
+					<a href="http://forum.xfce.org/index.php?action=register">Register</a>
+				</td>
+				<td class="maintab_last">&nbsp;</td>
+			</tr>
+		</table>
+	<div id="bodyarea" style="padding: 1ex 0px 2ex 0px;">
+<a name="top"></a>
+<a name="msg13694"></a>
+<div><div class="nav" style="font-size: smaller; margin-bottom: 2ex; margin-top: 2ex;"><b><a href="http://forum.xfce.org/index.php" class="nav">Xfce Community</a></b>&nbsp;>&nbsp;<b><a href="http://forum.xfce.org/index.php#2" class="nav">Support</a></b>&nbsp;>&nbsp;<b><a href="http://forum.xfce.org/index.php?board=4.0" class="nav">Desktop</a></b>&nbsp;>&nbsp;Topic: <b><a href="http://forum.xfce.org/index.php?topic=3270.0" class="nav">How [to] make NumLock be on at start?</a></b></div></div>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td class="middletext" valign="bottom" style="padding-bottom: 4px;">Pages: [<b>1</b>]   &nbsp;&nbsp;<a href="#lastPost"><b>Go Down</b></a></td>
+		<td align="right" style="padding-right: 1ex;">
+			<div class="nav" style="margin-bottom: 2px;"> <a href="http://forum.xfce.org/index.php?topic=3270.0;prev_next=prev#new">&laquo; previous</a> <a href="http://forum.xfce.org/index.php?topic=3270.0;prev_next=next#new">next &raquo;</a></div>
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					
+		<td class="mirrortab_first">&nbsp;</td>
+		<td class="mirrortab_back"><a href="http://forum.xfce.org/index.php?action=printpage;topic=3270.0" target="_blank">Print</a></td>
+		<td class="mirrortab_last">&nbsp;</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="border-bottom: 0;">
+		<tr class="catbg3">
+				<td valign="middle" width="2%" style="padding-left: 6px;">
+						<img src="http://forum.xfce.org/Themes/default/images/topic/normal_post.gif" align="bottom" alt="" />
+				</td>
+				<td width="13%"> Author</td>
+				<td valign="middle" width="85%" style="padding-left: 6px;" id="top_subject">
+						Topic: How [to] make NumLock be on at start? &nbsp;(Read 6597 times)
+				</td>
+		</tr>
+		<tr>
+				<td colspan="3" class="smalltext">0 Members and 1 Guest are viewing this topic.
+				</td>
+		</tr>
+</table>
+<form action="http://forum.xfce.org/index.php?action=quickmod2;topic=3270.0" method="post" accept-charset="ISO-8859-1" name="quickModForm" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('583a4c55013d32536b9d87147b503936') : confirm('Are you sure you want to do this?');">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="bordercolor">
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="http://forum.xfce.org/index.php?action=profile;u=2542" title="View the profile of blackdisk">blackdisk</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="http://forum.xfce.org/Themes/default/images/star.gif" alt="*" border="0" /><br />
+								<img src="http://forum.xfce.org/Themes/default/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Posts: 37<br />
+								<br />
+								
+								
+								
+								<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://forum.xfce.org/index.php?topic=3270.msg13694#msg13694"><img src="http://forum.xfce.org/Themes/default/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_13694">
+										<a href="http://forum.xfce.org/index.php?topic=3270.msg13694#msg13694">How [to] make NumLock be on at start?</a>
+									</div>
+									<div class="smalltext">&#171; <b> on:</b> March 22, 2007, 04:33am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">BIOS starts it, but it&#039;s off when XFCE starts. How can I make it always start with it on?</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_13694">
+									&#171; <i>Last Edit: March 22, 2007, 11:21pm by blackdisk</i> &#187;
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="http://forum.xfce.org/Themes/default/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg13695"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="http://forum.xfce.org/index.php?action=profile;u=3038" title="View the profile of SimonJ">SimonJ</a></b>
+							<div class="smalltext">
+								Full Member<br />
+								<img src="http://forum.xfce.org/Themes/default/images/star.gif" alt="*" border="0" /><img src="http://forum.xfce.org/Themes/default/images/star.gif" alt="*" border="0" /><img src="http://forum.xfce.org/Themes/default/images/star.gif" alt="*" border="0" /><br />
+								<img src="http://forum.xfce.org/Themes/default/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Posts: 135<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="http://www.eol.net.au/simon.gif" width="70" height="70" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="http://www.tux.id.au" title="Tux" target="_blank"><img src="http://forum.xfce.org/Themes/default/images/www_sm.gif" alt="WWW" border="0" /></a>
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://forum.xfce.org/index.php?topic=3270.msg13695#msg13695"><img src="http://forum.xfce.org/Themes/default/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_13695">
+										<a href="http://forum.xfce.org/index.php?topic=3270.msg13695#msg13695">Re: How do make NumLock be on at start?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #1 on:</b> March 22, 2007, 05:11am &#187;</div></td>
+								<td align="right" valign="bottom" height="20" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">I run a program called numlockx which starts with the X server.<br /><br />Ubuntu: sudo apt-get install numlockx<br /><br /><br />Works every time.<br /><br />hth,</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_13695">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="http://forum.xfce.org/Themes/default/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature">Simon.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; (^_^)<br /><br />TIP: Proofread carefully to see if you any words out.<br />=====================================================================</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg13703"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="http://forum.xfce.org/index.php?action=profile;u=708" title="View the profile of fatcat">fatcat</a></b>
+							<div class="smalltext">
+								Jr. Member<br />
+								<img src="http://forum.xfce.org/Themes/default/images/star.gif" alt="*" border="0" /><img src="http://forum.xfce.org/Themes/default/images/star.gif" alt="*" border="0" /><br />
+								<img src="http://forum.xfce.org/Themes/default/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Posts: 58<br />
+								<br />
+								<div style="overflow: auto; width: 100%;"><img src="http://forum.xfce.org/avatars/icons/470.gif" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://forum.xfce.org/index.php?topic=3270.msg13703#msg13703"><img src="http://forum.xfce.org/Themes/default/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_13703">
+										<a href="http://forum.xfce.org/index.php?topic=3270.msg13703#msg13703">Re: How do make NumLock be on at start?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #2 on:</b> March 22, 2007, 12:06pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post"><a href="http://wiki.xfce.org/faq" target="_blank">http://wiki.xfce.org/faq</a><br /><br />How do I get numlock to start on login?<br /><br />There are two possibilities to achieve this.&nbsp; You should use a display manager that turns the numlock on (eg. gdm, check the settings) or you can use a little program called numlockx, adding numlockx on in your .xinitrc will do the job.<br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_13703">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="http://forum.xfce.org/Themes/default/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg13706"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="http://forum.xfce.org/index.php?action=profile;u=2542" title="View the profile of blackdisk">blackdisk</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="http://forum.xfce.org/Themes/default/images/star.gif" alt="*" border="0" /><br />
+								<img src="http://forum.xfce.org/Themes/default/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Posts: 37<br />
+								<br />
+								
+								
+								
+								<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://forum.xfce.org/index.php?topic=3270.msg13706#msg13706"><img src="http://forum.xfce.org/Themes/default/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_13706">
+										<a href="http://forum.xfce.org/index.php?topic=3270.msg13706#msg13706">Re: How do make NumLock be on at start?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #3 on:</b> March 22, 2007, 11:18pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Already using gdm but i don&#039;t see any numlock setting. But numlockx did the trick. <br /><br />Thanks.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_13706">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="http://forum.xfce.org/Themes/default/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg15865"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="http://forum.xfce.org/index.php?action=profile;u=5208" title="View the profile of Oli Gophren">Oli Gophren</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="http://forum.xfce.org/Themes/default/images/star.gif" alt="*" border="0" /><br />
+								<img src="http://forum.xfce.org/Themes/default/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Posts: 2<br />
+								<br />
+								
+								
+								
+								<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://forum.xfce.org/index.php?topic=3270.msg15865#msg15865"><img src="http://forum.xfce.org/Themes/default/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_15865">
+										<a href="http://forum.xfce.org/index.php?topic=3270.msg15865#msg15865">Re: How [to] make NumLock be on at start?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #4 on:</b> August 07, 2008, 08:22pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Okay, obviously I am too stupid for this.&nbsp; <img src="http://forum.xfce.org/Smileys/default/tongue.gif" alt="tongue" border="0" /><br /><br />I am using Xubuntu 8.04. I don&#039;t see any numlock setting in Xfce configuration. And numlockx does not work for me: <br /><br />I inserted the following line <br />&nbsp; &nbsp;/usr/X11R6/bin/numlockx on<br />into these two files <br />&nbsp; &nbsp;/./etc/X11/xinit/xinitrc<br />&nbsp; &nbsp;/./etc/xdg/xfce4/xinitrc<br />at different positions, but nothing happened to numlock. Calling numlockx via Terminal does not show any light effects, with or without sudo. And yes, the path of numlock is correct.<br /><br />Please help to led my fire - thank you!</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_15865">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="http://forum.xfce.org/Themes/default/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg15917"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="http://forum.xfce.org/index.php?action=profile;u=5208" title="View the profile of Oli Gophren">Oli Gophren</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="http://forum.xfce.org/Themes/default/images/star.gif" alt="*" border="0" /><br />
+								<img src="http://forum.xfce.org/Themes/default/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Posts: 2<br />
+								<br />
+								
+								
+								
+								<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://forum.xfce.org/index.php?topic=3270.msg15917#msg15917"><img src="http://forum.xfce.org/Themes/default/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_15917">
+										<a href="http://forum.xfce.org/index.php?topic=3270.msg15917#msg15917">Re: How [to] make NumLock be on at start?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #5 on:</b> August 22, 2008, 10:08pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">Thanks for not answering. <br />I AM too stupid for this.&nbsp; <img src="http://forum.xfce.org/Smileys/default/undecided.gif" alt="undecided" border="0" /><br /><br />Here is the solution for those like me:<br /><br />The numlock and so the numberblock IS working, but the numlock LED is still OFF.<br /><br />...therefore, my problem is * SOLVED * (except of the visual feedback).<br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_15917">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="http://forum.xfce.org/Themes/default/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg15938"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+						<td valign="top" width="16%" rowspan="2" style="overflow: hidden;">
+							<b><a href="http://forum.xfce.org/index.php?action=profile;u=4850" title="View the profile of edward">edward</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="http://forum.xfce.org/Themes/default/images/star.gif" alt="*" border="0" /><br />
+								<img src="http://forum.xfce.org/Themes/default/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Posts: 11<br />
+								<br />
+								
+								
+								
+								<br />
+							</div>
+						</td>
+						<td valign="top" width="85%" height="100%">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="http://forum.xfce.org/index.php?topic=3270.msg15938#msg15938"><img src="http://forum.xfce.org/Themes/default/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+									<div style="font-weight: bold;" id="subject_15938">
+										<a href="http://forum.xfce.org/index.php?topic=3270.msg15938#msg15938">Re: How [to] make NumLock be on at start?</a>
+									</div>
+									<div class="smalltext">&#171; <b>Reply #6 on:</b> September 06, 2008, 04:15pm &#187;</div></td>
+								<td align="right" valign="bottom" height="20" style="font-size: smaller;">
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="post">The issue has been reported with more than one Linux distribution and it appears to be related to the X server.&nbsp; It is functioning as if the system is a laptop.&nbsp; X is supposed to turn the numlock light off for a laptop, but keep it on for a desktop.&nbsp; What is happening is that it is turning the light off for a desktop, which is incorrect.&nbsp; Some have said it&#039;s also hardware-dependent.<br /><br />On my two desktops both running Mandriva, the issue is intermittent, sometimes the numlock light will correctly remain on, other times when X starts, the light goes out.&nbsp; But when the light is out, the keypad still works normally, type <b>123</b> on the keypad, you will see <b>123</b>.<br /><br />If you see the numlock light go out when X starts, if you are able to press the Num Lock key fast enough right after the light goes out, to bring the light back on, it should remain on for that entire Linux session.<br /><br />&nbsp;</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_15938">
+									&#171; <i>Last Edit: September 06, 2008, 04:27pm by edward</i> &#187;
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="http://forum.xfce.org/Themes/default/images/ip.gif" alt="" border="0" />
+									Logged
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature"><img src="http://img.userbars.pl/135/26800.png" alt="" border="0" /><br /><span style="color: blue;">Xubuntu 9.10</span></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</table>
+<a name="lastPost"></a>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td class="middletext">Pages: [<b>1</b>]   &nbsp;&nbsp;<a href="#top"><b>Go Up</b></a></td>
+		<td align="right" style="padding-right: 1ex;">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					
+		<td class="maintab_first">&nbsp;</td>
+		<td class="maintab_back"><a href="http://forum.xfce.org/index.php?action=printpage;topic=3270.0" target="_blank">Print</a></td>
+		<td class="maintab_last">&nbsp;</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="http://forum.xfce.org/Themes/default/spellcheck.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://forum.xfce.org/Themes/default/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+	quickReplyCollapsed = true;
+
+	smf_topic = 3270;
+	smf_start = 0;
+	smf_show_modify = 1;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="583a4c55013d32536b9d87147b503936" /><input type="hidden" name="topic" value="3270" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'583a4c55013d32536b9d87147b503936\');" accesskey="s" />&nbsp;&nbsp;<input type="button" value="Spell Check" onclick="spellCheck(\'quickModForm\', \'message\');" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="http://forum.xfce.org/index.php?topic=3270.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 6597 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// ]]></script>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 1ex;">
+		<tr>
+				<td valign="top"><div class="nav" style="font-size: smaller; margin-bottom: 2ex; margin-top: 2ex;"><b><a href="http://forum.xfce.org/index.php" class="nav">Xfce Community</a></b>&nbsp;>&nbsp;<b><a href="http://forum.xfce.org/index.php#2" class="nav">Support</a></b>&nbsp;>&nbsp;<b><a href="http://forum.xfce.org/index.php?board=4.0" class="nav">Desktop</a></b>&nbsp;>&nbsp;Topic: <b><a href="http://forum.xfce.org/index.php?topic=3270.0" class="nav">How [to] make NumLock be on at start?</a></b></div></td> 
+				<td valign="top" align="right" class="nav"> <a href="http://forum.xfce.org/index.php?topic=3270.0;prev_next=prev#new">&laquo; previous</a> <a href="http://forum.xfce.org/index.php?topic=3270.0;prev_next=next#new">next &raquo;</a></td>
+		</tr>
+</table>
+	<table cellpadding="0" cellspacing="0" border="0" style="margin-left: 1ex;">
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<div class="tborder"><div class="titlebg2" style="padding: 4px;" align="right">
+	<form action="http://forum.xfce.org/index.php" method="get" accept-charset="ISO-8859-1" style="padding:0; margin: 0;">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#2">Support</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=3.0"> => Installation</option>
+			<option value="?board=4.0" selected="selected"> => Desktop</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">Community Discussion</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=12.0"> => General</option>
+			<option value="?board=9.0"> => Themes &amp; Screenshots</option>
+			<option value="?board=1.0"> => Website &amp; Graphics</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Reference</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=5.0"> => Frequently Asked Questions</option>
+			<option value="?board=2.0"> => Tips &amp; Tricks</option>
+		</select>&nbsp;
+		<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'http://forum.xfce.org/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+	</form>
+</div></div><br />
+<form action="http://forum.xfce.org/index.php?action=spellcheck" method="post" accept-charset="ISO-8859-1" name="spell_form" id="spell_form" target="spellWindow"><input type="hidden" name="spellstring" value="" /></form>
+	</div>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" align="center" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="http://forum.xfce.org/Themes/default/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="http://forum.xfce.org/Themes/default/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.11</a> | 
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2009, Simple Machines LLC</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="http://forum.xfce.org/Themes/default/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="http://forum.xfce.org/Themes/default/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			window.addEventListener("load", smf_codeFix, false);
+			function smf_codeFix()
+			{
+				var codeFix = document.getElementsByTagName ? document.getElementsByTagName("div") : document.all.tags("div");
+
+				for (var i = 0; i < codeFix.length; i++)
+				{
+					if (codeFix[i].className == "code" && (codeFix[i].scrollWidth > codeFix[i].clientWidth || codeFix[i].clientWidth == 0))
+						codeFix[i].style.overflow = "scroll";
+				}
+			}
+		// ]]></script>
+	</div>
+	<div id="ajax_in_progress" style="display: none;">Loading...</div>
+</body></html>

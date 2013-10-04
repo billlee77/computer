@@ -1,0 +1,195 @@
+\documentclass[a4paper, 12pt, onecolumn] {article}
+
+\pagestyle{plain}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{nopageno}
+\usepackage[english]{babel}
+\usepackage{booktabs}
+
+
+
+\begin {document}
+
+\begin{table}[tp]%
+\caption{Maximum load and nominal tension .}
+\label{aggiungi}\centering%
+\begin{tabular}{ccccc}
+\toprule%
+$D$ &                   & $P_u$   & $\sigma_N$\\
+( in )&                 & ( lbs ) & ( psi )   \\
+\toprule%
+5     & test 1          & 285     & 38.00     \\
+      & test 2          & 287     & 38.27     \\
+      & test 3          & 230     & 30.67     \\
+\midrule
+10 & test 1             & 430     & 28.67     \\
+      & test 2          & 433     & 28.87     \\
+      & test 3          & 431     & 28.73     \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\begin{table}[tp] \large %
+\label{aggiungi}\centering%
+\begin{tabular}{llc|p{5cm}}
+\toprule%
+
+%\multicolumn{4}{llcl}{Name & Model & Quantities & Fuctionality \\} \\
+%\multicolumn{4}{|c|}{Sample Tabular}\\
+
+\multicolumn{1}{l}{name}&
+\multicolumn{1}{l}{Model}&
+\multicolumn{1}{c}{Quantity}&
+\multicolumn{1}{l}{Functionality} \\
+
+\toprule%
+HV supply		& PDP Model 2K-10			& 3		&		 	\\
+				& KS Model 1570				& 1		&			\\
+\hline
+%\midrule
+Fan-in/Fan-out	& LeCroy Model 428F       	& 1     &		    \\
+
+Disciminamtor	& Phillips PSl 710          & 1    	&			\\
+				& LeCory 821Z				& 1		&			\\	
+\hline
+%\midrule
+Time Delay		& Ortec Model 425			& 2		&			\\	
+				& B007						& 4		&			\\
+				& Cern-NP type 9053			& 2		&			\\
+%\midrule
+\hline
+Logic Unit		& Plillips PS 775			& 1		&			\\
+%\midrule
+\hline
+TDC				& LeCroy 2228A				& 1					\\
+%\midrule
+\hline
+ADC				& LeCroy 2249W				& 1					\\
+%\midrule
+\hline
+CAMAC			& Kinetic Systems Model 1502& 1					\\
+\bottomrule
+\end{tabular}
+\caption{Maximum load and nominal tension .}
+\end{table}
+
+
+\end {document}
+
+
+
+%complicated Version
+\begin{table}[tp]  %
+\label{aggiungi}\centering%
+\begin{tabular}{llc|p{5cm}}
+\toprule%
+
+%\multicolumn{4}{llcl}{Name & Model & Quantities & Fuctionality \\} \\
+%\multicolumn{4}{|c|}{Sample Tabular}\\
+
+\multicolumn{1}{l}{Module Name}&
+\multicolumn{1}{l}{Manufactror \& Model}&
+\multicolumn{1}{c}{Quantity}&
+\multicolumn{1}{c}{Functionality} \\
+
+\toprule%
+
+HV supply		& \multirow{2}{4cm}{PDP Model 2K-10	~~~~ KS Model 1570}			& \multirow{2}{0.2cm}{3 ~~~~~~~~~~~~ 1}		&	{\small Provide negative polarised Hight votage to the scintilators} \\	
+
+\hline
+%\midrule
+Fan-in/Fan-out	& LeCroy Model 428F       	& 1     	& 		    
+{\small Module splite the input signal into 4 same magnitude output signal.}\\
+\hline
+
+Discriminator 					&
+
+\multirow{2}{3cm}{Phillips PSl 710  LeCory 821Z} 	&
+\multirow{2}{0.2cm}{3 ~~~~~~~~~~~~ 1}					&
+
+{\small Module responds to input signal with a pulse height only above certain threshold. If the criterion is satisfied, a standerd logic signal is issued.}\\
+
+
+%&&&\\
+%&&&\\
+%&&&\\
+
+\hline
+%\midrule
+Time Delay		& Ortec Model 425			& 2		& 
+\multirow{3}{5cm}{\small Delay the time for the incoming signal, without any shape changing.}\\	
+				& B007						& 4		\\
+				& Cern-NP Type 9053			& 2		\\
+%\midrule
+\hline
+
+Logic Unit		& Plillips PS 775			& 1		& {\small Will in-take four signal maxinum at the same time and perform logic operation such as AND, OR and Majority. Could also be used as Fan-in/Fan-out.}			\\
+%\midrule
+
+\hline
+
+TDC				& LeCroy 2228A				& 1	 	&{\small Time Digital Convertor in acting as a accurate stop watch, will precisely record small time interval between Starting and Stoping signals. }				\\
+%\midrule
+
+\hline
+
+ADC				& LeCroy 2249W				& 1		&{\small}			\\
+%\midrule
+
+\hline
+
+CAMAC			& Kinetic Systems Model 1502& 1		& Hosting for the TDC and ADC module, collecting digitised signal from modules, and pass data to the computer through cable connection.  				\\
+
+\bottomrule
+\end{tabular}
+\caption{Maximum load and nominal tension .}
+\end{table}
+
+
+
+
+
+%************************************8
+%Big table
+\begin{table}[h!]  %
+\centering%
+\begin{tabular}{llc|p{5cm}}
+\toprule%
+\multicolumn{1}{l}{Module Name}&
+\multicolumn{1}{l}{Manufacture \& Model}&
+\multicolumn{1}{c}{Quantity}&
+\multicolumn{1}{c}{Functionality} \\
+\toprule%
+HV supply		& \multirow{2}{4cm}{PDP Model 2K-10	~~~~ KS Model 1570}			& \multirow{2}{0.2cm}{3 ~~~~~~~~~~~~ 1}		&	{\small Provide negative polarized High voltage to the scintillators} \\	
+\hline
+Fan-in/Fan-out	& LeCroy Model 428F       	& 1     	& 		    
+{\small Module splits the input signal into 4 same magnitude output signal.}\\
+\hline
+Discriminator 					&
+\multirow{2}{3cm}{Phillips PS 710  LeCory 821Z} 	&
+\multirow{2}{0.2cm}{3 ~~~~~~~~~~~~ 1}					&
+{\small Module responds to input signal with a pulse height only above certain threshold. If the criterion is satisfied, a standard logic signal is issued.}\\
+\hline
+Time Delay		& Ortec Model 425			& 2		& 
+\multirow{3}{5cm}{\small Delay the time for the incoming signal, without any shape changing.}\\	
+				& B007						& 4		\\
+				& Cern-NP Type 9053			& 2		\\
+\hline
+Logic Unit		& Plillips PS 775			& 1		& {\small Will in-take four signal maximum at the same time and perform logic operation such as AND, OR and Majority. Could also be used as Fan-in/Fan-out.}			\\
+\hline
+TDC				& LeCroy 2228A				& 1	 	&{\small Time Digital Converter in acting as a accurate stop watch, will precisely record small time interval between Starting and Stopping signals. It often has to be mounted onto the CAMAC system.}				\\
+\hline
+ADC				& LeCroy 2249W				& 1		&{\small Analog Digital Converter is used to convert the information in an analog signal to equivalent digital signal. ADC is also associated with CAMAC System }			\\
+\hline
+CAMAC			& Kinetic Systems Model 1502& 1		& {\small Hosting for the TDC and ADC module, collecting digitized signal from modules, and pass data to the computer through cable connection.}\\
+\bottomrule
+\end{tabular}
+\caption{List of Electronic Devices used for experiment, and their functionality.}
+\label{tab1}
+\end{table}
+%Table
+%***********************************
+

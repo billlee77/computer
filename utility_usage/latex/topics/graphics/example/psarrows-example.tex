@@ -1,0 +1,165 @@
+\documentclass{article}
+\usepackage{pstricks-add}
+\usepackage{pst-node}
+\textheight=25cm
+\pagestyle{empty}
+
+\begin{document}
+
+\psset{arrowscale=3}
+
+% Lines (\psline macro)
+
+\begin{pspicture}(2,1)
+  \psline[ArrowInside=->]{<->}(2,1)
+\end{pspicture}
+
+\begin{pspicture}(2,1)
+  \psline[ArrowInside=-|]{|-|}(0,0)(2,1)
+\end{pspicture}
+
+\begin{pspicture}(0,-1)(10,2)
+  \psline[ArrowInside=-*]{->}(0,0)(2,1)(3,-1)(5,-1)(10,2)
+\end{pspicture}
+
+\begin{pspicture}(0,-1)(10,2)
+  \psline[ArrowInside=->,ArrowInsidePos=0.25]{->}(0,0)(2,1)(3,-1)(5,-1)(10,2)
+\end{pspicture}
+
+\begin{pspicture}(0,-1)(10,2)
+  \psline[linestyle=none,ArrowInside=->,ArrowInsidePos=0.25]
+         {->}(0,0)(2,1)(3,-1)(5,-1)(10,2)
+\end{pspicture}
+
+\begin{pspicture}(0,-1)(10,2)
+  \psline[ArrowInside=-<,ArrowInsidePos=0.75]{->}(0,0)(2,1)(3,-1)(5,-1)(10,2)
+\end{pspicture}
+
+\begin{pspicture}(0,-1)(10,2)
+  \psset{ArrowInside=-*}
+  \psline(0,0)(2,1)(3,-1)(5,-1)(10,2)
+  \psset{linestyle=none}
+  \psline[ArrowInsidePos=0](0,0)(2,1)(3,-1)(5,-1)(10,2)
+  \psline[ArrowInsidePos=1](0,0)(2,1)(3,-1)(5,-1)(10,2)
+\end{pspicture}
+
+\psset{ArrowInside=-|}
+
+\begin{pspicture}(0,-1)(10,2)
+  \psline[linearc=1]{<->}(0,0)(2,1)(3,-1)(5,-1)(10,2)
+\end{pspicture}
+
+\clearpage
+
+% Polygons (\pspolygon macro)
+
+\begin{pspicture}(6,3)
+  \pspolygon[ArrowInside=-|](0,0)(3,3)(6,3)(6,1)
+\end{pspicture}
+%
+\begin{pspicture}(-1,0)(6,3)
+  \pspolygon[ArrowInside=->,ArrowInsidePos=0.25](0,0)(3,3)(6,3)(6,1)
+\end{pspicture}
+
+\begin{pspicture}(6,4)
+  \pspolygon[ArrowInside=-|](0,0)(3,3)(6,3)(6,1)
+  \psset{linestyle=none,ArrowInside=-*}
+  \pspolygon[ArrowInsidePos=0](0,0)(3,3)(6,3)(6,1)
+  \pspolygon[ArrowInsidePos=1](0,0)(3,3)(6,3)(6,1)
+  \psset{ArrowInside=-o}
+  \pspolygon[ArrowInsidePos=0.25](0,0)(3,3)(6,3)(6,1)
+  \pspolygon[ArrowInsidePos=0.75](0,0)(3,3)(6,3)(6,1)
+\end{pspicture}
+
+% Bezier curves (\psbezier macro)
+
+\begin{pspicture}(3,4)
+  \psbezier[ArrowInside=-|](1,1)(2,2)(3,3)
+  \psset{linestyle=none,ArrowInside=-o}
+  \psbezier[ArrowInsidePos=0.25](1,1)(2,2)(3,3)
+  \psbezier[ArrowInsidePos=0.75](1,1)(2,2)(3,3)
+  \psset{linestyle=none,ArrowInside=-*}
+  \psbezier[ArrowInsidePos=0](1,1)(2,2)(3,3)
+  \psbezier[ArrowInsidePos=1](1,1)(2,2)(3,3)
+\end{pspicture}
+
+\begin{pspicture}(0,-1)(4,3)
+  \psbezier(0,0)(2,3)(3,-1)(4,2)
+\end{pspicture}
+%
+\begin{pspicture}(0,-1)(4,3)
+  \psbezier[ArrowInside=->]{->}(2,3)(3,-1)(4,2)
+\end{pspicture}
+%
+\begin{pspicture}(0,-1)(4,3)
+  \psset{ArrowInside=-|}
+  \psbezier[ArrowInsidePos=0.25](2,3)(3,-1)(4,2)
+  \psset{linestyle=none}
+  \psbezier[ArrowInsidePos=0.75](2,3)(3,-1)(4,2)
+  \psset{ArrowInside=-*}
+  \psbezier[ArrowInsidePos=0](2,3)(3,-1)(4,2)
+  \psbezier[ArrowInsidePos=1](2,3)(3,-1)(4,2)
+\end{pspicture}
+
+\begin{pspicture}(0,-1)(6,3)
+  \psbezier[ArrowInside=->](0,-1)(3,2)(6,3)(5,0)
+  \psset{linestyle=none,ArrowInside=-<}
+  \psbezier[ArrowInsidePos=0.2](0,-1)(3,2)(6,3)(5,0)
+  \psbezier[ArrowInsidePos=0.4](0,-1)(3,2)(6,3)(5,0)
+  \psbezier[ArrowInsidePos=0.6](0,-1)(3,2)(6,3)(5,0)
+  \psbezier[ArrowInsidePos=0.8](0,-1)(3,2)(6,3)(5,0)
+  \psset{ArrowInside=-o}
+  \psbezier[ArrowInsidePos=0.1](0,-1)(3,2)(6,3)(5,0)
+  \psbezier[ArrowInsidePos=0.9](0,-1)(3,2)(6,3)(5,0)
+  \psset{ArrowInside=-*}
+  \psbezier[ArrowInsidePos=0.3](0,-1)(3,2)(6,3)(5,0)
+  \psbezier[ArrowInsidePos=0.7](0,-1)(3,2)(6,3)(5,0)
+\end{pspicture}
+\clearpage
+
+\begin{pspicture}(2,1)
+  \psline[ArrowInside=->](2,1)
+\end{pspicture}
+\begin{pspicture}(2,1)
+  \psline[ArrowInside=->]{<->}(2,1)
+\end{pspicture}
+\begin{pspicture}(2,1)
+  \psline[ArrowInside=-|,ArrowInsidePos=0.75]{|-|}(0,0)(2,1)
+\end{pspicture}
+\begin{pspicture}(0,-1)(10,2)
+  \psline[ArrowInside=-<,ArrowInsidePos=0.75]{->}(0,0)(2,1)(3,-1)(5,-1)(10,2)
+\end{pspicture}
+% Lines (\pcline macro)
+\begin{pspicture}(2,1)
+  \pcline[ArrowInside=->](0,0)(2,1)
+\end{pspicture}
+\begin{pspicture}(2,1)
+  \pcline[ArrowInside=->]{<->}(0,0)(2,1)
+\end{pspicture}
+\begin{pspicture}(2,1)
+  \pcline[ArrowInside=-|,ArrowInsidePos=0.75]{|-|}(0,0)(2,1)
+\end{pspicture}
+\begin{pspicture}(2,1)
+  \pcline[ArrowInside=->,ArrowInsidePos=0.65]{*-*}(0,0)(2,0)
+  \naput[labelsep=0.3]{\large$g$}
+\end{pspicture}
+% Bezier curves (\psbezier macro)
+\begin{pspicture}(3,4)
+  \psbezier[ArrowInside=-|](1,1)(2,2)(3,3)
+  \psset{linestyle=none,ArrowInside=-o}
+  \psbezier[ArrowInsidePos=0.25](1,1)(2,2)(3,3)
+  \psbezier[ArrowInsidePos=0.75](1,1)(2,2)(3,3)
+  \psset{linestyle=none,ArrowInside=-*}
+  \psbezier[ArrowInsidePos=0](1,1)(2,2)(3,3)
+  \psbezier[ArrowInsidePos=1](1,1)(2,2)(3,3)
+\end{pspicture}
+\begin{pspicture}(3,4)
+  \psbezier[ArrowInside=->,ArrowInsidePos=0](1,1)(2,2)(3,3)
+  \psset{linestyle=none,ArrowInside=->}%
+  \psbezier[linecolor=red,ArrowInsidePos=0.1](1,1)(2,2)(3,3)
+  \psbezier[linecolor=blue,ArrowInsidePos=0.2](1,1)(2,2)(3,3)
+  \psbezier[linecolor=magenta,ArrowInsidePos=0.9](1,1)(2,2)(3,3)
+  \psbezier[linecolor=green,ArrowInsidePos=1](1,1)(2,2)(3,3)
+\end{pspicture}
+
+\end{document}

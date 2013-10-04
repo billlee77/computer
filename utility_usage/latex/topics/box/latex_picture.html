@@ -1,0 +1,1008 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <title>LaTeX Graphics</title>
+<meta name="author" content="Urs Oswald">
+<meta name="keywords" content="">
+<style type="text/css">
+  BODY {font-family: verdana; font-size: 10pt}
+  TD   {font-family: verdana; font-size: 10pt}
+</style>
+</head><body bgcolor="#ffffff">
+<center>
+
+<!-- Head -->
+<table width="90%" border="0" cellpadding="5"><tbody><tr>
+<td colspan="3" align="center">
+    <a href="http://www.ursoswald.ch/LaTeXGraphics/overview/overview.html">Overview</a>&nbsp;|
+    The picture Environment&nbsp;|
+    <a href="http://www.ursoswald.ch/LaTeXGraphics/pstricks/pstricks.html">The pstricks Package</a>&nbsp;
+</td>
+</tr><tr>
+  <td align="left"><font color="#0000ff" size="5">LaTeX Graphics</font></td>
+  <td align="center">
+    <font size="5"><b>The picture Environment</b></font>
+  </td>
+  <td align="right"><font color="#0000ff" size="5">LaTeX Graphics</font></td>
+</tr>
+</tbody></table>
+<!-- End of Head -->
+<br>
+<br>
+<br>
+<table width="90%" border="0">
+<tbody><tr>
+  <td colspan="2" valign="center">
+  
+<h2><a name="SECTION00010000000000000000">
+Contents</a>
+</h2>
+
+<!--Table of Contents-->
+<ul>
+<li><a name="tex2html32" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00020000000000000000">Basics</a>
+<ul>
+<li><a name="tex2html33" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00021000000000000000">Line segments</a>
+</li><li><a name="tex2html34" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00022000000000000000">Circles</a>
+</li><li><a name="tex2html35" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00023000000000000000">Arrows</a>
+</li><li><a name="tex2html36" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00024000000000000000">The multiput and the linethickness command</a>
+</li><li><a name="tex2html37" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00025000000000000000">Ovals, thinlines, thicklines</a>
+</li><li><a name="tex2html38" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00026000000000000000">Text, formulas, colors</a>
+</li><li><a name="tex2html39" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00027000000000000000">Quadratic Bézier curves</a>
+</li><li><a name="tex2html40" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00028000000000000000">Marking angles</a>
+</li><li><a name="tex2html41" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00029000000000000000">Line thickness again: the linethickness command</a>
+</li><li><a name="tex2html42" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION000210000000000000000">Line thickness again: thinlines and thicklines</a>
+</li><li><a name="tex2html43" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION000211000000000000000">Multiple use of predefined partial pictures</a>
+</li></ul>
+<br>
+</li><li><a name="tex2html44" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00030000000000000000">Applications</a>
+<ul>
+<li><a name="tex2html45" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00031000000000000000">Falling mass</a>
+</li><li><a name="tex2html46" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00032000000000000000">Simultaneousness</a>
+</li><li><a name="tex2html47" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00033000000000000000">Moving light clock</a>
+</li><li><a name="tex2html48" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00034000000000000000">Rotation of axes</a>
+</li><li><a name="tex2html49" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00035000000000000000">Rapidity</a>
+</li><li><a name="tex2html50" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00036000000000000000">Clocks in gravitational field</a>
+</li><li><a name="tex2html51" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00037000000000000000">Line of simultaneousness</a>
+</li><li><a name="tex2html52" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00038000000000000000">Isotropic spherical waves</a>
+</li></ul>
+<br>
+</li><li><a name="tex2html53" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00040000000000000000">Additional Examples of Bézier Curves</a>
+<ul>
+<li><a name="tex2html54" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00041000000000000000">Catenary</a>
+</li><li><a name="tex2html55" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00042000000000000000">Forces on the catenary</a>
+</li><li><a name="tex2html56" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00043000000000000000">Catenaries of constant length</a>
+</li><li><a name="tex2html57" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00044000000000000000">Circles and ellipses</a>
+</li></ul>
+<br>
+</li><li><a name="tex2html58" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00050000000000000000">Enhancing the picture Environment with Packages epic and eepic</a>
+<ul>
+<li><a name="tex2html59" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00051000000000000000">Two applications of epic: matrixput and putfile</a>
+</li><li><a name="tex2html60" href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00052000000000000000">Line segments and circles in the eepic package</a>
+</li></ul></li></ul>
+<!--End of Table of Contents-->
+
+<p>
+</p></td>
+</tr><tr>
+<td colspan="2">
+<br><br><br>
+<h1><a name="SECTION00020000000000000000">
+Basics</a>
+</h1>
+</td>
+
+</tr><tr>   <!-- Line Segments -->
+<td>
+<h2><a name="SECTION00021000000000000000">
+Line segments</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/strecken.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb03.png" height="272" width="273" border="0">
+</td>
+<td>
+The <img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>line</tt> command has two arguments:
+
+<ul>
+<li>a direction vector,
+</li>
+<li>a length. 
+</li>
+</ul>
+The components of the direction vector have to be coprime (no common divisor except 1), 
+and they are restricted to the integers
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+-6,\,-5,\,\dots,\, 5,\,6.
+\end{displaymath}
+ -->
+
+<img src="latex_picture_files/img7.png" alt="\begin{displaymath}
+-6,\,-5,\,\dots,\, 5,\,6.
+\end{displaymath}" height="27" width="118" border="0">
+</div><br clear="ALL">
+<p></p>
+The picture illustrates all 25 possible slope 
+values in the first quadrant.
+The length is relative to <img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>unitlength</tt>.
+The length argument is the vertical coordinate in the case of a vertical line segment, the horizontal 
+coordinate in all other cases.
+
+<p>
+Because of the restrictions to direction vectors, drawing line segments usually necessitates 
+an extensive search for suitable points. In many cases, drawing the desired line segments may not be possible
+without the use of additional packages, such as <tt>eepic</tt>, or <tt>pstricks</tt>.
+
+</p></td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Circles -->
+<td>
+<h2><a name="SECTION00022000000000000000">
+Circles</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/kreise.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb04.png" height="185" width="211" border="0">
+</td>
+<td>
+The argument of the <img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>circle</tt> command is relative to <img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>unitlength</tt>
+and determines the <i>diameter</i> (not the <i>radius</i>). The original <tt>picture</tt> environment
+only admits diameters up to approximately 14mm, and even below this limit, not all diameters are possible. 
+The <img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>circle*</tt>
+ command produces disks (filled circles).
+<p>
+As for drawing larger circles, see the section about circles and ellipses.
+</p></td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Arrows -->
+<td>
+<h2><a name="SECTION00023000000000000000">
+Arrows</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/pfeile.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb05.png" height="181" width="272" border="0">
+</td>
+<td>
+For arrows, the components of the direction vector are even more restricted than for line segments, namely
+to the integers
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+-4,\,-3,\,\dots,\,3,\,4.
+\end{displaymath}
+ -->
+
+<img src="latex_picture_files/img9.png" alt="\begin{displaymath}
+-4,\,-3,\,\dots,\,3,\,4.
+\end{displaymath}" height="27" width="118" border="0">
+</div><br clear="ALL">
+<p></p>
+Components also have to be coprime (no common divisor except 1). Notice the effect of the <code>\thicklines</code>
+command on the arrows pointing to the upper left.
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- multiput linethickness -->
+<td>
+<h2><a name="SECTION00024000000000000000">
+The <tt>multiput</tt> and<br> the <tt>linethickness</tt> command</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/multiput.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb06.png" height="182" width="272" border="0">
+</td>
+<td>
+The <code>\multiput</code> command has 4 arguments: the starting point, the translation vector, the number of
+objects, and the object to be drawn. The <code>\linethickness{</code><i>length</i><code>}</code> command applies to horizontal
+and vertical line segments, but neither to oblique line segments, nor to circles. It does, however, apply to 
+quadratic Bézier curves!
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Ovals thinlines thicklines -->
+<td>
+<h2><a name="SECTION00025000000000000000">
+Ovals, <tt>thinlines</tt>, <tt>thicklines</tt></a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/multiput.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb07.png" height="182" width="273" border="0">
+</td>
+<td>
+
+Line thickness can be controlled by two kinds of commands: <code>\linethickness{</code><i>length</i><code>}</code> 
+on the one hand, <img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>thinlines</tt> and <img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>thicklines</tt> on the other. While
+<code>\linethickness{0.075mm}</code> applies only to horizontal and vertical lines (and quadratic Bézier curves), 
+<code>\thinlines</code> and <code>\thicklines</code> apply to oblique line segments as well as to curves such as 
+circles or ovals.
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Text Formulas Colors -->
+<td>
+<h2><a name="SECTION00026000000000000000">
+Text, formulas, colors</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/textformulascolors.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb08.png" height="476" width="357" border="0">
+</td>
+<td>
+The <font color="#ff0000"><tt>color</tt></font> package allows the use of <blink><font color="#000000">colors</font></blink> 
+<blink><font color="#000000">inside</font></blink> and <blink><font color="#000000">outside</font></blink> of <font color="#ff0000"><tt>picture</tt></font> environments.
+
+<p>
+Predefined colors of the <tt>color</tt> package are: <tt>black</tt>, <tt>white</tt>, <tt>red</tt>, 
+<tt>green</tt>, <tt>blue</tt>, <tt>yellow</tt>, <tt>cyan</tt>, and <tt>magenta</tt>. As the current example
+shows, the 
+<img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>definecolor</tt> command
+  allows for the definition of arbitrary further 
+colors in terms either of the <tt>gray</tt>, or the <tt>rgb</tt> <i>color model</i>. 
+(L<sup><small>A</small></sup>T<small>E</small>X also supports a third color model, <tt>cymk</tt>).
+</p><p>
+As this example shows, the 
+<img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>colorbox</tt> 
+and the 
+<img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>fcolorbox</tt> commands
+are not compatible with <tt>latex2html</tt>, which produced
+ this text.
+</p></td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Quadratic Bezier Curves -->
+<td>
+<h2><a name="SECTION00027000000000000000">
+Quadratic Bézier curves</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/qbezier.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb09.png" height="182" width="273" border="0">
+</td>
+<td>
+As this example illustrates, splitting up a circle into four quadratic Bézier curves is not
+satisfactory. For a better solution, see the section about quadratic Bézier curves.
+
+<p>
+The example again shows the effect of the <img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>linethickness</tt> command on horizontal
+or vertical lines, and of the <img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>thinlines</tt> and <img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>thicklines</tt>
+commands on oblique line segments. It also shows that both kinds of commands affect quadratic Bézier curves,
+each command overriding all previous ones.
+</p></td>
+</tr><tr>
+<td colspan="2">
+<br><br>
+Let <!-- MATH
+ $P_1=(x_1,\,y_1),\,P_2=(x_2,\,y_2)$
+ -->
+<img src="latex_picture_files/img10.png" alt="\(P_1=(x_1,\,y_1),\,P_2=(x_2,\,y_2)\)" height="32" width="197" align="MIDDLE" border="0"> denote the end points, and <img src="latex_picture_files/img11.png" alt="\(m_1,\,m_2\)" height="29" width="56" align="MIDDLE" border="0"> the respective slopes, 
+of a quadratic Bézier curve. The  intermediate control point <img src="latex_picture_files/img12.png" alt="\(S=(x/y)\)" height="32" width="74" align="MIDDLE" border="0"> is then given by the equations
+<br>
+<br>
+</td>
+
+</tr><tr>
+
+<td align="CENTER"><a name="zwischenpunkt"></a><img src="latex_picture_files/img13.png" height="68" width="267" border="0"></td>
+<td width="10" align="RIGHT">
+(1)</td>
+
+</tr><tr>
+<td colspan="2">
+<br>
+<br>
+<p>
+The Java program <tt>qbezier.java</tt> 
+(see 
+<a href="http://www.ursoswald.ch/LaTeXGraphics/overview/latexgraphics.pdf" target="_new">PDF Version</a>) 
+started with the line
+
+</p><ul>
+<li><tt>java qbezier &lt;<img src="latex_picture_files/img14.png" alt="$x_1$" height="29" width="20" align="MIDDLE" border="0">&gt; &lt;<img src="latex_picture_files/img15.png" alt="$y_1$" height="29" width="19" align="MIDDLE" border="0">&gt; &lt;<img src="latex_picture_files/img16.png" alt="$m_1$" height="29" width="25" align="MIDDLE" border="0">&gt; &lt;<img src="latex_picture_files/img17.png" alt="$x_2$" height="29" width="20" align="MIDDLE" border="0">&gt; &lt;<img src="latex_picture_files/img18.png" alt="$y_2$" height="29" width="19" align="MIDDLE" border="0">&gt; &lt;<img src="latex_picture_files/img19.png" alt="$m_2$" height="29" width="25" align="MIDDLE" border="0">&gt;</tt>
+</li>
+</ul>
+writes a file <tt>qbezier.tex</tt> which can be pasted into a <tt>picture</tt> environment, whence it
+draws the desired curve.
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Marking angles -->
+<td>
+<h2><a name="SECTION00028000000000000000">
+Marking angles</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/arcs.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb10.png" height="183" width="273" border="0">
+</td>
+<td>
+In the current picture, arcs are approximated by quadratic Bézier curves.
+</td>
+</tr><tr>
+<td colspan="2">
+<br>
+<br> 
+In order to get the 
+control points of an arc of radius <img src="latex_picture_files/img20.png" alt="\(r\)" height="13" width="12" align="BOTTOM" border="0"> marking the angle <!-- MATH
+ $\angle P_1P_2P_3$
+ -->
+<img src="latex_picture_files/img21.png" alt="\(\angle P_1P_2P_3\)" height="30" width="66" align="MIDDLE" border="0">, one has to
+
+<ol>
+<li>translate and rotate the angle in order to move the vertex to the origin and have the bisector
+      point in the direction of the <img src="latex_picture_files/img22.png" alt="\(x\)" height="13" width="13" align="BOTTOM" border="0"> axis  (transformation <img src="latex_picture_files/img23.png" alt="\(T\)" height="14" width="16" align="BOTTOM" border="0">),
+</li>
+<li>reduce the vectors <img src="latex_picture_files/img24.png" alt="\(P_2P_1\)" height="30" width="39" align="MIDDLE" border="0"> and <img src="latex_picture_files/img25.png" alt="\(P_2P_3\)" height="30" width="39" align="MIDDLE" border="0"> to length <img src="latex_picture_files/img20.png" alt="\(r\)" height="13" width="12" align="BOTTOM" border="0">,
+</li>
+<li>let the intermediate control point <img src="latex_picture_files/img26.png" alt="\(P_2\)" height="30" width="21" align="MIDDLE" border="0"> be equal to <!-- MATH
+ $((x_1^2+y_1^2)/x_1, 0)$
+ -->
+<img src="latex_picture_files/img27.png" alt="\(((x_1^2+y_1^2)/x_1, 0)\)" height="34" width="119" align="MIDDLE" border="0">, <img src="latex_picture_files/img28.png" alt="\(x_1\)" height="29" width="20" align="MIDDLE" border="0"> and <img src="latex_picture_files/img29.png" alt="\(y_1\)" height="29" width="19" align="MIDDLE" border="0"> being
+      the coordinates of point <img src="latex_picture_files/img30.png" alt="\(P_1\)" height="30" width="21" align="MIDDLE" border="0"> after transformation <img src="latex_picture_files/img23.png" alt="\(T\)" height="14" width="16" align="BOTTOM" border="0"> and reduction to length <img src="latex_picture_files/img20.png" alt="\(r\)" height="13" width="12" align="BOTTOM" border="0">,
+</li>
+<li>apply the transformation <img src="latex_picture_files/img31.png" alt="\(T^{-1}\)" height="16" width="33" align="BOTTOM" border="0"> to points <img src="latex_picture_files/img30.png" alt="\(P_1\)" height="30" width="21" align="MIDDLE" border="0">, <img src="latex_picture_files/img26.png" alt="\(P_2\)" height="30" width="21" align="MIDDLE" border="0">, and <img src="latex_picture_files/img32.png" alt="\(P_3\)" height="30" width="21" align="MIDDLE" border="0">.      
+</li>
+</ol>
+
+If the Java program <tt>arc.java</tt> 
+(see 
+<a href="http://www.ursoswald.ch/LaTeXGraphics/overview/latexgraphics.pdf" target="_new">PDF Version</a>) 
+is started with the command line
+
+<ul>
+<li><tt>java arc &lt;<img src="latex_picture_files/img14.png" alt="$x_1$" height="29" width="20" align="MIDDLE" border="0">&gt; &lt;<img src="latex_picture_files/img15.png" alt="$y_1$" height="29" width="19" align="MIDDLE" border="0">&gt; &lt;<img src="latex_picture_files/img17.png" alt="$x_2$" height="29" width="20" align="MIDDLE" border="0">&gt; &lt;<img src="latex_picture_files/img18.png" alt="$y_2$" height="29" width="19" align="MIDDLE" border="0">&gt; &lt;<img src="latex_picture_files/img33.png" alt="$x_3$" height="29" width="20" align="MIDDLE" border="0">&gt; &lt;<img src="latex_picture_files/img34.png" alt="$y_3$" height="29" width="19" align="MIDDLE" border="0">&gt; &lt;<img src="latex_picture_files/img35.png" alt="$r$" height="13" width="12" align="BOTTOM" border="0">&gt;</tt>, 
+</li>
+</ul>
+it produces a file <tt>arc.tex</tt> which can be pasted into a <tt>picture</tt> environment, whence it 
+draws the required arc. As can be seen from the above input file, the  obtuse angle is marked in parts: 
+by consequtively marking the angles <!-- MATH
+ $\angle(0,\,0)(3,\,2)(3,\,0)$
+ -->
+<img src="latex_picture_files/img36.png" alt="$\angle(0,\,0)(3,\,2)(3,\,0)$" height="32" width="128" align="MIDDLE" border="0"> and <!-- MATH
+ $\angle(3,\,0)(3,\,2)(6,\,1)$
+ -->
+<img src="latex_picture_files/img37.png" alt="$\angle(3,\,0)(3,\,2)(6,\,1)$" height="32" width="128" align="MIDDLE" border="0">.
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Line thickness again: linethickness -->
+<td>
+<h2><a name="SECTION00029000000000000000">
+Line thickness again:<br> the <tt>linethickness</tt> command</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/linethickness.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb11.png" height="364" width="273" border="0">
+</td>
+<td>
+As can be seen from this picture, the command
+<img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>linethickness{</tt><i>length</i><tt>}</tt>
+applies to horizontal and vertical lines as well as to Bézier curves, but not to circles, or oblique
+line segments. Ovals are a combination of horizontal and vertical lines, and arcs.
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Line thickness again: thinlines -->
+<td>
+<h2><a name="SECTION000210000000000000000">
+Line thickness again: <br><tt>thinlines</tt> and <tt>thicklines</tt></a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/thicklines.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb12.png" height="364" width="273" border="0">
+</td>
+<td>
+
+As the comparison of the lower half of the picture with the upper half shows,
+the <img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>thinlines</tt> and the <img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>thicklines</tt> commands apply to all
+line segments and curves, but the effect cannot said to be very striking.
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Multiple Use -->
+<td>
+<h2><a name="SECTION000211000000000000000">
+Multiple use of<br> predefined partial pictures</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/multiuse.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb13.png" height="382" width="273" border="0">
+</td>
+<td>
+A partial picture can be <i>declared</i> and <i>defined</i> by the commands
+
+<ul>
+<li><code>\newsavebox{</code><i>name</i><code>}</code> 
+        &nbsp;&nbsp;&nbsp;&nbsp;(declaration)
+</li>
+<li><code>\newsavebox{</code><i>name</i><code>}(</code><i>size</i><code>)[</code><i>position</i><code>]{</code><i>content</i><code>}</code> 
+        &nbsp;&nbsp;&nbsp;&nbsp;(definition)
+</li>
+</ul>
+and then be arbitrarily often  <i>used</i> by the command
+
+<ul>
+<li><code>\usebox{</code><i>name</i><code>}</code>.
+</li>
+</ul>
+The <i>name</i> argument refers to a L<sup><small>A</small></sup>T<small>E</small>X storage bin and therefore is of a command nature (which accounts
+for the backlashes in the current example). <i>size</i> is a numeric pair referring to the current value of
+<code>\unitlength</code>.
+
+<p>
+An object defined with the <img src="latex_picture_files/img6.png" alt="\(\backslash\)" height="32" width="12" align="MIDDLE" border="0"><tt>savebox</tt> command (such as <code>\foldera</code> in the current 
+example) can be used in the definition of another such element (<code>\folderb</code>). The <code>\oval</code>
+command was applied because the connecting segments are two short to be drawn with the <code>\line</code> command.
+</p></td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>
+<td colspan="2">
+<br><br>
+<p>
+</p><h1><a name="SECTION00030000000000000000">
+Applications</a>
+</h1>
+
+</td></tr><tr>   <!-- Falling Mass -->
+<td>
+<h2><a name="SECTION00031000000000000000">
+Falling mass</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/fallend.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb16.png" height="122" width="239" border="0">
+</td>
+<td>&nbsp;</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Simultaneousness -->
+<td>
+<h2><a name="SECTION00032000000000000000">
+Simultaneousness</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/gleichzeitig.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb17.png" height="196" width="262" border="0">
+</td>
+<td>&nbsp;</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Moving Light Clock -->
+<td>
+<h2><a name="SECTION00033000000000000000">
+Moving light clock</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/lichtuhr.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb18.png" height="131" width="434" border="0">
+</td>
+<td>&nbsp;</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Rotation of Axes -->
+<td>
+<h2><a name="SECTION00034000000000000000">
+Rotation of axes</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/rotation.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb19.png" height="183" width="284" border="0">
+</td>
+<td>&nbsp;</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Rapidity -->
+<td>
+<h2><a name="SECTION00035000000000000000">
+Rapidity</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/rapiditaet.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb20.png" height="145" width="380" border="0">
+</td>
+<td>
+Each symmetric half of the <code>tanh</code> curve is approximated by a quadratic
+Bézier curve. See <a href="#zwischenpunkt">(1)</a> for details.
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Clocks in Gravitational Field -->
+<td>
+<h2><a name="SECTION00036000000000000000">
+Clocks in gravitational field</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/clocksingravitation.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td colspan="2">
+<img src="latex_picture_files/abb21.png" height="428" width="576" border="0">
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Line of Simultaneousness -->
+<td>
+<h2><a name="SECTION00037000000000000000">
+Line of simultaneousness</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/lineofsimult.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td colspan="2">
+<img src="latex_picture_files/abb22.png" height="300" width="543" border="0">
+</td>
+</tr><tr>
+<td colspan="2">
+The inserts in the input file drawing the angle markings are produced, according to 
+<a href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00028000000000000000">Marking angles</a>
+with the Java program <tt>arc.java</tt>
+(see 
+<a href="http://www.ursoswald.ch/LaTeXGraphics/overview/latexgraphics.pdf" target="_new">PDF Version</a>). 
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Isotropic Spherical Waves -->
+<td>
+<h2><a name="SECTION00038000000000000000">
+Isotropic spherical waves</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/isotrop.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb23.png" height="227" width="227" border="0">
+</td>
+<td>&nbsp;</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>
+<td colspan="2">
+<br><br>
+<p>
+</p><h1><a name="SECTION00040000000000000000">
+Additional Examples of Bézier Curves</a>
+</h1>
+</td>
+
+</tr><tr>   <!-- Catenary -->
+<td>
+<h2><a name="SECTION00041000000000000000">
+Catenary</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/kette.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb24.png" height="206" width="270" border="0">
+</td>
+<td>
+The right half of the curve ends in the point <img src="latex_picture_files/img45.png" alt="\((2,\,2.7622)\)" height="32" width="78" align="MIDDLE" border="0">, the slope there having the value 
+<img src="latex_picture_files/img46.png" alt="\(m=3.6269\)" height="13" width="83" align="BOTTOM" border="0">. 
+ Using equation (<a href="#zwischenpunkt">1</a>) in the section 
+   <a href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00027000000000000000">Quadratic Bézier curves</a>,
+ we can 
+calculate the intermediate control points. 
+They turn out to be <img src="latex_picture_files/img47.png" alt="$(1.2384,\,0)$" height="32" width="78" align="MIDDLE" border="0"> and <img src="latex_picture_files/img48.png" alt="$(-1.2384,\,0)$" height="32" width="91" align="MIDDLE" border="0">. 
+Or, using the Java program <tt>qbezier.java</tt> described there 
+(see 
+<a href="http://www.ursoswald.ch/LaTeXGraphics/overview/latexgraphics.pdf" target="_new">PDF Version</a>), 
+we can generate 
+the <tt>qbezier</tt> command lines and insert them into the L<sup><small>A</small></sup>T<small>E</small>X file.
+The red crosses indicate points of the <i>real</i> catenary. The error is barely noticeable, being less 
+than one percent.
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Forces on the Catenary -->
+<td>
+<h2><a name="SECTION00042000000000000000">
+Forces on the catenary</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/kraefte.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb25.png" height="389" width="261" border="0">
+</td>
+<td>&nbsp;</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Catenaries of Constant Length -->
+<td>
+<h2><a name="SECTION00043000000000000000">
+Catenaries of<br>constant length</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/konstlaenge.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb26.png" height="279" width="277" border="0">
+</td>
+<td>
+<p>
+From the equation
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\frac{y}{a}=\cosh\frac{x}{a}-1
+\end{displaymath}
+ -->
+
+<img src="latex_picture_files/img49.png" alt="\begin{displaymath}
+\frac{y}{a}=\cosh\frac{x}{a}-1
+\end{displaymath}" height="35" width="103" border="0">
+</div><br clear="ALL">
+<p></p>
+of the catenary, it is seen that all catenaries can be obtained by scaling the curve <img src="latex_picture_files/img44.png" alt="\(y=\cosh x - 1\)" height="30" width="103" align="MIDDLE" border="0"> with
+factor <img src="latex_picture_files/img50.png" alt="\(a\)" height="13" width="12" align="BOTTOM" border="0">. A catenary of length <img src="latex_picture_files/img51.png" alt="\(L\)" height="14" width="15" align="BOTTOM" border="0"> having its vertex in the origin and ending in the point 
+<img src="latex_picture_files/img52.png" alt="\((u,\,v)\)" height="32" width="44" align="MIDDLE" border="0"> satisfies (see 
+ <a href="http://www.vsmp.ch/" target="_new">http://www.vsmp.ch</a>, Bulletin nr. 87) the equations
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left\{
+    \begin{array}{rcl}
+      v & = & \sqrt{L^2+a^2}-a, \\[1mm] 
+      u & = &\displaystyle \frac{L^2-v^2}{2v}\ln\frac{L+v}{L-v}, \\[3mm]
+      m & = &\displaystyle \sinh\frac{u}{a}.    
+    \end{array}
+  \right.
+\end{displaymath}
+ -->
+
+<img src="latex_picture_files/img53.png" alt="\begin{displaymath}
+\left\{
+\begin{array}{rcl}
+v &amp; = &amp; \sqrt{L^2+a^2}-a, \\ [...
+... m &amp; = &amp;\displaystyle \sinh\frac{u}{a}.
+\end{array} \right.
+\end{displaymath}" height="103" width="200" border="0">
+</div><br clear="ALL">
+<p></p>
+</td>
+</tr><tr>
+<td colspan="2">
+From these equations, for <img src="latex_picture_files/img54.png" alt="\(L=1\)" height="14" width="44" align="BOTTOM" border="0"> we get:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{l|lll}
+   a & u & v & m \\
+   \hline   
+   0.1 & 0.2998  & 0.9050  & 10 \\
+   0.2 & 0.4625  & 0.8198  & 5 \\
+   0.3 & 0.5757  & 0.7440  & 3.3333 \\
+   0.4 & 0.6589  & 0.6770  & 2.5 \\
+   0.5 & 0.7218  & 0.6180  & 2 \\
+   0.6 & 0.7703  & 0.5662  & 1.6667 \\
+   0.7 & 0.8081  & 0.5207  & 1.4286 \\
+   0.8 & 0.8381  & 0.4806  & 1.25 \\
+   0.9 & 0.8620  & 0.4454  & 1.1111 \\
+   1   & 0.8814  & 0.4142  & 1 \\
+   1.1 & 0.8972  & 0.3866  & 0.9091 \\
+   1.2 & 0.9102  & 0.3620  & 0.8333   
+ \end{array}
+\end{displaymath}
+ -->
+
+<img src="latex_picture_files/img55.png" alt="\begin{displaymath}
+\begin{array}{l\vert lll}
+a &amp; u &amp; v &amp; m \\
+\hline
+0.1 ...
+...3866 &amp; 0.9091 \\
+1.2 &amp; 0.9102 &amp; 0.3620 &amp; 0.8333
+\end{array}\end{displaymath}" height="255" width="217" border="0">
+</div><br clear="ALL">
+<p></p>
+
+<p>
+ Using equation (<a href="#zwischenpunkt">1</a>) in the section 
+   <a href="http://www.ursoswald.ch/LaTeXGraphics/picture/picture.html#SECTION00027000000000000000">Quadratic Bézier curves</a>,
+we can calculate the intermediate
+control points. Or we can, by using the Java program <tt>qbezier.java</tt> described there
+(see 
+<a href="http://www.ursoswald.ch/LaTeXGraphics/overview/latexgraphics.pdf" target="_new">PDF Version</a>), 
+produce the <tt>qbezier</tt> command lines and insert them into the L<sup><small>A</small></sup>T<small>E</small>X file.
+</p></td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Circles and Ellipses -->
+<td>
+<h2><a name="SECTION00044000000000000000">
+Circles and ellipses</a>
+</h2>
+</td><td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/ellipsen.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb27.png" height="182" width="273" border="0">
+</td>
+<td>
+The circle (<img src="latex_picture_files/img56.png" alt="\(a=b=1.9\)" height="14" width="82" align="BOTTOM" border="0">) was built from 8 arcs, each of 45 degrees, and each approximated by a quadratic 
+Bézier curve. Circles and ellipses can then be obtained by rotating, scaling and translating. 
+</td>
+</tr><tr>
+<td colspan="2">
+Thus, the building block of all the circles and ellipses is the quadratic Bézier curve determined by 
+the control points
+<br>
+<!-- MATH
+ \begin{equation}
+\left\{
+    \begin{array}{rcl}
+      P_1 & = & (1/0),\\[2mm]
+      P_2 & = & (1/\sqrt{2}-1),\\
+      P_3 & = & \displaystyle\left(\left.\frac{1}{2}\sqrt{2}\right/\frac{1}{2}\sqrt{2}\right):
+    \end{array}
+  \right.
+\end{equation}
+ -->
+</td> 
+</tr><tr>
+<td align="right">
+<br><br>
+<a name="achtel"></a><img src="latex_picture_files/img57.png" alt="\begin{displaymath}
+\left\{
+\begin{array}{rcl}
+P_1 &amp; = &amp; (1/0),\\ [2mm]
+P_2 ...
+...sqrt{2}\right/\frac{1}{2}\sqrt{2}\right):
+\end{array} \right.
+\end{displaymath}" height="93" width="199" border="0">
+</td>
+<td width="10" align="RIGHT">(2)</td>
+</tr><tr>
+<td colspan="2">
+<br><br>
+<div align="CENTER">
+ <img src="latex_picture_files/abb28.png" height="184" width="256"><br>
+45 degrees arc
+</div>
+
+<p>
+The quadratic Bézier curve with control points (<a href="#achtel">2</a>) 
+ is given by the equation
+<br></p><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\mathbf{r}(t)=(1-t)^2{1\choose 0}+2(1-t)t{1\choose \sqrt{2}-1}
+    +t^2{\frac{1}{2}\sqrt{2}\choose\frac{1}{2}\sqrt{2}}.
+\end{displaymath}
+ -->
+
+<img src="latex_picture_files/img58.png" alt="\begin{displaymath}
+\mathbf{r}(t)=(1-t)^2{1\choose 0}+2(1-t)t{1\choose \sqrt{2}-1}
++t^2{\frac{1}{2}\sqrt{2}\choose\frac{1}{2}\sqrt{2}}.
+\end{displaymath}" height="51" width="371" border="0">
+</div><br clear="ALL">
+<p></p>
+
+<p>
+From this, we get:
+<br>
+</p><div align="RIGHT">
+<!-- MATH
+ \begin{equation}
+||\mathbf{r}(t)||^2=1+(10-7\sqrt{2})(1-t)^2 t^2,
+\end{equation}
+ -->
+</div></td></tr><tr>
+<td align="right">
+<a name="abstand"></a><img src="latex_picture_files/img59.png" alt="\begin{displaymath}
+\vert\vert\mathbf{r}(t)\vert\vert^2=1+(10-7\sqrt{2})(1-t)^2 t^2,
+\end{displaymath}" height="28" width="244" border="0"></td>
+<td width="10" align="RIGHT">
+(3)</td>
+</tr><tr>
+<td colspan="2">
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left\|\mathbf{r}\left(\frac{1}{2}\right)\right\|^2=\frac{1}{4}\sqrt{26-7\sqrt{2}}\approx 1.003\,135.
+\end{displaymath}
+ -->
+
+<img src="latex_picture_files/img60.png" alt="\begin{displaymath}
+\left\Vert\mathbf{r}\left(\frac{1}{2}\right)\right\Vert^2=\frac{1}{4}\sqrt{26-7\sqrt{2}}\approx 1.003\,135.
+\end{displaymath}" height="48" width="269" border="0">
+</div><br clear="ALL">
+<p></p>
+The error amounts to approximately 0.3 percent. From (<a href="#abstand">3</a>), we further conclude that 
+<!-- MATH
+ $||\mathbf{r}(t)||>1$
+ -->
+<img src="latex_picture_files/img61.png" alt="\(\vert\vert\mathbf{r}(t)\vert\vert&gt;1\)" height="32" width="77" align="MIDDLE" border="0"> for <img src="latex_picture_files/img62.png" alt="\(0&lt;t&lt;1\)" height="29" width="68" align="MIDDLE" border="0">. Letting <!-- MATH
+ $t=s+\frac{1}{2}$
+ -->
+<img src="latex_picture_files/img63.png" alt="\(t=s+\frac{1}{2}\)" height="35" width="68" align="MIDDLE" border="0">, we can see the symmetry with respect to
+<img src="latex_picture_files/img64.png" alt="\(t=\frac{1}{2}\)" height="35" width="41" align="MIDDLE" border="0">:
+<br><p></p>
+<div align="CENTER">
+<!-- MATH
+ \begin{displaymath}
+||\mathbf{r}(s)||^2=1+(10-7\sqrt{2})\left(s^2-\frac{1}{4}\right)^2
+    \qquad\left(-\frac{1}{2}\le s\le\frac{1}{2}\right).
+\end{displaymath}
+ -->
+
+<img src="latex_picture_files/img65.png" alt="\begin{displaymath}
+\vert\vert\mathbf{r}(s)\vert\vert^2=1+(10-7\sqrt{2})\left(s...
+...right)^2
+\qquad\left(-\frac{1}{2}\le s\le\frac{1}{2}\right).
+\end{displaymath}" height="48" width="405" border="0">
+</div><br clear="ALL">
+<p></p>
+The Java program <tt>bezierellipsen.java</tt>
+(see 
+<a href="http://www.ursoswald.ch/LaTeXGraphics/overview/latexgraphics.pdf" target="_new">PDF Version</a>) 
+generates a file, <tt>ellipse.tex</tt>, which
+can be pasted into a <tt>picture</tt> environment. Running the program with
+
+<ul>
+<li><tt>java bezierellipsen &lt;<i>u</i>&gt; &lt;<i>v</i>&gt; &lt;<i>a</i>&gt; &lt;<i>b</i>&gt; &lt;<i>phi</i>&gt;</tt>
+</li>
+</ul>
+produces a file representing the ellipse with center <img src="latex_picture_files/img66.png" alt="\((u/v)\)" height="32" width="42" align="MIDDLE" border="0"> and radii <img src="latex_picture_files/img50.png" alt="\(a\)" height="13" width="12" align="BOTTOM" border="0"> und <img src="latex_picture_files/img67.png" alt="\(b\)" height="14" width="11" align="BOTTOM" border="0">, and rotated by 
+<tt>&lt;<i>phi</i>&gt;</tt> degrees.
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>
+<td colspan="2">
+<br><br>
+<p>
+</p><h1><a name="SECTION00050000000000000000">
+Enhancing the picture Environment with Packages <tt>epic</tt> and <tt>eepic</tt></a>
+</h1>
+The packages <tt>epic</tt> and <tt>eepic</tt> enhance the <tt>picture</tt> environment. They are extensively 
+described  in G<small>OOSSENS, </small>M<small>ITTELBACH, </small>S<small>AMARIN</small>[<a href="#GoossensL">1</a>].
+ 
+<h2><a name="SECTION00051000000000000000">
+Two applications of <tt>epic</tt>: <tt>matrixput</tt> and <tt>putfile</tt></a>
+</h2>
+</td>
+</tr><tr>   <!-- matrixput -->
+<td>
+<h2>matrixput</h2>
+</td>
+<td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/matrixput.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb29.png" height="139" width="277" border="0">
+</td>
+<td>
+The <code>\matrixput</code> command is the natural generalization of the <code>\multiput</code> command to two dimensions.
+<br><br>
+As this example shows, not all the pixels always make it into the final picture.
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- putfile -->
+<td>
+<h2>putfile</h2>
+</td>
+<td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/putfile.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td colspan="2">
+The slash in the command <code>\putfile{data/datafile1}</code> may have to be replaced by the backslash on a Windows
+system.
+The two files <tt>datafile1</tt> and <tt>datafile2</tt> contain one coordinate pair on each line.
+<br><br>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb30.png" height="182" width="281" border="0">
+</td>
+<td>
+datafile1, for example, contains the lines<br><br>
+10 10<br>
+20 20<br>
+30 20<br>
+35 21<br>
+50 15<br>
+55 16<br>
+52 17<br>
+60 16
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>   <!-- Line Segments and Circles in the eepic package -->
+<td>
+<h2><a name="SECTION00052000000000000000">
+Line segments and circles<br>in the <tt>eepic</tt> package</a>
+</h2>
+</td>
+<td align="right"><a href="http://www.ursoswald.ch/LaTeXGraphics/picture/html/eepiccircleline.html" target="_new">Source file</a>
+</td>
+</tr><tr>
+<td>
+<img src="latex_picture_files/abb31.png" height="201" width="273" border="0">
+</td>
+<td>
+With the use of the  <tt>eepic</tt> package, line segments of any slope (defined by two 
+integers), and circles of any radius can be drawn within the <tt>picture</tt> environment.
+</td>
+</tr><tr><td colspan="2"><hr></td>
+
+</tr><tr>
+<td colspan="2">
+<br><br>
+<h2><a name="SECTION00050000000000000000">
+Bibliography</a>
+</h2><dl compact="compact"><dd><p></p></dd><dt><a name="GoossensL">1</a>
+</dt><dd>  M. Goossens, F. Mittelbach, A. Samarin <i>The L<sup><small>A</small></sup>T<small>E</small>X Companion</i>
+  <p></p></dd><dt><a name="GoossensLG">2</a>
+</dt><dd> M. Goossens, S. Rahtz, F. Mittelbach <i>The L<sup><small>A</small></sup>T<small>E</small>X Graphics Companion</i>
+  <p></p></dd><dt><a name="hobby">3</a>
+</dt><dd>   John D. Hobby, <i>User's Manual</i>, <a href="http://cm.bell-labs.com/who/hobby/" target="_top">http://cm.bell-labs.com/who/hobby/</a> 
+  <p></p></dd><dt><a name="hoenig">4</a>
+</dt><dd>  Alan Hoenig, <i>TeX Unbound</i>, OXFORD UNIVERSITY PRESS, 1998, ISBN 0-19-509685-1
+  <p></p></dd><dt><a name="knuth.1">5</a>
+</dt><dd> Donald E. Knuth. <i>The METAFONTbook</i>.
+                    ADDISON-WESLEY, 1992, ISBN 0-201-13445-4 und
+		    ISBN 0-201-13444-6 (soft)
+  <p></p></dd><dt><a name="lampert">6</a>
+</dt><dd> Leslie Lampert. <i>L<sup><small>A</small></sup>T<small>E</small>X - A Document Preparation System</i>.
+                    ADDISON-WESLEY, 1994 (13th Printing November 2001), ISBN 0201529831		    
+  <p></p></dd><dt><a name="kopka.1">7</a>
+</dt><dd> Helmut Kopka. <i>L<sup><small>A</small></sup>T<small>E</small>X - Eine Einführung</i>. 
+                    ADDISON-WESLEY, 1992, ISBN 3-89319-434-7
+  <p></p></dd><dt><a name="kopka.2">8</a>
+</dt><dd> Helmut Kopka. <i>L<sup><small>A</small></sup>T<small>E</small>X - Erweiterungsmöglichkeiten</i>. 
+                    ADDISON-WESLEY, 1992, ISBN 3-89319-356-1
+  <p></p></dd><dt><a name="reckdahl">9</a>
+</dt><dd> Keith Reckdahl, <i>Using Imported Graphics in LaTeX2e</i>,
+<br><a href="ftp://ftp.dante.de/tex-archive/info/epslatex.ps">ftp://ftp.dante.de/tex-archive/info/epslatex.ps</a>,
+<br><a href="ftp://ftp.dante.de/tex-archive/info/epslatex.pdf" target="_new">ftp://ftp.dante.de/tex-archive/info/epslatex.pdf</a> 		    
+</dd></dl>
+</td>
+
+</tr></tbody></table>
+</center>
+</body></html>

@@ -1,0 +1,85 @@
+# TRIGONOMETRIC FUNCTIONS
+
+# The tangent
+    tan
+
+# The cofunctions of the sine, cosine, and tangent (cosec/csc and cotan/cot are aliases)
+	csc, cosec, sec, sec, cot, cotan
+
+# The arcus (also known as the inverse) functions of the sine, cosine, and tangent
+	asin, acos, atan
+
+# The principal value of the arc tangent of y/x
+	atan2(y, x)
+
+# The arcus cofunctions of the sine, cosine, and tangent (acosec/acsc and acotan/acot are aliases). Note that atan2(0, 0) is not well-defined.
+	acsc, acosec, asec, acot, acotan
+
+# The hyperbolic sine, cosine, and tangent
+	sinh, cosh, tanh
+
+# The cofunctions of the hyperbolic sine, cosine, and tangent (cosech/csch and cotanh/coth are aliases)
+	csch, cosech, sech, coth, cotanh
+
+# The area (also known as the inverse) functions of the hyperbolic sine, cosine, and tangent
+	asinh, acosh, atanh
+
+# The area cofunctions of the hyperbolic sine, cosine, and tangent (acsch/acosech and acoth/acotanh are aliases)
+	acsch, acosech, asech, acoth, acotanh
+
+# The trigonometric constant pi and some of handy multiples of it are also defined.
+	pi, pi2, pi4, pip2, pip4
+
+
+
+
+
+# Angle Radian Conversion
+
+# PLANE ANGLE CONVERSIONS
+
+#(Plane, 2-dimensional) angles may be converted with the following functions.
+
+    * deg2rad
+
+         1. $radians = deg2rad($degrees);
+
+    * grad2rad
+
+         1. $radians = grad2rad($gradians);
+
+    * rad2deg
+
+         1. $degrees = rad2deg($radians);
+
+    * grad2deg
+
+         1. $degrees = grad2deg($gradians);
+
+    * deg2grad
+
+         1. $gradians = deg2grad($degrees);
+
+    * rad2grad
+
+         1. $gradians = rad2grad($radians);
+
+# The full circle is 2 pi radians or 360 degrees or 400 gradians. The result is by default wrapped to be inside the [0, {2pi,360,400}[ circle. If you don't want this, supply a true second argument:
+
+   1. $zillions_of_radians = deg2rad($zillions_of_degrees, 1);
+   2. $negative_degrees = rad2deg($negative_radians, 1);
+
+#You can also do the wrapping explicitly by rad2rad(), deg2deg(), and grad2grad().
+
+    * rad2rad
+         1. $radians_wrapped_by_2pi = rad2rad($radians);
+
+    * deg2deg
+         1. $degrees_wrapped_by_360 = deg2deg($degrees);
+
+    * grad2grad
+         1. $gradians_wrapped_by_400 = grad2grad($gradians);
+
+
+
+

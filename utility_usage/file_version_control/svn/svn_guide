@@ -1,0 +1,87 @@
+Good SVN reference link:
+http://svnbook.red-bean.com/nightly/en/index.html
+
+
+
+
+
+* Create the repository
+  svnadime create /home/program/coding_repo
+
+* Import the stuff
+  svn import /home/program/coding file:///home/program/coding_repo -m "Initial import"
+
+* Modify the repository
+ svn add file.cc
+  svn delete file.cc
+
+****************************************************************
+Information
+
+* Information::
+  svnlook tree coding_repo
+  svn status (-r X)
+  svn log (-r X)
+  svn info (-r X)
+
+* Check the different
+  diff coding coding-bk > comp.diff
+  svn diff filename 
+****************************************************************
+Check int and out
+
+* Checkout particular file::
+  svn export file:///home/program/coding_repo/file/ file/
+
+* Check out the versioned file
+  svn co (-r X) file:///home/program/coding_repo coding
+
+* updata::
+  svn update (-r X)
+
+* Commit the changes to the repository
+  svn ci
+  svn commit -m 'This is the latest version of SOMETHING!' () 
+
+****************************************************************
+Renaming and commiting
+* Renaming
+  Working dir:
+  /home/program/svn/dir
+  svn rename newdir
+
+* Commiting the charges
+  svn commit -m 'Name switched from dir -> newdir'  
+
+revert: undo all changes under the current dir
+undate: updating all changes that were commites from another working dir
+diff:   display the differences between the files under the current dir and last version of these files that were committed
+
+****************************************************************
+Other things
+
+* Make new directory
+  svn mkdir dir
+
+* Copy stuff
+  svn copy file/ dir/file_new
+ 
+* Recover the stuff
+  svnadmin recover /home/dir/svn
+
+* Remote repository
+  svn checkout svn+ssh://url.of.desktop/home/dir/svn filename 
+
+* Change the position of the data base
+  svnadmin dump /hime/dir/svn > temp/dumpfile.db
+  
+* Re-create the new database
+  svnadmin create --fs-type=fsfs /home/dir/newsvn
+  svnadmin load /home/dir/newsvn < /temp/dumpfile.db
+
+* Change URL
+  svn switch http://svn.red-bean.com/repos/trunk/vendors .
+
+
+* Change SVN repository system
+  svn switch --relocate svn+ssh://lynx/home/billlee/computer_repo   svn+ssh://lynx/home/billlee/repo/computer_repo

@@ -1,0 +1,9 @@
+1.) Manually adjust the mixer settings to something that is a good default for your audio needs. These settings will be loaded every time you restart your computer.
+
+2.) Change the file permissions for /var/lib/alsa/asound.state to enable read/write access for the group/others (open the folder in Thunar, then right-click the file, select properties, and go to the Permissions tab). If you don't do this, then the next step will give you a permission denied error.
+
+3.) Open up a terminal and enter the command "alsactl store" (without the quotes). This stores your mixer settings in /var/lib/alsa/asound.state for later use.
+
+4.) From The Xubuntu/Xfce menu, go to Settings and open Sessions and Startup. Go to the Application Autostart tab and click the Add button.
+
+5.) Enter the command "alsactl restore" (without the quotes) and the name and description of your choice. This causes the "alsactl restore" command to automatically run when you start your computer. The command restores you mixer settings from /var/lib/alsa/asound.state where you saved them earlier.

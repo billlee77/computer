@@ -1,0 +1,13 @@
+
+% Processdure:
+%	latex 2 times
+%	makeindex
+%	latex
+
+latex make_glossary.tex
+latex make_glossary.tex
+makeindex make_glossary.nlo  -s nomencl.ist -o make_glossary.nls
+latex make_glossary.tex
+
+
+

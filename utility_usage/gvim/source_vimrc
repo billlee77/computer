@@ -1,0 +1,3 @@
+source vimrc in a directory
+:so /dir/to/myvimrc
+

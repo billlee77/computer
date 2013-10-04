@@ -1,0 +1,432 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="en">
+    <title>Simple flow chart | TikZ example</title>
+    <!-- Framework CSS -->
+    <link rel="stylesheet" type="text/css" media="all" href="Simple%20flow%20chart%20%7C%20TikZ%20example_files/960.css">
+	<link rel="stylesheet" type="text/css" media="all" href="Simple%20flow%20chart%20%7C%20TikZ%20example_files/pygments_style.css">
+    <!-- Site-specific CSS -->
+    <link rel="stylesheet" href="Simple%20flow%20chart%20%7C%20TikZ%20example_files/base.css" type="text/css" media="screen">
+    <!--[if IE]><link rel="stylesheet" href="http://media.texample.net/css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+
+
+</head><body id="code" class="level3 tikz tikz-examples">
+<!-- Start of #header -->
+<div id="header">
+    <div class="container_12">
+        <div class="grid_7">
+            <h2><a href="http://www.texample.net/"><img src="Simple%20flow%20chart%20%7C%20TikZ%20example_files/logo.png" alt="TeXample.net"></a></h2>
+            <p>ample resources for TeX users</p>
+        </div>
+        <div id="navigation-mini" class="grid_5">
+            <form action="/search/" id="cse-search-box">
+            <ul>
+                <li><a href="http://www.texample.net/about/">About</a></li>
+                <li><a href="http://www.texample.net/contact/">Contact</a></li>
+            <li>
+    <input name="cx" value="008133027829266614561:kc0rxma4h7e" type="hidden">
+    <input name="cof" value="FORID:9" type="hidden">
+    <input name="ie" value="UTF-8" type="hidden">
+    <input style="background: rgb(255, 255, 255) url(http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif) no-repeat scroll left center; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;" name="q" size="20" type="text">
+    <input name="sa" value="Search" type="submit"></li>
+            </ul>
+<input value="www.texample.net/tikz/examples/simple-flow-chart/" name="siteurl" type="hidden"></form>
+<script type="text/javascript" src="Simple%20flow%20chart%20%7C%20TikZ%20example_files/brand.html"></script>
+
+</div>
+        <div class="clear">&nbsp;</div>    
+        
+        <!-- Start of #navigation-main -->
+        <div id="navigation-main" class="grid_12">
+            <ul>
+                <!--<li id="nav-home"><a href="/">home</a></li>-->
+                <li id="nav-tikz"><a href="http://www.texample.net/tikz/">Ti<i>k</i>Z</a></li>
+                <!--<li id="nav-beamer"><a href="/tikz/">Beamer</a></li>-->
+                <li id="nav-community"><a href="http://www.texample.net/community/">Community</a></li>
+                <!--<li id="nav-articles"><a href="/articles/">Articles</a></li>-->
+                <li id="nav-weblog"><a href="http://www.texample.net/weblog/">Weblog</a></li>
+<!--                <li id="nav-tools"><a 
+href="/tools/">Tools</a></li> -->
+            </ul>
+        </div>
+        <!-- End of #navigation-main -->
+        <div class="clear">&nbsp;</div>
+        
+    </div>
+    <!-- End of #header -->
+</div>
+<!-- END of #header-wrapper -->
+
+<div id="navigation-sec-wrapper">
+    <div class="container_12">
+        <div id="navigation-sec" class="grid_12">
+            
+<ul id="navigation-sub">
+<!--    <li id="nav-tikz-gallery"><a href="">gallery</a></li> -->
+    <li id="nav-tikz-examples"><a href="http://www.texample.net/tikz/examples/">Examples</a></li>
+    <li id="nav-tikz-resources"><a href="http://www.texample.net/tikz/resources/">Resources</a></li>
+    <li id="nav-tikz-builds"><a href="http://www.texample.net/tikz/builds/">Builds</a></li>
+</ul>
+
+        </div>
+        <div class="clear">&nbsp;</div>
+    </div>
+</div>
+
+
+<div class="wrapper">
+<div class="container_12">
+        <div class="grid_12 breadcrumbs">
+            
+            <a href="http://www.texample.net/">Home</a> 
+             &gt; <a href="http://www.texample.net/tikz/">Ti<i>k</i>Z</a> &gt; <a href="http://www.texample.net/tikz/examples/">Examples</a> &gt; <a href="http://www.texample.net/tikz/examples/all/">All</a> &gt; Simple flow chart
+        </div>
+        <div class="clear">&nbsp;</div>
+</div>
+</div>
+
+<div id="content-wrapper">
+
+<div class="container_12">
+<div class="grid_9">
+
+
+<h1>Example: Simple flow&nbsp;chart</h1>
+<div class="pubinfo">
+Published 2006-11-20 |
+ Author:
+<a href="http://www.texample.net/tikz/examples/author/kjell-magne-fauske/">Kjell Magne Fauske</a>
+
+</div>
+
+<div class="example-description">
+<p>With PGF/TikZ you can draw flow charts with relative ease. This flow chart from <a class="footnote-reference" href="http://media.texample.net/#id2" id="id1">[1]</a>
+outlines an algorithm for identifying the parameters of an autonomous underwater vehicle model.</p>
+<p>Note that relative node
+placement has been used to avoid placing nodes explicitly. This feature was
+introduced in PGF/TikZ &gt;= 1.09.</p>
+<table class="docutils footnote" id="id2" rules="none" frame="void">
+<colgroup><col class="label"><col></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="http://media.texample.net/#id1">[1]</a></td><td>Bossley, K.; Brown, M. &amp; Harris, C. Neurofuzzy identification of an autonomous underwater vehicle <cite>International Journal of Systems Science</cite>, 1999, 30, 901-913</td></tr>
+</tbody>
+</table>
+
+</div>
+<p>Download as: [<a href="http://media.texample.net/tikz/examples/PDF/simple-flow-chart.pdf">PDF</a>]
+[<a href="http://media.texample.net/tikz/examples/TEX/simple-flow-chart.tex">TEX</a>]
+
+</p>
+<div class="galleryimage">
+<a href="http://media.texample.net/tikz/examples/PDF/simple-flow-chart.pdf"><img src="Simple%20flow%20chart%20%7C%20TikZ%20example_files/simple-flow-chart.png" alt="Simple flow chart"></a>
+</div>
+
+<div id="example">
+<div class="highlight"><pre><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+
+<span class="k">\usepackage</span><span class="na">[latin1]</span><span class="nb">{</span>inputenc<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>tikz<span class="nb">}</span>
+<span class="k">\usetikzlibrary</span><span class="nb">{</span>shapes,arrows<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\pagestyle</span><span class="nb">{</span>empty<span class="nb">}</span>
+
+
+<span class="c">% Define block styles</span>
+<span class="k">\tikzstyle</span><span class="nb">{</span>decision<span class="nb">}</span> = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+<span class="k">\tikzstyle</span><span class="nb">{</span>block<span class="nb">}</span> = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=4em]
+<span class="k">\tikzstyle</span><span class="nb">{</span>line<span class="nb">}</span> = [draw, -latex']
+<span class="k">\tikzstyle</span><span class="nb">{</span>cloud<span class="nb">}</span> = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+    
+<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>[node distance = 2cm, auto]
+    <span class="c">% Place nodes</span>
+    <span class="k">\node</span> [block] (init) <span class="nb">{</span>initialize model<span class="nb">}</span>;
+    <span class="k">\node</span> [cloud, left of=init] (expert) <span class="nb">{</span>expert<span class="nb">}</span>;
+    <span class="k">\node</span> [cloud, right of=init] (system) <span class="nb">{</span>system<span class="nb">}</span>;
+    <span class="k">\node</span> [block, below of=init] (identify) <span class="nb">{</span>identify candidate models<span class="nb">}</span>;
+    <span class="k">\node</span> [block, below of=identify] (evaluate) <span class="nb">{</span>evaluate candidate models<span class="nb">}</span>;
+    <span class="k">\node</span> [block, left of=evaluate, node distance=3cm] (update) <span class="nb">{</span>update model<span class="nb">}</span>;
+    <span class="k">\node</span> [decision, below of=evaluate] (decide) <span class="nb">{</span>is best candidate better?<span class="nb">}</span>;
+    <span class="k">\node</span> [block, below of=decide, node distance=3cm] (stop) <span class="nb">{</span>stop<span class="nb">}</span>;
+    <span class="c">% Draw edges</span>
+    <span class="k">\path</span> [line] (init) -- (identify);
+    <span class="k">\path</span> [line] (identify) -- (evaluate);
+    <span class="k">\path</span> [line] (evaluate) -- (decide);
+    <span class="k">\path</span> [line] (decide) -| node [near start] <span class="nb">{</span>yes<span class="nb">}</span> (update);
+    <span class="k">\path</span> [line] (update) |- (identify);
+    <span class="k">\path</span> [line] (decide) -- node <span class="nb">{</span>no<span class="nb">}</span>(stop);
+    <span class="k">\path</span> [line,dashed] (expert) -- (init);
+    <span class="k">\path</span> [line,dashed] (system) -- (init);
+    <span class="k">\path</span> [line,dashed] (system) |- (evaluate);
+<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+
+
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+
+</div>
+
+
+
+<div id="commentsection">
+<h2>Comments</h2>
+
+
+
+<ul id="comments">
+
+<li>
+<dt id="c184"><a href="#c184">#1</a> Blithe, January 12, 2009 at 11:17 p.m.</dt>
+    <dd><p>A little improvement</p>
+<div class="highlight"><pre>\tikzstyle{decision} = [diamond, draw, fill=blue!20,
+    text width=4.5em, text badly centered, node distance=2.5cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20,
+    text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, very thick, color=black!50, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=2.5cm,
+    minimum height=2em]
+
+\begin{tikzpicture}[scale=2, node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (init) {initialize model};
+    \node [cloud, left of=init] (expert) {expert};
+    \node [cloud, right of=init] (system) {system};
+    \node [block, below of=init] (identify) {identify candidate models};
+    \node [block, below of=identify] (evaluate) {evaluate candidate models};
+    \node [block, left of=evaluate, node distance=2.5cm] (update) {update model};
+    \node [decision, below of=evaluate] (decide) {is best candidate better?};
+    \node [block, below of=decide, node distance=2.5cm] (stop) {stop};
+    % Draw edges
+    \path [line] (init) -- (identify);
+    \path [line] (identify) -- (evaluate);
+    \path [line] (evaluate) -- (decide);
+    \path [line] (decide) -| node [near start, color=black] {yes} (update);
+    \path [line] (update) |- (identify);
+    \path [line] (decide) -- node [, color=black] {no}(stop);
+    \path [line,dashed] (expert) -- (init);
+    \path [line,dashed] (system) -- (init);
+    \path [line,dashed] (system) |- (evaluate);
+\end{tikzpicture}
+</pre></div></dd></li>
+
+<li>
+<dt id="c269"><a href="#c269">#2</a> sintayhu, February 17, 2009 at 2:21 a.m.</dt>
+    <dd><p>i read it so it is intersting</p></dd></li>
+
+<li>
+<dt id="c361"><a href="#c361">#3</a> <a href="http://www.math.nyu.edu/%7Eleingang/">Matthew Leingang</a>, March 25, 2009 at 2:29 p.m.</dt>
+    <dd><p>Very helpful, thanks!  It seems the code for formatting the yes/no nodes can also be styled:</p>
+<div class="highlight"><pre>\tikzstyle{decision answer}=[near start,color=black]
+...
+\path[line] (decide) -| node[decision answer] {yes} (update);
+</pre></div>
+
+
+<p>You can also use anchors like decide.east if you want to force the
+arrows to come out of the points of the decision rhombus. This isn't
+needed here but if you want a diagonal line coming out of the decision
+node it will by default come from the center and emerge from one of the
+sides.</p></dd></li>
+
+<li>
+<dt id="c362"><a href="#c362">#4</a> Kjell Magne Fauske, March 25, 2009 at 2:41 p.m.</dt>
+    <dd><p>In
+the PGF &gt;= 2.0 manual there is a version of this flow chart that
+uses a tikz matrix to place the blocks. Requires less typing than my
+version. </p></dd></li>
+
+<li>
+<dt id="c363"><a href="#c363">#5</a> <a href="http://www.math.nyu.edu/%7Eleingang">Matthew Leingang</a>, March 25, 2009 at 5:46 p.m.</dt>
+    <dd><p>I have the 2.0 manual and I didn't catch it, which is why I turned to google and found this page.  Guess I'll look harder.</p></dd></li>
+
+<li>
+<dt id="c367"><a href="#c367">#6</a> Kjell Magne Fauske, March 26, 2009 at 8:46 a.m.</dt>
+    <dd><p>Section "16.6 Examples". Page 181 in the current CTAN version of the manual (PGF 2.0).</p></dd></li>
+
+<li>
+<dt id="c368"><a href="#c368">#7</a> <a href="http://www.math.nyu.edu/%7Eleingang/">Matthew Leingang</a>, March 26, 2009 at 2:15 p.m.</dt>
+    <dd><p>Found it, thanks!</p></dd></li>
+
+<li>
+<dt id="c507"><a href="#c507">#8</a> <a href="http://blog.antiblau.de/">LeSpocky</a>, May 24, 2009 at 6:53 p.m.</dt>
+    <dd><p>Meanwhile this section has another number, so reference by name would be easier. ;-) </p>
+<p>It's part III, chapter »Matrices and Alignment«, section »Examples«. 8-)</p></dd></li>
+
+<li>
+<dt id="c639"><a href="#c639">#9</a> Matze, August 18, 2009 at 11:15 a.m.</dt>
+    <dd><p>How do I do an other box around system, initialize model and expert? 
+I need this for modified flow chart.</p></dd></li>
+
+<li>
+<dt id="c856"><a href="#c856">#10</a> marla, October 14, 2009 at 3 a.m.</dt>
+    <dd><p>I want To learn how to make a flowchart easily!!</p></dd></li>
+
+<li>
+<dt id="c1130"><a href="#c1130">#11</a> <a href="http://www.uiowa.edu/">John Chain</a>, January 7, 2010 at 9:33 p.m.</dt>
+    <dd><p>Drop the semicolon for avoiding the semicolon at the top of the picture.</p>
+<p>tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm, minimum height=2em];</p></dd></li>
+
+<li>
+<dt id="c1132"><a href="#c1132">#12</a> Kjell Magne Fauske, January 11, 2010 at 7:56 p.m.</dt>
+    <dd><p>@John Chain: Fixed. </p></dd></li>
+
+</ul>
+
+
+<h3>Post a comment</h3>
+<div id="commentform">
+    
+
+<form action="/comments/post/" method="post">
+  
+    
+      <p>
+        
+        <label for="id_name">Name</label> <input id="id_name" name="name" maxlength="50" type="text">
+      </p>
+    
+  
+    
+      <p>
+        
+        <label for="id_email">Email address</label> <input name="email" id="id_email" type="text">
+      </p>
+    
+  
+    
+      <p>
+        
+        <label for="id_url">URL</label> <input name="url" id="id_url" type="text">
+      </p>
+    
+  
+    
+      <p>
+        
+        <label for="id_comment">Comment</label> <textarea id="id_comment" rows="10" cols="40" name="comment"></textarea>
+      </p>
+    
+  
+    
+      <p style="display: none;">
+        
+        <label for="id_honeypot">If you enter anything in this field your comment will be treated as spam</label> <input name="honeypot" id="id_honeypot" type="text">
+      </p>
+    
+  
+    
+      <input name="content_type" value="texgallery.exampleentry" id="id_content_type" type="hidden">
+    
+  
+    
+      <input name="object_pk" value="77" id="id_object_pk" type="hidden">
+    
+  
+    
+      <input name="timestamp" value="1264176844" id="id_timestamp" type="hidden">
+    
+  
+    
+      <input name="security_hash" value="a919f516c918495e5aba1dc45d1fb9bc87759fb4" id="id_security_hash" type="hidden">
+    
+    
+  <p class="submit">
+    <input name="post" class="submit-post" value="Post" type="submit">
+    <input name="preview" class="submit-preview" value="Preview" type="submit">
+  </p>
+<p><a href="http://daringfireball.net/projects/markdown/syntax">Markdown syntax enabled</a>. No HTML allowed.</p>
+</form>
+</div>
+
+
+</div>
+
+</div>
+
+<div class="grid_3">
+
+<div class="colentry linklist">
+<h5>Navigation</h5>
+<ul class="codemenu">
+<li><a href="http://www.texample.net/tikz/examples/">Gallery main page</a></li>
+<li><a href="http://www.texample.net/tikz/examples/about/">About the gallery</a></li>
+<li><a href="http://www.texample.net/tikz/examples/contribute/">Contribute</a></li>
+<li><a href="http://www.texample.net/tikz/examples/all/">Show all examples</a></li>
+<!--<li><a href="/pgftikzexamples/download/">Download</a></li>-->
+</ul>
+
+<p class="feedlink"><a href="http://www.texample.net/feeds/tikz/examples/">Subscribe to the Ti<i>k</i>Z examples RSS feed</a></p>
+
+</div>
+
+
+
+<p>There are currently <a href="#commentsection">12 comments</a> on this entry.</p>
+
+
+<div class="tag-list">
+
+<h5>Features</h5>
+<ul>
+
+</ul>
+
+
+<h5>Tags</h5>
+<ul>
+
+    <li><a href="http://www.texample.net/tikz/examples/tag/diagrams/">Diagrams<span class="count">37</span></a></li>
+
+</ul>
+
+
+
+
+</div>
+
+<p></p>
+<!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by/2.5/"><img alt="Creative Commons License" style="border-width: 0pt;" src="Simple%20flow%20chart%20%7C%20TikZ%20example_files/somerights20.png"></a><!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <Work rdf:about="">
+        <license rdf:resource="http://creativecommons.org/licenses/by/2.5/" />
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    </Work>
+    <License rdf:about="http://creativecommons.org/licenses/by/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+
+
+
+</div>
+
+<div class="clear">&nbsp;</div>
+</div><!-- container -->
+
+
+</div>
+
+<!-- footer -->
+<div id="footer" class="container_12">
+    <div class="grid_12">
+        <a href="http://www.texample.net/about/">about</a> | <a href="http://www.texample.net/contact/">contact</a> |
+        Hosted by <a href="http://www.webfaction.com/?affiliate=fauske">Webfaction</a>
+    </div>
+    <div class="clear">&nbsp;</div>
+</div>
+<!-- end of footer -->
+
+
+
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><script src="Simple%20flow%20chart%20%7C%20TikZ%20example_files/ga.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var pageTracker = _gat._getTracker("UA-3069412-4");
+        pageTracker._trackPageview();
+    </script>
+    
+</body></html>

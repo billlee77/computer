@@ -1,0 +1,49 @@
+
+
+/*--------------------------------------------------
+Date: 19/Otc/2011
+
+HP Color laserjet 2605 is connected to loon,
+thus CUPS Server needs to be configured on loon
+
+
+Step 1: Enable CUPS port in application->administration->FIREWALL
+
+Step 2: Set SElinux to permissive mode; restart
+
+Step 3: Share the printer, execute as root:
+		$/sbin/cupsctl --share-printers
+
+		Optionally:
+		$/usr/sbin/cupsctl --share-printers --remote-any
+		$/usr/sbin/cupsctl 'BrowseLocalProtocols="cups dnssd lpd smb"'
+
+Step 4: Make server accessable from other subnets:
+
+		$/usr/sbin/cupsctl BrowsePoll=server:port
+
+		for our case:
+		$/usr/sbin/cupsctl BrowsePoll=BrowsePoll 142.3.165.28:631
+		or	
+		$/usr/sbin/cupsctl BrowsePoll=BrowsePoll loon.phys.uregina.ca:631
+
+		For more information on the setup, please reference:
+			http://localhost:631/help/sharing.html?TOPIC=Getting+Started&QUERY=
+
+Step 5: Edit /etc/cups/cupsd.conf file to allow access to the server
+
+		Find section and change it into :
+	
+			<Location />
+			  Order allow,deny
+			#  Allow all
+			  allow 142.3.165*
+			  #allow lynx.phys.uregina.ca
+			  #aeny all
+			</Location>
+
+		As result only first floor of LAB building can access this
+
+
+
+

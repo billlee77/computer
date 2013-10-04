@@ -1,0 +1,1134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+
+<!-- <LINK REL="SHORTCUT ICON" HREF="../phong.ico"> -->
+	<title>phong [ advanced photoshop masking technique  ] </title>
+
+
+	<link rel="STYLESHEET" type="text/css" href="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/style.css">
+</head><body style="margin: 0pt;" bgcolor="white">
+<div align="center">
+<div style="width: 760px;">
+
+
+
+
+<div align="center">
+<!--- AD ---><iframe src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/randomAd.html" allowtransparency="1" scrolling="no" width="756" frameborder="0" height="81"></iframe>
+
+<table border="0" cellpadding="0" cellspacing="0" width="755">
+<tbody><tr>
+    <td rowspan="3"><a href="http://www.phong.com/"><img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/header-phong.gif" alt="" border="0" width="164" height="56"></a></td>
+    <td width="100%"><img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/emp.gif" alt="" border="0" width="1" height="47"></td>
+    <td rowspan="3"><a href="http://www.phong.com/tutorials/"><img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/header-tutorials.gif" alt="" border="0" width="137" height="56"></a></td>
+</tr>
+<tr>
+    <td bgcolor="black"><img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/emp.gif" alt="" border="0" width="1" height="1"></td>
+</tr>
+<tr>
+    <td><img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/emp.gif" alt="" border="0" width="1" height="8"></td>
+</tr>
+</tbody></table>
+
+</div>
+
+ 
+ 
+<table border="0" cellpadding="10" cellspacing="3" width="100%">
+
+
+
+<tbody><tr>
+<td colspan="2" class="topBar"></td>
+</tr>
+
+
+
+<tr>
+<td colspan="2" class="mainTitle">
+
+Masking a Tree
+
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+
+
+
+<a href="http://phong.com/tutorials/mask.tree/tree.jpg" target="_blank" class="superLink"><img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/thumbs-tree.jpg" alt="" style="margin: 0pt 15px 0pt 0pt;" align="left" border="0" width="75" height="100"></a>
+<!-- <img src="thumbs-cleanTree.jpg" width="75" height="100" alt="" border="2"  style="margin:0 15 0 0" align=right> -->
+This tutorial will demonstrate how to extract a clean mask from a photo
+of a tree set against a blue sky, using channels and levels, and then
+export the final result as a transparent <b>.png</b>.
+The general concepts may be intuitively applied to other applications.
+<br><br>
+First, download the tree photo on the left, and open it in <i>Adobe Photoshop</i>.
+
+
+</td>
+</tr>
+
+
+<tr>
+	<td class="number">
+	<font size="+2">
+	01.
+	</font>	
+	</td>
+	<td class="topic">
+	<font size="+1">
+	
+	Balancing the Channels
+	
+	</font>
+	</td>
+</tr>
+<tr>
+	<td></td>
+	<td class="text_body">
+	
+
+Open the Channels palette to inspect the various color channels.
+<br><br>
+Color channels tell how much of each color is in the image. An RGB
+image like this photo will contain 3 seperate color channels, one
+indicating the amount of Red, one for Green and one for Blue. White in
+a channel means that the color value is full (<i>255</i>), and black is empty (<i>0</i>).
+<br><br>
+Look for the channel with the highest contrast edge outlining the tree.
+The tree should be a flat color of very low contrast within the edge,
+and the backdrop should be white or quite light, also with low
+contrast. This way it will be easy to define the tree with an Alpha
+channel.
+<br><br>
+
+
+<table border="2" bordercolor="black" cellpadding="5" cellspacing="5" rules="rows" frame="below">
+
+<tbody><tr>
+
+
+<td class="gt" align="center">  
+
+	<div class="innerCaption">
+	
+	Because the sky is blue, the Blue channel will work well to start the mask.
+
+	</div>
+	
+</td>
+
+
+	<td class="gt" align="center">  
+	Press <b>Ctrl+3</b><br>
+	to inspect the Blue channel.
+	
+	
+</td>
+
+
+
+</tr>
+<tr>
+
+	<td align="center">
+		<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/01_002.jpg" alt="" border="1" width="255" height="180"></td>
+	<td align="center" width="50%">
+		<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/01_005.gif" alt="" border="0" width="255" height="168"></td>
+</tr>
+
+
+
+<tr>
+<td class="gt">  
+
+	<div class="innerCaption">On closer inspection,
+there are parts of the trunk which are considerably lighter than other
+parts of the tree. They are almost as light as parts of the sky. Only
+the sky should be white, otherwise parts of the trunk will appear
+transparent once the mask is applied.
+<br><br>
+
+Since the color of the bark is generally more Red than the rest of the scene, use the Red channel to push back the mask.
+
+
+	</div>
+	
+</td>
+	<td align="center">
+		<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/01.jpg" alt="" border="1" width="255" height="180"></td>
+</tr>
+
+
+
+<tr>
+<td class="gs">  
+
+	<div class="innerCaption">
+
+<b>a)</b> Make a copy of the Blue channel by dragging it onto the <i>New Channel</i> ( <img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/newChannel.gif" alt="" style="position: relative; top: 2px;" border="0" width="27" height="14"> ) button.<br><br>
+
+Double click on the new channel and rename it <i>Tree Alpha</i>.
+<br><br>
+<b>b)</b> Then make a copy of the Red channel, and make sure that it is selected.	(<b>Ctrl+5</b>)
+
+
+
+
+	</div>
+	
+</td>
+	<td align="center">
+		<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/01_004.gif" alt="" border="0" width="255" height="73">
+		
+		</td>
+</tr>
+
+
+
+<!-- 
+
+pull out blue
+push in red
+
+
+
+red channel copy
+level 50 / .85 / 222  
+
+select red channel, hide selection
+
+Tree Alpha
+level 120 / 1.2 / 255
+level 80 / .66 / 255
+
+
+deselect
+
+black black, white white
+level 30 / 1 / 145
+
+invert
+
+
+apply tree alpha to layer
+put half against black BG
+
+levels mask - 80 / 1.2 / 255
+balance, make sur eyou're not losing little branches, or as little as possible
+
+poly-lasso trunk
+
+add inversed adjustment layer to clean up dirty edges
+happy time, export as .png
+
+
+ -->
+
+ 
+ <!-- STEP CHUNK -->
+ 
+<tr>
+<td class="gs">  
+
+	<div class="innerCaption">
+	<b>c)</b>
+	 Adjust levels on the <i>Red copy</i> channel:<br>
+	 	<div class="indent">
+	 <span class="action">Image &gt; Adjustments &gt; Levels... (<b>Ctrl+L</b>)</span>
+	
+<br><br>
+
+	Input Levels: <b>50 / 0.85 / 222  </b>
+	</div>
+<br>Now the idea here is to isolate the bark-regions which are too
+bright in the Blue channel. Then this channel will be used as a
+selection to darken the <i>Tree Alpha</i> channel.
+
+<br><br>
+
+	<b>d)</b> Drag the <i>Red copy</i> channel onto the <br>
+	<i>Load channel as selection</i> ( <img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/loadSelection.gif" alt="" style="position: relative; top: 2px;" border="0" width="27" height="14"> ) button.
+
+	</div>
+	
+</td>
+	<td align="center" valign="top">
+		<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/01.gif" alt="" border="0" width="285" height="230">
+		
+		<br>
+
+<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/01_002.gif" alt="" border="0" width="255" height="100">
+		
+		</td>
+</tr>
+
+<!-- STEP CHUNK -->
+
+<tr>
+<td class="gs">  
+
+	<div class="innerCaption">
+	<b>e)</b> Click on the <i>Tree Alpha</i> channel, and then press <b>Ctrl+H</b> to hide the selection so we can see what's happening.
+	<br><br>
+	
+	<b>f)</b> Now significantly darken the bark region.<br><br>
+	
+		<div class="indent">
+	<span class="action">Image &gt; Adjustments &gt; Levels... (<b>Ctrl+L</b>)</span>
+	<br>
+	Input Levels: <b>120 / 1.2 / 255 </b>
+	</div>
+	
+
+	
+	
+
+	</div>
+	
+</td>
+	<td rowspan="2" align="center" valign="top">
+		<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/01_006.gif" alt="" border="0" width="285" height="340"></td>
+</tr>
+
+
+
+<tr>
+<td class="gt">  
+
+	<div class="innerCaption">
+
+With this method we use the Blue channel to create transparency, and the Red channel to make it more opaque.
+	
+
+	</div>
+	
+</td>
+
+</tr>
+
+
+
+<!-- STEP CHUNK -->
+
+<tr>
+<td class="gt">  
+
+
+	<div class="innerCaption"> When compositing the
+tree into another scene, the sky will want to be totally transparent,
+and the tree solid. So bump the shadows to black, and the sky to pure
+white. To do this: </div>
+		
+		</td>
+		<td rowspan="4" align="center" valign="top">
+			
+		<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/01_003.gif" alt="" border="1" width="285" height="658">
+		
+		</td>
+		</tr>
+		
+		<tr>
+		<td class="gs"> 
+			<div class="innerCaption">
+			
+
+	<b>g)</b> Press <b>Ctrl+D</b> to clear the previous selection.
+
+	
+	<br><br>
+		
+	<b>h)</b> Adjust levels on the <i>Tree Alpha</i> channel:<br><br>
+	
+	<span class="action">Image &gt; Adjustments &gt; Levels... (<b>Ctrl+L</b>)</span>
+		<br><br>
+Now slowly drag the white input level downwards until the whole sky
+turns white, and slowly drag the black input level upwards until most
+of the trunk and inner tree segments appear black.
+<br>
+These settings work well in this case:
+	<br>
+		<br>
+		<div class="indent">
+	Input Levels: <b>30 / 1 / 145 </b>
+	</div>
+	
+
+	
+	</div>
+	</td>
+	
+	
+	
+	
+	
+	</tr>
+	<tr><td class="gt"> 
+		<div class="innerCaption">
+	
+It may take a number of tries to find the perfect balance.<br><br>
+Be mindful of what is happening throughout the image as the levels are
+adjusted. If the white levels get too low, thin parts of the branches
+will disappear into the sky. And if the black levels get too high, the
+sky will glow through the edges of the tree. </div>
+	
+</td>
+
+</tr>
+
+	<tr><td class="gs"> 
+		<div class="innerCaption">
+	
+<b>i)</b> Invert the <i>Tree Alpha</i> channel  (<b>Ctrl+I</b>)<br> so that the tree appears white, and the sky black.
+
+	</div>
+	
+</td>
+
+</tr>
+
+
+</tbody></table>
+
+
+
+
+
+
+
+
+	
+	
+	
+	</td>
+</tr>
+
+
+
+
+
+
+<tr>
+	<td class="number">
+	<font size="+2">
+	02.
+	</font>	
+	</td>
+	<td class="topic">
+	<font size="+1">
+	
+	Applying the Mask
+	
+	</font>
+	</td>
+</tr>
+
+
+<tr>
+	<td></td>
+	<td class="text_body">
+	
+
+<table border="2" bordercolor="black" cellpadding="5" cellspacing="5" rules="rows" frame="below">
+
+<tbody><tr>
+
+<td class="gs" width="50%">  
+
+	<div class="innerCaption">
+	
+	<b>a)</b> Drag the <i>Tree Alpha</i> channel onto the<br> <i>Load channel as selection</i>
+( <img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/loadSelection.gif" alt="" style="position: relative; top: 2px;" border="0" width="27" height="14"> )	button.
+
+<br><br>
+
+<b>b)</b> Go to the Layers palette, and make a copy of the <i>Background</i> layer, by dragging it onto the<br> <i>New layer</i>
+( <img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/newChannel.gif" alt="" style="position: relative; top: 2px;" border="0" width="27" height="14"> ) button.
+<br><br>
+
+Double click on the new layer <i>Background copy</i>, and rename it <i>Tree</i>.
+<br><br>
+
+<b>c)</b> Click <i>Add layer mask</i> ( <img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/layerMask.gif" alt="" style="position: relative; top: 2px;" border="0" width="27" height="14"> ) on the Layers palette to add the selection as a mask to the <i>Tree</i> layer.
+
+<br><br>
+
+<b>d)</b> Hide or Delete the original <i>Background</i> layer.
+<br><br>
+
+
+
+
+	</div>
+	
+</td>
+
+
+	<td rowspan="1" align="center" valign="top" width="50%">
+	
+	<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/02_002.gif" alt="" border="0" width="255" height="103"><br><br>
+		<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/02.jpg" alt="" border="1" width="285" height="180">
+		
+
+
+	</td>
+</tr>
+
+
+
+
+
+<tr>
+<td class="gs">  
+
+	<div class="innerCaption">
+
+	
+	
+	<b>e)</b> Click the little black and white thumbnail on the <i>Tree</i> layer to paint on the layer mask.<br><br>
+	
+	
+
+	Isolate the trunk from the background hillside.
+	<br><br>
+	
+		<div class="indent">
+	
+	<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/brushTool.gif" alt="" border="0" width="25" height="21">  Use the Brush tool to
+	  make the hillside transparent by painting black on the layer mask
+
+<div align="center">	  or</div>
+
+	<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/polyLasso.gif" alt="" border="0" width="25" height="21"> Use the Polygon Lassoo  tool to select chunks of the hillside, and then fill them with black.
+
+		<div class="indent">
+Make the foreground color black ( <b>Ctrl+D</b> ), and then to fill ( <b>Alt+Backspace</b> ) the selection with the forground color.
+		</div>
+</div>
+	</div>
+	
+</td>
+
+
+
+	<td rowspan="1" align="center" width="50%">
+	
+	<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/02_004.gif" alt="" border="0" width="255" height="37"><br><br>
+	
+	<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/02.gif" alt="" border="0" width="285" height="180">
+
+
+	</td>
+
+
+</tr>
+
+
+
+
+</tbody></table>
+	
+
+	
+	</td>
+	</tr>
+
+	
+	
+	
+
+	
+	
+	
+	
+<tr>
+	<td class="number">
+	<font size="+2">
+	03.
+	</font>	
+	</td>
+	<td class="topic">
+	<font size="+1">
+	
+	Tweaking the Edges
+	
+	</font>
+	</td>
+</tr>
+
+
+<tr>
+
+	<td></td>
+	<td class="text_body">
+	
+
+<table border="2" bordercolor="black" cellpadding="5" cellspacing="5" rules="rows" frame="below">
+
+
+<tbody><tr>
+<td class="gs">  
+
+	<div class="innerCaption">
+	
+
+		<a href="http://phong.com/tutorials/mask.tree/scene.jpg" target="_scene" class="superLink"><img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/thumbs-scene.jpg" alt="" style="margin: 0pt 10px 10px 0pt;" align="left" border="1" width="45" height="60"></a>
+	
+<b>a)</b> Make a new layer ( <img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/newChannel.gif" alt="" style="position: relative; top: 2px;" border="0" width="27" height="14"> ), drag it  beneath the <i>Tree</i> layer, then paste a <a href="http://phong.com/tutorials/mask.tree/scene.jpg" target="_blank">scene</a> from the project it will composited into.<br><br>
+Or else fill the background with an average color of the scene, or make
+a gradient behind the tree layer, to test the mask over a range of
+colors. </div>
+	
+</td>
+
+
+	<td rowspan="2" align="center" width="50%">
+	
+	<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/02_003.gif" alt="" border="0" width="255" height="140"><br><br>
+		<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/03_002.jpg" alt="" border="1" width="285" height="180">
+
+
+	</td>
+	
+	
+	
+</tr>
+
+
+
+
+
+
+
+<tr>
+<td class="gt">  
+
+	<div class="innerCaption">
+If the tree is moving from a light sky to somthing relatively darker,
+there may be a noticable outline surrounding it, as if it were glowing.
+There are a number of ways to correct this. </div>
+	
+</td>
+
+
+
+	
+</tr>
+
+
+
+
+<tr>
+<td colspan="2" class="gt"><br>
+ <font class="sub_topic" size="+1">&nbsp;&nbsp;<b>01: Adjust Mask Levels</b></font><br>
+
+</td>
+</tr>
+
+
+<tr>
+
+<td class="gs" width="50%">  
+
+	<div class="innerCaption">
+	
+
+	
+	<b>a)</b>	Click the mask thumbnail on the <i>Tree</i> layer.<br><br>
+	
+	<span class="action">Image &gt; Adjustments &gt; Levels... (<b>Ctrl+L</b>)</span>
+	
+	<br><br>
+	
+	Now bring the shadow levels way up to minimize the glowing edge, while watching the integrity of the smaller branches.
+	
+	<br><br>
+	<div class="indent">
+	Input Levels: <b>120 / 1.2 / 255 </b>
+	</div>
+	
+	</div>
+	
+</td>
+
+		<td rowspan="1" align="center" valign="top">
+			
+		<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/03_003.gif" alt="" border="1" width="285" height="180">
+		
+		</td>
+
+
+</tr>
+
+
+
+<tr>
+<td class="gt">  
+
+	<div class="innerCaption"> A lot of the smaller
+branches will disappear with this technique. Although it can be
+effective with other images, do not use it in this case. </div>
+	
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2" class="gt"><br>
+ <font class="sub_topic" size="+1">&nbsp;&nbsp;<b>02: Darken the Edges</b></font><br>
+
+</td>
+</tr>
+
+
+<tr>
+<td class="gt">  
+	<div class="innerCaption">
+	
+A better way to fix the glowing edges of this tree is to darken the edges just inside the mask.
+
+	</div>
+</td>
+</tr>
+
+
+
+
+
+<tr>
+<td class="gs">  
+
+	<div class="innerCaption">
+	
+
+	<b>a)</b> Hold down <b>Ctrl</b> and click on the <i>Tree</i> layer mask thumbnail to select the mask's transparency.
+	<br><br>
+	
+	<b>b)</b> Contract the selection by 1 pixel.<br>
+	<b>Select &gt; Modify &gt; Contract... 1 pixel</b>
+	
+	<br><br>
+	
+	<b>c)</b> Invert the selection. <b>Ctrl+Shift+I</b>
+	<br><br>
+	
+	<b>d)</b> Create a <b>Curves</b> adjustment layer,<br>
+	
+	<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/curveIcon.gif" alt="" style="margin: 5px 8px 0pt 0pt;" align="left" border="0" width="32" height="32">
+	
+	by clicking <img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/adjustLayer.gif" alt="" style="position: relative; top: 2px;" border="0" width="27" height="14">  on the Layers palette,<br>
+	and selecting <b>Curves...</b>
+	<br><br>
+	
+	Drag the lower part of the Curve down. <br>Press <b>OK</b>.
+
+
+	</div>
+	
+</td>
+
+<td align="center">
+
+
+	<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/03.gif" alt="" border="0" width="232" height="289">
+
+</td>
+
+</tr>
+
+
+
+
+<tr>
+<td class="gs">  
+
+	<div class="innerCaption">
+	
+
+	<b>e)</b> Holding down <b>Alt</b>, move the mouse cursor between the <i>Curves</i> and <i>Tree</i> layers, until the cursor changes to two overlapping circles, <img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/clipGroup.gif" alt="" border="0" width="18" height="15"> and then click.
+
+
+	</div>
+	
+</td>
+
+<td rowspan="2" align="center">
+
+<br>
+	<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/03_002.gif" alt="" border="0" width="255" height="73"><br><br>
+	
+	<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/03.jpg" alt="" border="1" width="285" height="360">
+
+</td>
+
+</tr>
+
+
+
+
+<tr>
+<td class="gt">  
+
+	<div class="innerCaption">
+
+	Doing this creates a clipping group, so that the <i>Curves</i> adjustment will only effect the <i>Tree</i> layer.
+	
+	<br><br>
+	
+	In a clipping group, the bottom layer acts as a mask for the upper layers.	
+	
+	<br><br>
+	
+	Curving the edges so dark may create a noticable black line around the hard edges of the tree. This may be softened by <b>Gaussian Blurring</b> the <i>Curves</i> layer mask by one or two pixels.
+<br><br>
+Though blurring the <i>Tree</i> layer mask may produce undesirably trippy results.
+
+
+
+	</div>
+	
+</td>
+</tr>
+
+
+
+</tbody></table>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</td>
+	</tr>
+
+
+	
+	
+	
+	
+	
+<tr>
+	<td class="number">
+	<font size="+2">
+	04.
+	</font>	
+	</td>
+	<td class="topic">
+	<font size="+1">
+	
+	Exporting
+	
+	</font>
+	</td>
+</tr>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<tr>
+
+	<td></td>
+	<td class="text_body">
+	
+
+<table border="2" bordercolor="black" cellpadding="5" cellspacing="5" rules="rows" frame="below">
+
+
+
+
+<tbody><tr>
+<td class="gt">  
+
+	<div class="innerCaption">
+
+The next thing to do is either copy and paste the tree into another Photoshop image, or export it as a transparent <b>.png</b> file so that it can be imported into other programs such as <i>Flash</i> or <i>3Ds max</i>.
+
+
+	</div>
+	
+</td>
+
+
+
+
+	<td rowspan="5" align="center" width="50%">
+	
+	<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/04_003.gif" alt="" border="0" width="255" height="177"><br><br>
+<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/04_002.gif" alt="" border="0" width="252" height="336"><br><br>
+<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/04.gif" alt="" border="0" width="222" height="91">
+
+
+	</td>
+	
+	
+
+	
+</tr>
+
+
+
+
+<tr>
+<td class="gs">  
+
+	<div class="innerCaption">
+	
+<b>a)</b> Hide the background layer, in this case named <i>Scene</i>, by clicking on the little eye icon to the left of the layer so that it disappears.
+
+	</div>
+	
+</td>
+
+	
+</tr>
+
+
+
+
+
+<tr>
+<td colspan="1" class="gt"><br>
+ <font class="sub_topic" size="+1">&nbsp;&nbsp;<b>01: To export .png</b></font>
+
+</td>
+</tr>
+
+
+
+
+
+<tr>
+<td class="gs">  
+
+	<div class="innerCaption">
+
+<b>b)</b> Press <b>C</b> for the <b>Crop</b> tool, and select a box around the tree, leaving a bit of margin around the edges.
+<br><br>
+
+Double click in part of the selection, or press <b>Enter</b> to apply the crop.
+
+	</div>
+	
+</td>
+
+
+
+	
+</tr>
+
+
+
+<tr>
+<td class="gs">  
+
+	<div class="innerCaption">
+
+<b>c)</b> Export the File with Save for Web. 
+<br><br>
+<b>File &gt; Save for Web... </b>
+( <b>Alt+Shft+Ctrl+S</b> )
+<br><br>
+
+Select the Settings: <b>PNG-24</b><br>
+Enable <b>Transparency</b>.
+
+
+	</div>
+	
+</td>
+
+</tr>
+
+
+
+
+<tr>
+<td colspan="2" class="gt"><br>
+ <font class="sub_topic" size="+1">&nbsp;&nbsp;<b>02: To copy and paste</b></font>
+
+</td>
+</tr>
+
+
+
+
+<tr>
+<td class="gs">  
+
+	<div class="innerCaption">
+	
+	
+	
+	
+				<table border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					<td><b>b)</b> Select &gt; All<br><br></td>
+					<td valign="top">( <b>Ctrl+A</b> )</td>
+				</tr>
+				<tr>
+					<td><b>c)</b> Edit &gt; Copy Merged &nbsp;&nbsp;&nbsp;<br><br></td>
+					<td valign="top"> ( <b>Shft+Ctrl+C</b> )</td>
+				</tr>
+				<tr>
+				<td colspan="2">
+				<b>d)</b> Switch to another Photoshop document<br><br>
+				</td>
+				
+				</tr><tr>
+					<td><b>e)</b> Edit &gt; Paste </td>
+					<td valign="top"> ( <b>Ctrl+V</b> )</td>
+				</tr>
+				</tbody></table>
+
+	
+
+	</div>
+	
+</td>
+
+<td align="center">
+<img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/04.jpg" alt="" border="1" width="285" height="180">
+
+</td>
+	
+</tr>
+
+
+
+
+
+
+</tbody></table>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</td>
+	</tr>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<!-- 
+To collapse the mask to the inherant tranparency of the layer, drag the mask thumbnail onto the delete leyer icon, and select Apply
+ -->
+
+<tr>
+<td colspan="2" style="background: rgb(222, 222, 222) none repeat scroll 0% 0%; font-size: 9px; font-family: verdana; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; color: black;" align="center">
+
+by <a href="mailto:av@phong.com" style="text-decoration: none;">anson vogt</a> | nov.27.2004
+
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2" class="topBar"></td>
+</tr>
+
+</tbody></table>
+
+
+
+</div>
+</div>
+
+
+
+
+<div align="center">
+
+<table border="0" cellpadding="0" cellspacing="0" width="755">
+<tbody><tr>
+    <td rowspan="3"><a href="http://www.phong.com/"><img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/header-phong-upside.gif" alt="" border="0" width="164" height="56"></a></td>
+    <td width="100%"><img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/emp.gif" alt="" border="0" width="1" height="8"></td>
+    <td rowspan="3"><a href="http://www.phong.com/tutorials/"><img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/header-tutorials-upside.gif" alt="" border="0" width="137" height="56"></a></td>
+</tr>
+<tr>
+    <td bgcolor="black"><img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/emp.gif" alt="" border="0" width="1" height="1"></td>
+</tr>
+<tr>
+    <td><img src="phong%20%5B%20advanced%20photoshop%20masking%20technique%20%5D_files/emp.gif" alt="" border="0" width="1" height="47"></td>
+</tr>
+</tbody></table>
+
+</div>
+
+
+
+
+
+
+</body></html>

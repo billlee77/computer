@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.6)
+The top-level auxiliary file: thesis.aux
+The style file: abbrv.bst
+A level-1 auxiliary file: abstract.aux
+A level-1 auxiliary file: ack.aux
+A level-1 auxiliary file: contents.aux
+A level-1 auxiliary file: tables.aux
+A level-1 auxiliary file: figures.aux
+A level-1 auxiliary file: chap1.aux
+A level-1 auxiliary file: chap2.aux
+A level-1 auxiliary file: chap3.aux
+A level-1 auxiliary file: chap4.aux
+A level-1 auxiliary file: chap5.aux
+A level-1 auxiliary file: chap6.aux
+A level-1 auxiliary file: bib.aux
+A level-1 auxiliary file: apdxa.aux
+Database file #1: ref.bib
+You've used 3 entries,
+            2118 wiz_defined-function locations,
+            531 strings with 4240 characters,
+and the built_in function-call counts, 1078 in all, are:
+= -- 107
+> -- 38
+< -- 1
++ -- 15
+- -- 12
+* -- 71
+:= -- 172
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 15
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 46
+empty$ -- 93
+format.name$ -- 12
+if$ -- 232
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 4
+newline$ -- 18
+num.names$ -- 6
+pop$ -- 19
+preamble$ -- 1
+purify$ -- 12
+quote$ -- 0
+skip$ -- 34
+stack$ -- 0
+substring$ -- 78
+swap$ -- 13
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 10
+warning$ -- 0
+while$ -- 11
+width$ -- 4
+write$ -- 35

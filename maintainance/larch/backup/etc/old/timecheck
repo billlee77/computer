@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# Randy sets the time each day.
+# Put a copy of this file in /etc/cron.daily
+
+rdate -s timelord.cs.uregina.ca

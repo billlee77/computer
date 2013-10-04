@@ -1,0 +1,1013 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title>A Shell Programming Primer</title>
+<script defer="defer" src="tsshell_files/storage.js" charset="utf-8" type="text/javascript"></script><style type="text/css">#aptureD,#aptureD ABBR,#aptureD ACRONYM,#aptureD ADDRESS,#aptureD B,#aptureD BIG,#aptureD BLOCKQUOTE,#aptureD CAPTION,#aptureD CENTER,#aptureD CITE,#aptureD CODE,#aptureD DD,#aptureD DIV,#aptureD DL,#aptureD DT,#aptureD EM,#aptureD EMBED,#aptureD FONT,#aptureD FORM,#aptureD H1,#aptureD H2,#aptureD H3,#aptureD H4,#aptureD H5,#aptureD H6,#aptureD I,#aptureD IFRAME,#aptureD IMG,#aptureD LABEL,#aptureD LEGEND,#aptureD LI,#aptureD MAP,#aptureD OBJECT,#aptureD OL,#aptureD P,#aptureD PRE,#aptureD SMALL,#aptureD SPAN,#aptureD STRIKE,#aptureD STRONG,#aptureD SUB,#aptureD SUP,#aptureD TABLE,#aptureD TBODY,#aptureD TD,#aptureD TFOOT,#aptureD TH,#aptureD THEAD,#aptureD TR,#aptureD TT,#aptureD U,#aptureD UL,#aptureD a,#aptureD a:link,#aptureD a:hover,#aptureD a:visited,#aptureD a:active{border:0;background:transparent none;color:black;padding:0;text-align:left;font:normal medium serif;text-shadow:none;}div#aptureD,#aptureD DIV,#aptureD TABLE,#aptureD TR,#aptureD TH,#aptureD TD{height:auto;width:auto;}#aptureD,#aptureD *{border-collapse:none;margin:0;font:normal normal normal 12px/normal;text-transform:none;text-decoration:none;clear:none;cursor:auto;float:none;outline:none;letter-spacing:normal;word-spacing:normal;text-indent:0;white-space:normal;vertical-align:baseline;position:static;}#aptureD TABLE{border-collapse:collapse;}#aptureD TD{vertical-align:bottom;}#aptureD span,#aptureD img{display:inline;}#aptureD p,#aptureD div{display:block;}#aptureD div{overflow:visible;}#aptureD ul,#aptureD ol{padding-left:20px;}#aptureD a,#aptureD a:link,#aptureD a:hover,#aptureD a:visited,#aptureD a:active{display:inline;color:blue;text-decoration:underline;cursor:pointer;}#aptureD a:visited{color:purple;}#aptureD a:active{color:red;}#aptureD input{width:auto;border:0;background:transparent none;-webkit-box-sizing:content-box;}.aptureWPMessage{font:11px Helvetica,sans-serif;color:#999;padding:0 10px;}.aptureWPMessage strong{color:black;padding-left:15px!important;background-image:url(http://cdn.apture.com/media/imgs/link_icons.gif?v12)!important;background-repeat:no-repeat!important;background-position:left -350px;}#aptureD .aptureMessage{color:#333;border:1px solid;margin:10px 0;overflow:auto;position:absolute;z-index:12345;}#aptureD .aptureMessageInfo{background-color:#e9f5fd;border-color:#bcd;}#aptureD .aptureMessageInfoYellow{background-color:#FFFBCC;border-color:#E6DB55;}#aptureD .aptureMessageSuccess{background-color:#e8f0d9;border-color:#a7c46c;}#aptureD .aptureMessageAlert{background-color:#f7d9df;border-color:#e58099;}#aptureD .aptureMessage h4{font:bold 12px/18px Helvetica,sans-serif;border:solid #fff;border-width:1px 0 0 1px;margin:0;padding:9px 9px 6px 9px;}#aptureD .aptureMessageCloseBtn{width:20px;height:20px;margin-right:5px;cursor:pointer;float:right;background:transparent url(http://cdn.apture.com/media/imgs/add_edit_delete.gif?v2) no-repeat right -35px;}#aptureD .aptureMessage div,#aptureD .aptureMessage span{font:11px/18px Helvetica,sans-serif;}#aptureD .aptureMessage p{font:11px/18px Helvetica,sans-serif;border:solid #fff;border-width:0 0 0 1px;margin:0;padding:0 9px 6px 9px;}#aptureD .aptureMessage a{font:11px/18px Helvetica,sans-serif!important;color:#06c!important;font-weight:bold!important;text-decoration:none!important;}#aptureD .aptureMessage a:hover{text-decoration:underline!important;}#aptureD .aptureMessage a:active{color:#04a!important;}#aptureD .aptureDimLayer{position:fixed;top:0;left:0;background-color:black;}#aptureD .apturePopup{position:absolute;width:0;height:0;z-index:10002;overflow:hidden;}#aptureD .apturePopupHighlight{position:absolute;border:2px solid orange;top:5px;left:9px;}#aptureD .aptureCloseAll{position:fixed;top:0;right:0;width:75px;z-index:10345;background-color:#f0f0f0;padding:2px;cursor:pointer;}#aptureD .aptureCloseAll span{font:12px/17px Helvetica;padding-right:2px;cursor:pointer;}#aptureD .aptureStretchRow img{width:100%;height:100%;display:block;}#aptureD .apturePopupButton{cursor:pointer;float:right;display:block;width:25px;height:20px;overflow:hidden;margin:0;background-image:url(http://cdn.apture.com/media/imgs/title_icons.png?6)!important;background-repeat:no-repeat;}#aptureD .apturePopupButtonDark{cursor:pointer;float:right;width:25px;height:20px;overflow:hidden;margin:0 1px;background:url(http://cdn.apture.com/media/imgs/darktitle_icons.png?6) no-repeat left top;}#aptureD .aptureResizeOverlay{position:absolute;left:13px;top:10px;z-index:2147483642;display:none;border:5px solid #666;}#aptureD .aptureResizeBorder{width:100%;height:100%;}#aptureD .aptureMHTitleSignout{cursor:pointer!important;float:right!important;font-family:Helvetica!important;font-size:11px!important;font-weight:bold!important;color:#FFF!important;text-decoration:none!important;margin-top:3px!important;margin-right:9px!important;text-shadow:#000 0 -1px 1px!important;}#aptureD .aptureMHTitleSignout:hover{text-decoration:underline!important;}#aptureD .aptureMHTitleSignedInAs{float:right!important;font-family:Helvetica!important;font-size:11px!important;color:#FFF!important;margin-top:3px!important;margin-right:6px!important;text-shadow:#000 0 -1px 1px!important;}#aptureD .apturePrefButton{float:left;width:15px;height:13px;margin-left:1px;cursor:pointer;overflow:hidden;background:url(http://cdn.apture.com/media/imgs/footer_icons.png?2) no-repeat left top;}#aptureD .aptureActionBarButtons{float:right;width:100px;height:15px;margin-top:-16px;}#aptureD .aptureFooterPopupButton{cursor:pointer;float:right;overflow:hidden;width:15px;height:13px;margin-right:1px;background:url(http://cdn.apture.com/media/imgs/footer_icons.png?2) no-repeat left top;}#aptureD .aptureActionBar{position:absolute;height:15px;text-align:center;}#aptureD .aptureFeedback{width:65px!important;}#aptureD a.aptureQuickSurvey{display:block!important;height:10px!important;margin:3px auto!important;width:115px!important;}#aptureD a.aptureQuickSurvey{background:url(http://cdn.apture.com/media/imgs/quick-survey.gif) left top!important;}#aptureD a.aptureQuickSurvey span{display:none;}#aptureD a.aptureQuickSurvey:hover{background-position:left -10px!important;}#aptureD a.aptureQuickSurvey:active{background-position:left -20px!important;}#aptureD span.aptureTMMPopupFooterMsg{color:#222;font-family:helvetica;font-size:12px;padding:5px;}#aptureD a.aptureDontShowAgain{font:bold 12px Helvetica;text-decoration:none;color:#00F;float:right;}#aptureD a.aptureDontShowAgain:hover{text-decoration:underline;}#aptureD .aptureActionText{font:bold 12px Helvetica,sans-serif;color:#6d6d6d;padding-right:3px;float:right;}#aptureD .aptureAdBackground{position:absolute;background:url(http://cdn.apture.com/media/imgs/ad_bg.gif) repeat-x left top;}#aptureD .aptureEmbedShareType{clear:both;padding-top:2px;}#aptureD .aptureEmbedShareType span{float:left;width:50px;color:#666;font:bold 12px Helvetica;}#aptureD .aptureEmbedShareType input{float:left;width:220px;background-color:white;border:1px solid #ccc;font-size:11px;}#aptureD .aptureSuperEmbedFooter .aptureSuperEmbedBranding{float:left;display:inline!important;height:18px!important;margin-left:5px!important;width:55px!important;background:url(http://cdn.apture.com/media/imgs/_superEmbedAptureLogo.png) no-repeat left top!important;}#aptureD .aptureSuperEmbedFooter .aptureSuperEmbedShare{float:right;height:16px;width:48px;background:url(http://cdn.apture.com/media/imgs/share/button.gif?v2) no-repeat left top!important;}#aptureD .aptureSuperEmbedFooter .aptureSuperEmbedCreate{float:right;width:96px;height:16px;margin-right:3px;background:url(http://cdn.apture.com/media/imgs/share/button.gif?v2) no-repeat -48px top!important;}#aptureD .aptureSuperEmbedFooter .aptureSuperEmbedBranding span,#aptureD .aptureSuperEmbedFooter .aptureSuperEmbedShare span,#aptureD .aptureSuperEmbedFooter .aptureSuperEmbedCreate span{display:none;}#aptureD .apturePopup .aptureScrollClip,#aptureD .aptureHorizontalScroll .aptureScrollClip{position:absolute;z-index:2;}#aptureD .aptureSuperEmbedScroll{z-index:9!important;}#aptureD .apturePopup .aptureScrollClip,#aptureD .aptureSuperEmbedScroll .aptureScrollClip{top:6px!important;}#aptureD .aptureSuperEmbedScroll .aptureRelatedBack,#aptureD .aptureSuperEmbedScroll .aptureRelatedNext{position:absolute!important;background-image:url(http://cdn.apture.com/media/imgs/pagination.gif)!important;height:45px!important;display:block;cursor:pointer!important;overflow:hidden!important;z-index:4!important;top:5px!important;}#aptureD .aptureSuperEmbedScroll .aptureRelatedBack{width:15px!important;left:1px!important;background-position:left top!important;}#aptureD .aptureSuperEmbedScroll .aptureRelatedBack:hover{background-position:left -45px!important;}#aptureD .aptureSuperEmbedScroll .aptureRelatedNext{width:15px!important;background-position:right top!important;right:1px!important;}#aptureD .aptureSuperEmbedScroll .aptureRelatedNext:hover{background-position:right -45px!important;}#aptureD .aptureTitle{color:#000!important;font-weight:bold!important;text-decoration:none!important;text-shadow:#FFF 0 1px 1px!important;}#aptureD .aptureTitleTextInactive .aptureTitle{color:#666!important;}#aptureD .aptureTitleSourceText{color:#6d6d6d;text-shadow:#FFF 0 1px 1px;font-weight:bold;}#aptureD .apturePopupTitle{position:absolute;left:15px;top:10px;height:20px;}#aptureD .apturePopupBackground{font:14px Helvetica!important;font-weight:bold!important;color:#444;text-align:center;vertical-align:middle;}#aptureD .aptureTitleBarDark .aptureTitleText{color:#fff;text-shadow:#000 0 -1px 1px;}#aptureD .aptureFlashBlocker{position:absolute;}#aptureD .aptureBold{font-weight:bold;}#aptureD .aptureCursorPointer{cursor:pointer;}#aptureD .aptureLeft{float:left;}#aptureD .aptureRelative{position:relative;}#aptureD .aptureAbsolute{position:absolute;}.aptureEventCatchingOverlay{position:absolute;top:0;left:0;z-index:2147483642;width:100%;height:100%;display:none;}span.aptureLinkIcon,span.aptureLink,a.aptureLink{display:inline!important;margin:0!important;padding:0!important;border:0!important;float:none!important;}.aptureAutoKeywordLink a.aptureLink{color:#333!important;border-bottom-color:#acacac!important;border-bottom-style:dotted!important;border-bottom-width:2px!important;position:relative!important;padding:1px!important;padding-right:3px!important;text-decoration:none!important;}span.aptureLink{-khtml-border-radius:4px;-moz-border-radius:4px;border-radius:4px;cursor:pointer!important;}.aptureLink:hover a{text-decoration:underline!important;}.aptureAutoKeywordLink a.aptureLink:hover{background:#efefef!important;color:#080808!important;text-decoration:none!important;}.aptureLink span.aptureLinkIcon{padding-left:11px!important;background-image:url(http://cdn.apture.com/media/imgs/link_icons.gif?v12)!important;background-repeat:no-repeat!important;}.aptureLinkHover,.aptureLinkHover *{background-color:#ddebf8!important;}.aptureLinkDown,.aptureLinkDown *{background-color:#bbd6f1!important;}.aptureLinkOpen,.aptureLinkOpen *{background-color:#59d!important;color:#fff!important;}.aptureLinkOpenDown,.aptureLinkOpenDown *{background-color:#37b!important;color:#fff!important;}#aptureD .apturePopupIcon{vertical-align:top;width:18px;height:18px;float:left;}#aptureD .aptureResizeControl5{width:12px;height:12px;cursor:url(http://cdn.apture.com/media/imgs/cursor_resize.gif),se-resize;background:url(http://cdn.apture.com/media/imgs/resize.gif?v2) no-repeat right -12px;position:absolute;overflow:hidden;right:-5px;bottom:-7px;}#aptureD .aptureResizeControl6{width:12px;height:12px;cursor:url(http://cdn.apture.com/media/imgs/cursor_resize_sw.gif),sw-resize;background:url(http://cdn.apture.com/media/imgs/resize.gif?v2) no-repeat left -12px;position:absolute;overflow:hidden;left:-5px;bottom:-7px;}#aptureD .aptureNeedFlash{margin-top:5px;}#aptureD .aptureNeedFlash,#aptureD .aptureNeedFlash *{font:11px Helvetica,sans-serif!important;}#aptureD embed.aptureEmbed{left:0;}#aptureD .aptureImageViewer{overflow:hidden;}#aptureD .aptureAdvertisement{border:0 none;margin:0;padding-left:2px;background:transparent url(http://cdn.apture.com/media/imgs/housing2.gif) no-repeat scroll 0 0;cursor:pointer;position:absolute;width:205px;height:61px;-moz-background-clip:border;-moz-background-origin:padding;-moz-background-inline-policy:continuous;}#aptureD .aptureAdvertisementImage{margin:0;padding:0;padding-left:5px;position:absolute;right:5px;bottom:6px;cursor:pointer;}#aptureD .aptureAdvertisementClose{margin:0;padding:0;position:absolute;right:5px;top:4px;cursor:pointer;}#aptureD .aptureAdvertisementHomeLink{border:medium none;margin:0;padding:0;position:absolute;left:5px;top:4px;width:122px;height:10px;text-decoration:none;cursor:pointer;}#aptureD .aptureThumb{overflow:hidden;position:relative;width:60px;height:40px;background:white;}#aptureD .aptureThumb img.aptureThumbImg{width:100%;}#aptureD .aptureThumb,#aptureD .aptureThumb *{cursor:pointer;}#aptureD .aptureThumbBadge{position:absolute;left:0;top:0;}#aptureD .aptureNextIcon{padding-right:10px!important;background:url(http://cdn.apture.com/media/imgs/arrows.gif?v3) no-repeat right -114px!important;}#aptureD a.aptureNextIcon:hover{background:url(http://cdn.apture.com/media/imgs/arrows.gif?v3) no-repeat right -129px!important;}#aptureD a.apturePrevIcon{background:url(http://cdn.apture.com/media/imgs/wikinavarrows.gif) no-repeat scroll 0 0!important;background-position:0 0!important;padding-left:10px!important;}#aptureD a.apturePrevIcon:hover{background-position:0 -18px!important;}#aptureD .aptureTitle,#aptureD .aptureTitleSourceText,#aptureD .aptureTitleText{font:bold 11px Helvetica!important;vertical-align:top;cursor:default;}#aptureD .aptureTitleText{height:15px;overflow:hidden;padding-left:10px;cursor:default;margin-top:4px;}#aptureD .aptureLicense{font:10px Helvetica;color:#999;background-color:#444!important;text-align:right;overflow:hidden;width:auto;}#aptureD .aptureSSLicense{top:6px;height:12px;right:6px;background:transparent!important;}#aptureD .aptureSSLicenseC,#aptureD .aptureSSLicenseCC,#aptureD .aptureSSLicenseGFDL,#aptureD .aptureSSLicensePD{background:url(http://cdn.apture.com/media/imgs/slideshowLicenses.png) no-repeat scroll 0 0 transparent!important;}#aptureD .aptureSSLicenseC{background-position:-6px 0!important;padding-left:17px;}#aptureD .aptureSSLicenseCC{background-position:-6px -12px!important;padding-left:19px;}#aptureD .aptureSSLicenseGFDL{background-position:-0px -24px!important;padding-left:24px;}#aptureD .aptureSSLicensePD{background-position:-6px -36px!important;padding-left:18px;}#aptureD .aptureLoading{text-align:center;font:10px Helvetica;background-color:white;}#aptureD .aptureSlideshowIndicator{background-image:url(http://cdn.apture.com/media/imgs/slideshow_overlay.gif)!important;position:absolute;left:5px;bottom:5px;height:28px;width:28px;background-position:-84px 0;cursor:pointer;opacity:.75;filter:alpha(opacity=75);}#aptureD .aptureScrollClip{position:absolute;overflow:hidden;}#aptureD .aptureScrollView{position:absolute;}#aptureD .aptureRelatedOverlay{position:relative;float:left;margin-right:5px;width:66px;height:45px;}#aptureD .aptureRelatedTarget{position:absolute;overflow:hidden;width:60px;height:40px;}#aptureD .aptureRelatedCaption div{font:bold 11px Helvetica,sans-serif;text-align:center;}#aptureD .aptureRelatedCaption{padding:.25em;position:absolute;background-color:#333;z-index:8;}#aptureD .aptureHorizontalScroll .aptureRelatedBack,#aptureD .aptureHorizontalScroll .aptureRelatedNext{cursor:pointer;position:absolute;background-image:url(http://cdn.apture.com/media/imgs/arrows.gif?v3);width:9px;height:11px;overflow:hidden;z-index:4;top:20px;}#aptureD .aptureRelatedBack{left:2px;background-position:left -30px;}#aptureD .aptureRelatedNext{background-position:left top;right:2px;}#aptureD .aptureCaptionTriangle{position:absolute;z-index:7;top:47px;background:url(http://cdn.apture.com/media/imgs/arrows.gif?v3) no-repeat 0 -60px;width:9px;height:5px;}#aptureD .aptureTTWrapper{z-index:2147483645;position:fixed;}#aptureD .aptureTTWrapperAbsolute{position:absolute;}#aptureD .aptureTTFlashWrapper{top:17px;left:12px;position:relative;}#aptureD .aptureTTStyleGray .aptureSrchBtmBar{border-top:1px solid #999;-webkit-border-bottom-left-radius:5px;-webkit-border-bottom-right-radius:5px;-moz-border-radius-bottomleft:5px;-moz-border-radius-bottomright:5px;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}#aptureD .aptureTTAlignLeft .aptureTTContentWrapper{-webkit-box-shadow:-2px 3px 5px #000;-moz-box-shadow:-2px 3px 5px #000;}#aptureD .aptureTTAlignLeft.aptureTTStyleGray .aptureTTContentWrapper{-webkit-box-shadow:rgba(0,0,0,0.496094) 0 5px 22px;-moz-box-shadow:rgba(0,0,0,0.496094) 0 5px 22px;}#aptureD .aptureTTContent{position:absolute;}#aptureD .aptureTTStyleBlack .aptureTTContent *{color:white;}#aptureD .aptureTTArrow{height:28px;width:28px;position:absolute;background-image:url(http://cdn.apture.com/media/imgs/tooltip_arrow.gif?v4);background-repeat:no-repeat;}#aptureD .aptureTTAlignBelow .aptureTTArrow{background-position:0 0;}#aptureD .aptureTTAlignRight .aptureTTArrow{background-position:-28px 0;}#aptureD .aptureTTAlignLeft .aptureTTArrow{background-position:-56px 0;}</style><style type="text/css">a img,a{cursor:pointer;}img{cursor:auto;}.aptureTMMGutterWrapperQuirks{top:expression(this.parentNode.offsetHeight / 2);}.aptureTMMSelection::selection{background:#5499DE none 0 0;color:#fff;-webkit-border-radius:3px!important;}.aptureTMMSelection::-moz-selection{background:#5499DE none 0 0;color:#fff;-webkit-border-radius:3px!important;}.aptureTMMSelected::selection{background:#06c none 0 0;color:#fff;-webkit-border-radius:3px!important;}.aptureTMMSelected::-moz-selection{background:#06c none 0 0;color:#fff;-webkit-border-radius:3px!important;}#aptureD a.aptureTMMCloseButton{float:right;width:16px;height:16px;background-image:url(http://cdn.apture.com/media/imgs/close_gray.png);cursor:pointer;background-repeat:no-repeat;margin-top:1px;margin-right:3px;}#aptureD a.aptureTMMCloseButton:hover{background-image:url(http://cdn.apture.com/media/imgs/close_red.png);background-repeat:no-repeat;}#aptureD .aptureTMMResults{background-color:#efefef;-webkit-box-shadow:2px 3px 5px #333;-moz-box-shadow:2px 3px 5px #333;border-color:#555;border-style:solid;border-width:1px;overflow:hidden;}#aptureD .aptureTMMTitle{font-weight:bold!important;font-size:11px!important;font-family:Helvetica!important;text-decoration:none!important;color:black!important;display:block!important;position:relative;}#aptureD .aptureTMMResult{clear:both;position:relative;background-color:#FFF;}#aptureD .aptureTMMResult .aptureThumb{float:left;width:32px;height:32px;}#aptureD .aptureTMMWikiMoreLink{float:left;padding-top:2px!important;font:11px helvetica,arial!important;color:#06c!important;position:relative;}#aptureD span.aptureTMMSourceInfo,#aptureD span.aptureTMMSourceInfo span,#aptureD span.aptureTMMSourceInfo div{font-variant:small-caps;float:right;color:#999;font-size:12px!important;}#aptureD .aptureTMMSourceInfo .aptureTMMSourceIcon{width:16px;height:16px;background:url(http://cdn.apture.com/media/imgs/providers_small.gif?v3) no-repeat left top;}#aptureD .aptureTMMSourceInfo .aptureTMMSourceName{padding-right:4px;padding-left:4px;}#aptureD .aptureTMMRichWikipediaArticleItem .aptureThumb{width:100px;height:100px;}#aptureD .aptureTMMFullScreenPopup .aptureTMMFullScreenCloseButton{width:16px;height:16px;position:absolute;cursor:pointer;margin:10px;right:0;background-image:url(http://cdn.apture.com/media/imgs/fullscreen_close.png);background-repeat:no-repeat;}#aptureD .aptureTMMRichMediaListViewer .aptureThumb,#aptureD .aptureTMMRichMediaListViewer .aptureThumb:hover,#aptureD .aptureTMMRichMediaListViewer .aptureThumb:active,#aptureD .aptureTMMRichMediaListViewer .aptureThumb:visited{border:1px solid #303030;background-color:white;}#aptureD .aptureTMMRichMediaListViewer .aptureTMMListThumb{position:relative;float:left;clear:none;background-color:transparent;border-bottom:0;border:2px solid transparent;padding:1px;margin-right:4px;margin-left:4px;margin-top:2px;margin-bottom:2px;}#aptureD .aptureTMMRichMediaListViewer .aptureTMMListThumbHover{border:3px solid #555;padding:0;background:transparent;}#aptureD .aptureTMMRichMediaListViewer{border:1px solid #303030;user-select:none;-webkit-user-select:none;-moz-user-select:none;}#aptureD .aptureTMMRichMediaListViewer .aptureTMMRichImageListNav{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}#aptureD .aptureTMMRichMediaListViewer .aptureTMMThumbOpen{border:3px solid;padding:0;}#aptureD .aptureTMMRichMediaListViewer .aptureTMMThumbOpen .aptureThumb{border-color:black;}#aptureD .aptureTMMRichMediaListViewer .aptureTMMSlideshowLoadingDiv{position:absolute;top:0;left:0;background-color:black;}#aptureD .aptureTMMRichMediaListViewer .aptureTMMSlideshowInnerLoadingDiv .aptureTMMLoader{color:white;font:"Helvetica Neue",Helvetica;font-weight:normal;}#aptureD .aptureTMMRichMediaListViewer .aptureTMMImageNav{width:90px;position:absolute;cursor:pointer;}#aptureD .aptureTMMRichMediaListViewer .aptureImageViewer{background-color:white;}#aptureD .aptureTMMRichImageListNav .aptureTMMRichImageListNavIconWrapper{position:relative;float:left;overflow:hidden;}#aptureD .aptureTMMRichImageListNav .aptureTMMRILNavBtn{float:left;width:14px;height:22px;margin-top:5px;}#aptureD .aptureTMMRichImageListNav .aptureThumb{height:70px;width:70px;-webkit-box-shadow:rgba(0,0,0,0.31) 0 0 10px 1px;-moz-box-shadow:rgba(0,0,0,0.31) 0 0 10px 1px;}#aptureD .aptureTMMRichImageListNav .aptureThumb,#aptureD .aptureTMMRichImageListNav .aptureThumb *{cursor:url(http://cdn.apture.com/media/imgs/crsr/magnify_in.gif),pointer!important;}#aptureD .aptureTMMRichMediaListViewer .aptureTMMRichMediaListCaption{position:absolute;}#aptureD .aptureTMMRichMediaListCaption{background-color:white;border:1px solid white;font:12px Helvetica;}#aptureD .aptureTMMResult a.aptureVideoThumbPreview{width:96px;height:72px;border:1px solid #ccc;}#aptureD .aptureTMMResult .aptureVideoThumbPreview .aptureTMMVideoPreviewPlay{background-image:none;width:96px;height:72px;position:absolute;left:0;top:0;background-repeat:no-repeat;background-position:36px 24px;background-image:url(http://cdn.apture.com/media/imgs/play_button.png);}#aptureD .aptureTMMResult .aptureThumbBadge{display:none!important;}#aptureD .aptureTMMLoading{text-align:center;padding-top:30px;font:bold 13px Helvetica;text-shadow:#FFF 0 1px 1px!important;width:374px;}#aptureD .aptureTMMImageBorders{border:1px solid #CCC;}#aptureD .aptureTMMBar{background:url(http://cdn.apture.com/media/imgs/prstg_shadow.png) 0 35px repeat-x;height:46px;left:0;margin:0;padding:0;position:fixed;overflow:hidden;width:100%;-webkit-transition:top .6s ease-out,opacity .3s ease-out;text-shadow:none;}#aptureD .aptureTMMBar a{font:10pt 'Helvetica Neue',Helvetica;text-decoration:none;padding:0 5px;}#aptureD .aptureTMMBarInnerDiv{border-bottom:0 solid #000;height:35px;overflow:hidden;position:relative;}#aptureD a.aptureTMMFavIcon{width:16px;height:16px;}#aptureD a.aptureTMMBarLogo,#aptureD a.aptureTMMBarLogo:hover,#aptureD a.aptureTMMBarLogo:active{background:no-repeat 0 50%;top:1px!important;height:35px;position:absolute!important;padding:0!important;}#aptureD a.aptureTMMBarLogoIE6,#aptureD a.aptureTMMBarLogoIE6:hover,#aptureD a.aptureTMMBarLogoIE6:active{height:35px!important;top:1px!important;position:absolute!important;text-decoration:none!important;padding:0!important;}#aptureD a.aptureTMMBarTitle,#aptureD a.aptureTMMBarTitle:hover,#aptureD a.aptureTMMBarTitle:active{position:absolute!important;width:auto!important;top:3px!important;text-decoration:none!important;font:22px "Helvetica Neue",Helvetica,Arial!important;font-weight:bold!important;padding:0!important;cursor:pointer;}#aptureD .aptureTMMInput{position:absolute!important;top:6px!important;margin:1px;height:17px;width:254px;font-size:13px!important;font-family:'Helvetica Neue',Helvetica;background:white url(http://cdn.apture.com/media/imgs/tmmSearchSprite.png?v1) no-repeat scroll 0 0!important;border:1px solid #888!important;padding:2px 3px 2px 22px!important;outline:0;-webkit-transition:border-color .1s ease-out;}#aptureD .aptureTMMInputQuirks{height:23px;width:276px;}#aptureD .aptureTMMInput:focus,#aptureD .aptureTMMInputFocused{margin:0;border-width:2px!important;border-color:#1E84FF!important;}#aptureD .aptureTMMInputFocusedQuirks{height:25px;}#aptureD div.aptureTMMSurvey{padding:5px 2px 5px 8px;clear:both;background-color:#dde3ff;}#aptureD .aptureTMMSurveyIcon{float:left!important;padding:4px;background-color:#dde3ff;}#aptureD .aptureTMMSurveyContent{font:bold 11px Helvetica!important;color:#444;background-color:#dde3ff;margin:1px 4px!important;padding:1px 4px!important;}#aptureD .aptureTMMSurveyLink{font:12px Helvetica!important;padding-right:12px!important;background:url(http://cdn.apture.com/media/imgs/external.gif?v5) no-repeat right top!important;color:#06c!important;font-weight:bold!important;cursor:pointer!important;}#aptureD .aptureTMMSurveyLink:hover{color:#008!important;}#aptureD .aptureTMMShare{position:absolute!important;height:35px;margin:0;padding:0;}#aptureD a.aptureTMMShareLink,#aptureD a.aptureTMMShareLink:hover,#aptureD a.aptureTMMShareLink:active{margin:0!important;height:35px!important;padding:0!important;display:block!important;float:left!important;position:relative!important;cursor:pointer!important;text-decoration:none!important;}#aptureD .aptureTMMShareClearDiv{cursor:pointer;position:absolute;height:35px;margin:0;padding:0;left:0;top:0;}#aptureD .aptureTMMShareIcon{cursor:pointer;margin:6px 0 0 9px;padding:0;position:absolute;background-image:url(http://cdn.apture.com/media/imgs/share/share_icons.gif);height:24px;width:24px;}#aptureD .aptureTMMShareBackground{cursor:pointer;position:absolute;height:35px;width:20px;margin:0;padding:0;left:0;top:0;background-color:#f00;}#aptureD .aptureTMMShareCountDiv{position:absolute;font-family:arial!important;font-size:11px!important;color:#047;font-weight:bold!important;}#aptureD .aptureTMMShareCountDivOutline{color:#fff!important;}#aptureD .aptureTMMShareText{color:white;position:absolute;left:39px;overflow:hidden;height:14px;margin:0;padding:0;font-family:helvetica;font-size:11px;cursor:pointer;text-decoration:none!important;}#aptureD div.aptureTMMToutLink{margin:0!important;height:35px!important;overflow:hidden!important;padding:0 3px!important;display:block!important;float:left!important;position:absolute!important;cursor:pointer!important;text-decoration:none!important;}#aptureD .aptureTMMToutIcon{cursor:pointer;margin:6px 0 0 0!important;padding:0!important;float:left;height:24px!important;width:24px!important;}#aptureD .aptureTMMToutTooltipImage{position:absolute!important;width:75px;height:49px;z-index:2147483647!important;padding:0!important;margin:0;}#aptureD .aptureTMMHideButton{width:15px;height:35px;float:left;}#aptureD .aptureTMMHideButtonBorder{border-right:1px solid #888;position:absolute;}#aptureD .aptureTMMHideButtonFixed{position:fixed;top:0;left:0;}#aptureD .aptureTMMShowButtonCover{width:14px;height:35px;background-color:white;top:0;left:0;}#aptureD .aptureTMMHideButtonHidden .aptureTMMShowButtonCover,#aptureD .aptureTMMHideButtonHidden,#aptureD .aptureTMMHideButtonHidden .aptureTMMHideButtonBorder{-webkit-border-bottom-right-radius:5px 5px;-webkit-border-top-right-radius:5px 5px;-moz-border-radius-bottomright:5px 5px;-moz-border-radius-topright:5px 5px;border-bottom-right-radius:5px 5px;border-top-right-radius:5px 5px;}#aptureD .aptureTMMHideArrowPosition{position:absolute;left:1px;top:9.5px;}#aptureD .aptureTMMHideArrow{background-image:url(http://cdn.apture.com/media/imgs/vertical_chevron.png?v2);background-position:0 0;background-repeat:no-repeat;height:17px;width:12px;font-size:1px;}#aptureD .aptureTMMHideButtonHidden .aptureTMMHideArrow{background-position:0 -18px;}#aptureD .aptureTTStyleGray .aptureTMMTabBar{background:transparent;}#aptureD .aptureTTStyleGray .aptureTMMTab{border:1px solid transparent;}#aptureD .aptureTTStyleGray .aptureTMMTabTitle,#aptureD .aptureTTStyleGray .aptureTMMTabCount{color:#555!important;text-shadow:none!important;}#aptureD .aptureTTStyleGray .aptureTMMStar{color:#fff!important;}#aptureD .aptureTTStyleGray .aptureTMMTabMouseOver .aptureTMMTabTitle,#aptureD .aptureTTStyleGray .aptureTMMTabMouseOver .aptureTMMTabCount{color:white!important;}#aptureD .aptureSearchTTIndicator{font:bold 14px Helvetica;text-shadow:#fff 0 0 2px;margin-top:5px;color:#222!important;}#aptureD .aptureHighlightMarker{position:absolute;height:1px;width:1px;background:transparent;z-index:200000000;}#aptureD .aptureRichThumb img.aptureThumbImg{width:auto;height:auto;}#aptureD .aptureTMMDefinitionResult{background-color:#feffe4;}#aptureD .aptureTMMLoader{font:14px Helvetica;font-weight:bold;}#aptureD .aptureTMMLoaderSmall{background-repeat:no-repeat;height:16px;width:16px;float:left;margin-right:4px;}#aptureD .aptureTMMLoaderSmallWhite{background-image:url(http://cdn.apture.com/media/imgs/throbber_states.png?v2);}#aptureD .aptureTMMLoaderSmallBlack{background-image:url(http://cdn.apture.com/media/imgs/throbber_states.png?v2);}#aptureD .aptureNotificationOverlay{position:absolute;bottom:0;left:0;background:#f7fabb;width:100%;-webkit-box-shadow:#CCC 0 -5px 5px -3px;-moz-box-shadow:0 -5px 5px -3px #CCC;box-shadow:0 -5px 5px -3px #CCC;}#aptureD .aptureNotificationClose{position:absolute;top:-22px;left:15px;height:22px;width:26px;background-position:0 0;background-image:url(http://cdn.apture.com/media/imgs/notificationOverlayClose.png);}#aptureD .aptureNotificationOpen{background-position:-26px 0;}#aptureD .aptureNotificationContent{padding:10px;}#aptureD .aptureNotificationContent *{font-family:Helvetica;font-size:12px;color:#555;line-height:17px;}</style></head><body><div id="aptureD"><div></div><div style="z-index: 2147483640; display: block; background-color: rgb(103, 112, 254);" class="aptureTMMHideButton aptureTMMHideButtonFixed"><div class="aptureTMMHideButtonBorder"><div style="visibility: visible; opacity: 0.5;" class="aptureTMMHideArrow aptureTMMHideArrowPosition"></div><div title="Hide the Apture Bar" style="visibility: hidden; opacity: 0;" class="aptureTMMShowButtonCover"></div></div></div><div style="overflow: auto; position: fixed; top: 0px; z-index: 2147483639;" class="aptureTMMBar  "><div style="top: 4px; left: 3px;" class="aptureFlashBlocker"><div style="background-color: rgb(127, 127, 127); overflow: auto;"></div></div><table style="position: absolute; left: 0px; top: 0px; display: none;"><tbody><tr><td style="width: 17px; height: 30px; background: url(&quot;http://cdn.apture.com/media/imgs/pop_corners.png?7&quot;) no-repeat scroll left top transparent;"></td><td style="height: 30px; background: url(&quot;http://cdn.apture.com/media/imgs/pop_tb.png?7&quot;) repeat-x scroll center top transparent; width: 166px;"></td><td style="width: 17px; height: 30px; background: url(&quot;http://cdn.apture.com/media/imgs/pop_corners.png?7&quot;) no-repeat scroll right top transparent;"></td></tr><tr><td style="width: 13px; background: url(&quot;http://cdn.apture.com/media/imgs/pop_lr.png?7&quot;) repeat-y scroll left center transparent; height: 237px;"></td><td style="background-color: white;"></td><td style="width: 13px; background: url(&quot;http://cdn.apture.com/media/imgs/pop_lr.png?7&quot;) repeat-y scroll right center transparent; height: 237px;"></td></tr><tr><td style="width: 17px; height: 33px; background: url(&quot;http://cdn.apture.com/media/imgs/pop_corners.png?7&quot;) no-repeat scroll left bottom transparent;"></td><td style="height: 33px; background: url(&quot;http://cdn.apture.com/media/imgs/pop_tb.png?7&quot;) repeat-x scroll center bottom transparent; width: 166px;"></td><td style="width: 17px; height: 33px; background: url(&quot;http://cdn.apture.com/media/imgs/pop_corners.png?7&quot;) no-repeat scroll right bottom transparent;"></td></tr></tbody></table><div style="display: none;" class="apturePopupTitle"><div style="margin-right: -2px; background-position: 0px top;" title="Close Window (Tip: you can also click anywhere on the page to dismiss the last opened window)" class="apturePopupButton"></div><div style="background-position: -50px top; display: none;" title="Maximize" class="apturePopupButton"></div><div class="aptureTitleText"></div></div><div style="background-color: rgb(103, 112, 254);" class="aptureTMMBarInnerDiv"><div style="position: relative;" class="aptureTMMHideButton"><div class="aptureTMMHideButtonBorder"><div style="visibility: visible; opacity: 0.5;" class="aptureTMMHideArrow aptureTMMHideArrowPosition"></div><div style="visibility: hidden; opacity: 0;" class="aptureTMMShowButtonCover"></div></div></div><a href="http://www.vectorsite.net/" class="aptureTMMBarTitle" style="color: rgb(255, 255, 255); left: 74px;">In The Public Domain</a><div style="left: 425px;" class="aptureTMMShare"><a style="width: 104px;" target="_blank" class="aptureTMMShareLink" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.vectorsite.net%2Ftsshell.html"><div style="background-color: rgb(255, 255, 255); visibility: hidden; opacity: 0; width: 104px;" class="aptureTMMShareBackground"></div><div style="background-position: 0px 0px;" class="aptureTMMShareIcon"></div><div style="top: 7px; color: rgb(255, 255, 255);" class="aptureTMMShareText">Share on</div><div style="top: 19px; color: rgb(255, 255, 255);" class="aptureTMMShareText">Facebook</div><div style="top: 21px; left: 7px;" class="aptureTMMShareCountDiv aptureTMMShareCountDivOutline">1</div><div style="top: 22px; left: 7px;" class="aptureTMMShareCountDiv aptureTMMShareCountDivOutline">1</div><div style="top: 22px; left: 6px;" class="aptureTMMShareCountDiv aptureTMMShareCountDivOutline">1</div><div style="top: 22px; left: 5px;" class="aptureTMMShareCountDiv aptureTMMShareCountDivOutline">1</div><div style="top: 21px; left: 5px;" class="aptureTMMShareCountDiv aptureTMMShareCountDivOutline">1</div><div style="top: 20px; left: 5px;" class="aptureTMMShareCountDiv aptureTMMShareCountDivOutline">1</div><div style="top: 20px; left: 6px;" class="aptureTMMShareCountDiv aptureTMMShareCountDivOutline">1</div><div style="top: 20px; left: 7px;" class="aptureTMMShareCountDiv aptureTMMShareCountDivOutline">1</div><div style="top: 21px; left: 6px;" class="aptureTMMShareCountDiv">1</div><div style="width: 104px;" class="aptureTMMShareClearDiv"></div></a><a style="width: 104px;" target="_blank" class="aptureTMMShareLink" href="http://twitter.com/home?status=A%20Shell%20Programming%20Primer%20-%20http%3A%2F%2Fwww.vectorsite.net%2Ftsshell.html%20via%20%40Apture"><div style="background-color: rgb(255, 255, 255); visibility: hidden; opacity: 0; width: 104px;" class="aptureTMMShareBackground"></div><div style="background-position: 0px -48px;" class="aptureTMMShareIcon"></div><div style="top: 7px; color: rgb(255, 255, 255);" class="aptureTMMShareText">Share on</div><div style="top: 19px; color: rgb(255, 255, 255);" class="aptureTMMShareText">Twitter</div><div style="width: 104px;" class="aptureTMMShareClearDiv"></div></a><a style="width: 104px;" target="_blank" class="aptureTMMShareLink" href="mailto:?subject=A%20Shell%20Programming%20Primer&amp;body=Hi,%0A%0AI%20was%20reading%20this%20page%20and%20I%20thought%20you%20would%20be%20interested%20in%20it:%0A%0Ahttp%3A%2F%2Fwww.vectorsite.net%2Ftsshell.html%0A%0AShared%20using%20Apture%20%28www.apture.com%29"><div style="background-color: rgb(255, 255, 255); visibility: hidden; opacity: 0; width: 104px;" class="aptureTMMShareBackground"></div><div style="background-position: 0px -96px;" class="aptureTMMShareIcon"></div><div style="top: 7px; color: rgb(255, 255, 255);" class="aptureTMMShareText">Share via</div><div style="top: 19px; color: rgb(255, 255, 255);" class="aptureTMMShareText">email</div><div style="width: 104px;" class="aptureTMMShareClearDiv"></div></a></div><input value="Enter topic to look up" style="left: 919px; color: rgb(119, 119, 119);" size="34" class="aptureTMMInput" type="text"><div style="left: 1215px;" class="aptureTMMToutLink"><div style="background-image: url(&quot;http://cdn.apture.com/media/imgs/info_icon.png&quot;);" class="aptureTMMToutIcon"></div></div></div></div><div style="cursor: pointer; position: absolute; z-index: 2147483647; display: none;"><div style="position: absolute; top: 0pt; left: 0pt;"><img src="tsshell_files/LM-base.png" style="cursor: pointer;"><div style="cursor: pointer; position: absolute; width: 0pt; height: 27px; background-image: url(&quot;http://cdn.apture.com/media/imgs/search_tooltip/progress-bar.png&quot;); left: 5px; top: 4px;"></div><img src="tsshell_files/LM-text-gloss.png" style="cursor: pointer; position: absolute; top: 0pt; left: 0pt;"></div><img src="tsshell_files/LM-logo-icon.png" style="cursor: pointer; position: absolute; top: 0pt; left: 85px; height: 20px; width: 18px;"></div></div>
+<br>
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7060065211892894";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="";
+google_color_border = ["FDFFCA","FF4500","CC99CC","578A24"];
+google_color_bg = ["FDFFCA","FFEBCD","E7C6E8","CCFF99"];
+google_color_link = ["0000CC","DE7008","000000","00008B"];
+google_color_url = ["008000","E0AD12","00008B","00008B"];
+google_color_text = ["000000","8B4513","663366","000000"];
+//--></script>
+<script type="text/javascript" src="tsshell_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><ins id="aswift_0_anchor" style="display: block; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins>
+</center>
+<br>
+<hr>
+<b> 
+<center> 
+<a href="http://www.vectorsite.net/indextt.html">INDEX</a>   
+| <a href="http://www.vectorsite.net/idx_smap.html">SITEMAP</a>
+| <a href="http://www.vectorsite.net/idsearch.html">GOOGLE</a>
+| <a href="http://www.vectorsite.net/imylinks.html">LINKS</a>
+| <a href="http://www.vectorsite.net/idx_ud.html">UPDATES</a>
+| <a href="http://www.vectorsite.net/gblog.html">BLOG</a>
+| <a href="http://gvgpd.proboards.com/">MESSAGEBOARD</a>
+| <a href="http://www.vectorsite.net/imymail.html">EMAIL</a>
+| <a href="http://www.vectorsite.net/index.html">HOME</a>
+</center>
+</b>    
+<hr>    
+<p>
+</p><h1>A Shell Programming Primer</h1>
+<p>
+<em>v1.0.6 / 01 apr 11 / greg goebel / public domain</em>
+</p><p>
+* The UNIX operating system provides a flexible set of simple tools to
+perform a wide variety of system-management, text-processing, and
+general-purpose tasks.  These simple tools can be used in very powerful ways
+by tying them together programmatically, using "shell scripts" or "shell
+programs".
+</p><p>
+The UNIX "shell" itself is a user-interface program that accepts commands
+from the user and executes them.  It can also accept the same commands
+written as a list in a file, along with various other statements that the
+shell can interpret to provide input, output, decision-making, looping,
+variable storage, option specification, and so on.  This file is a shell
+program.
+</p><p>
+Shell programs are, like any other programming language, useful for some
+things but not for others.  They are excellent for system-management tasks
+but not for general-purpose programming of any sophistication.  Shell
+programs, though generally simple to write, are also tricky to debug and slow
+in operation.
+</p><p>
+There are three versions of the UNIX shell:  the original "Bourne shell
+(sh)", the "C shell (csh)" that was derived from it, and the "Korn shell
+(ksh)" that is in predominant use.  The Bourne shell is in popular use as the
+freeware "Bourne-again shell" AKA "bash".
+</p><p>
+This document focuses on the Bourne shell.  The C shell is more powerful but
+has various limitations, and while the Korn shell is clean and more powerful
+than the other two shells, it is a superset of the Bourne shell:  anything
+that runs on a Bourne shell runs on a Korn shell, though the reverse is not
+true.  Since the Bourne shell's capabilities are probably more than most
+people require, there's no reason to elaborate much beyond them in an
+introductory document, and the rest of the discussion will assume use of the
+Bourne shell unless otherwise stated.
+</p><p>
+ </p><hr>  
+<a href="http://www.vectorsite.net/tsshell.html#m1">[1] GETTING STARTED</a><br>
+<a href="http://www.vectorsite.net/tsshell.html#m2">[2] SHELL VARIABLES</a><br>
+<a href="http://www.vectorsite.net/tsshell.html#m3">[3] COMMAND SUBSTITUTION</a><br>
+<a href="http://www.vectorsite.net/tsshell.html#m4">[4] COMMAND-LINE ARGUMENTS</a><br>
+<a href="http://www.vectorsite.net/tsshell.html#m5">[5] DECISION-MAKING &amp; LOOP CONSTRUCTS</a><br>
+<a href="http://www.vectorsite.net/tsshell.html#m6">[6] OTHER SHELL FEATURES</a><br>
+<a href="http://www.vectorsite.net/tsshell.html#m7">[7] USEFUL TOOLS</a><br>
+<a href="http://www.vectorsite.net/tsshell.html#m8">[8] REGULAR EXPRESSIONS</a><br>
+<a href="http://www.vectorsite.net/tsshell.html#m9">[9] GREP, SED, &amp; AWK</a><br>
+<a href="http://www.vectorsite.net/tsshell.html#m10">[10] SHELL PROGRAM EXAMPLES</a><br>
+<a href="http://www.vectorsite.net/tsshell.html#m11">[11] QUICK REFERENCE</a><br>
+<a href="http://www.vectorsite.net/tsshell.html#m12">[12] REVISION HISTORY</a><br>
+ <hr>  
+<p>
+</p><h2><a name="m1">[1] GETTING STARTED</a></h2>
+<p>
+* The first thing to do in understanding shell programs is to understand the
+elementary system commands that can be used in them.  A list of fundamental
+UNIX system commands follows:
+<b><pre>  ls         # Give a simple listing of files.
+  cp         # Copy files.
+  mv         # Move or rename files.
+  rm         # Remove files.  
+  rm -r      # Remove entire directory subtree.
+  cd         # Change directories.
+  pwd        # Print working directory.
+  cat        # Lists a file or files sequentially.
+  more       # Displays a file a screenfull at a time.
+  pg         # Variant on "more".
+  mkdir      # Make a directory.
+  rmdir      # Remove a directory.
+</pre></b>
+The shell executes such commands when they are typed in from the command
+prompt with their appropriate parameters, which are normally options and file
+names.
+</p><p>
+* The shell also allows files to be defined in terms of "wildcard characters"
+that define a range of files.  The "*" wildcard character substitutes for any
+string of characters, so:
+<b><pre>   rm *.txt
+</pre></b>
+-- deletes all files that end with ".txt".  The "?" wildcard character
+substitutes for any single character, so:
+<b><pre>   rm book?.txt
+</pre></b>
+-- deletes "book1.txt", "book2.txt", and so on.  More than one wildcard
+character can be used at a time, for example:
+<b><pre>   rm *book?.txt
+</pre></b>
+-- deletes "book1.txt", "mybook1.txt", "bigbook2.txt", and so on.
+</p><p>
+* Another shell capability is "input and output redirection".  The shell,
+like other UNIX utilities, accepts input by default from what is called
+"standard input", and generates output by default to what is called "standard
+output".  These are normally defined as the keyboard and display,
+respectively, or what is referred to as the "console" in UNIX terms.
+However, standard input or output can be "redirected" to a file or another
+program if needed.  Consider the "sort" command.  This command sorts a list
+of words into alphabetic order; typing in:
+<b><pre>   sort
+   PORKY
+   ELMER
+   FOGHORN
+   DAFFY
+   WILE
+   BUGS
+   &lt;CTL-D&gt;
+</pre></b>
+-- spits back:
+<b><pre>   BUGS
+   DAFFY
+   ELMER
+   FOGHORN
+   PORKY
+   WILE
+</pre></b>
+Note that the CTL-D key input terminates direct keyboard input.  It is also
+possible to store the same words in a file and then "redirect" the
+contents of that file to standard input with the "&lt;" operator:
+<b><pre>   sort &lt; names.txt
+</pre></b>
+This would list the sorted names to the display as before.  They can be
+redirected to a file with the "&gt;" operator:
+<b><pre>   sort &lt; names.txt &gt; output.txt
+</pre></b>
+They can also be appended to an existing file using the "&gt;&gt;" operator:
+<b><pre>   sort &lt; names.txt &gt;&gt; output.txt
+</pre></b>
+In these cases, there's no visible output, since the command just executes
+and ends.  However, if that's a problem, it can be fixed by connecting the
+"tee" command to the output through a "pipe", designated by "|".  This allows
+the standard output of one command to be chained into the standard input of
+another command.  In the case of "tee", it accepts text into its standard
+input and then dumps it both to a file and to standard output:
+<b><pre>   sort &lt; names.txt | tee output.txt
+</pre></b>
+So this both displays the names and puts them in the output file.  Many
+commands can be chained together to "filter" information through several
+processing steps.  This ability to combine the effects of commands is one of
+the beauties of shell programming.  By the way, "sort" has some handy
+additional options:
+<b><pre>   sort -u    # Eliminate redundant lines in output.
+   sort -r    # Sort in reverse order.
+   sort -n    # Sort numbers. 
+   sort -k 2  # Skip first field in sorting.
+</pre></b>
+* If a command generates an error, it is displayed to what is called
+"standard error", instead of standard output, which defaults to the console.
+It will not be redirected by "&gt;".  However, the operator "2&gt;" can be used to
+redirect the error message.  For example:
+<b><pre>   ls xyzzy 2&gt; /dev/null
+</pre></b>
+-- will give an error message if the file "xyzzy" doesn't exist, but the
+error will be redirected to the file "/dev/null".  This is actually a
+"special file" that exists under UNIX where everything sent to it is simply
+discarded.
+</p><p>
+* The shell permits the execution of multiple commands sequentially on one
+line by chaining them with a ";":
+<b><pre>   rm *.txt ; ls
+</pre></b>
+A time-consuming program can also be run in a "parallel" fashion by following
+it with a "&amp;":
+<b><pre>   sort &lt; bigfile.txt &gt; output.txt &amp;
+</pre></b>
+* These commands and operations are essential elements for creating shell
+programs.  They can be stored in a file and then executed by the shell.  To
+tell the shell that the file contains commands, just mark it as "executable"
+with the "chmod" command.  Each file under UNIX has a set of "permission"
+bits, listed by an "ls -l" -- the option providing file details -- as:
+<b><pre>   rwxrwxrwx
+</pre></b>
+The "r" gives "read" permission, the "w" gives "write" permission, and the
+"x" gives "execute" permission.  There are three sets of these permission
+bits, one for the user, one for other members of a local group of users on a
+system, and one for everyone who can access the system -- remember that UNIX
+was designed as a multiuser environment.
+</p><p>
+The "chmod" command can be used to set these permissions, with the
+permissions specified as an octal code.  For example:
+<b><pre>   chmod 644 myfile.txt
+</pre></b>
+This sets both read and write permission on the file for the user, but
+everybody else on the system only gets read permission.  The same octal
+scheme can be used to set execute permission, though it's simpler just to use
+chmod "+x" option:
+<b><pre>   chmod +x mypgm
+</pre></b>
+This done, if the name "mypgm" is entered at the prompt, the shell reads the
+commands out of "mypgm" and executes them.  The execute permission can be
+removed with the "-x" option.
+</p><p>
+For example, suppose we want to be able to inspect the contents of a set of
+archive files stored in the directory "/users/group/archives".  We could
+create a file named "ckarc" and store the following command string in it:
+<b><pre>  ls /users/group/archives | pg
+</pre></b>
+This is a very simple shell program.  As noted, the shell has control
+constructs, supports storage variables, and has several options that can be
+set to allow much more sophisticated programs.  The following sections
+describe these features in a quick outline fashion.  
+</p><p>
+Incidentally, this scheme for creating executable files is for the UNIX
+environment.  Under the Windows environment, the procedure is to end shell
+program file names in a distinctive extension -- ".sh" is a good choice,
+though any unique extension will do -- and then configure Windows to run all
+files with that extension with a UNIX-type shell, usually bash.
+</p><p>
+<a href="http://www.vectorsite.net/tsshell.html"><b>BACK_TO_TOP</b></a>
+</p><p>
+</p><h2><a name="m2">[2] SHELL VARIABLES</a></h2>
+<p>
+* The first useful command to know about in building shell programs is
+"echo", which can be used to produce output from a shell program:
+<b><pre>   echo "This is a test!"
+</pre></b>
+This sends the string "This is a test!"  to standard output.  It is
+recommended to write shell programs that generate some output to inform the
+user of what they are doing.
+</p><p>
+The shell allows variables to be defined to store values.  It's simple, just
+declare a variable is assign a value to it:
+<b><pre>   shvar="This is a test!"
+</pre></b>
+The string is enclosed in double-quotes to ensure that the variable swallows
+the entire string (more on this later), and there are <em>no</em> spaces around
+the "=".  The value of the shell variable can be obtained by preceding it
+with a "$":
+<b><pre>   echo $shvar
+</pre></b>
+This displays "This is a test!".  If no value had been stored in that shell
+variable, the result would have simply been a blank line.  Values stored in
+shell variables can be used as parameters to other programs as well:
+<b><pre>   ls $lastdir
+</pre></b>
+The value stored in a shell variable can be erased by assigning the "null
+string" to the variable:
+<b><pre>   shvar=""
+</pre></b>
+There are some subtleties in using shell variables.  For example, suppose a
+shell program performed the assignment:
+<b><pre>   allfiles=*
+</pre></b>
+-- and then performed:
+<b><pre>   echo $allfiles
+</pre></b>
+This would echo a list of all the files in the directory.  However, only the
+string "*" would be stored in "allfiles".  The expansion of "*" only occurs
+when the "echo" command is executed.
+</p><p>
+Another subtlety is in modifying the values of shell variables.  Suppose we
+have a file name in a shell variable named "myfile" and want to copy that
+file to another with the same name, but with "2" tacked on to the end.  We
+might think to try:
+<b><pre>   mv $myfile $myfile2
+</pre></b>
+-- but the problem is that the shell will think that "myfile2" is a different
+shell variable, and this won't work.  Fortunately, there is a way around
+this; the change can be made as follows:
+<b><pre>   mv $myfile ${myfile}2
+</pre></b>
+A UNIX installation will have some variables installed by default, most
+importantly $HOME, which gives the location of a particular user's home
+directory.
+</p><p>
+As a final comment on shell variables, if one shell program calls another and
+the two shell programs have the same variable names, the two sets of
+variables will be treated as entirely different variables.  To call other
+shell programs from a shell program and have them use the same shell
+variables as the calling program requires use of the "export" command:
+<b><pre>   shvar="This is a test!"
+   export shvar
+   echo "Calling program two."
+   shpgm2
+   echo "Done!"
+</pre></b>
+If "shpgm2" simply contains:
+<b><pre>   echo $shvar
+</pre></b>
+-- then it will echo "This is a test!".
+</p><p>
+<a href="http://www.vectorsite.net/tsshell.html"><b>BACK_TO_TOP</b></a>
+</p><p>
+</p><h2><a name="m3">[3] COMMAND SUBSTITUTION</a></h2>
+<p>
+* The next step is to consider shell command substitution.  Like any
+programming language, the shell does exactly what it is told to do, and so it
+is important to be very specific when telling it to do something.  As an
+example, consider the "fgrep" command, which searches a file for a string.
+For example, to search a file named "source.txt" for the string "Coyote",
+enter:
+<b><pre>   fgrep Coyote source.txt
+</pre></b>
+-- and it would print out the matching lines.  However, suppose we wanted to
+search for "Wile E. Coyote".  If we did this as:
+<b><pre>   fgrep Wile E. Coyote source.txt
+</pre></b>
+-- we'd get an error message that "fgrep" couldn't open "E.".  The string has
+to be enclosed in double-quotes (""):
+<b><pre>   fgrep "Wile E. Coyote" source.txt
+</pre></b>
+If a string has a special character in it, such as "*" or "?", that must be
+interpreted as a "literal" and not a wildcard, the shell can get a little
+confused.  To ensure that the wildcards are not interpreted, the wildcard can
+either be "escaped" with a backslash ("\*" or "\?") or the string can be
+enclosed in single quotes, which prevents the shell from interpreting any of
+the characters within the string.  For example, if:
+<b><pre>   echo "$shvar"
+</pre></b>
+-- is executed from a shell program, it would output the value of the shell
+variable "$shvar".  In contrast, executing:
+<b><pre>   echo '$shvar'
+</pre></b>
+-- the output is the string "$shvar".
+</p><p>
+* Having considered "double-quoting" and "single-quoting", let's now consider
+"back-quoting".  This is a little tricky to explain.  As a useful tool,
+consider the "expr" command, which can be used to perform simple math from
+the command line:
+<b><pre>   expr 2 + 4
+</pre></b>
+This displays the value "6".  There must be spaces between the parameters; in
+addition, to perform a multiplication the "*" has to be "escaped" so the
+shell doesn't interpret it:
+<b><pre>   expr 3 \* 7 
+</pre></b>
+Now suppose the string "expr 12 / 3" has been stored in a shell variable
+named "shcmd"; then executing:
+<b><pre>   echo $shcmd
+</pre></b>
+-- or:
+<b><pre>   echo "$shcmd"
+</pre></b>
+-- would simply produce the text "expr 12 / 3".  If single-quotes were used:
+<b><pre>   echo '$shcmd'
+</pre></b>
+-- the result would be the string "$shcmd".  However, if <em>back</em>-quotes,
+the reverse form of a single quote, were used:
+<b><pre>   echo `$shcmd`
+</pre></b>
+-- the result would be the value "4", since the string inside "shcmd" is
+executed.  This is an extremely powerful technique that can be very confusing
+to use in practice.
+</p><p>
+<a href="http://www.vectorsite.net/tsshell.html"><b>BACK_TO_TOP</b></a>
+</p><p>
+</p><h2><a name="m4">[4] COMMAND-LINE ARGUMENTS</a></h2>
+<p>
+* In general, shell programs operate in a "batch" mode, that is, without
+interaction from the user, and so most of their parameters are obtained on
+the command line.  Each argument on the command line can be seen inside the
+shell program as a shell variable of the form "$1", "$2", "$3", and so on,
+with "$1" corresponding to the first argument, "$2" the second, "$3" the
+third, and so on.
+</p><p>
+There is also a "special" argument variable, "$0", that gives the name of the
+shell program itself.  Other special variables include "$#", which gives the
+number of arguments supplied, and "$*", which gives a string with <em>all</em> the
+arguments supplied.
+</p><p>
+Since the argument variables are in the range "$1" to "$9", so what happens
+there's more than 9 arguments?  No problem, the "shift" command can be used
+to move the arguments down through the argument list.  That is, when "shift"
+is executed, then the second argument becomes "$1", the third argument
+becomes "$2", and so on; and if a "shift" is performed again, the third
+argument becomes "$1"; and so on.  A count can be specified to cause a
+multiple shift:
+<b><pre>   shift 3
+</pre></b>
+-- shifts the arguments three times, so that the fourth argument ends up in
+"$1".
+</p><p>
+<a href="http://www.vectorsite.net/tsshell.html"><b>BACK_TO_TOP</b></a>
+</p><p>
+</p><h2><a name="m5">[5] DECISION-MAKING &amp; LOOP CONSTRUCTS</a></h2>
+<p>
+* Shell programs can perform conditional tests on their arguments and
+variables and execute different commands based on the results.  For example:
+<b><pre>   if [ "$1" = "hyena" ]
+   then
+     echo "Sorry, hyenas not allowed."
+     exit
+   elif [ "$1" = "jackal" ]
+   then
+     echo "Jackals not welcome."
+     exit
+   else
+     echo "Welcome to Bongo Congo."
+   fi 
+   echo "Do you have anything to declare?"
+</pre></b>
+-- checks the command line to see if the first argument is "hyena" or
+"jackal" and bails out, using the "exit" command, if they are.  Other
+arguments allow the rest of the file to be executed.  Note how "$1" is
+enclosed in double quotes, so the test will not generate an error message if
+it yields a null result.
+</p><p>
+There are a wide variety of such test conditions:
+<b><pre>   [ "$shvar" = "fox" ]    String comparison, true if match.
+   [ "$shvar" != "fox" ]   String comparison, true if no match.
+   [ "$shvar" = "" ]       True if null variable.
+   [ "$shvar" != "" ]      True if not null variable.
+
+   [ "$nval" -eq 0 ]       Integer test; true if equal to 0.
+   [ "$nval" -ge 0 ]       Integer test; true if greater than or equal to 0.
+   [ "$nval" -gt 0 ]       Integer test; true if greater than 0.
+   [ "$nval" -le 0 ]       Integer test; true if less than or equal to 0.
+   [ "$nval" -lt 0 ]       Integer test; true if less than to 0.
+   [ "$nval" -ne 0 ]       Integer test; true if not equal to 0.
+
+   [ -d tmp ]              True if "tmp" is a directory.
+   [ -f tmp ]              True if "tmp" is an ordinary file.
+   [ -r tmp ]              True if "tmp" can be read.
+   [ -s tmp ]              True if "tmp" is nonzero length.
+   [ -w tmp ]              True if "tmp" can be written.
+   [ -x tmp ]              True if "tmp" is executable.
+</pre></b>
+Incidentally, in the example above:
+<b><pre>   if [ "$1" = "hyena" ]
+</pre></b>
+-- there is a potential pitfall in that a user might enter, say, "-d" as a
+command-line parameter, which would cause an error when the program was run.
+Now there is only so much that can be done to save users from their own
+clumsiness, and "bullet-proofing" simple example programs tends to make them
+not so simple any more, but there is a simple if a bit cluttered fix for such
+a potential pitfall.  It is left as an exercise for the reader.
+</p><p>
+There is also a "case" control construct that checks for equality with a
+list of items.  It can be used with the example at the beginning of this
+section:
+<b><pre>   case "$1" 
+   in
+     "gorilla")  echo "Sorry, gorillas not allowed."
+                 exit;;
+     "hyena")    echo "Hyenas not welcome."
+                 exit;;
+     *)          echo "Welcome to Bongo Congo.";;
+   esac
+</pre></b>
+The string ";;" is used to terminate each "case" clause.
+</p><p>
+* The fundamental loop construct in the shell is based on the "for" command.
+For example:
+<b><pre>   for nvar in 1 2 3 4 5
+   do
+     echo $nvar
+   done
+</pre></b>
+-- echoes the numbers 1 through 5.  The names of all the files in the current
+directory could be displayed with:
+<b><pre>   for file in *
+   do
+     echo $file
+   done
+</pre></b>
+One nice little feature of the shell is that if the "in" parameters are not
+specified for the "for" command, it just cycles through the command-line
+arguments. 
+</p><p>
+* There is a "break" command to exit a loop if necessary:
+<b><pre>   for file
+   do
+     if [ "$file" = punchout ]
+     then 
+       break
+     else
+       echo $file
+     fi
+   done
+</pre></b>
+There is also a "continue" command that starts the next iteration of the loop
+immediately.  There <em>must</em> be a command in the "then" or "else" clauses, or
+the result is an error message.  If it's not convenient to actually do
+anything in the "then" clause, a ":" can be used as a "no-op" command:
+<b><pre>   then
+     :
+   else
+</pre></b>
+* There are two other looping constructs available as well, "while" and
+"until".  For an example of "while":
+<b><pre>   n=10
+   while [ "$n" -ne 0 ]
+   do
+     echo $n
+     n=`expr $n - 1`
+   done
+</pre></b>
+-- counts down from 10 to 1.  The "until" loop has similar syntax but tests
+for a false condition:
+<b><pre>   n=10
+   until [ "$n" -eq 0 ]
+   do
+   ...
+</pre></b>
+<a href="http://www.vectorsite.net/tsshell.html"><b>BACK_TO_TOP</b></a>
+</p><p>
+</p><h2><a name="m6">[6] OTHER SHELL FEATURES</a></h2>
+<p>
+* There are other useful features available for writing shell programs.  For
+example, comments can be placed in shell programs by preceding the comments
+with a "#":
+<b><pre>   # This is an example shell program.
+   cat /users/group/grouplog.txt | pg    # Read group log file.
+</pre></b>
+It is strongly recommended to comment <em>all</em> shell programs.  If they are
+just one-liners, a simple comment line at the top of the file will do.  If
+they are complicated shell programs, they should have a title, revision
+number, revision date, and revision history along with descriptive comments.
+This will prevent confusion if multiple versions of the same shell program
+are found, or if the program is modified later.  Shell programs can be
+obscure, even by the standards of programming languages, and it is useful to
+provide a few hints.
+</p><p>
+* Standard input can be read into a shell program using the "read" command.
+For example:
+<b><pre>   echo "What is your name?"
+   read myname
+   echo $myname
+</pre></b>
+-- echoes the user's own name.  The "read" command will read each item of
+standard input into a list of shell variables until it runs out of shell
+variables, and then it will read all the rest of standard input into the last
+shell variable.  As a result, in the example above, the user's name is stored
+into "myname".
+</p><p>
+* If a command is too long to fit on one line, the line continuation
+character "\" can be used to put it on more than one line:
+<b><pre>   echo "This is a test of \
+         the line continuation character."
+</pre></b>
+* There is a somewhat cryptic command designated by "."  that executes a file
+of commands within a shell program.  For example:
+<b><pre>  . mycmds
+</pre></b>
+-- will execute the commands stored in the file "mycmds".  It's something
+like an "include" command in other languages.
+</p><p>
+* For debugging, the execution of a shell program can be traced using the
+"-x" option with the shell:
+<b><pre>   sh -x mypgm *
+</pre></b>
+This traces out the steps "mypgm" takes during the course of its operation.
+</p><p>
+* One last comment on shell programs before proceeding:  What happens if with
+a shell program that just performs, say:
+<b><pre>  cd /users/coyote
+</pre></b>
+-- to change to another directory?  Well ... nothing happens.
+After the shell program runs and exits, the directory remains unchanged.
+The reason is that the shell creates a new shell, or "subshell", to run the
+shell program, and when the shell program is finished, the subshell vanishes,
+along with any changes made in that subshell's environment.  It is easier, at
+least in this simple case, to define a command alias in the UNIX "login"
+shell instead of struggling with the problem in shell programs.
+</p><p>
+<a href="http://www.vectorsite.net/tsshell.html"><b>BACK_TO_TOP</b></a>
+</p><p>
+</p><h2><a name="m7">[7] USEFUL TOOLS</a></h2>
+<p>
+* Before we go on to practical shell programs, let's consider a few more
+useful tools.
+</p><p>
+The "paste" utility takes a list of text files and concatenates them on a
+line-by-line basis.  For example:
+<b><pre>   paste names.txt phone.txt &gt; data.txt
+</pre></b>
+-- takes a file containing names and a file containing corresponding phone
+numbers and generates a file with each name and number "pasted" together on
+the same line.
+</p><p>
+* The "head" and "tail" utilities list the first 10 or last 10 lines in a
+file respectively.  The number of lines to be listed can be specified if 
+needed:
+<b><pre>   head -n -5 source.txt      # List first 5 lines.
+   tail -n -5 source.txt      # List last 5 lines.
+   tail -n +5 source.txt      # List all lines from line 5.
+</pre></b>
+* The "tr" utility translates from one set of characters to another.  For
+example, to translate uppercase characters to lowercase characters:
+<b><pre>   tr '[A-Z]' '[a-z]' &lt; file1.txt &gt; file2.txt
+</pre></b>
+The reverse conversion can of course be made using:
+<b><pre>   tr '[a-z]' '[A-Z]' &lt; file1.txt &gt; file2.txt
+</pre></b>
+The "-d" option deletes a character.  For example:
+<b><pre>   tr -d '*'
+</pre></b>
+-- deletes all asterisks from the input stream.  Note that "tr" only works on
+single characters.
+</p><p>
+* The "uniq" utility removes duplicate consecutive lines from a file.  It has
+the syntax:
+<b><pre>   uniq source.txt output.txt
+</pre></b>
+A "-c" option provides an additional count of the number of times a line was
+duplicated, while a "-d" option displays only the duplicated lines in a file.
+</p><p>
+* The "wc (word count)" utility tallies up the characters, words, and lines
+of text in a text file.  It can be invoked with the following options:
+<b><pre>    wc -c        # Character count only.
+    wc -w        # Word count only.
+    wc -l        # Line count only.
+</pre></b>
+* The "find" utility is extremely useful, if a little hard to figure out.
+Essentially, it traverses a directory subtree and performs whatever action
+specified on every match.  For example:
+<b><pre>   find / -name findtest.txt -print
+</pre></b>
+This searches from the root directory ("/") for "findtest.txt", as designated
+by the "-name" option, and then prints the full pathname of the file, as
+designated by the "-print" option.  Incidentally, "find" must be told what
+to do on a match; it will not by default say or do anything, it will just 
+keep right on searching.
+</p><p>
+There are a wide variety of selection criteria.  Simply printing out the
+names of directories in a search can be done with:
+<b><pre>   find . -type d -print
+</pre></b>
+Files can also be found based on their username, date of last modification,
+size, and so on.
+</p><p>
+<a href="http://www.vectorsite.net/tsshell.html"><b>BACK_TO_TOP</b></a>
+</p><p>
+</p><h2><a name="m8">[8] REGULAR EXPRESSIONS</a></h2>
+<p>
+* An advanced set of tools can be used to perform searches on text strings in
+files and, in some cases, manipulate the strings found.  These tools are
+known as "grep", "sed", and "awk" and are based on the concept of a "regular
+expression", which is a scheme by which specific text patterns can be
+specified by a set of special or "magic" characters.
+</p><p>
+The simplest regular expression is just the string being searched for.  For
+example:
+<b><pre>   grep Taz *.txt
+</pre></b>
+-- finds every example of the string "Taz" in all files ending in ".txt",
+then displays the name of the file and the line of text containing the
+string.
+</p><p>
+But using the magic characters provides much more flexibility.  For example:
+<b><pre>   grep ^Taz *.txt
+</pre></b>
+-- finds the string "Taz" <em>only</em> if it is at the beginning of the line.
+Similarly:
+<b><pre>   grep Taz$ *.txt
+</pre></b>
+-- matches it <em>only</em> if it is at the end of the line.  
+</p><p>
+Now suppose we want to match both "Taz" and "taz".  This can be done
+with:
+<b><pre>  [Tt]az
+</pre></b>
+The square brackets ("[]") can be used to specify a range of characters.  For
+example:
+<b><pre>   group_[abcdef]
+</pre></b>
+-- matches the strings "group_a", "group_b", and so on up to "group_f".  This
+range specification can be simplified to:
+<b><pre>   group_[a-f]
+</pre></b>
+Similarly:
+<b><pre>   set[0123456789]
+</pre></b>
+-- can be simplified to:
+<b><pre>   set[0-9]
+</pre></b>
+It is also possible to match to all characters <em>except</em> a specific range.
+For example:
+<b><pre>   unit_[^xyz]
+</pre></b>
+-- matches "unit_a" or "unit_b", but not "unit_x" or "unit_y" or "unit_z".
+</p><p>
+Other magic characters provide a wildcard capability.  The "."  character can
+substitute for any single character, while the "*" substitutes for zero or
+more repetitions of the preceding regular expression.  For example:
+<b><pre>   __*$
+</pre></b>
+-- matches any line that is padded with spaces to the right margin (for
+clarity the space character is represented here by a "_").  If a magic
+character is to be matched as a real item of text, it has to be "escaped"
+with a "\":
+<b><pre>   test\.txt
+</pre></b>
+This matches "test.txt".
+</p><p>
+<a href="http://www.vectorsite.net/tsshell.html"><b>BACK_TO_TOP</b></a>
+</p><p>
+</p><h2><a name="m9">[9] GREP, SED, &amp; AWK</a></h2>
+<p>
+* Now that we understand regular expressions, we can consider "grep", "sed",
+and "awk" in more detail.
+</p><p>
+The name of "grep" seems distinctly non-user-friendly, but it can be regarded
+as standing for "general regular expression processor"; as noted it searches
+a file for matches to a regular expression like "^Taz" or "_*$".  It has a
+few useful options as well.  For example:
+<b><pre>   grep -v &lt;regular_expression&gt; &lt;file_list&gt;
+</pre></b>
+-- lists all lines that <em>don't</em> match the regular expression.  Other options
+include:
+<b><pre>   grep -n      # List line numbers of matches.
+   grep -i      # Ignore case.
+   grep -l      # Only list file names for a match.
+</pre></b>
+If there's no need to go through the bother of using regular expressions in a
+particular search, there is a variation on "grep" called "fgrep" (meaning
+"fixed grep" or "fast grep") that searches for matches on strings and runs
+faster; it was used in an earlier example.  It uses the same options as
+described for "grep" above.
+</p><p>
+* The name "sed" stands for "stream editor" and it provides, in general, a
+search-and-replace capability.  Its syntax for this task is as follows:
+<b><pre>   sed 's/&lt;regular_expression&gt;/&lt;replacement_string&gt;/[g]' source.txt
+</pre></b>
+The optional "g" parameter specifies a "global" replacement.  That is, if
+there are have multiple matches on the same line, "sed" will replace them
+all.  Without the "g" option, it will only replace the first match on that
+line.  For example, "sed" can be used to replace the string "flack" with
+"flak" as follows:
+<b><pre>   sed 's/flack/flak/g' source.txt &gt; output.txt
+</pre></b>
+It can also delete strings:
+<b><pre>   sed 's/bozo//'
+</pre></b>
+-- or perform substitutions and deletions from a list of such specifications
+stored in a file:
+<b><pre>   sed -f sedcmds.txt source.txt &gt; output.txt
+</pre></b>
+Another useful feature stops output on a pattern match:
+<b><pre>   sed '/^Target/q' source.txt &gt; output.txt
+</pre></b>
+It is also possible to append a file to the output after a pattern match:
+<b><pre>   sed '/^Target/ r newtext.txt' source.txt &gt; output.txt
+</pre></b>
+The "sed" utility has a wide variety of other options, but a full discussion
+of its capabilities is beyond the scope of this document.
+</p><p>
+* Finally, "awk" is a full-blown text processing language that looks
+something like a mad cross between "grep" and "C".  In operation, "awk" takes
+each line of input and performs text processing on it.  It recognizes the
+current line as "$0", with each word in the line recognized as "$1", "$2",
+"$3", and so on.  This means that:
+<b><pre>   awk '{ print $0,$0 }' source.txt
+</pre></b>
+-- prints each line with duplicate text.  A regular expression can be
+specified to identify a pattern match.  For example, "awk" could tally the
+lines with the word "Taz" on them with:
+<b><pre>   awk '/Taz/  { taz++ }; END { print taz }' source.txt
+</pre></b>
+The END clause used in this example allows execution of "awk" statements
+after the line-scanning has been completed.  There is also a BEGIN clause
+that allows execution of "awk" statements before line-scanning begins.  "Awk"
+can be used to do very simple or very complicated things.  Its syntax is much
+like that of "C", though it is much less finicky to deal with.  Details of
+"awk" are discussed in a companion document.
+</p><p>
+<a href="http://www.vectorsite.net/tsshell.html"><b>BACK_TO_TOP</b></a>
+</p><p>
+</p><h2><a name="m10">[10] SHELL PROGRAM EXAMPLES</a></h2>
+<p>
+* The most elementary use of shell programs is to reduce complicated command
+strings to simpler commands and to provide handy utilities.  For example, I
+can never remember the options for compiling an ANSI C program, so I store
+them in a script program named "compile":
+<b><pre>   cc $1.c -Aa -o $1
+</pre></b>
+Similarly, I like to timestamp my documents in a particular format, so I have
+a shell program named "td" ("timedate") that invokes "date" as follows:
+<b><pre>   date +"date: %A, %d %B %Y %H%M %Z"
+</pre></b>
+This gives, for example:
+<b><pre>   date: Friday, 24 November 1995 1340 MST
+</pre></b>
+Another simple example is a shell script to convert file names from uppercase
+to lowercase:
+<b><pre>   for file
+   do
+     mv $file `echo $file | tr "[A-Z]" "[a-z]"`
+   done
+</pre></b>
+In this example, "for" is used to sequence through the file arguments, and of
+"tr" and back-quoting are used to establish the lower-case name for the file.
+</p><p>
+<a href="http://www.vectorsite.net/tsshell.html"><b>BACK_TO_TOP</b></a>
+</p><p>
+</p><h2><a name="m11">[11] QUICK REFERENCE</a></h2>
+<p>
+* This final section provides a fast lookup reference for the materials in
+this document. 
+</p><p>
+* Useful commands:
+<b><pre>   cat                  # Lists a file or files sequentially.
+   cd                   # Change directories.
+   chmod +x             # Set execute permissions.
+   chmod 666            # Set universal read-write permissions.
+   cp                   # Copy files.
+   expr 2 + 2           # Add 2 + 2.
+   fgrep                # Search for string match.
+   grep                 # Search for string pattern matches.
+   grep -v              # Search for no match.
+   grep -n              # List line numbers of matches.
+   grep -i              # Ignore case.
+   grep -l              # Only list file names for a match.
+   head -5 source.txt   # List first 5 lines.
+   ls                   # Give a simple listing of files.
+   mkdir                # Make a directory.
+   more                 # Displays a file a screenfull at a time.
+   mv                   # Move or rename files.
+   paste f1 f2          # Paste files by columns.
+   pg                   # Variant on "more".
+   pwd                  # Print working directory.
+   rm                   # Remove files.  
+   rm -r                # Remove entire directory subtree.
+   rmdir                # Remove a directory.
+   sed 's/txt/TXT/g'    # Scan and replace text.
+   sed 's/txt//'        # Scan and delete text.
+   sed '/txt/q'         # Scan and then quit.
+   sort                 # Sort input.
+   sort +1              # Skip first field in sorting. 
+   sort -n              # Sort numbers. 
+   sort -r              # Sort in reverse order.
+   sort -u              # Eliminate redundant lines in output.
+   tail -5 source.txt   # List last 5 lines.
+   tail +5 source.txt   # List all lines after line 5.
+   tr '[A-Z]' '[a-z]'   # Translate to lowercase.
+   tr '[a-z]' '[A-Z]'   # Translate to uppercase.
+   tr -d '_'            # Delete underscores.
+   uniq                 # Find unique lines. 
+   wc                   # Word count (characters, words, lines).
+   wc -w                # Word count only.
+   wc -l                # Line count.
+</pre></b>
+* Elementary shell capabilities:
+<b><pre>   shvar="Test 1"       # Initialize a shell variable.
+   echo $shvar          # Display a shell variable.
+   export shvar         # Allow subshells to use shell variable.
+   mv $f ${f}2          # Append "2" to file name in shell variable.
+   $1, $2, $3, ...      # Command-line arguments.
+   $0                   # Shell-program name.
+   $#                   # Number of arguments.
+   $*                   # Complete argument list.
+   shift 2              # Shift argument variables by 2.
+   read v               # Read input into variable "v".
+   . mycmds             # Execute commands in file.
+</pre></b>
+* IF statement:
+<b><pre>   if [ "$1" = "red" ]
+   then
+     echo "Illegal code."
+     exit
+   elif [ "$1" = "blue" ]
+   then
+     echo "Illegal code."
+     exit
+   else
+     echo "Access granted."
+   fi 
+
+   [ "$shvar" = "red" ]     String comparison, true if match.
+   [ "$shvar" != "red" ]    String comparison, true if no match.
+   [ "$shvar" = "" ]        True if null variable.
+   [ "$shvar" != "" ]       True if not null variable.
+
+   [ "$nval" -eq 0 ]        Integer test; true if equal to 0.
+   [ "$nval" -ge 0 ]        Integer test; true if greater than or equal to 0.
+   [ "$nval" -gt 0 ]        Integer test; true if greater than 0.
+   [ "$nval" -le 0 ]        Integer test; true if less than or equal to 0.
+   [ "$nval" -lt 0 ]        Integer test; true if less than to 0.
+   [ "$nval" -ne 0 ]        Integer test; true if not equal to 0.
+
+   [ -d tmp ]               True if "tmp" is a directory.
+   [ -f tmp ]               True if "tmp" is an ordinary file.
+   [ -r tmp ]               True if "tmp" can be read.
+   [ -s tmp ]               True if "tmp" is nonzero length.
+   [ -w tmp ]               True if "tmp" can be written.
+   [ -x tmp ]               True if "tmp" is executable.
+</pre></b>
+* CASE statement:
+<b><pre>   case "$1" 
+   in
+     "red")      echo "Illegal code."
+                 exit;;
+     "blue")     echo "Illegal code."
+                 exit;;
+     *)          echo "Access granted.";;
+   esac
+</pre></b>
+* Loop statements:
+<b><pre>   for nvar in 1 2 3 4 5
+   do
+     echo $nvar
+   done 
+
+   for file            # Cycle through command-line arguments.
+   do
+     echo $file
+   done
+
+   while [ "$n" != "Joe" ]     # Or:   until [ "$n" = "Joe" ]
+   do
+     echo "What's your name?"
+     read n
+     echo $n
+   done
+</pre></b>
+There are "break" and "continue" commands that exit or skip to the end of
+loops as the need arises.
+</p><p>
+<a href="http://www.vectorsite.net/tsshell.html"><b>BACK_TO_TOP</b></a>
+</p><p>
+</p><h2><a name="m12">[12] REVISION HISTORY</a></h2>
+<p>
+* This document was originally written during the 1990s, but I yanked it in
+2001 since it didn't seem to be attracting much attention.  In the spring of
+2003 I retrieved it and put it back up, since I realized it offered some
+value and it made no sense just to keep it archived, gathering dust.
+</p><p>
+Unfortunately, by that time I had lost track of its revision history.  For
+want of anything better to do, I simply gave the resurrected document the
+initial revcode of "v1.0.0".  I believe it is unlikely that any earlier
+versions of this document are available on the Internet, but since I had
+switched from a two-digit revcode format ("v1.0") to a three-digit format
+("v1.0.0") in the interim, any earlier copies will have a two-digit revcode.
+</p><p>
+* One last thing to keep the copyright cops happy:  UNIX was originally a
+trademark of AT&amp;T Bell Labs; the trademark has changed hands a number of
+times and is now, as best I can tell, a trademark of the Open Group.  Once
+upon a time the trademark issue was so stuffy that most folks wrote UNIX as
+"UN*X" just to avoid trouble, but those days are over.
+</p><p>
+* Revision history:
+<b><pre>   v1.0.0 / gvg / 01 may 03 / Posted as INTRODUCTION TO SHELL PROGRAMMING.
+   v1.0.1 / gvg / 01 nov 04 / Minor corrections.
+   v1.0.2 / gvg / 01 mar 06 / Minor fixes.
+   v1.0.3 / gvg / 01 feb 08 / Minor fixes.
+   v1.0.4 / gvg / 01 may 09 / General cleanup, changed to PRIMER.
+   v1.0.5 / gvg / 01 jun 09 / Yet more little tweaks.
+   v1.0.6 / gvg / 01 apr 11 / Review &amp; polish.
+</pre></b>
+<a href="http://www.vectorsite.net/tsshell.html"><b>BACK_TO_TOP</b></a>
+</p><hr>
+<b> 
+<center> 
+<a href="http://www.vectorsite.net/indextt.html">INDEX</a>   
+| <a href="http://www.vectorsite.net/idx_smap.html">SITEMAP</a>
+| <a href="http://www.vectorsite.net/idsearch.html">GOOGLE</a>
+| <a href="http://www.vectorsite.net/imylinks.html">LINKS</a>
+| <a href="http://www.vectorsite.net/idx_ud.html">UPDATES</a>
+| <a href="http://www.vectorsite.net/gblog.html">BLOG</a>
+| <a href="http://gvgpd.proboards.com/">MESSAGEBOARD</a>
+| <a href="http://www.vectorsite.net/imymail.html">EMAIL</a>
+| <a href="http://www.vectorsite.net/index.html">HOME</a>
+</center>
+</b>    
+<hr>    
+<center>
+<br>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7060065211892894";
+google_ad_width = 728;
+google_ad_height = 15;
+google_ad_format = "728x15_0ads_al_s";
+google_ad_channel = "";
+//-->
+</script>
+<script type="text/javascript" src="tsshell_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 15px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><ins id="aswift_1_anchor" style="display: block; border: medium none; height: 15px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="15" scrolling="no" width="728"></iframe></ins></ins>
+<br>
+<a href="http://www.vectorsite.net/idredir.html"><img src="tsshell_files/advector.png"></a>
+</center>
+<br>
+<hr>
+<script id="aptureScript" type="text/javascript" src="tsshell_files/apture.js" charset="utf-8">
+</script>
+<iframe style="position: absolute; top: 0px; right: 0px; width: 0pt; height: 0pt;" frameborder="0"></iframe></body></html>

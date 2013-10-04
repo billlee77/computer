@@ -1,0 +1,707 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>   HowTo: Linux / UNIX List Just Directories Or Directory Names</title>
+
+<link rel="stylesheet" href="good_ls_find_tip_files/themesv_19.css" type="text/css" media="screen, projection">
+<!--[if lte IE 8]><link rel="stylesheet" href="http://files.cyberciti.biz/assets/faq/ie.css?v=19" type="text/css" media="screen, projection" /><![endif]-->
+<link rel="alternate" type="application/rss+xml" title="Frequently Asked Questions About Linux / UNIX RSS Feed" href="http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks">
+<link rel="pingback" href="http://www.cyberciti.biz/faq/xmlrpc.php">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.cyberciti.biz/faq/xmlrpc.php?rsd">
+<script src="good_ls_find_tip_files/ga.js" type="text/javascript"></script><script src="good_ls_find_tip_files/a_002.js" type="text/javascript"></script><script src="good_ls_find_tip_files/a.js" type="text/javascript"></script>
+<link rel="shortcut icon" href="http://files.cyberciti.biz/assets/i/favicon.ico" type="image/x-icon">
+<meta name="ROBOTS" content="NOARCHIVE">
+<link rel="alternate" type="application/rss+xml" title="Frequently Asked Questions About Linux / UNIX » HowTo: Linux / UNIX List Just Directories Or Directory Names Comments Feed" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/feed/">
+<script type="text/javascript" src="good_ls_find_tip_files/comment-reply.js"></script>
+<link rel="stylesheet" href="good_ls_find_tip_files/orgSeries.css" type="text/css" media="screen"></head><body class="custom">
+<div id="container">
+<div id="page">
+<ul class="menu">
+<li><a href="http://www.cyberciti.biz/tips/about-us" title="About us">About</a></li>
+<li><a href="http://www.cyberciti.biz/" title="Blog">Blog</a></li>
+<li><a href="http://nixcraft.com/" title="Linux / UNIX Tech Support Forum">Forum</a></li>
+<li><a href="http://www.cyberciti.biz/low.html?utm_source=graphicsversion&amp;utm_campaign=faq&amp;utm_medium=link" title="See site in low graphics bandwidth friendly mode">Low graphics</a></li>
+<li><a href="http://bash.cyberciti.biz/" title="Linux/UNIX Shell scripts">Shell Scripts</a></li>
+<li class="rss"><a href="http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" title="Frequently Asked Questions About Linux / UNIX RSS Feed" rel="nofollow">RSS/Feed</a></li>
+</ul>
+	<div id="header">
+<div id="leaderboard"><div id="lbtop"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7825705102693166";
+/* cyberciti.biz-top 728x90 */
+google_ad_slot = "3400670370";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="good_ls_find_tip_files/show_ads.js">
+</script><script src="good_ls_find_tip_files/expansion_embed.js"></script><script src="good_ls_find_tip_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins id="google_ads_frame1_anchor" style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="good_ls_find_tip_files/ads.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins></div></div><div id="crumbslogo"><a href="http://www.cyberciti.biz/faq/">Linux FAQ / Howtos</a></div>	</div>
+	<div id="content_box">
+		<div id="content" class="hfeed">
+
+			<div class="post-366 post type-post hentry category-bash-shell category-linux category-unix tag-directory-names tag-find-command tag-grep-command tag-linux tag-list-directory tag-ls-command tag-unix post_box top" id="post-366">
+				<div class="headline_area">
+<!-- google_ad_section_start -->					<h1 class="entry-title">HowTo: Linux / UNIX List Just Directories Or Directory Names</h1>
+					<p class="headline_meta">by <span class="author vcard fn">Vivek Gite</span> on <abbr class="published" title="2006-09-28">September 28, 2006</abbr> · <span><a href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/#comments" rel="nofollow">27 comments</a></span></p>
+				</div>
+				<div class="format_text entry-content">
+<div style="float: right; margin-top: 0px; margin-left: 5px;"><a href="http://www.cyberciti.biz/faq/category/unix/" title="See all UNIX related articles/faq"><img src="good_ls_find_tip_files/unix-logo.gif" border="0"></a></div>
+<p><span class="drop_cap">H</span>ow do I list just directory names under Linux and UNIX operating systems?<br>
+<span id="more-366"></span><br> Under Linux or UNIX use the ls command
+to list files and directories. However, ls does not have an option to
+list only directories. You can use combination of ls and grep to list
+directory names only.</p>
+<h2>Display or list all directories</h2>
+<p>Type the following command:<br>
+<code>$ ls -l | egrep `^d'</code></p>
+<div style="float: right; margin-top: 0px; margin-left: 5px;"><a href="http://www.cyberciti.biz/faq/category/bash-shell/" title="See all Bash/Shell scripting related FAQ"><img src="good_ls_find_tip_files/terminal.png" border="0"></a></div>
+<h2>Display or list only files </h2>
+<p>Type the following command:<br>
+<code>$ ls -l | egrep -v `^d'</code></p>
+<p>grep command used to searches input. It will filter out directories
+name by matching first character d. To reverse effect (just to display
+files) you need to pass -v option. It invert the sense of matching, to
+select non-matching lines.</p>
+<h2>Task: Create aliases to save time</h2>
+<p>You can create two aliases as follows to list only directories and files.<br>
+<code>alias lf="ls -l | egrep -v '^d'"<br>
+alias ldir="ls -l | egrep '^d'"<br>
+</code><br>
+Put above two aliases in your bash shell startup file:<br>
+<code>$ cd<br>
+$ vi .bash_profile<br>
+</code><br>
+Append two lines:<br>
+<code>alias lf="ls -l | egrep -v '^d'"<br>
+alias ldir="ls -l | egrep '^d'"</code><br>
+Save and close the file.</p>
+<p>Now just type lf - to list files and ldir - to list directories only:<br>
+<code>$ cd /etc<br>
+$ lf</code><br>
+Output:
+</p><pre>-rw-r--r--   1 root root      2149 2006-09-04 23:25 adduser.conf
+-rw-r--r--   1 root root        44 2006-09-29 05:11 adjtime
+-rw-r--r--   1 root root       197 2006-09-04 23:48 aliases
+-rw-------   1 root root       144 2002-01-18 13:43 at.deny
+-rw-r--r--   1 root root       162 2006-09-22 23:24 aumixrc
+-rw-r--r--   1 root root        28 2006-09-22 23:24 aumixrc1
+....
+..
+....
+</pre>
+<p>List directory names only:<br>
+<code>$ cd /etc<br>
+$ ldir</code>Output:
+</p><pre>drwxr-xr-x   4 root root      4096 2006-09-22 16:41 alsa
+drwxr-xr-x   2 root root      4096 2006-09-20 20:59 alternatives
+drwxr-xr-x   6 root root      4096 2006-09-22 16:41 apm
+drwxr-xr-x   3 root root      4096 2006-09-07 02:51 apt
+drwxr-xr-x   2 root root      4096 2006-09-08 01:46 bash_completion.d
+....
+.....
+.
+</pre>
+<h2>find command</h2>
+<p>The find command can be used as follows to list all directories in /nas, enter:</p>
+<pre class="bash"><span style="color: rgb(194, 12, 185); font-weight: bold;">find</span> /nas -<span style="color: rgb(122, 8, 116); font-weight: bold;">type</span> d
+<span style="color: rgb(194, 12, 185); font-weight: bold;">find</span> /nas -<span style="color: rgb(122, 8, 116); font-weight: bold;">type</span> d -<span style="color: rgb(194, 12, 185); font-weight: bold;">ls</span>
+<span style="color: rgb(194, 12, 185); font-weight: bold;">find</span> . -<span style="color: rgb(122, 8, 116); font-weight: bold;">type</span> d -<span style="color: rgb(194, 12, 185); font-weight: bold;">ls</span></pre>
+<p>Sample outputs:</p>
+<pre>1070785    8 drwxrwxrwt   8 root     root         4096 Jul  5 07:12 .
+1070797    8 drwx------   2 root     root         4096 Jul  4 07:22 ./orbit-root
+1070843    8 drwxr-xr-x   2 root     root         4096 Jun 16 18:55 ./w
+1070789    8 drwxr-xr-x  10 root     root         4096 Jun 17 14:54 ./b
+1071340    8 drwxr-xr-x   2 root     root         4096 Jun 16 18:55 ./b/init.d
+1071581    8 drwxr-xr-x   3 root     root         4096 Jun 16 18:55 ./b/bind
+1071584    8 drwxr-xr-x   2 root     root         4096 Jun 16 18:55 ./b/bind/bak
+1071617    8 drwxr-xr-x   2 root     root         4096 Jun 16 18:55 ./b/fw
+1071628    8 drwxr-xr-x   8 root     root         4096 Jun 16 18:55 ./b/scripts
+</pre>
+<div style="float: right;"><div id="toolsRight">
+		<div class="faqinlinetools">
+			<div class="toolsInsideBox">
+				<ul id="toolsList" class="toolsList">				<li class="emailfaq"><a href="http://www.cyberciti.biz/tools/email.php?hash=1&amp;url=http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/&amp;subject=HowTo:%20Linux%20/%20UNIX%20List%20Just%20Directories%20Or%20Directory%20Names&amp;continue=366" title="Email FAQ to a friend">Email</a></li>				<li class="pdffaq"><a onclick="pageTracker._trackPageview('/static/pdf/faq/366.pdf');" title="Download this FAQ as a PDF version" href="http://www.cyberciti.biz/tools/faqs.php?p=/faq/366.pdf&amp;u=http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/&amp;s=HowTo:%20Linux%20/%20UNIX%20List%20Just%20Directories%20Or%20Directory%20Names">PDF</a></li>				<li class="printfaq"><a href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/print/?k=true&amp;r_POST_P_HELPER_ID=366" title="Print this FAQ">Print</a></li>				<li class="commentrssfaq"><a href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/feed/?k=true" title="See comment on this FAQ as RSS feed">Comment/RSS</a></li><li><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7825705102693166";
+/* Cyberciti.biz 125x125 */
+google_ad_slot = "0743992009";
+google_ad_width = 125;
+google_ad_height = 125;
+//-->
+</script>
+<script type="text/javascript" src="good_ls_find_tip_files/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 125px; position: relative; visibility: visible; width: 125px;"><ins id="google_ads_frame2_anchor" style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 125px; position: relative; visibility: visible; width: 125px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" src="good_ls_find_tip_files/ads_002.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="125" scrolling="no" width="125"></iframe></ins></ins></li>			</ul>
+			</div>
+		</div>
+               </div></div><h4>Featured Articles:</h4>
+		<ul>
+	<li><a href="http://www.cyberciti.biz/tips/top-linux-monitoring-tools.html">20 Linux System Monitoring Tools Every SysAdmin Should Know</a></li>
+	<li><a href="http://www.cyberciti.biz/tips/linux-security.html">20 Linux Server Hardening Security Tips</a></li>
+	<li><a href="http://www.cyberciti.biz/tips/my-10-unix-command-line-mistakes.html">My 10 UNIX Command Line Mistakes</a></li>
+        <li><a href="http://www.cyberciti.biz/tips/linux-laptop.html">The Novice Guide To Buying A Linux Laptop</a> <img style="vertical-align: text-top; padding-left: 1px;" src="good_ls_find_tip_files/new_fa.png" alt="" border="0"></li>
+        <li><a href="http://www.cyberciti.biz/tips/10-greatest-open-source-software-of-2009.html">10 Greatest Open Source Software Of 2009</a></li>
+	<li><a href="http://www.cyberciti.biz/tips/download-email-client-for-linux-mac-osx-windows.html">Top 5 Email Client For Linux, Mac OS X, and Windows Users</a></li>
+	<li><a href="http://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html">Top 20 OpenSSH Server Best Security Practices </a></li>
+	<li><a href="http://www.cyberciti.biz/tips/open-source-project-management-software.html">Top 10 Open Source Web-Based Project Management Software</a></li>
+	<li><a href="http://www.cyberciti.biz/faq/top5-linux-video-editing-system-software/">Top 5 Linux Video Editor Software</a></li>
+		</ul>
+        <!-- google_ad_section_end -->				</div>
+			</div>
+
+			<div id="comments">
+				<div id="comments_intro" class="comments_intro">
+					<p><span class="bracket">{</span> <span>27</span> comments… read them below or <a href="#respond" rel="nofollow">add one</a> <span class="bracket">}</span></p>
+				</div>
+
+				<dl id="comment_list">
+					<dt class="comment even thread-even depth-1" id="comment-33950">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/51057970c38af1c9718562548e525e15.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-33950" title="Permalink to this comment" rel="nofollow">1</a></span>
+<span class="comment_author">Eric</span>
+<span class="comment_time">April 26, 2007</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-33950">
+<p>To get just file names without the long list data:</p>
+<p>ls -l | grep ‘^d’ | awk ‘{ print $9 }’</p>
+<p>Or</p>
+<p>for foo in *; do if [ -d $foo ]; then print -n ” $foo”; else false; fi; done</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=33950#respond" onclick='return addComment.moveForm("comment-body-33950", "33950", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-36837">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/da9b6a4c533faaaf70111bf8d7d53966.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-36837" title="Permalink to this comment" rel="nofollow">2</a></span>
+<span class="comment_author">Lingerance</span>
+<span class="comment_time">September 18, 2007</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-36837">
+<p>find . -type d -maxdepth 1</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=36837#respond" onclick='return addComment.moveForm("comment-body-36837", "36837", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-36849">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/8b89a9d7061e061fa751f9f15ca2e3a8.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-36849" title="Permalink to this comment" rel="nofollow">3</a></span>
+<span class="comment_author">mysurface</span>
+<span class="comment_time">September 21, 2007</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-36849">
+<p>ls -d */</p>
+<p>or for hidden directories<br>
+ls -d .*/</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=36849#respond" onclick='return addComment.moveForm("comment-body-36849", "36849", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment byuser comment-author-administrator bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-36852">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/f70c4bd411985237db78966be0dc27de.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-36852" title="Permalink to this comment" rel="nofollow">4</a></span>
+<span class="comment_author">vivek</span>
+<span class="comment_time">September 21, 2007</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment byuser comment-author-administrator bypostauthor odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-36852">
+<p>Thanks for contributing all other tips :)</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=36852#respond" onclick='return addComment.moveForm("comment-body-36852", "36852", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-36865">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/0c1037f1d26d170420b452bf57430122.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-36865" title="Permalink to this comment" rel="nofollow">5</a></span>
+<span class="comment_author">Vinayak</span>
+<span class="comment_time">September 26, 2007</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-36865">
+<p>Thanks a lot for nice recipe… :-)</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=36865#respond" onclick='return addComment.moveForm("comment-body-36865", "36865", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-36881">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/a5ea2760c28f3bce455320976486e830.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-36881" title="Permalink to this comment" rel="nofollow">6</a></span>
+<span class="comment_author">Michel Roig</span>
+<span class="comment_time">October 1, 2007</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-36881">
+<p>To get just the subdirectories names</p>
+<p>find . -type d -maxdepth 1 -exec basename {} \;</p>
+<p>However, in this case you also get the directory itself! To avoid this, add mindepth 1:</p>
+<p>find . -type d -maxdepth 1 -mindepth 1 -exec basename {} \;</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=36881#respond" onclick='return addComment.moveForm("comment-body-36881", "36881", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-37046">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/bac9e613ea91ed98c8d20bd264fac841.jpeg" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-37046" title="Permalink to this comment" rel="nofollow">7</a></span>
+<span class="comment_author">Eugenio</span>
+<span class="comment_time">November 18, 2007</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-37046">
+<p>For some reasons on FAT fs</p>
+<p>ls -d */</p>
+<p>is not working. But this works on any filesystem:</p>
+<p>ls -d ./*/</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=37046#respond" onclick='return addComment.moveForm("comment-body-37046", "37046", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-37247">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/96489773e598ac440b16c1354871a7f0.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-37247" title="Permalink to this comment" rel="nofollow">8</a></span>
+<span class="comment_author">Suresh M</span>
+<span class="comment_time">January 4, 2008</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-37247">
+<p>echo */</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=37247#respond" onclick='return addComment.moveForm("comment-body-37247", "37247", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-39796">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/29a9ec127adba3f52e9298390dc80f52.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-39796" title="Permalink to this comment" rel="nofollow">9</a></span>
+<span class="comment_author">Al</span>
+<span class="comment_time">January 11, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-39796">
+<p>mysurface — you are the man!</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=39796#respond" onclick='return addComment.moveForm("comment-body-39796", "39796", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-39944">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/7b347c300c34bdfefe96781bc65d001f.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-39944" title="Permalink to this comment" rel="nofollow">10</a></span>
+<span class="comment_author">biodafes</span>
+<span class="comment_time">January 21, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-39944">
+<p>(folders)<br>
+ls -F | grep /<br>
+(files)<br>
+ls -F | grep -v /</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=39944#respond" onclick='return addComment.moveForm("comment-body-39944", "39944", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-40048">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/0788d90106acb0e61662f2d8e735a058.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-40048" title="Permalink to this comment" rel="nofollow">11</a></span>
+<span class="comment_author">Mahantesh Biradar</span>
+<span class="comment_time">January 30, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-40048">
+<p>Lists all the subdirectories in the current directory..</p>
+<p>ls -R | grep ./</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=40048#respond" onclick='return addComment.moveForm("comment-body-40048", "40048", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-41438">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/a37db7f94bc2d9f4748a23beec986c5d.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-41438" title="Permalink to this comment" rel="nofollow">12</a></span>
+<span class="comment_author">Gareth Reeman</span>
+<span class="comment_time">May 1, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1 parent">
+<div class="format_text" id="comment-body-41438">
+<p>can some1 please help me i need to know what the significant effects
+are of the following characters in unix filenames. 2 dots / 1 dot /
+tilde or “squiggle”<br>
+..<br>
+.<br>
+~</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=41438#respond" onclick='return addComment.moveForm("comment-body-41438", "41438", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					<dl class="children">
+					<dt class="comment byuser comment-author-administrator bypostauthor even depth-2" id="comment-41439">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/15810166254c809e5706e6a3b9ea9b35.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-41439" title="Permalink to this comment" rel="nofollow">13</a></span>
+<span class="comment_author">Vivek Gite</span>
+<span class="comment_time">May 1, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment byuser comment-author-administrator bypostauthor even depth-2">
+<div class="format_text" id="comment-body-41439">
+<p>. Current directory<br>
+.. Parent directory<br>
+~ Your home directory</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=41439#respond" onclick='return addComment.moveForm("comment-body-41439", "41439", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					</dl>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-41477">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/e655de4cbde1052101581a5be5e51b85.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-41477" title="Permalink to this comment" rel="nofollow">14</a></span>
+<span class="comment_author">Dennis Quek</span>
+<span class="comment_time">May 5, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-41477">
+<p>Can you just list the directories name, without the permission, datetime, and etc … ?</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=41477#respond" onclick='return addComment.moveForm("comment-body-41477", "41477", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-41527">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/55ac384f6bae4d9a30c45d804e16706d.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-41527" title="Permalink to this comment" rel="nofollow">15</a></span>
+<span class="comment_author">kopla</span>
+<span class="comment_time">May 8, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-41527">
+<p>Thanx, nice post. I was just thinking of doing it with awk but
+couldnt get the wildcard working. Now I am one step ahead in my shell
+knowledge ^^<br>
+To Dennis Quek above :<br>
+ A rather dirty solution but does the job. </p>
+<p>ls -l | egrep ‘^d’ | awk ‘$1=” “‘ | awk ‘$1=” “‘ | awk ‘$1=” “‘ |
+awk ‘$1=” “‘ | awk ‘$1=” “‘ | awk ‘$1=” “‘| awk ‘$1=” “‘| awk ‘$1=” “‘</p>
+<p>(forgive me if seeing this code gives someone a heart attack, all i can say is that I’m still learning :P )<br>
+I would love if someone can give my code a neater look :)</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=41527#respond" onclick='return addComment.moveForm("comment-body-41527", "41527", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-41528">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/55ac384f6bae4d9a30c45d804e16706d.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-41528" title="Permalink to this comment" rel="nofollow">16</a></span>
+<span class="comment_author">kopla</span>
+<span class="comment_time">May 8, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-41528">
+<p>oops! didnt read the other comments. Already many nice solutions have been posted :P</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=41528#respond" onclick='return addComment.moveForm("comment-body-41528", "41528", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-42306">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/0c0512bd0e8770384be037f28801f6a2.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-42306" title="Permalink to this comment" rel="nofollow">17</a></span>
+<span class="comment_author">jagan</span>
+<span class="comment_time">June 30, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-42306">
+<p>i used to the $ du command to retrieve all directory names.<br>
+$ du</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=42306#respond" onclick='return addComment.moveForm("comment-body-42306", "42306", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-42766">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/b05b8c62a30f958eff4cd29eec1b0c30.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-42766" title="Permalink to this comment" rel="nofollow">18</a></span>
+<span class="comment_author">Aditya</span>
+<span class="comment_time">July 28, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-42766">
+<p>&gt;  i used to the $ du command to retrieve all directory names.<br>
+Jagan,<br>
+du is used to calculate Disk Usage. I want to know did you tweak this
+command to display directory listing in pwd. Please explain.</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=42766#respond" onclick='return addComment.moveForm("comment-body-42766", "42766", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-44023">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/8c7e898f1b570760f834ecc03edf6b35.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-44023" title="Permalink to this comment" rel="nofollow">19</a></span>
+<span class="comment_author">anon</span>
+<span class="comment_time">October 7, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-44023">
+<p>$ /bin/ls -l | grep “^d” | cut -d’ ‘ -f8<br>
+it’s a neat trick on linux systems.</p>
+<p>i’m using /bin/ls and not ls because it may be aliased</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=44023#respond" onclick='return addComment.moveForm("comment-body-44023", "44023", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-44159">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/b518192246bb711860831c6a3da23ea8.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-44159" title="Permalink to this comment" rel="nofollow">20</a></span>
+<span class="comment_author">Amit Nagwanshi</span>
+<span class="comment_time">October 20, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-44159">
+<p>one can list directory i simple and easy way by :<br>
+1. ls -ltr | grep -e d<br>
+2. ls -ld */<br>
+3. du</p>
+<p>third one is the most easiest way. :-)</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=44159#respond" onclick='return addComment.moveForm("comment-body-44159", "44159", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-44271">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/5f19df8dfeb57d300a333ecc47f6393e.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-44271" title="Permalink to this comment" rel="nofollow">21</a></span>
+<span class="comment_author">Amr</span>
+<span class="comment_time">October 23, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-44271">
+<p>I tried with both GNU ls and BSD one and the best option is as someone else posted above:</p>
+<p>ls -ld */</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=44271#respond" onclick='return addComment.moveForm("comment-body-44271", "44271", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-45108">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/3eab9c5a1f87dbf0239d3873c90e9dad.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-45108" title="Permalink to this comment" rel="nofollow">22</a></span>
+<span class="comment_author">Mohammed asif</span>
+<span class="comment_time">December 9, 2009</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-45108">
+<p>i renamed a directory name with a space in between the directory name within GUI(Graphical User Interface)<br>
+which is allowed and now in the shell prompt i.e. in the terminal
+command mode i want to enter the directory which has a space in between
+but it does not allows to enter into that directory it says “INVALID
+DIRECTORY”<br>
+is their any alternative solution or trick to enter into the directory with the name having space.please explain<br>
+the directory name is “file data”<br>
+i tried with    —     $cd file data    but it didnt work out.</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=45108#respond" onclick='return addComment.moveForm("comment-body-45108", "45108", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-46142">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/3936bccdba224c49e21789520a07fa5e.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-46142" title="Permalink to this comment" rel="nofollow">23</a></span>
+<span class="comment_author">Sirdude</span>
+<span class="comment_time">February 25, 2010</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-46142">
+<p>nice stuff!</p>
+<p>i learned a lot from the original post, but the comments are a treasure trove!</p>
+<p>one thing about the original post, you have a back tick instead of a single quote in the 1st two snippets<br>
+ls -l | egrep `^d’ for example should be ls -l | egrep ‘^d’ for the copy / pasters</p>
+<p>thanks again ;)</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=46142#respond" onclick='return addComment.moveForm("comment-body-46142", "46142", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-46240">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/f787c85e7c4c8fd70973c4b3907f030c.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-46240" title="Permalink to this comment" rel="nofollow">24</a></span>
+<span class="comment_author">newbee1</span>
+<span class="comment_time">March 3, 2010</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-46240">
+<p>if you wanted to pull a date from the directory to only list files
+from datea/timea through dateb/timeb (say March 2 at 6:00 AM to March 8
+at 6:00 AM) and move into a new file the output, how is this
+accomplished? I tried this but no output<br>
+#!/bin/bash<br>
+FILES=’ls -A1′<br>
+OUTFILE=”c:/temp/RRDfilesinrange.txt”<br>
+STARTDATE=’date –utc –date “2010-02-27 06:00:00″ %s’<br>
+ENDDATE=’date –utc –date “2010-03-02 06:00:00″ %s’<br>
+cd C: temp/tsfr-complete<br>
+for f in $FILES<br>
+do<br>
+if [ -f $f ]; then<br>
+FDATE=’stat -c “%Z” $f’<br>
+if [ $FDATE -ge $STARTDATE ]; then<br>
+if [ $FDATE -le $ENDDATE ]; then<br>
+‘echo $f &gt;&gt; $OUTFILE’<br>
+fi<br>
+fi<br>
+fi<br>
+done</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=46240#respond" onclick='return addComment.moveForm("comment-body-46240", "46240", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-47084">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/02fc37bb0bc01b568016b98351798196.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-47084" title="Permalink to this comment" rel="nofollow">25</a></span>
+<span class="comment_author">Davis</span>
+<span class="comment_time">April 27, 2010</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-47084">
+<p>How do you get the directory listing to display only: the file name, the user that owns the file and that user’s permissions?</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=47084#respond" onclick='return addComment.moveForm("comment-body-47084", "47084", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-48637">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/b7c4effa40ab4b3174ee6680ccba6df2.jpeg" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-48637" title="Permalink to this comment" rel="nofollow">26</a></span>
+<span class="comment_author">balarajangeetha</span>
+<span class="comment_time">August 4, 2010</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-48637">
+<p>//Mohammed asif December 9, 2009<br>
+is their any alternative solution or trick to enter into the directory with the name having space.please explain//<br>
+did you try<br>
+cd “file data”<br>
+or<br>
+cd ‘file data’<br>
+( i.e. directory name with double quotes or single quote)<br>
+you yourself have given the hint :-)</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=48637#respond" onclick='return addComment.moveForm("comment-body-48637", "48637", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-48976">
+<span class="avatar"><img alt="" src="good_ls_find_tip_files/300ad4bfdb1a66a0bb939606e6107f70.png" class="avatar avatar-60 photo" height="60" width="60"></span>
+<span class="comment_num"><a href="#comment-48976" title="Permalink to this comment" rel="nofollow">27</a></span>
+<span class="comment_author">danio</span>
+<span class="comment_time">August 23, 2010</span>
+
+<!-- google_ad_section_start -->					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-48976">
+<p>@Davis:<br>
+ls -l | awk ‘{ print $1,$3,$9 }’</p>
+<p class="reply"><a rel="nofollow" class="comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/?replytocom=48976#respond" onclick='return addComment.moveForm("comment-body-48976", "48976", "respond", "366")'>Reply</a></p>
+<!-- google_ad_section_end --></div>
+					</dd>
+				</dl>
+				<div id="respond">
+					<div id="respond_intro">
+<a rel="nofollow" id="cancel-comment-reply-link" href="http://www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/#respond" style="display: none;">Cancel reply</a>						<p>Leave a Comment</p>
+					</div>
+					<form action="http://www.cyberciti.biz/faq/wp-comments-post.php" method="post" id="commentform">
+						<p><input class="text_input" name="author" id="author" tabindex="1" aria-required="true" type="text"><label for="author">Name <span class="required" title="Required">*</span></label></p>
+						<p><input class="text_input" name="email" id="email" tabindex="2" aria-required="true" type="text"><label for="email">E-mail <span class="required" title="Required">*</span></label></p>
+						<p><input class="text_input" name="url" id="url" tabindex="3" type="text"><label for="url">Website</label></p>
+						<p class="comment_box">
+							<textarea name="comment" id="comment" tabindex="4" cols="40" rows="8"></textarea>
+						</p>
+<span class="allowed"><span>
+<em>You can use these <acronym title="HyperText Markup Language">HTML</acronym> tags and attributes:</em>
+&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym
+title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt;
+&lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q
+cite=""&gt; &lt;strike&gt; &lt;strong&gt; </span></span>
+
+
+	<p style="clear: both;" class="subscribe-to-comments">
+	<input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" type="checkbox">
+	<label for="subscribe">Notify me of followup comments via e-mail</label>
+	</p>
+
+
+						<p class="remove_bottom_margin">
+							<input name="submit" class="form_submit" id="submit" tabindex="5" value="Submit" type="submit">
+<input name="comment_post_ID" value="366" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+						</p>
+<center><div id="adslargerectbottom"></div></center><small><p class="post_tags">Tagged as: <a href="http://www.cyberciti.biz/faq/tag/directory-names/" rel="tag">directory names</a>, <a href="http://www.cyberciti.biz/faq/tag/find-command/" rel="tag">find command</a>, <a href="http://www.cyberciti.biz/faq/tag/grep-command/" rel="tag">grep command</a>, <a href="http://www.cyberciti.biz/faq/tag/linux/" rel="tag">Linux</a>, <a href="http://www.cyberciti.biz/faq/tag/list-directory/" rel="tag">list directory</a>, <a href="http://www.cyberciti.biz/faq/tag/ls-command/" rel="tag">ls command</a>, <a href="http://www.cyberciti.biz/faq/tag/unix/" rel="tag">UNIX</a></p></small>					</form>
+				</div>
+			</div>
+					<div class="prev_next post_nav">
+						<p class="previous">Previous post: <a href="http://www.cyberciti.biz/faq/linux-how-can-i-find-a-file-on-my-system/" rel="prev">Linux: How can I find a file on my system?</a></p>
+						<p>Next post: <a href="http://www.cyberciti.biz/faq/how-to-include-files-with-php/" rel="next">How to include files with PHP</a></p>
+					</div>
+		</div>
+
+		<div id="sidebars">
+			<div id="multimedia_box" class="custom_box">
+				<div id="custom_box">
+<img style="border: 0pt none ; vertical-align: middle;" src="good_ls_find_tip_files/emailsignup.png" alt="0" border="0"> Sign up for our daily email newsletter:<br><br>
+<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=Nixcraft-LinuxFreebsdSolarisTipsTricks', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">&nbsp;&nbsp;&nbsp;&nbsp;<input class="text_input" name="email" value="Enter your email address" id="name" onclick="if (this.value=='Enter your email address') {this.value=''};" onblur="if (this.value=='') {this.value='Enter your email address';}" type="text"><input value="Nixcraft-LinuxFreebsdSolarisTipsTricks" name="uri" type="hidden">
+<input name="loc" value="en_US" type="hidden"><input value="Sign Up" class="form_submit" onclick="javascript: pageTracker._trackPageview('/outgoing/email/signup/faq/top-right/');" type="submit"></form>
+<br>
+
+&nbsp;&nbsp;<a href="http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" rel="nofollow"><img src="good_ls_find_tip_files/cbzrss.gif" alt="" style="border: 0pt none ; vertical-align: top;" height="16" width="16" border="0"></a>&nbsp;
+ <a href="http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" rel="nofollow"><img src="good_ls_find_tip_files/feedburner.gif" style="border: 0pt none ; vertical-align: top;" alt="" height="26" width="88"></a>&nbsp;
+ <a href="http://fusion.google.com/add?source=atgs&amp;feedurl=http%3A//feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" rel="nofollow"><img src="good_ls_find_tip_files/cbzgooglerss.gif" alt="" style="border: 0pt none ; vertical-align: top;" height="17" width="67" border="0"></a>&nbsp;
+<a href="http://twitter.com/nixcraft" title="Follow us on twitter"><img src="good_ls_find_tip_files/twitter.png" alt="" style="border: 0pt none ; vertical-align: top;" height="15" width="80" border="0"></a>
+
+
+				</div>
+			</div>
+			<div id="sidebar_1" class="sidebar">
+				<ul class="sidebar_list">
+<li class="widget widget_text" id="text-384338352">			<div class="textwidget"><div id="adstoprect"></div>
+</div>
+		</li><li class="widget widget_text" id="text-384338353"><h3>Search</h3>			<div class="textwidget"><form action="http://www.cyberciti.biz/linux-search.php" id="cse-search-box">
+  <div>
+    <input name="cx" value="002165917076592449621:d37x4vctltg" type="hidden">
+    <input name="cof" value="FORID:11" type="hidden">
+    <input name="ie" value="UTF-8" type="hidden">
+    <input style="background: rgb(255, 255, 255) url(http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif) no-repeat scroll left center; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;" name="q" size="27" type="text">
+    <input name="sa" value="Search" type="submit">
+
+  </div>
+<input value="www.cyberciti.biz/faq/linux-list-just-directories-or-directory-names/" name="siteurl" type="hidden"></form>
+<script type="text/javascript" src="good_ls_find_tip_files/brand.js"></script></div>
+		</li><li class="widget widget_text" id="text-384338354">			<div class="textwidget"><div id="adswhitepapers"></div></div>
+		</li><li class="widget widget_text" id="text-384338355">			<div class="textwidget"><iframe src="good_ls_find_tip_files/likebox.html" style="border: medium none ; overflow: hidden; width: 300px; height: 290px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div>
+		</li><li class="widget widget_text" id="text-384338356">			<div class="textwidget"><div id="adsrightsky1"></div></div>
+		</li><li class="widget widget_text" id="text-384338357"><h3>Sponsored links</h3>			<div class="textwidget">Save now with the best deals from CDW.  Click here to save on desktops, notebooks, LCDs and more. <a href="http://ad-emea.doubleclick.net/clk;227073932;50461831;c" onclick="pageTracker._trackPageview(\'/outgoing/cdw.com/j23-a23/\');" target="_blank" rel="nofollow">Shop now!</a></div>
+		</li><li class="widget widget_related_faq"><h3>Related FAQs</h3><ul><li><a href="http://www.cyberciti.biz/faq/how-do-i-check-and-repair-ms-dos-file-systems-under-linux/" rel="bookmark" title="Permanent Link: How do I check and repair MS-DOS file systems under Linux?">How do I check and repair MS-DOS file systems under Linux?</a></li><li><a href="http://www.cyberciti.biz/faq/unix-command-rename-file/" rel="bookmark" title="Permanent Link: UNIX Command To Rename A File">UNIX Command To Rename A File</a></li><li><a href="http://www.cyberciti.biz/faq/what-you-need-to-back-up-on-linux-to-recover/" rel="bookmark" title="Permanent Link: What you need to back up on Linux to recover">What you need to back up on Linux to recover</a></li><li><a href="http://www.cyberciti.biz/faq/linuxunix-rules-for-naming-file-and-directory-names/" rel="bookmark" title="Permanent Link: Linux / UNIX: Rules For Naming File And Directory Names">Linux / UNIX: Rules For Naming File And Directory Names</a></li><li><a href="http://www.cyberciti.biz/faq/linux-unix-recursively-grep-through-sub-directories/" rel="bookmark" title="Permanent Link: Bash Grep Subdirectories (Recursively)">Bash Grep Subdirectories (Recursively)</a></li></ul></li><li class="widget widget_text" id="text-299777825652"><div id="adstoprect2"></div></li>				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+<div class="idglogo">
+            <img src="good_ls_find_tip_files/idg-logo-new.gif" alt="" border="0">
+	 </div><div class="copynotice">
+©2006-2010 nixCraft. All rights reserved | 
+<a href="http://www.cyberciti.biz/tips/privacy">Privacy Policy</a> | 
+<a href="http://www.cyberciti.biz/tips/disclaimer">Terms of Service</a><br>
+<a href="http://www.cyberciti.biz/tips/classified-advertising">Advertise</a> | 
+<a href="http://www.cyberciti.biz/tips/contact-us">Questions or Comments</a> |
+<a href="http://www.cyberciti.biz/faq/faqsitemaps/">Sitemap</a>
+</div>
+	<script type="text/javascript"><!--
+var seriesdropdown = document.getElementById("orgseries_dropdown");
+if (seriesdropdown) { 
+ function onSeriesChange() {
+		if ( seriesdropdown.options[seriesdropdown.selectedIndex].value > 0 ) {
+			location.href = "http://www.cyberciti.biz/faq/series/"+seriesdropdown.options[seriesdropdown.selectedIndex].attributes.getNamedItem('class').value;
+		}
+    }
+    seriesdropdown.onchange = onSeriesChange;
+}
+--></script>
+		</div>
+</div>
+</div>
+<!--[if lte IE 8]>
+<div id="ie_clear"></div>
+<![endif]-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-108650-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body></html>

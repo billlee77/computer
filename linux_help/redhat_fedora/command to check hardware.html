@@ -1,0 +1,1469 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+<!-- base href="http://www.linuxquestions.org/questions/" --><!--[if IE]></base><![endif]-->
+	<link rel="canonical" href="http://www.linuxquestions.org/questions/linux-general-1/command-to-check-hardware-135433/">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="generator" content="vBulletin 3.8.6">
+
+<meta name="keywords" content="command,check,hardware, command to check hardware, Linux,how to,tutorial,operating system,linux,red hat,mandrake,security,linux help,installation,question,forum">
+<meta name="description" content="I'm pretty new to linux. Just wondering if there is a command for linux to print up a list of hardware specs on a computer, also giving information on ">
+
+
+<!-- CSS Stylesheet -->
+<style type="text/css" id="vbulletin_css">
+/**
+* vBulletin 3.8.6 CSS
+* Style: 'LQ Style - child of default'; Style ID: 7
+*/
+@import url("http://static.linuxquestions.org/questions/clientscript/vbulletin_css/style-f53258c0-00007.css");
+</style>
+<link rel="stylesheet" type="text/css" href="command%20to%20check%20hardware_files/vbulletin_important.css">
+
+
+<!-- / CSS Stylesheet -->
+
+
+<script src="command%20to%20check%20hardware_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+<!--
+var SESSIONURL = "";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "http://static.linuxquestions.org/questions/images/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</script>
+
+<script type="text/javascript" src="command%20to%20check%20hardware_files/vbulletin_global.js"></script>
+<script type="text/javascript" src="command%20to%20check%20hardware_files/vbulletin_menu.js"></script>
+<link rel="shortcut icon" href="http://www.linuxquestions.org/favicon.ico" type="image/x-icon">
+<link rel="alternate" type="application/rss+xml" title="LQ Latest Threads" href="http://www.linuxquestions.org/syndicate/lqlatest.xml">
+<link rel="alternate" type="application/rss+xml" title="LQ News and Articles" href="http://www.linuxquestions.org/syndicate/lqnews.rss">
+<link rel="alternate" type="application/rss+xml" title="LQ Zero Reply Threads" href="http://www.linuxquestions.org/syndicate/lqnoreplies.xml">
+<link rel="search" type="application/opensearchdescription+xml" title="LinuxQuestions.org" href="http://static.linuxquestions.org/lq-osd.xml">
+
+<script type="text/javascript" src="command%20to%20check%20hardware_files/spcjs.js"></script><script type="text/javascript" src="command%20to%20check%20hardware_files/spc.js"></script><script type="text/javascript" src="command%20to%20check%20hardware_files/fl.js"></script>
+
+
+	<title> command to check hardware</title>
+
+	<style type="text/css" id="vbulletin_showthread_css">
+	<!--
+	
+	#links div { white-space: nowrap; }
+	#links img { vertical-align: middle; }
+	-->
+	</style>
+
+<script type="text/javascript">
+//<![CDATA[
+
+window.google_analytics_uacct = "UA-71419-4";
+window.google_analytics_domain_name="www.linuxquestions.org";
+
+
+//]]>
+</script>
+</head><body onload="">
+<script type="text/javascript"><!--
+var _gaq = _gaq || [];
+_gaq.push(
+['_setDomainName', 'www.linuxquestions.org'],
+['_setAccount', 'UA-71419-4'],
+['_setVar', 'usergroup-1-Unregistered / Not Logged In'],
+['_trackPageview']
+);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+//-->
+</script>
+
+<!-- logo -->
+<a name="top"></a>
+<table cellpadding="0" cellspacing="0" width="100%" align="center" border="0">
+<tbody><tr>
+    <td align="left"><a href="http://www.linuxquestions.org/questions/"><img title="LinuxQuestions.org" src="command%20to%20check%20hardware_files/LinuxQuestions.png" alt="LinuxQuestions.org" border="0"></a></td>
+    <td align="right">
+     <div align="right">Visit the LQ <a href="http://www.linuxquestions.org/linux/articles/">Articles and Editorials</a> section</div>
+    </td>
+</tr>
+</tbody></table>
+<!-- /logo -->
+
+<!-- content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+
+
+
+
+<div class="vbmenu_popup" id="vbbloglinks_menu" style="display: none; margin-top: 3px;" align="left">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead"><a href="http://www.linuxquestions.org/questions/blog/">Blogs</a></td>
+	</tr>
+	
+	<tr>
+		<td class="vbmenu_option"><a href="http://www.linuxquestions.org/questions/blog/recent-entries/">Recent Entries</a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><a href="http://www.linuxquestions.org/questions/blog/best-entries/">Best Entries</a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><a href="http://www.linuxquestions.org/questions/blog/best-blogs/">Best Blogs</a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><a href="http://www.linuxquestions.org/questions/blog/all/">Blog List</a></td>
+	</tr>
+	
+	<tr>
+		<td class="vbmenu_option"><a rel="nofollow" href="http://www.linuxquestions.org/questions/blog_search.php?do=search">Search Blogs</a></td>
+	</tr>
+	
+	</tbody></table>
+</div>
+<script type="text/javascript">
+<!--
+function log_out()
+{
+    ht = document.getElementsByTagName("html");
+    ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+    if (confirm('Are you sure you want to log out?'))
+    {
+        return true;
+    }
+    else
+    {
+        ht[0].style.filter = "";
+        return false;
+    }
+}
+//-->
+</script>
+<div style="text-align: center; margin-bottom: 15px;" align="center"> 
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(108599);
+// ]]> --></script><script type="text/javascript"><!--
+google_ad_client = "pub-4420048478783872";
+/* LQ Main - Top Leaderboard */
+google_ad_slot = "2731986808";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="command%20to%20check%20hardware_files/show_ads.js">
+</script><script src="command%20to%20check%20hardware_files/expansion_embed.js"></script><script src="command%20to%20check%20hardware_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display: inline-table; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><ins id="google_ads_frame1_anchor" style="display: block; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="command%20to%20check%20hardware_files/ads.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="90" width="728" scrolling="no"></iframe></ins></ins><div id="beacon_e118a9465b" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="command%20to%20check%20hardware_files/lg_002.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a target='_blank' href='http://d1.openx.org/ck.php?n=8fda443'><img border='0' alt='' src='http://d1.openx.org/avw.php?zoneid=108599&amp;n=8fda443' /></a></noscript>
+</div>
+<!-- START: LQ Table Top -->
+<table cellpadding="0" cellspacing="0" width="100%" align="center" border="0">
+<tbody><tr>
+<td class="page" valign="top">
+<!-- END: LQ Table Top -->
+<!-- nav buttons bar -->
+<div align="center">
+	<table class="tborder" style="border-top-width: 0px;" cellpadding="3" cellspacing="0" width="100%" align="center" border="0">
+	<tbody><tr align="center">
+		<td class="vbmenu_control"><a href="http://www.linuxquestions.org/" accesskey="1">Home</a></td>
+		<td class="vbmenu_control"><a href="http://www.linuxquestions.org/questions/">Forums</a></td>
+		<td class="vbmenu_control"><a href="http://www.linuxquestions.org/hcl/">HCL</a></td>
+		<td class="vbmenu_control"><a href="http://www.linuxquestions.org/reviews/">Reviews</a></td>
+		<td class="vbmenu_control"><a href="http://www.linuxquestions.org/linux/answers/">Tutorials</a></td>
+		<td class="vbmenu_control"><a href="http://www.linuxquestions.org/linux/articles/">Articles</a></td>
+		
+			<td class="vbmenu_control"><a href="http://www.linuxquestions.org/questions/register.php" rel="nofollow">Register</a></td>
+		
+				
+			
+				<td id="navbar_search" class="vbmenu_control"><a href="http://www.linuxquestions.org/questions/search.php" accesskey="4" rel="nofollow">Search</a> <script type="text/javascript"> vbmenu_register("navbar_search"); </script></td>
+			
+			
+		
+		
+	</tr>
+	</tbody></table>
+</div>
+<!-- / nav buttons bar -->
+
+
+<!-- NAVBAR POPUP MENUS -->
+	
+	
+	<!-- header quick search form -->
+	<div class="vbmenu_popup" id="navbar_search_menu" style="display: none;">
+		<table cellpadding="4" cellspacing="1" border="0">
+		<tbody><tr>
+			<td class="thead">Search Forums</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+			<form action="/questions/search.php" method="post">
+				<input name="do" value="process" type="hidden">
+				<input name="showposts" value="1" type="hidden">
+				<input name="quicksearch" value="1" type="hidden">
+				<input name="s" value="" type="hidden">
+	<input name="securitytoken" value="guest" type="hidden">
+				<input class="bginput" name="query" size="20" type="text"><input class="button" value="Go" type="submit"><br>
+			</form>
+			</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option"><a href="http://www.linuxquestions.org/questions/search.php" accesskey="4" rel="nofollow">Advanced Search</a></td>
+		</tr>
+
+		<tr>
+			<td class="thead">Search Tags</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite"><form action="/questions/search.php" method="post"><input class="bginput" name="tag" size="20" type="text"><input name="do" value="process" type="hidden"><input name="posttags" value="1" type="hidden"><input name="s" value="" type="hidden">
+	<input name="securitytoken" value="guest" type="hidden"><input class="button" value="Go" type="submit"><br></form>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="thead">Search LQ Wiki</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+            <form action="http://wiki.linuxquestions.org/wiki/Special:Search">
+              <input name="fulltext" value="Search" type="hidden">              <input name="search" class="bginput" size="20" type="text"><input class="button" value="Go" type="submit"><br>
+            </form>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="thead">Search Tutorials/Articles</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+		<form action="/linux/search/node" method="post">
+			<input name="op" value="Search" type="hidden">
+			<input class="bginput" name="edit[keys]" size="20" type="text"><input class="button" value="Go" type="submit"><br>
+		</form>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="thead">Search HCL</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+
+		<form method="get" action="/hcl/showcat.php">
+			<input name="cat" value="all" type="hidden">
+			<input name="stype" value="1" type="hidden">
+			<input name="si" size="20" class="bginput" type="text"><input class="button" value="Go" type="submit"><br>
+		</form>
+			</td>
+		</tr>
+		<tr>
+			<td class="thead">Search Reviews</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+		<form method="get" action="/reviews/showcat.php">
+			<input name="cat" value="all" type="hidden">
+			<input name="stype" value="1" type="hidden">
+			<input name="si" size="20" class="bginput" type="text"><input class="button" value="Go" type="submit"><br>
+		</form>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="thead">Search Bookmarks</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+		<form action="/bookmarks/search/" method="post">
+			<input name="range" value="all" type="hidden">
+			<input name="terms" size="20" class="bginput" type="text"><input class="button" value="Go" type="submit"><br>
+		</form>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="thead">Search ISOs</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+		<form method="get" action="http://iso.linuxquestions.org/search.php">
+			<input name="query" size="20" class="bginput" type="text"><input class="button" value="Go" type="submit"><br>
+		</form>
+			</td>
+		</tr>
+		</tbody></table>
+	</div>
+	<!-- / header quick search form -->
+	
+
+	
+<!-- / NAVBAR POPUP MENUS -->
+
+<!-- PAGENAV POPUP -->
+
+	<div class="vbmenu_popup" id="pagenav_menu" style="display: none;">
+		<table cellpadding="4" cellspacing="1" border="0">
+		<tbody><tr>
+			<td class="thead" nowrap="nowrap">Go to Page...</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+			<form action="/questions/" method="get" onsubmit="return this.gotopage()" id="pagenav_form">
+				<input class="bginput" id="pagenav_itxt" style="font-size: 11px;" size="4" type="text">
+				<input class="button" id="pagenav_ibtn" value="Go" type="button">
+			</form>
+			</td>
+		</tr>
+		</tbody></table>
+	</div>
+
+<!-- / PAGENAV POPUP -->
+
+
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" style="border-top: 0px none;" cellpadding="3" cellspacing="1" width="100%" align="center" border="0">
+<tbody><tr>
+	<td class="alt1" width="100%">
+		
+			<table cellpadding="0" cellspacing="0" border="0">
+			<tbody><tr valign="bottom">
+				<td><a href="http://www.linuxquestions.org/questions/linux-general-1/command-to-check-hardware-135433/#" onclick="history.back(1); return false;"><img title="Go Back" src="command%20to%20check%20hardware_files/navbits_start.gif" alt="Go Back" border="0"></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a href="http://www.linuxquestions.org/" accesskey="1">LinuxQuestions.org</a></span> 
+
+<span class="navbar">&gt; <a href="http://www.linuxquestions.org/questions/" accesskey="1">Forums</a></span> 
+
+
+	<span class="navbar">&gt; <a href="http://www.linuxquestions.org/questions/linux-forums-50/">Linux Forums</a></span>
+
+
+	<span class="navbar">&gt; <a href="http://www.linuxquestions.org/questions/linux-general-1/">Linux - General</a></span>
+
+</td>
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size: 10pt; padding-top: 1px;" colspan="3"><a href="http://www.linuxquestions.org/questions/"><img title="Reload this Page" class="inlineimg" src="command%20to%20check%20hardware_files/navbits_finallink.gif" alt="Reload this Page" border="0"></a> <strong>
+	 command to check hardware
+
+</strong></td>
+			</tr>
+			</tbody></table>			
+		
+	</td>	
+	
+	
+		
+		<td class="alt2" style="padding: 0px;" nowrap="nowrap">
+			
+		<!-- login form -->
+		<form action="/questions/login.php" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+		<script type="text/javascript" src="command%20to%20check%20hardware_files/vbulletin_md5.js"></script>
+		<table cellpadding="0" cellspacing="3" border="0">
+		<tbody><tr>
+			<td class="smallfont">User Name</td>
+			<td><input class="bginput" style="font-size: 11px;" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="User Name" onfocus="if (this.value == 'User Name') this.value = '';" type="text"></td>
+			<td class="smallfont" colspan="2" nowrap="nowrap"><label for="cb_cookieuser_navbar"><input name="cookieuser" value="1" tabindex="103" id="cb_cookieuser_navbar" accesskey="c" checked="checked" type="checkbox">Remember Me?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont">Password</td>
+			<td><input class="bginput" style="font-size: 11px;" name="vb_login_password" size="10" accesskey="p" tabindex="102" type="password"></td>
+			<td><input class="button" value="Log in" tabindex="104" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" type="submit"></td>
+		</tr>
+		</tbody></table>
+		<input name="s" value="" type="hidden">
+	<input name="securitytoken" value="guest" type="hidden">
+		<input name="do" value="login" type="hidden">		
+		<input name="vb_login_md5password" type="hidden">
+		<input name="vb_login_md5password_utf" type="hidden">
+		</form>
+		<!-- / login form -->
+			
+		</td>
+		
+		
+	
+</tr>
+</tbody></table>
+<!-- / breadcrumb, login, pm info -->
+
+
+	<table class="tborder" style="border-top: 0px none;" cellpadding="3" cellspacing="1" width="100%" align="center" border="0">
+	<tbody><tr>
+		<td class="alt1" width="100%"><strong>Linux - General</strong> <span class="smallfont">This Linux forum is for general Linux questions and discussion.<br>
+If it is Linux Related and doesn't seem to fit in any other forum then this is the place.</span></td>
+	</tr>
+	</tbody></table>
+
+
+
+
+	<br>
+	<table class="tborder" cellpadding="3" cellspacing="1" width="100%" align="center" border="0">
+	<tbody><tr>
+		<td class="thead">Notices</td>
+	</tr>
+	<tr>
+		<td class="alt1"><div class="navbar_notice" id="navbar_notice_1">
+	Welcome to <strong>LinuxQuestions.org</strong>, a friendly and active Linux Community. <br><br>
+You are currently viewing LQ as a guest.  By joining our community you 
+will have the ability to post topics, receive our newsletter, use the 
+advanced search, subscribe to threads and access many other special 
+features. Registration is quick, simple and absolutely free. <a href="http://www.linuxquestions.org/questions/register.php"><strong>Join our community</strong></a> today!<br><br>
+<strong>Note that registered members see fewer ads, and ContentLink is completely disabled once you log in.</strong><br><br>
+Are you new to LinuxQuestions.org?  Visit the following links:<br>
+<a href="http://www.linuxquestions.org/linux/answers/LinuxQuestions_org/How_to_Use_LinuxQuestions_org">Site Howto</a> |
+<a href="http://www.linuxquestions.org/questions/faq.php">Site FAQ</a> |
+<a href="http://www.linuxquestions.org/linux/sitemap.html">Sitemap</a> | 
+<a href="http://www.linuxquestions.org/questions/register.php">Register Now</a>
+<br><br>If you have any problems with the registration process or your account login, please <a href="http://www.linuxquestions.org/questions/sendmessage.php">contact us</a>.  If you need to reset your password, <a rel="nofollow" href="http://www.linuxquestions.org/questions/login.php?do=lostpw">click here</a>.<br><br>
+<strong>Having a problem logging in? Please visit <a href="http://www.linuxquestions.org/removecookies.php">this page</a> to clear all LQ-related cookies.</strong>
+</div><div class="navbar_notice" id="navbar_notice_18">
+	<br>
+<table>
+<tbody><tr><td>
+<a href="http://linuxquestions.tradepub.com/free/w_opeb01/prgm.cgi" rel="nofollow"><img src="command%20to%20check%20hardware_files/w_opeb01c.gif" align="left" border="0"></a></td><td>
+
+<em>Complimentary eBook: Securing &amp; Optimizing Linux</em>
+<br><br>
+A comprehensive collection of Linux security products and explanations 
+in the most simple and structured manner on how to safely and easily 
+configure and run many popular Linux-based applications and services. 
+<br><br>
+This book is intended for a technical audience and system administrators
+ who manage Linux servers, but it also includes material for home users 
+and others. It discusses how to install and setup a Linux server with 
+all the necessary security and optimization for a high performance Linux
+ specific machine. It can also be applied with some minor changes to 
+other Linux variants without difficulty. 
+<br><br>
+<a href="http://linuxquestions.tradepub.com/free/w_opeb01/" rel="nofollow">Click Here</a> to receive the Securing &amp; Optimizing Linux guide absolutely free.</td></tr>
+</tbody></table>
+</div></td>
+	</tr>
+	</tbody></table>
+
+
+
+	<br>
+
+<!-- <div style="text-align:center;margin-bottom:15px"> 
+google_leaderboard_white_text
+</div>-->
+<div class="KonaBody">
+
+	
+			
+	
+
+
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table style="margin-bottom: 3px;" cellpadding="0" cellspacing="0" width="100%" border="0">
+<tbody><tr valign="bottom">
+	
+		<td class="smallfont"><a href="http://www.linuxquestions.org/questions/newreply.php?do=newreply&amp;noquote=1&amp;p=704493" rel="nofollow"><img title="Reply" src="command%20to%20check%20hardware_files/reply.gif" alt="Reply" border="0"></a></td>
+	
+	
+</tr>
+</tbody></table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" style="border-bottom-width: 0px;" cellpadding="3" cellspacing="1" width="100%" align="center" border="0">
+<tbody><tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		
+		&nbsp;
+		</div>
+	</td>
+
+	
+		<td class="vbmenu_control" id="threadsearch" nowrap="nowrap">
+			<a rel="nofollow" href="http://www.linuxquestions.org/questions/linux-general-1/command-to-check-hardware-135433/?nojs=1#goto_threadsearch">Search this Thread</a>
+			<script type="text/javascript"> vbmenu_register("threadsearch"); </script>
+		</td>
+	
+	
+	
+
+	
+
+</tr>
+</tbody></table>
+<!-- / toolbar -->
+
+
+
+
+
+
+
+<div id="posts"><!-- post #704493 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+	<div id="edit704493" style="padding: 0px 0px 3px;">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table id="post704493" class="tborder" cellpadding="3" cellspacing="0" width="100%" align="center" border="0">
+<tbody><tr>
+	
+		<td class="thead" style="font-weight: normal; border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(255, 255, 255) -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255);">		
+			<!-- status icon and date -->
+			<a name="post704493"><img title="Old" class="inlineimg" src="command%20to%20check%20hardware_files/post_old.gif" alt="Old" border="0"></a>
+			01-16-2004, 10:43 AM
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight: normal; border-width: 1px 1px 1px 0px; border-style: solid solid solid none; border-color: rgb(255, 255, 255) rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+			&nbsp;
+		
+			#<a href="http://www.linuxquestions.org/questions/linux-general-1/command-to-check-hardware-135433/#post704493" rel="nofollow" id="postcount704493" name="1"><strong>1</strong></a>
+			
+		
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt2" style="border-right: 1px solid rgb(255, 255, 255); border-left: 1px solid rgb(255, 255, 255); border-width: 0px 1px; border-style: none solid; border-color: -moz-use-text-color rgb(255, 255, 255);" width="175">			
+			<div id="postmenu_704493">
+				<div class="bigusername">
+				<!-- google_ad_section_start(weight=ignore) -->harrycrumb11<!-- google_ad_section_end --></div>
+				
+			</div>
+			<div class="smallfont">Member</div>
+			
+			
+			
+			
+			
+			<div class="smallfont">
+				&nbsp;<br>
+				<div>Registered: Aug 2003</div>
+				<div>Location: New York</div>
+				<div>Distribution: Redhat 9</div>
+				
+				<div>
+					Posts: 36
+				</div>
+				
+				
+				
+				<br><div><span id="repdisplay_704493_51588">Rep: <img title="Reputation: 15" class="inlineimg" src="command%20to%20check%20hardware_files/reputation_pos.gif" alt="Reputation: 15" border="0"> <!-- <smallfont>(15)</smallfont>--></span></div>
+				
+				<div>    </div>
+			</div>					
+	</td>
+	
+	<td class="alt2" id="td_post_704493" style="border-right: 1px solid rgb(255, 255, 255);">
+	
+		
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong><!-- google_ad_section_start -->command to check hardware<!-- google_ad_section_end --></strong>
+			</div>
+			<hr style="color: rgb(255, 255, 255);" size="1">
+			<!-- / icon and title -->
+		
+		
+
+		<!-- message -->
+
+
+<div style="float: right; margin: -3px -3px 5px 5px;">
+<script type="text/javascript">
+      netseer_tag_id = "1735";
+      netseer_ad_width = "300";
+      netseer_ad_height = "250";
+      netseer_task = "ad";
+</script>
+<script src="command%20to%20check%20hardware_files/netseerads.js" type="text/javascript"></script><iframe name="netseer_ads_frame" src="command%20to%20check%20hardware_files/BannerServer.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="250" width="300" scrolling="no"></iframe>
+<br>
+<script language="javascript" type="text/javascript">
+document.write('[<a href="/questions/lqlogin.php">Log in</a> to <strong>get rid</strong> of this advertisement]');
+</script>[<a href="http://www.linuxquestions.org/questions/lqlogin.php">Log in</a> to <strong>get rid</strong> of this advertisement]
+</div>
+
+		<div id="post_message_704493"><!-- google_ad_section_start -->I'm 
+pretty new to linux. Just wondering if there is a command for linux to 
+print up a list of hardware specs on a computer, also giving information
+ on if the hardware is working properly or not.  I'm using Knoppix 3.3. 
+Thanks in advance.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255);">
+
+
+		
+
+		
+		
+		&nbsp;
+	</td>
+
+	
+	<td class="alt2" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px 0px; border-style: none solid solid none; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+	
+		<!-- controls -->
+	
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+				
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+<div align="center"><!-- lq_leader_afterpost --> </div>
+
+
+
+<!-- post 704493 popup menu -->
+<div class="vbmenu_popup" id="postmenu_704493_menu" style="display: none;">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">harrycrumb11</td>
+	</tr>
+	
+	<tr><td class="vbmenu_option"><a rel="nofollow" href="http://www.linuxquestions.org/questions/user/harrycrumb11-51588/">View Public Profile</a></td></tr>
+	
+	<tr><td class="vbmenu_option"><a href="http://www.linuxquestions.org/questions/blog/harrycrumb11-51588/">View LQ Blog</a></td></tr>
+	<tr><td class="vbmenu_option"><a href="http://www.linuxquestions.org/bookmarks/user/harrycrumb11">View Bookmarks</a></td></tr>
+	<tr><td class="vbmenu_option"><a rel="nofollow" href="http://www.linuxquestions.org/reviews/showcat.php?cat=myprod&amp;ppuser=51588">View Review Entries</a></td></tr>
+	<tr><td class="vbmenu_option"><a rel="nofollow" href="http://www.linuxquestions.org/hcl/showcat.php?cat=myprod&amp;ppuser=51588">View HCL Entries</a></td></tr>
+	
+	
+	
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.linuxquestions.org/questions/search.php?do=finduser&amp;u=51588" rel="nofollow">Find More Posts by harrycrumb11</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 704493 popup menu -->
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #704493 --><!-- post #704547 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+	<div id="edit704547" style="padding: 0px 0px 3px;">
+	
+
+
+
+<table id="post704547" class="tborder" cellpadding="3" cellspacing="0" width="100%" align="center" border="0">
+<tbody><tr>
+	
+		<td class="thead" style="font-weight: normal; border-width: 1px 0px 1px 1px; border-style: solid none solid solid; border-color: rgb(255, 255, 255) -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255);">		
+			<!-- status icon and date -->
+			<a name="post704547"><img title="Old" class="inlineimg" src="command%20to%20check%20hardware_files/post_old.gif" alt="Old" border="0"></a>
+			01-16-2004, 11:22 AM
+			
+			<!-- / status icon and date -->
+		</td>
+		<td class="thead" style="font-weight: normal; border-width: 1px 1px 1px 0px; border-style: solid solid solid none; border-color: rgb(255, 255, 255) rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+			&nbsp;
+		
+			#<a href="http://www.linuxquestions.org/questions/linux-general-1/command-to-check-hardware-135433/#post704547" rel="nofollow" id="postcount704547" name="2"><strong>2</strong></a>
+			
+		
+		</td>
+	
+</tr>
+<tr valign="top">
+	<td class="alt1" style="border-right: 1px solid rgb(255, 255, 255); border-left: 1px solid rgb(255, 255, 255); border-width: 0px 1px; border-style: none solid; border-color: -moz-use-text-color rgb(255, 255, 255);" width="175">			
+			<div id="postmenu_704547">
+				<div class="bigusername">
+				<!-- google_ad_section_start(weight=ignore) -->fancypiper<!-- google_ad_section_end --></div>
+				
+			</div>
+			<div class="smallfont">Guru</div>
+			
+			
+			
+			
+			
+			<div class="smallfont">
+				&nbsp;<br>
+				<div>Registered: Feb 2003</div>
+				<div>Location: Sparta, NC USA</div>
+				<div>Distribution: Ubuntu 10.04</div>
+				
+				<div>
+					Posts: 5,141
+				</div>
+				
+				
+				
+				<br><div><span id="repdisplay_704547_24686">Rep: <img title="Reputation: 55" class="inlineimg" src="command%20to%20check%20hardware_files/reputation_pos.gif" alt="Reputation: 55" border="0"> <!-- <smallfont>(55)</smallfont>--></span></div>
+				
+				<div>    </div>
+			</div>					
+	</td>
+	
+	<td class="alt1" id="td_post_704547" style="border-right: 1px solid rgb(255, 255, 255);">
+	
+		
+		
+		
+
+		<!-- message -->
+
+
+		<div id="post_message_704547"><!-- google_ad_section_start -->You mean you don't know what hardware is in your <a id="KonaLink0" target="undefined" class="kLink" style="text-decoration: underline ! important; position: static;" href="#"><font style="color: blue ! important; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: 400; font-size: 13.3333px; position: static;" color="blue"><span class="kLink" style="color: blue ! important; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: 400; font-size: 13.3333px; position: relative;">computer</span></font></a>?  Here are a few bash commands for finding out stuff.<br>
+<br>
+Handy bash commands for finding out stuff in Linux:<br>
+# Find CPU specifications<br>
+cat /proc/cpuinfo<br>
+<br>
+# Find running kernel version<br>
+uname -r<br>
+<br>
+# What compiler version do I have installed<br>
+gcc -v<br>
+gcc --version<br>
+<br>
+# What is the running kernel and <a id="KonaLink1" target="undefined" class="kLink" style="text-decoration: underline ! important; position: static;" href="#"><font style="color: blue ! important; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: 400; font-size: 13.3333px; position: static;" color="blue"><span class="kLink" style="color: blue ! important; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: 400; font-size: 13.3333px; position: relative;">compiler</span></font></a> installed<br>
+cat /proc/version<br>
+<br>
+# Find X server version<br>
+X -showconfig<br>
+<br>
+# What pci cards are installed and what irq/port is used<br>
+cat /proc/pci<br>
+<br>
+# What kernel modules are loaded<br>
+lsmod<br>
+<br>
+# Memory and swap information<br>
+cat /proc/meminfo<br>
+free<br>
+An article: <a href="http://www.home.linuxjournal.com/article.php?sid=2770" target="_blank">Tips for Optimizing Linux Memory</a><br>
+<br>
+# How are the hard drives partitioned<br>
+<a id="KonaLink2" target="undefined" class="kLink" style="text-decoration: underline ! important; position: static;" href="#"><font style="color: blue ! important; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: 400; font-size: 13.3333px; position: static;" color="blue"><span class="kLink" style="color: blue ! important; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: 400; font-size: 13.3333px; position: relative; border-bottom: 1px solid blue; background-color: transparent;">fdisk</span></font><span style="position: relative;" class="preLoadWrap" id="preLoadWrap2"><div style="position: absolute; z-index: 2147482647; top: -32px; left: -18px; display: none;" id="preLoadLayer2"><img style="border: medium none; width: 22px; height: 22px;" src="command%20to%20check%20hardware_files/grey_loader.gif" class="preloadImg"></div></span></a> -l<br>
+<br>
+# How much free/used <a id="KonaLink3" target="undefined" class="kLink" style="text-decoration: underline ! important; position: static;" href="#"><font style="color: blue ! important; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: 400; font-size: 13.3333px; position: static;" color="blue"><span class="kLink" style="color: blue ! important; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: 400; font-size: 13.3333px; position: relative;">drive</span></font></a> space<br>
+df -h<br>
+<br>
+# Show disk usage by current directory and all subdirectories<br>
+du | less<br>
+<br>
+# What takes up so much space on your box<br>
+# Run from the directory in question and the largest chunk shows up last<br>
+find $1 -type d | xargs du -sm | sort -g<br>
+<br>
+# What is the distribution<br>
+cat /etc/.product<br>
+cat /etc/.issue<br>
+cat /etc/issue<br>
+cat /etc/issue.net<br>
+sysinfo<br>
+<br>
+# For finding or locating files<br>
+find<br>
+locate<br>
+which<br>
+whereis<br>
+<br>
+# Use dmesg to view the kernel ring buffer (error messages)<br>
+dmesg | less<br>
+<br>
+# Watch error messages as they happen (sysklog needed)<br>
+as root, <b>tail -f /var/log/messages</b> (shows last 10 lines, use a number in front of <b>f</b> for more lines)<br>
+<br>
+# What processes are running<br>
+ps -A<br>
+<br>
+# Find a process by name<br>
+ps -ef | grep -i &lt;plain text&gt;<br>
+For example, XCDroast<br>
+ps -ef xcdroast<br>
+<br>
+# See current environment list, or pipe to file<br>
+env | more<br>
+env &gt; environmentvariablelist.txt<br>
+<br>
+# Show current userid and assigned groups<br>
+id<br>
+<br>
+# See all command aliases for the current user<br>
+alias<br>
+<br>
+# See rpms installed on current system<br>
+rpmquery --all | less<br>
+rpmquery --all &gt; &lt;filename&gt;<br>
+rpmquery --all | grep -i &lt;plaintext&gt;<br>
+<br>
+<a href="http://freshmeat.net/projects/autospec/?topic_id=147" target="_blank">Autospec</a> for tarballs<br>
+<a href="http://www.paganini.net/rpmtools/" target="_blank">RPM tools</a><br>
+<br>
+# What directory am I using<br>
+pwd<br>
+<br>
+# Get ls colors in less<br>
+ls --color=always | less -R<br>
+<br>
+Look at <b>man &lt;command&gt;</b> or <b>info &lt;command&gt;</b> for the flags I used and for other options you can use for bash commands.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+	
+		
+		
+		
+		
+
+		
+		
+		
+		
+		
+		<!-- edit note -->
+			<div class="smallfont">
+				<hr style="color: rgb(255, 255, 255);" size="1">
+				<em>
+					
+						Last edited by fancypiper; 01-16-2004 at <span class="time">11:24 AM</span>.
+					
+					
+				</em>
+			</div>
+		<!-- / edit note -->
+		
+	
+	</td>
+</tr>
+<tr>
+	<td class="alt1" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px; border-style: none solid solid; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255);">
+
+
+		
+
+		
+		
+		&nbsp;
+	</td>
+
+	
+	<td class="alt1" style="border-right: 1px solid rgb(255, 255, 255); border-width: 0px 1px 1px 0px; border-style: none solid solid none; border-color: -moz-use-text-color rgb(255, 255, 255) rgb(255, 255, 255) -moz-use-text-color;" align="right">
+	
+		<!-- controls -->
+	
+		
+		
+		
+		
+		
+		
+		
+			
+		
+		
+				
+					
+			<div id="helpfulanswers_box_704547">		
+								
+				
+							
+					
+				
+					
+					
+					
+					
+				
+				
+				
+				
+			</div>			
+			
+		
+		
+		<!-- / controls -->
+	</td>
+</tr>
+</tbody></table>
+
+
+
+<!-- post 704547 popup menu -->
+<div class="vbmenu_popup" id="postmenu_704547_menu" style="display: none;">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">fancypiper</td>
+	</tr>
+	
+	<tr><td class="vbmenu_option"><a rel="nofollow" href="http://www.linuxquestions.org/questions/user/fancypiper-24686/">View Public Profile</a></td></tr>
+	
+	<tr><td class="vbmenu_option"><a href="http://www.linuxquestions.org/questions/blog/fancypiper-24686/">View LQ Blog</a></td></tr>
+	<tr><td class="vbmenu_option"><a href="http://www.linuxquestions.org/bookmarks/user/fancypiper">View Bookmarks</a></td></tr>
+	<tr><td class="vbmenu_option"><a rel="nofollow" href="http://www.linuxquestions.org/reviews/showcat.php?cat=myprod&amp;ppuser=24686">View Review Entries</a></td></tr>
+	<tr><td class="vbmenu_option"><a rel="nofollow" href="http://www.linuxquestions.org/hcl/showcat.php?cat=myprod&amp;ppuser=24686">View HCL Entries</a></td></tr>
+	
+	
+	
+	
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://fancypiper.is-a-geek.org/">Visit fancypiper's homepage!</a></td></tr>
+	
+	
+		<tr><td class="vbmenu_option"><a href="http://www.linuxquestions.org/questions/search.php?do=finduser&amp;u=24686" rel="nofollow">Find More Posts by fancypiper</a></td></tr>
+	
+	
+	
+	</tbody></table>
+</div>
+<!-- / post 704547 popup menu -->
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #704547 --><div id="lastpost"></div></div>
+
+<div align="center"><span style="float: left; margin-left: 20%;"><script type="text/javascript"><!--// <![CDATA[
+    OA_show(109471);
+// ]]> --></script><script type="text/javascript"><!--
+google_ad_client = "pub-4420048478783872";
+/* LQ Main - Bottom Medium Rectangle */
+google_ad_slot = "0665833758";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="command%20to%20check%20hardware_files/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display: inline-table; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 300px;"><ins id="google_ads_frame2_anchor" style="display: block; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 300px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" src="command%20to%20check%20hardware_files/ads_002.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="250" width="300" scrolling="no"></iframe></ins></ins><div id="beacon_1ceb3a83f1" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="command%20to%20check%20hardware_files/lg.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a target='_blank' href='http://d1.openx.org/ck.php?n=e59e8cb'><img border='0' alt='' src='http://d1.openx.org/avw.php?zoneid=109471&amp;n=e59e8cb' /></a></noscript></span>&nbsp;&nbsp;<span style="float: left;"></span></div><br>
+<div style="clear: both;"><br></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width: 100%; text-align: left;">
+		<div style="padding: 0px;" align="left">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table cellpadding="0" cellspacing="0" width="100%" border="0">
+<tbody><tr valign="top">
+	
+		<td class="smallfont"><a href="http://www.linuxquestions.org/questions/newreply.php?do=newreply&amp;noquote=1&amp;p=704547" rel="nofollow"><img title="Reply" src="command%20to%20check%20hardware_files/reply.gif" alt="Reply" border="0"></a></td>
+	
+	
+</tr>
+</tbody></table>
+<!-- / controls below postbits -->
+
+
+
+
+
+
+
+
+
+
+<!-- lightbox scripts -->
+	<script type="text/javascript" src="command%20to%20check%20hardware_files/vbulletin_lightbox.js"></script>
+	<script type="text/javascript">
+	<!--
+	vBulletin.register_control("vB_Lightbox_Container", "posts", 1);
+	//-->
+	</script>
+<!-- / lightbox scripts -->
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+
+<!-- currently active users -->
+
+<!-- end currently active users -->
+
+
+<!-- popup menu contents -->
+<br>
+
+<!-- thread tools menu -->
+<div class="vbmenu_popup" id="threadtools_menu" style="display: none;">
+<form action="/questions/postings.php?t=135433&amp;pollid=" method="post" name="threadadminform">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">Thread Tools<a name="goto_threadtools"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><img title="Show Printable Version" class="inlineimg" src="command%20to%20check%20hardware_files/printer.gif" alt="Show Printable Version"> <a href="http://www.linuxquestions.org/questions/linux-general-1/command-to-check-hardware-135433-print/" accesskey="3" rel="nofollow">Show Printable Version</a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><img title="Email this Page" class="inlineimg" src="command%20to%20check%20hardware_files/sendtofriend.gif" alt="Email this Page"> <a href="http://www.linuxquestions.org/questions/sendmessage.php?do=sendtofriend&amp;t=135433" rel="nofollow">Email this Page</a></td>
+	</tr>
+	
+	
+	
+			
+	
+	
+	</tbody></table>
+</form>
+</div>
+<!-- / thread tools menu -->
+
+<!-- **************************************************** -->
+
+
+<!-- thread search menu -->
+<div class="vbmenu_popup" id="threadsearch_menu" style="display: none;">
+<form action="/questions/search.php?do=process&amp;searchthreadid=135433" method="post">
+	<table cellpadding="4" cellspacing="1" border="0">
+	<tbody><tr>
+		<td class="thead">Search this Thread<a name="goto_threadsearch"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option" title="nohilite">
+			<input name="s" value="" type="hidden">
+			<input name="securitytoken" value="guest" type="hidden">
+			<input name="do" value="process" type="hidden">
+			<input name="searchthreadid" value="135433" type="hidden">
+			<input class="bginput" name="query" size="25" type="text"><input class="button" value="Go" type="submit"><br>
+		</td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><a rel="nofollow" href="http://www.linuxquestions.org/questions/search.php?searchthreadid=135433">Advanced Search</a></td>
+	</tr>
+	</tbody></table>
+</form>
+</div>
+<!-- / thread search menu -->
+
+
+<!-- **************************************************** -->
+
+
+
+<!-- / popup menu contents -->
+
+
+<!-- forum rules and admin links -->
+<table cellpadding="0" cellspacing="0" width="100%" align="center" border="0">
+<tbody><tr valign="bottom">
+	<td class="smallfont" align="left">
+		<table class="tborder" cellpadding="3" cellspacing="1" width="210" border="0">
+<thead>
+<tr>
+	<td class="thead">
+		<a style="float: right;" href="http://www.linuxquestions.org/questions/linux-general-1/command-to-check-hardware-135433/#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="command%20to%20check%20hardware_files/collapse_thead.gif" alt="" border="0"></a>
+		Posting Rules
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div>You <strong>may not</strong> post new threads</div>
+		<div>You <strong>may not</strong> post replies</div>
+		<div>You <strong>may not</strong> post attachments</div>
+		<div>You <strong>may not</strong> edit your posts</div>
+		<hr>
+		
+		<div><a rel="nofollow" href="http://www.linuxquestions.org/questions/misc.php?do=bbcode" target="_blank">BB code</a> is <strong>On</strong></div>
+		<div><a rel="nofollow" href="http://www.linuxquestions.org/questions/misc.php?do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></div>
+		<div><a rel="nofollow" href="http://www.linuxquestions.org/questions/misc.php?do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>Off</strong></div>
+		<div>HTML code is <strong>Off</strong></div><div><a rel="nofollow" href="http://www.linuxquestions.org/questions/misc.php?do=linkbacks#trackbacks" target="_blank">Trackbacks</a> are <strong>Off</strong></div>
+<div><a rel="nofollow" href="http://www.linuxquestions.org/questions/misc.php?do=linkbacks#pingbacks" target="_blank">Pingbacks</a> are <strong>On</strong></div>
+<div><a rel="nofollow" href="http://www.linuxquestions.org/questions/misc.php?do=linkbacks#refbacks" target="_blank">Refbacks</a> are <strong>Off</strong></div>
+		<hr>
+		<div><a rel="nofollow" href="http://www.linuxquestions.org/questions/misc.php?do=showrules" target="_blank">Forum Rules</a></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+	</td>
+	<td class="smallfont" align="right">
+		<table cellpadding="0" cellspacing="0" border="0">
+		
+		<tbody><tr>
+			<td>
+			
+			</td>
+		</tr>
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+<!-- /forum rules and admin links -->
+
+<br>
+
+
+<table class="tborder" cellpadding="3" cellspacing="1" width="100%" align="center" border="0">
+<thead>
+	<tr>
+		<td class="tcat" colspan="5" width="100%">
+			<a style="float: right;" href="http://www.linuxquestions.org/questions/linux-general-1/command-to-check-hardware-135433/#top" onclick="return toggle_collapse('similarthreads')"><img id="collapseimg_similarthreads" src="command%20to%20check%20hardware_files/collapse_tcat.gif" alt="" border="0"></a>
+			Similar Threads<a name="similarthreads"></a>
+		</td>
+	</tr>
+</thead>
+<tbody id="collapseobj_similarthreads" style="">
+<tr class="thead" align="center">
+	<td class="thead" width="40%">Thread</td>
+	<td class="thead" width="15%" nowrap="nowrap">Thread Starter</td>
+	<td class="thead" width="20%">Forum</td>
+	<td class="thead" width="5%">Replies</td>
+	<td class="thead" width="20%">Last Post</td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.linuxquestions.org/questions/linux-hardware-18/is-there-a-single-command-to-list-all-hardware-installed-command-line-361738/" title="There's a command on Solaris (prtconf) which lists all hardware installed on a box. Is there an equivalent command on linux (RedHat ES)? 
+ 
+Dave" target="_blank">Is there a single command to list all hardware installed (command line)?</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">davee</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Linux - Hardware</span></td>
+	<td class="alt2" align="center"><span class="smallfont">6</span></td>
+	<td class="alt1" align="right"><span class="smallfont">02-28-2009 <span class="time">07:19 PM</span></span></td>
+</tr><tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.linuxquestions.org/questions/fedora-installation-39/stuck-on-the-hardware-check-281212/" title="Hi there.. 
+http://www.overclockersclub.com/gui...fedora_xp_2.php ... I'm tryin to install fedora core 1 with the help of this cool site. The problem..." target="_blank">Stuck on the hardware check...</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">wildrider30</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Fedora - <a id="KonaLink4" target="undefined" class="kLink" style="text-decoration: underline ! important; position: static;" href="#"><font style="color: blue ! important; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: 400; font-size: 11px; position: static;" color="blue"><span class="kLink" style="color: blue ! important; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: 400; font-size: 11px; position: relative;">Installation</span></font></a></span></td>
+	<td class="alt2" align="center"><span class="smallfont">1</span></td>
+	<td class="alt1" align="right"><span class="smallfont">04-15-2006 <span class="time">01:20 AM</span></span></td>
+</tr><tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.linuxquestions.org/questions/linux-hardware-18/hardware-check-373333/" title="In another thread, someone suggested that my harddrive might be failing and that I get a hardware utility to check this.  I don't know much about how..." target="_blank">Hardware check?</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">General</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Linux - Hardware</span></td>
+	<td class="alt2" align="center"><span class="smallfont">2</span></td>
+	<td class="alt1" align="right"><span class="smallfont">10-15-2005 <span class="time">12:12 PM</span></span></td>
+</tr><tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.linuxquestions.org/questions/linux-general-1/check-the-hardware-information-125090/" title="except reboot the RH7 system , how can I know the hardware information 
+1. the no. of harddisk ( how many pcs ) and what is the size of each harddisk..." target="_blank">Check the hardware information</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">ust</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Linux - General</span></td>
+	<td class="alt2" align="center"><span class="smallfont">3</span></td>
+	<td class="alt1" align="right"><span class="smallfont">12-12-2003 <span class="time">06:03 AM</span></span></td>
+</tr><tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.linuxquestions.org/questions/linux-newbie-8/hardware-check-107879/" title="Ok, I'm curious about hardware recommendations before I buy the parts for my linux machine. I'm building it under a mini-budget... real mini. 
+ 
+-AMD..." target="_blank">Hardware check</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">joeblack</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Linux - Newbie</span></td>
+	<td class="alt2" align="center"><span class="smallfont">2</span></td>
+	<td class="alt1" align="right"><span class="smallfont">10-24-2003 <span class="time">03:39 AM</span></span></td>
+</tr>
+</tbody>
+</table>
+
+<br>
+
+<!-- end content table  -->
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+</div>
+
+<br>
+<div class="smallfont" align="center">All times are GMT -5. The time now is <span class="time">06:53 PM</span>.</div>
+<br>
+<!-- /content area table -->
+
+<form action="/questions/" method="get">
+<table class="page" cellpadding="3" cellspacing="0" width="100%" align="center" border="0">
+<tbody><tr>
+	
+	
+	<td class="tfoot" width="100%" align="right">
+		<div class="smallfont">
+			<strong>
+				<a href="http://www.linuxquestions.org/questions/sendmessage.php" rel="nofollow">Contact Us</a> -
+				<a href="http://www.linuxquestions.org/linux/adinfo.html">Advertising Info</a> - 
+				<a href="http://www.linuxquestions.org/linux/rules.html">Rules</a> - 
+				<a href="http://www.cafeshops.com/linuxquestions">LQ Merchandise</a> - 
+				<a href="http://www.linuxquestions.org/linux/donation.html">Donations</a> - 
+				<a href="http://www.linuxquestions.org/linux/member.html">Contributing Member</a> - 
+				<a href="http://www.linuxquestions.org/linux/sitemap.html">LQ Sitemap</a> - 
+				<a href="http://www.linuxquestions.org/">LinuxQuestions.org</a> -
+				
+				
+				
+				<a href="http://www.linuxquestions.org/questions/">Linux Forums</a>
+			</strong>
+		</div>
+	</td>
+</tr>
+</tbody></table>
+
+</form>
+
+
+<!-- START: LQ Table Bottom -->
+</td>
+<td class="page" style="padding-left: 5px;" valign="top" width="165px">
+<table style="margin-bottom: 5px;" class="tborder" cellpadding="2" cellspacing="0" width="100%" align="center" border="0">
+<tbody><tr><td class="vbmenu_control">Main Menu</td></tr>
+<tr><td class="alt1">
+<ul class="lqrightmenu">
+<li><a href="http://www.linuxquestions.org/questions/">Linux Forums</a></li>
+<li><a href="http://www.linuxquestions.org/questions/search.php">Search</a></li>
+<li><a href="http://www.linuxquestions.org/questions/tags/">LQ Tags</a></li>
+<li><a href="http://www.linuxquestions.org/hcl/">Linux HCL</a></li>
+<li><a href="http://www.linuxquestions.org/linux/answers/">Linux Tutorials</a></li>
+<li><a href="http://www.linuxquestions.org/jobs">LQ Job Marketplace</a></li>
+<li><a href="http://wiki.linuxquestions.org/">Linux Wiki</a></li>
+<li><a href="http://www.linuxquestions.org/reviews/index.php/cat/2">Distro Reviews</a></li>
+<li><a href="http://www.linuxquestions.org/reviews/index.php/cat/15">Book Reviews</a></li>
+<li><a href="http://iso.linuxquestions.org/">Download Linux</a></li>
+<li><a href="http://www.linuxquestions.org/bookmarks/">Linux Bookmarks</a></li>
+<li><a href="http://radio.linuxquestions.org/linux/lq-podcasts/">Linux Podcast</a></li>
+<li><a href="http://www.linuxquestions.org/questions/groups/">Social Groups</a></li>
+<li><a href="http://www.linuxquestions.org/questions/blog/">LQ Blogs</a></li>
+<li><a href="http://radio.linuxquestions.org/">LQ Radio</a></li>
+<li><a href="http://radio.linuxquestions.org/player/player.php" onclick="window.open('http://radio.linuxquestions.org/player/player.php','wimpyMP3player','width=540,height=320');return false">LQ Radio Jukebox</a></li>
+<li><a href="http://www.linuxquestions.org/">Home</a></li>
+</ul>
+<div align="center"><a href="http://www.linuxquestions.org/questions/linux-general-1/command-to-check-hardware-135433/#main_cont">(Con't)</a></div>
+</td></tr>
+</tbody></table>
+<div style="text-align: center; margin-bottom: 5px;"><script type="text/javascript"><!--// <![CDATA[
+    OA_show(108600);
+// ]]> --></script><script type="text/javascript"><!--
+google_ad_client = "pub-4420048478783872";
+/* LQ Main - Side Wide Skyscraper */
+google_ad_slot = "5452649278";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="command%20to%20check%20hardware_files/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display: inline-table; border: medium none; height: 600px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 160px;"><ins id="google_ads_frame3_anchor" style="display: block; border: medium none; height: 600px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 160px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame3" marginheight="0" marginwidth="0" name="google_ads_frame" src="command%20to%20check%20hardware_files/ads_003.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="600" width="160" scrolling="no"></iframe></ins></ins><div id="beacon_86b3efb8f1" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="command%20to%20check%20hardware_files/lg_003.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a target='_blank' href='http://d1.openx.org/ck.php?n=98c6c15'><img border='0' alt='' src='http://d1.openx.org/avw.php?zoneid=108600&amp;n=98c6c15' /></a></noscript></div>
+
+
+<div style="text-align: center; margin-bottom: 5px;" class="alt1">
+&nbsp; <!-- unused ad --> </div>
+
+
+<!-- netseer_side -->
+
+<table style="margin-bottom: 5px;" class="tborder" cellpadding="2" cellspacing="0" width="100%" align="center" border="0">
+<tbody><tr><td class="vbmenu_control">My LQ</td></tr>
+<tr><td class="alt1"><ul class="lqrightmenu">
+<li><a href="http://www.linuxquestions.org/questions/lqlogin.php">Login</a></li>
+<li><a href="http://www.linuxquestions.org/questions/register.php">Register</a></li>
+
+</ul>
+</td></tr>
+</tbody></table>
+
+<table style="margin-bottom: 5px;" class="tborder" cellpadding="2" cellspacing="0" width="100%" align="center" border="0">
+<tbody><tr><td class="vbmenu_control">Write for LQ</td></tr>
+<tr><td class="alt1">
+LinuxQuestions.org is looking for people interested in writing
+Editorials, Articles, Reviews, and more. If you'd like to contribute
+content, <a href="http://www.linuxquestions.org/questions/sendmessage.php">let us know</a>.
+</td></tr>
+</tbody></table>
+
+<table style="margin-bottom: 5px;" class="tborder" cellpadding="2" cellspacing="0" width="100%" align="center" border="0">
+<tbody><tr><td class="vbmenu_control" id="main_cont">Main Menu</td></tr>
+<tr><td class="alt1">
+<ul class="lqrightmenu">
+<li><a href="http://www.linuxquestions.org/questions/calendar.php">LQ Calendar</a></li>
+<li><a href="http://www.linuxquestions.org/linux/rules.html">LQ Rules</a></li>
+<li><a href="http://www.linuxquestions.org/linux/sitemap.html">LQ Sitemap</a></li>
+<li><a href="http://www.linuxquestions.org/questions/faq.php">Site FAQ</a></li>
+<li><a href="http://www.linuxquestions.org/bookmarks/">Linux Links</a></li>
+<li><a rel="nofollow" href="http://www.linuxquestions.org/questions/search.php?do=getnew">View New Posts</a></li>
+<li><a rel="nofollow" href="http://www.linuxquestions.org/questions/lqsearch.php?do=getnew&amp;daysprune=7">View Latest Posts</a></li>
+<li><a rel="nofollow" href="http://www.linuxquestions.org/questions/lqsearch.php?do=noreplies">Zero Reply Threads</a></li>
+<li><a href="http://wiki.linuxquestions.org/wiki/Special:Wantedpages">LQ Wiki Most Wanted</a></li>
+<li><a href="http://jeremy.linuxquestions.org/">Jeremy's Blog</a></li>
+<li><a href="http://www.linuxquestions.org/questions/project.php">Report LQ Bug</a></li>
+</ul>
+</td></tr>
+</tbody></table>
+<table style="margin-bottom: 5px;" class="tborder" cellpadding="2" cellspacing="0" width="100%" align="center" border="0">
+<tbody><tr><td class="vbmenu_control">Syndicate</td></tr>
+<tr><td class="alt1">
+<a href="http://www.linuxquestions.org/syndicate/lqlatest.xml"><img title="RSS1" src="command%20to%20check%20hardware_files/rss.gif" alt="RSS1" height="16" width="16" border="0"></a>&nbsp; Latest Threads<br>
+<a href="http://www.linuxquestions.org/syndicate/lqnews.rss"><img title="RSS1" src="command%20to%20check%20hardware_files/rss.gif" alt="RSS1" height="16" width="16" border="0"></a>&nbsp; LQ News<br>
+<a href="http://radio.linuxquestions.org/syndicate/lqpodcast.php"><img title="RSS2" src="command%20to%20check%20hardware_files/rss.gif" alt="RSS2" height="16" width="16" border="0"></a>&nbsp; LQ Podcast<br>
+<a href="http://radio.linuxquestions.org/syndicate/lqradio.php"><img title="RSS2" src="command%20to%20check%20hardware_files/rss.gif" alt="RSS2" height="16" width="16" border="0"></a>&nbsp; LQ Radio<br>
+<div class="smallfont">Twitter: <a href="http://twitter.com/linuxquestions" rel="nofollow">@linuxquestions</a><br>
+identi.ca: <a href="http://identi.ca/linuxquestions" rel="nofollow">@linuxquestions</a><br>
+Facebook: <a href="http://www.facebook.com/LinuxQuestions.org" rel="nofollow">@linuxquestions</a>
+</div>
+</td></tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<!-- END: LQ Table Bottom -->
+
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<div align="center">
+	<div class="smallfont" align="center">
+<a href="http://www.lqconsulting.com/">Open Source Consulting</a> |
+<a href="http://www.lqconsulting.com/services/Web/Domain-Registration">Domain Registration</a>
+</div><br><br>
+	
+	<div class="smallfont" align="center">
+	
+	</div>
+</div>
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init();
+//-->
+</script>
+
+
+<script type="text/javascript">
+var dc_UnitID = 14;
+var dc_PublisherID = 4566;
+var dc_AdLinkColor = 'blue';
+var dc_adprod='ADL';
+</script>
+<script type="text/javascript" src="command%20to%20check%20hardware_files/KonaLibInline.js"></script><script language="JavaScript" src="command%20to%20check%20hardware_files/generatedPublisherConfig.js"></script><script language="JavaScript" src="command%20to%20check%20hardware_files/KonaFlashBase.js"></script><a id="AdLinkLayerClick" target="_top" href="#"></a><input id="KonaImpression" style="width: 1px; height: 1px; visibility: hidden; display: none; position: absolute; left: -500px;" type="image"><input id="KonaImpression1" style="width: 1px; height: 1px; visibility: hidden; display: none; position: absolute; left: -500px;" type="image"><iframe allowtransparency="true" src="" vspace="0" hspace="0" marginheight="0" marginwidth="0" style="width: 1px; height: 1px; background-color: transparent; position: absolute; left: -500px;" id="caterpilarID" name="caterpilarID" frameborder="0" scrolling="no"></iframe><style id="konaStyle" type="text/css">
+ span.kLink { border-top: 0px none !important;border-left: 0px none !important;border-right: 0px none !important;border-bottom:  1px solid  ;padding : 0px 0px 1px 0px !important;color:blue;background: transparent none;width: auto !important;float: none !important;display:inline !important; } 
+ a.kLink { color:blue !important ; border-bottom-style: none;text-decoration: underline;cursor: pointer;font-family: verdana;border: 0px none transparent !important;background: transparent none !important;margin: 0px 0px 0px 0px; padding:0px 0px 0px 0px !important;text-transform: none !important;display:inline !important;font-variant:normal;top:0px; right:0px;bottom:0px;left:0px;;outline:none } 
+ a.kLink:link { color:blue !important ; border-bottom-style: none;text-decoration: underline;cursor: pointer;font-family: verdana;border: 0px none transparent !important;background: transparent none !important;margin: 0px 0px 0px 0px; padding:0px 0px 0px 0px !important;text-transform: none !important;display:inline !important;font-variant:normal;top:0px; right:0px;bottom:0px;left:0px; } 
+ a.kLink:hover { color:blue;text-decoration: underline;cursor: pointer;font-family: verdana;border: 0px none transparent !important;background: transparent none !important;margin: 0px 0px 0px 0px; padding:0px 0px 0px 0px !important;text-transform: none !important;display:inline !important;font-variant:normal;top:0px; right:0px;bottom:0px;left:0px; } 
+ a.kLink:visited { color:blue;text-decoration: underline;cursor: pointer; font-family: verdana;margin: 0px 0px 0px 0px; padding:0px 0px 0px 0px; } 
+ .sponsor { font-family: MS Sans Serif, Verdana; color: #AFAFAF;font-size: 9pt; cursor: default; } 
+ a.CBL { cursor:default; } 
+ a.CBL:link { cursor:default; } 
+ a.CBL:hover { cursor:default; } 
+ a.CBL:visited { cursor:default; } 
+ .KonaBody { display:inline; } </style>
+
+
+<!-- temp -->
+<div style="display: none;">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</div>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+window.orig_onload = window.onload;
+window.onload = function() {
+var cpost=document.location.hash.substring(1);var cpost2='';if(cpost){ var ispost=cpost.substring(0,4)=='post';if(ispost)cpost2='post_'+cpost.substring(4);if((cobj = fetch_object(cpost))||(cobj = fetch_object(cpost2))){cobj.scrollIntoView(true);}else if(ispost){cpostno = cpost.substring(4,cpost.length);if(parseInt(cpostno)>0){location.replace('http://www.linuxquestions.org/questions/showthread.php?p='+cpostno);};} }
+
+if(typeof window.orig_onload == "function") window.orig_onload();
+}
+
+//]]>
+</script>
+<div style="position: fixed; top: 5px; left: 3px; width: 1px; height: 1px; overflow: hidden;" id="kona_flash_preloader_wrapper"><object style="visibility: visible; width: 1px; height: 1px;" id="kona_flash_preloader" data="command%20to%20check%20hardware_files/konalayer.swf" type="application/x-shockwave-flash" height="100" width="100"><param value="transparent" name="wmode"><param value="always" name="allowScriptAccess"><param value="konaSuffix=?00000000380_16_08_2009&amp;layerId=-1&amp;enablePreloader=0" name="flashvars"></object></div><span id="konasapn0"><script src="command%20to%20check%20hardware_files/KonaGet.txt" type="text/javascript"></script><script src="command%20to%20check%20hardware_files/ContentLink.html" id="sendTeRequestTag" type="text/javascript"></script><script src="command%20to%20check%20hardware_files/ContentLink_002.html" id="sendTeRequestTag" type="text/javascript"></script><div allowscriptaccess="always" style="position: absolute; top: -1000px; left: -1000px; width: 316px; height: 150px; display: inline;" id="tmpPositionDiv"></div></span><div style="background: none repeat scroll 0% 0% transparent; overflow: hidden; top: 1733px; position: absolute; left: -3000px; z-index: 2147482649; height: 173.5px; width: 318.5px;" id="kona_2_wrapper"><object style="visibility: visible; background: none repeat scroll 0% 0% transparent; height: 173.5px; width: 318.5px; outline: medium none;" id="kona_2" data="command%20to%20check%20hardware_files/konalayer.swf" type="application/x-shockwave-flash" height="150px" width="316px"><param value="transparent" name="wmode"><param value="always" name="allowScriptAccess"><param value="konaSuffix=?00000000380_16_08_2009&amp;layerId=2&amp;enablePreloader=0&amp;swfId=2&amp;uniqueID=2" name="flashvars"></object><div style="opacity: 1; position: absolute; top: 0pt; left: 0pt; z-index: -1; overflow: hidden; border: medium none;" id="mainiframe2"></div><div style="cursor: move; z-index: 100; position: absolute; left: 2px; top: 14px; width: 220px; height: 23px; background-color: rgb(255, 255, 255); opacity: 0;" id="konaFlashDrag_2"></div></div></body></html>

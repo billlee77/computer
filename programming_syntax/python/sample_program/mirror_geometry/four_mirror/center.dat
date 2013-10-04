@@ -1,0 +1,20 @@
+Miror Demension (Length, Width): 600, 550
+Thickness: 3
+Mirror Radius: 1100
+#
+# Positive X Positive Y Mirror (Mirror 1)
+Mirror 1 Start Position (X, Y, Z): 43.8, 270, 870.5
+Mirror 1 Tilt Angle: 19.9831, 0
+#
+# Positive X Negative Y Mirror (Mirror 2)
+Mirror 2 Start Position (X, Y, Z): 43.8, -270, 905.5
+Mirror 2 Tilt Angle: 19.9831, 0
+#
+# Negative X Positive Y Mirror (Mirror 3)
+Mirror 3 Start Position (X, Y, Z): 72, 270, 897.6
+Mirror 3 Tilt Angle: -16.2202, 0
+#
+# Negative X Positive Y Mirror (Mirror 2)
+Mirror 4 Start Position (X, Y, Z): 72, -270, 932.6
+Mirror 4 Tilt Angle: -16.2202, 0
+#

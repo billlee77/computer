@@ -1,0 +1,346 @@
+/** new page-title-tab by yang.zhao **/
+.page-titletabs{padding:5px 0 10px 0;position:relative}
+.page-titletabs .title-name{padding-left:24px;padding-top:3px;font-size:14px;font-weight:bold;float:left;margin-right:14px}
+.page-titletabs ul.nav-tabs{}
+.page-titletabs ul.nav-tabs li{float:left;margin:0 10px;height:22px;line-height:22px;color:#666}
+.page-titletabs ul.nav-tabs li span{font-weight:bold}
+.page-titletabs ul.nav-tabs li.pipe,.page-titletabs ul.nav-tabs li.angleright{margin:0;font-weight:lighter;color:#CCC}
+*+html .page-titletabs ul.nav-tabs li.pipe{line-height:16px}
+.page-titletabs ul.nav-tabs li.angleright{background:transparent url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat -48px -102px;width:5px;height:9px;padding-top:6px}
+*+html .page-titletabs ul.nav-tabs li.angleright{background:transparent url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat -48px -102px}
+.page-titletabs ul.nav-tabs li.selected a{background: url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat left -508px;display:block;color:#fff;padding-left:10px}
+.page-titletabs ul.nav-tabs li.selected a span{background: url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat right -508px;display:block;padding:5px 10px 6px 0;line-height:12px;cursor:pointer}
+* html .page-titletabs ul.nav-tabs li.selected a span{padding:6px 10px 5px 0;line-height:12px}
+*+html .page-titletabs ul.nav-tabs li.selected a span{padding:7px 10px 4px 0;line-height:12px}
+.page-titletabs .title-button{position:absolute;right:0;top:0;display:block;height:26px;line-height:26px;padding-left:27px;color:#333;background:transparent url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat left -541px}
+.page-titletabs .title-button span{background:transparent url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat right -541px;display:inline-block;height:26px;line-height:26px;padding-right:13px;cursor:pointer}
+.page-titletabs .title-button:hover{text-decoration:none}
+.page-titletabs .upload-photo{}
+.page-titletabs .create-publicalbum{}
+.page-titletabs .return-index{position:absolute;right:0;height:26px;line-height:26px;}
+
+/** Photo page-title-tab by yang.zhao **/
+.page-titletabs .photo{background:transparent url(http://xnimg.cn/img/newsfeed/photo.gif) no-repeat  0 50%;}
+.album .note{position:relative;background-color:#FEFFCF;padding:10px;margin:10px 0;border:1px solid #E2C822}
+.album .note .x-to-hide{position:absolute;top:5px;right:5px}
+/** new album by yang.zhao  **/
+#pageAlbum .compatible {float:left;width:800px;}
+#pageAlbum #content {}
+.album .album-home{width:580px;float:left;overflow:hidden:z-index:1}
+.album .album-sidebar{width:200px;float:right;overflow:hidden}
+.photo-myList .album-home{width:600px;float:left;overflow:hidden:z-index:1;border-top:1px solid #DDD}
+.photo-myList .album-sidebar{width:180px;float:right;overflow:hidden}
+.preview-photo .album-main{background-color:#F2F2F2;position:relative;border-top:1px solid #DDD}
+.preview-photo .album-main .album-home{width:680px;float:left;background-color:#F7F7F7;overflow:hidden}
+.preview-photo .album-main .album-sidebar{width:120px;float:right;overflow:hidden}
+.preview-photo .album-main .album-home .photo-main{padding-bottom:10px}
+.preview-photo .float-list{position:absolute;right:0;z-index:2}
+.album .number-photo{line-height:22px;color:#666;padding-left:10px}
+.album .report{background:transparent url(http://xnimg.cn/imgpro/bg/report_bj.png) no-repeat -1px 0px;padding:2px 0 2px 20px;}
+.photo-myList .report{margin:5px 0 5px 13px}
+
+.album .no-content{margin:20px 0;text-align:center}
+.photo-myList .no-content{margin:150px 0}
+.photo-myList .album-sidebar .no-content{margin:20px 0}
+.photo-myList .album-sidebar .no-content{margin:20px 0;text-align:center}
+
+/* dialog */
+.preview-photo .infor-camera {background-color:#fff;border:1px solid #DDD;display:block;line-height:18px;padding:5px 8px;width:240px;margin-top:5px}
+.preview-photo .infor-camera span{display:block;width:100%}
+/* function-nav */
+.album .function-nav{position:relative;padding:5px 0 5px 5px;background-color:#F7F7F7;z-index:2}
+.index .function-nav{border-top:1px solid #CEE1EE}
+.preview-photo .function-nav{background-color:transparent;padding:10px 0;}
+.photo-myList .function-nav{background-color:#fff;padding-bottom:0}
+.album .function-nav h1{font-size:12px;line-height:23px;padding-left:10px}
+.album .function-nav h2{font-size:12px;font-weight:lighter;line-height:23px;padding-left:10px}
+.album .function-nav .more{position:absolute;right:10px;top:9px}
+.album .function-nav ul.nav-btn{}
+.album .function-nav ul.nav-btn li{float:left}
+.album .function-nav ul.nav-btn li.pipe{line-height:22px;font-family:宋体}
+.album .function-nav ul.nav-btn li a{display:block;height:20px;padding-left:30px;line-height:20px;background-image:url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125);background-repeat:no-repeat}
+.album .function-nav ul.nav-btn li.comment-button a{background-position:13px 5px;width:31px}
+.album .function-nav ul.nav-btn li.accolade-button a{background-position:13px -16px;width:32px}
+.album .function-nav ul.nav-btn li.circle-button a{background-position:13px -38px;width:32px}
+.album .function-nav ul.nav-btn li.beaut-button a{background-position:13px -59px;width:32px}
+.album .function-nav ul.nav-btn li.sequence-button a{background-position:-38px -31px;width:31px}
+.album .function-nav ul.nav-btn li.upload-button a{background-position:-182px 6px;width:50px;padding-left:25px}
+.album .function-nav ul.nav-btn li.ilike a{background-position:13px -16px;width:30px}
+.album .function-nav ul.nav-btn li a#edit-button{background-position:13px -80px;width:48px}
+.album .function-nav ul.nav-btn li.pub-comment-button{padding-left:0}
+.album .function-nav ul.nav-btn li.pub-comment-button a{background-image:none;width:55px;padding-left:0}
+.album .function-nav ul.nav-btn li.user-index a{background-image:none;padding-left:10px}
+* html .album .function-nav ul.nav-btn li.user-index a{float:left}
+.album .function-nav ul.nav-btn li.user-index a:hover{background-image:none}
+.album .border-background-none{border-top:0;background-color:#fff;width:50%;padding-bottom:0}
+.album .function-nav p.upload-time{color:#999;float:left;margin-right:10px;height:18px;line-height:20px;}
+*+html .album .function-nav p.upload-time{line-height:18px}
+/* Pager-photo */
+.album .pager-photo-top{position:absolute;top:-5px;right:0;height:22px}
+.album .pager-top{border-bottom:0}
+.album .pager-photo-bottom{border-top:1px solid #CEE1EE;padding-top:5px}
+.album .pager-bottom{border-top:0}
+.album .pager-bottom .pagerpro li a{margin-top:2px;border-top:0}
+.pager-bottom .pagerpro li.current a, .pager-bottom .pagerpro li.current a:hover{border-top:2px solid #005EAC;margin-top:0}
+/* Drop-down menus */
+.album .nav-btn li.edit-button{position:relative}
+.album .nav-btn li.edit-button #edit-button{}
+.album .nav-btn li.edit-button ul#edit-menus{display:none;position:absolute;border:1px solid #84ABC6;background-color:#ffffff;z-index:10;left:13px}
+.album .nav-btn li.edit-button ul#edit-menus li{display:block;line-height:27px;float:none}
+.album .nav-btn li.edit-button ul#edit-menus li a{display:block;width:66px;text-align:left;background-image:none;padding:0 0 0 10px}
+.album .nav-btn li.edit-button ul#edit-menus li a:hover{background-color:#EDF3FF;}
+.album .nav-btn li.edithover{}
+.album .nav-btn li.edithover ul#edit-menus{display:block}
+/* Function button */
+.preview-photo .function-nav span.photo-pager{position:absolute;right:0;top:5px;color:#999}
+.preview-photo .function-nav a.share{position:absolute;right:10px;top:7px}
+.photoNote{background-color:#FFFBE2;border:1px solid #FFE222;margin:0 20px 10px;padding:10px;text-align:left}
+.photoNote #tagNote{line-height:23px;float:left}
+#photoTitleEditor{text-align:left;margin-bottom:10px;margin-top:10px;}
+#photoTitleEditor .textarea{margin-bottom:5px;width:400px;height:48px;background:#FFA;}
+#photoTitleEditor .button-holder{text-align:left}
+.album .page-titletabs .share{position:absolute;right:0;}
+/* Photo image */
+.preview-photo .photo-img{width:680px;height:450px;min-height:450px;text-align:center;position:relative;display: table-cell;vertical-align:middle;text-align:center;*display: block;*font-size: 376px;*font-family:Arial}
+*+html .preview-photo .photo-img{height:auto !important}
+.preview-photo .photo-img img{vertical-align:middle}
+/* User comment */
+.preview-photo .user-comment{padding:0}
+/* Box-photomain */
+.preview-photo .box-photomain{padding:10px;background-color:#F2F2F2;margin-bottom:10px;position:relative}
+.preview-photo .box-photomain h1{font-size:12px;padding:10px 0 6px 10px;font-weight:lighter;color:#666;border-top:1px solid #fff}
+.preview-photo .box-photomain ul.user-photolist{padding:0 0 5px 10px}
+.preview-photo .box-photomain ul.user-photolist li{color:#DDD;margin-bottom:5px}
+.preview-photo .box-photomain ul.user-photolist li:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.preview-photo .box-photomain ul.user-photolist li{display:inline-block}
+.preview-photo .box-photomain ul.user-photolist li{display:block}
+.preview-photo .box-photomain ul.user-photolist li a{float:left}
+.preview-photo .box-photomain ul.user-photolist li a.close{background:transparent url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat -53px top;font-weight:11px;height:11px;line-height:11px;width:11px;margin:3px 0 0 3px;display:block}
+.preview-photo .box-photomain ul.user-photolist li a.close:hover{text-decoration:none;background-position:-53px -14px}
+.preview-photo .box-photomain .all-open,.preview-photo .box-photomain .all-pack{border-bottom:1px solid #D9D9D9;padding:0 0 10px 10px;text-align:left}
+.preview-photo .box-photomain .all-open a{background:transparent url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat r24px -307px;display:block;padding-right:10px}
+.preview-photo .box-photomain .all-pack a{background:transparent url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat 80px -295px;display:block;padding-right:10px}
+
+.preview-photo .box-photomain ul.content-photo{padding-top:10px;border-top:1px solid #fff;padding-left:10px}
+.preview-photo .box-photomain ul.content-photo li{color:#999;margin-bottom:5px}
+/*.preview-photo .box-photomain ul.content-photo li.link-gray a{color:#999;text-decoration:underline}
+.preview-photo .box-photomain ul.content-photo li.link-gray a:hover{color:#999;text-decoration:underline}*/
+.preview-photo .box-photomain ul.content-photo li.link-gray .infor-nav{text-align:left}
+.preview-photo .box-photomain ul.content-photo li.link-gray .infor-nav:hover {background:#EEE none repeat scroll 0 0}
+
+.preview-photo .box-photomain .photo-scroll{text-align:center;border-bottom:1px solid #D9D9D9;padding-bottom:15px}
+.preview-photo .box-photomain .photo-scroll p{padding-bottom:10px}
+.preview-photo .box-photomain .photo-scroll .pagetop a{display:block;background:transparent url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat left -130px;width:50px;padding-left:9px;height:20px;line-height:20px;margin:0 auto;font-size:11px;font-family:MingLiU}
+.preview-photo .box-photomain .photo-scroll .pagetop a:hover{text-decoration:none}
+.preview-photo .box-photomain .photo-scroll a.nogo-top{background-position:left -388px;color:#95A9B8;cursor:default}
+.preview-photo .box-photomain .photo-scroll .pagebottom a{display:block;background:transparent url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat left -150px;width:50px;padding-left:9px;height:20px;line-height:21px;margin:0 auto;font-size:11px;font-family:MingLiU;}
+.preview-photo .box-photomain .photo-scroll .pagebottom a:hover{text-decoration:none}
+.preview-photo .box-photomain .photo-scroll a.nogo-bottom{background-position: left -408px;color:#95A9B8;cursor:default}
+.preview-photo .box-photomain .photo-scroll ul{height:190px;overflow:hidden;margin-top:5px}
+.preview-photo .box-photomain .photo-scroll li{display:block;width:68px;margin:0 auto 5px auto}
+* html .preview-photo .box-photomain .photo-scroll li{margin:0 auto 3px auto}
+.preview-photo .box-photomain .photo-scroll li a,.preview-photo .box-photomain .photo-scroll li.photo-selected a{background:transparent url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat -1px -178px;padding:4px;display:block;width:60px;height:50px}
+.preview-photo .box-photomain .photo-scroll li a:hover{background-position:-1px -330px}
+.preview-photo .box-photomain .photo-scroll li.photo-selected a{background-position:-1px -236px}
+.preview-photo .box-photomain .photo-scroll li.photo-loading{background:transparent url(http://xnimg.cn/imgpro/indicator/loading.gif) no-repeat center center}
+/* Photo List */
+.album .photo-list{padding:20px 0 20px 0;position:relative}
+.album .photo-list .more{position:absolute;right:0}
+.album .photo-list ul{font-size:0}
+.album .photo-list li{display:inline-block;margin-right:30px;margin-bottom:10px;font-size:12px}
+.album .photo-list li{vertical-align:bottom;*display:inline}
+.layout{zoom:1;display:inline-block}
+.album .photo-list li span{display:block}
+.album .photo-list li span.img{width:112px;text-align:center}
+.album .photo-list li span.img img{padding:5px;border:1px solid #CEE1EE}
+.album .photo-list li span.infor{table-layout:fixed;word-wrap:break-word;word-break:break-all;overflow:hidden;width:109px;padding:3px 0 0 2px;line-height:15px;height:30px;color:#666}
+.index .photo-list li span.infor{height:45px}
+.album .photo-list li span.from{color:#999;line-height:1.5em}
+.album .friend-photo li{margin-right:35px}
+.photo-myList .photo-list{background-color:#F7F7F7;border-top:1px solid #DDD}
+.photo-myList .photo-list li{margin:0 15px 10px 20px}
+* html .photo-myList .photo-list li{margin:0 18px 10px 10px}
+/* Photo-list Hot */
+.album .public-albumlist-hot{padding:10px 0}
+.album .public-albumlist-hot ul{}
+.album .public-albumlist-hot li{float:left;width:50%;margin-bottom:20px;overflow:hidden}
+.album .public-albumlist-hot li h2{font-size:14px;font-weight:lighter;color:#005EAC;padding-bottom:5px}
+.album .public-albumlist-hot li p{color:#999}
+.album .public-albumlist-hot li p a.album-name{padding:3px;border:1px solid #D8DFEA;float:left;margin-right:10px;display:block;width:50px;height:50px}
+.album .public-albumlist-hot li p a img{}
+.album .public-albumlist-hot li p span{display:block;line-height:1.5em}
+/* Rounded box */
+.rounded-box .corner {background: url(http://xnimg.cn/imgpro/box/blue_rounded_sprite.gif) no-repeat}
+.rounded-box .corner.tl {background-position: left top}
+.rounded-box .corner.tr {background-position: right top;padding: 4px 0 0}
+.rounded-box .corner.bl {background-position: left bottom}
+.rounded-box .corner.br {background-position: right bottom;padding: 0 0 4px}
+.rounded-box .corner-body {background: #F0F5F8;border: solid #CEE1EE;border-width: 0px 1px;padding: 1px 0}
+/* Album-list me */
+.album .corner-body h2{position:relative;font-size:12px;border-bottom:1px solid #CEE1EE;margin:5px 10px;padding-bottom:5px}
+.album .corner-body h2 a.more{position:absolute;right:0;_right:10px;font-weight:lighter}
+.album ul.album-list-me{margin:10px}
+.album ul.album-list-me li:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.album ul.album-list-me li{margin-bottom:15px;line-height:1.5em}
+*html .album ul.album-list-me li{display:inline-block}
+*+html .album ul.album-list-me li{display:inline-block}
+.album ul.album-list-me li a.album-mame{float:left;margin-right:10px;width:50px;height:54px;padding:4px 5px 5px 4px;background:#fff url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat scroll left -437px}
+* html .album ul.album-list-me li a.album-mame{margin-right:5px}
+.album ul.album-list-me li a.album-mame img{border:1px solid #90A4B3;border-right:0;border-bottom:0}
+.album ul.album-list-me li span{}
+.album ul.album-list-me li span.tag{table-layout:fixed;word-wrap:break-word;word-break:break-all;overflow:hidden;width:90px;*width:88px;display:block}
+.album ul.album-list-me li span.statis{color:#999;display:block}
+/* Album-Photo */
+.album .photolist-pager{width:595px}
+/* Album-List */
+.album .album-list .photo-two-column{border-collapse: separate;width:100%}
+.album .album-list .photo-two-column td{background: #FFF;border: 1px solid #CCC;width:50%}
+.album .album-list .photo-two-column .photo-list{padding: 10px;overflow: hidden;zoom: 1;}
+.album .album-list .photo-two-column .photo-list img{float: left;width:200px}
+.album .album-list .photo-two-column .photo-list .info{float: left;margin: 2px 0 0 8px;width: 150px;}
+.album .album-list .photo-two-column .photo-list .info .author{line-height:1.5em;margin-top: 0.5em;}
+.album .album-list .photo-two-column .photo-list .info .taged{line-height:1.5em;margin-bottom: 0.5em;}
+.album .album-list .photo-two-column .photo-list .info .taged a{font-weight:bold;}
+.album .album-list .photo-two-column .photo-list .info .date {font-size: 1.0em;line-height:1.5em;}
+/* Photo Editor */
+.preview-photo .photo-desc{margin:15px 0 10px 40px;min-height:30px}
+* html .preview-photo .photo-desc{height:30px !important}
+*+ html .preview-photo .photo-desc{height:auto !important}
+.preview-photo .photo-desc h1{position:relative;font-size:12px;padding-bottom:6px}
+.preview-photo .photo-desc h1 a.edit{position:absolute;font-weight:lighter;right:0;_right:10px}
+.preview-photo .photo-desc p{color:#333;margin:10px 40px 10px 0}
+.preview-photo .photo-desc p.photo-title-hover{background-color:#FFA}
+/*Ablum Information*/
+.photo-myList .ablum-Information{position:relative;padding-top:10px}
+.photo-myList .ablum-Information .name{display:block;width:50px;height:54px;padding:4px 5px 5px 4px;background:url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat left -437px;float:left;margin-right:10px}
+.photo-myList .ablum-Information .name img{border:1px solid #999;border-right:0;border-bottom:0}
+.photo-myList .ablum-Information .Information{float:left;width:484px;table-layout:fixed;overflow:hidden;word-wrap:break-word;word-break:break-all}
+.photo-myList .ablum-Information .Information h1{font-size:14px;padding:5px 0 2px 0}
+.photo-myList .ablum-Information .Information p{line-height:1.5em}
+.photo-myList .ablum-Information .Information .describe{color:#666}
+.photo-myList .ablum-Information .Information .site{color:#999}
+.photo-myList .ablum-Information a.share{position:absolute;right:0;top:10px}
+/*Album MyList*/
+.album-myList .album-list{padding:20px 0}
+.album-myList .album-list ul{}
+.album-myList .album-list li{display:block;margin:0 15px 15px 10px;float:left;height:180;}
+.album-myList .album-list li .name{background:url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091125) no-repeat right -382px;width:114px;height:118px;display:block;overflow:hidden;margin-bottom:6px}
+.album-myList .album-list li .name span{background-position:left -20px;background-repeat:no-repeat;display:block;width:100px;height:100px;border:1px solid #333;margin:6px}
+.album-myList .album-list li .infor{table-layout:fixed;word-wrap:break-word;word-break:break-all;width:135px;display:block;color:#999;line-height:1.5em}
+.album-myList .album-list li .infor span{display:block}
+.album-myList .album-list li span.password{background:url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091117) no-repeat -102px -274px;}
+.album-myList .album-list li span em{background:url(http://xnimg.cn/imgpro/album/album-icon.png?timestamp=091117) no-repeat -111px 2px;color:#E4494A;padding-left:15px}
+/*Ablum corner-body*/
+.photo-myList .album-sidebar .corner-body{background-color:#F0F5F8;padding:5px 0;border:1px solid #CEE1EE}
+/*Friend Selector*/
+.photo-myList .friendAutoSelector{padding:10px 0 5px 10px;border-top:1px solid #CEE1EE;width:168px}
+
+/* start phototag by dimu.feng 09/10/27 */
+#photoPan {position:relative}
+div#panDiv { position:absolute; width:200px; background-color:#fff; border:solid #005eac; border-width:1px 1px 2px; display:none; z-Index: 999; }
+div#panDiv {z-Index: 1011;}
+div#photoNote {margin:10px 20px;padding:10px; background-color:#fffBE2 ;border:1px solid #FFE222; display:none; }
+#panDiv .target-title {padding-bottom:1px; }
+*+html #panDiv .target-title {padding-top:3px;}
+#panDiv .target-title h3 {padding:2px 5px; color:gray; }
+#panDiv .target-title input {margin:1px 5px; border:1px solid #7f9db9; padding:2px 3px 1px;  }
+#panDiv .target-body {background:#eee; border-top:1px solid #ccc; border-bottom:1px solid #ccc; line-height:22px; }
+#panDiv .target-body li {padding:0 5px;}
+#panDiv .target-body li.myself {border-bottom:1px solid #838383;}
+#panDiv .target-body input {margin-right:3px;background:#eee; border:0; }
+#panDiv .note { background-color:#d8dfea; padding:5px; margin-bottom:5px}
+#panDiv .inputbutton {margin-right:20px; font-size:12px}
+#panDiv ul {list-style:none}
+#panDiv .target-action {text-align:center; padding:5px 0; }
+#tagNote .title {font-weight:bold; color:#008000; margin-top:0;font-size:14px}
+#targetId { width:160px }
+.tagcloud { margin:10px 0;padding:0 10px;}
+div.operation {text-align:center; margin:10px 0}
+div.operation input{margin-right:20px}
+.tagger_css {position:absolute; background:#fffbe2; border:#ffe222 1px solid; width:200px; height:20px;padding:2px 8px;display:none}
+/* add by dimu.feng 09/10/27 */
+#innerTagName {padding:2px 3px;background-color:#D8DFEA;position:absolute;color:#333;-moz-border-radius:2px;-webkit-border-radius:2px;}
+#taglayout{position:absolute;left:-2px;top:-2px;border:1px solid #000;opacity:0.3;filter:alpha(opacity=30)}
+#taglayin{border:1px solid #000;opacity:0.05;position:absolute;top:0px;filter:alpha(opacity=5)}
+div.tagshowcon{border:1px solid #fff;position:absolute;zoom:1;}
+
+#rRightDown,#rLeftDown,#rLeftUp,#rRightUp{position:absolute;background:#FFF;border: 1px solid #000;width: 6px;height: 6px;z-index:500;font-size:0;}
+#dragInnerDiv {border:1px dashed #fff;}
+#rLeftDown,#rRightUp{cursor:ne-resize;}
+#rRightDown,#rLeftUp{cursor:nw-resize;}
+
+#rLeftDown{left:-1px;bottom:-1px;}
+#rRightUp{right:-1px;top:-1px;}
+#rRightDown{right:-1px;bottom:-1px;}
+#rLeftUp{left:-1px;top:-1px;}
+
+#bgDiv{ position:absolute;display:none;overflow:hidden;}
+#bgDiv img{ position:absolute;left:0;top:0;cursor:crosshair;}
+#dragDiv{border:1px dashed #000;width:100px; height:60px; cursor:move; zoom:1;}
+
+/** From old albumpro.css Begin**/
+/* Tag List pan */
+/* Note
+ * fixed gettagphoto has no whisper
+ * added by bo.hu 2009.08.03
+ * */
+.whisper {background:transparent url(http://xnimg.cn/img/lock_red_new.png) no-repeat scroll 0 2px;float:right;font-weight:bold;padding-left:15px;padding-right:5px;line-height:15px;}
+/* minieditor
+ * import by xiang.xiao 2009.08.05
+ * */
+.commentinalbum{width:468px;padding:5px 0 10px;margin-bottom:30px;background-color:#F0F5F8;} 
+.commentinalbum .m-editor{width:394px;float:left;}
+.commentinalbum .m-editor textarea#cmtbody{width:392px;height:90px;*margin-top:-1px;}
+.m-editor{position:relative;}
+.m-editor .m-editor-action{height:23px;float:right;}
+.m-editor .m-editor-action a{display:block;outline:none;float:left;line-height:23px;background-image:url(http://xnimg.cn/imgpro/minieditor/action_btn.png);background-repeat:no-repeat;}
+.m-editor .m-editor-action a.m-editor-emo{height:23px;padding-left:25px;background-position:0 -23px;}
+.m-editor .m-editor-action .m-editor-more-action a{text-indent:0;background:none;line-height:23px;float:right;padding-right:10px;}
+.m-editor .m-editor-action a.m-editor-addlink{height:23px;padding-left:27px;width:32px;background-position:-40px 0;}
+.m-editor .m-editor-textarea textarea{border:1px solid #CEE1EE;margin:0;}
+.m-editor .m-editor-submit{padding-top:5px;}
+.m-editor .m-editor-submit .whisper-label{margin-left:10px;}
+.m-editor .m-editor-submit .whisper-label #whisper{margin-right:3px;}
+
+.m-editor-emo-holder{background:#fff;padding:5px;border:1px solid #8496BA;width:334px}
+.m-editor-emo-holder .emo-header ul{padding:0 10px;margin-bottom:10px;list-style:none;border-bottom:1px solid #B8D4E8;*zoom:1;}
+.m-editor-emo-holder .emo-header ul:after{content:".";display:block;clear:both;height:0;visibility:hidden;}
+.m-editor-emo-holder .emo-header li{float:left;margin-right:3px;padding:3px 10px;*padding:5px 10px 1px;}
+.m-editor-emo-holder .emo-header li.current{padding:1px 10px 5px;}
+.m-editor-emo-holder .emo-header li a{float:left;display:block;outline:none;}
+.m-editor-emo-holder .emo-header li.current{
+	background-color: #FFF;
+	border: 1px solid #B8D4E8;
+	border-bottom: 0;
+	position: relative;
+	bottom: -1px;
+	border-radius: 5px 5px 0 0;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius: 5px 5px 0 0;
+	*border: 0;
+	*background: url(http://xnimg.cn/imgpro/bg/corner.gif) #FFF no-repeat left top;
+	*padding: 0;
+	*padding-left: 5px;
+}
+.m-editor-emo-holder .emo-header li.current a {
+	*padding: 4px 11px 3px 8px;
+	*background: url(http://xnimg.cn/imgpro/bg/corner.gif) #FFF no-repeat right top;
+}
+.m-editor-emo-holder .emo-header li.current a {font-weight:bold;color:#000;}
+.m-editor-emo-holder .notVip-tip{width:334px;padding:10px 0;background:#fff url(http://xnimg.cn/imgpro/minieditor/noviptip.png) no-repeat 20px center;}
+.m-editor-emo-holder .notVip-tip p{margin-left:100px;padding-bottom:5px;}
+.m-editor-emo-holder .notVip-tip p.red{color:#f00;padding-bottom:3px;}
+.m-editor-emo-holder .notVip-tip p .join-vip{display:block;text-indent:-9999px;outline:none;width:81px;height:24px;background:url(http://xnimg.cn/imgpro/minieditor/joinvip.png) no-repeat;}
+.m-editor-emo-holder .emo-list{*zoom:1;width:336px;cursor:default;}
+.m-editor-emo-holder .emo-list:after{content:".";display:block;clear:both;height:0;visibility:hidden;}
+.m-editor-emo-holder .emo-list li{float:left;cursor:pointer;margin:0 2px 2px 0;width:24px;height:16px;padding:4px 0;text-align:center;border:1px solid #B8D4E8;}
+.m-editor-emo-holder .emo-list li img{height:16px;}
+.m-editor-emo-holder .emo-list li:hover{border-color:#888;}
+.m-editor-emo-holder .emo-list.big-emo li a{width:38px;height:32px;padding:3px 0;}
+.m-editor-emo-holder .emo-list.big-emo li a img{width:32px;height:32px;}
+.meditor-emo-preview img{width:50px;height:50px;}  
+.commentinalbum .user-avatar{float:left;width:50px;height:50px;padding:0 8px 0 6px;}
+.commentinalbum .user-avatar img.avatar{position: absolute;display: block;position:absolute;width: 50px;clip: rect(0 50px 50px 0);}
+/** From old albumpro.css End **/
+

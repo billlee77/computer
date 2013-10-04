@@ -1,0 +1,754 @@
+This is METAFONT, Version 2.71828 (Web2C 7.5.4) (base=mf 2010.6.8)  19 NOV 2010 21:18
+**\mode=localmode; input samplepics;
+(samplepics.mf (/home/billlee/texmf/metafont/feynmf/feynmf.mf)
+! Value is too large (5121).
+<recently read> ;
+                 
+beginchar->...rdp:=(EXPR3);w:=hround(charwd*hppp);
+                                                  h:=vround(charht*hppp);d:=...
+l.4 beginchar(1, 50*2.84526pt#, 30*2.84526pt#, 0)
+                                                 ;
+? q
+OK, entering batchmode...
+feynmf: 1
+! Value is too large (5121).
+subgraph->...=((EXPR0),(EXPR1));se=sw+((EXPR2),0);
+                                                  nw=sw+(0,(EXPR3));ne=sw+((...
+l.7 subgraph (0, 0, w, h)
+                         ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Value is too large (5121).
+subgraph->...+(0,(EXPR3));ne=sw+((EXPR2),(EXPR3));
+                                                  c=0.5[sw,ne];
+l.7 subgraph (0, 0, w, h)
+                         ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Value is too large (4608.86874).
+vforce->...3);vlist[vlookup(SUFFIX3)]loc:=(EXPR2);
+                                                  endgroup
+<for(__o1)> vforce(point.off.of(path),(SUFFIX0))
+                                                ;off:=off+len/(numv-1); ENDFOR
+vdistribute->...2),$);off:=off+len/(numv-1);endfor
+                                                  .fi.endgroup
+vright->...roup.vdistribute(right_gallery,(TEXT2))
+                                                  endgroup
+vrightn->...oup.vright(vmklist((SUFFIX2),(EXPR3)))
+                                                  ;endgroup
+l.11 vrightn (__o, 4)
+                     ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Value is too large (5062.10057).
+vforce->...3);vlist[vlookup(SUFFIX3)]loc:=(EXPR2);
+                                                  endgroup
+<for(__o2)> vforce(point.off.of(path),(SUFFIX0))
+                                                ;off:=off+len/(numv-1); ENDFOR
+vdistribute->...2),$);off:=off+len/(numv-1);endfor
+                                                  .fi.endgroup
+vright->...roup.vdistribute(right_gallery,(TEXT2))
+                                                  endgroup
+vrightn->...oup.vright(vmklist((SUFFIX2),(EXPR3)))
+                                                  ;endgroup
+l.11 vrightn (__o, 4)
+                     ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Value is too large (5062.09523).
+vforce->...3);vlist[vlookup(SUFFIX3)]loc:=(EXPR2);
+                                                  endgroup
+<for(__o3)> vforce(point.off.of(path),(SUFFIX0))
+                                                ;off:=off+len/(numv-1); ENDFOR
+vdistribute->...2),$);off:=off+len/(numv-1);endfor
+                                                  .fi.endgroup
+vright->...roup.vdistribute(right_gallery,(TEXT2))
+                                                  endgroup
+vrightn->...oup.vright(vmklist((SUFFIX2),(EXPR3)))
+                                                  ;endgroup
+l.11 vrightn (__o, 4)
+                     ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Value is too large (4608.86874).
+vforce->...3);vlist[vlookup(SUFFIX3)]loc:=(EXPR2);
+                                                  endgroup
+<for(__o4)> vforce(point.off.of(path),(SUFFIX0))
+                                                ;off:=off+len/(numv-1); ENDFOR
+vdistribute->...2),$);off:=off+len/(numv-1);endfor
+                                                  .fi.endgroup
+vright->...roup.vdistribute(right_gallery,(TEXT2))
+                                                  endgroup
+vrightn->...oup.vright(vmklist((SUFFIX2),(EXPR3)))
+                                                  ;endgroup
+l.11 vrightn (__o, 4)
+                     ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Value is too large (4355.11201).
+<for(10)> ...]cnt,vlist[(EXPR0)]poly[j]idx)endfor;
+                                                  fi ENDFOR
+vfreeze->...nt,vlist[i]poly[j]idx)endfor;fi.endfor
+                                                  .if.vtracing:vdump;fi.endg...
+l.25 vfreeze
+            ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Value is too large (4355.11252).
+<for(10)> ...]cnt,vlist[(EXPR0)]poly[j]idx)endfor;
+                                                  fi ENDFOR
+vfreeze->...nt,vlist[i]poly[j]idx)endfor;fi.endfor
+                                                  .if.vtracing:vdump;fi.endg...
+l.25 vfreeze
+            ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Curve out of range.
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+draw_plain_arrow->begingroup.cdraw(EXPR2);
+                                          cfill(arrow(EXPR2));endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(1)> ...3),(EXPR0)),vlist[(3)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(3)]arc[(EXPR0)]sty...
+<for(3)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+! Value is too large (4492.37512).
+marrow->...=point(EXPR3)*length((EXPR2))of(EXPR2);
+                                                  (t1,whatever)=(EXPR2)inter...
+
+arrow->begingroup.marrow((EXPR2),0.5)
+                                     endgroup
+<to be read again> 
+                   )
+draw_plain_arrow->...aw(EXPR2);cfill(arrow(EXPR2))
+                                                  ;endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(1)> ...3),(EXPR0)),vlist[(3)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(3)]arc[(EXPR0)]sty...
+<for(3)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Value is too large (4413.5834).
+arrow_head->...=infinity;fi.tip=point.t2of(EXPR2);
+                                                  ap=subpath(t1,t2)of(EXPR2)...
+
+marrow->....z);arrow_head((EXPR2),t1,t2,arrow_ang)
+                                                  endgroup
+arrow->begingroup.marrow((EXPR2),0.5)
+                                     endgroup
+<to be read again> 
+                   )
+draw_plain_arrow->...aw(EXPR2);cfill(arrow(EXPR2))
+                                                  ;endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(1)> ...3),(EXPR0)),vlist[(3)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(3)]arc[(EXPR0)]sty...
+<for(3)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Curve out of range.
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+draw_plain_arrow->...w(EXPR2);cfill(arrow(EXPR2));
+                                                  endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(1)> ...3),(EXPR0)),vlist[(3)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(3)]arc[(EXPR0)]sty...
+<for(3)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+! Curve out of range.
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+draw_plain_arrow->begingroup.cdraw(EXPR2);
+                                          cfill(arrow(EXPR2));endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(1)> ...6),(EXPR0)),vlist[(6)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(6)]arc[(EXPR0)]sty...
+<for(6)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+! Value is too large (4492.37535).
+marrow->...=point(EXPR3)*length((EXPR2))of(EXPR2);
+                                                  (t1,whatever)=(EXPR2)inter...
+
+arrow->begingroup.marrow((EXPR2),0.5)
+                                     endgroup
+<to be read again> 
+                   )
+draw_plain_arrow->...aw(EXPR2);cfill(arrow(EXPR2))
+                                                  ;endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(1)> ...6),(EXPR0)),vlist[(6)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(6)]arc[(EXPR0)]sty...
+<for(6)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Value is too large (4413.58377).
+arrow_head->...=infinity;fi.tip=point.t2of(EXPR2);
+                                                  ap=subpath(t1,t2)of(EXPR2)...
+
+marrow->....z);arrow_head((EXPR2),t1,t2,arrow_ang)
+                                                  endgroup
+arrow->begingroup.marrow((EXPR2),0.5)
+                                     endgroup
+<to be read again> 
+                   )
+draw_plain_arrow->...aw(EXPR2);cfill(arrow(EXPR2))
+                                                  ;endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(1)> ...6),(EXPR0)),vlist[(6)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(6)]arc[(EXPR0)]sty...
+<for(6)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Curve out of range.
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+draw_plain_arrow->...w(EXPR2);cfill(arrow(EXPR2));
+                                                  endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(1)> ...6),(EXPR0)),vlist[(6)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(6)]arc[(EXPR0)]sty...
+<for(6)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+:1:\fmfL(22.61072,17.10936,b){$\gamma ,Z$}%
+! Curve out of range.
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+draw_wiggly->begingroup.cdraw(wiggly(EXPR2));
+                                             endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(3)> ...8),(EXPR0)),vlist[(8)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(8)]arc[(EXPR0)]sty...
+<for(8)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+! Curve out of range.
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+draw_wiggly->begingroup.cdraw(wiggly(EXPR2));
+                                             endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(1)> ...9),(EXPR0)),vlist[(9)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(9)]arc[(EXPR0)]sty...
+<for(9)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+! Curve out of range.
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+draw_plain_arrow->begingroup.cdraw(EXPR2);
+                                          cfill(arrow(EXPR2));endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(3)> ...9),(EXPR0)),vlist[(9)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(9)]arc[(EXPR0)]sty...
+<for(9)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+! Value is too large (4743.83923).
+marrow->...=point(EXPR3)*length((EXPR2))of(EXPR2);
+                                                  (t1,whatever)=(EXPR2)inter...
+
+arrow->begingroup.marrow((EXPR2),0.5)
+                                     endgroup
+<to be read again> 
+                   )
+draw_plain_arrow->...aw(EXPR2);cfill(arrow(EXPR2))
+                                                  ;endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(3)> ...9),(EXPR0)),vlist[(9)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(9)]arc[(EXPR0)]sty...
+<for(9)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Value is too large (5011.18732).
+arrow_head->...=infinity;fi.tip=point.t2of(EXPR2);
+                                                  ap=subpath(t1,t2)of(EXPR2)...
+
+marrow->....z);arrow_head((EXPR2),t1,t2,arrow_ang)
+                                                  endgroup
+arrow->begingroup.marrow((EXPR2),0.5)
+                                     endgroup
+<to be read again> 
+                   )
+draw_plain_arrow->...aw(EXPR2);cfill(arrow(EXPR2))
+                                                  ;endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(3)> ...9),(EXPR0)),vlist[(9)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(9)]arc[(EXPR0)]sty...
+<for(9)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Curve out of range.
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+draw_plain_arrow->...w(EXPR2);cfill(arrow(EXPR2));
+                                                  endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(3)> ...9),(EXPR0)),vlist[(9)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(9)]arc[(EXPR0)]sty...
+<for(9)> ...arc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+! Curve out of range.
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+draw_plain_arrow->begingroup.cdraw(EXPR2);
+                                          cfill(arrow(EXPR2));endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(3)> ...),(EXPR0)),vlist[(10)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(10)]arc[(EXPR0)]st...
+<for(10)> ...rc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+! Value is too large (4743.8419).
+marrow->...=point(EXPR3)*length((EXPR2))of(EXPR2);
+                                                  (t1,whatever)=(EXPR2)inter...
+
+arrow->begingroup.marrow((EXPR2),0.5)
+                                     endgroup
+<to be read again> 
+                   )
+draw_plain_arrow->...aw(EXPR2);cfill(arrow(EXPR2))
+                                                  ;endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(3)> ...),(EXPR0)),vlist[(10)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(10)]arc[(EXPR0)]st...
+<for(10)> ...rc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Value is too large (5011.18326).
+arrow_head->...=infinity;fi.tip=point.t2of(EXPR2);
+                                                  ap=subpath(t1,t2)of(EXPR2)...
+
+marrow->....z);arrow_head((EXPR2),t1,t2,arrow_ang)
+                                                  endgroup
+arrow->begingroup.marrow((EXPR2),0.5)
+                                     endgroup
+<to be read again> 
+                   )
+draw_plain_arrow->...aw(EXPR2);cfill(arrow(EXPR2))
+                                                  ;endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(3)> ...),(EXPR0)),vlist[(10)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(10)]arc[(EXPR0)]st...
+<for(10)> ...rc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+The equation I just processed has given some variable
+a value of 4096 or more. Continue and I'll try to cope
+with that big value; but it might be dangerous.
+(Set warningcheck:=0 to suppress this message.)
+
+! Curve out of range.
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+draw_plain_arrow->...w(EXPR2);cfill(arrow(EXPR2));
+                                                  endgroup
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_arc->...cantokens("draw_"&(EXPR2))((EXPR4));
+                                                  vdraw_arc_label((EXPR4),(S...
+<for(3)> ...),(EXPR0)),vlist[(10)]arc[(EXPR0)]lbl)
+                                                  ;vlist[(10)]arc[(EXPR0)]st...
+<for(10)> ...rc[j]sty:="";endgroup;fi.fi.fi.endfor
+                                                  ; ENDFOR
+vdraw->...]sty:="";endgroup;fi.fi.fi.endfor;endfor
+                                                  .for.i=polygons:vdraw_labe...
+l.26 vdraw
+          ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+:1:\fmfL(3.31293,-1.26537,rt){$e_-$}%
+:1:\fmfL(3.31293,31.26653,rb){$e_+$}%
+:1:\fmfL(46.6825,-1.26537,lt){$\mu _+$}%
+:1:\fmfL(51.48064,9.2194,l){$\nu _{\mu }$}%
+:1:\fmfL(51.48059,20.78203,l){$s$}%
+:1:\fmfL(46.6825,31.26653,lb){$\noexpand \bar c$}%
+! Curve out of range.
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_vertex->...)decor.size.shifted(SUFFIX2)loc);
+                                                  fi.endgroup
+<to be read again> 
+                   ;
+<for(9)> ...PR0)]lbl);vdraw_vertex.vlist[(EXPR0)];
+                                                   ENDFOR
+vdraw->...list[i]lbl);vdraw_vertex.vlist[i];endfor
+                                                  .for.i=vertices:for.j=varc...
+l.26 vdraw
+          ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+! Curve out of range.
+<to be read again> 
+                   endgroup
+<to be read again> 
+                   ;
+vdraw_vertex->...)decor.size.shifted(SUFFIX2)loc);
+                                                  fi.endgroup
+<to be read again> 
+                   ;
+<for(10)> ...R0)]lbl);vdraw_vertex.vlist[(EXPR0)];
+                                                   ENDFOR
+vdraw->...list[i]lbl);vdraw_vertex.vlist[i];endfor
+                                                  .for.i=vertices:for.j=varc...
+l.26 vdraw
+          ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+ [1]
+! Curve out of range.
+<to be read again> 
+                   ;
+<for(0)> screenrule((0,(EXPR0)),(w,(EXPR0)));
+                                              ENDFOR
+makebox->...h.o_,-d.o_:(TEXT0)((0,y),(w,y));endfor
+                                                  .for.x=0,w:(TEXT0)((x,-d.o...
+
+endchar->...it;if.displaying>0:makebox(screenrule)
+                                                  ;showit;fi.endgroup
+l.28 endchar
+            ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+! Curve out of range.
+<to be read again> 
+                   ;
+<for(3073)> screenrule((0,(EXPR0)),(w,(EXPR0)));
+                                                 ENDFOR
+makebox->...h.o_,-d.o_:(TEXT0)((0,y),(w,y));endfor
+                                                  .for.x=0,w:(TEXT0)((x,-d.o...
+
+endchar->...it;if.displaying>0:makebox(screenrule)
+                                                  ;showit;fi.endgroup
+l.28 endchar
+            ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+! Curve out of range.
+<to be read again> 
+                   ;
+<for(0)> screenrule((0,(EXPR0)),(w,(EXPR0)));
+                                              ENDFOR
+makebox->...h.o_,-d.o_:(TEXT0)((0,y),(w,y));endfor
+                                                  .for.x=0,w:(TEXT0)((x,-d.o...
+
+endchar->...it;if.displaying>0:makebox(screenrule)
+                                                  ;showit;fi.endgroup
+l.28 endchar
+            ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+! Curve out of range.
+<to be read again> 
+                   ;
+<for(5121)> ...le(((EXPR0),-d.o_),((EXPR0),h.o_));
+                                                   ENDFOR
+makebox->...0,w:(TEXT0)((x,-d.o_),(x,h.o_));endfor
+                                                  .if.charic<>0:(TEXT0)((w+c...
+
+endchar->...it;if.displaying>0:makebox(screenrule)
+                                                  ;showit;fi.endgroup
+l.28 endchar
+            ;
+At least one of the coordinates in the path I'm about to
+digitize was really huge (potentially bigger than 4095).
+So I've cut it back to the maximum size.
+The results will probably be pretty wild.
+
+ ) 
+Here is how much of METAFONT's memory you used:
+ 638 strings out of 5276
+ 7428 string characters out of 70111
+ 73111 words of memory out of 1000000
+ 1378 symbolic tokens out of 9500
+ 14i,67n,8r,28p,128b stack positions out of 300i,300n,1000r,150p,200000b
+
+Output written on samplepics.2602gf (1 character, 37548 bytes).

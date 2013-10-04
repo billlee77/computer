@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+<title>adduser(8) - Linux man page</title>
+<link rel="stylesheet" type="text/css" href="adduser_files/white.css">
+<link rel="shortcut icon" href="http://linux.die.net/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=800,maximum-scale=1.0">
+<meta name="description" content="When invoked without the -D option, the useradd command creates a new user account using the values specified on the command line and the default values from the system.">
+</head><body link="#660000" text="#333333" vlink="#660000" alink="#000000" bgcolor="#ffffff">
+<div id="bg"><div id="content">
+
+<!-- google_ad_section_start -->
+<h1>adduser(8) - Linux man page</h1>
+
+<h2>Name</h2>
+
+<p>useradd - create a new user or update default new user information
+</p><h2>Synopsis</h2>
+
+<p><b>useradd</b> [<i>options</i>] <i>LOGIN</i>
+</p><dl compact="compact">
+<dt><b>useradd</b> -D
+</dt><dt><b>useradd</b> -D [<i>options</i>]
+</dt></dl>
+<h2>Description</h2>
+<div id="adright">
+<script type="text/javascript"><!--
+google_ad_client = "pub-5823754184406795";
+google_ad_slot = "5992934909";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="adduser_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 300px;"><ins id="aswift_0_anchor" style="display: block; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 300px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins>
+</div>
+
+
+
+<p>When invoked without the <b>-D</b> option, the <b>useradd</b> command
+ creates a new user account using the values specified on the command 
+line and
+the default values from the system. Depending on command line options, 
+the useradd command will update system files and may also create the new
+ user's home
+directory and copy initial files. The version provided with Red Hat 
+Linux will create a group for each user added to the system by default.
+</p><h2>Options</h2>
+
+<p>The options which apply to the <b>useradd</b> command are:
+</p><dl compact="compact">
+<dt><b>-c</b>, <b>--comment</b> <i>COMMENT</i>
+</dt><dd>Any text string. It is generally a short description of the login, and is currently used as the field for the user's full name.
+</dd><dt><b>-b</b>, <b>--base-dir</b> <i>BASE_DIR</i>
+</dt><dd>The default base directory for the system if <b>-d</b> dir is not specified. <i>BASE_DIR</i> is concatenated with the account name to define the home
+directory. If the <b>-m</b> option is not used, <i>BASE_DIR</i> must exist.
+</dd><dt><b>-d</b>, <b>--home</b> <i>HOME_DIR</i>
+</dt><dd>The new user will be created using <i>HOME_DIR</i> as the value for the user's login directory. The default is to append the <i>LOGIN</i> name to
+<i>BASE_DIR</i> and use that as the login directory name. The directory <i>HOME_DIR</i> does not have to exist but will not be created if it is
+missing.
+</dd><dt><b>-e</b>, <b>--expiredate</b> <i>EXPIRE_DATE</i>
+</dt><dd>The date on which the user account will be disabled. The date is specified in the format <i>YYYY-MM-DD</i>.
+</dd><dt><b>-f</b>, <b>--inactive</b> <i>INACTIVE</i>
+</dt><dd>The number of days after a password expires until the account 
+is permanently disabled. A value of 0 disables the account as soon as 
+the password has
+expired, and a value of -1 disables the feature. The default value is 
+-1.
+</dd><dt><b>-g</b>, <b>--gid</b> <i>GROUP</i>
+</dt><dd>The group name or number of the user's initial login group. The
+ group name must exist. A group number must refer to an already existing
+ group.
+<i>/etc/default/useradd</i>.
+</dd><dt><b>-G</b>, <b>--groups</b> <i>GROUP1</i>[<i>,GROUP2,...</i>[<i>,GROUPN</i>]]]
+</dt><dd>A list of supplementary groups which the user is also a member 
+of. Each group is separated from the next by a comma, with no 
+intervening whitespace. The
+groups are subject to the same restrictions as the group given with the <b>-g</b> option. The default is for the user to belong only to the initial
+group.
+</dd><dt><b>-h</b>, <b>--help</b>
+</dt><dd>Display help message and exit.
+</dd><dt><b>-M</b>
+
+<p>The user's home directory will not be created, even if the system wide settings from <i>/etc/login.defs</i> is to create home dirs.
+</p></dt><dt><b>-m</b>, <b>--create-home</b>
+</dt><dd>The user's home directory will be created if it does not exist. The files contained in <i>SKEL_DIR</i> will be copied to the home directory if the
+<b>-k</b> option is used, otherwise the files contained in <i>/etc/skel</i> will be used instead. Any directories contained in <i>SKEL_DIR</i> or
+<i>/etc/skel</i> will be created in the user's home directory as well. The <b>-k</b> option is only valid in conjunction with the <b>-m</b> option.
+The default is to not create the directory and to not copy any files.
+</dd><dt><b>-l</b>
+
+<p>Do not add the user to the last login log file. This is an option added by Red Hat.
+
+</p><p><b>-n</b>
+
+</p><p>A group having the same name as the user being added to the 
+system will be created by default. This option will turn off this Red 
+Hat Linux specific
+behavior. When this option is used, users by default will be placed in 
+whatever group is specified in <i>/etc/default/useradd</i>. If no default group is
+defined, group 1 will be used.
+</p></dt><dt><b>-K</b>, <b>--key</b> <i>KEY</i>=<i>VALUE</i>
+</dt><dd>Overrides /etc/login.defs defaults (UID_MIN, UID_MAX, UMASK, PASS_MAX_DAYS and others).
+<p>Example: <b>-K</b> <i>PASS_MAX_DAYS</i>=<i>-1</i> can be used when creating system account to turn off password ageing, even though system
+account has no password at all. Multiple <b>-K</b> options can be specified, e.g.: <b>-K</b> <i>UID_MIN</i>=<i>100</i> <b>-K</b>
+<i>UID_MAX</i>=<i>499</i>
+</p><p>Note: <b>-K</b> <i>UID_MIN</i>=<i>10</i>,<i>UID_MAX</i>=<i>499</i> doesn't work yet.
+</p></dd><dt><b>-o</b>, <b>--non-unique</b>
+</dt><dd>Allow the creation of a user account with a duplicate (non-unique) UID.
+</dd><dt><b>-p</b>, <b>--password</b> <i>PASSWORD</i>
+</dt><dd>The encrypted password, as returned by <b><a href="http://linux.die.net/man/3/crypt">crypt</a></b>(3). The default is to disable the account.
+</dd><dt><b>-r</b>
+
+<p>This flag is used to create a system account. That is, a user with a UID lower than the value of UID_MIN defined in <i>/etc/login.defs</i> and whose
+password does not expire. Note that <b>useradd</b> will not create a home directory for such an user, regardless of the default setting in
+<i>/etc/login.defs</i>. You have to specify <b>-m</b> option if you want a home directory for a system account to be created. This is an option added by Red
+Hat
+</p></dt><dt><b>-s</b>, <b>--shell</b> <i>SHELL</i>
+</dt><dd>The name of the user's login shell. The default is to leave 
+this field blank, which causes the system to select the default login 
+shell.
+</dd><dt><b>-u</b>, <b>--uid</b> <i>UID</i>
+</dt><dd>The numerical value of the user's ID. This value must be unique, unless the <b>-o</b>
+ option is used. The value must be non-negative. The
+default is to use the smallest ID value greater than 999 and greater 
+than every other user. Values between 0 and 999 are typically reserved 
+for system
+accounts.
+</dd><dt><b>-Z</b>, <b>--selinux-user</b> <i>SEUSER</i>
+</dt><dd>The SELinux user for the user's login. The default is to leave 
+this field blank, which causes the system to select the default SELinux 
+user.
+</dd></dl>
+
+<p><b>Changing the default values</b>
+</p><dl compact="compact">
+<dt>When invoked with the <b>-D</b> option, <b>useradd</b> will either display the current default values, or update the default values from the command
+line. The valid options are
+</dt><dt><b>-b</b> <i>HOME_DIR</i>
+</dt><dd>The initial path prefix for a new user's home directory. The user's name will be affixed to the end of <i>HOME_DIR</i> to create the new directory name if
+the <b>-d</b> option is not used when creating a new account.
+</dd><dt><b>-e</b> <i>EXPIRE_DATE</i>
+</dt><dd>The date on which the user account is disabled.
+</dd><dt><b>-f</b> <i>INACTIVE</i>
+</dt><dd>The number of days after a password has expired before the account will be disabled.
+</dd><dt><b>-g</b>, <b>--gid</b> <i>GROUP</i>
+</dt><dd>The group name or ID for a new user's initial group. The named 
+group must exist, and a numerical group ID must have an existing entry.
+</dd><dt><b>-s</b>, <b>--shell</b> <i>SHELL</i>
+</dt><dd>The name of the new user's login shell. The named program will be used for all future new user accounts.
+</dd><dt>If no options are specified, <b>useradd</b> displays the current default values.
+</dt></dl>
+<h2>Notes</h2>
+
+<p>The system administrator is responsible for placing the default user files in the <i>/etc/skel/</i> directory.<br>
+This version of useradd was modified by Red Hat to suit Red Hat user/group conventions.
+</p><h2>Caveats</h2>
+
+<p>You may not add a user to a NIS group. This must be performed on the NIS server.
+</p><p>Similarly, if the username already exists in an external user database such as NIS, <b>useradd</b> will deny the user account creation
+request.
+</p><h2>Files</h2>
+
+<p><i>/etc/passwd</i>
+</p><dl compact="compact">
+<dd>User account information.
+</dd><dt><i>/etc/shadow</i>
+</dt><dd>Secure user account information.
+</dd><dt><i>/etc/group</i>
+</dt><dd>Group account information.
+</dd><dt><i>/etc/gshadow</i>
+</dt><dd>Secure group account information.
+</dd><dt><i>/etc/default/useradd</i>
+</dt><dd>Default values for account creation.
+</dd><dt><i>/etc/skel/</i>
+</dt><dd>Directory containing default files.
+</dd><dt><i>/etc/login.defs</i>
+</dt><dd>Shadow password suite configuration.
+</dd></dl>
+<h2>Exit Values</h2>
+
+<p>The <b>useradd</b> command exits with the following values:
+</p><dl compact="compact">
+<dt><i>0</i>
+
+<p>success
+
+</p><p><i>1</i>
+
+</p><p>can't update password file
+
+</p><p><i>2</i>
+
+</p><p>invalid command syntax
+
+</p><p><i>3</i>
+
+</p><p>invalid argument to option
+
+</p><p><i>4</i>
+
+</p><p>UID already in use (and no <b>-o</b>)
+
+</p><p><i>6</i>
+
+</p><p>specified group doesn't exist
+
+</p><p><i>9</i>
+
+</p><p>username already in use
+
+</p><p><i>10</i>
+
+</p><p>can't update group file
+
+</p><p><i>12</i>
+
+</p><p>can't create home directory
+
+</p><p><i>13</i>
+
+</p><p>can't create mail spool
+
+</p></dt></dl>
+<h2>See Also</h2>
+
+<p><b><a href="http://linux.die.net/man/1/chfn">chfn</a></b>(1), <b><a href="http://linux.die.net/man/1/chsh">chsh</a></b>(1), <b><a href="http://linux.die.net/man/1/passwd">passwd</a></b>(1), <b><a href="http://linux.die.net/man/3/crypt" rel="nofollow">crypt</a></b>(3), <b><a href="http://linux.die.net/man/8/groupadd">groupadd</a></b>(8), <b><a href="http://linux.die.net/man/8/groupdel">groupdel</a></b>(8), <b><a href="http://linux.die.net/man/8/groupmod">groupmod</a></b>(8), <b><a href="http://linux.die.net/man/5/login.defs">login.defs</a></b>(5),
+<b><a href="http://linux.die.net/man/8/userdel">userdel</a></b>(8), <b><a href="http://linux.die.net/man/8/usermod">usermod</a></b>(8).
+
+<!-- google_ad_section_end -->
+</p><div id="adbottom">
+<script type="text/javascript"><!--
+google_ad_client = "pub-5823754184406795";
+google_ad_slot = "8789940313";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="adduser_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 280px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 336px;"><ins id="aswift_1_anchor" style="display: block; border: medium none; height: 280px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 336px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="280" scrolling="no" width="336"></iframe></ins></ins>
+</div>
+
+
+</div>
+<div id="menu">
+<a href="http://www.die.net/"><img src="adduser_files/logo.gif" alt="die.net" height="121" width="119" border="0"></a>
+
+
+<dl><dd>
+<form id="cse-search-box-menu" action="http://www.die.net/search/">
+<label><a href="http://www.die.net/search/">site search</a></label>
+<input name="q" size="10" type="text">
+<span style="font-family: Arial,Helvetica,sans-serif; font-size: 75%;">Google Custom Search</span>
+<input name="sa" value="Search" type="hidden">
+<input name="ie" value="ISO-8859-1" type="hidden">
+<input name="cx" value="partner-pub-5823754184406795:54htp1rtx5u" type="hidden">
+<input name="cof" value="FORID:9" type="hidden">
+</form>
+<script type="text/javascript">
+<!--
+document.forms["cse-search-box-menu"].action = "http://www.die.net/search/";
+// -->
+</script>
+</dd></dl>
+
+
+
+
+<dl>
+<dt>Library</dt>
+<dd><a href="http://dictionary.die.net/">online dictionary</a></dd>
+<dd><a href="http://linux.die.net/">linux docs</a></dd>
+<dd><a href="http://linux.die.net/man/">linux man pages</a></dd>
+<dd><a href="http://www.die.net/musings/page_load_time/">page load time</a></dd>
+</dl>
+<dl>
+<dt>Toys</dt>
+<dd><a href="http://www.die.net/earth/">world sunlight</a></dd>
+<dd><a href="http://www.die.net/moon/">moon phase</a></dd>
+<dd><a href="http://trace.die.net/">trace explorer</a></dd>
+</dl>
+
+
+
+</div></div>
+<script type="text/javascript">
+<!--
+if (top.location != self.location) top.location = self.location;
+// -->
+</script>
+</body></html>

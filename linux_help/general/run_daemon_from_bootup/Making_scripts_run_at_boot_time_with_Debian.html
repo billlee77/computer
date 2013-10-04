@@ -1,0 +1,2746 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head>
+
+  
+    <meta name="description" content="Tips for a Debian GNU/Linux System Administrator.">
+<meta name="keywords" content="Debian System Administration News, Debian Sysadmin, Linux Administration, Linux Sysadmin, Sysadmin">
+<meta name="copyright" content="(c) 2004-2009 Debian Administration">
+<meta name="author" content="Debian Administration">
+<meta name="robots" content="index,follow">
+<meta name="resource-type" content="document">
+<meta name="classification" content="Personal">
+<meta name="language" content="en">
+<link rel="icon" href="http://www.debian-administration.org/favicon.ico">
+<link rel="shortcut icon" href="http://www.debian-administration.org/favicon.ico">
+<link rel="top" title="home" href="http://www.debian-administration.org/">
+<link rel="stylesheet" type="text/css" media="print, handheld" href="Making_scripts_run_at_boot_time_with_Debian_files/print.css">
+<link rel="search" title="Search" href="http://www.debian-administration.org/about/search">
+<link rel="alternate" title="Debian Administration RSS" href="http://www.debian-administration.org/articles.rdf" type="application/rdf+xml">
+<link rel="alternate" title="Atom" href="http://www.debian-administration.org/atom.xml" type="application/atom+xml">
+<link rel="search" href="http://www.debian-administration.org/opensearchdescription.xml" type="application/opensearchdescription+xml" title="Debian Administration">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="Making_scripts_run_at_boot_time_with_Debian_files/style.css" media="screen" title="Default Layout">
+
+    <title>Making scripts run at boot time with Debian</title>
+
+    <link rel="stylesheet" type="text/css" media="" href="Making_scripts_run_at_boot_time_with_Debian_files/jquery.css">
+    <script src="Making_scripts_run_at_boot_time_with_Debian_files/load.js" async="" type="text/javascript"></script><script src="Making_scripts_run_at_boot_time_with_Debian_files/jquery_003.js" type="text/javascript"></script>
+    <script src="Making_scripts_run_at_boot_time_with_Debian_files/jquery.js" type="text/javascript"></script>
+    <script src="Making_scripts_run_at_boot_time_with_Debian_files/jquery_002.js" type="text/javascript"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+    (function() {
+        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+        
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'http://api.flattr.com/js/0.5.0/load.js?mode=auto';
+        
+        t.parentNode.insertBefore(s, t);
+    })();
+/* ]]> */
+</script>
+  <style type="text/css">.a2a_menu,.a2a_menu *{float:none;margin:0;padding:0;height:auto;width:auto}.a2a_menu table{border-collapse:collapse;border-spacing:0;width:auto}.a2a_menu table,.a2a_menu tbody,.a2a_menu td,.a2a_menu tr{border:0;margin:0;padding:0;background-color:#FFF}.a2a_menu td{vertical-align:top}.a2a_menu,.a2a_menu_inside{-webkit-border-radius:16px;-moz-border-radius:16px}.a2a_menu{display:none;z-index:9999999;position:absolute;direction:ltr;min-width:200px;background:#EEE;background:rgba(238,238,238,.6);font:12px Arial,Helvetica,sans-serif;color:#000;line-height:12px;border:1px solid transparent;_border:1px solid #EEE;padding:7px;vertical-align:baseline;overflow:hidden}.a2a_menu_inside{background-color:#FFF;border:1px solid #CCC;padding:8px}.a2a_menu a span,.a2a_tabs .a2a_tab_selected span{color:#00F}.a2a_menu a:hover span,.a2a_tabs div span,.a2a_tabs a span{color:#000}.a2a_menu a,#a2a_hist_list a,.a2a_tabs div{color:#00F;text-decoration:none;font:12px Arial,Helvetica,sans-serif;line-height:12px;height:auto;width:auto;clear:none;outline:none;-moz-outline:none;-webkit-border-radius:8px;-moz-border-radius:8px}.a2a_menu a:visited,#a2a_hist_list a:visited{color:#00F;clear:right}.a2a_menu a:hover,.a2a_menu a:active,.a2a_menu a.a2a_i:focus,.a2a_tabs div:hover{color:#000;border:1px solid #CCC;background-color:#EEE;text-decoration:none}.a2a_menu span,.a2a_img{background:url(http://static.addtoany.com/menu/icons_19.png) no-repeat;border:0;display:block;line-height:16px}.a2a_menu span.a2a_i_find{height:16px;left:5px;position:absolute;top:2px;width:16px}#a2a_menu_container{display:inline-block}#a2a_menu_container{_display:inline}.a2a_menu_title_container{margin-bottom:2px;padding:6px}.a2a_menu_find_container{position:relative;text-align:left;margin:4px 1px;padding:1px 24px 1px 0;border:1px solid #CCC;-webkit-border-radius:8px;-moz-border-radius:8px}.a2a_menu input,.a2a_menu input[type="text"]{display:block;background-image:none;box-shadow:none;line-height:100%;margin:0;overflow:hidden;padding:0;-moz-box-shadow:none;-webkit-box-shadow:none;-webkit-appearance:none}.a2a_menu_title_container input.a2a_menu_title{color:#000;background-color:#FFF;border:0;margin:0;padding:0;width:100%}.a2a_menu_find_container input.a2a_menu_find{position:relative;left:24px;color:#000;font-size:12px;padding:2px 0;outline:0;border:0;background-color:transparent;_background-color:#FFF;width:250px}table.a2a_cols_container{width:100%}.a2a_cols{width:50%}.a2a_clear{clear:both} .a2a_default_style a{float:left;line-height:16px;padding:0 2px}.a2a_default_style .a2a_img{display:block;height:16px;line-height:16px;overflow:hidden;width:16px}.a2a_default_style .a2a_img,.a2a_default_style .a2a_dd{float:left}.a2a_default_style .a2a_img_text{margin-right:4px}.a2a_default_style .a2a_divider{border-left:1px solid #000;display:inline;float:left;height:16px;line-height:16px;margin:0 5px}.a2a_kit a{cursor:pointer}.a2a_hr{margin:0 12px 12px;padding:1px;background:none;background-color:#EEE}.a2a_nowrap{white-space:nowrap}.a2a_note{margin:0 auto;padding:9px;font-size:11px;text-align:center}.a2a_note .a2a_note_note{margin:0 0 9px;color:#000}.a2a_wide a{display:block;margin-top:3px;border:1px solid #EEE;padding:3px;text-align:center}.a2a_tabs{float:left;margin:0 0 3px}.a2a_tabs a,.a2a_tabs div{margin:1px;background-color:#EEE;border:1px solid #EEE;font-size:11px;padding:6px 12px 2px;white-space:nowrap}.a2a_tabs a span,.a2a_tabs div span{margin-bottom:4px;padding-left:20px}.a2a_tabs a,.a2a_tabs a:visited,.a2a_tabs a:hover,.a2a_tabs div,.a2a_tabs div:hover{cursor:pointer;border-bottom:1px solid #EEE;color:#000;-webkit-border-bottom-left-radius:0;-moz-border-radius-bottomleft:0;-webkit-border-bottom-right-radius:0;-moz-border-radius-bottomright:0}a.a2a_tab_selected,a.a2a_tab_selected:visited,a.a2a_tab_selected:hover,a.a2a_tab_selected:active,a.a2a_tab_selected:focus,div.a2a_tab_selected,div.a2a_tab_selected:hover{color:#00F;background-color:#FFF;border:1px solid #CCC;border-bottom:1px solid #FFF}a.a2a_i{display:block;padding:4px 6px;border:1px solid #FFF;text-align:left;white-space:nowrap}a.a2a_i span{padding-left:20px}a.a2a_sss{font-weight:700}a.a2a_ind{display:inline;margin:0;padding:0}a.a2a_emailer{display:inline-block;border:1px solid #EEE;margin:0 9px;text-align:center}a.a2a_email_client{padding-left:6px}a.a2a_email_client span{display:inline-block;height:16px;line-height:16px;margin:0 2px;padding-left:0;width:16px}a.a2a_menu_show_more_less{margin:4px 0 8px;padding:0}a.a2a_menu_show_more_less span{display:inline-block;height:14px;margin:0 auto;vertical-align:baseline;width:16px}a.a2a_menu_powered_by,a.a2a_menu_powered_by:visited{background-color:#EEE;font-size:9px;color:#999}iframe.a2a_shim{border:0;position:absolute;z-index:999999}.a2a_dd img{border:0}.a2a_i_a2a{background-position:0 0!important}.a2a_i_agregator{background-position:0 -17px!important}.a2a_i_aiderss{background-position:0 -34px!important}.a2a_i_aim{background-position:0 -51px!important}.a2a_i_allvoices{background-position:0 -68px!important}.a2a_i_amazon{background-position:0 -85px!important}.a2a_i_aol{background-position:0 -102px!important}.a2a_i_apple_mail{background-position:0 -119px!important}.a2a_i_arto{background-position:0 -136px!important}.a2a_i_ask{background-position:0 -153px!important}.a2a_i_avantgo{background-position:0 -170px!important}.a2a_i_backflip{background-position:0 -187px!important}.a2a_i_bebo{background-position:0 -204px!important}.a2a_i_bibsonomy{background-position:0 -221px!important}.a2a_i_bitty{background-position:0 -238px!important}.a2a_i_blinklist{background-position:0 -255px!important}.a2a_i_blogger{background-position:0 -272px!important}.a2a_i_bloglines{background-position:0 -289px!important}.a2a_i_blogmarks{background-position:0 -306px!important}.a2a_i_blogrovr{background-position:0 -323px!important}.a2a_i_bookmark{background-position:0 -340px!important}.a2a_i_bookmarks_fr{background-position:0 -357px!important}.a2a_i_box{background-position:0 -374px!important}.a2a_i_buddymarks{background-position:0 -391px!important}.a2a_i_buzmob{background-position:0 -408px!important}.a2a_i_buzz{background-position:0 -425px!important}.a2a_i_bzzster{background-position:0 -442px!important}.a2a_i_care2{background-position:0 -459px!important}.a2a_i_chrome{background-position:0 -476px!important}.a2a_i_citeulike{background-position:0 -493px!important}.a2a_i_clear{background-position:0 -510px!important}.a2a_i_connotea{background-position:0 -527px!important}.a2a_i_current{background-position:0 -544px!important}.a2a_i_dailyme{background-position:0 -561px!important}.a2a_i_dailyrotation{background-position:0 -578px!important}.a2a_i_darr{background-position:0 -595px!important}.a2a_i_darr_wt{background-position:0 -612px!important}.a2a_i_default{background-position:0 -629px!important}.a2a_i_delicious{background-position:0 -646px!important}.a2a_i_designfloat{background-position:0 -663px!important}.a2a_i_digg{background-position:0 -680px!important}.a2a_i_diglog{background-position:0 -697px!important}.a2a_i_diigo{background-position:0 -714px!important}.a2a_i_dzone{background-position:0 -731px!important}.a2a_i_email{background-position:0 -748px!important}.a2a_i_eskobo{background-position:0 -765px!important}.a2a_i_evernote{background-position:0 -782px!important}.a2a_i_excitemix{background-position:0 -799px!important}.a2a_i_expression{background-position:0 -816px!important}.a2a_i_facebook{background-position:0 -833px!important}.a2a_i_fark{background-position:0 -850px!important}.a2a_i_faves{background-position:0 -867px!important}.a2a_i_feed{background-position:0 -884px!important}.a2a_i_feedblitz{background-position:0 -901px!important}.a2a_i_feedbucket{background-position:0 -918px!important}.a2a_i_feedlounge{background-position:0 -935px!important}.a2a_i_feedm8{background-position:0 -952px!important}.a2a_i_feedmailer{background-position:0 -969px!important}.a2a_i_feedreader_net{background-position:0 -986px!important}.a2a_i_feedshow{background-position:0 -1003px!important}.a2a_i_find{background-position:0 -1020px!important}.a2a_i_fireant{background-position:0 -1037px!important}.a2a_i_firefox{background-position:0 -1054px!important}.a2a_i_flurry{background-position:0 -1071px!important}.a2a_i_folkd{background-position:0 -1088px!important}.a2a_i_foxiewire{background-position:0 -1105px!important}.a2a_i_friendfeed{background-position:0 -1122px!important}.a2a_i_friendster{background-position:0 -1139px!important}.a2a_i_funp{background-position:0 -1156px!important}.a2a_i_furl{background-position:0 -1173px!important}.a2a_i_fwicki{background-position:0 -1189px!important}.a2a_i_gabbr{background-position:0 -1206px!important}.a2a_i_global_grind{background-position:0 -1223px!important}.a2a_i_gmail{background-position:0 -1240px!important}.a2a_i_google{background-position:0 -1257px!important}.a2a_i_google_buzz{background-position:0 -1274px!important}.a2a_i_healthranker{background-position:0 -1291px!important}.a2a_i_hellotxt{background-position:0 -1308px!important}.a2a_i_hemidemi{background-position:0 -1325px!important}.a2a_i_hi5{background-position:0 -1342px!important}.a2a_i_hubdog{background-position:0 -1359px!important}.a2a_i_hugg{background-position:0 -1376px!important}.a2a_i_hyves{background-position:0 -1393px!important}.a2a_i_identica{background-position:0 -1410px!important}.a2a_i_im{background-position:0 -1427px!important}.a2a_i_imera{background-position:0 -1444px!important}.a2a_i_instapaper{background-position:0 -1461px!important}.a2a_i_iterasi{background-position:0 -1478px!important}.a2a_i_itunes{background-position:0 -1495px!important}.a2a_i_jamespot{background-position:0 -1512px!important}.a2a_i_jots{background-position:0 -1529px!important}.a2a_i_jumptags{background-position:0 -1546px!important}.a2a_i_khabbr{background-position:0 -1563px!important}.a2a_i_kledy{background-position:0 -1580px!important}.a2a_i_klipfolio{background-position:0 -1597px!important}.a2a_i_linkagogo{background-position:0 -1614px!important}.a2a_i_linkatopia{background-position:0 -1631px!important}.a2a_i_linkedin{background-position:0 -1648px!important}.a2a_i_live{background-position:0 -1665px!important}.a2a_i_livejournal{background-position:0 -1682px!important}.a2a_i_ma_gnolia{background-position:0 -1699px!important}.a2a_i_maple{background-position:0 -1716px!important}.a2a_i_meneame{background-position:0 -1733px!important}.a2a_i_mindbodygreen{background-position:0 -1750px!important}.a2a_i_miro{background-position:0 -1767px!important}.a2a_i_mister-wong{background-position:0 -1784px!important}.a2a_i_mixx{background-position:0 -1801px!important}.a2a_i_mobile{background-position:0 -1818px!important}.a2a_i_mozillaca{background-position:0 -1835px!important}.a2a_i_msdn{background-position:0 -1852px!important}.a2a_i_multiply{background-position:0 -1869px!important}.a2a_i_my_msn{background-position:0 -1886px!important}.a2a_i_mylinkvault{background-position:0 -1903px!important}.a2a_i_myspace{background-position:0 -1920px!important}.a2a_i_netimechannel{background-position:0 -1937px!important}.a2a_i_netlog{background-position:0 -1954px!important}.a2a_i_netomat{background-position:0 -1971px!important}.a2a_i_netvibes{background-position:0 -1988px!important}.a2a_i_netvouz{background-position:0 -2005px!important}.a2a_i_newgie{background-position:0 -2022px!important}.a2a_i_newsalloy{background-position:0 -2039px!important}.a2a_i_newscabby{background-position:0 -2056px!important}.a2a_i_newsgator{background-position:0 -2073px!important}.a2a_i_newshutch{background-position:0 -2090px!important}.a2a_i_newsisfree{background-position:0 -2107px!important}.a2a_i_newstrust{background-position:0 -2124px!important}.a2a_i_newsvine{background-position:0 -2141px!important}.a2a_i_nowpublic{background-position:0 -2158px!important}.a2a_i_odeo{background-position:0 -2175px!important}.a2a_i_oneview{background-position:0 -2192px!important}.a2a_i_openbm{background-position:0 -2209px!important}.a2a_i_orkut{background-position:0 -2226px!important}.a2a_i_outlook{background-position:0 -2243px!important}.a2a_i_pageflakes{background-position:0 -2260px!important}.a2a_i_pdf{background-position:0 -2277px!important}.a2a_i_phonefavs{background-position:0 -2294px!important}.a2a_i_ping{background-position:0 -2311px!important}.a2a_i_plaxo{background-position:0 -2328px!important}.a2a_i_plurk{background-position:0 -2345px!important}.a2a_i_plusmo{background-position:0 -2362px!important}.a2a_i_podnova{background-position:0 -2379px!important}.a2a_i_posterous{background-position:0 -2396px!important}.a2a_i_print{background-position:0 -2413px!important}.a2a_i_printfriendly{background-position:0 -2430px!important}.a2a_i_propeller{background-position:0 -2447px!important}.a2a_i_protopage{background-position:0 -2464px!important}.a2a_i_pusha{background-position:0 -2481px!important}.a2a_i_rapidfeeds{background-position:0 -2498px!important}.a2a_i_rasasa{background-position:0 -2515px!important}.a2a_i_reader{background-position:0 -2532px!important}.a2a_i_reddit{background-position:0 -2549px!important}.a2a_i_rssfwd{background-position:0 -2566px!important}.a2a_i_segnalo{background-position:0 -2583px!important}.a2a_i_share{background-position:0 -2600px!important}.a2a_i_shoutwire{background-position:0 -2617px!important}.a2a_i_shyftr{background-position:0 -2634px!important}.a2a_i_simpy{background-position:0 -2651px!important}.a2a_i_sitejot{background-position:0 -2668px!important}.a2a_i_skimbit{background-position:0 -2685px!important}.a2a_i_slashdot{background-position:0 -2702px!important}.a2a_i_smaknews{background-position:0 -2719px!important}.a2a_i_sodahead{background-position:0 -2736px!important}.a2a_i_sofomo{background-position:0 -2753px!important}.a2a_i_spaces{background-position:0 -2770px!important}.a2a_i_sphere{background-position:0 -2787px!important}.a2a_i_sphinn{background-position:0 -2803px!important}.a2a_i_spurl{background-position:0 -2820px!important}.a2a_i_squidoo{background-position:0 -2837px!important}.a2a_i_startaid{background-position:0 -2854px!important}.a2a_i_strands{background-position:0 -2871px!important}.a2a_i_stumbleupon{background-position:0 -2888px!important}.a2a_i_stumpedia{background-position:0 -2905px!important}.a2a_i_symbaloo{background-position:0 -2922px!important}.a2a_i_taggly{background-position:0 -2939px!important}.a2a_i_tagza{background-position:0 -2956px!important}.a2a_i_tailrank{background-position:0 -2973px!important}.a2a_i_technet{background-position:0 -2990px!important}.a2a_i_technorati{background-position:0 -3007px!important}.a2a_i_technotizie{background-position:0 -3024px!important}.a2a_i_thefreedictionary{background-position:0 -3041px!important}.a2a_i_thefreelibrary{background-position:0 -3058px!important}.a2a_i_thunderbird{background-position:0 -3075px!important}.a2a_i_tipd{background-position:0 -3092px!important}.a2a_i_toolbar_google{background-position:0 -3109px!important}.a2a_i_tumblr{background-position:0 -3126px!important}.a2a_i_twiddla{background-position:0 -3143px!important}.a2a_i_twine{background-position:0 -3160px!important}.a2a_i_twitter{background-position:0 -3177px!important}.a2a_i_txtvox{background-position:0 -3194px!important}.a2a_i_typepad{background-position:0 -3211px!important}.a2a_i_uarr{background-position:0 -3228px!important}.a2a_i_uarr_wt{background-position:0 -3245px!important}.a2a_i_unalog{background-position:0 -3262px!important}.a2a_i_viadeo{background-position:0 -3279px!important}.a2a_i_webnews{background-position:0 -3296px!important}.a2a_i_webwag{background-position:0 -3314px!important}.a2a_i_wikio{background-position:0 -3331px!important}.a2a_i_windows_mail{background-position:0 -3348px!important}.a2a_i_wink{background-position:0 -3365px!important}.a2a_i_winksite{background-position:0 -3382px!important}.a2a_i_wists{background-position:0 -3399px!important}.a2a_i_wordpress{background-position:0 -3416px!important}.a2a_i_xanga{background-position:0 -3433px!important}.a2a_i_xerpi{background-position:0 -3450px!important}.a2a_i_xianguo{background-position:0 -3467px!important}.a2a_i_yahoo{background-position:0 -3484px!important}.a2a_i_yample{background-position:0 -3501px!important}.a2a_i_yigg{background-position:0 -3518px!important}.a2a_i_yim{background-position:0 -3535px!important}.a2a_i_yoolink{background-position:0 -3552px!important}.a2a_i_youmob{background-position:0 -3569px!important}.a2a_i_yourminis{background-position:0 -3586px!important}.a2a_i_zaptxt{background-position:0 -3603px!important}.a2a_i_zhuaxia{background-position:0 -3620px!important}.a2a_i_zune{background-position:0 -3637px;  }</style></head><body id="yawns"><iframe src="Making_scripts_run_at_boot_time_with_Debian_files/sm3.html" allowtransparency="true" transparency="true" style="border: 0pt none; left: 0pt; top: 0pt; position: absolute; z-index: 100000; display: none;" id="a2apage_sm_ifr" frameborder="0" height="1" width="1"></iframe><div style="position: static;"><div id="a2apage_dropdown" class="a2a_menu" onmouseover="a2a.onMouseOver_stay()" onmouseout="a2a.onMouseOut_delay()"><div class="a2a_menu_inside"><table><tbody><tr><td><div id="a2apage_title_container" class="a2a_menu_title_container" style="display: none;"><input id="a2apage_title" class="a2a_menu_title"></div><div class="a2apage_wide a2a_wide"><div class="a2a_tabs"><div id="a2apage_DEFAULT" class="a2a_tab_selected" style="margin-right: 1px;" onclick="return a2a.tabs('DEFAULT')"><span class="a2a_i_share">Share / Save</span></div></div><div class="a2a_tabs"><div title="Share via email" id="a2apage_EMAIL" style="margin-right: 1px;" onclick="return a2a.tabs('EMAIL',true)"><span class="a2a_i_email">Email</span></div></div><div class="a2a_tabs"><div onclick="a2a.bmBrowser()" title="Bookmark in your browser" id="a2apage_BROWSER" style="margin-left: 1px;"><span class="a2a_i_bookmark">Bookmark</span></div></div></div><div class="a2a_clear"></div><div id="a2apage_find_container" class="a2a_menu_find_container"><input id="a2apage_find" class="a2a_menu_find" onclick="a2a.focus_find()" onkeyup="a2a.do_find()" autocomplete="off" onfocus="a2a['page'].find_focused=true;a2a.onMouseOver_stay()" onblur="a2a.blur_find()" title="Instantly find any service" type="text"><span id="a2apage_find_icon" class="a2a_i_find" onclick="a2a.focus_find()"></span></div><table id="a2apage_cols_container" class="a2a_cols_container"><tbody><tr><td class="a2a_cols"><div id="a2apage_col1"><a target="_blank" href="http://www.debian-administration.org/" class="a2a_i a2a_sss" rel="nofollow" id="a2apage_google_buzz"><span class="a2a_i_google_buzz">Google Buzz</span></a><a target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_facebook"><span class="a2a_i_facebook">Facebook</span></a><a target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_delicious"><span class="a2a_i_delicious">Delicious</span></a><a target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_google_bookmarks"><span class="a2a_i_google">Google Bookmarks</span></a><a target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_myspace"><span class="a2a_i_myspace">MySpace</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_live"><span class="a2a_i_live">Messenger</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_yahoo_bookmarks"><span class="a2a_i_yahoo">Yahoo Bookmarks</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_mister_wong"><span class="a2a_i_mister-wong">Mister-Wong</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_google_reader"><span class="a2a_i_reader">Google Reader</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_xing"><span class="a2a_i_default">XING</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_netvibes_share"><span class="a2a_i_netvibes">Netvibes Share</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_posterous"><span class="a2a_i_posterous">Posterous</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_business_exchange"><span class="a2a_i_default">Business Exchange</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_technet"><span class="a2a_i_technet">TechNet</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_arto"><span class="a2a_i_arto">Arto</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_smaknews"><span class="a2a_i_smaknews">SmakNews</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_aim"><span class="a2a_i_aim">AIM</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_identi_ca"><span class="a2a_i_identica">Identi.ca</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_blogger_post"><span class="a2a_i_blogger">Blogger Post</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_box_net"><span class="a2a_i_box">Box.net</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_netlog"><span class="a2a_i_netlog">Netlog</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_shoutwire"><span class="a2a_i_shoutwire">Shoutwire</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_jumptags"><span class="a2a_i_jumptags">Jumptags</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_funp"><span class="a2a_i_funp">FunP</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_phonefavs"><span class="a2a_i_phonefavs">PhoneFavs</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_netvouz"><span class="a2a_i_netvouz">Netvouz</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_diigo"><span class="a2a_i_diigo">Diigo</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_blogmarks"><span class="a2a_i_blogmarks">BlogMarks</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_startaid"><span class="a2a_i_startaid">StartAid</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_khabbr"><span class="a2a_i_khabbr">Khabbr</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_yoolink"><span class="a2a_i_yoolink">Yoolink</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_technotizie"><span class="a2a_i_technotizie">Technotizie</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_multiply"><span class="a2a_i_multiply">Multiply</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_plaxo_pulse"><span class="a2a_i_plaxo">Plaxo Pulse</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_squidoo"><span class="a2a_i_squidoo">Squidoo</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_blinklist"><span class="a2a_i_blinklist">Blinklist</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_yigg"><span class="a2a_i_yigg">YiGG</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_segnalo"><span class="a2a_i_segnalo">Segnalo</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_youmob"><span class="a2a_i_youmob">YouMob</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_fark"><span class="a2a_i_fark">Fark</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_jamespot"><span class="a2a_i_jamespot">Jamespot</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_twiddla"><span class="a2a_i_twiddla">Twiddla</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_mindbodygreen"><span class="a2a_i_mindbodygreen">MindBodyGreen</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_hugg"><span class="a2a_i_hugg">Hugg</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_nowpublic"><span class="a2a_i_nowpublic">NowPublic</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_livejournal"><span class="a2a_i_livejournal">LiveJournal</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_hellotxt"><span class="a2a_i_hellotxt">HelloTxt</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_yample"><span class="a2a_i_yample">Yample</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_linkatopia"><span class="a2a_i_linkatopia">Linkatopia</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_linkedin"><span class="a2a_i_linkedin">LinkedIn</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_ask_com_mystuff"><span class="a2a_i_ask">Ask.com MyStuff</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_maple"><span class="a2a_i_maple">Maple</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_connotea"><span class="a2a_i_connotea">Connotea</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_mylinkvault"><span class="a2a_i_mylinkvault">MyLinkVault</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_sphinn"><span class="a2a_i_sphinn">Sphinn</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_care2_news"><span class="a2a_i_care2">Care2 News</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_sphere"><span class="a2a_i_sphere">Sphere</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_gabbr"><span class="a2a_i_gabbr">Gabbr</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_tagza"><span class="a2a_i_tagza">Tagza</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_vodpod"><span class="a2a_i_default">VodPod</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_amazon_wish_list"><span class="a2a_i_amazon">Amazon Wish List</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_read_it_later"><span class="a2a_i_default">Read It Later</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_email"><span class="a2a_i_email">Email</span></a></div><div id="a2apage_2_col1" style="display: none;"><a target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_yahoo_mail"><span class="a2a_i_yahoo">Yahoo Mail</span></a><a target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_aol_mail"><span class="a2a_i_aol">AOL Mail</span></a></div></td><td class="a2a_cols"><div id="a2apage_col2"><a target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_twitter"><span class="a2a_i_twitter">Twitter</span></a><a target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_digg"><span class="a2a_i_digg">Digg</span></a><a target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_reddit"><span class="a2a_i_reddit">Reddit</span></a><a target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_stumbleupon"><span class="a2a_i_stumbleupon">StumbleUpon</span></a><a style="" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_bebo"><span class="a2a_i_bebo">Bebo</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_wordpress"><span class="a2a_i_wordpress">WordPress</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_orkut"><span class="a2a_i_orkut">Orkut</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_evernote"><span class="a2a_i_evernote">Evernote</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_strands"><span class="a2a_i_strands">Strands</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_dailyme"><span class="a2a_i_dailyme">DailyMe</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_msdn"><span class="a2a_i_msdn">MSDN</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_expression"><span class="a2a_i_expression">Expression</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_tipd"><span class="a2a_i_tipd">Tipd</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_plurk"><span class="a2a_i_plurk">Plurk</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_yahoo_messenger"><span class="a2a_i_yim">Yahoo Messenger</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_mozillaca"><span class="a2a_i_mozillaca">Mozillaca</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_typepad_post"><span class="a2a_i_typepad">TypePad Post</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_mixx"><span class="a2a_i_mixx">Mixx</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_technorati_favorites"><span class="a2a_i_technorati">Technorati Favorites</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_citeulike"><span class="a2a_i_citeulike">CiteULike</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_hemidemi"><span class="a2a_i_hemidemi">Hemidemi</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_instapaper"><span class="a2a_i_instapaper">Instapaper</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_xerpi"><span class="a2a_i_xerpi">Xerpi</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_wink"><span class="a2a_i_wink">Wink</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_bibsonomy"><span class="a2a_i_bibsonomy">BibSonomy</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_tailrank"><span class="a2a_i_tailrank">Tailrank</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_kledy"><span class="a2a_i_kledy">Kledy</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_meneame"><span class="a2a_i_meneame">Meneame</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_bookmarks_fr"><span class="a2a_i_bookmarks_fr">Bookmarks.fr</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_newsvine"><span class="a2a_i_newsvine">NewsVine</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_friendfeed"><span class="a2a_i_friendfeed">FriendFeed</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_ping"><span class="a2a_i_ping">Ping</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_protopage_bookmarks"><span class="a2a_i_protopage">Protopage Bookmarks</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_faves"><span class="a2a_i_faves">Faves</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_webnews"><span class="a2a_i_webnews">Webnews</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_pusha"><span class="a2a_i_pusha">Pusha</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_slashdot"><span class="a2a_i_slashdot">Slashdot</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_allvoices"><span class="a2a_i_allvoices">Allvoices</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_imera_brazil"><span class="a2a_i_imera">Imera Brazil</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_linkagogo"><span class="a2a_i_linkagogo">LinkaGoGo</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_unalog"><span class="a2a_i_unalog">unalog</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_diglog"><span class="a2a_i_diglog">Diglog</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_tumblr"><span class="a2a_i_tumblr">Tumblr</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_current"><span class="a2a_i_current">Current</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_spurl"><span class="a2a_i_spurl">Spurl</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_oneview"><span class="a2a_i_oneview">Oneview</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_simpy"><span class="a2a_i_simpy">Simpy</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_buddymarks"><span class="a2a_i_buddymarks">BuddyMarks</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_viadeo"><span class="a2a_i_viadeo">Viadeo</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_wists"><span class="a2a_i_wists">Wists</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_backflip"><span class="a2a_i_backflip">Backflip</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_sitejot"><span class="a2a_i_sitejot">SiteJot</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_dzone"><span class="a2a_i_dzone">DZone</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_hyves"><span class="a2a_i_hyves">Hyves</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_bitty_browser"><span class="a2a_i_bitty">Bitty Browser</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_symbaloo_feeds"><span class="a2a_i_symbaloo">Symbaloo Feeds</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_folkd"><span class="a2a_i_folkd">Folkd</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_newstrust"><span class="a2a_i_newstrust">NewsTrust</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_printfriendly"><span class="a2a_i_printfriendly">PrintFriendly</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_tuenti"><span class="a2a_i_default">Tuenti</span></a><a style="display: none;" target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_rediff"><span class="a2a_i_default">Rediff MyPage</span></a></div><div id="a2apage_2_col2" style="display: none;"><a target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_google_gmail"><span class="a2a_i_gmail">Google Gmail</span></a><a target="_blank" href="http://www.debian-administration.org/" class="a2a_i" rel="nofollow" id="a2apage_hotmail"><span class="a2a_i_live">Hotmail</span></a></div></td></tr></tbody></table><div id="a2apage_note_BROWSER" class="a2a_note" style="display: none;"></div><div id="a2apage_note_EMAIL" class="a2a_note" style="display: none;"><div class="a2a_hr"></div><div class="a2a_note_note">Send from any other email service:</div><div class="a2a_nowrap"><a href="http://www.debian-administration.org/" id="a2apage_any_email" class="a2a_i a2a_emailer" target="_blank" servicename="Email (form)" safename="email_form" customserviceuri="http://www.addtoany.com/email?linkurl=A2A_LINKURL_ENC&amp;linkname=A2A_LINKNAME_ENC" onkeydown="a2a.linker(this)" onmousedown="a2a.linker(this)" onmouseup="a2a.a2a_track('testShare1', 'Email');if(a2a.c.track_pub)a2a.a2a_track('z_'+a2a.c.track_pub+'Share', 'Email')" style="margin-right: 9px;"><span class="a2a_i_email">Any email</span></a><a href="http://www.debian-administration.org/" class="a2a_i a2a_emailer a2a_email_client" id="a2apage_email_client" servicename="Email (mailto)" safename="email_mailto" customserviceuri="mailto:?subject=A2A_LINKNAME_ENC&amp;body=A2A_LINKURL_ENC" onkeydown="a2a.linker(this)" onmousedown="a2a.linker(this)" onmouseup="a2a.a2a_track('testShare1', 'Email');if(a2a.c.track_pub)a2a.a2a_track('z_'+a2a.c.track_pub+'Share', 'Email')" style="margin-left: 9px;"><span class="a2a_i_outlook">&nbsp;</span><span class="a2a_i_windows_mail">&nbsp;</span><span class="a2a_i_apple_mail">&nbsp;</span><span class="a2a_i_thunderbird">&nbsp;</span></a></div></div><div class="a2apage_wide a2a_wide"><a href="javascript:void(0)" id="a2apage_show_more_less" class="a2a_menu_show_more_less" onclick="return a2a.show_more_less(0)" onmouseover="img=this.firstChild;if(a2a.c.color_arrow_hover=='fff'){if(img.className.indexOf('_wt')==-1)img.className+='_wt'}else img.className=img.className.replace(/_wt/,'')" onmouseout="img=this.firstChild;if(a2a.c.color_arrow=='fff'){if(img.className.indexOf('_wt')==-1)img.className+='_wt'}else img.className=img.className.replace(/_wt/,'')" title="Show all"><span class="a2a_i_darr"></span></a></div><div class="a2apage_wide a2a_wide"><a href="http://www.addtoany.com/" id="a2apage_powered_by" class="a2a_menu_powered_by" target="_blank" title="Share &amp; Subscribe buttons" onmouseover="if(!window.opera)this.innerHTML=this.orig;this.style.textAlign='center'">Powered by AddToAny</a></div></td></tr></tbody></table></div></div></div>
+    <div id="no-rightBar">
+
+<div id="sidebar">
+  
+<!--[if gte IE 5.5000]>
+   <script language="JavaScript" type="text/javascript"> var ie55up = true </script>
+<![endif]-->
+<script language="JavaScript" type="text/javascript">
+function fixPNG(myImage) // correctly handle PNG transparency in Win IE 5.5 or higher.
+   {
+    if (window.ie55up)
+	 {
+	 var imgID = (myImage.id) ? "id='" + myImage.id + "' " : ""
+	 var imgClass = (myImage.className) ? "class='" + myImage.className + "' " : ""
+	 var imgTitle = (myImage.title) ? "title='" + myImage.title + "' " : "title='" + myImage.alt + "' "
+	 var imgStyle = "display:inline-block;" + myImage.style.cssText
+	 var strNewHTML = "<span " + imgID + imgClass + imgTitle
+	 strNewHTML += " style=\"" + "width:" + myImage.width + "px; height:" + myImage.height + "px;" + imgStyle + ";"
+	 strNewHTML += "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=\'" + myImage.src + "\', sizingMethod='scale');\"></" + "span>"
+	 myImage.outerHTML = strNewHTML
+	 }
+   }
+</script>
+
+<div id="logo">
+ <p><a href="http://www.debian-administration.org/" title="Go back to homepage">
+
+  <!-- Internet Explorer; needs fixPNG -->
+<!--[if IE]>
+    <img src="/images/logo.png" alt="Logo" width="104" height="115"  onload="fixPNG(this)" />
+<![endif]-->
+
+  <!-- Sane browser.  No need for PNG fixups -->
+<!--[if !IE]><!-->
+    <img src="Making_scripts_run_at_boot_time_with_Debian_files/logo.png" alt="Logo" height="115" width="104">
+<!--<![endif]-->
+
+  </a></p>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+        <h3 class="sideBarTitle">Contribute</h3>
+	<ul>
+	<li><a href="http://www.debian-administration.org/create/article">Submit an Article</a></li>
+	<li><a href="http://www.debian-administration.org/create/poll">Submit a Poll</a></li>
+	</ul>
+ 
+
+
+
+ 
+        <h3 class="sideBarTitle">Current Poll</h3>
+	
+	<form method="post" action="/polls/153">
+	<p><input name="poll_id" value="153" type="hidden"><b>Which is best Linux certificate ?</b></p><p>
+	
+	<label><input name="pollanswer" value="1" type="radio">LPI</label><br>
+	
+	<label><input name="pollanswer" value="2" type="radio">CompTIA Linux+</label><br>
+	
+	<label><input name="pollanswer" value="3" type="radio">Sun/Oracle certificates</label><br>
+	
+	<label><input name="pollanswer" value="4" type="radio">Red Hat certificates</label><br>
+	
+	<label><input name="pollanswer" value="5" type="radio">Novell/SUSE</label><br>
+	
+	<label><input name="pollanswer" value="6" type="radio">Other</label><br>
+	
+	<label><input name="pollanswer" value="7" type="radio">None</label><br>
+	
+	<input name="pollvote" value="Vote" type="submit"><br>
+        <span class="votescast">
+	( <a href="http://www.debian-administration.org/polls/153">163 votes ~ 2 comments</a> )</span></p>
+	</form>
+	
+ 
+
+
+
+	<h3 class="sideBarTitle">Recent Weblogs</h3>
+	    
+	<div class="weblogs">
+              
+	<div class="body">
+	<div class="title"><a href="http://www.debian-administration.org/users/dkg/weblog/80">test-driven development: refactoring, difficulties</a></div>
+        <div class="tagline">by <a href="http://www.debian-administration.org/users/dkg">dkg</a></div>
+	<div class="comments"> </div>
+	</div>
+              
+	<div class="body">
+	<div class="title"><a href="http://www.debian-administration.org/users/simonw/weblog/416">Skype 2.1 "p2p connect failed"</a></div>
+        <div class="tagline">by <a href="http://www.debian-administration.org/users/simonw">simonw</a></div>
+	<div class="comments"> </div>
+	</div>
+              
+	<div class="body">
+	<div class="title"><a href="http://www.debian-administration.org/users/lee/weblog/43">Sieve filters for Exim4 virtual domains</a></div>
+        <div class="tagline">by <a href="http://www.debian-administration.org/users/lee">lee</a></div>
+	<div class="comments"> </div>
+	</div>
+              
+	<div class="body">
+	<div class="title"><a href="http://www.debian-administration.org/users/ajt/weblog/195">How to make a qemu image sparese again?</a></div>
+        <div class="tagline">by <a href="http://www.debian-administration.org/users/ajt">ajt</a></div>
+	<div class="comments">  <a href="http://www.debian-administration.org/users/ajt/weblog/195#comments">6 comments</a></div>
+	</div>
+              
+	<div class="body">
+	<div class="title"><a href="http://www.debian-administration.org/users/dammitjim/weblog/1">Debian Squeeze or Wheezy - e17 + Lirc &amp; XBMC</a></div>
+        <div class="tagline">by <a href="http://www.debian-administration.org/users/dammitjim">dammitjim</a></div>
+	<div class="comments"> </div>
+	</div>
+              
+	<div class="body">
+	<div class="title"><a href="http://www.debian-administration.org/users/fugit/weblog/6">selenium as a service </a></div>
+        <div class="tagline">by <a href="http://www.debian-administration.org/users/fugit">fugit</a></div>
+	<div class="comments">  <a href="http://www.debian-administration.org/users/fugit/weblog/6#comments">3 comments</a></div>
+	</div>
+              
+	<div class="body">
+	<div class="title"><a href="http://www.debian-administration.org/users/mcortese/weblog/17">Silent Grub</a></div>
+        <div class="tagline">by <a href="http://www.debian-administration.org/users/mcortese">mcortese</a></div>
+	<div class="comments"> </div>
+	</div>
+              
+	<div class="body">
+	<div class="title"><a href="http://www.debian-administration.org/users/kumanna/weblog/15">Review of "Linux Shell Scripting Cookbook"</a></div>
+        <div class="tagline">by <a href="http://www.debian-administration.org/users/kumanna">kumanna</a></div>
+	<div class="comments">  <a href="http://www.debian-administration.org/users/kumanna/weblog/15#comments">2 comments</a></div>
+	</div>
+              
+	<div class="body">
+	<div class="title"><a href="http://www.debian-administration.org/users/scejja/weblog/1">Brother HL-1030 installation on debian lenny</a></div>
+        <div class="tagline">by <a href="http://www.debian-administration.org/users/scejja">scejja</a></div>
+	<div class="comments">  <a href="http://www.debian-administration.org/users/scejja/weblog/1#comments">5 comments</a></div>
+	</div>
+              
+	<div class="body">
+	<div class="title"><a href="http://www.debian-administration.org/users/emeitner/weblog/10">Reboot with a broomstick, a piece of gum, and tape</a></div>
+        <div class="tagline">by <a href="http://www.debian-administration.org/users/emeitner">emeitner</a></div>
+	<div class="comments"> </div>
+	</div>
+              
+	</div>
+
+
+	    <h3 class="sideBarTitle">More Weblogs</h3>
+	    <ul>
+	    <li><a href="http://planet.debian-administration.org/" title="Planet Debian Administration">Archived Weblogs</a></li>
+            </ul>
+
+
+	    
+
+
+
+
+</div>
+
+<!-- Main body -->
+<div id="mainContent">
+   <!-- ./templates/pages/view_article.inc## Header ./templates/pages/view_article.inc## -->
+   <div id="header">
+    <div class="midHeader">
+    <h1 class="headerTitle"><a href="http://www.debian-administration.org/">Debian Administration</a></h1>
+
+    <h2 id="headerSubTitle">System Administration Tips and Resources</h2>
+
+    </div>
+    <div class="subHeader">
+    [
+ <a href="http://www.debian-administration.org/about/Debian%20Administration" title="About this site">About</a> |
+ <a href="http://www.debian-administration.org/adverts/all" title="See our community adverts">Adverts</a> |
+ <a href="http://www.debian-administration.org/archive" title="Archived Articles, by Month">Archive</a> |
+ <a href="http://www.debian-administration.org/about/FAQ" title="Frequently asked questions with answers">FAQ</a> |
+ <a href="http://www.debian-administration.org/hof" title="Article statistics">Hall of Fame</a> |
+ <a href="http://www.debian-administration.org/about/Search" title="Search the articles which have been posted previously">Search</a> |
+ <a href="http://www.debian-administration.org/tag" title="See tagged content">Tag Cloud</a> |
+
+      </div>
+    </div>
+
+<!-- Main body -->
+<div id="content">
+
+
+       <div class="article">
+       <!-- headline + section name -->
+       <h2 class="title">Making scripts run at boot time with Debian</h2>
+
+       <div class="tagline"><p>Posted by  <a href="http://www.debian-administration.org/users/Steve">Steve</a> on Mon 11 Oct 2004  at 13:01 </p></div>
+
+
+<!-- tag start -->
+  <script>
+function addTag(url)
+{
+    $("#current_tags").load( url,
+                             function() {
+                                 $("#new_tag").val( "" )
+                                 $("#add_tag").hide()
+                             })
+
+}
+
+ $(document).ready(function(){
+    $("#new_tag").autocomplete("/ajax.cgi?tag_complete=1;");
+    $('a#toggle').click(function() {
+       $('#add_tag').toggle(400);
+     })
+
+} )
+</script>
+<div class="tags">
+  <span id="current_tags">Tags: 
+
+<a href="http://www.debian-administration.org/tag/boot" title="Find more content with this tag" rel="tag">boot</a>, 
+
+<a href="http://www.debian-administration.org/tag/debian-specific%20commands" title="Find more content with this tag" rel="tag">debian-specific commands</a>, 
+
+<a href="http://www.debian-administration.org/tag/initscripts" title="Find more content with this tag" rel="tag">initscripts</a>, 
+
+<a href="http://www.debian-administration.org/tag/scheduling" title="Find more content with this tag" rel="tag">scheduling</a>
+
+</span>
+  
+</div>
+
+<!-- tag end -->
+
+       <p>Debian uses a Sys-V like init system for executing commands 
+when the system runlevel changes - for example at bootup and shutdown 
+time. 
+</p><p>If you wish to add a new service to start when the machine boots you should add the necessary script to the directory <tt>/etc/init.d/</tt>. Many of the scripts already present in that directory will give you an example of the kind of things that you can do. 
+</p><p>Here's a very simple script which is divided into two parts, code
+ which always runs, and code which runs when called with "start" or 
+"stop". </p><pre>#! /bin/sh
+# /etc/init.d/blah
+#
+
+# Some things that run always
+touch /var/lock/blah
+
+# Carry out specific functions when asked to by the system
+case "$1" in
+  start)
+    echo "Starting script blah "
+    echo "Could do more here"
+    ;;
+  stop)
+    echo "Stopping script blah"
+    echo "Could do more here"
+    ;;
+  *)
+    echo "Usage: /etc/init.d/blah {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
+
+</pre>
+<p>Once you've saved your file into the correct location make sure that it's executable by running "<tt>chmod 755 /etc/init.d/blah</tt>". 
+</p><p>Then you need to add the appropriate symbolic links to cause the script to be executed when the system goes down, or comes up. 
+</p><p>The simplest way of doing this is to use the Debian-specific command <tt>update-rc.d</tt>:
+</p><pre>root@skx:~# update-rc.d blah defaults
+ Adding system startup for /etc/init.d/blah ...
+   /etc/rc0.d/K20blah -&gt; ../init.d/blah
+   /etc/rc1.d/K20blah -&gt; ../init.d/blah
+   /etc/rc6.d/K20blah -&gt; ../init.d/blah
+   /etc/rc2.d/S20blah -&gt; ../init.d/blah
+   /etc/rc3.d/S20blah -&gt; ../init.d/blah
+   /etc/rc4.d/S20blah -&gt; ../init.d/blah
+   /etc/rc5.d/S20blah -&gt; ../init.d/blah
+</pre>
+<p>If you wish to remove the script from the startup sequence in the future run: 
+</p><pre>root@skx:/etc/rc2.d# update-rc.d -f  blah remove
+update-rc.d: /etc/init.d/blah exists during rc.d purge (continuing)
+ Removing any system startup links for /etc/init.d/blah ...
+   /etc/rc0.d/K20blah
+   /etc/rc1.d/K20blah
+   /etc/rc2.d/S20blah
+   /etc/rc3.d/S20blah
+   /etc/rc4.d/S20blah
+   /etc/rc5.d/S20blah
+   /etc/rc6.d/K20blah
+</pre>
+<p>This will leave the script itself in place, just remove the links which cause it to be executed. 
+</p><p>You can find more details of this command by running "<tt>man update-rc.d</tt>". 
+
+
+
+</p><div style="text-align: right;">
+<a name="a2a_dd" onmouseover="a2a_show_dropdown(this)" onmouseout="a2a_onMouseOut_delay()" href="http://www.addtoany.com/share_save#url=http%3A%2F%2Fwww.debian-administration.org%2Farticle%2FMaking_scripts_run_at_boot_time_with_Debian&amp;title=Making%20scripts%20run%20at%20boot%20time%20with%20Debian&amp;description=Tips%20for%20a%20Debian%20GNU%2FLinux%20System%20Administrator."><img src="Making_scripts_run_at_boot_time_with_Debian_files/share_save_171_16.gif" alt="Share/Save/Bookmark" height="16" width="171" border="0"></a><script type="text/javascript">a2a_linkname="Making scripts run at boot time with Debian";a2a_linkurl="http://www.debian-administration.org/article/Making_scripts_run_at_boot_time_with_Debian";</script><script type="text/javascript" src="Making_scripts_run_at_boot_time_with_Debian_files/page.js"></script>
+</div>
+
+
+<div class="navigation">
+	<div class="row">
+        <span class="left">
+	<a href="http://www.debian-administration.org/comment/onarticle/28">Add Comment</a>
+ <a href="http://www.debian-administration.org/comment/feed/onarticle/28"><img src="Making_scripts_run_at_boot_time_with_Debian_files/xml.gif" title="Subscribe to comments on this article." alt="XML logo" height="14" width="36"></a></span>
+         <span class="right">
+         <a href="http://www.debian-administration.org/article/Making_scripts_run_at_boot_time_with_Debian/print">Printable version</a>
+         </span>
+	<div class="spacer"> </div>
+	</div>
+
+
+	<p>&nbsp;</p>
+         <div class="row">
+	  <span class="left">
+           
+            <a href="http://www.debian-administration.org/article/27/Transferring_files_with_OpenSSH">&lt;&lt;&lt; Transferring files with OpenSSH</a>
+           
+          </span>
+          <span class="right">
+           
+            <a href="http://www.debian-administration.org/article/29/Handling_mail_for_multiple_domains_with_exim3">Handling mail for multiple domains with exim3 &gt;&gt;&gt;</a>
+           
+          </span>
+	<div class="spacer"> </div>
+        </div>
+
+	</div>
+</div>
+
+
+
+
+	
+	<p></p>
+	<div class="advert">
+	<center>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-1910202134166551";
+	google_ad_width = 728;
+	google_ad_height = 90;
+	google_ad_format = "728x90_as";
+	google_ad_type = "text_image";
+	google_ad_channel ="4454478967";
+	//--></script>
+	<script type="text/javascript" src="Making_scripts_run_at_boot_time_with_Debian_files/show_ads.js">
+	</script><ins style="display: inline-table; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><ins id="aswift_0_anchor" style="display: block; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins>
+	</center>
+
+        
+	  <p style="text-align: right;"><a href="http://www.debian-administration.org/about/FAQ%20:%20Site%20Adverts">Why are these adverts here?</a></p>
+        
+	</div>
+	
+
+
+
+ <hr>
+ 
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_1">#1</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_1">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/yaarg">yaarg</a>  on Fri 15 Oct 2004  at 07:58 <br>
+[ <a href="http://www.debian-administration.org/create/message/yaarg">Send Message</a> | <a href="http://www.debian-administration.org/users/yaarg/weblog">View Weblogs</a> ]</div>
+
+ <div class="body">
+  <p>I do wish Debian would do away with the System V run level scheme, 
+it's all a bit confusing. As I understand it some of the run levels 
+aren't even used?! Gentoo has done away with it already, using "reboot",
+ "nonetwork" etc. instead, it's a bit more intuitive.. as it happens the
+ rc-update tool is much better too... </p><p>
+ </p></div>
+
+<p class="foot">
+ [
+ 
+  Parent
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/1">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_2">#2</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_2">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  on Tue  2 Nov 2004  at 06:55 <br>
+</div>
+
+ <div class="body">
+  <p>I could not agree more. I have no idea how exactly are those run-levels interpreted by the system. </p><p>
+ </p></div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_1">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/2">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_3">#3</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_3">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (81.89.xx.xx) on Sat 10 Sep 2005  at 10:07 <br>
+</div>
+
+ <div class="body">
+  read the /etc/inittab for more info 
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_2">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/3">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_4">#4</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_4">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (203.91.xx.xx) on Thu 17 Nov 2005  at 05:42 <br>
+</div>
+
+ <div class="body">
+  <div class="hft-lines">my script created is not displaying messaegs on console that means the cho command is not dispalying any messges on console. <br> i am working on solaris 10 x86 .so could u help me in this.<br></div>
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_3">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/4">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+ </div>
+  
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_8">#8</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_8">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (213.158.xx.xx) on Mon 30 Oct 2006  at 14:03 <br>
+</div>
+
+ <div class="body">
+  Yeah, like you, I can only agree.. That something is "complex" and 
+"inaccessible" does not mean it's good (very often the opposite). <br> Too bad many other linux-solutions and independent projects in general suffer from the same syndrome... ;/ <br>
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_2">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/8">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_23">#23</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_23">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (64.41.xx.xx) on Thu  7 May 2009  at 08:38 <br>
+</div>
+
+ <div class="body">
+  I'd like to see a less complex scheme too and I'm curious about the 
+stuff you mentioned. In the non-runlevel scheme you mention, how do you 
+get the system into a state where you can run e2fsck, ... <br><br>Also, I switch between a dual and single display config for X. How would I do that in your scheme? <br><br>Thanks.
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_1">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/23">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_5">#5</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_5">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/GecKo">GecKo</a>  (222.154.xx.xx) on Thu 23 Feb 2006  at 04:47 <br>
+[ <a href="http://www.debian-administration.org/create/message/GecKo">Send Message</a> ]</div>
+
+ <div class="body">
+  Is it possible to have what ever script is running run from a 
+different user? Or should I incorporate that into the startup script 
+with su?<br>
+ </div>
+
+<p class="foot">
+ [
+ 
+  Parent
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/5">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_6">#6</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_6">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Steve">Steve</a>  (82.41.xx.xx) on Thu 23 Feb 2006  at 09:35 <br>
+[ <a href="http://www.debian-administration.org/create/message/Steve">Send Message</a> | <a href="http://www.debian-administration.org/users/Steve/scratchpad">View Steve's Scratchpad</a> | <a href="http://www.debian-administration.org/users/Steve/weblog">View Weblogs</a> ]</div>
+
+ <div class="body">
+  <p>It is best to use <tt>su</tt> as you suggested.</p><p><a href="http://www.steve.org.uk/">Steve</a>
+ </p></div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_5">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/6">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_7">#7</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_7">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (201.147.xx.xx) on Fri  6 Oct 2006  at 01:30 <br>
+</div>
+
+ <div class="body">
+  Is there any easy way?<br>
+ </div>
+
+<p class="foot">
+ [
+ 
+  Parent
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/7">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_9">#9</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_9">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (203.129.xx.xx) on Tue 21 Nov 2006  at 04:49 <br>
+</div>
+
+ <div class="body">
+  you're all so damn ignorant and quick to give up. Learn some skills, 
+init.d and rc levels are so easy, i know a 7 year old with complete 
+mastery of them... get better simpletons?<br>
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_7">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/9">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_12">#12</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_12">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (72.166.xx.xx) on Sun  8 Apr 2007  at 23:34 <br>
+</div>
+
+ <div class="body">
+  Yeah, why whine about it? If another Distro trips your trigger, by all
+ means go for it. As #10 points out in this thread, there is another way
+ to do it, too. <br><br>Typical Linux, multiple ways to obtain the same 
+result. I admit Debian is a bit less than intuitive at times but that is
+ how they keep the riff raff out. ;=&gt; <br><br>Cheers. <br><br>T
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_9">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/12">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_24">#24</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_24">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (199.46.xx.xx) on Wed 20 May 2009  at 12:42 <br>
+</div>
+
+ <div class="body">
+  I hope you don't support getting Linux onto every computer because 
+your comment speaks in the other direction. The more intuitive the OS 
+the more adoption there will be and a greater interest in supporting it.
+ Everyone benefits from simplifying. No one really benefits from 
+complexity.
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_12">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/24">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+ </div>
+  
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_25">#25</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_25">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (216.195.xx.xx) on Sat  6 Jun 2009  at 05:54 <br>
+</div>
+
+ <div class="body">
+  As so many people have pointed out - widespread adoption isn't really 
+the point of linux. We build a system we personally like. Different 
+people build systems *they* like. Find a distro or an OS that works for 
+you, or learn the one that works for us.
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_24">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/25">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+ </div>
+  
+
+ </div>
+  
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_10">#10</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_10">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (220.245.xx.xx) on Tue 26 Dec 2006  at 05:42 <br>
+</div>
+
+ <div class="body">
+  I think it would be better to make one init.d script that just 
+executes a custom script. Gentoo has this, it has an init.d script 
+called local, which just runs everything in /etc/conf.d/local.start and 
+local.stop <br><br> If you don't like the old Debian init scripts you 
+could try installing initng, also should improve boot times quite a lot 
+although its mostly used by Gentooers but there seems to be Debian 
+builds (At least some old ones in experimental). <br><br><a href="http://www.initng.org/" rel="nofollow">http://www.initng.org/</a> - Seems down currently<br>
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_7">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/10">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_13">#13</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_13">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (203.144.xx.xx) on Sun 27 May 2007  at 03:50 <br>
+</div>
+
+ <div class="body">
+  /etc/rc.local is in etch.
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_10">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/13">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_11">#11</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_11">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (64.81.xx.xx) on Fri 30 Mar 2007  at 23:07 <br>
+</div>
+
+ <div class="body">
+  man 5 crontab <br>specifically look at @reboot <br>that is easy and will "make scripts run at boot time" only.
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_7">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/11">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_15">#15</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_15">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (209.234.xx.xx) on Mon 12 May 2008  at 22:00 <br>
+</div>
+
+ <div class="body">
+  Thanks for the idea..didn't even think of that route :) <br><br>and if Gentoo is so GREATE, then why are you even here!?
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_11">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/15">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_19">#19</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_19">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (66.185.xx.xx) on Sat 25 Oct 2008  at 15:19 <br>
+</div>
+
+ <div class="body">
+  Obviously not to chat with people who can't spell "great".
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_15">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/19">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+ </div>
+  
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_14">#14</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_14">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (62.80.xx.xx) on Tue  1 Jan 2008  at 20:35 <br>
+</div>
+
+ <div class="body">
+  Not working for me :( <br><br>
+ </div>
+
+<p class="foot">
+ [
+ 
+  Parent
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/14">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_16">#16</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_16">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (125.25.xx.xx) on Mon 25 Aug 2008  at 18:44 <br>
+</div>
+
+ <div class="body">
+  I want to auto start apache on OpenSolaris10. <br>Help me please!!!
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_14">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/16">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_17">#17</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_17">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (69.9.xx.xx) on Wed  3 Sep 2008  at 19:13 <br>
+</div>
+
+ <div class="body">
+  If you are going to spend time learning to administer an OS, OpenSLOWaris is probably a bad pick.
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_16">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/17">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_18">#18</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_18">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (80.220.xx.xx) on Thu 18 Sep 2008  at 22:09 <br>
+</div>
+
+ <div class="body">
+  The example script is a bit too simple, it doesn't conform to the Debian Policy. See <a href="http://www.debian.org/doc/debian-policy/ch-opersys.html#s-sysvinit" rel="nofollow"></a><a href="http://www.debian.org/doc/debian-policy/ch-opersys.html#s-sysvinit" rel="nofollow">http://www.debian.org/doc/debian-policy/ch-opersys.html#s-sysvini t</a> for how to write correct init.d scripts.
+ </div>
+
+<p class="foot">
+ [
+ 
+  Parent
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/18">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_20">#20</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_20">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (74.197.xx.xx) on Tue 13 Jan 2009  at 13:47 <br>
+</div>
+
+ <div class="body">
+  if you are looking for a gui tool, look at bum (BootUp-Manager) in the
+ repositories. There is a checkbox to display advanced options like 
+priorities and such.
+ </div>
+
+<p class="foot">
+ [
+ 
+  Parent
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/20">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_22">#22</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_22">Making scripts run at boot time with Ubuntu</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (59.162.xx.xx) on Wed 25 Feb 2009  at 12:51 <br>
+</div>
+
+ <div class="body">
+  <br> #! /bin/sh <br> # /etc/init.d/blah <br> # <br><br> # Some things that run always <br> touch /var/lock/blah <br><br> # Carry out specific functions when asked to by the system <br> case Ã¢â‚¬Å“$1Ã¢&amp;aci rc;‚¬Â³ in <br> start) <br> HOST=Ã¢â‚¬â„¢10.147.25 1.90Ã¢â‚¬Â² <br> USER=Ã¢â‚¬â„¢tritech&amp;A tilde;¢â‚¬â„¢ <br> PASSWD=Ã¢â‚¬â„¢tritech Ã¢â‚¬â„¢ <br> ftp -n $HOST &lt;&lt;END_SCRIPT <br> quote USER $USER <br> quote PASS $PASSWD <br> get candle1.C <br> END_SCRIPT <br> ;; <br> stop) <br> echo Ã¢â‚¬Å“Starting script blah Ã¢â‚¬ï¿½ <br> ;; <br> *) <br> exit 1 <br> ;; <br> esac <br><br> exit 0 <br><br>
+ this is my script in which i am trying to copy the file candle1.C from 
+an ftp server at the time of starting the system so i had put this file 
+in /etc/init.d/blah .but it is not working , instead of these ftp 
+commands if am using mkdir d something like command it is working means 
+this script is working but for using an ftp what i have to do , or it is
+ possible to start an ftp connection at the time of init process.plz 
+help me. <br><br>
+ </div>
+
+<p class="foot">
+ [
+ 
+  Parent
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/22">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_26">#26</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_26">Re: Making scripts run at boot time with Ubuntu</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (66.29.xx.xx) on Sun 29 Nov 2009  at 05:16 <br>
+</div>
+
+ <div class="body">
+  There are a lot of misconceptions voiced here about the sysvinit 
+system. It is complex because it HAS to be. To quote Eistein, "Make 
+things as simple as possible, and no simpler." <br><br>Sysvinit is the 
+best way known to manage all the complexity involved in making any 
+combination of the 10,000+ Debian packages load the various daemons they
+ need, in the order they need, only to the extent they are installed, 
+and have them all work smoothly together. The older BSD init system was 
+simpler, but less capable-- the init scripts had to be edited for every 
+package you added that needed to start at boot time, and the order was 
+always a potential source of a problem. That is why most Linux 
+distributions use sysvinit-- it has proven its value over many years. <br><br>Each
+ package that needs to load at a certain runlevel puts one script in 
+/etc/init.d, usually named with the package name. This allows you to 
+start, stop, restart, reload, etc. it by typing "/etc/init.d/mypackage 
+start" (or stop or reload or whatever). If you write a script, use 
+others as a template, and change what you need to change. Test the 
+script by typing these commands manually (probably at a root shell). If 
+the script works properly here, it should work in runlevels. However, to
+ answer the last plea for help, this script does NOT start anything 
+automatically at ANY runlevel. We still need one more thing for that. <br><br>To
+ do that, we create symlinks to these scripts in the various runlevel 
+directories. For example, if we normally run at runlevel 2 (as Debian 
+does by default) and we want mypackage to run as start, then create two 
+links in /etc/rc2.d, one named S99mypackage and one named K99mypackage. S
+ means Start, and K means Kill (stop) the process. When the system goes 
+into runlevel 2, all the start links in /etc/rc2.d will be run one after
+ another. The 99 tells the system WHEN it should be run-- they run in 
+numerical order from 01-99 (and in alpha order within those numeric 
+levels, I think). So 99 will be run last, and everything should 
+basically already be up by then, usually a good choice for your personal
+ stuff. But if you want it run before thing1 and after thing2, then pick
+ a more appropriate number. If you want it started first and stopped 
+last, then name the links S01mypackage and K99mypackage. You can also 
+disable the link temporarily by renaming the uppercase S or K to 
+lowercase-- only the uppercase letters will be run. <br><br>As to "why 
+so many runlevels, if Debian only uses two?"-- you can use them any way 
+you want. Runlevel S (or 1) is single-user maintenance mode (which may 
+not even mount your disks). Runlevel 2 (in Debian) is multi-user. Some 
+distributions once used runlevel 3 for networking, or 5 for X windows. 
+Now both (networking and X) seem to be nearly universal, and are not 
+usually put on separate runlevels. But if you want to do that, you can. 
+It's your system, do what you want. Maybe you have a system needs to be 
+configured differently at home and work, or when the kids are using it. 
+You can set runlevels for these different modes. <br><br>If you want the
+ simpler "just run this at boot time" of BSD, just add your script to 
+the /etc/rc.local script which runs after the rest of the boot process 
+is complete. So you CAN have it both ways. <br><br>Hope this clears up 
+some of the confusion. I'd say RTFM, but sometimes the manuals are long 
+on detail and short on 30,000 foot-level explanation of the concepts. 
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_22">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/26">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_27">#27</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_27">Re: Making scripts run at boot time with Ubuntu</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (64.129.xx.xx) on Fri 15 Jan 2010  at 17:11 <br>
+</div>
+
+ <div class="body">
+  Bravo. Thank you very much for the 30k view. I've been over the 
+manpages for it about 6 times now, and I find it always leaves an uneasy
+ feeling. <br><br>-- Specifically, around what happens when a particular
+ package is upgraded, but I guess if I'm not packaging my scripts into a
+ .deb file, I really don't need to worry about that. ( I think I got 
+confused when I was trying to do things like disable proftpd for an 
+indeterminate amount of time. ) apt-get update will automatically update
+ proftpd ( and from what I understood, possibly re-activate the sysvinit
+ links. ) <br><br>Anyway, I like your quick view above so much that I'm 
+going to save it in a file on my servers. I'd credit you, but it was 
+posted anonymously. I'll credit the URL instead. Thanks again. <br><br>Regarding
+ the attitude that the point of Linux isn't adoption, I find that 
+short-sighted. Perhaps I'm just an optimist, but I really think that the
+ best thing for all Linux users is more Linux usage. If for no other 
+reason, hardware support. We Linux users don't have a lot of economic 
+influence on hardware manufacturer's -- there's not a lot of incentive 
+to even passively check and see if Linux can work. That's not going to 
+change until the hardware vendors start hurting from lack of sales 
+because they won't support Linux. And that's not going to happen until 
+there are enough people running Linux to care... <br>
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_26">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/27">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_29">#29</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_29">Re: Making scripts run at boot time with Ubuntu</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (60.49.xx.xx) on Fri 17 Sep 2010  at 20:11 <br>
+</div>
+
+ <div class="body">
+  hi there..can i ask here?i'm trying to disable bluetooth autostart on 
+my linuxmint 9 lxde box..not to completely disable/remove it,just to 
+make it not run upon boot and i can just reenable it whenever i 
+want..its so annoying to see that my bluetooth always turn on upon boot 
+while i rarely use it.. <br>so here the script of /etc/init.d/bluetooth <br>what to change here? <br><br><br>#! /bin/sh <br>### BEGIN INIT INFO <br># Provides: bluetooth <br># Required-Start: $local_fs $syslog $remote_fs dbus <br># Required-Stop: $local_fs $syslog $remote_fs <br># Default-Start: 2 3 4 5 <br># Default-Stop: 0 1 6 <br># Short-Description: Start bluetoothd <br>### END INIT INFO <br><br>. /lib/lsb/init-functions <br><br>set -e <br><br>case "$1" in <br> start) <br> #currently this init script exists only because of what appears to be <br> #an egg and chicken problem <br> # bluetoothd normally starts up by udev rules. it needs dbus to function, <br> # but dbus doesn't start up until after udev finishes triggering <br> # <br> if [ ! -f /sbin/udevadm.upgrade ]; then <br> udevadm trigger --subsystem-match=bluetooth <br> fi <br> ;; <br> stop) <br> pkill -TERM bluetoothd || true <br> ;; <br> restart|force-reload) <br> $0 stop <br> $0 start <br> ;; <br> status) <br> status_of_proc "bluetoothd" "bluetooth" &amp;&amp; exit 0 || exit $? <br> ;; <br> *) <br> N=/etc/init.d/bluetooth <br> # echo "Usage: $N {start|stop|restart|reload|force-reload|status}" &gt;&amp;2 <br> echo "Usage: $N {start|stop|restart|force-reload|status}" &gt;&amp;2 <br> exit 1 <br> ;; <br>esac <br><br>exit 0 <br>
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_27">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/29">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+ </div>
+  
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+ <div class="indent">
+  
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_30">#30</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_30">Re: Making scripts run at boot time with Ubuntu</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (128.219.xx.xx) on Tue 14 Dec 2010  at 15:58 <br>
+</div>
+
+ <div class="body">
+  I usually just stick an "exit 0" as the first executable line in the 
+script when I want to disable it. The only problem comes in upgrades, 
+because the upgrade will now ask you if you want to change a changed 
+script. Gets a little messy at times.
+ </div>
+
+<p class="foot">
+ [
+ 
+  <a href="#comment_29">Parent</a>
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/30">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+ </div>
+  
+
+ </div>
+  
+
+ </div>
+  
+
+ </div>
+  
+
+
+<p></p>
+
+
+<!-- Indent comments.
+     See matching loop to correctly terminate the comment indentation.
+  -->
+
+
+
+
+<!-- Comment entry -->
+<div class="comment">
+  <div class="link">
+   
+   
+    <a href="http://www.debian-administration.org/articles/28#comment_31">#31</a>
+   
+   
+  </div>
+
+ <div class="title"><a name="comment_31">Re: Making scripts run at boot time with Debian</a>
+
+ </div>
+
+ <div class="tagline">
+ Posted by <a href="http://www.debian-administration.org/users/Anonymous">Anonymous</a>  (163.139.xx.xx) on Tue 29 Mar 2011  at 14:25 <br>
+</div>
+
+ <div class="body">
+  Instead of using the program "update-rc.d" I prefer using 
+"sysv-rc-conf", which is more noob friendly I guess^^. You can 
+add/remove any script in the /etc/init.d/ directory and start/stop 
+services right from there with one button too. <br>Nice guide, I didn't know it was so easy. <br>
+ </div>
+
+<p class="foot">
+ [
+ 
+  Parent
+ 
+
+ 
+
+ 
+  
+  | <a href="http://www.debian-administration.org/comment/onarticle/28/31">Reply to this comment</a>
+  
+ 
+
+ 
+
+ 
+
+ 
+  
+  
+ 
+
+ 
+]
+</p>
+
+</div>
+
+<!-- Terminate the indentation of the comments. -->
+
+
+<p></p>
+
+
+
+
+  <!-- Closing tag for if_error -->
+
+</div>
+
+  <div id="footer">
+	<div>
+<p>Articles and comments are the property of their respective posters.</p>
+<p>Trademarks are the property of their respective owners.<br>  Debian is <a href="http://tarr.uspto.gov/servlet/tarr?regser=serial&amp;entry=75386376&amp;action=Request+Status">a registered trademark</a> of <a href="http://www.spi-inc.org/">Software in the Public Interest, Inc</a>.</p>
+<p>This site is copyright © 2004-2010 <a href="http://www.steve.org.uk/">Steve Kemp</a>.<br>Site hosting provided by <a href="http://www.bytemark.co.uk/">Bytemark Hosting</a>.</p>
+<p>Email: <a class="footer" href="mailto:webmaster@debian-administration.org">webmaster@debian-administration.org</a></p>
+<p><a href="http://www.debian-administration.org/about/Syndication">Article Feeds in Atom, RSS, &amp; RDF formats</a></p>
+</div></div>
+
+<!-- Right Sidebar -->
+<div id="rightbar">
+  
+
+      <h3 class="sideBarTitle">User Login</h3>
+            <form id="user-login" action="/" method="post">
+	    <input name="target" value="/articles/28" type="hidden">
+                
+	<p><b>Username</b>:<br>
+        <input id="name" name="lname" size="14" maxlength="25" type="text"></p>
+	<p><b>Password</b>:<br>
+	<input id="pass" name="lpass" size="15" maxlength="25" type="password"></p>
+	<p>[ <a href="http://www.debian-administration.org/login">Advanced Login</a> ]</p>
+        <p><input name="login" value="Login" type="submit"></p>
+    
+        <p><a href="http://www.debian-administration.org/create/user">Register Account</a></p>
+            </form>
+
+
+
+
+
+   <h3 class="sideBarTitle">Flattr</h3>
+ <div style="text-align: center;"><iframe allowtransparency="true" marginwidth="0" marginheight="0" border="0" src="Making_scripts_run_at_boot_time_with_Debian_files/a.html" frameborder="0" height="62" scrolling="no" width="55"></iframe></div>
+
+
+   
+
+        
+
+        
+           <div class="advert">
+<h3 class="sideBarTitle">Sponsored Links</h3>
+<p></p>
+<div align="center">
+<script type="text/javascript"><!--
+google_ad_client = "pub-1910202134166551";
+//200x90, created 08/12/07
+google_ad_slot = "2315151555";
+google_ad_width = 200;
+google_ad_height = 90;
+//--></script>
+<script type="text/javascript" src="Making_scripts_run_at_boot_time_with_Debian_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 200px;"><ins id="aswift_1_anchor" style="display: block; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 200px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="90" scrolling="no" width="200"></iframe></ins></ins>
+</div>
+
+            
+	       <p><a href="http://www.debian-administration.org/about/FAQ%20:%20Site%20Adverts">Why are these adverts here?</a></p>
+            
+	    </div>
+	
+
+   
+
+
+
+
+
+   
+
+
+  
+   <h3 class="sideBarTitle">Related Links</h3>
+   <ul>
+   
+    <li><a href="http://www.debian-administration.org/articles/212">Debian Run Levels</a> </li>
+  
+   </ul>
+  
+
+<h3 class="sideBarTitle">Quick Site Search</h3>
+ <form id="quickSearch" action="/search/" method="get">
+  <p><input size="10" id="search" name="q">
+  <input name="cmd" value="Search!" type="hidden">
+  <input name="go" value="Go" type="submit"></p>
+ </form>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div></div>
+  </body></html>

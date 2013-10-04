@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="modify-eqref-command_files/ga.js" async="" type="text/javascript"></script><script src="modify-eqref-command_files/quant.js" async="" type="text/javascript"></script><script>window.serq=[];StackExchange={ready:function(f){serq.push(f)}}</script>
+    
+    
+    <title>equations - Modify \eqref command - TeX - LaTeX</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/tex/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/tex/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="TeX - LaTeX - Stack Exchange" href="http://tex.stackexchange.com/opensearch.xml">
+
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="modify-eqref-command_files/all.css">
+    
+    <link rel="canonical" href="http://tex.stackexchange.com/questions/28894/modify-eqref-command">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'Modify \eqref command'" href="http://tex.stackexchange.com/feeds/question/28894">
+
+
+        <script type="text/javascript">
+             StackExchange.ready(function () {
+                 StackExchange.realtime.init('ws://sockets.ny.stackexchange.com');
+                StackExchange.realtime.subscribeToInboxNotifications();
+                StackExchange.realtime.subscribeToReputationNotifications('85');            
+        });
+        </script>
+
+    
+
+<script src="modify-eqref-command_files/full-anon.js" type="text/javascript" async=""></script><script src="modify-eqref-command_files/prettify-full.js" type="text/javascript" async=""></script></head>
+<body class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    <span id="hlinks-user">
+                  
+                  </span>
+                  <span id="hlinks-nav">
+                  <a href="http://tex.stackexchange.com/users/login?returnurl=%2fquestions%2f28894%2fmodify-eqref-command">log in</a>
+ <span class="lsep">|</span>
+
+                  </span>
+                  <span id="hlinks-custom">
+                  <a href="http://chat.stackexchange.com/">chat</a>
+ <span class="lsep">|</span>
+<a href="http://meta.tex.stackexchange.com/">meta</a>
+ <span class="lsep">|</span>
+<a href="http://tex.stackexchange.com/about">about</a>
+ <span class="lsep">|</span>
+<a href="http://tex.stackexchange.com/faq">faq</a>
+                  </span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get" autocomplete="off">
+                    <div>
+                        <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" maxlength="140" size="28" type="text">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://tex.stackexchange.com/">TeX - LaTeX</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://tex.stackexchange.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://tex.stackexchange.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://tex.stackexchange.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://tex.stackexchange.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://tex.stackexchange.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://tex.stackexchange.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+        <div id="content">
+            
+            
+
+
+<div itemscope="" itemtype="http://schema.org/Article">
+<link itemprop="image" href="http://cdn.sstatic.net/tex/img/apple-touch-icon.png">
+<div id="question-header">
+    <h1 itemprop="name"><a href="http://tex.stackexchange.com/questions/28894/modify-eqref-command" class="question-hyperlink">Modify \eqref command</a></h1>
+</div>
+<div id="mainbar">
+
+
+<div class="question" id="question" data-questionid="28894">
+
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+
+<div class="vote">
+    <input value="28894" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">5</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>1</b></div>   
+ 
+</div>
+
+    </td>
+<td class="postcell">
+<div>          
+    <div class="post-text" itemprop="description">
+        <p>I want to edit the <code>\eqref</code> command so that \eqref will produce Eq. (1), for example, instead of (1).
+Of course, I could define</p>
+
+<pre class="lang-tex prettyprint"><code><span class="dec">\newcommand</span><span class="pun">{</span><span class="kwd">\reff</span><span class="pun">}{</span><span class="pln">Eq.~</span><span class="kwd">\eqref</span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p>but then I lose my editor's ability to present a list of former labelled equations when encountering the <code>\eqref</code> command (I am using Inlage).</p>
+
+<p>So I was wondering if it's possible to refer to a previous command 
+definition, without re-defining it, and just append the changes. 
+something in the form</p>
+
+<pre class="lang-tex prettyprint"><code><span class="dec">\renewcommand</span><span class="pun">{</span><span class="kwd">\eqref</span><span class="pun">}{</span><span class="pln">Eq.~</span><span class="pun">[</span><span class="pln">old_</span><span class="kwd">\eqref</span><span class="pln"> definition</span><span class="pun">]}</span><span class="pln"><br></span></code></pre>
+
+<p>Hope it's clear.</p>
+
+    </div>            
+    <div class="post-taglist">
+        <a href="http://tex.stackexchange.com/questions/tagged/equations" class="post-tag" title="show questions tagged 'equations'" rel="tag">equations</a> <a href="http://tex.stackexchange.com/questions/tagged/cross-referencing" class="post-tag" title="show questions tagged 'cross-referencing'" rel="tag">cross-referencing</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://tex.stackexchange.com/q/28894" title="short permalink to this question" class="short-link" id="link-post-28894">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/28894/edit">improve this question</a></div>
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover"><div class="user-action-time">edited <a href="http://tex.stackexchange.com/posts/28894/revisions" title="show all edits to this post"><span title="2011-09-19 10:21:57Z" class="relativetime">Sep 19 '11 at 10:21</span></a></div><div class="user-gravatar32"><a href="http://tex.stackexchange.com/users/4427/egreg"><div class=""><img src="modify-eqref-command_files/a7fa52f9027bcf1c9c31a3de4747531b.png" alt="" height="32" width="32"></div></a></div><div class="user-details"><a href="http://tex.stackexchange.com/users/4427/egreg">egreg</a><br><span class="reputation-score" title="reputation score 112382" dir="ltr">112k</span><span title="7 gold badges"><span class="badge1"></span><span class="badgecount">7</span></span><span title="212 silver badges"><span class="badge2"></span><span class="badgecount">212</span></span><span title="497 bronze badges"><span class="badge3"></span><span class="badgecount">497</span></span></div></div>    </td>
+    <td class="post-signature owner">
+    <div class="user-info"><div class="user-action-time">asked <span title="2011-09-19 10:15:24Z" class="relativetime">Sep 19 '11 at 10:15</span></div><div class="user-gravatar32"><a href="http://tex.stackexchange.com/users/7929/pineapple"><div class=""><img src="modify-eqref-command_files/dd5b49fe385b53ce75550ef2c11354e3.png" alt="" height="32" width="32"></div></a></div><div class="user-details"><a href="http://tex.stackexchange.com/users/7929/pineapple">PineApple</a><br><span class="reputation-score" title="reputation score" dir="ltr">116</span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span></div></div>
+        <br class="cbt">
+        <div class="accept-rate cool" title="this user has accepted an answer for 5 of 7 eligible questions">71% accept rate</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>    </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-28894" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-56672" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Vaguely related question: <a href="http://tex.stackexchange.com/q/28903/86">tex.stackexchange.com/q/28903/86</a></span> –&nbsp;<a href="http://tex.stackexchange.com/users/86/andrew-stacey" title="42746 reputation" class="comment-user">Andrew Stacey</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(56672, 0)" href="#comment56672_28894"><span title="2011-09-19 12:31:35Z">Sep 19 '11 at 12:31</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>    
+</div>
+
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>3 Answers</h2>
+            <div id="tabs">
+                <a href="http://tex.stackexchange.com/questions/28894/modify-eqref-command?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://tex.stackexchange.com/questions/28894/modify-eqref-command?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://tex.stackexchange.com/questions/28894/modify-eqref-command?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>    
+    </div>    
+
+
+  
+    <a name="28896"></a>
+    <div id="answer-28896" class="answer" data-answerid="28896">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input value="28896" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">9</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+<span class="vote-accepted-on" title="The question owner accepted this as the best answer Sep 19 '11 at 11:23">accepted</span> 
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>There's a "standard" method:</p>
+
+<pre class="lang-tex prettyprint"><code><span class="kwd">\let\originaleqref\eqref</span><span class="pln"><br></span><span class="dec">\renewcommand</span><span class="pun">{</span><span class="kwd">\eqref</span><span class="pun">}{</span><span class="pln">Eq.~</span><span class="kwd">\originaleqref</span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p>First of all you save a copy of the command to modify, then redefine 
+it using the saved copy. It would be almost equivalent to say</p>
+
+<pre class="lang-tex prettyprint"><code><span class="dec">\renewcommand</span><span class="pln">*</span><span class="pun">{</span><span class="kwd">\eqref</span><span class="pun">}[</span><span class="pln">1</span><span class="pun">]{</span><span class="pln">Eq.~</span><span class="kwd">\originaleqref</span><span class="pun">{</span><span class="pln">#1</span><span class="pun">}}</span><span class="pln"><br></span></code></pre>
+
+<p>but this is less efficient, as it reads the argument twice: one for the (new) <code>\eqref</code> and one for the <code>\originaleqref</code>.</p>
+
+<p>There is also the <strong>etoolbox</strong> method:</p>
+
+<pre class="lang-tex prettyprint"><code><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">etoolbox</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\pretocmd</span><span class="pun">{</span><span class="kwd">\eqref</span><span class="pun">}{</span><span class="pln">Eq.~</span><span class="pun">}{}{}</span><span class="pln"><br></span></code></pre>
+
+<p>that doesn't require to keep a copy of the old command. However, this method will fail for commands that are defined with <code>\DeclareRobustCommand</code> or that take an optional argument, so it needs looking at the command's definition.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/28896" title="short permalink to this answer" class="short-link" id="link-post-28896">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/28896/edit">improve this answer</a></div>    </td>
+    <td class="post-signature" align="right">
+<div class="user-info"><div class="user-action-time">edited <a href="http://tex.stackexchange.com/posts/28896/revisions" title="show all edits to this post"><span title="2011-09-19 10:41:36Z" class="relativetime">Sep 19 '11 at 10:41</span></a></div><div class="user-gravatar32"></div><div class="user-details"><br></div></div>    </td>
+            
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover"><div class="user-action-time">answered <span title="2011-09-19 10:18:50Z" class="relativetime">Sep 19 '11 at 10:18</span></div><div class="user-gravatar32"><a href="http://tex.stackexchange.com/users/4427/egreg"><div class=""><img src="modify-eqref-command_files/a7fa52f9027bcf1c9c31a3de4747531b.png" alt="" height="32" width="32"></div></a></div><div class="user-details"><a href="http://tex.stackexchange.com/users/4427/egreg">egreg</a><br><span class="reputation-score" title="reputation score 112382" dir="ltr">112k</span><span title="7 gold badges"><span class="badge1"></span><span class="badgecount">7</span></span><span title="212 silver badges"><span class="badge2"></span><span class="badgecount">212</span></span><span title="497 bronze badges"><span class="badge3"></span><span class="badgecount">497</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-28896" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-56654" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Great! this is exactly what I wanted. Also thanks for the explanation</span> –&nbsp;<a href="http://tex.stackexchange.com/users/7929/pineapple" title="116 reputation" class="comment-user owner">PineApple</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(56654, 28896)" href="#comment56654_28896"><span title="2011-09-19 10:28:57Z">Sep 19 '11 at 10:28</span></a></span><span class="edited-yes" title="this comment was edited"></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="28897"></a>
+    <div id="answer-28897" class="answer" data-answerid="28897">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input value="28897" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">4</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+ 
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>(I know that this isn't what you want to 
+do, but it's very close so that others might find this question hoping 
+to do the following.)</p>
+
+<p>egreg's answer is what to do if you only want to change how the 
+reference is typeset when it is referred to.  If you want to change it 
+everywhere, meaning when the label itself is typeset, then you need to 
+change a macro called <code>\tagform@</code>.  As far as I can see, <code>amsmath</code>
+ doesn't include a facility for changing this easily so it needs to be 
+redefined.  Also, its definition involves a few commands that clearly 
+"do something special" so its overall form should be preserved.</p>
+
+<p>Its original definition is:</p>
+
+<pre class="lang-tex prettyprint"><code><span class="dec">\def</span><span class="kwd">\tagform@</span><span class="pln">#1</span><span class="pun">{</span><span class="kwd">\maketag@@@</span><span class="pun">{(</span><span class="kwd">\ignorespaces</span><span class="pln">#1</span><span class="kwd">\unskip\@@italiccorr</span><span class="pun">)}}</span><span class="pln"><br></span></code></pre>
+
+<p>so to change it, you would put the following in your preamble:</p>
+
+<pre class="lang-tex prettyprint"><code><span class="kwd">\makeatletter</span><span class="pln"><br></span><span class="dec">\def</span><span class="kwd">\tagform@</span><span class="pln">#1</span><span class="pun">{</span><span class="kwd">\maketag@@@</span><span class="pun">{</span><span class="pln">Eq.~</span><span class="pun">(</span><span class="kwd">\ignorespaces</span><span class="pln">#1</span><span class="kwd">\unskip\@@italiccorr</span><span class="pun">)}}</span><span class="pln"><br></span><span class="kwd">\makeatother</span><span class="pln"><br></span></code></pre>
+
+<p>For an explanation of the surrounding commands, see <a href="http://tex.stackexchange.com/questions/8351/what-do-makeatletter-and-makeatother-do">What do \makeatletter and \makeatother do?</a></p>
+
+<p>The <code>#1</code> becomes the equation number.  Keep everything inside the <code>\maketag@@@</code> macro, and keep the stuff surrounding the <code>#1</code>
+ where it is.  Thus to change the format of the equation number (as I 
+did above), you change the opening and closing parentheses <em>and nothing else</em>!  (Unless you know what you're doing.)</p>
+
+<p>So if you want your equation numbers to be green with purple spots, you might have:</p>
+
+<pre class="lang-tex prettyprint"><code><span class="kwd">\makeatletter</span><span class="pln"><br></span><span class="dec">\def</span><span class="kwd">\tagform@</span><span class="pln">#1</span><span class="pun">{</span><span class="kwd">\maketag@@@</span><span class="pun">{</span><span class="kwd">\GreenWithPurpleSpots</span><span class="pun">{</span><span class="kwd">\ignorespaces</span><span class="pln">#1</span><span class="kwd">\unskip\@@italiccorr</span><span class="pun">}}}</span><span class="pln"><br></span><span class="kwd">\makeatother</span><span class="pln"><br></span></code></pre>
+
+<p>Where, <code>\GreenWithPurpleSpots</code> is defined in the <code>StrangeAndBizarreColours</code> package[1].</p>
+
+<p>More seriously, if you want square brackets instead of curved, you could put:</p>
+
+<pre class="lang-tex prettyprint"><code><span class="kwd">\makeatletter</span><span class="pln"><br></span><span class="dec">\def</span><span class="kwd">\tagform@</span><span class="pln">#1</span><span class="pun">{</span><span class="kwd">\maketag@@@</span><span class="pun">{[</span><span class="kwd">\ignorespaces</span><span class="pln">#1</span><span class="kwd">\unskip\@@italiccorr</span><span class="pun">]}}</span><span class="pln"><br></span><span class="kwd">\makeatother</span><span class="pln"><br></span></code></pre>
+
+<p>Here's an example showing both this reformatting and egreg's redefinition of the <code>\eqref</code> command:</p>
+
+<pre class="lang-tex prettyprint"><code><span class="kwd">\documentclass</span><span class="pun">{</span><span class="pln">article</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">amsmath</span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">\makeatletter</span><span class="pln"><br></span><span class="dec">\def</span><span class="kwd">\tagform@</span><span class="pln">#1</span><span class="pun">{</span><span class="kwd">\maketag@@@</span><span class="pun">{[</span><span class="kwd">\ignorespaces</span><span class="pln">#1</span><span class="kwd">\unskip\@@italiccorr</span><span class="pun">]}}</span><span class="pln"><br></span><span class="kwd">\makeatother</span><span class="pln"><br><br></span><span class="kwd">\let\originaleqref</span><span class="pun">=</span><span class="kwd">\eqref</span><span class="pln"><br></span><span class="dec">\renewcommand</span><span class="pun">{</span><span class="kwd">\eqref</span><span class="pun">}{</span><span class="pln">Eq.~</span><span class="kwd">\originaleqref</span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">equation</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\label</span><span class="pun">{</span><span class="pln">aneq</span><span class="pun">}</span><span class="pln"><br>x^2 + y^2 </span><span class="pun">=</span><span class="pln"> z^2<br></span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">equation</span><span class="pun">}</span><span class="pln"><br><br>We refer to </span><span class="kwd">\eqref</span><span class="pun">{</span><span class="pln">aneq</span><span class="pun">}</span><span class="pln">.<br></span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p>And the output:</p>
+
+<p><img src="modify-eqref-command_files/iwvFb.png" alt="redefined equation labels"></p>
+
+<hr>
+
+<p>[1]: This is a <em>joke</em>, although I fully expect that package to exist on CTAN within about a week of posting.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/28897" title="short permalink to this answer" class="short-link" id="link-post-28897">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/28897/edit">improve this answer</a></div>    </td>
+    <td class="post-signature" align="right">
+<div class="user-info"><div class="user-action-time">edited <a href="http://tex.stackexchange.com/posts/28897/revisions" title="show all edits to this post"><span title="2011-09-19 11:37:58Z" class="relativetime">Sep 19 '11 at 11:37</span></a></div><div class="user-gravatar32"></div><div class="user-details"><br></div></div>    </td>
+            
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover"><div class="user-action-time">answered <span title="2011-09-19 10:42:44Z" class="relativetime">Sep 19 '11 at 10:42</span></div><div class="user-gravatar32"><a href="http://tex.stackexchange.com/users/86/andrew-stacey"><div class=""><img src="modify-eqref-command_files/c9359d5d299cd6f7b0bf8cc123c69234.jpeg" alt="" height="32" width="32"></div></a></div><div class="user-details"><a href="http://tex.stackexchange.com/users/86/andrew-stacey">Andrew Stacey</a><br><span class="reputation-score" title="reputation score 42746" dir="ltr">42.7k</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="83 silver badges"><span class="badge2"></span><span class="badgecount">83</span></span><span title="223 bronze badges"><span class="badge3"></span><span class="badgecount">223</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-28897" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-56661" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Thanks. But in which situations besides referring to this equation would I use the label name?</span> –&nbsp;<a href="http://tex.stackexchange.com/users/7929/pineapple" title="116 reputation" class="comment-user owner">PineApple</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(56661, 28897)" href="#comment56661_28897"><span title="2011-09-19 11:27:16Z">Sep 19 '11 at 11:27</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-56662" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@PineApple: This changes the format of the label <b>in the equation as well</b>.  That's the situation that it didn't seem that you yourself wanted, but which others who found your question might want.</span> –&nbsp;<a href="http://tex.stackexchange.com/users/86/andrew-stacey" title="42746 reputation" class="comment-user">Andrew Stacey</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(56662, 28897)" href="#comment56662_28897"><span title="2011-09-19 11:35:17Z">Sep 19 '11 at 11:35</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-56664" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Added a screenshot to make it clearer (I hope).</span> –&nbsp;<a href="http://tex.stackexchange.com/users/86/andrew-stacey" title="42746 reputation" class="comment-user">Andrew Stacey</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(56664, 28897)" href="#comment56664_28897"><span title="2011-09-19 11:39:47Z">Sep 19 '11 at 11:39</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-56665" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Yeah I 
+understand that. But just wondering: in which more situations would I 
+use that different labelling of the equation, so it would matter? Would a
+ label in an equation be important for anything else besides the 
+reference and it's look?</span> –&nbsp;<a href="http://tex.stackexchange.com/users/7929/pineapple" title="116 reputation" class="comment-user owner">PineApple</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(56665, 28897)" href="#comment56665_28897"><span title="2011-09-19 11:40:48Z">Sep 19 '11 at 11:40</span></a></span><span class="edited-yes" title="this comment was edited 2 times"></span></div></td>
+    </tr>
+            
+    <tr id="comment-56667" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Ah, I see.  No, I can't think of anything else!</span> –&nbsp;<a href="http://tex.stackexchange.com/users/86/andrew-stacey" title="42746 reputation" class="comment-user">Andrew Stacey</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(56667, 28897)" href="#comment56667_28897"><span title="2011-09-19 11:57:36Z">Sep 19 '11 at 11:57</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    <a id="comments-link-28897" class="comments-link" data-comments-count="3" title="expand to show all comments on this post">show <b>3</b> more comments</a>
+    
+    <div style="color: rgb(130, 129, 127);" class="was-this-helpful">Was this post useful to you? &nbsp;&nbsp;<input style="opacity: 0.013815;" class="anon-vote" value="Yes" type="button"> &nbsp;<input style="opacity: 0.013815;" class="anon-vote" value="No" type="button"></div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="28909"></a>
+    <div id="answer-28909" class="answer" data-answerid="28909">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input value="28909" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+ 
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>Try this:</p>
+
+<pre class="lang-tex prettyprint"><code><span class="dec">\newcommand</span><span class="pun">{</span><span class="kwd">\eq</span><span class="pun">}[</span><span class="pln">1</span><span class="pun">]{</span><span class="kwd">\hyperref</span><span class="pun">[</span><span class="pln">#1</span><span class="pun">]{</span><span class="pln">Eq. </span><span class="kwd">\eqref</span><span class="pun">{</span><span class="pln">#1</span><span class="pun">}}}</span><span class="pln"><br></span></code></pre>
+
+<p>Of course, you need the hyperref package. Put this in the preamble:</p>
+
+<pre class="lang-tex prettyprint"><code><span class="kwd">\usepackage</span><span class="pun">[</span><span class="pln">colorlinks</span><span class="pun">]{</span><span class="pln">hyperref</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\hypersetup</span><span class="pun">{</span><span class="pln">linkcolor</span><span class="pun">=</span><span class="pln">DarkRed</span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p>(the colorlinks option enables you to paint the referencing text)</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/28909" title="short permalink to this answer" class="short-link" id="link-post-28909">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/28909/edit">improve this answer</a></div>    </td>
+            
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2011-09-19 13:06:53Z" class="relativetime">Sep 19 '11 at 13:06</span></div><div class="user-gravatar32"><a href="http://tex.stackexchange.com/users/1999/user1999"><div class=""><img src="modify-eqref-command_files/f608b8a786146a0cb0fe38370379f756.png" alt="" height="32" width="32"></div></a></div><div class="user-details"><a href="http://tex.stackexchange.com/users/1999/user1999">user1999</a><br><span class="reputation-score" title="reputation score" dir="ltr">327</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-28909" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-56685" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">nice, but is there an option to redefine the \eqref command with this package?</span> –&nbsp;<a href="http://tex.stackexchange.com/users/7929/pineapple" title="116 reputation" class="comment-user owner">PineApple</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(56685, 28909)" href="#comment56685_28909"><span title="2011-09-19 13:26:14Z">Sep 19 '11 at 13:26</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+    <a name="new-answer"></a>
+    <form id="post-form" action="/questions/28894/answer/submit" method="post" class="post-form">
+        <h2 class="space">Your Answer</h2>
+
+
+
+
+
+
+<div id="post-editor" class="post-editor">  
+
+    
+    <div class="wmd-container">
+        <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+        <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="6d07991ff926b2578401d94723b94d68" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>    <div class="form-item">
+        <table>
+        <tbody><tr>
+            <td class="vm open-id-login">
+                <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="http://tex.stackexchange.com/users/login?returnurl=%2fquestions%2f28894%2fmodify-eqref-command">log in</a>
+                <script type="text/javascript">
+                    StackExchange.ready(function () {
+                        StackExchange.helpers.onClickDraftSave('#login-link');
+                    });
+                </script>
+            </td>
+            <td class="orcell">
+                <div class="orword">or</div>
+                <div class="orline"></div>
+            </td>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="40" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but never shown</span>
+                </div>
+                <div>
+                    <label for="home-page">Home Page</label>
+                    <input id="home-page" name="home-page" size="40" maxlength="200" tabindex="107" type="text">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+           
+        <div class="form-submit cbt">
+            <input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+            <a href="#" class="discard-answer dno">discard</a>
+    <p class="privacy-policy-agreement">
+        By posting your answer, you agree to the 
+        <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and 
+        <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.
+    </p>
+        </div>
+    </form>
+
+
+
+
+        <h2 class="bottom-notice">
+                Not the answer you're looking for? 
+            Browse other questions tagged <a href="http://tex.stackexchange.com/questions/tagged/equations" class="post-tag" title="show questions tagged 'equations'" rel="tag">equations</a> <a href="http://tex.stackexchange.com/questions/tagged/cross-referencing" class="post-tag" title="show questions tagged 'cross-referencing'" rel="tag">cross-referencing</a> 
+                or <a href="http://tex.stackexchange.com/questions/ask">ask your own question</a>.
+        </h2>
+</div>
+</div>
+<div id="sidebar">
+
+
+
+     <script type="text/javascript">
+        window.showNewUser = true;
+            
+                (function(){
+                    var cs = window.sessionStorage && window.sessionStorage['tNewsletter'];
+                    var m = /:\/\/([^\/]*)/.exec(document.referrer);
+                    var h = {'www.reddit.com':1,'news.ycombinator.com':1};
+                    if(window.sessionStorage && (cs || (m && m.length == 2 && h[m[1]]))){
+                        showNewUser = false;
+                        StackExchange.ready(function(){
+                            StackExchange.newsletterAd.loader(m[1], cs);
+                        });
+                    }
+                    if (window.localStorage && showNewUser){
+                        var c = parseInt(localStorage['nuCounter'],10); 
+                        c = isNaN(c) ? 1 : c+1;
+                        window.localStorage['nuCounter'] = c; 
+                        showNewUser = c < 10;
+                    }
+                })()
+            
+     </script>
+    <div class="module newuser newuser-greeting" id="newuser-box" style="display:none;">
+        <h4>Welcome!</h4>
+        <div>
+            <p>This is a collaboratively edited question and answer site for <b>users of TeX, LaTeX, ConTeXt, and related typesetting systems</b>. It's 100% free, no registration required.</p><p>Got a question about the site itself? <a href="http://meta.tex.stackexchange.com/">meta</a> is the place to talk about things like what questions are appropriate, what tags we should use, etc.</p>
+            <p class="ar"><a href="http://tex.stackexchange.com/about?mnu=1">about »</a>&nbsp;&nbsp;&nbsp;<a href="http://tex.stackexchange.com/faq?mnu=1">faq »</a>
+&nbsp; <a href="http://meta.tex.stackexchange.com/">meta »</a>            </p>
+        </div>
+    </div>
+     <script type="text/javascript">
+        if (showNewUser) {
+            document.getElementById('newuser-box').style.display = '';
+        }
+     </script>
+    <div class="module question-stats">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://tex.stackexchange.com/questions/tagged/cross-referencing" class="post-tag" title="show questions tagged 'cross-referencing'" rel="tag">cross-referencing</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">510</span></span><br>
+<a href="http://tex.stackexchange.com/questions/tagged/equations" class="post-tag" title="show questions tagged 'equations'" rel="tag">equations</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">493</span></span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left: 10px;"><p class="label-key" title="2011-09-19 10:15:24Z"><b>11 months ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left: 10px;"><p class="label-key"><b>954 times</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left: 10px;"><p class="label-key"><b><a href="http://tex.stackexchange.com/questions/28894/modify-eqref-command?lastactivity" class="lastactivity-link" title="2011-09-19 13:06:53Z">11 months ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+
+<div class="module community-bulletin" data-tracker="cb=1">
+    <h4>Community Bulletin</h4>
+    <div class="related">
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://tex.blogoverflow.com/?cb=1" class="event-date" target="_blank">blog</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://tex.blogoverflow.com/2012/08/textalk-an-interview-with-aditya/?cb=1" class="question-hyperlink" target="_blank">TeXtalk: an interview with Aditya</a>
+            </div>
+            <br class="cbt">
+        </div>
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://meta.tex.stackexchange.com/?cb=1" class="event-date" target="_blank">meta</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://meta.tex.stackexchange.com/questions/2678/reason-for-closure-of-a-question?cb=1" class="question-hyperlink" target="_blank">Reason for closure of a question</a>
+            </div>
+            <br class="cbt">
+        </div>
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://meta.tex.stackexchange.com/?cb=1" class="event-date" target="_blank">meta</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://meta.tex.stackexchange.com/questions/2670/should-how-to-install-package-x-on-ubuntu-questions-be-consolidated?cb=1" class="question-hyperlink" target="_blank">Should 'how to install package X on Ubuntu' questions be consolidated?</a>
+            </div>
+            <br class="cbt">
+        </div>
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://meta.tex.stackexchange.com/?cb=1" class="event-date" target="_blank">meta</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://meta.tex.stackexchange.com/questions/2669/application-of-the-mtpro-tag?cb=1" class="question-hyperlink" target="_blank">Application of the {mtpro} tag</a>
+            </div>
+            <br class="cbt">
+        </div>
+    </div>
+</div>
+        <div style="margin-bottom: 10px;">
+        
+<style type="text/css">
+#newsletter-ad {
+    width: 190px;
+    height: 250px;
+    overflow: hidden;
+    background: url('http://cdn.sstatic.net/tex/img/newsletter-ad.png');
+    padding: 0 15px 0 15px;
+}
+#newsletter-ad-header {
+    margin-top: 60px;
+}
+#newsletter-ad ul {
+    margin: 1em 0 1em 1.5em;
+}
+#newsletter-ad ul li {
+    margin-bottom: 5px;
+}
+#newsletter-signup-container {
+    text-align: center;
+}
+#newsletter-preview-container {
+    margin-top: 10px;
+    text-align: center;
+}
+#newsletter-email-input {
+    width: 200px;
+}
+</style>
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+</script>
+
+<div id="newsletter-ad">
+    <p id="newsletter-ad-header">Get the <strong>weekly newsletter!</strong></p>
+    <ul>
+        <li>Top questions and answers</li>
+        <li>Important announcements</li>
+        <li>Unanswered questions</li>
+    </ul>
+    <div id="newsletter-signup-container"><input id="newsletter-signup" value="Sign up for the newsletter" type="button"></div>
+    <p id="newsletter-preview-container">see an <a href="http://stackexchange.com/newsletters/newsletter?site=tex.stackexchange.com" id="newsletter-preview">example newsletter</a></p>
+    <div class="dno">
+            <p class="privacy-policy-agreement">
+        By subscribing, you agree to the 
+        <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and 
+        <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.
+    </p>
+
+    </div>
+</div>
+
+    </div>
+
+      
+    
+    <div class="module sidebar-linked">
+        <h4 id="h-linked">Linked</h4>
+        <div class="linked" data-tracker="lq=1">
+            <div class="spacer">
+<a href="http://tex.stackexchange.com/questions/8351/what-do-makeatletter-and-makeatother-do?lq=1" class="question-hyperlink">What do \makeatletter and \makeatother do?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/28903/changing-the-apperance-of-equation-numbers-with-amsmath?lq=1" class="question-hyperlink">Changing the apperance of equation numbers with amsmath</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/45443/customize-the-way-eqref-works-with-tags?lq=1" class="question-hyperlink">Customize the way eqref works with tags</a>
+</div>
+
+        </div>
+    </div>
+    <div class="module sidebar-related">
+        <h4 id="h-related">Related</h4>
+        <div class="related" data-tracker="rq=1">
+            <div class="spacer">
+<a href="http://tex.stackexchange.com/questions/3154/how-to-organize-labels-when-there-are-too-many-equations?rq=1" class="question-hyperlink">How to organize labels when there are too many equations?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/4335/renew-ref-command-doesnt-work?rq=1" class="question-hyperlink">Renew \ref command doesn't work</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/4925/custom-equations-names?rq=1" class="question-hyperlink">Custom equations' names</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/5618/label-inside-an-align-environment?rq=1" class="question-hyperlink">\label inside an align environment</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/8982/how-do-i-discard-a-portion-of-an-equation-number-when-cross-referencing?rq=1" class="question-hyperlink">How do I discard a portion of an equation number when cross-referencing?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/11701/inserting-numbering-labelling-referencing-several-times-the-same-equation-writte?rq=1" class="question-hyperlink">Inserting/Numbering/Labelling/Referencing several times the same equation written in various form</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/13196/how-can-i-extract-equations-from-one-document-for-use-in-another?rq=1" class="question-hyperlink">How can I extract equations from one document for use in another?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/15266/eqref-in-italic-math-environnment?rq=1" class="question-hyperlink">\eqref in italic math environnment</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/15820/suppress-equation-number-when-not-refered-to?rq=1" class="question-hyperlink">Suppress equation number when not refered to</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/18986/is-there-a-standard-way-to-refer-to-a-range-of-equations?rq=1" class="question-hyperlink">Is there a standard way to refer to a range of equations?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/28903/changing-the-apperance-of-equation-numbers-with-amsmath?rq=1" class="question-hyperlink">Changing the apperance of equation numbers with amsmath</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/29585/how-to-include-the-number-of-a-certain-figure-in-the-typeout-command?rq=1" class="question-hyperlink">How to include the number of a certain figure in the typeout command?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/35772/referencing-subequations-with-cleveref?rq=1" class="question-hyperlink">Referencing subequations with cleveref</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/40272/how-to-align-an-equation-reference-1-to-the-right?rq=1" class="question-hyperlink">How to align an equation reference (1) to the right</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/40668/using-achemso-package-cant-reference-equations-with-label-and-ref?rq=1" class="question-hyperlink">Using achemso package, can't reference equations with \label and \ref</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/41018/refer-to-some-equation-number-in-different-environments?rq=1" class="question-hyperlink">Refer to some equation number in different environments</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/44483/using-cleveref-with-tagged-equations?rq=1" class="question-hyperlink">Using cleveref with tagged equations</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/45443/customize-the-way-eqref-works-with-tags?rq=1" class="question-hyperlink">Customize the way eqref works with tags</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/51195/multiple-items-equations-in-single-eqref-call?rq=1" class="question-hyperlink">Multiple items/equations in single eqref call</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/52410/how-to-use-the-command-autoref-to-implement-the-same-effect-when-use-the-comman?rq=1" class="question-hyperlink">How to use the command \autoref to implement the same effect when use the command \eqref?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/53690/tagging-under-an-equation-using-underbrace?rq=1" class="question-hyperlink">Tagging under an equation using underbrace</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/57069/accessing-the-most-recently-declared-label-when-issuing-a-cross-referencing-comm?rq=1" class="question-hyperlink">Accessing the most-recently-declared label when issuing a cross-referencing command</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/58764/cross-referencing-an-equation?rq=1" class="question-hyperlink">Cross-referencing an equation</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/61764/eqref-in-captions-with-mathtools?rq=1" class="question-hyperlink">eqref in captions with mathtools</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/63200/creating-reference-for-command?rq=1" class="question-hyperlink">Creating reference for command</a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://tex.stackexchange.com/feeds/question/28894" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+
+<noscript>
+    <div><img src="/posts/28894/ivc/5af5" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-tex</div></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://tex.stackexchange.com/about">about</a> |
+                <a href="http://tex.stackexchange.com/faq">faq</a> |
+                <a href="http://tex.blogoverflow.com/?blb=1">blog</a> |
+                    <a href="http://chat.stackexchange.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a> |
+                <a href="http://stackexchange.com/about/contact">advertising info</a> |
+                <a onclick="StackExchange.switchMobile('on', '/questions/28894/modify-eqref-command')">mobile</a> |
+
+                <b><a href="http://tex.stackexchange.com/help">contact us</a></b>
+                  | <b><a href="http://meta.tex.stackexchange.com/">feedback</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color:#ebf5f5;font-size:140%">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">■</span>&nbsp;<a href="http://diy.stackexchange.com/">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">■</span>&nbsp;<a href="http://gis.stackexchange.com/">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">■</span>&nbsp;<a href="http://electronics.stackexchange.com/">electrical&nbsp;engineering</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">■</span>&nbsp;<a href="http://android.stackexchange.com/">android</a>&nbsp;
+                        <span style="color:#2e4e60;font-size:140%">■</span>&nbsp;<a href="http://security.stackexchange.com/">security</a>&nbsp;
+                        <span style="color:#45bcb5;font-size:140%">■</span>&nbsp;<a href="http://bicycles.stackexchange.com/">bicycles</a>&nbsp;
+                        <span style="color:#00adee;font-size:140%">■</span>&nbsp;<a href="http://dba.stackexchange.com/">dba</a>&nbsp;
+                        <span style="color:#2edaf0;font-size:140%">■</span>&nbsp;<a href="http://drupal.stackexchange.com/">drupal</a>&nbsp;
+                        <span style="color:#213951;font-size:140%">■</span>&nbsp;<a href="http://sharepoint.stackexchange.com/">sharepoint</a>&nbsp;
+                        <span style="color:#73abb3;font-size:140%">■</span>&nbsp;<a href="http://scifi.stackexchange.com/">scifi &amp; fantasy</a>&nbsp;
+                        <span style="color:#23629F;font-size:140%">■</span>&nbsp;<a href="http://ux.stackexchange.com/">user experience</a>&nbsp;
+                        <span style="color:#faff72;font-size:140%">■</span>&nbsp;<a href="http://skeptics.stackexchange.com/">skeptics</a>&nbsp;
+                        <span style="color:#623121;font-size:140%">■</span>&nbsp;<a href="http://rpg.stackexchange.com/">rpg</a>&nbsp;
+                        <span style="color:#e4be88;font-size:140%">■</span>&nbsp;<a href="http://judaism.stackexchange.com/">judaism</a>&nbsp;
+                        <span style="color:#ffecb1;font-size:140%">■</span>&nbsp;<a href="http://mathematica.stackexchange.com/">mathematica</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2012.8.17.3702</div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2012 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            
+
+        </div>
+    </div>
+    
+    <noscript>
+        <div id="noscript-warning">TeX - LaTeX - Stack Exchange works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-24']);
+        _gaq.push(['_setDomainName','.stackexchange.com']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|equations|cross-referencing|']); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    (function(){
+        var s=document.getElementsByTagName('script')[0];
+        var ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src='http://www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src='http://edge.quantserve.com/quant.js'; 
+        s.parentNode.insertBefore(sc,s);
+    })();
+    </script>
+    <script type="text/javascript">
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>    
+    
+    <script type="text/javascript" src="modify-eqref-command_files/jquery.js"></script><script type="text/javascript" src="modify-eqref-command_files/stub.js"></script>    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:28894});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('85', '28894');
+        });
+    </script>    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"https://stackauth.com","serverTime":1345251508,"styleCode":true,"enableUserHovercards":true,"site":{"name":"TeX - LaTeX","description":"Q\u0026A for users of TeX, LaTeX, ConTeXt, and related typesetting systems","isNoticesTabEnabled":true,"newTitleSearchBoxEnabled":false,"enableSocialMediaInSharePopup":true},"user":{"isAnonymous":true,"fkey":"6d07991ff926b2578401d94723b94d68","notificationsUnviewedCount":0,"inboxUnviewedCount":-1}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"d1cd9a23171c","js/moderator.js":"8c49fc268737","js/full-anon.js":"945170d238e3","js/full.js":"c60de8021771","js/wmd.js":"93b92575f8bc","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"6eb68240242f","js/help.js":"fc9fb0517db2","js/tageditor.js":"c1ba807b32aa","js/tageditornew.js":"bd66fabe1c71","js/inline-tag-editing.js":"be882e188985","js/revisions.js":"8c6bcd93b7fe","js/suggested-edits.js":"46c4696efca5","js/probes.js":"beb933322ff0","js/review.js":"fca067ef962b"});
+        
+    </script><script type="text/javascript">
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+    });  
+</script><script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/28894/ivc/5af5');});
+</script>
+    
+
+</body></html>

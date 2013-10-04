@@ -1,0 +1,72 @@
+
+# check multiple directory
+@files = ("$backdir".'backup', "$backdir"."backup/$person", "$backdir".'backup/etc' ,"/home/billlee/computer/linux_help/desktop/icewm");
+
+print @files, "\n";
+
+for $i (0 .. $#files) {
+
+#	print "File $files[$i] ";
+    if (-d $files[$i])
+    {
+        print "directory  Exists!\n";
+    }
+    else
+    {
+        print $files[$i], "directory does not exist!\n";
+		$path = $files[$i];
+		system(	"mkdir $path");  
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Multiple file check: Method 1
+@files = ('filename1','filename2','filename3')
+for $i (0 .. $#files) {
+  print "File $files[$i] "
+  if (-e $files[$i]) {
+    print 'does not exist.'
+  }
+  else {
+     print 'exists.'
+   }
+}
+
+# Multiple file check: Method 2
+@files = qw/file1 file2 file3/;
+foreach (@files)
+{
+    if (-e $_)
+    {
+        print "File '$_' Exists!\n";
+    }
+    else
+    {
+        print "File '$_' does not exist!\n";
+    }
+}
+
+
+# Multiple file check: Method 3
+$list = "/path/to/list.txt";
+use Tie::File;
+tie @files, "Tie::File", $list or die "failed, does your list exist?";
+
+foreach $file (@files){
+	if(-f $file){
+        	print $file." exists\n";	
+	}
+}

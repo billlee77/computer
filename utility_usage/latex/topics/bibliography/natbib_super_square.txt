@@ -1,0 +1,11 @@
+
+
+#very useful
+\usepackage[square,numbers,super]{natbib}
+
+\makeatletter
+\renewcommand\NAT@citesuper[3]{\ifNAT@swa
+\unskip\kern\p@\textsuperscript{\NAT@@open #1\NAT@@close}%
+\if*#3*\else\ (#3)\fi\else #1\fi\endgroup}
+\makeatother 
+

@@ -1,0 +1,31 @@
+Go back the External Monitor
+  xrandr --output LVDS --off
+	
+To active the connected External Monitor
+  xrandr --output VGA --same-as LVDS
+
+To go back to laptop Monitor
+  xrandr --output VGA --offa
+
+To bring back the Monitor
+  xrandr --output VGA(LVDS) --auto
+
+To configure the resolution of Monitor
+  xrandr --size 2 (1024x768)
+
+
+//******************************************
+display setting saving issue
+
+/etc/X11/xorg.conf
+**
+Section "Screen"
+	Identifier	"Default Screen"
+	Monitor		"Configured Monitor"
+	Device		"Configured Video Device"
+	SubSection "Display"
+		Depth 24
+		Modes "1024x768"
+	EndSubSection
+EndSection
+**

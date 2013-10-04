@@ -1,0 +1,33 @@
+# Read 250000 lines of data line by line and output to new file. 
+perl -e 'open FILE, "<tanjia.dat"; $i=0; while(<FILE>){my($data) = $_; chop($data); print "$data\n";if($i==249999){exit}; $i++}'>tanjia_half.dat
+
+perl -e 'open FILE, "<tanjia.dat"; for(0..249999){ $line = <FILE>; print $line;}'>tanjia_half.dat
+
+
+# Output number from 1 to 440
+perl -e 'print $_ ,"\n" ,for 1..440'
+
+
+
+# Insert or append string to the data file
+perl -n -e 'print "$. - $_"' file
+perl -n -e 'my $l =$_; chop($l); print "$l - $.", "\n"' file
+
+
+
+# Remove the 1st line from a file and 3rd line
+perl -pi -e '$_ = "" if ($. == 1 || $. == 3);' filename
+
+# Insert in 3rd line
+perl -pi -e 'print "Put before first line\n" if $. == 3' inFile.txt
+
+# Read First 2 lines of the file and then reset the read file handler
+perl -e 'open in, "<test.dat"; $line = <in>;print $line; $line = <in>; print $line; seek(in, 0, SEEK_SET); $line=<in>;  print $line';
+
+
+
+perl -e 'open in, "<test.dat"; $line = <in>; print $line; do { print $line;} while($line=<in>);'
+
+
+
+

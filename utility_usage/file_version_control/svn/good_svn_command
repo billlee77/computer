@@ -1,0 +1,21 @@
+
+
+svnadmin create --fs-type=fsfs filename
+
+svnlook tree $HOME/svn2
+
+ternal
+svn co svn+ssh://li@iklx23.fzk.de/users/ik3al1/li/filename
+
+
+# change SVN repository system
+svn switch --relocate svn+ssh://lynx/home/billlee/computer_repo   svn+ssh://lynx/home/billlee/repo/computer_repo
+
+# clean up the previous version
+# Example: preserve on version from 9000 to 10000
+svnadmin dump /path/to/current/repo -r9000:10000 > svn.dump
+svnadmin create /path/to/new/repo
+svnadmin load /path/to/new/repo < svn.dump
+
+
+

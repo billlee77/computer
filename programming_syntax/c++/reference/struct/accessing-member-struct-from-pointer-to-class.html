@@ -1,0 +1,1035 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="accessing-member-struct-from-pointer-to-class_files/ga.js" async="" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+    
+    <title>C++: syntax for accessing member struct from pointer to class - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <script src="accessing-member-struct-from-pointer-to-class_files/adzerk1_2_4_43adzerk2_2_17_45adzerk3_2_4_44.js" async="" type="text/javascript"></script><script type="text/javascript" src="accessing-member-struct-from-pointer-to-class_files/jquery.js"></script>
+    <script type="text/javascript" src="accessing-member-struct-from-pointer-to-class_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="accessing-member-struct-from-pointer-to-class_files/all.css">
+    
+    <link rel="canonical" href="http://stackoverflow.com/questions/915106/c-syntax-for-accessing-member-struct-from-pointer-to-class">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'C++: syntax for accessing member struct from pointer to class'" href="http://stackoverflow.com/feeds/question/915106">
+    <meta name="title" content="C++: syntax for accessing member struct from pointer to class - Stack Overflow">
+    <link rel="image_src" href="http://sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:915106});
+
+            styleCode();
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"http://stackauth.com","serverTime":1320449760,"styleCode":true,"newTagEditor":true,"enableUserHovercards":true,"enableTabCompletion":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers"},"user":{"isAnonymous":true,"fkey":"6d07991ff926b2578401d94723b94d68","inboxUnviewedCount":-1}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"0324556b7bf7","js/moderator.js":"4b831f9da1aa","js/full-anon.js":"6d7020bd1545","js/full.js":"6a19ff0e57e3","js/wmd.js":"4299f69ea585","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"97644ef9b7d4","js/help.js":"7f83495f785a","js/tageditor.js":"75954ba7b6f1","js/tageditornew.js":"9d9998359a54","js/inline-tag-editing.js":"364e12111b4b","js/mathjax-editing.js":"807037d18f3f"});
+    </script>
+
+<script src="accessing-member-struct-from-pointer-to-class_files/full-anon.js" type="text/javascript" async=""></script><script src="accessing-member-struct-from-pointer-to-class_files/prettify-full.js" type="text/javascript" async=""></script><link rel="stylesheet" type="text/css" href="accessing-member-struct-from-pointer-to-class_files/sidebar.css"></head><body style="margin-top: 2.5em;" class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"><div id="notify--1" style=""><span class="notify-close"><a title="dismiss this notification">×</a></span><span class="notify-text">Welcome to Q&amp;A for professional and enthusiast programmers — check out the <a onclick="StackExchange.notify.closeFirstTime(); return false;" href="http://stackoverflow.com/faq">FAQ</a>!</span></div></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    <span id="hlinks-user">
+                  
+                  </span>
+                  <span id="hlinks-nav">
+                  <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f915106%2fc-syntax-for-accessing-member-struct-from-pointer-to-class">log in</a>
+ <span class="lsep">|</span>
+<a href="http://careers.stackoverflow.com/">careers</a>
+ <span class="lsep">|</span>
+
+                  </span>
+                  <span id="hlinks-custom">
+                  <a href="http://chat.stackoverflow.com/">chat</a>
+ <span class="lsep">|</span>
+<a href="http://meta.stackoverflow.com/">meta</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/about">about</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/faq">faq</a>
+                  </span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get" autocomplete="off">
+                    <div>
+                        <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" maxlength="140" size="28" value="search" type="text">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+        <div id="content">
+            
+
+
+
+<div id="question-header">
+    <h1><a href="http://stackoverflow.com/questions/915106/c-syntax-for-accessing-member-struct-from-pointer-to-class" class="question-hyperlink">C++: syntax for accessing member struct from pointer to class</a></h1>
+</div>
+<div id="mainbar">
+
+
+<div class="question" id="question">
+
+    <div class="everyonelovesstackoverflow" id="adzerk1"><a href="http://engine.adzerk.net/redirect/0/2568/2444/8277/80e790c7cfdb40d1a576d00a6087210e/43/1178/2292/634560464820766710?keywords=c%2b%2b%2cstruct%2cmember" rel="nofollow" target="_blank" title=""><img src="accessing-member-struct-from-pointer-to-class_files/2568.bin" title="" alt="" border="0" height="90" width="728"></a></div>
+
+    
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+<div class="vote">
+    <input value="915106" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">5</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>    
+
+    <script type="text/javascript">
+        StackExchange.ready(function() {
+            var shareUrl = "http%3a%2f%2fstackoverflow.com%2fq%2f915106";
+            var shareMsg = "C%2b%2b%3a+syntax+for+accessing+member+struct+from+pointer+to+class";
+            StackExchange.share.facebook($("#fb-share-915106"), shareUrl, shareMsg);
+            StackExchange.share.twitter($("#twitter-share-915106"), shareUrl, shareMsg);
+        });
+    </script>
+    <a id="fb-share-915106" class="fb-share" title="share link to this question on Facebook">share [fb]</a>
+    <a id="twitter-share-915106" class="twitter-share" title="share link to this question on Twitter">share [tw]</a>    
+
+</div>
+
+    </td>
+<td class="postcell">
+<div>          
+    <div class="post-text">
+        <p>I'm trying to access a member structs variables, but I can't seem to get the syntax right. 
+The two compile errors pr. access are:
+error C2274: 'function-style cast' : illegal as right side of '.' operator
+error C2228: left of '.otherdata' must have class/struct/union
+I have tried various changes, but none successful.</p>
+
+<pre class="lang-c prettyprint"><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;iostream&gt;</span><span class="pln"><br><br></span><span class="kwd">using</span><span class="pln"> std</span><span class="pun">::</span><span class="pln">cout</span><span class="pun">;</span><span class="pln"><br><br></span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Foo</span><span class="pun">{</span><span class="pln"><br></span><span class="kwd">public</span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">struct</span><span class="pln"> </span><span class="typ">Bar</span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> otherdata</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> somedata</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">};</span><span class="pln"><br><br></span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(){</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Foo</span><span class="pln"> foo</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; foo</span><span class="pun">.</span><span class="typ">Bar</span><span class="pun">.</span><span class="pln">otherdata </span><span class="pun">=</span><span class="pln"> </span><span class="lit">5</span><span class="pun">;</span><span class="pln"><br><br>&nbsp; &nbsp; cout </span><span class="pun">&lt;&lt;</span><span class="pln"> foo</span><span class="pun">.</span><span class="typ">Bar</span><span class="pun">.</span><span class="pln">otherdata</span><span class="pun">;</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+    </div>            
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged 'c++'" rel="tag">c++</a> <a href="http://stackoverflow.com/questions/tagged/struct" class="post-tag" title="show questions tagged 'struct'" rel="tag">struct</a> <a href="http://stackoverflow.com/questions/tagged/member" class="post-tag" title="" rel="tag">member</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/q/915106" title="short permalink to this question" id="link-post-915106">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/915106/edit">improve this question</a></div>
+    </td>
+    <td class="post-signature owner">
+    <div class="user-info"><div class="user-action-time">asked <span title="2009-05-27 10:53:22Z" class="relativetime">May 27 '09 at 10:53</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/107323/psykocyber"><div class=""><img src="accessing-member-struct-from-pointer-to-class_files/e219bc7c283b866e4e95fbc7fee2d131.jpeg" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/107323/psykocyber">Psykocyber</a><br><span class="reputation-score" title="reputation score">187</span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span></div></div>
+        <br class="cbt">
+        <div class="accept-rate accept-answer-link" title="this user has accepted an answer for 4 of 4 eligible questions">100% accept rate</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>    </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-915106" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>    
+</div>
+
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>6 Answers</h2>
+            <div id="tabs">
+                <a href="http://stackoverflow.com/questions/915106/c-syntax-for-accessing-member-struct-from-pointer-to-class?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://stackoverflow.com/questions/915106/c-syntax-for-accessing-member-struct-from-pointer-to-class?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://stackoverflow.com/questions/915106/c-syntax-for-accessing-member-struct-from-pointer-to-class?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>    
+    </div>    
+
+
+  
+    <a name="915116"></a>
+    <div id="answer-915116" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="915116" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">13</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+<span class="vote-accepted-on" title="The question owner accepted this as the best answer May 27 '09 at 11:06">accepted</span>
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>You only define a struct there, not allocate one. Try this:</p>
+
+<pre class="lang-c prettyprint"><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">Foo</span><span class="pun">{</span><span class="pln"><br></span><span class="kwd">public</span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">struct</span><span class="pln"> </span><span class="typ">Bar</span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> otherdata</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"> mybar</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> somedata</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">};</span><span class="pln"><br><br></span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(){</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Foo</span><span class="pln"> foo</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; foo</span><span class="pun">.</span><span class="pln">mybar</span><span class="pun">.</span><span class="pln">otherdata </span><span class="pun">=</span><span class="pln"> </span><span class="lit">5</span><span class="pun">;</span><span class="pln"><br><br>&nbsp; &nbsp; cout </span><span class="pun">&lt;&lt;</span><span class="pln"> foo</span><span class="pun">.</span><span class="pln">mybar</span><span class="pun">.</span><span class="pln">otherdata</span><span class="pun">;</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p>If you want to reuse the struct in other classes, you can also define the struct outside:</p>
+
+<pre class="lang-c prettyprint"><code><span class="kwd">struct</span><span class="pln"> </span><span class="typ">Bar</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="kwd">int</span><span class="pln"> otherdata</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">};</span><span class="pln"><br><br></span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Foo</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br></span><span class="kwd">public</span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Bar</span><span class="pln"> mybar</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> somedata</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/questions/915106/c-syntax-for-accessing-member-struct-from-pointer-to-class/915116#915116" title="permalink to this answer" id="link-post-915116">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/915116/edit">improve this answer</a></div>
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/915116/revisions" title="show all edits to this post"><span title="2009-05-27 12:27:41Z" class="relativetime">May 27 '09 at 12:27</span></a></div><div class="user-gravatar32"></div><div class="user-details"><br></div></div>    </td>
+            
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover"><div class="user-action-time">answered <span title="2009-05-27 10:56:52Z" class="relativetime">May 27 '09 at 10:56</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/34065/schnaader"><div class=""><img src="accessing-member-struct-from-pointer-to-class_files/d21d33ac8f67242d2c1dd61c8696d358.png" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/34065/schnaader">schnaader</a><br><span class="reputation-score" title="reputation score 15641">15.6k</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="15 silver badges"><span class="badge2"></span><span class="badgecount">15</span></span><span title="46 bronze badges"><span class="badge3"></span><span class="badgecount">46</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-915116" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-722896" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Thanks, completely forgot that. And works like a charm.</span> –&nbsp;<a href="http://stackoverflow.com/users/107323/psykocyber" title="187 reputation" class="comment-user owner">Psykocyber</a> <span class="comment-date"><span title="2009-05-27 11:07:37Z">May 27 '09 at 11:07</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-722902" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'great comment' votes received" class="cool">4</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">The code is not precisely equivalent. In the first example, the name of the Bar struct is really Foo::Bar.</span> –&nbsp;<span class="comment-user">anon</span> <span class="comment-date"><span title="2009-05-27 11:09:09Z">May 27 '09 at 11:09</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-723130" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">You're right, Neil, edited my answer.</span> –&nbsp;<a href="http://stackoverflow.com/users/34065/schnaader" title="15641 reputation" class="comment-user">schnaader</a> <span class="comment-date"><span title="2009-05-27 12:26:34Z">May 27 '09 at 12:26</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+    <div class="everyonelovesstackoverflow" id="adzerk3"><a href="http://engine.adzerk.net/redirect/0/2568/2444/8277/0db5414748d2478fa9fe9765b83e1227/44/1178/2292/634560464820979050?keywords=c%2b%2b%2cstruct%2cmember" rel="nofollow" target="_blank" title=""><img src="accessing-member-struct-from-pointer-to-class_files/2568.bin" title="" alt="" border="0" height="90" width="728"></a></div>
+
+    
+  
+    <a name="915120"></a>
+    <div id="answer-915120" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="915120" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">6</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p><code>Bar</code> is inner structure defined inside <code>Foo</code>. Creation of <code>Foo</code> object does not implicitly create the <code>Bar</code>'s members. You need to explicitly create the object of Bar using <code>Foo::Bar</code> syntax.</p>
+
+<pre class="lang-c prettyprint"><code><span class="typ">Foo</span><span class="pln"> foo</span><span class="pun">;</span><span class="pln"><br></span><span class="typ">Foo</span><span class="pun">::</span><span class="typ">Bar</span><span class="pln"> fooBar</span><span class="pun">;</span><span class="pln"><br>fooBar</span><span class="pun">.</span><span class="pln">otherdata </span><span class="pun">=</span><span class="pln"> </span><span class="lit">5</span><span class="pun">;</span><span class="pln"><br>cout </span><span class="pun">&lt;&lt;</span><span class="pln"> fooBar</span><span class="pun">.</span><span class="pln">otherdata</span><span class="pun">;</span><span class="pln"><br></span></code></pre>
+
+<p>Otherwise,</p>
+
+<p>Create the Bar instance as member in <code>Foo</code> class.</p>
+
+<pre class="lang-c prettyprint"><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">Foo</span><span class="pun">{</span><span class="pln"><br></span><span class="kwd">public</span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">struct</span><span class="pln"> </span><span class="typ">Bar</span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> otherdata</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> somedata</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Bar</span><span class="pln"> myBar</span><span class="pun">;</span><span class="pln"> &nbsp;</span><span class="com">//Now, Foo has Bar's instance as member</span><span class="pln"><br><br></span><span class="pun">};</span><span class="pln"><br><br>&nbsp;</span><span class="typ">Foo</span><span class="pln"> foo</span><span class="pun">;</span><span class="pln"><br>&nbsp;foo</span><span class="pun">.</span><span class="pln">myBar</span><span class="pun">.</span><span class="pln">otherdata </span><span class="pun">=</span><span class="pln"> </span><span class="lit">5</span><span class="pun">;</span><span class="pln"><br></span></code></pre>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/questions/915106/c-syntax-for-accessing-member-struct-from-pointer-to-class/915120#915120" title="permalink to this answer" id="link-post-915120">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/915120/edit">improve this answer</a></div>
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/915120/revisions" title="show all edits to this post"><span title="2009-05-27 11:08:14Z" class="relativetime">May 27 '09 at 11:08</span></a></div><div class="user-gravatar32"></div><div class="user-details"><br></div></div>    </td>
+            
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2009-05-27 10:57:41Z" class="relativetime">May 27 '09 at 10:57</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/64960/aj"><div class=""><img src="accessing-member-struct-from-pointer-to-class_files/2071587c6b585edc883abe69a57895c1.png" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/64960/aj">aJ.</a><br><span class="reputation-score" title="reputation score 11915">11.9k</span><span title="18 silver badges"><span class="badge2"></span><span class="badgecount">18</span></span><span title="55 bronze badges"><span class="badge3"></span><span class="badgecount">55</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-915120" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-722914" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">I like this style better than the traditional C style "struct &lt;Type&gt; { } &lt;Instance&gt;".</span> –&nbsp;<a href="http://stackoverflow.com/users/455874/dave-van-den-eynde" title="5312 reputation" class="comment-user">Dave Van den Eynde</a> <span class="comment-date"><span title="2009-05-27 11:18:41Z">May 27 '09 at 11:18</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="915122"></a>
+    <div id="answer-915122" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="915122" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">5</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>You create a nested structure, but you never create any instances of it within the class. You need to say  something like:</p>
+
+<pre class="lang-c prettyprint"><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">Foo</span><span class="pun">{</span><span class="pln"><br></span><span class="kwd">public</span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">struct</span><span class="pln"> </span><span class="typ">Bar</span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> otherdata</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Bar</span><span class="pln"> bar</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> somedata</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">};</span><span class="pln"><br></span></code></pre>
+
+<p>You can then say:</p>
+
+<pre class="lang-c prettyprint"><code><span class="pln">foo</span><span class="pun">.</span><span class="pln">bar</span><span class="pun">.</span><span class="pln">otherdata </span><span class="pun">=</span><span class="pln"> </span><span class="lit">5</span><span class="pun">;</span><span class="pln"><br></span></code></pre>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/questions/915106/c-syntax-for-accessing-member-struct-from-pointer-to-class/915122#915122" title="permalink to this answer" id="link-post-915122">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/915122/edit">improve this answer</a></div>
+    </td>
+            
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2009-05-27 10:58:05Z" class="relativetime">May 27 '09 at 10:58</span></div><div class="user-gravatar32"><span class="anonymous-gravatar"></span></div><div class="user-details">anon<br></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-915122" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="915129"></a>
+    <div id="answer-915129" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="915129" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>You are only declaring Foo::Bar but you don't instantiate it (not sure if that's the correct terminology)</p>
+
+<p>See here for usage:</p>
+
+<pre class="lang-c prettyprint"><code><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;iostream&gt;</span><span class="pln"><br><br></span><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span><span class="pln"><br><br></span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Foo</span><span class="pln"><br></span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">public</span><span class="pun">:</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">struct</span><span class="pln"> </span><span class="typ">Bar</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> otherdata</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Bar</span><span class="pln"> bar</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> somedata</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">};</span><span class="pln"><br><br></span><span class="kwd">int</span><span class="pln"> main</span><span class="pun">(){</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Foo</span><span class="pun">::</span><span class="typ">Bar</span><span class="pln"> bar</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; bar</span><span class="pun">.</span><span class="pln">otherdata </span><span class="pun">=</span><span class="pln"> </span><span class="lit">6</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; cout </span><span class="pun">&lt;&lt;</span><span class="pln"> bar</span><span class="pun">.</span><span class="pln">otherdata </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="typ">Foo</span><span class="pln"> foo</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="com">//foo.Bar.otherdata = 5;</span><span class="pln"><br>&nbsp; &nbsp; foo</span><span class="pun">.</span><span class="pln">bar</span><span class="pun">.</span><span class="pln">otherdata </span><span class="pun">=</span><span class="pln"> </span><span class="lit">5</span><span class="pun">;</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="com">//cout &lt;&lt; foo.Bar.otherdata;</span><span class="pln"><br>&nbsp; &nbsp; cout </span><span class="pun">&lt;&lt;</span><span class="pln"> foo</span><span class="pun">.</span><span class="pln">bar</span><span class="pun">.</span><span class="pln">otherdata </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"><br></span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/questions/915106/c-syntax-for-accessing-member-struct-from-pointer-to-class/915129#915129" title="permalink to this answer" id="link-post-915129">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/915129/edit">improve this answer</a></div>
+    </td>
+            
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover"><div class="user-action-time">answered <span title="2009-05-27 11:00:11Z" class="relativetime">May 27 '09 at 11:00</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/45654/stefanb"><div class=""><img src="accessing-member-struct-from-pointer-to-class_files/074cb23f424613c8d5dbc3eedc5d3dbf.png" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/45654/stefanb">stefanB</a><br><span class="reputation-score" title="reputation score 12323">12.3k</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="22 silver badges"><span class="badge2"></span><span class="badgecount">22</span></span><span title="56 bronze badges"><span class="badge3"></span><span class="badgecount">56</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-915129" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="915130"></a>
+    <div id="answer-915130" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="915130" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><pre class="lang-c prettyprint"><code><span class="kwd">struct</span><span class="pln"> </span><span class="typ">Bar</span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> otherdata</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">};</span><span class="pln"><br></span></code></pre>
+
+<p>Here you have just defined a structure but not created any object of it. Hence when you say <code>foo.Bar.otherdata = 5;</code> it is compiler error. Create a object of struct Bar like <code>Bar m_bar;</code> and then use <code>Foo.m_bar.otherdata = 5;</code></p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/questions/915106/c-syntax-for-accessing-member-struct-from-pointer-to-class/915130#915130" title="permalink to this answer" id="link-post-915130">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/915130/edit">improve this answer</a></div>
+    </td>
+            
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover"><div class="user-action-time">answered <span title="2009-05-27 11:00:20Z" class="relativetime">May 27 '09 at 11:00</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/39742/naveen"><div class=""><img src="accessing-member-struct-from-pointer-to-class_files/b3900ab00ee7e4c0906fb212050fbe23.jpeg" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/39742/naveen">Naveen</a><br><span class="reputation-score" title="reputation score 25173">25.2k</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="34 silver badges"><span class="badge2"></span><span class="badgecount">34</span></span><span title="92 bronze badges"><span class="badge3"></span><span class="badgecount">92</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-915130" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="2368483"></a>
+    <div id="answer-2368483" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="2368483" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>This doesnt help at all my teacher has a something like this</p>
+
+<p>class List
+{</p>
+
+<p>private:</p>
+
+<pre class="lang-c prettyprint"><code><span class="pln">&nbsp; &nbsp; </span><span class="com">// used to build a linked list of integers</span><span class="pln"><br>&nbsp; </span><span class="kwd">struct</span><span class="pln"> </span><span class="typ">Node</span><span class="pln"><br>&nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">Node</span><span class="pln"> </span><span class="pun">*</span><span class="pln">next</span><span class="pun">;</span><span class="pln"> &nbsp;</span><span class="com">// pointer to the next Node</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">int</span><span class="pln"> data</span><span class="pun">;</span><span class="pln"> &nbsp; &nbsp;</span><span class="com">// the actual data in the node</span><span class="pln"><br>&nbsp; </span><span class="pun">};</span><span class="pln"><br><br>&nbsp; </span><span class="typ">Node</span><span class="pln"> </span><span class="pun">*</span><span class="pln">head_</span><span class="pun">;</span><span class="pln"> </span><span class="com">// pointer to the head of the list</span><span class="pln"><br>&nbsp; </span><span class="typ">Node</span><span class="pln"> </span><span class="pun">*</span><span class="pln">tail_</span><span class="pun">;</span><span class="pln"> </span><span class="com">// pointer to the last node</span><span class="pln"><br>&nbsp; </span><span class="kwd">int</span><span class="pln"> size_</span><span class="pun">;</span><span class="pln"> &nbsp; </span><span class="com">// number of items on the list</span><span class="pln"><br><br>&nbsp; </span><span class="kwd">static</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> object_count_</span><span class="pun">;</span><span class="pln"> &nbsp; &nbsp; &nbsp; </span><span class="com">// number of Lists created</span><span class="pln"><br>&nbsp; </span><span class="typ">Node</span><span class="pln"> </span><span class="pun">*</span><span class="pln">new_node</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> data</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">const</span><span class="pun">;</span><span class="pln"> </span><span class="com">// allocate node, initialize data/next</span><span class="pln"><br></span></code></pre>
+
+<p>}
+how do i access that? when i have to call to new_node
+and make a function for it but i can classify it as
+Node *List::new_node(int data) const;
+when i cant access Node sense it is a private struct?</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/questions/915106/c-syntax-for-accessing-member-struct-from-pointer-to-class/2368483#2368483" title="permalink to this answer" id="link-post-2368483">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/2368483/edit">improve this answer</a></div>
+    </td>
+            
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2010-03-03 03:07:45Z" class="relativetime">Mar 3 '10 at 3:07</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/284942/killa"><div class=""><img src="accessing-member-struct-from-pointer-to-class_files/3436e7cadddfd1aec5416f20647621fb.png" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/284942/killa">killa</a><br><span class="reputation-score" title="reputation score">1</span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-2368483" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+    <a name="new-answer"></a>
+    <form id="post-form" action="/questions/915106/answer/submit" method="post" class="post-form">
+        <h2 class="space">Your Answer</h2>
+       
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+    
+        initTagRenderer("".split(" "), "".split(" "));
+
+              
+            prepareEditor({
+                
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                onDemand: true                ,immediatelyShowMarkdownHelp:true
+            });
+            
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">  
+
+    
+    <div class="wmd-container">
+        <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+        <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height: 24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height: 24px; display: none;">draft saved</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="6d07991ff926b2578401d94723b94d68" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>   
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+        <td class="vm open-id-login">
+            <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f915106%2fc-syntax-for-accessing-member-struct-from-pointer-to-class">log in</a>
+            <script type="text/javascript">
+                StackExchange.ready(function () {
+                    StackExchange.helpers.onClickDraftSave('#login-link');
+                });
+            </script>
+        </td>
+
+    
+        <td class="orcell">
+            <div class="orword">or</div>
+            <div class="orline"></div>
+        </td>
+        <td class="vm">
+            <div>
+                <label for="display-name">Name</label>
+                <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+            </div>
+            <div>
+                <label for="m-address">Email</label>
+                <input id="m-address" name="m-address" size="40" maxlength="100" tabindex="106" type="text">
+                <span class="edit-field-overlay">required, but never shown</span>
+            </div>
+            <div>
+                <label for="home-page">Home Page</label>
+                <input id="home-page" name="home-page" size="40" maxlength="200" tabindex="107" type="text">
+            </div>
+        </td>
+    
+        </tr>
+        </tbody></table>
+    </div>
+               
+        <div class="form-submit cbt"><input id="submit-button" value="Post Your Answer" tabindex="110" type="submit"></div>
+    </form>
+
+
+        <h2 class="bottom-notice">
+                Not the answer you're looking for? 
+            Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged 'c++'" rel="tag">c++</a> <a href="http://stackoverflow.com/questions/tagged/struct" class="post-tag" title="show questions tagged 'struct'" rel="tag">struct</a> <a href="http://stackoverflow.com/questions/tagged/member" class="post-tag" title="show questions tagged 'member'" rel="tag">member</a> 
+                or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.
+        </h2>
+</div>
+</div>
+<div id="sidebar">
+
+
+
+    <div class="module newuser newuser-greeting" style="">
+        <h4>Hello World!</h4>
+        <div>
+            <p></p><p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p>
+            <p class="ar"><a href="http://stackoverflow.com/about">about »</a>&nbsp;&nbsp;&nbsp;<a href="http://stackoverflow.com/faq">faq »</a>
+            </p>
+        </div>
+    </div>
+    <div class="module">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://stackoverflow.com/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged 'c++'" rel="tag">c++</a>&nbsp;<span class="item-multiplier">×&nbsp;94129</span><br>
+<a href="http://stackoverflow.com/questions/tagged/struct" class="post-tag" title="show questions tagged 'struct'" rel="tag">struct</a>&nbsp;<span class="item-multiplier">×&nbsp;1974</span><br>
+<a href="http://stackoverflow.com/questions/tagged/member" class="post-tag" title="show questions tagged 'member'" rel="tag">member</a>&nbsp;<span class="item-multiplier">×&nbsp;245</span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left: 10px;"><p class="label-key" title="2009-05-27 10:53:22Z"><b>2 years ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left: 10px;"><p class="label-key"><b>2,188 times</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left: 10px;"><p class="label-key"><b><a href="http://stackoverflow.com/questions/915106/c-syntax-for-accessing-member-struct-from-pointer-to-class?lastactivity" class="lastactivity-link" title="2010-03-03 03:07:45Z">1 year ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+    
+        <script type="text/javascript">
+            var scriptSrc = "http://engine2.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44?keywords=c%2b%2b,struct,member";
+            if (document.referrer) {
+                if (/\?/.test(scriptSrc))
+                    scriptSrc += "&";
+                else
+                    scriptSrc += "?";
+                scriptSrc += "xReferrer=" + document.referrer;
+            }
+            var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = scriptSrc; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);
+        </script>
+    
+    <div class="everyonelovesstackoverflow" id="adzerk2"><a href="http://engine.adzerk.net/redirect/0/4791/7472/8277/7a02a434471b4f85b926ac15e5b37590/45/1178/10193/634560464820871990?keywords=c%2b%2b%2cstruct%2cmember" rel="nofollow" target="_blank" title=""><img src="accessing-member-struct-from-pointer-to-class_files/180414077f314dbdbaa8d8e2f7898249.gif" title="" alt="" border="0" height="250" width="220"></a></div>
+
+    
+    <div>
+        <script type="text/javascript">
+            var careers_adurl="http://careers.stackoverflow.com/ad/js",careers_cssurl="http://cdn.sstatic.net/careers/ads/sidebar.min.css?33df70",careers_leaderboardcssurl="http://cdn.sstatic.net/careers/ads/ninja.min.css?33cf39",careers_companycssurl="http://cdn.sstatic.net/careers/ads/company";(function(){var b="min-height:220px;margin:15px 0",c=$("<div>").addClass("hireme").attr("style",b),a=$("<div>").html(c);document.write(a.html());$.ajax({url:"http://cdn.sstatic.net/careers/ads/adloader.min.js?33df70",dataType:"script",cache:true})})();
+        </script><div style="min-height: 220px; margin: 15px 0pt;" class="hireme"> <a href="http://careers.stackoverflow.com/jobs?a=12" class="top" target="_blank"></a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/14751/application-architect-senior-software-developer-telmetrics?a=hqyVNO8" target="_blank" title="Application Architect (Senior Software Developer) at Telmetrics. Click to learn more."> Application Architect (Senior Software Developer)<br> <span class="company">Telmetrics</span> <span class="location">Mississauga, ON, Canada</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/12992/incredibly-smart-web-developer-top-hat-monocle?a=flIb92o" target="_blank" title="Incredibly smart web developer at Top Hat Monocle. Click to learn more."> Incredibly smart web developer<br> <span class="company">Top Hat Monocle</span> <span class="location">Toronto, ON, Canada; Waterloo,…</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/14358/net-software-engineer-ui-platform-team-j2-global-communications?a=gXM45Us" target="_blank" title=".NET Software Engineer (UI &amp;amp; Platform Team) at j2 Global Communications. Click to learn more."> .NET Software Engineer (UI &amp; Platform Team)<br> <span class="company">j2 Global Communications</span> <span class="location">Hollywood, CA; Los Angeles, CA;…</span> </a> </li> </ul> <img alt="" class="impression" src="accessing-member-struct-from-pointer-to-class_files/hqyVNO8-flIb92o-gXM45Us-12.asc" style="display: none;"></div>
+    </div>
+
+        <div style="margin-bottom: 10px;">
+        
+<style type="text/css">
+#newsletter-ad {
+    width: 190px;
+    height: 250px;
+    overflow: hidden;
+    background: url('http://sstatic.net/stackoverflow/img//newsletter-ad.png');
+    padding: 0 15px 0 15px;
+}
+#newsletter-ad-header {
+    margin-top: 60px;
+}
+#newsletter-ad ul {
+    margin: 1em 0 1em 1.5em;
+}
+#newsletter-ad ul li {
+    margin-bottom: 5px;
+}
+#newsletter-signup-container {
+    text-align: center;
+}
+#newsletter-preview-container {
+    margin-top: 10px;
+    text-align: center;
+}
+#newsletter-email-input {
+    width: 200px;
+}
+</style>
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+</script>
+
+<div id="newsletter-ad">
+    <p id="newsletter-ad-header">Get the <strong>weekly newsletter!</strong></p>
+    <ul>
+        <li>Top questions and answers</li>
+        <li>Important announcements</li>
+        <li>Unanswered questions</li>
+    </ul>
+    <div id="newsletter-signup-container"><input id="newsletter-signup" value="Sign up for the newsletter" type="button"></div>
+    <p id="newsletter-preview-container">see an <a href="http://stackexchange.com/newsletters/newsletter?site=stackoverflow.com" id="newsletter-preview">example newsletter</a></p>
+</div>
+
+    </div>
+  
+
+    <div class="module">
+    <h4 id="h-linked">Linked</h4>
+    <div class="linked">
+    <div class="spacer">
+<a href="http://stackoverflow.com/questions/5413212/c-syntax-how-to-declare-fill-and-access-an-array-within-a-class" class="question-hyperlink">C++ syntax/how to declare, fill and access an array within a class</a>
+</div>
+
+    </div>
+    </div>
+    <div class="module">
+    <h4 id="h-related">Related</h4>
+    <div class="related">
+    <div class="spacer">
+<a href="http://stackoverflow.com/questions/146275/function-pointer-to-template-class-member-functions" class="question-hyperlink">Function pointer to template class member functions</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/494597/c-member-variable-aliases" class="question-hyperlink">C++ member variable aliases?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1247745/default-visibility-of-c-class-struct-members" class="question-hyperlink">default visibility of C++ class/struct members</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1368438/f-accessing-public-readonly-members-of-structs-in-external-assemblies" class="question-hyperlink">F# : Accessing public readonly members of structs in external assemblies</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1705582/private-member-function-that-takes-a-pointer-to-a-private-member-in-the-same-cla" class="question-hyperlink">Private member function that takes a pointer to a private member in the same class</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2172598/member-pointer-to-base-class" class="question-hyperlink">Member Pointer to Base Class</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2971670/member-access-syntaxes-for-pointer-to-a-structure" class="question-hyperlink">Member access syntaxes for pointer to a structure</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3050805/pointer-to-const-member-function-typedef" class="question-hyperlink">pointer to const member function typedef</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3221397/public-char-member-of-a-class-struct-inaccessiblepo" class="question-hyperlink">public char * member of a class/struct inaccessible?!?!?!po</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3715570/flexible-array-of-pointers-to-char-in-a-struct-please-help" class="question-hyperlink">Flexible array of pointers to char in a struct - Please help!</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3898593/if-i-can-take-a-normal-pointer-to-a-variable-within-a-class-whats-the-point-of" class="question-hyperlink">If I can take a normal pointer to a variable within a class, what's the point of class member pointers?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4065683/basic-c-how-do-i-initialize-a-struct-member-of-a-class" class="question-hyperlink">Basic C++: How do I initialize a struct member of a class?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4216961/pointer-to-member-function" class="question-hyperlink">Pointer to member function</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4230218/curlopt-writefunction-pointer-to-member-function" class="question-hyperlink">CURLOPT_WRITEFUNCTION pointer to member function</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4308076/pointer-to-object-pointer-to-first-member" class="question-hyperlink">pointer to object == pointer to first member?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4669182/this-pointer-and-member-function-address" class="question-hyperlink">this pointer and member function address</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4828992/is-there-an-easy-way-to-tell-if-a-class-struct-has-no-data-members" class="question-hyperlink">Is there an easy way to tell if a class/struct has no data members?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5015973/c-bool-pointer-member-behaviour-different-on-assigning-true-vs-false" class="question-hyperlink">c++ - bool pointer member behaviour different on assigning true vs false</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5459638/function-with-struct-parameter-and-its-inside-objects" class="question-hyperlink">function with struct parameter and its inside objects</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5594888/how-to-declare-a-member-of-a-class-type-defined-in-a-different-file" class="question-hyperlink">how to declare a member of a class type defined in a different file</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5707683/how-to-initialize-a-static-struct-in-c" class="question-hyperlink">how to initialize a static struct in c++?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5913568/accessing-and-changing-a-class-member-function-from-another-class" class="question-hyperlink">Accessing and changing a class member function from another class</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6880832/pointer-to-class-member-as-template-parameter" class="question-hyperlink">Pointer to class member as template parameter</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7184703/is-it-possible-to-have-dynamic-struct-members-dependent-to-another-member-in-c-s" class="question-hyperlink">is it possible to have dynamic struct members dependent to another member in c#</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7761564/c-accessing-a-struct-in-a-base-class-from-derived-class" class="question-hyperlink">C++ accessing a struct in a base class from derived class</a>
+</div>
+
+    </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/915106" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript" src="accessing-member-struct-from-pointer-to-class_files/15d8.asc"></script>
+<noscript>
+    <div><img src="/posts/915106/ivc/15d8" class="dno" alt=""></div>
+</noscript>
+<div style="display: none;" id="prettify-lang">lang-c</div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://stackoverflow.com/about">about</a> |
+                <a href="http://stackoverflow.com/faq">faq</a> |
+                <a href="http://blog.stackexchange.com/">blog</a> |
+                    <a href="http://chat.stackoverflow.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://blog.stackoverflow.com/category/podcasts/">podcast</a> |
+                <a href="http://shop.stackexchange.com/">shop</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+
+                <a onclick="StackExchange.switchMobile('on', '/questions/915106/c-syntax-for-accessing-member-struct-from-pointer-to-class')">mobile</a> |
+
+                <b><a href="mailto:team@stackoverflow.com">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color: rgb(254, 122, 21); font-size: 140%;">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color: rgb(254, 122, 21); font-size: 140%;">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color: rgb(254, 122, 21); font-size: 140%;">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color: rgb(232, 39, 44); font-size: 140%;">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color: rgb(0, 175, 239); font-size: 140%;">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color: rgb(150, 150, 150); font-size: 140%;">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color: rgb(70, 147, 125); font-size: 140%;">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color: rgb(192, 208, 220); font-size: 140%;">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color: rgb(0, 0, 0); font-size: 140%;">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color: rgb(221, 72, 20); font-size: 140%;">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color: rgb(156, 228, 254); font-size: 140%;">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color: rgb(207, 77, 63); font-size: 140%;">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color: rgb(244, 242, 141); font-size: 140%;">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color: rgb(15, 53, 89); font-size: 140%;">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color: rgb(242, 242, 242); font-size: 140%;">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color: rgb(3, 113, 135); font-size: 140%;">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color: rgb(241, 231, 204); font-size: 140%;">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color: rgb(225, 205, 174); font-size: 140%;">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color: rgb(162, 217, 246); font-size: 140%;">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color: rgb(27, 62, 108); font-size: 140%;">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color: rgb(41, 58, 93); font-size: 140%;">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color: rgb(190, 192, 203); font-size: 140%;">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color: rgb(147, 145, 133); font-size: 140%;">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color: rgb(181, 205, 164); font-size: 140%;">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>&nbsp;
+                        <span style="color: rgb(65, 118, 171); font-size: 140%;">■</span>&nbsp;<a href="http://diy.stackexchange.com/">home&nbsp;improvement</a>&nbsp;
+                        <span style="color: rgb(209, 216, 215); font-size: 140%;">■</span>&nbsp;<a href="http://gis.stackexchange.com/">gis</a>&nbsp;
+                        <span style="color: rgb(229, 226, 211); font-size: 140%;">■</span>&nbsp;<a href="http://electronics.stackexchange.com/">electronics</a>&nbsp;
+                        <span style="color: rgb(164, 198, 57); font-size: 140%;">■</span>&nbsp;<a href="http://android.stackexchange.com/">android</a>&nbsp;
+                        <span style="color: rgb(46, 78, 96); font-size: 140%;">■</span>&nbsp;<a href="http://security.stackexchange.com/">security</a>&nbsp;
+                        <span style="color: rgb(69, 188, 181); font-size: 140%;">■</span>&nbsp;<a href="http://bicycles.stackexchange.com/">bicycles</a>&nbsp;
+                        <span style="color: rgb(0, 173, 238); font-size: 140%;">■</span>&nbsp;<a href="http://dba.stackexchange.com/">dba</a>&nbsp;
+                        <span style="color: rgb(46, 218, 240); font-size: 140%;">■</span>&nbsp;<a href="http://drupal.stackexchange.com/">drupal</a>&nbsp;
+                        <span style="color: rgb(33, 57, 81); font-size: 140%;">■</span>&nbsp;<a href="http://sharepoint.stackexchange.com/">sharepoint</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2011.11.4.4</div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2011 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            
+
+        </div>
+    <iframe id="global-auth-frame" style="display: none;" src="accessing-member-struct-from-pointer-to-class_files/read.html"></iframe></div>
+    
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src='http://www.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();_qoptions={qacct:"p-c1rF4kxgLUzNc"};</script>
+    <script type="text/javascript" src="accessing-member-struct-from-pointer-to-class_files/quant.js"></script>
+    
+
+</body></html>

@@ -1,0 +1,11 @@
+# Do not remove the following line, or various programs
+# that require network functionality will fail.
+127.0.0.1		localhost.localdomain localhost
+65.87.245.116   polaris.xw.ca   polaris
+142.3.164.33    lichen.phys.uregina.ca  lichen
+142.3.164.51    lafite.phys.uregina.ca  lafite
+142.3.164.52    lepin.phys.uregina.ca   lepin
+142.3.200.10    gridiron.sci.uregina.ca gridiron
+129.57.34.20    jlabs1.cebaf.gov        jlabs1
+129.57.35.235   jlabs2.cebaf.gov        jlabs2
+

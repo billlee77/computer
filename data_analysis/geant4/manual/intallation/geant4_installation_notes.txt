@@ -1,0 +1,158 @@
+
+	GEANT4 INSTALLATION NOTES FOR FEDORA-10
+	09.02.19
+
+1. Install CLHEP
+
+   clhep-2.0.4.2.tar.gz
+
+   Create directories /home/apps/clhep/source and build.
+
+   Instructions from source/INSTALL:
+
+   Unwind the source code tar ball in the source directory.
+   Autoconf and automake will aready have been run.  
+   Determine where the files will be installed.
+   Create a build directory that is NOT in the source code directory tree.
+
+   cd <build_directory>
+   <source_code_directory>/configure --prefix=<install_dir>
+      (Note that files will be installed under /usr/local if you do not 
+       specify a prefix.)
+   make
+      (Build temporary copies of libraries and executables.)
+   make check
+      (Run the tests.)
+   make install
+      (Copy libraries, headers, executables, etc. to relevant 
+       subdirectories under <install_dir>.)
+
+2. Install Geant4 Data Libraries
+
+   G4ABLA.3.0.tar.gz   
+   G4EMLOW.5.1.tar.gz  
+   G4EMLOW.6.2.tar.gz  
+   G4NDL.0.2.tar.gz
+   G4NDL.3.13.tar.gz
+   G4RadioactiveDecay.3.2.tar.gz
+   PhotonEvaporation.2.0.tar.gz
+
+   Create /home/apps/geant4/data and unpack tar files in data directory.
+
+3. Install Geant4
+
+   geant4.9.2.tar.gz
+
+   Unpack tar file in geant4 directory.
+
+   Execute the Configure script, following the instructions regarding the
+   location of CLHEP and the Data files, and selecting the various options 
+   on which visualization libraries to create.
+	./Configure -build
+   The compilation will take quite a long time.
+
+   In case the installation procedure fails for some reason, or you 
+   realize the selected options were not correct, you can repeat the 
+   process manually with:
+        cd geant4/source
+        make clean
+
+   In case new modules need to be added to an existing build, this can be 
+   done manually by re-running Configure and providing the new settings.
+
+   Once the process of building the libraries has been completed 
+   successfully, the Geant4 toolkit can be installed by typing:
+        ./Configure -install
+
+4. Install Root
+
+   root_v5.22.00.source.tar.gz
+
+   Create /home/apps/root and unpack tar file.
+   Execute configure script, and then make.
+
+   Note that on gridiron, I experienced a number of compilation errors.
+   To get around them I needed to do:
+     configure --disable-asimage --disable-xrootd --disable-reflex
+   so that the problem areas would not be compiled.
+
+5. Install Geant4 visualization utilities:
+
+   HepRApp.jar in <user>/geant4/bin/Linux-g++/HepRAPP.jar
+   Run via: java -jar HepRAapp.jar
+
+   jas3 in /home/apps/jas3
+   jas3-Linux-0.8.3.tar.gz
+   Once application is up, need to enable the following Plugins:
+   HepRep Plugin
+   WIRED 3 Graphics Format
+   WIRED 4
+   WIRED 4 Base Library
+   WIRED CORBA HepRep Client Plugin
+
+   dawn in /home/apps/dawn
+   dawn_3_88a.tar.gz --> unpack and then make.
+
+   Note regarding Java:
+
+   HepRApp and jas3 require the full set of JRE libraries and not the minimal
+   gcj version that comes with some Linux distributions.  To check if the
+   installed version of java is adequate type:  java -version
+   If the output info mentions gcj then you will need to download and install
+   JRE from the Sun website.  Be sure that /usr/bin/java points to the new
+   version.
+
+6. Set environment variables in .cshrc:
+
+   setenv CLHEP_LIB_DIR /usr/local/lib
+   setenv LD_LIBRARY_PATH /home/apps/geant4/lib/Linux-g++:/usr/local/lib/:.:/home/apps/root/lib
+   setenv CLHEP_BASE_DIR /usr/local
+   setenv CLHEP_INCLUDE_DIR /usr/local/include
+   #setenv CLHEP_LIB CLHEP
+   setenv ROOTSYS /home/apps/root
+   set path=($path $ROOTSYS/bin /home/apps/jas3 /home/apps/dawn)
+   setenv DAWN_PS_PREVIEWER gv
+   setenv G4DAWNFILE_VIEWER 'dawn -d'
+
+   and in .login:
+   source /home/apps/geant4/.config/bin/Linux-g++/env.csh
+   set path=($path $G4WORKDIR/bin)
+
+############################################################################
+Special NOTES
+
+Many NVIDIA does not draw detector frame in the Opengl visualization
+
+To resolve this, the latest Driver from NVIDIA need to be installed following the steps below:
+
+1. logout the session
+2. ctrl+alt+F1
+3. \sbin\init 3 (as root)
+4. sh NVIDIA-Linux-x86-260.19.44.run
+5. following the step of installasion
+6. reboot
+
+
+
+
+############################################################################
+Geant 4.9.2.p04 compilation
+
+Driver and Gui inteface acticated at the installation
+UI system 				n
+XAW interfaces			n
+XM Motif				y
+QT						y
+visualization drivers	n
+OpenGL					y
+Motif Xm inteface		y
+Dawn					y
+OpenInventor driver		n
+ray-tracing graphics	n
+VRML viewer				n
+QT Driver				y
+GDML plugin module		n
+g3tog4					n
+
+
+

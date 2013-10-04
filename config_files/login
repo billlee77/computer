@@ -1,0 +1,117 @@
+# file:  .login
+
+# this file is executed once, at login, after .cshrc is executed
+# it should contain terminal initialization commands and environment variable
+# definitions inherited by other C shells that are started after login
+
+# Garth Huber   94.12.07
+
+echo "Executing .login"
+
+if ($?loopcount) then
+    set loopcount = `expr $loopcount + 1`
+else
+    set loopcount = 2
+endif
+
+# IF YOU WANT TO USE THE SAME FILE FOR YOUR HOME COMPUTER AS WELL AS AT WORK,
+# THEN INSERT THE NAME OF YOUR HOME COMPUTER BELOW
+
+if ( $machine != "polaris" ) then    # NOT home computer
+
+#******************************************************
+# Mainz Stuff
+# AcquRoot
+# if ( $loopcount <2 ) source ~/.acqu_environ_4v4
+
+#******************************************************
+
+
+#  ROOT, GEANT4 stuff
+
+   source $APPS_BASE/geant4/.config/bin/Linux-g++/env.csh
+   if ( $loopcount <2 ) set path=($path $G4WORKDIR/bin)
+endif
+
+
+if ( ! "$?PBS_ENVIRONMENT" ) then  # only interactive jobs
+
+  # Set Xterm titlebar to current directory
+  setenv MTYP `uname -m`
+
+  if ( $machine != "gridiron" && $machine != "castiron" && $machine !~ node*) then 
+  # Standard Linux Installations
+
+  # Set title at top of Intel Linux Xterm
+    source /home/$USER/bin/settitle.sh
+
+    setenv TRIUMF_FONTS $APPS_BASE/physica-2.77/
+    setenv PHYSICA_DIR $APPS_BASE/physica-2.77/
+    setenv TD_HELP $APPS_BASE/topdrawer-1.4e/doc/topdrawer4.0.gih
+    setenv TRIUMF_TERMINAL_TYPE X
+    setenv TRIUMF_PLOTTER_TYPE PS
+
+  else  # GridIron
+
+  # set title at top of Intel Linux Xterm
+    source /home/gridiron/$USER/bin/settitle.sh
+  endif # NOT gridiron
+
+  # Hall C CVS stuff - gh 03.02.12
+  setenv CVS_RSH ssh
+  setenv CVSROOT huberg@cvs.jlab.org:/group/hallc/cvsroot
+
+  #*********************************************************
+  # INSERT YOUR FAVORITE COMPUTER AND PRINTER SETTINGS HERE
+
+#  if ( $machine == "compass" ) then        # laptop
+#    # alias jlpr 'rlpr -Hjlabprt.jlab.org -Pccc1x'
+#   # alias jlpr 'rlpr -H 129.57.112.11 -Pphyhp18'
+#    alias jlpr 'rlpr -Hconfsrv.jlab.org -Pccc1x'
+#    alias klpr 'rlpr -Hprint.kph.uni-mainz.de -Plj4100-4 -h'
+#  else if ( $machine == "lichen" ) then    # regular working computer
+#    setenv PRINTER las232
+#    setenv MOZ_PRINTER_NAME las232 
+#    setenv HIGZPRINTER 'lp -dlas232 paw.ps'
+#    setenv POST_SCRIPT las232
+#  else if ($machine == "polaris" ) then    # home computer
+#    setenv PRINTER polaris_lp
+#    setenv MOZ_PRINTER_NAME polaris_lp
+#  endif
+
+  #*********************************************************
+  # SET YOUR FAVORITE EDITOR
+
+  setenv EDITOR gvim
+  # setenv EDITOR emacs
+
+
+  tset -I -Q
+  umask 022
+  unsetenv TERMCAP
+  setenv TERM vt100
+  setenv EXINIT 'set redraw wm=8'
+
+  #*********************************************************
+  # SET YOUR FAVORITE PROMPT BELOW
+
+  #set prompt="%n@%m[\!] "
+  #set prompt="`whoami`@`hostname`[\!] "
+  #set prompt="%m> "
+  set prompt="%n@%m:%/%# "
+
+
+  alias st 'sudo /usr/sbin/gdm-stop'
+  # this part selects the colors to display in the ls command
+  setenv LS_COLORS 'no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:ex=01;31:'
+
+  echo " "
+  date
+  echo " "
+
+  #*********************************************************
+  # INSERT ANY FURTHER USER CUSTOMIZATIONS BELOW
+  bash
+
+endif   # only interactive jobs
+

@@ -1,0 +1,565 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><title>Perl Examples</title>
+</head><body text="#000000" bgcolor="#ffffff">
+
+<hr>
+
+Please note: I think I made this page in 1997 as some quick scripts
+for common local tasks for my non-programmer students. I just noticed
+13 years later this is the top google hit for "perl examples".  This
+is VERY funny given how terrible my Perl knowledge is.  Enjoy.  -<a href="http://accad.osu.edu/%7Emlewis/">Matthew Lewis</a>
+
+
+<hr>
+
+<center>
+<h1>Perl Examples</h1>
+</center>
+
+<br>
+
+<hr>
+
+<ol>
+<li>Calling System Commands
+<ul>
+<li><a href="#ip">Image Processing</a>
+</li><li><a href="#rf">Renaming Files</a>
+</li><li><a href="#fc">File Conversion</a>
+</li><li><a href="#cd">Creating Directories</a>
+</li><li><a href="#puf">Padding &amp; Unpadding Files</a>
+</li></ul>
+
+<br>
+
+</li><li>Scanning the Network
+<ul>
+<li><a href="#fm">Finding Free Machines</a>
+</li><li><a href="#p">Finding Processes</a>
+</li><li><a href="#fiad">Finding Files</a>
+</li><li><a href="#u">Finding Users</a>
+</li></ul>
+
+<br>
+
+</li><li>File Manipulation
+<ul>
+<li><a href="#ghf">Generating HTML Files</a>
+</li><li><a href="#gxs">Generating Xpost Scripts</a>
+</li><li><a href="#mtf">Modifying Files</a>
+</li><li><a href="#crt">Convert Raw Data</a>
+</li></ul>
+
+</li></ol>
+
+<hr>
+
+<b>Remember: In order to be able to run your perl script, it must begin 
+with the line:</b><br>
+<pre>   #!/usr/local/bin/perl
+</pre>
+
+<b>Furthermore, if you've named the file "myFile", then to make
+the file executable, you need to type in a unix window:</b><br> 
+<pre>   chmod 755 myFile
+</pre>
+
+<hr>
+<a name="ip">
+</a><center><h2><a name="ip">Image Processing</a></h2></center>
+
+<pre><a name="ip">#!/usr/local/bin/perl
+#
+# composite series of images over a background image
+#
+
+if ($#ARGV != 4) {
+ print "usage: compem bg.rgb inbase outbase startNum stopNum\n";
+ exit;
+}
+
+$bg = $ARGV[0];
+$inbase = $ARGV[1];
+$outbase = $ARGV[2];
+$start = $ARGV[3];
+$stop = $ARGV[4];
+
+# for each image
+for ($i=$start; $i &lt;= $stop; $i++) {
+
+    # pad numbers
+    $num = $i;
+    if($i&lt;10) { $num = "00$i"; }
+    elsif($i&lt;100) { $num = "0$i"; }
+
+    # call unix command "over"
+    $cmd = "over $bg $inbase.$num $outbase.$num 0 0";
+    print $cmd."\n";
+    if(system($cmd)) { print "over failed\n"; }
+}
+
+</a></pre>
+
+
+<hr>
+<a name="rf">
+</a><center><h2><a name="rf">Renaming Files</a></h2></center>
+<pre><a name="rf">#!/usr/local/bin/perl
+#
+# rename series of frames
+#
+if ($#ARGV != 3) {
+    print "usage: rename old new start stop\n";
+    exit;
+}
+
+$old = $ARGV[0];
+$new = $ARGV[1];
+$start = $ARGV[2];
+$stop = $ARGV[3];
+
+for ($i=$start; $i &lt;= $stop; $i++) {
+
+    $num = $i;
+    if($i&lt;10) {	$num = "00$i"; }
+    elsif($i&lt;100) { $num = "0$i"; }
+
+    $cmd = "mv $old.$num $new.$num";
+    print $cmd."\n";
+    if(system($cmd)) { print "rename failed\n"; }
+}
+
+</a></pre>
+
+<hr>
+<a name="fc">
+</a><center><h2><a name="fc">File Conversion</a></h2></center>
+<pre><a name="fc">#!/usr/local/bin/perl
+#
+# convert series of images from one format to another
+#
+if ($#ARGV != 5) {
+    print "usage: fconvert intype outtype old new start stop\n";
+    exit;
+}
+
+$intype = $ARGV[0];
+$outtype = $ARGV[1];
+$old = $ARGV[2];
+$new = $ARGV[3];
+$start = $ARGV[4];
+$stop = $ARGV[5];
+
+for ($i=$start; $i &lt;= $stop; $i++) {
+
+    $num = $i;
+    if($i&lt;10) {	$num = "00$i"; }
+    elsif($i&lt;100) { $num = "0$i"; }
+
+    $cmd = "imgcvt -i $intype -o $outtype $old.$num $new.$num";
+    print $cmd."\n";
+    if(system($cmd)) { print "imgcvt failed\n"; }
+}
+
+</a></pre>
+
+<hr>
+<a name="cd">
+</a><center><h2><a name="cd">Creating Directories</a></h2></center>
+<pre><a name="cd">#!/usr/local/bin/perl
+#
+# create a series of directories
+#
+if ($#ARGV != 2) {
+    print "usage: mkdirs base start stop\n";
+    exit;
+}
+
+$base = $ARGV[0];
+$start = $ARGV[1];
+$stop = $ARGV[2];
+
+for ($i=$start; $i &lt;= $stop; $i++) {
+
+    $num = $i;
+    if($i&lt;10) {	$num = "00$i"; }
+    elsif($i&lt;100) { $num = "0$i"; }
+
+    $cmd = "mkdir $base$num";
+    print $cmd."\n";
+    if(system($cmd)) { print "mkdir failed\n"; }
+}
+
+</a></pre>
+
+<hr>
+<a name="puf">
+</a><center><h2><a name="puf">Padding &amp; Unpadding Files</a></h2></center>
+<pre><a name="puf">#!/usr/local/bin/perl
+#
+# pad file numbers with zeros
+#
+if ($#ARGV != 2) {
+    print "usage: pad base start stop\n";
+    exit;
+}
+
+$base = $ARGV[0];
+$start = $ARGV[1];
+$stop = $ARGV[2];
+
+for ($i=$start; $i &lt;= $stop; $i++) {
+
+    $num = $i;
+    if($i&lt;10) {	$num = "00$i"; }
+    elsif($i&lt;100) { $num = "0$i"; }
+
+    $cmd = "mv $base$i $base$num";
+
+    # to unpad, use this instead:
+    # $cmd = "mv $base$num $base$i";
+
+    print $cmd."\n";
+    if(system($cmd)) { print "pad failed\n"; }
+}
+
+</a></pre>
+
+<hr>
+<a name="fm">
+</a><center><h2><a name="fm">Finding Free Machines</a></h2></center>
+<pre><a name="fm">#!/usr/local/bin/perl
+#
+# search list of machines for machines with no users logged on
+#
+$machines = `systems sgi`;
+chop($machines);
+@sgis = split(/ /, $machines);
+@sgis = sort(@sgis);
+
+foreach $machine (@sgis) {
+
+    if(!(`rusers $machine`)) {
+	print "$machine\n";
+    }
+}
+
+</a></pre>
+
+<hr>
+<a name="p">
+</a><center><h2><a name="p">Finding Processes</a></h2></center>
+<pre><a name="p">#!/usr/local/bin/perl
+#
+# search for processes running on machines
+#
+
+if ($#ARGV != 0) {
+    print "usage: findprocess process\n";
+    exit;
+}
+
+$process = $ARGV[0];
+$machines = `systems sgi`;
+chop($machines);
+@sgis = split(/ /,$machines);
+@sgis = sort(@sgis);
+
+foreach $machine (@sgis) {
+
+    print "Checking $machine...\n";
+
+    @lines = `rsh $machine \"ps -ef | grep $process | grep -v findprocess | grep -v grep\"`;
+
+    if(@lines) {
+	foreach $line (@lines) {
+	    $line =~ /^\s*(\w+)\s+(\d+)/;
+	    $user = $1;
+	    $pid = $2;
+	    print "$user on $machine  pid: $pid\n";
+	}
+    }
+}
+
+</a></pre>
+
+<hr>
+<a name="fiad">
+</a><center><h2><a name="fiad">Finding Files</a></h2></center>
+<pre><a name="fiad">#!/usr/local/bin/perl
+#
+# search for a file in all subdirectories
+#
+if ($#ARGV != 0) {
+    print "usage: findfile filename\n";
+    exit;
+}
+
+$filename = $ARGV[0];
+
+# look in current directory
+$dir = `pwd`;
+chop($dir);
+&amp;searchDirectory($dir);
+
+sub searchDirectory {
+    local($dir);
+    local(@lines);
+    local($line);
+    local($file);
+    local($subdir);
+
+    $dir = $_[0];
+
+    # check for permission
+    if(-x $dir) {
+
+	# search this directory
+	@lines = `cd $dir; ls -l | grep $filename`;
+	foreach $line (@lines) {
+	    $line =~ /\s+(\S+)$/;
+	    $file = $1;
+	    print "Found $file in $dir\n";
+	}
+	
+	# search any sub directories
+	@lines = `cd $dir; ls -l`;
+	foreach $line (@lines) {
+	    if($line =~ /^d/) {
+		$line =~ /\s+(\S+)$/;
+		$subdir = $dir."/".$1;
+		&amp;searchDirectory($subdir);
+	    }
+	}
+    }
+}
+
+</a></pre>
+
+<hr>
+<a name="u">
+</a><center><h2><a name="u">Finding Users</a></h2></center>
+<pre><a name="u">#!/usr/local/bin/perl
+#
+# check whether user is logged on
+#
+
+if ($#ARGV != 0) {
+    print "usage: finduser username\n";
+    exit;
+}
+
+$username = $ARGV[0];
+$machines = "insanity ".`systems sgi`;
+chop($machines);
+@machines = split(/ /,$machines);
+@machines = sort(@machines);
+
+foreach $machine (@machines) {
+    
+    if(`rusers $machine | grep $username`) {
+	print "$username logged on $machine\n";
+    }
+}
+
+</a></pre>
+
+<hr>
+<a name="ghf">
+</a><center><h2><a name="ghf">Generating HTML Files</a></h2></center>
+<pre><a name="ghf">#!/usr/local/bin/perl
+#
+# create n html files linked together in slide show
+#
+
+if ($#ARGV != 1) {
+    print "usage: htmlslides base num\n";
+    exit;
+}
+
+$base = $ARGV[0];
+$num = $ARGV[1];
+
+for ($i=1; $i &lt;= $num; $i++) {
+
+    open(HTML, "&gt;$base$i.html");
+
+    if($i==$num) {
+	$next = 1;
+    } else {
+	$next = $i+1;
+    }
+
+    print HTML "&lt;html&gt;\n&lt;head&gt;\n&lt;title&gt;$base$i&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n";
+    print HTML "&lt;a href=\"$base$next.html\"&gt;&lt;img src=\"$base$i.jpg\"&gt;&lt;/a&gt;\n";
+    print HTML "&lt;/body&gt;\n&lt;/html&gt;\n";
+
+    close(HTML);
+}
+
+</a></pre>
+
+<hr>
+<a name="gxs">
+</a><center><h2><a name="gxs">Generating Xpost Scripts</a></h2></center>
+<pre><a name="gxs">#!/usr/local/bin/perl
+#
+# generate an xpost script to adjust saturation, and run xpost
+#
+if ($#ARGV != 2) {
+ print "usage: fixsat infile.tiff outfile.tiff satval\n";
+ exit;
+}
+
+$infile = $ARGV[0];
+$outfile = $ARGV[1];
+$satval = $ARGV[2];
+
+# open xpost script
+open(XPOST, "&amp;gt__tmp.xp");
+
+# set view to register A
+print XPOST "view A\n";
+
+# load original image into reg A
+print XPOST "load $infile\n";
+
+# run Kmult to turn down saturation
+print XPOST "Kmult $satval $satval $satval  1.0 a b\n";
+
+# set view to register B
+print XPOST "view B\n";
+
+# save unsaturated image
+print XPOST "save tiff $outfile\n";
+
+# close xpost script
+close(XPOST);
+
+# run xpost script
+$cmd = "xpost -q -s __tmp.xp";
+print $cmd."\n";
+system($cmd);
+
+# clean up
+$cmd = "/bin/rm -f __tmp.xp";
+print $cmd."\n";
+system($cmd);
+
+</a></pre>
+
+<hr>
+<a name="mtf">
+</a><center><h2><a name="mtf">Modifying Text Files</a></h2></center>
+<pre><a name="mtf">#!/usr/local/bin/perl
+#
+# change all occurances of a string in a file to another string
+#
+
+if ($#ARGV != 3) {
+    print "usage: chstring oldfile newfile oldstring newstring\n";
+    exit;
+}
+
+$oldfile = $ARGV[0];
+$newfile = $ARGV[1];
+$old = $ARGV[2];
+$new = $ARGV[3];
+
+open(OF, $oldfile);
+open(NF, "&gt;$newfile");
+
+# read in each line of the file
+while ($line = &lt;OF&gt;) {
+    $line =~ s/$old/$new/;
+    print NF $line;
+}
+
+close(OF);
+close(NF);
+
+</a></pre>
+
+<hr>
+<a name="crt">
+</a><center><h2><a name="crt">Convert Raw Timecode Data to Readable Data</a></h2></center>
+<pre><a name="crt">#!/usr/local/bin/perl
+#
+# Change raw timecode data to different format
+#
+# timecode data event looks like:
+# 
+# Event: 1
+# 00:01:05:23
+# 00:01:27:21
+# a-2-9
+# 
+# Event: 2
+# 00:01:56:13
+# 00:02:03:19
+# a-3-9
+# 
+# ...and so on...
+#
+# Want to change it to the form:
+#
+# a-2-9 = 21.93 seconds = 658 frames
+# a-3-9 = 7.20 seconds = 216 frames
+#
+
+open(FP,"&lt;log.txt");
+
+$first = 1;
+$total = 0;
+
+while($line = &lt;FP&gt;) {
+
+    if ($line =~ /^\d\d/ &amp;&amp; $first) {
+	$in = $line;
+	$first = 0;
+    } elsif ($line =~ /^\d\d/ &amp;&amp; !$first) {
+	$out = $line;
+	$first = 1;
+    } elsif ($line =~ /^\w-/) {
+	$shot = $line;
+	chop($shot);
+
+	# parse timecodes and
+	# translate in and out into seconds
+	$in =~ /(\d\d):(\d\d):(\d\d):(\d\d)/;
+	$hrs = $1;
+	$mns = $2;
+	$scs = $3;
+	$fms = $4;
+	$inSecs = $hrs * 3600 + $mns * 60 + $scs + $fms / 30;
+
+	$out =~ /(\d\d):(\d\d):(\d\d):(\d\d)/;
+	$hrs = $1;
+	$mns = $2;
+	$scs = $3;
+	$fms = $4;
+	$outSecs = $hrs * 3600 + $mns * 60 + $scs + $fms / 30;
+
+	# calc duration
+	$dur = $outSecs - $inSecs;
+	$total += $dur;
+
+	# print line
+	printf("$shot = %.2f seconds = %d frames\n", $dur, $dur * 30);
+    }
+}
+
+print "total = ".($total / 60)." mins\n";
+
+close FP;
+
+</a></pre>
+
+
+<p>
+
+</p><hr>
+
+<a href="http://accad.osu.edu/%7Emlewis/">Matthew Lewis</a>, 1997
+
+</body></html>

@@ -1,0 +1,5 @@
+# Portforwarding
+ssh lynx -L  5900:localhost:6100
+
+#on local shell
+gvim ssh_forward_porting

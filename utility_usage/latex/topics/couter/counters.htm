@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Traditional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title>LaTeX Counters</title></head><body>
+<h1>LaTeX Counters</h1>
+
+ Everything LaTeX numbers for you has a counter associated with it. The
+ name  of the counter  is the same  as the name  of the environment  or
+ command that produces  the number,  except with no \.  Below is a list
+ of the counters  used  LaTeX's  standard  document  styles  to control
+ numbering.
+<table>
+<tbody><tr><td> part         </td><td>   part         </td><td>   figure      </td><td>    enumi
+</td></tr><tr><td> chapter      </td><td>   subparagraph </td><td>   table       </td><td>    enumii
+</td></tr><tr><td> section      </td><td>   page         </td><td>   footnote    </td><td>    enumiii
+</td></tr><tr><td> subsection   </td><td>   equation     </td><td>   mpfootnote  </td><td>    enumiv
+</td></tr><tr><td> subsubsection
+</td></tr></tbody></table>
+
+Here are the commands to be used with counters:
+<ul>
+   <li><a href="#addtocounter">\addtocounter{counter}{value}</a> increments
+     counter by the amount, which can be negative
+   </li><li><a href="#alph">\alph{counter}, \Alph{counter}</a> print the value
+     of the counter as a lower or upper case letter.
+   </li><li><a href="#arabic">\arabic{counter}</a> print the value of the
+    counter as am arabic number
+   </li><li><a href="#fnsymbol">\fnsymbol{counter}</a> print the counter as a
+     footnote symbol
+   </li><li><a href="#newcounter">\newcounter</a> define a new counter
+   </li><li><a href="#roman">\roman{counter}, \Roman{counter}</a> print the value
+     of the counter as a roman letter using lower or upper case letters
+   </li><li><a href="#setcounter">\setcounter{counter}{value}</a> assign the
+     value to the counter
+   </li><li><a href="#usecounter">\usecounter{counter}</a> to be used in
+     <a href="http://www.personal.ceu.hu/tex/environ.htm#list">list</a> environment.
+   </li><li><a href="#value">\value{counter}</a> get the value of the counter.
+</li></ul>
+
+<hr>
+<h3><a name="addtocounter">\addtocounter</a></h3>
+<pre> \addtocounter{counter}{value}
+</pre>
+ The  command  increments  the  counter  by  the  amount
+ specified by the value argument.  The value argument can be negative.
+
+<hr>
+<h3><a name="alph">\alph, \Alph</a></h3>
+<pre> \alph{counter} \Alph{counter}
+</pre>
+ This  command  causes  the  value  of the  counter  to be  printed  in
+ alphabetic characters.  The \alph command causes lower case alphabetic
+ alphabetic characters, i.e., a, b, c... while the \Alph command causes
+ upper case alphabetic characters, i.e., A, B, C...
+
+<hr>
+<h3><a name="arabic">\arabic</a></h3>
+<pre> \arabic{counter}
+</pre>
+ The \arabic command causes the value of the counter  to be printed  in
+ arabic numbers, i.e., 3.
+
+<hr>
+<h3><a name="fnsymbol">\fnsymbol</a></h3>
+<pre> \fnsymbol{counter}
+</pre>
+ The \fnsymbol command causes the value of the counter to be printed in
+ a specific  sequence  of nine symbols  that can be used  for numbering
+ <a href="http://www.personal.ceu.hu/tex/footnote.htm">footnotes</a>.
+
+<hr>
+<h3><a name="newcounter">\newcounter</a></h3>
+<pre> \newcounter{foo}[counter]
+</pre>
+ The \newcounter command defines a new counter named foo.  The optional
+ argument  [counter]  causes the counter  foo to be reset whenever  the
+ counter named in the optional argument is incremented.
+
+<hr>
+<h3><a name="roman">\roman, \Roman</a></h3>
+<pre> \roman{counter} \Roman{counter}
+</pre>
+ This command  causes the value of the counter  to be printed  in roman
+ numerals.   The \roman command causes lower case roman numerals, i.e.,
+ i, ii, iii...,  while  the \Roman  command  causes  upper  case  roman
+ numerals, i.e., I, II, III...
+
+
+<hr>
+<h3><a name="setcounter">\setcounter</a></h3>
+<pre> \setcounter{counter}{value}
+</pre>
+ The  \setcounter  command  sets  the  value  of the  counter  to  that
+ specified by the value argument.
+
+<hr>
+<h3><a name="usecounter">\usecounter</a></h3>
+<pre> \usecounter{counter}
+</pre>
+ The \usecounter  command  is used in the second  argument  of the
+ <a href="http://www.personal.ceu.hu/tex/environ.htm#list">list</a>
+ environment  to allow the counter  specified  to be used to number the
+ list items.
+
+<hr>
+<h3><a name="value">\value</a></h3>
+<pre> \value{counter}
+</pre>
+ The \value  command  produces  the value of the counter  named  in the
+ mandatory argument.   It can be used where LaTeX expects an integer or
+ number, such as the second argument of a \setcounter  or \addtocounter
+ command, or in <pre>      \hspace{\value{foo}\parindent}
+</pre>
+ It is useful for doing arithmetic with counters.
+
+<hr>
+<p>
+<a href="http://www.personal.ceu.hu/tex/latex.htm">Back to the main LaTeX page.</a>
+</p></body></html>

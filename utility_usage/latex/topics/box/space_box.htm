@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Traditional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>LaTeX Spaces and Boxes</title></head><body>
+<h1>LaTeX Spaces and Boxes</h1>
+
+<a name="top">Commands manipulating horizontal and vertical spaces, and
+holding material in boxes:</a>
+<ul>
+<li><a href="#vspace"><strong>\vspace{length}. \vspace*{length}</strong></a>
+  leave out given vertical space
+</li><li><a href="#bskip"><strong>\smallskip, \medskip, \bigskip</strong></a>
+  leave out certain spaces
+</li><li><a href="#addvspace"><strong>\addvspace{length}</strong></a> extend the
+  vertical space until it reaches length.
+</li><li><a href="#vfill"><strong>\vfill</strong></a> strech vertical space so
+  that it fills all empty space
+</li><li><a href="#hspace"><strong>\hspace{length}, \hpace*{length}</strong></a>
+  leave out given horizontal space
+</li><li><a href="#hfill"><strong>\hfill, \hrulefill, \dotfill</strong></a> fill
+  out all available horizontal space with a line or with dots
+</li><li><a href="#rule"><strong>\rule{width}{thickness}</strong></a> draw a line
+</li><li><a href="#makebox"><strong>\makebox{text}, \mbox{text}</strong></a>
+   enclose text into a box and then print, can be used in math mode.
+</li><li><a href="#framebox"><strong>\framebox{text}, \fbox{text}</strong></a>
+   enclose text into a framed box and then print.
+</li><li><a href="#parbox"><strong>\parbox{width}{text}</strong></a> insert several
+   paragraphs into a box of given width
+</li><li><a href="#raisebox"><strong>\raisebox{dist}{text}</strong></a> raise or
+  lower (if dist is negative) the box created from text.
+</li><li><a href="#newsavebox"><strong>\newsavebox{boxname}</strong></a> define
+   the holder boxname to store a box.
+</li><li><a href="#savebox"><strong>\savebox{boxname}{text},
+   \sbox{boxname}{text}</strong></a> save text int the holder boxname
+</li><li><a href="#usebox"><strong>\usebox{boxname}</strong></a> use material
+   stored in box holder boxname
+</li></ul>
+
+<p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="vspace">\vspace</a></h3>
+<pre>  \vspace[*]{length}
+</pre>
+ The \vspace command adds vertical  space.  The length of the space can
+ be expressed  in any  terms  that  LaTeX  understands,  i.e.,  points,
+ inches, etc.  You can add negative  as well as positive  space with an
+ \vspace command.
+<p>
+ LaTeX removes vertical  space that comes at the end of a page.  If you
+ don't  want  LaTeX  to remove  this  space,  include  the  optional  *
+ argument.  Then the space is never removed.
+
+
+</p><p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="bskip"></a>\smallskip, \medskip, \bigskip</h3>
+ The \smallskip command is equivalent to \vspace{smallskipamount} where
+ smallskipamount is determined by the document style.
+<p>
+ The \medskip  command  is equivalent  to \vspace{medskipamount}  where
+ medskipamount is determined by the document style.
+</p><p>
+ The \bigskip  command  is equivalent  to \vspace{bigskipamount}  where
+ bigskipamount is determined by the document style.
+
+
+</p><p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="addvspace">\addvspace</a></h3>
+<pre>  \addvspace{length}
+</pre>
+ The  \addvspace  command  normally  adds  a vertical  space  of height
+ length.  However, if vertical space has already been added to the same
+ point  in the  output  by a previous  \addvspace  command,  then  this
+ command will not add more space than needed to make the natural length
+ of the total vertical space equal to length.
+
+
+<p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="vfill">\vfill</a></h3>
+ The \vfill fill command produces  a rubber length which can stretch or
+ shrink vertically.
+
+
+<p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="hspace">\hspace</a></h3>
+<pre>  \hspace[*]{length}
+</pre>
+ The \hspace command  adds horizontal  space.   The length of the space
+ can be expressed  in any terms that LaTeX understands,  i.e.,  points,
+ inches, etc.  You can add negative  as well as positive  space with an
+ \hspace command.  Adding negative space is like backspacing.
+<p>
+ LaTeX removes  horizontal  space that comes at the end of a line.   If
+ you don't want LaTeX  to remove  this space,  include  the optional  *
+ argument.  Then the space is never removed.
+
+
+</p><p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="hfill">\hfill, \hrulefill, \dotfill</a></h3>
+ The \hfill fill command produces  a rubber length which can stretch or
+ shrink horizontally.  It will be filled with spaces.
+<p>
+ The \hrulefill fill command produces a rubber length which can stretch
+ or shrink horizontally.  It will be filled with a horizontal rule.
+</p><p>
+ The \dotfill  command  produces  a rubber  length  that produces  dots
+ instead of just spaces.
+
+
+
+</p><p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="rule">\rule</a></h3>
+<pre>  \rule[raise-height]{width}{thickness}
+</pre>
+ The \rule command is used to produce horizontal  lines.  The arguments
+ are defined as follows.
+<ul>
+<li><strong>raise-height</strong>:  specifies how high to raise the rule (optional)
+</li><li><strong>width</strong>:  specifies the length of the rule (mandatory)
+</li><li><strong>thickness</strong>:  specifies the thickness of the rule (mandatory)
+</li></ul>
+
+
+<p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="makebox">\makebox, \mbox</a></h3>
+<pre>  \makebox[width][position]{text}
+  \mbox {text}
+</pre>
+ The \makebox command creates a box to contain the text specified.  The
+ width  of the box is specified  by the optional  width  argument.  The
+ position  of the text  within  the box is determined  by the  optional
+ position argument.
+<ul>
+<li><strong>c</strong> - centered (default)
+</li><li><strong>l</strong> - flushleft
+</li><li><strong>r</strong> - flushright
+</li></ul>
+ The \mbox  command  creates  a box just wide enough  to hold  the text
+ created by its argument.
+
+
+
+<p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="framebox">\framebox, \fbox</a></h3>
+<pre>  \framebox[width][position]{text}
+ \fbox{text}
+</pre>
+ The \framebox  command  is exactly  the same as the \makebox  command,
+ except  that it puts a frame  around  the outside  of the box that  it
+ creates.
+<p>
+ The framebox  command  produces  a rule  of thickness  \fboxrule,  and
+ leaves a space \fboxsep between the rule and the contents of the box.
+</p><p>
+ The \fbox command  is exactly  the same as the \mbox  command,  except
+ that it puts a frame around the outside of the box that it creates.
+
+
+
+</p><p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="parbox">\parbox</a></h3>
+<pre>  \parbox[position]{width}{text}
+</pre>
+ A parbox is a box whose contents  are created in paragraph  mode.  The
+ \parbox has two mandatory arguments:
+<ol>
+<li><strong>width</strong>:  specifies the width of the parbox; and
+</li><li><strong>text</strong>:  the text that goes inside the parbox.
+</li></ol>
+ LaTeX will position a parbox so its center lines up with the center of
+ the text line.  An optional  first argument,  position,  allows you to
+ line up either the top or bottom line in the parbox.
+<p>
+ A \parbox  command  is used for a parbox  containing  a small piece of
+ text, with nothing fancy inside.  In particular, you shouldn't use any
+ of the paragraph-making  environments  inside a \parbox argument.  For
+ larger pieces  of text, including  ones containing  a paragraph-making
+ environment, you should use a minipage environment.
+
+
+
+</p><p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="raisebox">\raisebox</a></h3>
+<pre>  \raisebox{distance}[extend-above][extend-below]{text}
+</pre>
+ The \raisebox  command  is used  to raise  or lower  text.   The first
+ mandatory  argument  specifies  how high the text is to be raised  (or
+ lowered if it is a negative amount).  The text itself is processed  in
+ LR mode.
+<p>
+ Sometimes  it's useful  to make LaTeX think something  has a different
+ size than  it really  does  - or a different  size  than  LaTeX  would
+ normally think it has.  The \raisebox  command lets you tell LaTeX how
+ tall it is.
+</p><p>
+ The first optional argument, extend-above,  makes LaTeX think that the
+ text  extends  above  the line  by the amount  specified.   The second
+ optional  argument,  extend-below,  makes  LaTeX  think  that the text
+ extends below the line by the amount specified.
+
+
+
+</p><p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="newsavebox"></a>\newsavebox</h3>
+<pre>  \newsavebox{cmd}
+</pre>
+ Declares cmd, which must be a command name starting with a \,
+ that is not already defined, to be a bin for saving boxes.
+
+
+<p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="savebox">\savebox, \sbox</a></h3>
+<pre>  \savebox{cmd}[width][pos]{text},  \sbox{cmd}[text]
+</pre>
+ These commands  typeset  text in a box just as for \mbox  or \makebox.
+ However,  instead of printing  the resulting  box, they save it in bin
+ cmd, which must have been declared with \newsavebox.
+
+
+
+<p><a href="#top">Go to the top.</a>
+</p><hr><h3><a name="usebox">\usebox</a></h3>
+<pre>  \usebox{cmd}
+</pre>
+ Prints the box most recently saved in bin cmd by a \savebox command.
+
+
+<p><a href="#top">Go to the top.</a>
+</p><hr>
+<p>
+<a href="http://www.personal.ceu.hu/tex/latex.htm">Back to the main LaTeX page.</a>
+</p></body></html>

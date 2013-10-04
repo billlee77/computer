@@ -1,0 +1,31 @@
+% samplepics.mf -- do not edit, generated automatically by fey2.tex
+input feynmf
+require_RCS_revision "1.30";
+beginchar(1, 50*2.84526pt#, 30*2.84526pt#, 0);
+"feynmf: 1";
+LaTeX_unitlength:=2.84526pt;
+subgraph (0, 0, w, h);
+vinit;
+pickup pencircle scaled thin;
+vleftn (__i, 2);
+vrightn (__o, 4);
+vlabel ("$e_-$", __i1);
+vlabel ("$e_+$", __i2);
+vlabel ("$\mu _+$", __o1);
+vlabel ("$\nu _{\mu }$", __o2);
+vlabel ("$s$", __o3);
+vlabel ("$\noexpand \bar c$", __o4);
+vconnect ("fermion", __i1, __v1, __i2);
+vconnect ("boson,label=$\gamma ,,Z$", __v1, __v2);
+vconnect ("boson", __v3, __v2, __v4);
+vconnect ("fermion", __o1, __v3, __o2);
+vconnect ("fermion", __o4, __v4, __o3);
+vdot (__v1, __v3, __v4);
+vblob ((.12w), __v2);
+vfreeze;
+vdraw;
+endsubgraph;
+endchar;
+% the end.
+end.
+endinput;

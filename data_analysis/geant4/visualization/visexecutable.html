@@ -1,0 +1,388 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Adding Visualization to Your Executable
+</title>
+</head><body>
+
+<table width="100%">
+<tbody><tr>
+<td><a href="http://geant4.cern.ch/G4UsersDocuments/Overview/html/index.html">
+<img src="visexecutable_files/Overview.gif" alt="Overview" height="16" width="59"></a>
+<a href="http://geant4.cern.ch/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization/index.html">
+<img src="visexecutable_files/Contents.gif" alt="Contents" height="16" width="59"></a>
+<a href="http://geant4.cern.ch/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization/introduction.html">
+<img src="visexecutable_files/Previous.gif" alt="Previous" height="16" width="59"></a>
+<a href="http://geant4.cern.ch/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization/visdrivers.html">
+<img src="visexecutable_files/Next.gif" alt="Next" height="16" width="59"></a>
+</td>
+
+<td align="Right"><font color="#238e23"><font size="-1">
+<b>Geant4 User's Guide</b> <br>
+<b>For Application Developers</b> <br>
+<b>Visualization</b> </font></font> </td>
+</tr>
+</tbody></table>
+
+<center><font color="#238e23"><font size="+3">
+<b>8.2 Adding Visualization to Your Executable</b><br>
+</font></font></center>
+<br>
+
+<hr size="7%" align="Center"><br>
+
+ This section explains how to incorporate your selected visualization drivers
+ into the <tt>main()</tt> function and create an executable for it.  In order 
+ to perform visualization with your Geant4 executable, you must compile it 
+ with realized visualization driver(s). You may be dazzled by the number of
+ choices of visualization driver, but you need not use all of them at one time.
+ 
+<h4>8.2.1 Installing Visualization Drivers</h4>
+
+ Depending on what has been installed on your system, several kinds of
+ visualization driver are available. One or many drivers may be chosen for
+ realization in compilation, depending on your visualization requirements. 
+ Features and notes on each driver are briefly described in
+ <a href="http://geant4.cern.ch/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization/visdrivers.html">Section 8.3</a> "<b>Visualization Drivers</b>", 
+ along with links to detailed web pages for the various drivers.
+<p>
+ Note that not all drivers can be installed on all systems;
+ Table 8.1 in <a href="http://geant4.cern.ch/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization/visdrivers.html">Section 8.3</a> lists all the available
+ drivers and the platforms on which they can be installed. For any of the 
+ visualization drivers to work, the corresponding graphics system must be 
+ installed beforehand.
+</p><p>
+Unless the environment variable <tt>G4VIS_NONE</tt> is set to "1",
+visualization drivers that do not depend on external libraries are 
+automatically incorporated into Geant4 libraries during their installation. 
+(Here "installation of Geant4 libraries" means the generation of Geant4 
+libraries by compilation.) 
+The automatically incorporated visualization drivers are: 
+DAWNFILE, HepRepFile, HepRepXML, RayTracer, VRML1FILE, VRML2FILE and ATree and GAGTree.
+</p><p>
+The OpenGL, OpenInventor and RayTracerX drivers are not incorporated by default.
+Nor are the DAWN-Network and VRML-Network drivers, because they require the 
+network setting of the installed machine.  In order to incorporate them, 
+the environment variables "<tt>G4VIS_BUILD_DRIVERNAME_DRIVER</tt>" should be 
+set to  "<tt>1</tt>" before installing the Geant4 libraries: 
+</p><pre>     setenv G4VIS_BUILD_OPENGLX_DRIVER      1  # OpenGL-Xlib driver
+     setenv G4VIS_BUILD_OPENGLXM_DRIVER     1  # OpenGL-Motif driver 
+     setenv G4VIS_BUILD_OIX_DRIVER          1  # OpenInventor-Xlib driver
+     setenv G4VIS_BUILD_RAYTRACERX_DRIVER   1  # RayTracer-XLib driver
+     setenv G4VIS_BUILD_DAWN_DRIVER         1  # DAWN-Network driver
+     setenv G4VIS_BUILD_VRML_DRIVER         1  # VRML-Network
+</pre>
+Unless the environment variable <tt>G4VIS_NONE</tt> is set to "1", 
+setting any of the above variables sets a C-pre-processor flag of the same 
+name. Also the C-pre-processor flag <tt>G4VIS_BUILD </tt> is set (see 
+config/G4VIS_BUILD.gmk), which incorparates the selected driver into the 
+Geant4 libraries.
+
+<h4>8.2.2 How to Realize Visualization Drivers in an Executable</h4>
+
+ You can realize and use any of the visualization driver(s) you want 
+ in your Geant4 executable, provided they are among the set installed 
+ beforehand into the Geant4 libraries. A warning will appear if this is
+ not the case.
+
+ <p>In order to realize visualization drivers, you must instantiate
+ and initialize a subclass of <tt>G4VisManager</tt> that implements
+ the pure virtual function <tt>RegisterGraphicsSystems()</tt>.  This
+ subclass must be compiled in the user's domain to force the loading
+ of appropriate libraries in the right order.  The easiest way to do
+ this is to use <tt>G4VisExecutive</tt>, a provided class with
+ included implementation.  <tt>G4VisExecutive</tt> is sensitive to the
+ <tt>G4VIS_USE...</tt> variables mentioned below.
+
+</p><p>If you do wish to write your own subclass, you may do so.  You will
+see how to do this by looking at <tt>G4VisExecutive.icc</tt>.  A
+typical extract is:
+
+</p><pre>     ...
+       RegisterGraphicsSystem (new G4DAWNFILE);
+     ...
+     #ifdef G4VIS_USE_OPENGLX
+       RegisterGraphicsSystem (new G4OpenGLImmediateX);
+       RegisterGraphicsSystem (new G4OpenGLStoredX);
+     #endif
+     ...
+</pre>
+<p>If you wish to use <tt>G4VisExecutive</tt> but register an
+additional graphics system, <tt>XXX</tt> say, you may do so either
+before or after initializing:
+</p><pre>     visManager-&gt;RegisterGraphicsSytem(new XXX);
+     visManager-&gt;Initialize();
+</pre>
+<p>
+Source listing 8.2.2<br>
+An example of a typical <tt>main()</tt> function is given below.
+</p><p>
+By default, you get the DAWNFILE, HepRepFile, RayTracer, VRML1FILE, VRML2FILE, ATree and
+GAGTree drivers. Additionally, you may choose from the OpenGL-Xlib, OpenGL-Motif, OpenInventor,
+RayTracerX, DAWN-Network and VRML-Network drivers, each of 
+which can be selected by setting the proper environment variable:
+</p><pre>     setenv G4VIS_USE_OPENGLX      1
+     setenv G4VIS_USE_OPENGLXM     1
+     setenv G4VIS_USE_OIX          1
+     setenv G4VIS_USE_RAYTRACERX   1
+     setenv G4VIS_USE_DAWN         1
+     setenv G4VIS_USE_VRML         1
+</pre>
+<p>
+(Of course, this has to be chosen from the set incorporated into 
+the Geant4 libraries during their compilation.)
+Unless the environment variable <tt>G4VIS_NONE</tt> is set, 
+these set C-pre-processor flags of the same name.
+</p><p>
+Also, unless the environment variable <tt>G4VIS_NONE</tt> is set, the 
+C-pre-processor flag <tt>G4VIS_USE</tt> is always set by default.
+This flag is available in describing the <tt>main()</tt> function.
+
+</p><p>
+ You may have to set additional environment variables for your selected
+ visualization drivers and graphics systems.
+ For example, the OpenGL driver may require the setting of <tt>OGLHOME</tt>
+ which points to the location of the OpenGL libraries.  For more details, 
+ see <a href="http://geant4.cern.ch/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization/visdrivers.html">Section 8.3</a> "<b>Visualization Drivers</b>"
+ and pages linked from there.
+</p><p>
+
+</p><h4>A Sample Set-up File </h4>
+ The following can be part of the user's <tt>.cshrc</tt> or <tt>.tcshrc</tt> 
+ file on a Linux platform to configure the environment for creating Geant4 
+ executables available for Geant4 visualization. This sample is shown only as 
+ an example; it may NOT correspond to a specific platform configuration and 
+ does NOT apply in general for any specific setup !
+<p>
+</p><center>
+<table border="2" cellpadding="10">
+<tbody><tr>
+<td>
+<pre> ############################################################
+ # Main Environment Variables for GEANT4 with Visualization #
+ ############################################################
+
+ ### Platform
+ setenv G4SYSTEM Linux-g++
+
+ ### CLHEP base directory
+ setenv CLHEP_BASE_DIR /opt/local
+
+ ### OpenGL base directory
+ setenv OGLHOME /usr/X11R6
+ 
+ ### G4VIS_BUILD 
+ ###   Incorporation of OpenGL-Xlib and OpenGL-Motif drivers
+ ###   into Geant4 libraries.
+ setenv G4VIS_BUILD_OPENGLX_DRIVER 1
+ setenv G4VIS_BUILD_OPENGLXM_DRIVER 1
+
+ ### G4VIS_USE
+ ###   Incorporation of OpenGL-Xlib and OpenGL-Motif drivers
+ ###   into Geant4 executables.
+ setenv G4VIS_USE_OPENGLX       1
+ setenv G4VIS_USE_OPENGLXM      1
+
+ ### Viewer for DAWNFILE driver 
+ ### Default value is "dawn".  You can change it to, say,
+ ### "david" for volume overlapping tests
+ # setenv G4DAWNFILE_VIEWER david
+
+ ### Viewer for VRMLFILE drivers 
+ setenv G4VRMLFILE_VIEWER vrmlview
+
+ ########## end 
+</pre>
+</td>
+</tr>
+<tr>
+<td align="center">
+Source listing 8.2.1<br>
+ Part of a sample <tt>.cshrc</tt> setup file for the Linux platform.
+</td>
+</tr>
+</tbody></table></center>
+
+
+ <h4>8.2.3 Visualization Manager</h4>
+ Visualization procedures are controlled by the "Visualization Manager",
+ a class which must inherit from  <i>G4VisManager</i> defined in the visualization category.
+ Most users will find that they can just use the default visualization manager, <i>G4VisExecutive</i>.
+ The Visualization Manager accepts users' requests for visualization, processes them, and passes
+ the processed requirements to the abstract interface, i.e., to the currently 
+ selected visualization driver. 
+
+<h4>8.2.4 How to Write the <tt>main()</tt> Function</h4>
+
+ In order for your Geant4 executable to perform visualization, you
+ must instantiate and initialize "your" Visualization Manager in the
+ <tt>main()</tt> function. The core of the Visualization Manager is
+ the class <tt>G4VisManager</tt>, defined in the visualization
+ category.  This class requires that one pure virtual function be
+ implemented, namely, <tt>void RegisterGraphicsSystems()</tt>.  The
+ easiest way to do this is to use <tt>G4VisExecutive</tt>, as
+ described above (but you may write your own class - see above).
+
+<p>
+ Source listing 8.2.2 shows the form of the <tt>main()</tt> function.
+</p><p>
+</p><center>
+<table border="2" cellpadding="10">
+<tbody><tr>
+<td>
+<pre> //----- C++ source codes: Instantiation and initialization of G4VisManager
+
+ .....
+ // Your Visualization Manager 
+ #include "G4VisExecutive.hh"
+ .....
+
+ // Instantiation and initialization of the Visualization Manager
+ #ifdef G4VIS_USE
+ G4VisManager* visManager = new G4VisExecutive;
+ visManager -&gt; initialize ();
+ #endif
+
+ .....
+ #ifdef G4VIS_USE
+ delete visManager;
+ #endif
+
+ //----- end of C++ 
+</pre>
+</td>
+</tr>
+<tr>
+<td align="center">
+ Source listing 8.2.2<br>
+ The form of the <tt>main()</tt> function.
+</td>
+</tr>
+</tbody></table></center>
+<p>
+ Alternatively, you can implement an empty <tt>RegisterGraphicsSystems()</tt> 
+ function, and register visualization drivers you want directly in
+ your <tt>main()</tt> function. See Source listing 8.2.3.
+</p><p>
+</p><center>
+<table border="2" cellpadding="10">
+<tbody><tr>
+<td>
+<pre> //----- C++ source codes: How to register a visualization driver directly
+ //                        in main() function
+
+ .....
+ G4VisManager* visManager = new G4VisExecutive;
+ visManager -&gt; RegisterGraphicsSystem (new MyGraphicsSystem);
+ .....
+ delete visManager
+
+ //----- end of C++ 
+</pre>
+</td>
+</tr>
+<tr>
+<td align="center">
+ Source listing 8.2.3<br>
+ An alternative style for the <tt>main()</tt> function.
+</td>
+</tr>
+</tbody></table></center>
+<p>
+ DO NOT FORGET to delete the instantiated Visualization Manager by yourself. 
+ Note that a graphics system for Geant4 Visualization may run as a different 
+ process. In that case, the destructor of <tt>G4VisManager</tt> might have to 
+ terminate the graphics system and/or close the connection.
+</p><p>
+ We recommend that the instantiation, initialization, and deletion of the
+ Visualization Manager be protected by C-pre-processor commands, as in the
+ novice examples.  The C-pre-processor macro <tt>G4VIS_USE</tt> is 
+ automatically defined unless the environment variable <tt>G4VIS_NONE</tt> is 
+ set.  This assumes that you are compiling your Geant4 executable with the
+ standard version of GNUmakefile found in the <tt>config</tt> directory.
+</p><p>
+ Source listing 8.2.4 shows an example of the <tt>main()</tt> function 
+ available for Geant4 Visualization.
+</p><p>
+</p><center>
+<table border="2" cellpadding="10">
+<tbody><tr>
+<td>
+<pre> //----- C++ source codes: An example of main() for visualization
+ .....
+ #include "G4VisExecutive.hh"
+ .....
+
+ int main() 
+ {
+      // Run Manager
+      G4RunManager * runManager = new G4RunManager;
+
+      // Detector components
+      runManager-&gt;set_userInitialization(new MyDetectorConstruction);
+      runManager-&gt;set_userInitialization(new MyPhysicsList);
+
+      // UserAction classes.
+      runManager-&gt;set_userAction(new MyRunAction);
+      runManager-&gt;set_userAction(new MyPrimaryGeneratorAction);
+      runManager-&gt;set_userAction(new MyEventAction);
+      runManager-&gt;set_userAction(new MySteppingAction);
+
+ #ifdef G4VIS_USE
+      G4VisManager* visManager = new G4VisExecutive;
+      visManager -&gt; initialize ();
+ #endif
+
+      // Event loop
+      // Define (G)UI terminal
+      G4UIsession * session = new G4UIterminal
+      session-&gt;sessionStart();
+
+      delete session;
+      delete runManager;
+
+ #ifdef G4VIS_USE
+      delete visManager;
+ #endif
+
+      return 0;
+ }
+
+ //----- end of C++ 
+</pre>
+</td>
+</tr>
+<tr>
+<td align="center">
+ Source listing 8.2.4<br>
+ An example of the <tt>main()</tt> function available for Geant4 Visualization.
+</td>
+</tr>
+</tbody></table></center>
+<p>
+ Useful information on incorporated visualization drivers can be displayed 
+ in initializing the Visualization Manager. This is done by setting the 
+ verbosity flag to an appropriate string:
+</p><pre>   Simple graded message scheme - give first letter or a digit:
+    0) quiet,         // Nothing is printed.
+    1) startup,       // Startup and endup messages are printed...
+    2) errors,        // ...and errors...
+    3) warnings,      // ...and warnings...
+    4) confirmations, // ...and confirming messages...
+    5) parameters,    // ...and parameters of scenes and views...
+    6) all            // ...and everything available.
+</pre>
+For example, in your 
+ <tt>main()</tt> function, write the following code:
+<pre>  ...
+  G4VisManager* visManager = new G4VisExecutive ();
+  visManager -&gt; SetVerboseLevel (1);
+  visManager -&gt; Initialize ();
+  ...
+</pre>
+(This can also be set with the <tt>/vis/verbose</tt> command.)
+<p>
+
+</p><hr>
+ <a href="http://geant4.cern.ch/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization/visdrivers.html">Next section</a><br>
+ <a href="http://geant4.cern.ch/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization/introduction.html">Back to contents</a>
+</body></html>

@@ -1,0 +1,7 @@
+# This is the configuration file for Plots2D
+# This file will ask if you want certain features turned on
+# or off. Answer y or n of yes or no.
+All plots on a single plane: n
+Show plots of hits and misses: y
+Separate hits file: y
+PMT's on: n

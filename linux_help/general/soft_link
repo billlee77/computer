@@ -1,0 +1,9 @@
+
+#Create the Soft link
+ln -s /home/Data1 /home/Stores/abc
+
+#Change position of soft link
+ln -f -s /home/Data2 /home/Stores/abc
+
+#Remove softlink
+unlink linkname

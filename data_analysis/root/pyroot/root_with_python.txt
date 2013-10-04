@@ -1,0 +1,14 @@
+ROOT BASH example
+export ROOTSYS=/home/apps/root
+export PATH=$ROOTSYS/bin:$PATH
+export LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
+
+
+
+export LD_LIBRARY_PATH=$ROOTSYS/lib:$PYTHONDIR/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=$ROOTSYS/lib:$PYTHONPATH
+
+
+
+
+

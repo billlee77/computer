@@ -1,0 +1,491 @@
+# ACE/gr parameter file
+#
+@version 40102
+@page layout free
+@ps linewidth begin 1
+@ps linewidth increment 2
+@hardcopy device 2
+@page 5
+@page inout 5
+@link page off
+@default linestyle 1
+@default linewidth 1
+@default color 1
+@default char size 1.000000
+@default font 4
+@default font source 0
+@default symbol size 1.000000
+@timestamp off
+@timestamp 0.03, 0.03
+@timestamp linewidth 1
+@timestamp color 1
+@timestamp rot 0
+@timestamp font 4
+@timestamp char size 1.000000
+@timestamp def "Sun Aug 27 18:03:52 2000"
+@with g0
+@g0 on
+@g0 label off
+@g0 hidden false
+@g0 type xy
+@g0 autoscale type AUTO
+@g0 fixedpoint off
+@g0 fixedpoint type 0
+@g0 fixedpoint xy 0.000000, 0.000000
+@g0 fixedpoint format general general
+@g0 fixedpoint prec 6, 6
+@    world xmin 0
+@    world xmax 10
+@    world ymin 0
+@    world ymax 120
+@    stack world 0, 0, 0, 0 tick 0, 0, 0, 0
+@    view xmin 0.150000
+@    view xmax 0.850000
+@    view ymin 0.150000
+@    view ymax 0.850000
+@    title ""
+@    title font 4
+@    title size 1.500000
+@    title color 1
+@    title linewidth 1
+@    subtitle ""
+@    subtitle font 4
+@    subtitle size 1.000000
+@    subtitle color 1
+@    subtitle linewidth 1
+@    s0 symbol 2
+@    s0 symbol size 1.000000
+@    s0 symbol fill 1
+@    s0 symbol color 1
+@    s0 symbol linewidth 1
+@    s0 symbol linestyle 1
+@    s0 symbol center false
+@    s0 symbol char 0
+@    s0 skip 0
+@    s0 linestyle 0
+@    s0 linewidth 1
+@    s0 color 1
+@    s0 fill 0
+@    s0 fill with color
+@    s0 fill color 1
+@    s0 fill pattern 0
+@    s0 errorbar type BOTH
+@    s0 errorbar length 1.000000
+@    s0 errorbar linewidth 1
+@    s0 errorbar linestyle 1
+@    s0 errorbar riser on
+@    s0 errorbar riser linewidth 1
+@    s0 errorbar riser linestyle 1
+@    s0 xyz 0.000000, 0.000000
+@    s0 comment "/slakhome/brash/phys372/temp.data"
+@    s1 symbol 0
+@    s1 symbol size 1.000000
+@    s1 symbol fill 0
+@    s1 symbol color 1
+@    s1 symbol linewidth 1
+@    s1 symbol linestyle 0
+@    s1 symbol center false
+@    s1 symbol char 0
+@    s1 skip 0
+@    s1 linestyle 2
+@    s1 linewidth 2
+@    s1 color 1
+@    s1 fill 0
+@    s1 fill with color
+@    s1 fill color 1
+@    s1 fill pattern 0
+@    s1 errorbar type BOTH
+@    s1 errorbar length 0.000000
+@    s1 errorbar linewidth 1
+@    s1 errorbar linestyle 1
+@    s1 errorbar riser on
+@    s1 errorbar riser linewidth 1
+@    s1 errorbar riser linestyle 1
+@    s1 xyz 0.000000, 0.000000
+@    s1 comment "/slakhome/brash/phys372/fit.data"
+@    s5 symbol 0
+@    s5 symbol size 1.000000
+@    s5 symbol fill 0
+@    s5 symbol color 1
+@    s5 symbol linewidth 1
+@    s5 symbol linestyle 1
+@    s5 symbol center false
+@    s5 symbol char 0
+@    s5 skip 0
+@    s5 linestyle 1
+@    s5 linewidth 2
+@    s5 color 1
+@    s5 fill 0
+@    s5 fill with color
+@    s5 fill color 1
+@    s5 fill pattern 0
+@    s5 errorbar type BOTH
+@    s5 errorbar length 1.000000
+@    s5 errorbar linewidth 1
+@    s5 errorbar linestyle 1
+@    s5 errorbar riser on
+@    s5 errorbar riser linewidth 1
+@    s5 errorbar riser linestyle 1
+@    s5 xyz 0.000000, 0.000000
+@    s5 comment "3 deg fit of set 0"
+@    s7 symbol 0
+@    s7 symbol size 1.000000
+@    s7 symbol fill 0
+@    s7 symbol color 1
+@    s7 symbol linewidth 1
+@    s7 symbol linestyle 1
+@    s7 symbol center false
+@    s7 symbol char 0
+@    s7 skip 0
+@    s7 linestyle 4
+@    s7 linewidth 2
+@    s7 color 1
+@    s7 fill 0
+@    s7 fill with color
+@    s7 fill color 1
+@    s7 fill pattern 0
+@    s7 errorbar type BOTH
+@    s7 errorbar length 1.000000
+@    s7 errorbar linewidth 1
+@    s7 errorbar linestyle 1
+@    s7 errorbar riser on
+@    s7 errorbar riser linewidth 1
+@    s7 errorbar riser linestyle 1
+@    s7 xyz 0.000000, 0.000000
+@    s7 comment "4 deg fit of set 0"
+@    s8 symbol 0
+@    s8 symbol size 1.000000
+@    s8 symbol fill 0
+@    s8 symbol color 1
+@    s8 symbol linewidth 1
+@    s8 symbol linestyle 1
+@    s8 symbol center false
+@    s8 symbol char 0
+@    s8 skip 0
+@    s8 linestyle 5
+@    s8 linewidth 2
+@    s8 color 1
+@    s8 fill 0
+@    s8 fill with color
+@    s8 fill color 1
+@    s8 fill pattern 0
+@    s8 errorbar type BOTH
+@    s8 errorbar length 1.000000
+@    s8 errorbar linewidth 1
+@    s8 errorbar linestyle 1
+@    s8 errorbar riser on
+@    s8 errorbar riser linewidth 1
+@    s8 errorbar riser linestyle 1
+@    s8 xyz 0.000000, 0.000000
+@    s8 comment "2 deg fit of set 0"
+@    xaxis  tick on
+@    xaxis  tick major 2
+@    xaxis  tick minor 1
+@    xaxis  tick offsetx 0.000000
+@    xaxis  tick offsety 0.000000
+@    xaxis  label "Position (cm)"
+@    xaxis  label layout para
+@    xaxis  label place auto
+@    xaxis  label char size 1.000000
+@    xaxis  label font 4
+@    xaxis  label color 1
+@    xaxis  label linewidth 1
+@    xaxis  ticklabel on
+@    xaxis  ticklabel type auto
+@    xaxis  ticklabel prec 5
+@    xaxis  ticklabel format general
+@    xaxis  ticklabel append ""
+@    xaxis  ticklabel prepend ""
+@    xaxis  ticklabel layout horizontal
+@    xaxis  ticklabel place on ticks
+@    xaxis  ticklabel skip 0
+@    xaxis  ticklabel stagger 0
+@    xaxis  ticklabel op bottom
+@    xaxis  ticklabel sign normal
+@    xaxis  ticklabel start type auto
+@    xaxis  ticklabel start 0.000000
+@    xaxis  ticklabel stop type auto
+@    xaxis  ticklabel stop 0.000000
+@    xaxis  ticklabel char size 1.000000
+@    xaxis  ticklabel font 4
+@    xaxis  ticklabel color 1
+@    xaxis  ticklabel linewidth 1
+@    xaxis  tick major on
+@    xaxis  tick minor on
+@    xaxis  tick default 6
+@    xaxis  tick in
+@    xaxis  tick major color 1
+@    xaxis  tick major linewidth 1
+@    xaxis  tick major linestyle 1
+@    xaxis  tick minor color 1
+@    xaxis  tick minor linewidth 1
+@    xaxis  tick minor linestyle 1
+@    xaxis  tick log off
+@    xaxis  tick size 1.000000
+@    xaxis  tick minor size 0.500000
+@    xaxis  bar off
+@    xaxis  bar color 1
+@    xaxis  bar linestyle 1
+@    xaxis  bar linewidth 1
+@    xaxis  tick major grid off
+@    xaxis  tick minor grid off
+@    xaxis  tick op both
+@    xaxis  tick type auto
+@    xaxis  tick spec 0
+@    yaxis  tick on
+@    yaxis  tick major 20
+@    yaxis  tick minor 10
+@    yaxis  tick offsetx 0.000000
+@    yaxis  tick offsety 0.000000
+@    yaxis  label "Temperature (\So\NC)"
+@    yaxis  label layout para
+@    yaxis  label place auto
+@    yaxis  label char size 1.000000
+@    yaxis  label font 4
+@    yaxis  label color 1
+@    yaxis  label linewidth 1
+@    yaxis  ticklabel on
+@    yaxis  ticklabel type auto
+@    yaxis  ticklabel prec 5
+@    yaxis  ticklabel format general
+@    yaxis  ticklabel append ""
+@    yaxis  ticklabel prepend ""
+@    yaxis  ticklabel layout horizontal
+@    yaxis  ticklabel place on ticks
+@    yaxis  ticklabel skip 0
+@    yaxis  ticklabel stagger 0
+@    yaxis  ticklabel op left
+@    yaxis  ticklabel sign normal
+@    yaxis  ticklabel start type auto
+@    yaxis  ticklabel start 0.000000
+@    yaxis  ticklabel stop type auto
+@    yaxis  ticklabel stop 0.000000
+@    yaxis  ticklabel char size 1.000000
+@    yaxis  ticklabel font 4
+@    yaxis  ticklabel color 1
+@    yaxis  ticklabel linewidth 1
+@    yaxis  tick major on
+@    yaxis  tick minor on
+@    yaxis  tick default 6
+@    yaxis  tick in
+@    yaxis  tick major color 1
+@    yaxis  tick major linewidth 1
+@    yaxis  tick major linestyle 1
+@    yaxis  tick minor color 1
+@    yaxis  tick minor linewidth 1
+@    yaxis  tick minor linestyle 1
+@    yaxis  tick log off
+@    yaxis  tick size 1.000000
+@    yaxis  tick minor size 0.500000
+@    yaxis  bar off
+@    yaxis  bar color 1
+@    yaxis  bar linestyle 1
+@    yaxis  bar linewidth 1
+@    yaxis  tick major grid off
+@    yaxis  tick minor grid off
+@    yaxis  tick op both
+@    yaxis  tick type auto
+@    yaxis  tick spec 0
+@    zeroxaxis  tick on
+@    zeroxaxis  tick major 2
+@    zeroxaxis  tick minor 1
+@    zeroxaxis  tick offsetx 0.000000
+@    zeroxaxis  tick offsety 0.000000
+@    zeroxaxis  label ""
+@    zeroxaxis  label layout para
+@    zeroxaxis  label place auto
+@    zeroxaxis  label char size 1.000000
+@    zeroxaxis  label font 4
+@    zeroxaxis  label color 1
+@    zeroxaxis  label linewidth 1
+@    zeroxaxis  ticklabel off
+@    zeroxaxis  ticklabel type auto
+@    zeroxaxis  ticklabel prec 5
+@    zeroxaxis  ticklabel format general
+@    zeroxaxis  ticklabel append ""
+@    zeroxaxis  ticklabel prepend ""
+@    zeroxaxis  ticklabel layout horizontal
+@    zeroxaxis  ticklabel place on ticks
+@    zeroxaxis  ticklabel skip 0
+@    zeroxaxis  ticklabel stagger 0
+@    zeroxaxis  ticklabel op bottom
+@    zeroxaxis  ticklabel sign normal
+@    zeroxaxis  ticklabel start type auto
+@    zeroxaxis  ticklabel start 0.000000
+@    zeroxaxis  ticklabel stop type auto
+@    zeroxaxis  ticklabel stop 0.000000
+@    zeroxaxis  ticklabel char size 1.000000
+@    zeroxaxis  ticklabel font 4
+@    zeroxaxis  ticklabel color 1
+@    zeroxaxis  ticklabel linewidth 1
+@    zeroxaxis  tick major off
+@    zeroxaxis  tick minor on
+@    zeroxaxis  tick default 6
+@    zeroxaxis  tick in
+@    zeroxaxis  tick major color 1
+@    zeroxaxis  tick major linewidth 1
+@    zeroxaxis  tick major linestyle 1
+@    zeroxaxis  tick minor color 1
+@    zeroxaxis  tick minor linewidth 1
+@    zeroxaxis  tick minor linestyle 1
+@    zeroxaxis  tick log off
+@    zeroxaxis  tick size 1.000000
+@    zeroxaxis  tick minor size 0.500000
+@    zeroxaxis  bar off
+@    zeroxaxis  bar color 1
+@    zeroxaxis  bar linestyle 1
+@    zeroxaxis  bar linewidth 1
+@    zeroxaxis  tick major grid off
+@    zeroxaxis  tick minor grid off
+@    zeroxaxis  tick op both
+@    zeroxaxis  tick type auto
+@    zeroxaxis  tick spec 0
+@    zeroyaxis  tick on
+@    zeroyaxis  tick major 50
+@    zeroyaxis  tick minor 25
+@    zeroyaxis  tick offsetx 0.000000
+@    zeroyaxis  tick offsety 0.000000
+@    zeroyaxis  label ""
+@    zeroyaxis  label layout para
+@    zeroyaxis  label place auto
+@    zeroyaxis  label char size 1.000000
+@    zeroyaxis  label font 4
+@    zeroyaxis  label color 1
+@    zeroyaxis  label linewidth 1
+@    zeroyaxis  ticklabel off
+@    zeroyaxis  ticklabel type auto
+@    zeroyaxis  ticklabel prec 5
+@    zeroyaxis  ticklabel format general
+@    zeroyaxis  ticklabel append ""
+@    zeroyaxis  ticklabel prepend ""
+@    zeroyaxis  ticklabel layout horizontal
+@    zeroyaxis  ticklabel place on ticks
+@    zeroyaxis  ticklabel skip 0
+@    zeroyaxis  ticklabel stagger 0
+@    zeroyaxis  ticklabel op left
+@    zeroyaxis  ticklabel sign normal
+@    zeroyaxis  ticklabel start type auto
+@    zeroyaxis  ticklabel start 0.000000
+@    zeroyaxis  ticklabel stop type auto
+@    zeroyaxis  ticklabel stop 0.000000
+@    zeroyaxis  ticklabel char size 1.000000
+@    zeroyaxis  ticklabel font 4
+@    zeroyaxis  ticklabel color 1
+@    zeroyaxis  ticklabel linewidth 1
+@    zeroyaxis  tick major off
+@    zeroyaxis  tick minor on
+@    zeroyaxis  tick default 6
+@    zeroyaxis  tick in
+@    zeroyaxis  tick major color 1
+@    zeroyaxis  tick major linewidth 1
+@    zeroyaxis  tick major linestyle 1
+@    zeroyaxis  tick minor color 1
+@    zeroyaxis  tick minor linewidth 1
+@    zeroyaxis  tick minor linestyle 1
+@    zeroyaxis  tick log off
+@    zeroyaxis  tick size 1.000000
+@    zeroyaxis  tick minor size 0.500000
+@    zeroyaxis  bar off
+@    zeroyaxis  bar color 1
+@    zeroyaxis  bar linestyle 1
+@    zeroyaxis  bar linewidth 1
+@    zeroyaxis  tick major grid off
+@    zeroyaxis  tick minor grid off
+@    zeroyaxis  tick op both
+@    zeroyaxis  tick type auto
+@    zeroyaxis  tick spec 0
+@    legend on
+@    legend loctype view
+@    legend layout 0
+@    legend vgap 2
+@    legend hgap 1
+@    legend length 4
+@    legend box on
+@    legend box fill on
+@    legend box fill with color
+@    legend box fill color 0
+@    legend box fill pattern 1
+@    legend box color 1
+@    legend box linewidth 1
+@    legend box linestyle 1
+@    legend x1 0.2
+@    legend y1 0.8
+@    legend font 4
+@    legend char size 1.000000
+@    legend linestyle 1
+@    legend linewidth 1
+@    legend color 1
+@    legend string 0 "Experimental Data"
+@    legend string 1 "Fit (a=4.8+/-3.6, b=9.4+/-0.7"
+@    legend string 5 "Cubic Fit"
+@    legend string 7 "4th Order Fit"
+@    legend string 8 "Quadratic Fit"
+@    frame on
+@    frame type 0
+@    frame linestyle 1
+@    frame linewidth 1
+@    frame color 1
+@    frame fill off
+@    frame background color 0
+@WITH G0
+@G0 ON
+@TARGET S0
+@TYPE xydy
+1 15.6 5
+2 17.5 5
+3 36.6 5
+4 43.8 5
+5 58.2 5
+6 61.6 5
+7 64.2 5
+8 70.4 5
+9 98.8 5
+&
+@TARGET S1
+@TYPE xydy
+1 14.2222 0
+2 23.6305 0
+3 33.0389 0
+4 42.4472 0
+5 51.8556 0
+6 61.2639 0
+7 70.6722 0
+8 80.0806 0
+9 89.4889 0
+&
+@TARGET S5
+@TYPE xy
+               1          10.8949
+               2          25.7207
+               3          36.4941
+               4          44.6065
+               5          51.4494
+               6          58.4141
+               7          66.8921
+               8          78.2747
+               9          93.9535
+&
+@TARGET S7
+@TYPE xy
+               1          15.3922
+               2          18.9749
+               3          32.9606
+               4          47.4976
+               5          57.2315
+               6          61.3051
+               7          63.3585
+               8          71.5289
+               9          98.4507
+&
+@TARGET S8
+@TYPE xy
+               1          14.7909
+               2          23.7727
+               3          32.8764
+               4          42.1019
+               5          51.4494
+               6          60.9186
+               7          70.5097
+               8          80.2227
+               9          90.0576
+&

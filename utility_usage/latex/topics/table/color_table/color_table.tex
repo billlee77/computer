@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+
+\usepackage{times}
+%\usepackage[table]{xcolor}
+\usepackage[usenames,dvipsnames, table]{xcolor}
+
+
+\usepackage{booktabs}
+
+\definecolor{orange}{rgb}{1,0.5,0}
+
+\newcommand{\oic}{(Original In Color)}% Current row font
+
+\setlength{\abovecaptionskip}{6pt}   % 0.5cm as an example
+\setlength{\belowcaptionskip}{6pt}   % 0.5cm as an example
+
+\begin{document}
+
+\begin{table}[t]
+\centering
+\caption[Overall Mirror Quality Summary]{Overall mirror quality summary from coordinate measurement and optical test results. 90\% Fit $R$ and $\kappa$ are form Table \ref{fit_result_tab}; \# of Failed Criterion is deduced from Table \ref{mirror_select_tab}, FR/2$-$FL results are from Table \ref{optical_result_tab}, Blue-Green ratio results are from Table \ref{pixel_info}. The worst quality mirrors are highlighted in red; the average quality mirrors are highlighted in yellow; the best quality mirrors are highlighted in green. \oic}
+\begin{tabular}{ccccccc}
+\toprule%
+Mirror  & 90\% Fit& 90\% Fit & \# of Failed &  FR/2$-$FL &   Blue-Green  &  Overall \\        
+\#	    & $R$ (cm)& $\kappa$ & Criterion    &   (cm)    &    Ratio 	    &  Ranking \\    
+\toprule                                                                                 \rowcolor{Salmon}  %\rowcolor[rgb]{1,0.3,0.3}
+1		& 118.397 &  1.95    & 5            &   1.15    &    0.09	    &  Bad     \\    \rowcolor{GreenYellow}               %\rowcolor[cmyk]{0,0,0.5,0}
+2       & 113.124 &  1.06    & 5            &   2.24    &    0.39       &  Average \\    \rowcolor{GreenYellow}              %\rowcolor[cmyk]{0,0,0.5,0}
+3       & 117.110 &  1.70    & 5            &   2.99    &    0.70       &  Average \\    \rowcolor{Salmon}              %\rowcolor[rgb]{1,0.3,0.3}                           
+4       & 122.392 &  2.29    & 6            &   4.80    &    0.08       &  Bad     \\    \rowcolor{GreenYellow}             %\rowcolor[cmyk]{0,0,0.5,0}
+5       & 113.331 &  0.76    & 5            &  -0.14    &    0.14       &  Average \\    \rowcolor{TealBlue}             %\rowcolor[rgb]{0.3,0.8,0.3}
+6       & 112.906 &  0.94    & 2            &  -0.36    &    0.15       &  Good    \\    \rowcolor{GreenYellow}             %\rowcolor[cmyk]{0,0,0.5,0} 
+7       & 113.538 &  1.13    & 3            &   0.79    &    0.12       &  Reserve \\    \rowcolor{GreenYellow}             %\rowcolor[cmyk]{0,0,0.5,0}
+8       & 114.325 &  1.26    & 4            &   1.01    &    0.15       &  Average \\    \rowcolor{GreenYellow}             %\rowcolor[cmyk]{0,0,0.5,0}
+9       & 114.372 &  1.30    & 4            &   1.62    &    0.12       &  Reserve \\    \rowcolor{TealBlue}             %\rowcolor[rgb]{0.3,0.8,0.3} 
+10      & 112.035 &  0.42    & 0            &  -0.79    &    0.14       &  Good    \\    \rowcolor{TealBlue}             %\rowcolor[rgb]{0.3,0.8,0.3} 
+11      & 111.766 &  0.75    & 1            &   0.73    &    0.12       &  Good    \\    \rowcolor{TealBlue}             %\rowcolor[rgb]{0.3,0.8,0.3} 
+12      & 112.117 &  0.84    & 1            &   0.24    &    0.12       &  Good    \\    \rowcolor{Salmon}             %\rowcolor[rgb]{1,0.3,0.3}                           
+13      & 122.464 &  2.43    & 6            &   3.19    &    0.01       &  Bad     \\    \rowcolor{Salmon}             %\rowcolor[rgb]{1,0.3,0.3}
+14      & 117.964 &  1.59    & 6            &   3.41    &    0.14       &  Bad     \\    \rowcolor{GreenYellow}             %\rowcolor[cmyk]{0,0,0.5,0}
+15      & 113.674 &  1.17    & 5            &   2.10    &    0.18       &  Average \\    
+\bottomrule
+\end{tabular}
+\label{table_master}
+\end{table}
+
+
+
+\end{document}
+

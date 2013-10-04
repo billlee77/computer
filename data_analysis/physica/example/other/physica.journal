@@ -1,0 +1,32 @@
+********************************************************************************
+***                                                                          ***
+*** PHYSICA                      VERSION # 2.77               November  2005 ***
+*** Copyright (C) 1992,...,2005                              Joseph L. Chuma ***
+***                           All rights reserved                            ***
+***                                                                          ***
+***  Enter NEWS to get the latest information on new commands and features   ***
+***  Latest news added on November 21, 2005                                  ***
+***  Journal file: physica.journal                                           ***
+***                                                                          ***
+***            UNAUTHORIZED COMMERCIAL USE IS STRICTLY PROHIBITED            ***
+***                                                                          ***
+*** Physica 3.0 for the Windows environment has been released under the name ***
+*** Extrema. See www.extremasoftware.com                                     ***
+***                                                                          ***
+********************************************************************************
+User: billlee   Date: 05-Jan-2011 16:41:18
+ Default graphics hardcopy device: PostScript: colour, paper size A
+ executing initialization file: /home/billlee/.physicarc
+ HYSICA: .q
+     invalid command
+ HYSICA: ks
+     invalid command
+ HYSICA: ls
+     invalid command
+ HYSICA: ls
+     invalid command
+ HYSICA: .q
+     invalid command
+ HYSICA: q
+     invalid command
+ HYSICA: exit

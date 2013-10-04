@@ -1,0 +1,22 @@
+clear
+x=[0:20]
+y=x^2-20*x+50
+yel=10*ran(x)
+yeu=10*ran(x)
+yes=20*ran(x)
+
+set pchar -1
+label\xaxis `Asymmetric errors'
+graph x y yel,, yeu
+
+
+!window 0
+device postscript
+hardcopy S text1.eps
+
+!window 0
+label\xaxis `Asymmetric errors'
+graph x y yes
+hardcopy S text2.eps
+clear
+

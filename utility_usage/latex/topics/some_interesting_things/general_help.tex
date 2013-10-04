@@ -1,0 +1,67 @@
+\documentclass[12pt,a4,onecolumn]{article}
+
+\begin{document}
+
+\begin{flushright}
+  \begin{tabular}{l}
+    one row \\
+    two row \\
+    three row
+  \end{tabular}
+\end{flushright}
+
+% \raggedleft
+
+%%%%%************************************************************************
+% Starting package
+
+% Fonts
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{upgreek}
+\usepackage{fourier}
+\usepackage{mathrsfs}
+%\usepackage{counters}
+
+% Reference
+\usepackage[english]{babel}
+%\usepackage[square, super]{natbib}
+\usepackage{natbib}
+\usepackage{booktabs}
+
+% Extra package: hyperlink & setspace & fullpage
+\usepackage{fullpage}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+% hyperlink setup
+\hypersetup{
+	colorlinks=false,
+	linkbordercolor=1 1 1,
+}
+
+% Netbib setup
+\bibpunct{[}{]}{,}{a}{}{;}
+
+% Define new command
+\newcommand\etc{\textsl{etc}}
+\newcommand\eg{\textsl{eg.}\ }
+\newcommand\etal{\textsl{et al.}}
+
+\newcommand\Quote[1]{\lq\textsl{#1}\rq}
+\newcommand\fr[2]{{\textstyle\frac{#1}{#2}}}
+
+%symbol
+\newcommand\solarm{$M_{\odot}$}
+\newcommand*{\xymove}[3]{\makebox[0pt][l]{\mbox{}\hspace{#1}\raisebox{#2}[0pt][0pt]{#3}}}
+
+% Roman letter
+
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+
+\end{document}

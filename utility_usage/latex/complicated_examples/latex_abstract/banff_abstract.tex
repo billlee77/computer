@@ -1,0 +1,69 @@
+\documentclass{article}
+
+% LaTeX2e abstract template for WNPPC 2013
+%
+% Abstract to be submitted by Jan 13, 2013
+%
+% E-mail your 2013 abstract to leahy@ucalgary.ca
+
+%----------------------------------------------------------------------
+% Typeset document in the Times font rather than Computer Modern Roman
+
+\renewcommand{\rmdefault}{ptm}
+%\usepackage{times}             % Use if \renewcommand{\rmdefault}{ptm}
+                                % does not work.
+
+%----------------------------------------------------------------------
+
+% Use Michel Goossens' dense lists Itemize, Enumerate and Description
+% Prevent infinite loops
+
+\let\Otemize =\itemize
+\let\Onumerate =\enumerate
+\let\Oescription =\description
+% Zero the vertical spacing parameters
+\def\Nospacing{\itemsep=0pt\topsep=0pt\partopsep=0pt\parskip=0pt\parsep=0pt}
+% Redefine the environments in terms of the original values
+\newenvironment{Itemize}{\Otemize\Nospacing}{\endlist}
+\newenvironment{Enumerate}{\Onumerate\Nospacing}{\endlist}
+\newenvironment{Description}{\Oescription\Nospacing}{\endlist}
+
+%----------------------------------------------------------------------
+
+\newcommand{\Title}[1]{{\Large\bfseries\boldmath\uppercase{#1}}}
+\newcommand{\presentingauthor}[1]{{\large\underline{#1}}}
+\newcommand{\otherauthor}[1]{{\large{#1}}}
+\newcommand{\institution}[1]{{\large\emph{#1}}}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\oddsidemargin   0mm
+\parindent       5mm
+\parskip      0.25\baselineskip
+\topmargin     -12mm
+\textheight    200mm
+\textwidth     165mm
+\frenchspacing
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\Large
+\Title{Cherenkov Mirror Reflectivity Measurements for Hall C at Jefferson  Lab}%
+      \\[4mm]
+\large
+\presentingauthor{Wenliang Li}%
+      % Optional footnote:
+      {\footnote{\emph{E-mail:} Li429@uregina.ca}}%
+      , % Leave comma if more than one author, delete if single author.
+%
+% Enter other authors and institutions, grouped by institution, below:
+\\[1mm]
+\institution{University of Regina}
+\\[3mm]
+\end{center}
+
+Jefferson Lab (JLab) has undertaken the 12 GeV Upgrade to double the accelerating energy of its electron beam. This attracts many interesting proposals to probe the quark-gluon nature of nuclear matter at higher energy, therefore a new set of experimental equipment is required. Hall C of JLab has planned to construct a new Super High Momentum Spectrometer (SHMS) to replace the existing Short Orbit Spectrometer (SOS). The University of Regina is assigned to construct the Heavy Gas Cherenkov (HGC) Detector as part of the SHMS focal plane detectors. The HGC consists of four aluminized mirrors which are required to reflect 70-90\% of UV photons between 200-400 nm wavelength. In this talk, we present latest SHMS HGC mirror reflectivity results obtained with the reflectivity measurement setup at JLab. This setup uses the lock-in amplification technique, which uses a photo-diode instead of a PMT, and is capable of measuring large size optics up to 60 cm X 55 cm.
+
+
+\end{document}

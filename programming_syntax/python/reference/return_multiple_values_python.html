@@ -1,0 +1,1074 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+
+    
+    <title>coding style - How do you return multiple values in Python? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <script src="return_multiple_values_python_files/ga.js" async="" type="text/javascript"></script><script src="return_multiple_values_python_files/adzerk1_2_4_43adzerk2_2_17_45adzerk3_2_4_44.html" async="" type="text/javascript"></script><script type="text/javascript" src="return_multiple_values_python_files/jquery.js"></script>
+    <script type="text/javascript" src="return_multiple_values_python_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="return_multiple_values_python_files/all.css">
+    
+    <link rel="canonical" href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'How do you return multiple values in Python?'" href="http://stackoverflow.com/feeds/question/354883">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+
+            StackExchange.question.init({showAnswerHelp:true,questionId:354883});
+
+            styleCode();
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"http://stackauth.com","serverTime":1309049095,"styleCode":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers"},"user":{"isAnonymous":true,"fkey":"3dff4168a892bdde1e5710ba094ea642","inboxUnviewedCount":-1}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"dcf6d862901d","js/moderator.js":"8e87c1c40b0e","js/full-anon.js":"e03725643238","js/full.js":"819a14de65d6","js/wmd.js":"28bd1c0690e0","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"df1de0a3b4c4","js/help.js":"fbef715fc699"});
+    </script>
+
+</head><body style="margin-top: 2.5em;" class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"><div id="notify--1" style=""><span class="notify-close"><a title="dismiss this notification">×</a></span><span class="notify-text">Welcome to Q&amp;A for professional and enthusiast programmers — check out the <a onclick="StackExchange.notify.closeFirstTime(); return false;" href="http://stackoverflow.com/faq">FAQ</a>!</span></div></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+     
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    <span id="hlinks-user">
+                  
+                  </span>
+                  <span id="hlinks-nav">
+                  <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f354883%2fhow-do-you-return-multiple-values-in-python">log in</a>
+ <span class="lsep">|</span>
+ <a href="http://blog.stackoverflow.com/">blog</a>
+ <span class="lsep">|</span>
+<a href="http://careers.stackoverflow.com/">careers</a>
+ <span class="lsep">|</span>
+
+                  </span>
+                  <span id="hlinks-custom">
+                  <a href="http://chat.stackoverflow.com/">chat</a>
+ <span class="lsep">|</span>
+<a href="http://meta.stackoverflow.com/">meta</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/about">about</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/faq">faq</a>
+                  </span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get">
+                    <div>
+                        <input name="q" class="textbox" tabindex="1" onfocus="if (this.value=='search') this.value = ''" maxlength="140" size="28" value="search" type="text">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            
+
+
+
+<div id="question-header">
+    <h1><a href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python" class="question-hyperlink">How do you return multiple values in Python?</a></h1>
+</div>
+<div id="mainbar">
+
+
+<div id="question">
+
+    <div class="everyonelovesstackoverflow" id="adzerk1"><a href="http://engine.adzerk.net/redirect/0/2568/2444/8277/f7add1caeb3f4839a7dd98aa3edc66bc/43/1178/2292/634446206955316604?keywords=python%2ccoding-style" rel="nofollow" target="_blank" title=""><img src="return_multiple_values_python_files/2568.bin" title="" alt="" height="90" width="728" border="0"></a></div>
+
+    
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+<div class="vote">
+    <input value="354883" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">22</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>5</b></div>    
+
+</div>
+
+    </td>
+    <td class="postcell">
+        <div>          
+            <div class="post-text">
+                <p>The canonical way to return multiple values in languages that support it is often <a href="http://stackoverflow.com/questions/38508/whats-the-best-way-to-return-multiple-values-from-a-function-in-python">tupling</a>. </p>
+
+<p>Consider this trivial example:</p>
+
+<pre class="default prettyprint"><code><span class="kwd">def</span><span class="pln"> f</span><span class="pun">(</span><span class="pln">x</span><span class="pun">):</span><span class="pln"><br>&nbsp; y0 </span><span class="pun">=</span><span class="pln"> x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pln"><br>&nbsp; y1 </span><span class="pun">=</span><span class="pln"> x </span><span class="pun">*</span><span class="pln"> </span><span class="lit">3</span><span class="pln"><br>&nbsp; y2 </span><span class="pun">=</span><span class="pln"> y0 </span><span class="pun">**</span><span class="pln"> y3<br>&nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">(</span><span class="pln">y0</span><span class="pun">,</span><span class="pln">y1</span><span class="pun">,</span><span class="pln">y2</span><span class="pun">)</span><span class="pln"><br></span></code></pre>
+
+<p>However, this quickly gets problematic as the number of values 
+returned increases. What if you want to return four or five values? 
+Sure, you could keep tupling them, but it gets easy to forget which 
+value is where. It's also rather ugly to unpack them wherever you want 
+to receive them.</p>
+
+<p>The next logical step seems to be to introduce some sort of 'record 
+notation'. In python, the obvious way to do this is by means of a <code>dict</code>. </p>
+
+<p>Consider the following:</p>
+
+<pre class="default prettyprint"><code><span class="kwd">def</span><span class="pln"> g</span><span class="pun">(</span><span class="pln">x</span><span class="pun">):</span><span class="pln"><br>&nbsp; y0 </span><span class="pun">=</span><span class="pln"> x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pln"><br>&nbsp; y1 </span><span class="pun">=</span><span class="pln"> x </span><span class="pun">*</span><span class="pln"> </span><span class="lit">3</span><span class="pln"><br>&nbsp; y2 </span><span class="pun">=</span><span class="pln"> y0 </span><span class="pun">**</span><span class="pln"> y3<br>&nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span><span class="str">'y0'</span><span class="pun">:</span><span class="pln">y0</span><span class="pun">,</span><span class="pln"> </span><span class="str">'y1'</span><span class="pun">:</span><span class="pln">y1 </span><span class="pun">,</span><span class="str">'y2'</span><span class="pun">:</span><span class="pln">y2 </span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p>(edit- Just to be clear, y0, y1 and y2 are just meant as abstract 
+identifiers. As pointed out, in practice you'd use meaningful 
+identifiers)</p>
+
+<p>Now, we have a mechanism whereby we can project out a particular member of the returned object. For example, </p>
+
+<pre class="default prettyprint"><code><span class="pln">result</span><span class="pun">[</span><span class="str">'y0'</span><span class="pun">]</span><span class="pln"><br></span></code></pre>
+
+<p>However, there is another option. We could instead return a 
+specialized structure. I've framed this in the context of Python, but 
+I'm sure it applies to other languages as well. Indeed, if you were 
+working in C this might very well be your only option. Here goes:</p>
+
+<pre class="default prettyprint"><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">ReturnValue</span><span class="pun">(</span><span class="kwd">object</span><span class="pun">):</span><span class="pln"><br>&nbsp; </span><span class="kwd">def</span><span class="pln"> __init__</span><span class="pun">(</span><span class="pln">y0</span><span class="pun">,</span><span class="pln"> y1</span><span class="pun">,</span><span class="pln"> y2</span><span class="pun">):</span><span class="pln"><br>&nbsp; &nbsp; &nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">y0 </span><span class="pun">=</span><span class="pln"> y0<br>&nbsp; &nbsp; &nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">y1 </span><span class="pun">=</span><span class="pln"> y1<br>&nbsp; &nbsp; &nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">y2 </span><span class="pun">=</span><span class="pln"> y2<br><br></span><span class="kwd">def</span><span class="pln"> g</span><span class="pun">(</span><span class="pln">x</span><span class="pun">):</span><span class="pln"><br>&nbsp; y0 </span><span class="pun">=</span><span class="pln"> x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pln"><br>&nbsp; y1 </span><span class="pun">=</span><span class="pln"> x </span><span class="pun">*</span><span class="pln"> </span><span class="lit">3</span><span class="pln"><br>&nbsp; y2 </span><span class="pun">=</span><span class="pln"> y0 </span><span class="pun">**</span><span class="pln"> y3<br>&nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="typ">ReturnValue</span><span class="pun">(</span><span class="pln">y0</span><span class="pun">,</span><span class="pln"> y1</span><span class="pun">,</span><span class="pln"> y2</span><span class="pun">)</span><span class="pln"><br></span></code></pre>
+
+<p>In python the previous two are perhaps very similar in terms of plumbing- After all <code>{ y0, y1, y2 }</code> just end up being entries in the internal <code>__dict__</code> of the ResultValue.</p>
+
+<p>There is one additional feature provided by Python though for tiny objects, the <code>__slots__</code> attribute. The class could be expressed as:</p>
+
+<pre class="default prettyprint"><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">ReturnValue</span><span class="pun">(</span><span class="kwd">object</span><span class="pun">):</span><span class="pln"><br>&nbsp; __slots__ </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="str">"y0"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"y1"</span><span class="pun">,</span><span class="pln"> </span><span class="str">"y2"</span><span class="pun">]</span><span class="pln"><br>&nbsp; </span><span class="kwd">def</span><span class="pln"> __init__</span><span class="pun">(</span><span class="pln">y0</span><span class="pun">,</span><span class="pln"> y1</span><span class="pun">,</span><span class="pln"> y2</span><span class="pun">):</span><span class="pln"><br>&nbsp; &nbsp; &nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">y0 </span><span class="pun">=</span><span class="pln"> y0<br>&nbsp; &nbsp; &nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">y1 </span><span class="pun">=</span><span class="pln"> y1<br>&nbsp; &nbsp; &nbsp;</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">y2 </span><span class="pun">=</span><span class="pln"> y2<br></span></code></pre>
+
+<p>"The <code>__slots__</code> declaration takes a sequence of instance 
+variables and reserves just enough space in each instance to hold a 
+value for each variable. Space is saved because <code>__dict__</code> is not created for each instance." <a href="http://www.network-theory.co.uk/docs/pylang/__slots__.html" rel="nofollow">Python reference manual</a>.</p>
+
+<p>Another suggestion which I'd overlooked comes from Bill the Lizard:
+    def h(x):
+      result = [x + 1]
+      result.append(x * 3)
+      result.append(y0 ** y3)
+      return result</p>
+
+<p>This is my least favorite method though. I suppose I'm tainted by 
+exposure to Haskell, but the idea of mixed-type lists has always felt 
+uncomfortable to me. In this particular example the list is -not- mixed 
+type, but it conceivably could be. A list used in this way really 
+doesn't gain anything with respect to the tuple as far as I can tell. 
+The only real difference between lists and tuples in Python is that 
+lists are <a href="http://docs.python.org/library/stdtypes.html#typesseq-mutable" rel="nofollow">mutable</a>,
+ wheras tuples are not. I personally tend to carry over the conventions 
+from functional programming: use lists for any number of elements of the
+ same type, and tuples for a fixed number of elements of predetermined 
+types.</p>
+
+<p>After the lengthy preamble, comes the inevitable question. Which method (do you think) is best?</p>
+
+<p>I've typically found myself going the dictionary route because it 
+involves less set-up work. From a types perspective however, you might 
+be better off going the class route, since that may help you avoid 
+confusing what a dictionary represents. On the other hand, there are 
+some in
+            </p></div>            
+            <div class="post-taglist">
+                <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag" title="show questions tagged 'python'" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/coding-style" class="post-tag" title="show questions tagged 'coding-style'" rel="tag">coding-style</a> 
+            </div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/q/354883" title="short permalink to this question" id="link-post-354883">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/354883/edit">improve this question</a></div>
+            </td>
+            <td class="post-signature" align="right">
+<div class="user-info"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/354883/revisions" title="show all edits to this post"><span title="2008-12-10 13:35:27Z" class="relativetime">Dec 10 '08 at 13:35</span></a></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/3850/hop"><img src="return_multiple_values_python_files/0c6524ce20ccace7c2f65e31e7f52ba7.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/3850/hop">hop</a><br><span class="reputation-score" title="reputation score">6,393</span><span title="13 silver badges"><span class="badge2"></span><span class="badgecount">13</span></span><span title="28 bronze badges"><span class="badge3"></span><span class="badgecount">28</span></span></div></div>            </td>
+                        
+
+            <td class="post-signature owner">
+            <div class="user-info"><div class="user-action-time">asked <span title="2008-12-10 01:55:50Z" class="relativetime">Dec 10 '08 at 1:55</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/37984/saffsd"><img src="return_multiple_values_python_files/7248c0f60179a3da4f600e89ce68ba07.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/37984/saffsd">saffsd</a><br><span class="reputation-score" title="reputation score">1,064</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="24 bronze badges"><span class="badge3"></span><span class="badgecount">24</span></span></div></div>
+                <br class="cbt">
+                <div class="accept-rate cool" title="this user has accepted an answer for 25 of 32 eligible questions">78% accept rate</div>
+            </td>
+            </tr>
+            </tbody></table>
+        </div>
+    </td>
+    </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-354883" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>    </tbody></table>    
+</div>
+
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>8 Answers</h2>
+            <div id="tabs">
+                <a href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>
+    </div>
+
+
+  
+    <a name="354955"></a>
+    <div id="answer-354955" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="354955" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">7</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>I prefer to use tuples whenever a 
+tuple feels "natural"; coordinates are a typical example, where the 
+separate objects can stand on their own, e.g. in one-axis only scaling 
+calculations.</p>
+
+<p>I use dictionaries as a return value only when the grouped objects aren't always the same. Think optional email headers.</p>
+
+<p>For the rest of the cases, where the grouped objects have inherent 
+meaning inside the group or a fully-fledged object with its own methods 
+is needed, I use a class.</p>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python/354955#354955" title="permalink to this answer" id="link-post-354955">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/354955/edit">improve this answer</a></div>
+            </td>
+            
+
+            <td class="post-signature" align="right">   
+       
+
+            <div class="user-info"><div class="user-action-time">answered <span title="2008-12-10 02:40:43Z" class="relativetime">Dec 10 '08 at 2:40</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/6899/"><img src="return_multiple_values_python_files/132aeb33251a1eddee3efc87633c0af1.jpg" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/6899/">ΤΖΩΤΖΙΟΥ</a><br><span class="reputation-score" title="reputation score 13008">13k</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="23 silver badges"><span class="badge2"></span><span class="badgecount">23</span></span><span title="49 bronze badges"><span class="badge3"></span><span class="badgecount">49</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-354955" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+    <div class="everyonelovesstackoverflow" id="adzerk3"><a href="http://engine.adzerk.net/redirect/0/3441/5394/8277/957d513ec3154f68bf9d5411afb22e91/44/1178/6387/634446206955472854?keywords=python%2ccoding-style" rel="nofollow" target="_blank" title=""><img src="return_multiple_values_python_files/3441.bin" title="" alt="" height="90" width="728" border="0"></a></div>
+
+    
+  
+    <a name="355036"></a>
+    <div id="answer-355036" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="355036" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">5</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>+1 on S.Lott's suggestion of a named container class.</p>
+
+<p>For python 2.6 and up, a <a href="http://docs.python.org/library/collections.html#collections.namedtuple" rel="nofollow">named tuple</a>
+ provides a useful way of easily creating these container classes, and 
+the results are "lightweight and require no more memory than regular 
+tuples".</p>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python/355036#355036" title="permalink to this answer" id="link-post-355036">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/355036/edit">improve this answer</a></div>
+            </td>
+            
+
+            <td class="post-signature" align="right">   
+       
+
+            <div class="user-info"><div class="user-action-time">answered <span title="2008-12-10 03:51:47Z" class="relativetime">Dec 10 '08 at 3:51</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/15154/john-fouhy"><img src="return_multiple_values_python_files/cdca0dc45085388c1b753104ce4c8648.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/15154/john-fouhy">John Fouhy</a><br><span class="reputation-score" title="reputation score">6,418</span><span title="12 silver badges"><span class="badge2"></span><span class="badgecount">12</span></span><span title="35 bronze badges"><span class="badge3"></span><span class="badgecount">35</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-355036" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-186942" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Thanks,
+ I hadn't heard of named tuples in python yet. I suppose their greatest 
+usefulness is in interfacing with existing code that returns tuples.</span> –&nbsp;<a href="http://stackoverflow.com/users/37984/saffsd" title="1064 reputation" class="comment-user owner">saffsd</a> <span class="comment-date"><span title="2008-12-10 04:38:23Z">Dec 10 '08 at 4:38</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="356695"></a>
+    <div id="answer-356695" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="356695" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">4</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p><a href="http://docs.python.org/library/collections.html#namedtuple-factory-function-for-tuples-with-named-fields" rel="nofollow">Named tuples</a> were added in 2.6 for this purpose.  Also see <a href="http://docs.python.org/library/os.html#os.stat" rel="nofollow">os.stat</a> for a similar builtin example.</p>
+
+<pre class="default prettyprint"><code><span class="pun">&gt;&gt;&gt;</span><span class="pln"> </span><span class="kwd">import</span><span class="pln"> collections<br></span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> point </span><span class="pun">=</span><span class="pln"> collections</span><span class="pun">.</span><span class="pln">namedtuple</span><span class="pun">(</span><span class="str">'Point'</span><span class="pun">,</span><span class="pln"> </span><span class="pun">[</span><span class="str">'x'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'y'</span><span class="pun">])</span><span class="pln"><br></span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> p </span><span class="pun">=</span><span class="pln"> point</span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> y</span><span class="pun">=</span><span class="lit">2</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> p</span><span class="pun">.</span><span class="pln">x</span><span class="pun">,</span><span class="pln"> p</span><span class="pun">.</span><span class="pln">y<br></span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2</span><span class="pun">)</span><span class="pln"><br></span><span class="pun">&gt;&gt;&gt;</span><span class="pln"> p</span><span class="pun">[</span><span class="lit">0</span><span class="pun">],</span><span class="pln"> p</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]</span><span class="pln"><br></span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2</span><span class="pun">)</span><span class="pln"><br></span></code></pre>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python/356695#356695" title="permalink to this answer" id="link-post-356695">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/356695/edit">improve this answer</a></div>
+            </td>
+            
+
+            <td class="post-signature" align="right">   
+       
+
+            <div class="user-info"><div class="user-action-time">answered <span title="2008-12-10 16:36:01Z" class="relativetime">Dec 10 '08 at 16:36</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/36433/coady"><img src="return_multiple_values_python_files/cfd315482372bc7a6123e865b785f9cd.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/36433/coady">Coady</a><br><span class="reputation-score" title="reputation score">2,900</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="11 bronze badges"><span class="badge3"></span><span class="badgecount">11</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-356695" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="354929"></a>
+    <div id="answer-354929" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="354929" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">3</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>For small projects I find it 
+easiest to work with tuples. When that gets too hard to manage (and not 
+before) I start grouping things into logical structures, however I think
+ your suggested use of dictionaries and ReturnValue objects is wrong (or
+ too simplistic).</p>
+
+<p>Returning a dictionary with keys y0, y1, y2 etc doesn't offer any 
+advantage over tuples. Returning a ReturnValue instance with properties 
+.y0 .y1 .y2 etc doesn't offer any advantage over tuples either. You need
+ to start naming things if you want to get anywhere, and you can do that
+ using tuples anyway:</p>
+
+<pre class="default prettyprint"><code><span class="kwd">def</span><span class="pln"> getImageData</span><span class="pun">(</span><span class="pln">filename</span><span class="pun">):</span><span class="pln"><br>&nbsp; </span><span class="pun">[</span><span class="pln">snip</span><span class="pun">]</span><span class="pln"><br>&nbsp; </span><span class="kwd">return</span><span class="pln"> size</span><span class="pun">,</span><span class="pln"> </span><span class="pun">(</span><span class="pln">format</span><span class="pun">,</span><span class="pln"> version</span><span class="pun">,</span><span class="pln"> compression</span><span class="pun">),</span><span class="pln"> </span><span class="pun">(</span><span class="pln">width</span><span class="pun">,</span><span class="pln">height</span><span class="pun">)</span><span class="pln"><br>size</span><span class="pun">,</span><span class="pln"> type</span><span class="pun">,</span><span class="pln"> dimensions </span><span class="pun">=</span><span class="pln"> getImageData</span><span class="pun">(</span><span class="pln">x</span><span class="pun">)</span><span class="pln"><br></span></code></pre>
+
+<p>IMHO, the only good technique beyond tuples is to return real objects with proper methods and properties, like you get from <code>re.match()</code> or <code>open(file)</code>.</p>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python/354929#354929" title="permalink to this answer" id="link-post-354929">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/354929/edit">improve this answer</a></div>
+            </td>
+            
+
+            <td class="post-signature" align="right">   
+       
+
+            <div class="user-info"><div class="user-action-time">answered <span title="2008-12-10 02:22:28Z" class="relativetime">Dec 10 '08 at 2:22</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/28835/too-much-php"><img src="return_multiple_values_python_files/34a7a029578b79cf4afa596ad4e3e72b.jpg" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/28835/too-much-php">too much php</a><br><span class="reputation-score" title="reputation score 12070">12.1k</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="33 silver badges"><span class="badge2"></span><span class="badgecount">33</span></span><span title="54 bronze badges"><span class="badge3"></span><span class="badgecount">54</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-354929" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="354918"></a>
+    <div id="answer-354918" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="354918" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">2</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>Generally, the "specialized structure" actually IS a sensible current state of an object, with its own methods.</p>
+
+<pre class="default prettyprint"><code><span class="kwd">class</span><span class="pln"> </span><span class="typ">Some3SpaceThing</span><span class="pun">(</span><span class="kwd">object</span><span class="pun">):</span><span class="pln"><br>&nbsp; </span><span class="kwd">def</span><span class="pln"> __init__</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln">x</span><span class="pun">):</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">g</span><span class="pun">(</span><span class="pln">x</span><span class="pun">)</span><span class="pln"><br>&nbsp; </span><span class="kwd">def</span><span class="pln"> g</span><span class="pun">(</span><span class="kwd">self</span><span class="pun">,</span><span class="pln">x</span><span class="pun">):</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">y0 </span><span class="pun">=</span><span class="pln"> x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">y1 </span><span class="pun">=</span><span class="pln"> x </span><span class="pun">*</span><span class="pln"> </span><span class="lit">3</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">y2 </span><span class="pun">=</span><span class="pln"> y0 </span><span class="pun">**</span><span class="pln"> y3<br><br>r </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Some3SpaceThing</span><span class="pun">(</span><span class="pln"> x </span><span class="pun">)</span><span class="pln"><br>r</span><span class="pun">.</span><span class="pln">y0<br>r</span><span class="pun">.</span><span class="pln">y1<br>r</span><span class="pun">.</span><span class="pln">y2<br></span></code></pre>
+
+<p>I like to find names for anonymous structures where possible.  Meaningful names make things more clear.</p>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python/354918#354918" title="permalink to this answer" id="link-post-354918">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/354918/edit">improve this answer</a></div>
+            </td>
+            <td class="post-signature" align="right">
+<div class="user-info"><div class="user-action-time">edited <a href="http://stackoverflow.com/posts/354918/revisions" title="show all edits to this post"><span title="2008-12-10 02:33:16Z" class="relativetime">Dec 10 '08 at 2:33</span></a></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/6899/"><img src="return_multiple_values_python_files/132aeb33251a1eddee3efc87633c0af1.jpg" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/6899/">ΤΖΩΤΖΙΟΥ</a><br><span class="reputation-score" title="reputation score 13008">13k</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="23 silver badges"><span class="badge2"></span><span class="badgecount">23</span></span><span title="49 bronze badges"><span class="badge3"></span><span class="badgecount">49</span></span></div></div>            </td>
+            
+
+            <td class="post-signature" align="right">   
+       
+
+            <div class="user-info"><div class="user-action-time">answered <span title="2008-12-10 02:15:34Z" class="relativetime">Dec 10 '08 at 2:15</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/10661/s-lott"><img src="return_multiple_values_python_files/c2c732bbf13dc96670b210b3c0c1ead5.jpg" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/10661/s-lott">S.Lott</a><br><span class="reputation-score" title="reputation score 121645">122k</span><span title="11 gold badges"><span class="badge1"></span><span class="badgecount">11</span></span><span title="108 silver badges"><span class="badge2"></span><span class="badgecount">108</span></span><span title="314 bronze badges"><span class="badge3"></span><span class="badgecount">314</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-354918" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="354892"></a>
+    <div id="answer-354892" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="354892" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>I prefer</p>
+
+<pre class="default prettyprint"><code><span class="kwd">def</span><span class="pln"> g</span><span class="pun">(</span><span class="pln">x</span><span class="pun">):</span><span class="pln"><br>&nbsp; y0 </span><span class="pun">=</span><span class="pln"> x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pln"><br>&nbsp; y1 </span><span class="pun">=</span><span class="pln"> x </span><span class="pun">*</span><span class="pln"> </span><span class="lit">3</span><span class="pln"><br>&nbsp; y2 </span><span class="pun">=</span><span class="pln"> y0 </span><span class="pun">**</span><span class="pln"> y3<br>&nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span><span class="str">'y0'</span><span class="pun">:</span><span class="pln">y0</span><span class="pun">,</span><span class="pln"> </span><span class="str">'y1'</span><span class="pun">:</span><span class="pln">y1 </span><span class="pun">,</span><span class="str">'y2'</span><span class="pun">:</span><span class="pln">y2 </span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p>it seems everything else is just extra code to do the same thing.</p>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python/354892#354892" title="permalink to this answer" id="link-post-354892">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/354892/edit">improve this answer</a></div>
+            </td>
+            
+
+            <td class="post-signature" align="right">   
+       
+
+            <div class="user-info"><div class="user-action-time">answered <span title="2008-12-10 02:00:49Z" class="relativetime">Dec 10 '08 at 2:00</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/115/unkwntech"><img src="return_multiple_values_python_files/198d6d4fed2012d939b47e63e561082f.jpg" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/115/unkwntech">Unkwntech</a><br><span class="reputation-score" title="reputation score 10065">10.1k</span><span title="11 gold badges"><span class="badge1"></span><span class="badgecount">11</span></span><span title="46 silver badges"><span class="badge2"></span><span class="badgecount">46</span></span><span title="113 bronze badges"><span class="badge3"></span><span class="badgecount">113</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-354892" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-187141" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Tuples are easier to unpack:
+y0, y1, y2 = g()
+with a dict you have to do:
+result = g()
+y0, y1, y2 = result.get('y0'), result.get('y1'), result.get('y2')
+which is a little bit ugly. Each solution has its 'pluses' and its 'minuses'.</span> –&nbsp;<a href="http://stackoverflow.com/users/22035/oli" title="2147 reputation" class="comment-user">Oli</a> <span class="comment-date"><span title="2008-12-10 07:46:26Z">Dec 10 '08 at 7:46</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="354896"></a>
+    <div id="answer-354896" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="354896" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>In languages like Python, I would usually use a dictionary as it involves less overhead than creating a new class.</p>
+
+<p>However, if I find myself constantly returning the same set of 
+variables, then that probably involves a new class that I'll factor out.</p>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python/354896#354896" title="permalink to this answer" id="link-post-354896">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/354896/edit">improve this answer</a></div>
+            </td>
+            
+
+            <td class="post-signature" align="right">   
+       
+
+            <div class="user-info"><div class="user-action-time">answered <span title="2008-12-10 02:02:37Z" class="relativetime">Dec 10 '08 at 2:02</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/12828/fluffels"><img src="return_multiple_values_python_files/ff7c972c4739072804a16b54e70bb33d.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/12828/fluffels">fluffels</a><br><span class="reputation-score" title="reputation score">1,099</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="30 bronze badges"><span class="badge3"></span><span class="badgecount">30</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-354896" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="354958"></a>
+    <div id="answer-354958" class="answer">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+<div class="vote">
+    <input value="354958" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+
+</div>
+
+        </td>
+        <td>
+            <div class="post-text"><p>I vote for the dictionary.</p>
+
+<p>I find that if I make a function that returns anything more than 2-3 
+variables I'll fold them up in a dictionary.  Otherwise I tend to forget
+ the order and content of what I'm returning.</p>
+
+<p>Also, introducing a 'special' structure makes your code more 
+difficult to follow. (Someone else will have to search through the code 
+to find out what it is)</p>
+
+<p>If your concerned about type look up, use descriptive dictionary keys, for example, 'x-values list'.</p>
+
+<pre class="default prettyprint"><code><span class="kwd">def</span><span class="pln"> g</span><span class="pun">(</span><span class="pln">x</span><span class="pun">):</span><span class="pln"><br>&nbsp; y0 </span><span class="pun">=</span><span class="pln"> x </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pln"><br>&nbsp; y1 </span><span class="pun">=</span><span class="pln"> x </span><span class="pun">*</span><span class="pln"> </span><span class="lit">3</span><span class="pln"><br>&nbsp; y2 </span><span class="pun">=</span><span class="pln"> y0 </span><span class="pun">**</span><span class="pln"> y3<br>&nbsp; </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span><span class="str">'y0'</span><span class="pun">:</span><span class="pln">y0</span><span class="pun">,</span><span class="pln"> </span><span class="str">'y1'</span><span class="pun">:</span><span class="pln">y1 </span><span class="pun">,</span><span class="str">'y2'</span><span class="pun">:</span><span class="pln">y2 </span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+</div>
+            <table class="fw">
+            <tbody><tr>
+            <td class="vt">
+                <div class="post-menu"><a href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python/354958#354958" title="permalink to this answer" id="link-post-354958">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/354958/edit">improve this answer</a></div>
+            </td>
+            
+
+            <td class="post-signature" align="right">   
+       
+
+            <div class="user-info"><div class="user-action-time">answered <span title="2008-12-10 02:42:05Z" class="relativetime">Dec 10 '08 at 2:42</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/24718/monkut"><img src="return_multiple_values_python_files/41cf21bb4bd9c12edb82ff624ed363a3.png" alt="" height="32" width="32"></a></div><div class="user-details"><a href="http://stackoverflow.com/users/24718/monkut">monkut</a><br><span class="reputation-score" title="reputation score">5,354</span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="37 bronze badges"><span class="badge3"></span><span class="badgecount">37</span></span></div></div>
+            </td>
+            </tr>
+            </tbody></table>
+        </td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-354958" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+    
+    <a name="new-answer"></a>
+    <form id="post-form" action="/questions/354883/answer/submit" method="post">
+        <h2 class="space">Your Answer</h2>
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+     
+        initTagRenderer("".split(" "), "".split(" "));
+
+        
+            prepareEditor({
+                
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                onDemand: true
+                ,autoShowMarkdownHelp:true
+            });
+        
+    });  
+</script>
+
+
+
+
+<div id="post-editor">  
+
+    
+    <div id="wmd-container">
+        <div id="wmd-button-bar"><ul id="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+        <textarea id="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height: 24px;">&nbsp;</div>
+    <div id="draft-saved" class="community-option fl" style="margin-top: 8px; height: 24px; display: none;">draft saved</div>
+
+
+    <div id="wmd-preview"></div>
+    <div id="wmd-final"></div>
+
+
+    <div id="edit-block">
+        <input id="fkey" name="fkey" value="3dff4168a892bdde1e5710ba094ea642" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>   
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+        <td class="vm open-id-login">
+            <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f354883%2fhow-do-you-return-multiple-values-in-python">log in</a>
+            <script type="text/javascript">
+                StackExchange.ready(function () {
+                    StackExchange.helpers.onClickDraftSave('#login-link');
+                });
+            </script>
+        </td>
+
+    
+        <td class="orcell">
+            <div class="orword">or</div>
+            <div class="orline"></div>
+        </td>
+        <td class="vm">
+            <div>
+                <label for="display-name">Name</label>
+                <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+            </div>
+            <div>
+                <label for="m-address">Email</label>
+                <input id="m-address" name="m-address" size="40" maxlength="100" tabindex="106" type="text">
+                <span class="edit-field-overlay">required, but never shown</span>
+            </div>
+            <div>
+                <label for="home-page">Home Page</label>
+                <input id="home-page" name="home-page" size="40" maxlength="200" tabindex="107" type="text">
+            </div>
+        </td>
+    
+        </tr>
+        </tbody></table>
+    </div>
+               
+        <div class="form-submit cbt"><input id="submit-button" value="Post Your Answer" tabindex="110" type="submit"></div>
+    </form>
+    <h2 class="bottom-notice">
+        Not the answer you're looking for? 
+        Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag" title="show questions tagged 'python'" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/coding-style" class="post-tag" title="show questions tagged 'coding-style'" rel="tag">coding-style</a> 
+        or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.
+    </h2>
+</div>
+</div>
+<div id="sidebar">
+
+<div class="module newuser newuser-greeting" style="">
+    <h4>Hello World!</h4>
+    <div>
+        <p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p>
+        <p class="ar"><a href="http://stackoverflow.com/about">about »</a>&nbsp;&nbsp;&nbsp;<a href="http://stackoverflow.com/faq">faq »</a></p>
+    </div>
+</div>    <div class="module">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://stackoverflow.com/questions/tagged/python" class="post-tag" title="show questions tagged 'python'" rel="tag">python</a>&nbsp;<span class="item-multiplier">×&nbsp;63323</span><br>
+<a href="http://stackoverflow.com/questions/tagged/coding-style" class="post-tag" title="show questions tagged 'coding-style'" rel="tag">coding-style</a>&nbsp;<span class="item-multiplier">×&nbsp;1944</span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left: 10px;"><p class="label-key" title="2008-12-10 01:55:50Z"><b>2 years ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left: 10px;"><p class="label-key"><b>8,860 times</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left: 10px;"><p class="label-key"><b><a href="http://stackoverflow.com/questions/354883/how-do-you-return-multiple-values-in-python?lastactivity" class="lastactivity-link" title="2008-12-10 16:36:01Z">2 years ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+    
+        <script type="text/javascript">
+            var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = "http://engine2.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44?keywords=python,coding-style"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);
+        </script>
+    
+    <div class="everyonelovesstackoverflow" id="adzerk2"><div id="careersadsdoublehigh" style="display: none;"></div></div>
+
+    
+    <div>
+        <script type="text/javascript">
+            (function(){var q="http://careers.stackoverflow.com/ad/js",g=location.search=="?golarge",a,d=100,c=location.hash.indexOf("#ninjas")>-1,f="Pretty",h="#adzerk2",b="#adzerk1",i="#herebeninjas";(function(){var b="min-height:220px;margin:15px 0",c=$("<div>").addClass("hireme").attr("style",b),a=$("<div>").html(c);document.write(a.html())})();$(function(){setTimeout(r,2e3);a=setTimeout(e,d)});var e=function(){clearTimeout(a);if(m()&&!k()){a=setTimeout(e,d);return}c=c||n();c&&$(b).css("height",$(b).outerHeight()).attr("id","stop-adzerk");if(l()&&!j()){a=setTimeout(e,d);return}g=g||o();f=g?"Large":f;p()},r=function(){clearTimeout(a);var b=$("div.hireme, "+i);b.each(function(){var a=$(this),d=a.html().replace(/\s+/g,"").length==0;if(d){var c=a,b=a.parents(".everyonelovesstackoverflow").first();if(b.length>0)c=b;c.remove()}})},l=function(){return $(h).length>0},j=function(){var a=$(h);return a.length==0?false:a.html().replace(/\s+/g,"").length>0},o=function(){return $("#careersadsdoublehigh").length>0},m=function(){return $(b).length>0},k=function(){var a=$(b);return a.length==0?false:a.html().replace(/\s+/g,"").length>0},n=function(){return $(i).length>0},p=function(){$.ajax({url:s(),dataType:"script",cache:true})},s=function(){return q+"?style="+f+"&gobanner="+c.toString()}})();
+        </script><div style="min-height: 220px; margin: 15px 0pt;" class="hireme"> <style type="text/css"> div.hireme { border:1px solid #B5B5B5; color: #333; font-family: Arial, Helvetica, sans-serif; font-size:12px; text-align:left; line-height:130%; padding:0; margin:10px 0; width:218px; } div.hireme > p { display:block; margin:12px; } div.hireme > p > a { cursor:pointer; text-decoration:none; } div.hireme > p > a > span { color:#666; } div.hireme > p > a > span.company { font-weight:bold; } div.hireme > img.impression { display:none; } div.hireme > a > img.careers-hed { width:218px; min-height:50px; border:0; } div.hireme > p.bottom { margin-top:15px; text-align:center; } div.hireme > p.bottom > a { height: 16px; color: #FEF4E9; border: solid 1px #DA7C0C; background: #F78D1D url(http://careers.stackoverflow.com/Content/Img/orange-submit-bg.png) repeat-x top left; background: -webkit-gradient(linear, left top, left bottom, from(#FAA51A), to(#F47A20)); background: -moz-linear-gradient(top, #FAA51A, #F47A20); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: bold; font-size: 13px; color: white; line-height: 16px; text-decoration: none; display: inline-block; -moz-border-radius: 12px; -webkit-border-radius: 12px; border-radius: 12px; padding: 4px 15px; cursor: pointer; -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2); -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2); box-shadow: 0 1px 2px rgba(0, 0, 0, .2); text-shadow: 0 1px 1px rgba(0, 0, 0, .3); } </style> <a href="http://careers.stackoverflow.com/?campaign=LargeHeader" target="_blank"> <img alt="Careers 2.0" class="careers-hed" src="return_multiple_values_python_files/careers2-ad-header-so.png"></a> <p> <a href="http://careers.stackoverflow.com/jobs/11902/php-web-developer-milcord?campaign=LargeTopspot" target="_blank" title="PHP Web Developer at Milcord. Click to learn more."> PHP Web Developer<br> <span class="company">Milcord</span><br> <span class="location">Waltham, MA</span> </a> </p> <p> <a href="http://careers.stackoverflow.com/jobs/12049/software-developer-c-sharp-asp-net-rspca-qld?campaign=LargeClassic" target="_blank" title="Software Developer C# ASP.Net at RSPCA QLD. Click to learn more."> Software Developer C# ASP.Net<br> <span class="company">RSPCA QLD</span><br> <span class="location">Brisbane, Queensland, Australia</span> </a> </p> <p> <a href="http://careers.stackoverflow.com/jobs/11820/digital-developer-net-longtail-communications?campaign=LargeClassic" target="_blank" title="Digital Developer (.net) at Longtail Communications. Click to learn more."> Digital Developer (.net)<br> <span class="company">Longtail Communications</span><br> <span class="location">Perth, Australia</span> </a> </p> <p> <a href="http://careers.stackoverflow.com/jobs/11987/senior-java-developer-boston-capital?campaign=LargeClassic" target="_blank" title="Senior Java Developer at Boston Capital. Click to learn more."> Senior Java Developer<br> <span class="company">Boston Capital</span><br> <span class="location">Boston, MA</span> </a> </p> <p> <a href="http://careers.stackoverflow.com/jobs/12251/net-developer-bloom-insurance-agency?campaign=LargeClassic" target="_blank" title=".Net Developer at Bloom Insurance Agency. Click to learn more."> .Net Developer<br> <span class="company">Bloom Insurance Agency</span><br> <span class="location">Bloomington, IN</span> </a> </p> <p> <a href="http://careers.stackoverflow.com/jobs/11920/front-end-technical-lead-senior-developer-domani-studios?campaign=LargeClassic" target="_blank" title="Front End Technical Lead/Senior Developer at Domani Studios. Click to learn more."> Front End Technical Lead/Senior Developer<br> <span class="company">Domani Studios</span><br> <span class="location">Brooklyn, NY</span> </a> </p> <p class="bottom"><a href="http://careers.stackoverflow.com/jobs?campaign=LargeFooter" target="_blank"> view more jobs </a></p> <img src="return_multiple_values_python_files/jobimpression.gif" alt="impression" class="impression"> </div>
+    </div>
+
+      
+
+    <div class="module">
+    <h4 id="h-linked">Linked</h4>
+    <div class="linked">
+    <div class="spacer">
+<a href="http://stackoverflow.com/questions/5995478/is-it-possible-to-assign-two-different-returned-values-from-a-python-function-to" class="question-hyperlink">Is it possible to assign two different returned values from a python function to two separate variables?</a>
+</div>
+
+    </div>
+    </div>
+    <div class="module">
+    <h4 id="h-related">Related</h4>
+    <div class="related">
+    <div class="spacer">
+<a href="http://stackoverflow.com/questions/137115/are-multiple-return-points-from-a-method-good-or-bad" class="question-hyperlink">Are multiple return points from a method good or bad?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/311588/how-to-indent-python-list-comprehensions" class="question-hyperlink">How to indent Python list-comprehensions?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/477096/python-import-coding-style" class="question-hyperlink">Python import coding style</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/583557/what-is-the-best-way-to-print-a-table-with-delimiters-in-python" class="question-hyperlink">What is the best way to print a table with delimiters in Python</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/597476/how-to-concisely-cascade-through-multiple-regex-statements-in-python" class="question-hyperlink">How to concisely cascade through multiple regex statements in Python</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/764253/how-many-nested-code-blocks-do-you-end-up-with-in-practice-when-coding" class="question-hyperlink">How many nested code blocks do you end up with in practice when coding?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1236256/how-do-you-decide-whether-to-use-a-library-or-write-your-own-implementation" class="question-hyperlink">How do you decide whether to use a library or write your own implementation</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1313694/python-style-question-function-parameters" class="question-hyperlink">Python style question, function parameters</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2146940/how-do-you-work-with-a-programmer-with-a-radically-different-coding-style" class="question-hyperlink">How do you work with a programmer with a radically different coding style?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2192926/using-explicit-del-in-python-on-local-variables" class="question-hyperlink">Using explicit del in python on local variables</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2748280/is-this-a-good-approach-to-execute-a-list-of-operations-on-a-data-structure-in-py" class="question-hyperlink">Is this a good approach to execute a list of operations on a data structure in Python?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2853531/how-do-you-pep-8-name-a-class-whose-name-is-an-acronym" class="question-hyperlink">How do you PEP 8-name a class whose name is an acronym?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3028961/best-style-for-python-programs-what-do-you-suggest" class="question-hyperlink">Best style for Python programs: what do you suggest?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3042627/which-style-of-return-is-better-for-a-method-that-might-return-none" class="question-hyperlink">Which style of return is “better” for a method that might return None?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3654706/python-shorten-ugly-code" class="question-hyperlink">Python: Shorten ugly code?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4018783/python-is-it-bad-style-to-give-an-argument-the-same-name-as-the-function" class="question-hyperlink">Python: Is it bad style to give an argument the same name as the function?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4177735/best-practice-for-lazy-loading-python-modules" class="question-hyperlink">Best practice for lazy loading Python modules.</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4326119/create-default-values-for-dictionary-in-python" class="question-hyperlink">Create default values for dictionary in python.</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4380008/python-style-lowercase-class-names-for-namespaces" class="question-hyperlink">Python style: lowercase class names for “namespaces”?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5021041/are-there-any-gotchas-with-this-python-pattern" class="question-hyperlink">Are there any 'gotchas' with this Python pattern?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5033906/in-python-should-i-use-else-after-a-return-in-an-if-block" class="question-hyperlink">In Python, should I use else after a return in an if block?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5437619/python-style-line-continuation-with-strings" class="question-hyperlink">Python style - line continuation with strings?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5854129/does-this-code-follow-python-coding-standards-style-and-idioms" class="question-hyperlink">Does this code follow Python coding standards\style and idioms?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6005741/need-example-of-non-trivial-python-application-for-use-in-adopting-good-program" class="question-hyperlink">Need Example of non-trivial python application - for use in adopting good programming coding style</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6244342/can-should-i-implement-python-methods-by-assignment-to-attributes" class="question-hyperlink">Can/should I implement Python methods by assignment to attributes?</a>
+</div>
+
+    </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/354883" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript" src="return_multiple_values_python_files/6d44.txt"></script>
+<noscript>
+    <div><img src="/posts/354883/ivc/6d44" class="dno" alt=""></div>
+</noscript>
+<div style="display: none;" id="prettify-lang">default</div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://stackoverflow.com/about">about</a> |
+                <a href="http://stackoverflow.com/faq">faq</a> |
+                 <a href="http://blog.stackoverflow.com/">blog</a> |
+                    <a href="http://chat.stackoverflow.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://blog.stackoverflow.com/category/podcasts/">podcast</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+                <b><a href="mailto:team@stackoverflow.com">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com/">feedback always welcome</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color: rgb(254, 122, 21); font-size: 140%;">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color: rgb(254, 122, 21); font-size: 140%;">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color: rgb(254, 122, 21); font-size: 140%;">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color: rgb(232, 39, 44); font-size: 140%;">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color: rgb(0, 175, 239); font-size: 140%;">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color: rgb(150, 150, 150); font-size: 140%;">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color: rgb(70, 147, 125); font-size: 140%;">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color: rgb(192, 208, 220); font-size: 140%;">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color: rgb(0, 0, 0); font-size: 140%;">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color: rgb(221, 72, 20); font-size: 140%;">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color: rgb(156, 228, 254); font-size: 140%;">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color: rgb(207, 77, 63); font-size: 140%;">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color: rgb(244, 242, 141); font-size: 140%;">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color: rgb(15, 53, 89); font-size: 140%;">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color: rgb(242, 242, 242); font-size: 140%;">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color: rgb(3, 113, 135); font-size: 140%;">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color: rgb(241, 231, 204); font-size: 140%;">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color: rgb(225, 205, 174); font-size: 140%;">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color: rgb(162, 217, 246); font-size: 140%;">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color: rgb(27, 62, 108); font-size: 140%;">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color: rgb(41, 58, 93); font-size: 140%;">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color: rgb(190, 192, 203); font-size: 140%;">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color: rgb(147, 145, 133); font-size: 140%;">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color: rgb(181, 205, 164); font-size: 140%;">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>&nbsp;
+                        <span style="color: rgb(65, 118, 171); font-size: 140%;">■</span>&nbsp;<a href="http://diy.stackexchange.com/">home&nbsp;improvement</a>&nbsp;
+                        <span style="color: rgb(209, 216, 215); font-size: 140%;">■</span>&nbsp;<a href="http://gis.stackexchange.com/">gis</a>&nbsp;
+                        <span style="color: rgb(229, 226, 211); font-size: 140%;">■</span>&nbsp;<a href="http://electronics.stackexchange.com/">electronics</a>&nbsp;
+                        <span style="color: rgb(164, 198, 57); font-size: 140%;">■</span>&nbsp;<a href="http://android.stackexchange.com/">android</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2011.6.24.7</div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2011 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+        </div>
+    </div>
+    
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src='http://www.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();_qoptions={qacct:"p-c1rF4kxgLUzNc"};</script>
+    <script type="text/javascript" src="return_multiple_values_python_files/quant.js"></script>
+    
+
+</body></html>

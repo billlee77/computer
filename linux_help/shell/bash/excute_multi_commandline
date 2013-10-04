@@ -1,0 +1,358 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index,nofollow">
+
+<title>CommandlineHowto - Community Ubuntu Documentation</title>
+<script type="text/javascript" src="multiple_command_files/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="multiple_command_files/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="multiple_command_files/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="multiple_command_files/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="multiple_command_files/projection.css">
+
+<!-- css only for MSIE browsers -->
+<!--[if IE]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/htdocs/ubuntunew/css/msie.css">
+<![endif]-->
+
+
+
+<link rel="Start" href="https://help.ubuntu.com/community/UserDocumentation">
+<link rel="Alternate" title="Wiki Markup" href="https://help.ubuntu.com/community/CommandlineHowto?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="https://help.ubuntu.com/community/CommandlineHowto?action=print">
+<link rel="Search" href="https://help.ubuntu.com/community/FindPage">
+<link rel="Index" href="https://help.ubuntu.com/community/TitleIndex">
+<link rel="Glossary" href="https://help.ubuntu.com/community/WordIndex">
+<link rel="Help" href="https://help.ubuntu.com/community/HelpOnFormatting">
+</head><body dir="ltr" lang="en">
+
+<div id="round" class="roundme">
+<img id="topcap" alt="" src="multiple_command_files/cap-top.png">
+<div id="layout" class="container clear-block">
+<div id="header">
+<div id="logo-floater">
+<h1><a href="http://help.ubuntu.com/" title="Ubuntu Documentation"><img alt="Ubuntu" id="logo" src="multiple_command_files/logo.png"></a></h1>
+</div>
+
+<noscript>
+ <form action="http://www.google.com/cse" id="cse-search-box">
+   <div>
+     <input type="hidden" name="cx" value="003883529982892832976:e2vwumte3fq" />
+     <input type="hidden" name="ie" value="UTF-8" />
+     <input type="text" name="q" size="27" />
+     <input type="submit" name="sa" value="Search" />
+   </div>
+ </form>
+</noscript>
+
+<script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="003883529982892832976:e2vwumte3fq" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script><form action="https://help.ubuntu.com/search.html" id="cse-search-box">  <div>    <input name="cof" value="FORID:9" type="hidden">    <input name="cx" value="003883529982892832976:e2vwumte3fq" type="hidden">    <input name="ie" value="UTF-8" type="hidden">    <input name="q" size="27" type="text">    <input name="sa" value="Search" type="submit">  </div></form>
+
+<div id="sitename"><a href="https://help.ubuntu.com/community"><img src="multiple_command_files/help-faq.png"><span>Community Documentation</span></a></div>
+</div> <!--header-->
+<ul id="loginbar"><li><a href="https://help.ubuntu.com/community/CommandlineHowto?action=login" id="login" rel="nofollow">Login to Edit</a></li></ul>
+
+
+<!--1-->
+<div id="page" dir="ltr" lang="en">
+
+<!--2-->
+
+<div id="breadcrumbs">
+<a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/community">Community Documentation</a> &gt; <a class="backlink" href="https://help.ubuntu.com/community/CommandlineHowto?action=fullsearch&amp;context=180&amp;value=linkto%3A%22CommandlineHowto%22" rel="nofollow" title="Click to do a full-text search for this title">CommandlineHowto</a>
+</div>
+
+
+<ul id="pagelocation">
+<li><a class="backlink" href="https://help.ubuntu.com/community/CommandlineHowto?action=fullsearch&amp;context=180&amp;value=linkto%3A%22CommandlineHowto%22" rel="nofollow" title="Click to do a full-text search for this title">CommandlineHowto</a></li>
+</ul>
+
+<!--3--><div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-10"></span><div><table style="margin: 0pt 0pt 1em 1em; background: rgb(241, 241, 237) none repeat scroll 0% 0%; float: right; font-size: 0.9em; width: 40%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><tbody><tr>  <td style="padding: 0.5em;"><p class="line891"></p><div class="table-of-contents"><p class="table-of-contents-heading">Contents</p><ol><li><a href="#Introduction">Introduction</a><ol><li><a href="#What%20is%20it?">What is it?</a></li><li><a href="#History">History</a><ol><li><a href="#POSIX">POSIX</a></li></ol></li><li><a href="#Advantages%20of%20using%20the%20command%20line">Advantages of using the command line</a></li><li><a href="#Prerequisites">Prerequisites</a></li><li><a href="#How%20to%20invoke%20it">How to invoke it</a></li><li><a href="#Basic%20structure%20and%20concepts">Basic structure and concepts</a></li></ol></li><li><a href="#Command%20Syntax">Command Syntax</a><ol><li><a href="#Single%20Command">Single Command</a></li><li><a href="#Multiple%20Commands">Multiple Commands</a></li><li><a href="#Wildcards">Wildcards</a><ol><li><a href="#Specifing%20a%20single%20character">Specifing a single character</a></li><li><a href="#Specifying%20multiple%20characters">Specifying multiple characters</a></li><li><a href="#Specifying%20a%20range">Specifying a range</a></li></ol></li><li><a href="#Control%20Flow">Control Flow</a><ol><li><a href="#Redirection">Redirection</a></li><li><a href="#Pipe">Pipe</a></li></ol></li></ol></li><li><a href="#Further%20reading">Further reading</a></li></ol></div></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><p class="line867">
+</p><h1 id="Introduction">Introduction</h1>
+<span class="anchor" id="line-14"></span><p class="line862">Even though
+Ubuntu is the newbie friendly and polished graphical distribution,
+there are still situations where a significant amount of time and
+mouse-clicking can be spared by typing a bit. I don't think this is a
+bad thing at all; no matter what you do, Linux has one of its real
+strengths in the Command Line! <img alt=":)" src="multiple_command_files/smile.png" title=":)" width="15" height="15">  <span class="anchor" id="line-15"></span><span class="anchor" id="line-16"></span></p><p class="line867">
+</p><h2 id="What is it?">What is it?</h2>
+<span class="anchor" id="line-17"></span><p class="line862">A Command Line is, in all simplicity, a user interface based on lines of commands. You can say that it is a <strong>textual direct serial processor</strong>.
+Most commonly, the user interacts directly with the computer by typing
+one line (although it can be more than one), which triggers actions
+from the computer based on the syntax of the current processor.<br>
+ <span class="anchor" id="line-18"></span>Before everything gets too complicated, we can quite simply move on. <span class="anchor" id="line-19"></span><img alt="/!\" src="multiple_command_files/alert.png" title="/!\" width="15" height="15"> The impatient can move right on to the <strong>Command Syntax</strong> section. <span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span></p><p class="line867"><span class="anchor" id="line-22"></span></p><p class="line867">
+</p><h2 id="History">History</h2>
+<span class="anchor" id="line-23"></span><p class="line862">In the
+early days of computers, there was only the Command Line. The concept
+of a Graphical User Interface (GUI) after which most GUI are modeled
+was developed by engineers at <strong>Xerox's Palo Alto Research Center (PARC)</strong>.
+A bit later, Apple paid a whole bunch of money to be allowed to "study"
+their GUI idea. And, after a while, Apple had their own GUI. <span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span></p><p class="line862">Not until 1986 did UNIX get its first GUI, developed by the <strong>MIT Project</strong>.
+They named it X. Linux, however, had to wait ten more years before
+XFree86 was released. XFree86 was, and is even today, a free adaptation
+of the original X server. <span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span></p><p class="line862">As
+mentioned earlier, the CLI (Command Line Interface) was the only way to
+communicate with computers before the GUI was invented. In 1969, <strong>Bell Telephone Laboratories</strong>
+released V1 of the UNIX Timeshare System. UNIX had a shell called sh,
+which was the only means of communicating with the computer, and it
+would stay that way for quite some time. <span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span></p><p class="line874">Later
+on, there came derivatives of UNIX: HP-UX, 1BSD, Solaris, OpenVMS,
+IRIX, SCO XENIX, etc. As time progressed, GNU/Linux emerged. However,
+the history of Linux itself is way off the scope of this HOWTO. Suffice
+to say that alternative CLI to sh emerged: zsh, ksh, bourne shell, etc.
+<span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span></p><p class="line867">
+</p><h3 id="POSIX">POSIX</h3>
+<span class="anchor" id="line-32"></span><p class="line874">The Wikipedia defines POSIX as the following: <span class="anchor" id="line-33"></span><span class="anchor" id="line-34"></span></p><p class="line874">"POSIX
+is the collective name of a family of related standards specified by
+the IEEE to define the application program interface (API) for software
+designed to run on variants of the Unix OS. They are formally
+designated as IEEE 1003 and the international standard name is ISO/IEC
+9945. The standards emerged from a project, begun circa 1985. The term
+POSIX was suggested by Richard Stallman in response to an IEEE request
+for a memorable name; before that the standards effort was called
+IEEE-IX. POSIX is a near acronym for Portable Operating System
+Interface, with the X signifying the Unix heritage of the API." <span class="anchor" id="line-35"></span><span class="anchor" id="line-36"></span></p><p class="line874">This
+sounds fancy and all, but to stay rather concise, POSIX is the
+underlying standard and functionality of how your CLI responds. <span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span></p><p class="line867">
+</p><h2 id="Advantages of using the command line">Advantages of using the command line</h2>
+<span class="anchor" id="line-39"></span><p class="line862">So this all sounds very dull and boring, not to mention hard.<br>
+ <span class="anchor" id="line-40"></span>Well, it isn't, really. <img alt=";)" src="multiple_command_files/smile4.png" title=";)" width="15" height="15"> It's quite easy once you understand the basics. <span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span></p><p class="line874">Some advantage of using the command line are: <span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span></p><ul><li>save you time. <span class="anchor" id="line-45"></span></li><li>can help when you are unable to use the GUI, such as a system crash or a configuration issue. <span class="anchor" id="line-46"></span></li><li>enable you to use Linux in ways that using a GUI exclusively can not. <span class="anchor" id="line-47"></span><span class="anchor" id="line-48"></span></li></ul><p class="line862">For
+example, you have been called by the systems administrator that you
+have used too much space. You want to quickly work out where the most
+space is used, so using a graphical interface, start your timer - go.
+Now, go to a command line and type: <tt class="backtick">du&nbsp;|&nbsp;sort&nbsp;-n</tt>
+(we will describe more later). See? It is faster to do some things on
+the command line (and other times, easier for graphical). <span class="anchor" id="line-49"></span><span class="anchor" id="line-50"></span></p><p class="line867">
+</p><h2 id="Prerequisites">Prerequisites</h2>
+<span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span><p class="line862">This assumes that you are running any version of Ubuntu Linux and have a desire to learn its inner workings.<br>
+ <span class="anchor" id="line-53"></span><span class="anchor" id="line-54"></span></p><p class="line867">
+</p><h2 id="How to invoke it">How to invoke it</h2>
+<span class="anchor" id="line-55"></span><p class="line862">For the purpose of this document, we will invoke the command line interface from the Desktop.<br>
+ <span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span></p><p class="line867"><strong>Ubuntu</strong><br>
+ <span class="anchor" id="line-58"></span><em>Applications | Accessories | Terminal</em><br>
+ <span class="anchor" id="line-59"></span><span class="anchor" id="line-60"></span></p><p class="line867"><strong>Kubuntu</strong><br>
+ <span class="anchor" id="line-61"></span><em>KDE Menu | System | Konsole Terminal Program</em><br>
+ <span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span></p><p class="line867"><strong>Xubuntu</strong> <em>6.10</em><br>
+ <span class="anchor" id="line-64"></span><em>Applications | System | Terminal</em><br>
+ <span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span></p><p class="line862">An alternative way to invoke the command line, only using keyboard shortcuts (<em>since on the command line, you would mostly be interacting only through the keyboard</em>) is: <span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span></p><p class="line862">On GNOME (Ubuntu): <tt>Alt</tt> + <tt>F2</tt> -&gt; (<em>Type within the text box</em>) gnome-terminal (Press <em>return</em>) <br>
+ <span class="anchor" id="line-69"></span>On KDE (Kubuntu): <tt>Alt</tt> + <tt>F2</tt> -&gt; (<em>Type within the text box</em>) konsole (Press <em>return</em>) <br>
+ <span class="anchor" id="line-70"></span><span class="anchor" id="line-71"></span></p><p class="line867">
+</p><h2 id="Basic structure and concepts">Basic structure and concepts</h2>
+<span class="anchor" id="line-72"></span><p class="line874">The first thing that you should notice is something like: <span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><span class="anchor" id="line-77"></span></p><pre>dud@shadowplay:~ $
+or
+[dud@shadowplay ~]$</pre><span class="anchor" id="line-78"></span><p class="line862">What you see here is called the prompt. It signifies that the computer is ready and awaiting user input. In my case, <strong>dud</strong> is the user that I'm logged in as. <strong>shadowplay</strong> is the computer's hostname, and <strong>~</strong> is the current directory (the user's home directory). <span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span></p><p class="line874">Concepts: <span class="anchor" id="line-81"></span></p><ul><li>A terminal is a "physical"(direct) interface to your Linux Operating System. <span class="anchor" id="line-82"></span></li><li>A
+terminal emulator is what we'll be using here. This is a CLI wrapped
+within your running GUI. Any applications running in a terminal
+emulator will be killed if you close the terminal emulator. <span class="anchor" id="line-83"></span></li><li>A shell is an interpreter for your terminal.  <span class="anchor" id="line-84"></span></li><li>A command is usually a small utility that the shell will execute for you. <span class="anchor" id="line-85"></span></li><li>Output is what a command returns; most often this is returned on the terminal. <span class="anchor" id="line-86"></span></li><li>Input is the arguments or data that any given command will take. Input will change the way a given command acts. <span class="anchor" id="line-87"></span></li><li>A process is a running application on your computer. It can be active, sleeping, or in a number of other states. <span class="anchor" id="line-88"></span><span class="anchor" id="line-89"></span></li></ul><p class="line867">
+</p><h1 id="Command Syntax">Command Syntax</h1>
+<span class="anchor" id="line-90"></span><p class="line874">This
+section will try to give you a good rundown of the basic usage for the
+bash shell, which is the default user shell in Ubuntu. <span class="anchor" id="line-91"></span><span class="anchor" id="line-92"></span></p><p class="line867">
+</p><h2 id="Single Command">Single Command</h2>
+<span class="anchor" id="line-93"></span><span class="anchor" id="line-94"></span><p class="line874">The command syntax will vary with each command. Here are some of the basics. <span class="anchor" id="line-95"></span><span class="anchor" id="line-96"></span></p><p class="line862">The simplest way to use some commands is to type just the command.<br>
+ <span class="anchor" id="line-97"></span><span class="anchor" id="line-98"></span></p><ul><li style="list-style-type: none;"><p class="line891"><strong>command</strong> <span class="anchor" id="line-99"></span><span class="anchor" id="line-100"></span></p></li></ul><p class="line874">Example: <span class="anchor" id="line-101"></span><span class="anchor" id="line-102"></span></p><p class="line867"><span class="anchor" id="line-103"></span><span class="anchor" id="line-104"></span><span class="anchor" id="line-105"></span><span class="anchor" id="line-106"></span><span class="anchor" id="line-107"></span><span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span><span class="anchor" id="line-110"></span><span class="anchor" id="line-111"></span></p><pre>dud@shadowplay:~ $ ls
+file1.txt
+file2.pdf
+file3.mp3
+file1.pdf
+another_file.txt
+Yet-Another_file.txt
+file-with_other-NAME.TXT</pre><span class="anchor" id="line-112"></span><span class="anchor" id="line-113"></span><p class="line874">The
+above example displays the contents of the current working directory,
+while other commands may require one or more arguments. <span class="anchor" id="line-114"></span><span class="anchor" id="line-115"></span></p><ul><li style="list-style-type: none;"><p class="line891"><strong>command &lt;argument&gt;</strong> <span class="anchor" id="line-116"></span><span class="anchor" id="line-117"></span></p></li></ul><p class="line874">Example: <span class="anchor" id="line-118"></span><span class="anchor" id="line-119"></span></p><p class="line867"><span class="anchor" id="line-120"></span><span class="anchor" id="line-121"></span><span class="anchor" id="line-122"></span><span class="anchor" id="line-123"></span><span class="anchor" id="line-124"></span></p><pre>dud@shadowplay:~ $ cat file1.txt
+Roses are red.
+Violets are blue,
+and you have the bird-flu!</pre><span class="anchor" id="line-125"></span><span class="anchor" id="line-126"></span><p class="line862">The above example shows you the content of the file1.txt file by adding the filename as the argument for the <em>cat</em> command. Almost all commands, whether they have arguments or not, have options. <span class="anchor" id="line-127"></span><span class="anchor" id="line-128"></span></p><ul><li style="list-style-type: none;"><p class="line891"><strong>command -option</strong> <span class="anchor" id="line-129"></span><span class="anchor" id="line-130"></span></p></li></ul><p class="line874">Example: <span class="anchor" id="line-131"></span><span class="anchor" id="line-132"></span></p><p class="line867"><span class="anchor" id="line-133"></span><span class="anchor" id="line-134"></span><span class="anchor" id="line-135"></span><span class="anchor" id="line-136"></span><span class="anchor" id="line-137"></span><span class="anchor" id="line-138"></span><span class="anchor" id="line-139"></span><span class="anchor" id="line-140"></span><span class="anchor" id="line-141"></span></p><pre>dud@shadowplay:~ $ ls -r
+file-with_other-NAME.TXT
+Yet-Another_file.txt
+another_file.txt
+file1.pdf
+file3.mp3
+file2.pdf
+file1.txt</pre><span class="anchor" id="line-142"></span><span class="anchor" id="line-143"></span><p class="line862">Using the previous example of showing the current directory, we have added the <em>-r</em> option. As you can see, the listing of the current working directory has been displayed in the reverse order. <span class="anchor" id="line-144"></span><span class="anchor" id="line-145"></span></p><p class="line867">
+</p><h2 id="Multiple Commands">Multiple Commands</h2>
+<span class="anchor" id="line-146"></span><span class="anchor" id="line-147"></span><p class="line874">Sometimes
+the desired task may require the use of more than one command to be
+completed. Here is the syntax for the use of multiple commands. <span class="anchor" id="line-148"></span><span class="anchor" id="line-149"></span></p><p class="line874">If you want to execute two commands consecutively, then you would use the following syntax: <span class="anchor" id="line-150"></span><span class="anchor" id="line-151"></span></p><ul><li style="list-style-type: none;"><p class="line891"><strong>command1 ; command2</strong> <span class="anchor" id="line-152"></span><span class="anchor" id="line-153"></span></p></li></ul><p class="line874">Example: <span class="anchor" id="line-154"></span><span class="anchor" id="line-155"></span></p><p class="line867"><span class="anchor" id="line-156"></span><span class="anchor" id="line-157"></span><span class="anchor" id="line-158"></span><span class="anchor" id="line-159"></span></p><pre>dud@shadowplay:~ $grep red file1.txt ; grep blue file1.txt
+Roses are red,
+Violets are blue,</pre><span class="anchor" id="line-160"></span><span class="anchor" id="line-161"></span><p class="line874">In
+the example above, command1 and command2 are executed. However, if you
+need command1 to complete successfully before executing command2, then
+you would use the following syntax: <span class="anchor" id="line-162"></span><span class="anchor" id="line-163"></span></p><ul><li style="list-style-type: none;"><p class="line891"><strong>command1 &amp;&amp; command2</strong> <span class="anchor" id="line-164"></span><span class="anchor" id="line-165"></span></p></li></ul><p class="line874">Example: <span class="anchor" id="line-166"></span><span class="anchor" id="line-167"></span></p><p class="line867"><span class="anchor" id="line-168"></span><span class="anchor" id="line-169"></span><span class="anchor" id="line-170"></span><span class="anchor" id="line-171"></span><span class="anchor" id="line-172"></span><span class="anchor" id="line-173"></span></p><pre>dud@shadowplay:~ $ grep red file1.txt &amp;&amp; grep blue file1.txt
+Roses are red,
+Violets are blue,
+dud@shadowplay:~ $ grep purple file1.txt &amp;&amp; grep blue file1.txt
+dud@shadowplay:~ $</pre><span class="anchor" id="line-174"></span><span class="anchor" id="line-175"></span><p class="line874">In
+the example above, you will notice nothing happened when the first
+command did not complete successfully. If you want command2 to execute
+only if command1 fails, then you would use the following syntax: <span class="anchor" id="line-176"></span><span class="anchor" id="line-177"></span></p><ul><li style="list-style-type: none;"><p class="line891"><strong>command1 || command2</strong> <span class="anchor" id="line-178"></span><span class="anchor" id="line-179"></span></p></li></ul><p class="line874">Example: <span class="anchor" id="line-180"></span><span class="anchor" id="line-181"></span></p><p class="line867"><span class="anchor" id="line-182"></span><span class="anchor" id="line-183"></span><span class="anchor" id="line-184"></span><span class="anchor" id="line-185"></span><span class="anchor" id="line-186"></span><span class="anchor" id="line-187"></span></p><pre>dud@shadowplay:~ $ grep red file1.txt || grep blue file1.txt
+Roses are red,
+dud@shadowplay:~ $ grep purple file1.txt || grep blue file1.txt
+Violets are blue,
+dud@shadowplay:~ $</pre><span class="anchor" id="line-188"></span><span class="anchor" id="line-189"></span><p class="line874">In the example above, you will notice command2 was only executed when command1 failed. <span class="anchor" id="line-190"></span><span class="anchor" id="line-191"></span></p><p class="line867">
+</p><h2 id="Wildcards">Wildcards</h2>
+<span class="anchor" id="line-192"></span><span class="anchor" id="line-193"></span><p class="line874">Wildcards
+are a useful feature that allows an unknown value or values to be used
+with another command. This becomes very useful with commands such as
+"ls" allowing only a range of filenames to be displayed. <span class="anchor" id="line-194"></span><span class="anchor" id="line-195"></span></p><p class="line874">There are three operators used with wildcards - "*", "?" and "[x-y]".  <span class="anchor" id="line-196"></span><span class="anchor" id="line-197"></span></p><p class="line867">
+</p><h3 id="Specifing a single character">Specifing a single character</h3>
+<span class="anchor" id="line-198"></span><span class="anchor" id="line-199"></span><p class="line874">The
+"?" is used to represent a single unknown character, consider we have a
+folder containing four files: file1.pdf, file2.pdf, file2.mp3 and
+file23.pdf. If wanted to know which PDF filenames contained numbers,
+then we could use: <span class="anchor" id="line-200"></span><span class="anchor" id="line-201"></span></p><p class="line867"><span class="anchor" id="line-202"></span><span class="anchor" id="line-203"></span><span class="anchor" id="line-204"></span><span class="anchor" id="line-205"></span></p><pre>dud@shadowplay:~ $ ls file?.pdf
+file1.pdf
+file2.pdf</pre><span class="anchor" id="line-206"></span><span class="anchor" id="line-207"></span><p class="line867">
+</p><h3 id="Specifying multiple characters">Specifying multiple characters</h3>
+<span class="anchor" id="line-208"></span><span class="anchor" id="line-209"></span><p class="line874">Using the same files as the previous example, if we wanted to search for all files called "file2" of any type we could: <span class="anchor" id="line-210"></span><span class="anchor" id="line-211"></span></p><p class="line874">Example: <span class="anchor" id="line-212"></span><span class="anchor" id="line-213"></span></p><p class="line867"><span class="anchor" id="line-214"></span><span class="anchor" id="line-215"></span><span class="anchor" id="line-216"></span><span class="anchor" id="line-217"></span></p><pre>dud@shadowplay:~ $ ls file2.*
+file2.pdf
+file2.mp3</pre><span class="anchor" id="line-218"></span><span class="anchor" id="line-219"></span><p class="line867">
+</p><h3 id="Specifying a range">Specifying a range</h3>
+<span class="anchor" id="line-220"></span><span class="anchor" id="line-221"></span><p class="line874">If we wanted to know all PDF filenames beginning with "file" and a number between 1 and 5 then we use: <span class="anchor" id="line-222"></span><span class="anchor" id="line-223"></span></p><p class="line867"><span class="anchor" id="line-224"></span><span class="anchor" id="line-225"></span><span class="anchor" id="line-226"></span><span class="anchor" id="line-227"></span></p><pre>dud@shadowplay:~ $ ls file[2-23].pdf
+file2.pdf
+file23.pdf</pre><span class="anchor" id="line-228"></span><span class="anchor" id="line-229"></span><p class="line867">
+</p><h2 id="Control Flow">Control Flow</h2>
+<span class="anchor" id="line-230"></span><span class="anchor" id="line-231"></span><p class="line874">Commands
+read input from the keyboard (standard input, or stdin) and write to
+output (standard out, or stdout). There is also a special output
+category for error messages called standard error (or stderr). These
+three locations are created automatically for each program. <span class="anchor" id="line-232"></span><span class="anchor" id="line-233"></span></p><p class="line874">We can redirect input and output to and from a command.  <span class="anchor" id="line-234"></span><span class="anchor" id="line-235"></span></p><p class="line867">
+</p><h3 id="Redirection">Redirection</h3>
+<span class="anchor" id="line-236"></span><span class="anchor" id="line-237"></span><p class="line874">If you wanted the output of a command to go to a file instead of the terminal, then you would use the following syntax: <span class="anchor" id="line-238"></span><span class="anchor" id="line-239"></span></p><ul><li style="list-style-type: none;"><p class="line891"><strong>command &gt; filename</strong> <span class="anchor" id="line-240"></span><span class="anchor" id="line-241"></span></p></li></ul><p class="line874">Example: <span class="anchor" id="line-242"></span><span class="anchor" id="line-243"></span></p><p class="line867"><span class="anchor" id="line-244"></span><span class="anchor" id="line-245"></span><span class="anchor" id="line-246"></span><span class="anchor" id="line-247"></span><span class="anchor" id="line-248"></span><span class="anchor" id="line-249"></span><span class="anchor" id="line-250"></span><span class="anchor" id="line-251"></span><span class="anchor" id="line-252"></span><span class="anchor" id="line-253"></span><span class="anchor" id="line-254"></span></p><pre>dud@shadowplay:~ $ ls &gt; file4.txt
+dud@shadowplay:~ $ cat file4.txt
+file1.txt
+file2.pdf
+file3.mp3
+file1.pdf
+another_file.txt
+Yet-Another_file.txt
+file-with_other-NAME.TXT
+file4.txt</pre><span class="anchor" id="line-255"></span><span class="anchor" id="line-256"></span><p class="line862">The above example will create file4.txt if it is not found. <strong>NOTE:</strong>
+If file4.txt exists already, the above command will overwrite its
+contents. If you want to add to the end of a existing file, then you
+would use the following syntax: <span class="anchor" id="line-257"></span><span class="anchor" id="line-258"></span></p><ul><li style="list-style-type: none;"><p class="line891"><strong>command &gt;&gt; filename</strong> <span class="anchor" id="line-259"></span><span class="anchor" id="line-260"></span></p></li></ul><p class="line874">Example: <span class="anchor" id="line-261"></span><span class="anchor" id="line-262"></span></p><p class="line867"><span class="anchor" id="line-263"></span><span class="anchor" id="line-264"></span><span class="anchor" id="line-265"></span><span class="anchor" id="line-266"></span><span class="anchor" id="line-267"></span><span class="anchor" id="line-268"></span><span class="anchor" id="line-269"></span><span class="anchor" id="line-270"></span><span class="anchor" id="line-271"></span><span class="anchor" id="line-272"></span><span class="anchor" id="line-273"></span><span class="anchor" id="line-274"></span><span class="anchor" id="line-275"></span><span class="anchor" id="line-276"></span><span class="anchor" id="line-277"></span><span class="anchor" id="line-278"></span><span class="anchor" id="line-279"></span><span class="anchor" id="line-280"></span><span class="anchor" id="line-281"></span></p><pre>dud@shadowplay:~ $ ls &gt;&gt; file4.txt
+dud@shadowplay:~ $ cat file4.txt
+file1.txt
+file2.pdf
+file3.mp3
+file1.pdf
+another_file.txt
+Yet-Another_file.txt
+file-with_other-NAME.TXT
+file4.txt
+file1.txt
+file2.pdf
+file3.mp3
+file1.pdf
+another_file.txt
+Yet-Another_file.txt
+file-with_other-NAME.TXT
+file4.txt</pre><span class="anchor" id="line-282"></span><span class="anchor" id="line-283"></span><p class="line874">In
+the example, you will notice the file was appended with the new
+information. Now we are going to do a different redirection: We are
+going to take the input from a file for the command to be executed.
+Here is the syntax for this redirection: <span class="anchor" id="line-284"></span><span class="anchor" id="line-285"></span></p><ul><li style="list-style-type: none;"><p class="line891"><strong>command &lt; filename</strong> <span class="anchor" id="line-286"></span><span class="anchor" id="line-287"></span></p></li></ul><p class="line874">Example: <span class="anchor" id="line-288"></span><span class="anchor" id="line-289"></span></p><p class="line867"><span class="anchor" id="line-290"></span><span class="anchor" id="line-291"></span><span class="anchor" id="line-292"></span><span class="anchor" id="line-293"></span><span class="anchor" id="line-294"></span><span class="anchor" id="line-295"></span><span class="anchor" id="line-296"></span><span class="anchor" id="line-297"></span><span class="anchor" id="line-298"></span><span class="anchor" id="line-299"></span><span class="anchor" id="line-300"></span><span class="anchor" id="line-301"></span><span class="anchor" id="line-302"></span><span class="anchor" id="line-303"></span><span class="anchor" id="line-304"></span><span class="anchor" id="line-305"></span></p><pre>dud@shadowplay:~ $ sort &lt; file4.txt
+another_file.txt
+another_file.txt
+file1.txt
+file1.txt
+file2.pdf
+file2.pdf
+file3.mp3
+file3.mp3
+file4.txt
+file4.txt
+file-with_other-NAME.TXT
+file-with_other-NAME.TXT
+Yet-Another_file.txt
+Yet-Another_file.txt</pre><span class="anchor" id="line-306"></span><span class="anchor" id="line-307"></span><p class="line874">As you can see from this example, we used the file4.txt as input into the sort command. <span class="anchor" id="line-308"></span><span class="anchor" id="line-309"></span><span class="anchor" id="line-310"></span></p><p class="line867">
+</p><h3 id="Pipe">Pipe</h3>
+<span class="anchor" id="line-311"></span><span class="anchor" id="line-312"></span><p class="line874">When
+you need the output from command 1 for the input into command 2, then
+you would use pipe character '|'. Here is the syntax for the pipe
+character: <span class="anchor" id="line-313"></span><span class="anchor" id="line-314"></span></p><ul><li style="list-style-type: none;"><p class="line891"><strong>command | command</strong> <span class="anchor" id="line-315"></span><span class="anchor" id="line-316"></span></p></li></ul><p class="line874">Example: <span class="anchor" id="line-317"></span><span class="anchor" id="line-318"></span></p><p class="line867"><span class="anchor" id="line-319"></span><span class="anchor" id="line-320"></span><span class="anchor" id="line-321"></span><span class="anchor" id="line-322"></span><span class="anchor" id="line-323"></span><span class="anchor" id="line-324"></span><span class="anchor" id="line-325"></span><span class="anchor" id="line-326"></span><span class="anchor" id="line-327"></span></p><pre>dud@shadowplay:~ $ ls | sort
+another_file.txt
+file1.pdf
+file1.txt
+file2.pdf
+file3.mp3
+file-with_other-NAME.TXT
+Yet-Another_file.txt</pre><span class="anchor" id="line-328"></span><span class="anchor" id="line-329"></span><p class="line874">The above example is using the output from ls as input to the sort command. You will notice the list has been sorted. <span class="anchor" id="line-330"></span><span class="anchor" id="line-331"></span></p><p class="line874">As
+you can see, the command line is an easy and powerful way of completing
+many tasks. If you want more information on using the command line,
+then look at the further reading section of this document. <span class="anchor" id="line-332"></span><span class="anchor" id="line-333"></span></p><p class="line867">
+</p><h1 id="Further reading">Further reading</h1>
+<span class="anchor" id="line-334"></span><span class="anchor" id="line-335"></span><p class="line867"><a class="http" href="http://rute.2038bug.com/index.html.gz">http://rute.2038bug.com/index.html.gz</a> <br>
+ <span class="anchor" id="line-336"></span><a href="https://help.ubuntu.com/community/BasicCommands">BasicCommands</a> has a list of basic commands.<br>
+ <span class="anchor" id="line-337"></span><a href="https://help.ubuntu.com/community/AdvancedCommandlineHowto">AdvancedCommandlineHowto</a> has some advanced command line features such as scripting.<br>
+ <span class="anchor" id="line-338"></span><span class="anchor" id="line-339"></span></p><p class="line867"></p><hr><p class="line874"> <span class="anchor" id="line-340"></span><a href="https://help.ubuntu.com/community/CategoryCommandLine">CategoryCommandLine</a> <span class="anchor" id="line-341"></span><span class="anchor" id="bottom"></span></p></div><p id="pageinfo" class="info" dir="ltr" lang="en">CommandlineHowto  (last edited 2008-10-17 23:40:36 by <span title="https://login.launchpad.net/+id/LfJyXpA @ cpe-69-207-215-155.stny.res.rr.com[69.207.215.155]"><a class="interwiki" href="https://launchpad.net/%7Elittlergirl" title="https://login.launchpad.net/+id/LfJyXpA @ cpe-69-207-215-155.stny.res.rr.com[69.207.215.155]">Little Girl</a></span>)</p>
+
+<ul class="pagelinks">
+<li><a class="nbinfo" href="https://help.ubuntu.com/community/CommandlineHowto?action=info" rel="nofollow">Page History</a></li>
+</ul>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+<hr width="550">
+
+  <div id="ubuntulinks">
+	<p>
+	      The material on this wiki is available under a free license, see <a href="https://help.ubuntu.com/community/License">Copyright / License</a> for details<br><b>You</b> can contribute to this wiki, see <a href="https://help.ubuntu.com/community/WikiGuide">Wiki Guide</a> for details
+	</p><br>
+  </div>
+<script src="multiple_command_files/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1018242-7";
+urchinTracker();
+__utmSetVar('UbuntuWiki');
+</script>
+<script type="text/javascript">
+function togglebar() {
+    obj = document.getElementById('editbar');
+    obj2 = document.getElementById('showbarspan');
+    obj3 = document.getElementById('showbar');
+    if (obj.style.position == 'fixed') {
+        obj.style.position = 'static';
+	obj3.style.bottom = '0';
+        obj2.innerHTML = 'Show';
+    } else {
+        obj.style.position = 'fixed';
+        obj2.innerHTML = 'Hide';
+        obj3.style.bottom = '25px';
+    }
+    return false;
+}
+</script>
+
+
+</div> <!-- footer -->
+</div> <!-- layout -->
+<img id="bottomcap" alt="" src="multiple_command_files/cap-bottom.png">
+</div> <!-- round -->
+</body></html>

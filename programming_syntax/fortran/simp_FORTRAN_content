@@ -1,0 +1,29 @@
+
+READ(*,*) variables
+
+WRITE(*,*)'things', & variable
+
+DO I = X, Y, Z
+  operation
+END DO
+
+IF (condition) THEN
+  operation
+ELSE
+  operation
+END PROGRAM 
+
+SELECT CASE(case_expression)
+CASE (case_selector)
+...
+! a_value  	--specific value
+! low:high 	--range of value, low to high inclusive
+!low:           --range starting at low... to higher possible value
+:high		--range of value  from lowest possible value ending at high
+...
+CASE DEFAULT
+
+
+
+
+

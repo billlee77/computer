@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Content-Language" content="en"><meta http-equiv="Cache-control" content="no-cache"><meta http-equiv="imagetoolbar" content="no"><meta name="Copyright" content="(c) Wenliang Li's Web"><meta name="description" content="This is Wenliang's web"><meta name="keywords" content="wenliang li, billlee "><title> Wenliang Li's Web </title></head><body>
+
+
+<?php 
+ require($DOCUMENT_ROOT . "style.php");?>
+
+<!--Header Page-->
+<?php
+ require($DOCUMENT_ROOT . "../page_element/header.html"); ?>
+
+<!--Navigation bar-->
+<?php
+ require($DOCUMENT_ROOT . "../page_element/navi.html"); ?>
+
+<!--Left bar-->
+<?php
+ require($DOCUMENT_ROOT . "../page_element/left_sidebar.html"); ?>
+
+
+<center><h1 class="pageheader">Wenliang's Home</h1></center>
+<br>
+<h2 class="secheader">You Are More Than Welcome </h2>
+
+<p class="lettercontent">Dear visiter, my name is Wenliang Li, also know
+ as Bill. This is the first website I have ever created. The main 
+purpose is to explore the knowledge and syntax of HTML and others. As a 
+part of personal experience, I think the best way to learn programing 
+skills is to practically use it, remember things while achieving goals. 
+There are infinite amount of things to learn, learning programing is 
+perhaps not a matter of remembering but a mattering of doing. I am very 
+happy to share my little experience, including studying abroad, being a 
+physics student, basic programing knowledge and some funning stuff over 
+the years.</p>
+<br>
+
+<br>
+<h2 class="secheader">Master Thesis Download</h2>
+
+<center>
+<a href="http://lynx.phys.uregina.ca/~billlee/file/thesis_defence_version.pdf"><font size="4">Master Thesis 2012</a> 
+</center>
+
+<!--
+<h2 class="secheader">What You May Find In Here</h2>
+<p class="lettercontent">First of all, I have been been studying physics
+ student for four years, and I know very little about the subject, I 
+will share my version of physics in this website. The self 
+interpretation on the matter may contradict the view others, therefore I
+ apologise in advance for the lack of knowledge and naive understanding.
+ The statement shows on this website are totally self sprited, my 
+apology for any possible similar statement.</p>
+
+<p class="lettercontent">I only had a short career with computer 
+programing and linux usage, however I am more than willing to share the 
+limited knowledge and experience. I am familiar with the following 
+subjects:</p>
+
+<ul>
+<li> Basic C++ with ROOT
+</li><li> Basic BASH
+</li><li> Basic FORTRAN 90
+</li><li> Basic IDL
+</li><li> Basic HTML
+</li><li> Basic Latex
+</li><li> Some Hacking Trick : )
+</li></ul>
+
+
+<p class="lettercontent">As I claimed I have only had very short 
+programing age (less than a year), if you are a beginner on some of 
+these subject, may be you will find something that is useful here. </p>
+
+<p class="lettercontent">The last thing you may find is some funny stuff
+ I collected over the year from different counties. Some are quite 
+funning, however some can be offensive depend on your oriatation. I do 
+fully apologize for any possible frustration. I have not host any 
+authority or responsibility on any media product that I introduce. </p>
+--!>
+
+
+<!--Right Side Bar-->
+<?php
+ require($DOCUMENT_ROOT . "../page_element/right_sidebar.html"); ?>
+
+<!--Footer-->
+<?php
+ require($DOCUMENT_ROOT . "../page_element/footer.html"); ?>
+
+    </body>
+</html>
+

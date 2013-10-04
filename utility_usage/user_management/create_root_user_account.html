@@ -1,0 +1,999 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html class="js" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="root user, create root user account, add root user, create root user, adding root user account, root user account, add root user account, linux, linux classes, computer help, linux courses, linux training, computer training, servers, linux server, computer, technology, configure, fedora linux, fedora, windows, unix, download, install windows, install fedora, install linux, screenshot, configure linux, setup linux, fedora command, linux command, unix command, Using Linux">
+<meta name="copyright" content="Copyrights © 2011 LabTestProject.com">
+<meta name="description" content="This article show the step by step to create the duplicate root account that have the same privileges as super user root account on the Linux Fedora Core operating system.">
+<meta name="revisit-after" content="1 day">
+<link rel="shortcut icon" href="http://www.labtestproject.com/files/favicon.ico" type="image/x-icon">
+  <title>Create root user account on Linux Fedora Core. | Linux Windows Install Setup Configuration Project</title>
+  <link type="text/css" rel="stylesheet" media="all" href="create_root_user_account_files/css_d98b8de6b8b212dcf0f09468a5e9bc8a.css">
+  <script src="create_root_user_account_files/ga.js" async="" type="text/javascript"></script><script src="create_root_user_account_files/beacon.js" async=""></script><script src="create_root_user_account_files/beacon.js" async=""></script><script src="create_root_user_account_files/beacon.js" async=""></script><script src="create_root_user_account_files/beacon.js" async=""></script><script src="create_root_user_account_files/beacon.js" async=""></script><script src="create_root_user_account_files/beacon.js" async=""></script><script type="text/javascript" src="create_root_user_account_files/js_b97795db6be23cda3f18fc10f5cb0e9c.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "cron": { "basePath": "/poormanscron", "runNext": 1303844432 } });
+//--><!]]>
+</script>
+  <script type="text/javascript"> </script>
+</head><body class="cron-check-processed">
+<script>var cwfl = "http://www.labtestproject.com/files/cwfl.htm";</script>
+<script src="create_root_user_account_files/getjs_006.js"></script><div id="cw_td_4761054" style="height: 0pt; width: 0pt; display: none;"></div><script type="text/javascript" src="create_root_user_account_files/getad.js"></script><center></center>
+<div style="display: none; width: 0pt; height: 0pt;"><iframe src="create_root_user_account_files/p-01-0VIaSjnOLg_007.gif" marginwidth="0" marginheight="0" allowtransparency="true" frameborder="0" height="0" scrolling="NO" width="0"></iframe></div><div style="display: none; width: 0pt; height: 0pt;"><script>var _comscore = _comscore || [];_comscore.push({ c1: "8", c2: "2102", c3: "106", c4: "", c5: "", c15: "", c16: "" });(function() {var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";el.parentNode.insertBefore(s, el);})();</script><noscript><img src="http://b.scorecardresearch.com/p?c1=8&c2=2102&c3=106&c4=&c5=&c6=&c15=&c16=&cv=2.0&cj=1" /></noscript></div>
+
+
+<table id="header" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td id="logo">
+      <a href="http://www.labtestproject.com/" title="Home"><img src="create_root_user_account_files/logo.png" alt="Home"></a>      <h1 class="site-name"><a href="http://www.labtestproject.com/" title="Home">Linux Windows Install Setup Configuration Project</a></h1>      <div class="site-slogan">The Linux Training, Windows, Computer, Technology, Install, Configuration Setup and Troubleshoot Project</div>    </td>
+    <td id="menu">
+            <ul class="links" id="navlist"><li class="menu-127 first"><a href="http://www.labtestproject.com/" title="Linux Windows Laboratory Test Project.">Home</a></li>
+<li class="menu-187"><a href="http://www.labtestproject.com/contact_us" title="Contact Us">Contact Us</a></li>
+<li class="menu-111"><a href="http://www.labtestproject.com/disclaimer.html" title="DISCLAIMER STATEMENTS.">Disclaimer</a></li>
+<li class="menu-110"><a href="http://www.labtestproject.com/privacy.html" title="PRIVACY POLICY STATEMENTS">Privacy</a></li>
+<li class="menu-268"><a href="http://www.labtestproject.com/tagadelic" title="Linux Windows Install Setup Configuration Project Tags">Tags</a></li>
+<li class="menu-76 last"><a href="http://www.labtestproject.com/tracker">Recent posts</a></li>
+</ul>          </td>
+  </tr>
+  <tr>
+    <td colspan="2"><div></div></td>
+  </tr>
+</tbody></table>
+
+<table id="content" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr>
+    <td id="sidebar-left">
+        <div class="block block-block" id="block-block-25">
+    <h2 class="title"></h2>
+    <div class="content"><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-bottom" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
+  <div class="cse-branding-form">
+    <form action="http://www.labtestproject.com/google_search" id="cse-search-box">
+      <div>
+        <input name="cx" value="partner-pub-3039790253816126:f2kj297a4q5" type="hidden">
+        <input name="cof" value="FORID:10" type="hidden">
+        <input name="ie" value="ISO-8859-1" type="hidden">
+        <input name="as_q" size="27" type="text">
+        <input name="sa" value="Search" type="submit">
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="create_root_user_account_files/poweredby_FFFFFF.gif" alt="Google">
+  </div>
+  <div class="cse-branding-text">
+    Custom Search
+  </div>
+</div></div>
+ </div>
+  <div class="block block-menu" id="block-menu-menu-home">
+    <h2 class="title">Home</h2>
+    <div class="content"><ul class="menu"><li class="leaf first last"><a href="http://www.labtestproject.com/linux_configuration.html" title="Linux Training and Windows Install Setup Configuration Project with Screenshot and Example.">Linux Training and Windows Install Setup Configuration Project with Screenshot and Example.</a></li>
+</ul></div>
+ </div>
+  <div class="block block-menu" id="block-menu-menu-linux-commands">
+    <h2 class="title">Linux Commands</h2>
+    <div class="content"><ul class="menu"><li class="collapsed first last"><a href="http://www.labtestproject.com/linuxcmd/index.html" title="Guides and help on using basic Linux commands &amp; basic Unix commands with step-by-step example.">Guides and help on using basic Linux commands &amp; basic Unix commands with step-by-step example.</a></li>
+</ul></div>
+ </div>
+  <div class="block block-menu" id="block-menu-menu-using-linux">
+    <h2 class="title">Using Linux</h2>
+    <div class="content"><ul class="menu"><li class="expanded first last active-trail"><a href="http://www.labtestproject.com/linuse/index.html" title="Step by step on install configure manage and using Linux Fedora on clients server computer presented with screenshots examples.">Step by step on install configure manage and using Linux Fedora on clients server computer presented with screenshots examples.</a><ul class="menu"><li class="leaf first"><a href="http://www.labtestproject.com/linuse/adding_user.html" title="Add new user account to Fedora Core Linux system">Add new user account to Fedora Core Linux system</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/bug_on_pirut_addremove_software_and_yum_tb21f8f94d_packagespy" title="Bug on Pirut Add/Remove Software.">Bug on Pirut Add/Remove Software.</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/change_linux_fedora_virtual_terminal_and_graphical_desktop.html" title="Change Linux Fedora Virtual Terminal and Graphical Desktop">Change Linux Fedora Virtual Terminal and Graphical Desktop</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/step_by_step_change_linux_partition_system_id_on_fedora_system" title="Step by step Change Linux Partition System ID on Linux Fedora system">Change Linux Partition System ID on Fedora system</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/change_default_boot_up_runlevel_linux_fedora_edit_inittab_configuration_file" title="Change default boot up runlevel Linux Fedora and edit inittab configuration file">Change boot up runlevel inittab configuration file</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/linuse/change_user_password.html" title="Change or reset user password on Linux Fedora Core">Change or reset user password on Linux Fedora Core</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/linuse/change_root_password.html" title="Change root password for Linux Fedora Core in runlevel 1">Change root password for Linux Fedora Core in runlevel 1</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/smartctl_tool_check_hard_disk_drive_health_status_smart_linux_fedora" title="smartctl Tool to Check Hard Disk Drive Health Status using SMART on Linux Fedora">Check Hard Disk Drive Health Status using SMART</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/check_linux_file_type_and_file_format_using_file_command_and_ls_command" title="Check Linux File Type and File Format using file Command and ls Command.">Check Linux File Type and File Format.</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/check_and_list_partition_on_usb_hard_disk_drive_using_fdisk_command" title="Check and List Partition on USB Hard Disk Drive using fdisk Command">Check List Partition on Hard Disk Drive</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/check_shell_type_currently_use_check_shell_version_linux_fedora" title="Check Shell Type Currently Use and Check Shell Version on Linux Fedora">Check Shell Type Check Shell Version</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/check_usb_hard_disk_drive_name_auto_detect_on_fedora_system" title="Check USB Hard Disk Drive Name Auto Detect on Fedora System">Check USB Hard Disk Drive Name on Fedora System</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/open_and_check_usb_disk_on_fedora_linux_and_check_usb_disk_on_windows_xp" title="Open and Check USB disk on Fedora Linux and Check USB disk on Windows XP">Check USB disk on Fedora Linux and Windows XP</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/check_and_list_available_shell.html" title="Check and List Available Shell">Check and List Available Shell</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/configure_fedora_core_4_after_first_boot" title="Configure Fedora Core 4 After the First Boot">Configure Fedora Core 4 After the First Boot</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/convert_linux_manual_man_page_to_text_file" title="Convert Linux manual man page to text file.">Convert Linux manual man page to text file.</a></li>
+<li class="leaf active-trail"><a href="http://www.labtestproject.com/create_root_user_account" title="Create extra root user account to your Linux box" class="active">Create root user account on Linux Fedora Core</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/delete_windows_partition_using_fdisk_command_on_linux_fedora_system" title="Step by Step Delete Windows Partition using fdisk command on Linux Fedora System">Delete Windows Partition using fdisk command on Linux Fedora System</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/how_to_disable_ctrl_alt_delete_key_on_linux_fedora_10_system.html" title="How To Disable Ctrl Alt Delete Key on Linux Fedora 10 System">Disable Ctrl Alt Delete Key on Linux Fedora 10 System</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/disable_networkmanager_on_linux_fedora_10" title="Step by Step to Disable NetworkManager on Linux Fedora 10">Disable NetworkManager on Linux Fedora 10</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/how_to_disable_networkmanager_on_linux_fedora_11.html" title="How to disable NetworkManager on Linux Fedora 11">Disable NetworkManager on Linux Fedora 11</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/enable_disable_yum_repo_list_fedora_11.html" title="Enable Disable Yum Repo List Fedora 11">Enable Disable Yum Repo List Fedora 11</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/extract_open_targz_compress_file.html" title="Extract Open tar.gz Compress File">Extract Open tar.gz Compress File</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/enable_fedora_firewall_configuration" title="Firewall Configuration">Firewall Configuration</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/format_linux_partition_ext3_on_linux_fedora_usb_hard_disk" title="Step by Step Format Linux partition ext3 on Linux Fedora USB hard disk">Format Linux partition ext3 on Linux Fedora USB hard disk</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/how_to_get_into_cd_into_directory_use_double_quotes_as_directory_name.html" title="How to get into or cd into directory that use &quot; double quotes as directory name">How to get into cd into directory use double quotes as directory name</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/what_is_linux_shell" title="Info What is Linux Shell.">Info What is Linux Shell.</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/install_software_from_fedora_installation_dvd" title="Install software from Fedora installation DVD.">Install software from Fedora installation DVD.</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/linux_fedora_core_4_installation_process_start_install_fedora_core_4_to_hard_disk" title="Linux Fedora Core 4 Installation Process Start to Install Fedora Core 4 to Hard Disk">Linux Fedora Core 4 Installation Process Start to Install Fedora Core 4 to Hard Disk</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/fedora_core_4_installation_preparation" title="Linux Fedora Core 4 step-by-step installation screnshot the preparation of the installation process">Linux Fedora Core 4 step-by-step installation screnshot the preparation of the installation process</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/list_of_linux_shell" title="List of Linux Shell.">List of Linux Shell.</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/login_in_fedora_core" title="Login in to Linux Fedora Core Operating System">Login in to Linux Fedora Core Operating System</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/logout_reboot_shutdown_linux_fedora_core" title="Logout Reboot and Shutdown Linux Fedora Core operating system">Logout Reboot and Shutdown Linux Fedora Core operating system</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/make_external_usb_hard_disk_portable_on_linux_and_windows_using_vfat_filesystem" title="Make External USB Hard Disk Portable on Linux and Windows using vfat Filesystem">Make External USB Hard Disk Portable on Linux and Windows</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/open_x_terminal_shell_on_fedora_10" title="Open X Terminal Shell on Fedora 10">Open X Terminal Shell on Fedora 10</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/open_x_terminal_on_fedora_11.html" title="Open X Terminal on Fedora 11">Open X Terminal on Fedora 11</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/partition_hard_disk_using_fdisk_command_on_linux_fedora_system" title="Partition Hard Disk using fdisk command on Linux Fedora system">Partition Hard Disk using fdisk command</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/step_by_step_to_reset_change_root_password_on_fedora_10" title="Step by Step to Reset Change root Password on Fedora 10">Reset Change root Password on Fedora 10</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/run_anaconda_the_graphical_fedora_core_system_installer_installation_configuration_process" title="Running Anaconda the Graphical Fedora Core 4 System Installer - Installation Configuration Process">Running Anaconda the Graphical Fedora Core 4 System Installer - Installation Configuration Process</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/setup_to_install_software_package_from_fedora_10_dvd" title="Step by step setup to install or adding software package from Fedora 10 installation DVD">Setup to Install software package from Fedora 10 DVD</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/step_by_step_enable_install_software_package_from_centos_dvd.html" title="Step by Step Enable Install Software Package from CentOS DVD">Step by Step Enable Install Software Package from CentOS DVD</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/step_by_step_enable_root_login_on_fedora_11_gui_desktop.html" title="Step by Step How To Enable Root Login on Fedora 11 GUI Desktop">Step by Step Enable Root Login on Fedora 11 GUI Desktop</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/step_by_step_how_to_enable_install_software_package_from_fedora_11_dvd.html" title="Step by Step How to Enable Install Software Package from Fedora 11 DVD">Step by Step How to Enable Install Software Package from Fedora 11 DVD</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/step_by_step_how_to_enable_root_login_on_fedora_10" title="Enable root log in and Login as root user on Linux Fedora 10">Step by step How to Enable root login on Fedora 10</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/test_fedora_core_4_installations_media_using_linux_mediacheck" title="Test the Fedora Core 4 installations media using Linux Media Check - Linux Fedora Core Project">Test the Fedora Core 4 installations media using Linux Media Check - Linux Fedora Core Project</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/update_fedora_sever.html" title="Update Fedora Sever Using yum Command">Update Fedora Sever</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/linuse/kernel_upgrade.html" title="Upgrade Fedora Core kernel using RPM packages manually.">Upgrade Fedora Core kernel using RPM packages manually.</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/reconfigure_fedora_configure_fedora_linux_using_firstboot_program" title="Reconfigure Fedora or Configure Fedora Linux using Firstboot Program">Using Firstboot to Configure Fedora or Reconfigure Fedora</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/linuse/linux_help.html" title="Using man command to get Linux online help manual and documentation.">Using man command to get Linux online help manual and documentation.</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/verify_the_existence_of_storage_media" title="Verify the existence of the storage media on Linux Fedora Core machine - Linux Fedora Core Project">Verify the existence of the storage media on Linux Fedora Core machine - Linux Fedora Core Project</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/using_linux/view_linux_log_file_on_linux_fedora_with_gnomesystemlog.html" title="View Linux log file on Linux Fedora with gnome-system-log">View Linux log file on Linux Fedora with gnome-system-log</a></li>
+<li class="leaf"><a href="http://www.labtestproject.com/what_is_linux" title="What is Linux Linux kernel Linux utilities and Linux distro - Linux Fedora Core Project">What is Linux Linux kernel Linux utilities and Linux distro - Linux Fedora Core Project</a></li>
+<li class="leaf last"><a href="http://www.labtestproject.com/using_linux/how_to_install_flash_player_on_fedora_10.html" title="Step by step how to install flash player on Fedora 10">how to install flash player on Fedora</a></li>
+</ul></li>
+</ul></div>
+ </div>
+  <div class="block block-menu" id="block-menu-menu-linux-network">
+    <h2 class="title">Linux Network</h2>
+    <div class="content"><ul class="menu"><li class="collapsed first last"><a href="http://www.labtestproject.com/linnet/index.html" title="Step by step Install Setup and Configure Linux Fedora Core Server and Network Management with Screen Shot and Example.">Step by step Install Setup and Configure Linux Fedora Core Server and Network Management with Screen Shot and Example.</a></li>
+</ul></div>
+ </div>
+  <div class="block block-menu" id="block-menu-menu-linux-tools">
+    <h2 class="title">Linux Tools</h2>
+    <div class="content"><ul class="menu"><li class="collapsed first"><a href="http://www.labtestproject.com/linux_tools/index.html" title="List of graphical Linux tools for system administration and system configuration available on Fedora Core operating system.">List of graphical Linux tools for system administration and system configuration available on Fedora Core operating system.</a></li>
+<li class="collapsed last"><a href="http://www.labtestproject.com/linux_tools/using_yum_install_and_manage_software_on_fedora.html" title="Using YUM Install and Manage Software on Fedora">Using YUM Install and Manage Software on Fedora</a></li>
+</ul></div>
+ </div>
+  <div class="block block-menu" id="block-menu-menu-using-windows">
+    <h2 class="title">Using Windows</h2>
+    <div class="content"><ul class="menu"><li class="collapsed first last"><a href="http://www.labtestproject.com/win/index.html" title="Guide on install using and configure Microsoft Windows operating system on PC and server computer with screenshot example.">Guide on install using and configure Microsoft Windows operating system on PC and server computer with screenshot example.</a></li>
+</ul></div>
+ </div>
+  <div class="block block-menu" id="block-menu-menu-download">
+    <h2 class="title">Download</h2>
+    <div class="content"><ul class="menu"><li class="leaf first last"><a href="http://www.labtestproject.com/download/index.html" title="Download Linux Fedora Core screenshot Windows XP Windows 2000 screenshot.">Download Linux Fedora Core screenshot Windows XP Windows 2000 screenshot.</a></li>
+</ul></div>
+ </div>
+  <div class="block block-menu" id="block-menu-menu-screenshots">
+    <h2 class="title">Screenshots</h2>
+    <div class="content"><ul class="menu"><li class="collapsed first"><a href="http://www.labtestproject.com/step_by_step_install_fedora_screenshot" title="Staep by Step Collection of  Linux Fedora Core and Fedora operating system installation screenshots.">Step by Step Fedora Installation Screenshot.</a></li>
+<li class="leaf last"><a href="http://www.labtestproject.com/step_by_step_windows_screenshot" title="Collection of Step by step Windows operating system installation screenshots.">Step by step Windows Screenshot.</a></li>
+</ul></div>
+ </div>
+  <div class="block block-menu" id="block-menu-menu-miscellaneous">
+    <h2 class="title">Miscellaneous</h2>
+    <div class="content"><ul class="menu"><li class="collapsed first last"><a href="http://www.labtestproject.com/hardware_and_software_setting_that_wont_fit_into_linux_and_windows_category" title="Hardware Software Setting and Configuration that wont fit into Linux and Windows category.">Hardware Software Setting and Configuration that wont fit into Linux and Windows category.</a></li>
+</ul></div>
+ </div>
+  <div class="block block-menu" id="block-menu-menu-site-map">
+    <h2 class="title">Site Map</h2>
+    <div class="content"><ul class="menu"><li class="leaf first last"><a href="http://www.labtestproject.com/menutree/all" title="LabTestProject.com Site Contents Map.">Site Map.</a></li>
+</ul></div>
+ </div>
+  <div class="block block-statistics" id="block-statistics-0">
+    <h2 class="title">Popular content</h2>
+    <div class="content"><div class="item-list"><h3>Today's:</h3><ul><li class="first"><a href="http://www.labtestproject.com/404.html">File Not Found</a></li>
+<li><a href="http://www.labtestproject.com/google_search">Search Results</a></li>
+<li><a href="http://www.labtestproject.com/linux_configuration.html">Linux Training and Windows Install Setup Configuration Project with Screenshot and Example.</a></li>
+<li><a href="http://www.labtestproject.com/linnet/dns-server.html">Fedora Core DNS Server using BIND - Linux Server Configuration.</a></li>
+<li class="last"><a href="http://www.labtestproject.com/linux_network/view_and_check_who_login_on_shh_server">View and Check Who Login on SHH Server</a></li>
+</ul></div></div>
+ </div>
+  <div class="block block-block" id="block-block-41">
+    <h2 class="title"></h2>
+    <div class="content"><script src="create_root_user_account_files/getjs.js"></script><div id="cw_td_9867680" style="height: 0pt; width: 0pt; display: none;"></div><script type="text/javascript" src="create_root_user_account_files/getad_003.js"></script><center></center>
+<div style="display: none; width: 0pt; height: 0pt;"><iframe src="create_root_user_account_files/p-01-0VIaSjnOLg_009.gif" marginwidth="0" marginheight="0" allowtransparency="true" frameborder="0" height="0" scrolling="NO" width="0"></iframe></div><div style="display: none; width: 0pt; height: 0pt;"><script>var _comscore = _comscore || [];_comscore.push({ c1: "8", c2: "2102", c3: "106", c4: "", c5: "", c15: "", c16: "" });(function() {var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";el.parentNode.insertBefore(s, el);})();</script><noscript><img src="http://b.scorecardresearch.com/p?c1=8&c2=2102&c3=106&c4=&c5=&c6=&c15=&c16=&cv=2.0&cj=1" /></noscript></div>
+
+</div>
+ </div>
+  <div class="block block-tagadelic" id="block-tagadelic-2">
+    <h2 class="title">Linux Classes Tags</h2>
+    <div class="content"><a href="http://www.labtestproject.com/basic_linux_commands" class="tagadelic level4" rel="tag">Basic Linux Commands</a> 
+<a href="http://www.labtestproject.com/install_setup_configuration" class="tagadelic level3" rel="tag">Install Setup Configuration</a> 
+<a href="http://www.labtestproject.com/linux_network" class="tagadelic level5" rel="tag">Linux Network</a> 
+<a href="http://www.labtestproject.com/fedora_12_screenshot" class="tagadelic level5" rel="tag">Fedora 12 Screenshot</a> 
+<a href="http://www.labtestproject.com/windows_screenshot" class="tagadelic level1" rel="tag">Windows Screenshot</a> 
+<a href="http://www.labtestproject.com/fedora_13_screenshot" class="tagadelic level5" rel="tag">Fedora 13 Screenshot</a> 
+<a href="http://www.labtestproject.com/using_linux" class="tagadelic level5" rel="tag">Using Linux</a> 
+<a href="http://www.labtestproject.com/miscellaneous" class="tagadelic level1" rel="tag">Miscellaneous</a> 
+<a href="http://www.labtestproject.com/hardware_setting" class="tagadelic level1" rel="tag">Hardware Setting</a> 
+<a href="http://www.labtestproject.com/using_windows" class="tagadelic level4" rel="tag">Using Windows</a> 
+<a href="http://www.labtestproject.com/linux_tools" class="tagadelic level3" rel="tag">Linux Tools</a> 
+<a href="http://www.labtestproject.com/software_setting" class="tagadelic level1" rel="tag">Software Setting</a> 
+<a href="http://www.labtestproject.com/screenshots" class="tagadelic level1" rel="tag">Screenshots</a> 
+<a href="http://www.labtestproject.com/fedora_screenshot" class="tagadelic level6" rel="tag">Fedora Screenshot</a> 
+<a href="http://www.labtestproject.com/download_screenshot" class="tagadelic level1" rel="tag">Download Screenshot</a> 
+</div>
+ </div>
+    </td>    <td valign="top"><!--INFOLINKS_ON-->
+            <div id="main">
+      			<br class="clear">
+      			<div class="adsense adsense_managed">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3039790253816126";
+/* 468x15 */
+google_ad_slot = "8472746949";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="create_root_user_account_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 15px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 468px;"><ins id="aswift_0_anchor" style="display: block; border: medium none; height: 15px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 468px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="15" scrolling="no" width="468"></iframe></ins></ins>
+</div>      			<br class="clear">     	  
+        <div class="breadcrumb"><a href="http://www.labtestproject.com/">Home</a> » <a href="http://www.labtestproject.com/linuse/index.html" title="Step by step on install configure manage and using Linux Fedora on clients server computer presented with screenshots examples.">Step by step on install configure manage and using Linux Fedora on clients server computer presented with screenshots examples.</a></div>        <h1 class="title">Create root user account on Linux Fedora Core.</h1>
+        <div class="tabs"></div>
+                        
+
+  <div class="node">
+            <span class="submitted"></span>
+    <div class="taxonomy"><ul class="links inline"><li class="taxonomy_term_3 first last"><a href="http://www.labtestproject.com/using_linux" rel="tag" title="Step by step using Linux operation system, this step by step using Linux operating system base on Linux Fedora operating system.">Using Linux</a></li>
+</ul></div>
+    <div class="content"><div class="borderline"></div><div align="center"><img src="create_root_user_account_files/installsetupconfigure7.png" alt="Linux Windows Computer Technology Install Setup Linux Network Configuration Troubleshoot Linux Unix Linux Classes Linux Training" border="0"><div class="adsense adsense_managed">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3039790253816126";
+/* 728x90 */
+google_ad_slot = "7509859622";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="create_root_user_account_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><ins id="aswift_1_anchor" style="display: block; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins>
+</div></div><div style="float: left; margin: 0pt; padding: 0pt 1em 0.31em 0pt;"><img src="create_root_user_account_files/installsetupconfigure6.png" alt="Linux Windows Computer Technology Install Setup Linux Network Configuration Troubleshoot Linux Unix Linux Classes Linux Training" border="0"><div class="adsense adsense_managed">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3039790253816126";
+/* 336x280 */
+google_ad_slot = "9037537818";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="create_root_user_account_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 280px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 336px;"><ins id="aswift_2_anchor" style="display: block; border: medium none; height: 280px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 336px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_2" name="aswift_2" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="280" scrolling="no" width="336"></iframe></ins></ins>
+</div></div><!-- google_ad_section_start --><p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<h1 style="margin-top: 0pt; margin-bottom: 0pt;">Create extra
+root user account to your Linux box.</h1>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;&nbsp; The ‘<span style="font-family: Courier New;">root</span>’ 
+account with user id <span style="font-family: Courier New;">0</span> is the most powerful 
+user in Linux and Unix system.&nbsp; This article show the step by step 
+to create the duplicate root account that have the same privileges as 
+super user root account on the Linux Fedora Core operating system.
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;&nbsp; You may want 
+to make replicate of root user account, or to create more than one user account&nbsp;that have the same capabilities as a 
+'<span style="font-family: Courier New;">root</span>' user (superuser) account.&nbsp; 
+Why, may be for a root backup 
+user account, incase of something happen to the '<span style="font-family: Courier New;">root</span>' 
+user account or may be just for fun :-).
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;&nbsp; To create another root user 
+account, 
+we need to replicate the '<span style="font-family: Courier New;">root</span>' user account 
+characteristic, then make one account that have the same characteristic 
+and capabilities of the '<span style="font-family: Courier New;">root</span>' user account.
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<h1 style="margin-top: 0pt; margin-bottom: 0pt;">Let begin by 
+check the '<span style="font-family: Courier New;">root</span>' user account.</h1>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+1.&nbsp; Check 
+user id for ‘<span style="font-family: Courier New;">root</span>’ user 
+account:
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p class="editable" style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[root@fedora ~]#</span></b><b><span style="font-family: Courier New; color: rgb(0, 100, 0);"> </span>
+<span style="font-family: Courier New; color: rgb(0, 66, 0);">id 
+root</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">uid=0(root) gid=0(root) 
+groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel)</span>
+</p>  <div class="block block-block" id="block-block-43">
+    <h2 class="title"></h2>
+    <div class="content"><div style="text-align: center;"><div class="adsense adsense_managed">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3039790253816126";
+/* 336x280 */
+google_ad_slot = "3091984432";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="create_root_user_account_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 280px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 336px;"><ins id="aswift_3_anchor" style="display: block; border: medium none; height: 280px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 336px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_3" name="aswift_3" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="280" scrolling="no" width="336"></iframe></ins></ins>
+</div></div></div>
+ </div>
+
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Explanations of the command output:
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+A.&nbsp;
+<b><span style="font-family: Courier New; color: rgb(0, 66, 0);">uid=0(root)</span></b><span style="font-family: Courier New; color: rgb(0, 102, 0);"> </span>The user id 
+for user '<span style="font-family: Courier New;">root</span>' user is 0.
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+B.&nbsp;<b><span style="font-family: Courier New; color: rgb(0, 66, 0);"> gid=0(root)</span></b><span style="font-family: Courier New; color: rgb(0, 102, 0);"> </span>the group id 
+for user ‘<span style="font-family: Courier New;">root</span>’ is 0.
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+C. <b> <span style="font-family: Courier New; color: rgb(0, 102, 0);">&nbsp;</span><span style="font-family: Courier New; color: rgb(0, 66, 0);">groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel)</span></b><span style="font-family: Courier New; color: rgb(0, 102, 0);">
+</span>The user ‘<span style="font-family: Courier New;">root</span>’ 
+is belong in groups; root, bin, daemon, sys, adm, disk and wheel.
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+2.&nbsp; Now 
+we take a look at the <span style="font-family: Courier New;">passwd</span>,
+<span style="font-family: Courier New;">shadow</span> and
+<span style="font-family: Courier New;">group</span> files that contain ‘<span style="font-family: Courier New;">root’</span> 
+user information:
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p class="editable" style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[root@fedora ~]#</span></b><b><span style="font-family: Courier New; color: rgb(0, 102, 0);"> </span>
+<span style="font-family: Courier New; color: rgb(0, 66, 0);">less 
+/etc/passwd</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">root:x:0:0:root:/root:/bin/bash</span>
+</p>
+<p class="editable" style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[root@fedora ~]#</span></b><b><span style="font-family: Courier New; color: rgb(0, 102, 0);"> </span>
+<span style="font-family: Courier New; color: rgb(0, 66, 0);">less 
+/etc/shadow</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">root:$1$B2BEWv4X$Gb.QPb6I3RwCkEkz13ow21:13080:0:99999:7:::</span>
+</p>
+<p class="editable" style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">[root@fedora ~]#<b> </b></span><b> 
+<span style="font-family: Courier New; color: rgb(0, 66, 0);">less 
+/etc/group</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">root:x:0:root</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">bin:x:1:root,bin,daemon</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">daemon:x:2:root,bin,daemon</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">sys:x:3:root,bin,adm</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">adm:x:4:root,adm,daemon</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">tdisk:x:6:root</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">wheel:x:10:root</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;&nbsp; From the information 
+gather above, to create a user that have the same power (superuser power) 
+as a ‘<span style="font-family: Courier New;">root</span>’ user in Linux system, we need 
+to create a user with same root user uid, gid and group.
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+3.&nbsp; To 
+create user account that has the same ability (super user) as the ‘<span style="font-family: Courier New;">root</span>’ 
+user, issue this command:
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p class="editable" style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[root@fedora ~]#</span></b><b><span style="font-family: Courier New; color: rgb(0, 102, 0);"> </span>
+<span style="font-family: Courier New; color: rgb(0, 66, 0);">adduser 
+-u 0 -o -g 0 -G 0,1,2,3,4,6,10 -M root2</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Adduser command explanations:
+</p>
+<table style="border-collapse: collapse;" id="table1" width="550" border="0" cellpadding="0">
+	<tbody>
+		<tr>
+			<td bordercolor="#9999CC" width="118" bgcolor="#a9d807">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			<b><span style="font-family: Courier New; color: rgb(0, 66, 0);">adduser</span></b>
+			</p>
+			</td>
+			<td bordercolor="#9999CC" style="border-left: 1px solid rgb(128, 128, 0); border-right: 1px solid rgb(128, 128, 0);" align="left" bgcolor="#a9d807">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			<b><span style="font-family: Courier New; color: rgb(0, 66, 0);">-u 0 -o</span></b>
+			</p>
+			</td>
+			<td bordercolor="#9999CC" style="border-left: 1px solid rgb(128, 128, 0); border-right: 1px solid rgb(128, 128, 0);" align="left" bgcolor="#a9d807">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			<b><span style="font-family: Courier New; color: rgb(0, 66, 0);">-g 0</span></b>
+			</p>
+			</td>
+			<td bordercolor="#9999CC" style="border-left: 1px solid rgb(128, 128, 0); border-right: 1px solid rgb(128, 128, 0);" align="left" bgcolor="#a9d807">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			<b><span style="font-family: Courier New; color: rgb(0, 66, 0);">-G 0,1,2,3,4,6,10</span></b>
+			</p>
+			</td>
+			<td bordercolor="#9999CC" style="border-left: 1px solid rgb(128, 128, 0); border-right: 1px solid rgb(128, 128, 0);" align="left" bgcolor="#a9d807">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			<b><span style="font-family: Courier New; color: rgb(0, 66, 0);">-M</span></b>
+			</p>
+			</td>
+			<td bordercolor="#9999CC" align="left" bgcolor="#a9d807">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			<b><span style="font-family: Courier New; color: rgb(0, 66, 0);">root2</span></b>
+			</p>
+			</td>
+		</tr>
+		<tr>
+			<td bordercolor="#9999CC" valign="top" width="118" align="left">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			Using Linux adduser command to create 
+			a new user account or to update default new user information.
+			</p>
+			</td>
+			<td bordercolor="#9999CC" style="border-left: 1px solid rgb(128, 128, 0); border-right: 1px solid rgb(128, 128, 0);" valign="top" align="left">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			Set the value of user 
+			id to 0.
+			</p>
+			</td>
+			<td bordercolor="#9999CC" style="border-left: 1px solid rgb(128, 128, 0); border-right: 1px solid rgb(128, 128, 0);" valign="top" align="left">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			Set the initial group 
+			number or name to 0
+			</p>
+			</td>
+			<td bordercolor="#9999CC" style="border-left: 1px solid rgb(128, 128, 0); border-right: 1px solid rgb(128, 128, 0);" align="left">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			Set supplementary&nbsp; 
+			group to:
+			</p>
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			0 = root
+			</p>
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			1 = bin
+			</p>
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			2 = daemon
+			</p>
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			3 = sys
+			</p>
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			4 = adm
+			</p>
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			6 = disk
+			</p>
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			10 = wheel
+			</p>
+			</td>
+			<td bordercolor="#9999CC" style="border-left: 1px solid rgb(128, 128, 0); border-right: 1px solid rgb(128, 128, 0);" valign="top" align="left">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			'home directory' not 
+			created for the user.
+			</p>
+			</td>
+			<td bordercolor="#9999CC" valign="top" align="left">
+			<p style="margin-top: 0pt; margin-bottom: 0pt;">
+			User name of the new 
+			user account.
+			</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Note: you need 
+to have the administrative privilege on the system in order to issue '<b><span style="font-family: Courier New;">adduser</span></b>' 
+command above.
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+4.&nbsp; Now 
+add a password for user ‘<span style="font-family: Courier New;">root2</span>’ by issue 
+the ‘<span style="font-family: Courier New;">passwd root2</span>’ command, see example 
+below:
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p class="editable" style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[root@fedora ~]#</span></b><b><span style="font-family: Courier New; color: rgb(0, 102, 0);"> </span>
+<span style="font-family: Courier New; color: rgb(0, 66, 0);">passwd 
+root2</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">Changing password for 
+user root2.</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">New UNIX password:</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">Retype new UNIX password:</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">passwd: all authentication 
+tokens updated successfully.</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Note: you need 
+to have the administrative privilege on the system in order to issue '<b><span style="font-family: Courier New;">passwd</span></b><span style="font-family: Arial;">'</span> 
+command above.
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+5.&nbsp; Check 
+id for user root2 by issue the ‘<span style="font-family: Courier New;">id root2</span>’ 
+command, see example below:
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p class="editable" style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[root@fedora ~]#</span></b><b><span style="font-family: Courier New; color: rgb(0, 102, 0);"> </span>
+<span style="font-family: Courier New; color: rgb(0, 66, 0);">id 
+root2</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">uid=0(root) gid=0(root) 
+groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel)</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+6.&nbsp; Now 
+recheck the <b> <span style="font-family: Courier New;">passwd</span></b>,
+<b>
+<span style="font-family: Courier New;">shadow</span></b> and
+<b>
+<span style="font-family: Courier New;">group</span></b> files that contain ‘<b><span style="font-family: Courier New;">root2</span></b>’ 
+user informations to confirm the changes:
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p class="editable" style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[root@fedora ~]#</span></b><b><span style="font-family: Courier New; color: rgb(0, 102, 0);"> </span>
+<span style="font-family: Courier New; color: rgb(0, 66, 0);">less 
+/etc/passwd</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">root:x:0:0:root:/root:/bin/bash</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">root2:x:0:0::/home/root2:/bin/bash</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p class="editable" style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[root@fedora ~]#</span></b><b><span style="font-family: Courier New; color: rgb(0, 102, 0);"> </span>
+<span style="font-family: Courier New; color: rgb(0, 66, 0);">less 
+/etc/shadow</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">root:$1$B2BRWv4X$Gb.MPc6I3RwCkEkT13ow21:13080:0:99999:7:::</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">root2:$1$bQHGH4cX$TtsV/WVdFe5cIsHWjzc.N1:13112:0:99999:7:::</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p class="editable" style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[root@fedora ~]#</span></b><b><span style="font-family: Courier New; color: rgb(0, 102, 0);"> </span>
+<span style="font-family: Courier New; color: rgb(0, 66, 0);">less /etc/group</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">root:x:0:root,root2</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">bin:x:1:root,bin,daemon,root2</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">daemon:x:2:root,bin,daemon,root2</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">sys:x:3:root,bin,adm,root2</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">adm:x:4:root,adm,daemon,root2</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">disk:x:6:root,root2</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">wheel:x:10:root,root2</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+7.&nbsp; Everything 
+should be ok, now try to login to system with newly created ‘<b><span style="font-family: Courier New;">root2</span></b>’ 
+account, see example:
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">login as: </span> <b>
+<span style="font-family: Courier New; color: rgb(0, 66, 0);">root2</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">root2@10.7.0.211's password:</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">Last login: Thu Nov 24 
+23:48:49 2005 from 10.7.0.112</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">Could not chdir to home 
+directory /home/root2: No such file or directory</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">-bash-3.00#</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">-bash-3.00#</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">-bash-3.00#</span></b><b><span style="font-family: Courier New; color: rgb(0, 102, 0);"> </span>
+<span style="font-family: Courier New; color: rgb(0, 66, 0);">su –</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[root@fedora ~]#</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+8.&nbsp; Make sure that you execute 
+the<b><span style="font-size: medium;"> su </span></b>command with hyphen (<b><span style="font-size: medium;"> su -
+</span></b>) to get the PATH of the user that you become to... below is the 
+example of the<b><span style="font-size: medium;"> su </span></b>command with hyphen and without 
+hyphen.
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Loggin in as user tenouk, then 
+execute<b><span style="font-size: medium;"> $PATH </span></b>as example below.
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[tenouk@fedora 
+~]$ <span style="color: rgb(0, 66, 0);">$PATH</span></span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">-bash: /usr/lib/qt-3.3/bin:/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/home/ 
+tenouk/bin: No such file or directory</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[tenouk@tenouk 
+~]$</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Use the<b><span style="font-size: medium;"> su </span>
+</b>command to change to root user as example below and then execute <b>
+<span style="font-size: medium;">$PATH</span></b> as example below.
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[tenouk@fedora 
+~]$ <span style="color: rgb(0, 66, 0);">su root</span></span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">Password:</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">
+[root@fedora tenouk]# <span style="color: rgb(0, 66, 0);">$PATH</span></span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">bash: /usr/kerberos/sbin:/usr/lib/qt-3.3/bin:/usr/kerberos/bin:/usr/local/bin:/b 
+in:/usr/bin:/home/tenouk/bin: No such file or directory</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">
+[root@fedora tenouk]#</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Then try use the<b><span style="font-size: medium;"> su 
+- </span></b>command and verify with the <b><span style="font-size: medium;">$PATH</span></b> as 
+example below.
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[root@tenouk 
+tenouk]# <span style="color: rgb(0, 66, 0);">su - root</span></span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[root@tenouk 
+~]# <span style="color: rgb(0, 66, 0);">$PATH</span></span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<span style="font-family: Courier New; color: rgb(0, 102, 0);">-bash: /usr/lib/qt-3.3/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin: 
+/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin: No such file or director 
+y</span>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<b><span style="font-family: Courier New;">[root@tenouk 
+~]#</span></b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Note:&nbsp; The execution of <b>
+<span style="font-size: medium;">su</span></b> command, without the hypen (<b><span style="font-size: medium;"> -
+</span></b>) you inherit the PATH of the current user. Use the <b>
+<span style="font-size: medium;">su</span></b> command, with hyphen (<b><span style="font-size: medium;"> su -
+</span></b>) to get the default PATH of the root user. 
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+<u><b>Step-by-step 
+how to procedure above tested on:</b></u>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Operating System:
+<b>GNU/Linux Fedora Core 4</b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Kernel Name:
+<b>Linux</b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Kernel&nbsp; 
+Release:&nbsp; <b>2.6.11-1.1369_FC4</b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Kernel Version:
+<b>#1 Thu Jun 2 22:55:56&nbsp; EDT 2005</b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Machine Hardware:&nbsp;
+<b>i686</b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Machine Processor:&nbsp;
+<b>i686</b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Hardware Platform:
+<b>&nbsp;i386</b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Shell: <b>GNU 
+bash, version 3.00.16(1)-release (i386-redhat-linux-gnu)</b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Installation 
+Type: <b>Full&nbsp; Installation (Custom)</b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+SELinux: <b>
+Disable</b>
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Keywords: root user, create 
+root user 
+account, add root user, create root user, adding root user account, root 
+user account, add root user account.
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+Good Nite... &amp; Good luck…
+</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;">
+&nbsp;
+</p>
+<!-- google_ad_section_end --><div class="service-links"><div class="service-label">Bookmark/Search this post with </div><ul class="links"><li class="service-links-delicious first"><a href="http://del.icio.us/post?url=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account&amp;title=Create+root+user+account+on+Linux+Fedora+Core." title="Bookmark this post on del.icio.us." id="service-links-delicious" class="service-links-delicious" rel="nofollow"><img src="create_root_user_account_files/delicious.png" alt="del.icio.us" title="" height="16" width="16"></a></li>
+<li class="service-links-digg"><a href="http://digg.com/submit?phase=2&amp;url=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account&amp;title=Create+root+user+account+on+Linux+Fedora+Core." title="Digg this post on digg.com" id="service-links-digg" class="service-links-digg" rel="nofollow"><img src="create_root_user_account_files/digg.png" alt="Digg" title="" height="16" width="16"></a></li>
+<li class="service-links-facebook"><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account&amp;t=Create+root+user+account+on+Linux+Fedora+Core." title="Share on Facebook." id="service-links-facebook" class="service-links-facebook" rel="nofollow"><img src="create_root_user_account_files/facebook.png" alt="Facebook" title="" height="16" width="16"></a></li>
+<li class="service-links-furl"><a href="http://www.furl.net/storeIt.jsp?u=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account&amp;t=Create+root+user+account+on+Linux+Fedora+Core." title="Submit this post on furl.net." id="service-links-furl" class="service-links-furl" rel="nofollow"><img src="create_root_user_account_files/furl.png" alt="Furl" title="" height="16" width="16"></a></li>
+<li class="service-links-google"><a href="http://www.google.com/bookmarks/mark?op=add&amp;bkmk=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account&amp;title=Create+root+user+account+on+Linux+Fedora+Core." title="Bookmark this post on Google." id="service-links-google" class="service-links-google" rel="nofollow"><img src="create_root_user_account_files/google.png" alt="Google" title="" height="16" width="16"></a></li>
+<li class="service-links-google-buzz"><a href="http://www.google.com/buzz/post?url=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account" title="Buzz this post on Google." id="service-links-google-buzz" class="service-links-google-buzz" rel="nofollow"><img src="create_root_user_account_files/google_buzz.png" alt="Google Buzz" title="" height="16" width="16"></a></li>
+<li class="service-links-linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account&amp;title=Create+root+user+account+on+Linux+Fedora+Core.&amp;summary=%0D%0A%26nbsp%3B%0D%0A%0D%0ACreate+extra%0D%0Aroot+user+account+to+your+Linux+box.%0D%0A%0D%0A%26nbsp%3B%0D%0A%0D%0A%0D%0A%C2%A0%C2%A0+The+%E2%80%98root%E2%80%99+%0D%0Aaccount+with+user+id+0+is+the+most+powerful+%0D%0Auser+in+Linux+and+Unix+system.%C2%A0+This+article+show+the+step+by+step+%0D%0Ato+create+the+duplicate+root+account+that+have+the+same+privileges+as+%0D%0Asuper+user+root+account+on+the+Linux+Fedora+Core+operating+system.%0D%0A%0D%0A%0D%0A%26nbsp%3B%0D%0A&amp;source=Linux+Windows+Install+Setup+Configuration+Project" title="Publish this post to LinkedIn" id="service-links-linkedin" class="service-links-linkedin" rel="nofollow"><img src="create_root_user_account_files/linkedin.png" alt="LinkedIn" title="" height="16" width="16"></a></li>
+<li class="service-links-myspace"><a href="http://www.myspace.com/index.cfm?fuseaction=postto&amp;t=Create+root+user+account+on+Linux+Fedora+Core.&amp;u=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account" title="Share on MySpace." id="service-links-myspace" class="service-links-myspace" rel="nofollow"><img src="create_root_user_account_files/myspace.png" alt="MySpace" title="" height="16" width="16"></a></li>
+<li class="service-links-pingthis"><a href="http://ping.fm/ref/?link=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account&amp;title=Create+root+user+account+on+Linux+Fedora+Core.&amp;body=%0D%0A%26nbsp%3B%0D%0A%0D%0ACreate+extra%0D%0Aroot+user+account+to+your+Linux+box.%0D%0A%0D%0A%26nbsp%3B%0D%0A%0D%0A%0D%0A%C2%A0%C2%A0+The+%E2%80%98root%E2%80%99+%0D%0Aaccount+with+user+id+0+is+the+most+powerful+%0D%0Auser+in+Linux+and+Unix+system.%C2%A0+This+article+show+the+step+by+step+%0D%0Ato+create+the+duplicate+root+account+that+have+the+same+privileges+as+%0D%0Asuper+user+root+account+on+the+Linux+Fedora+Core+operating+system.%0D%0A%0D%0A%0D%0A%26nbsp%3B%0D%0A" title="Submit to Ping.fm." id="service-links-pingthis" class="service-links-pingthis" rel="nofollow"><img src="create_root_user_account_files/pingthis.png" alt="Ping This!" title="" height="16" width="16"></a></li>
+<li class="service-links-propeller"><a href="http://www.propeller.com/submit/?U=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account&amp;T=Create+root+user+account+on+Linux+Fedora+Core." title="Submit to Propeller." id="service-links-propeller" class="service-links-propeller" rel="nofollow"><img src="create_root_user_account_files/propeller.png" alt="Propeller" title="" height="16" width="16"></a></li>
+<li class="service-links-reddit"><a href="http://reddit.com/submit?url=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account&amp;title=Create+root+user+account+on+Linux+Fedora+Core." title="Submit this post on reddit.com." id="service-links-reddit" class="service-links-reddit" rel="nofollow"><img src="create_root_user_account_files/reddit.png" alt="Reddit" title="" height="16" width="16"></a></li>
+<li class="service-links-stumbleupon"><a href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account&amp;title=Create+root+user+account+on+Linux+Fedora+Core." title="Thumb this up at StumbleUpon" id="service-links-stumbleupon" class="service-links-stumbleupon" rel="nofollow"><img src="create_root_user_account_files/stumbleit.png" alt="StumbleUpon" title="" height="16" width="16"></a></li>
+<li class="service-links-twitter"><a href="http://twitter.com/home/?status=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account+--+Create+root+user+account+on+Linux+Fedora+Core." title="Share this on Twitter" id="service-links-twitter" class="service-links-twitter" rel="nofollow"><img src="create_root_user_account_files/twitter.png" alt="Twitter" title="" height="16" width="16"></a></li>
+<li class="service-links-yahoo last"><a href="http://bookmarks.yahoo.com/myresults/bookmarklet?u=http%3A%2F%2Fwww.labtestproject.com%2Fcreate_root_user_account&amp;t=Create+root+user+account+on+Linux+Fedora+Core." title="Bookmark this post on Yahoo." id="service-links-yahoo" class="service-links-yahoo" rel="nofollow"><img src="create_root_user_account_files/yahoo.png" alt="Yahoo" title="" height="16" width="16"></a></li>
+</ul></div><br class="clear"><script src="create_root_user_account_files/getjs_004.js"></script><div id="cw_td_318845" style="height: 0pt; width: 0pt; display: none;"></div><script type="text/javascript" src="create_root_user_account_files/GetAd.js"></script><center></center>
+<div style="display: none; width: 0pt; height: 0pt;"><iframe src="create_root_user_account_files/p-01-0VIaSjnOLg_007.gif" marginwidth="0" marginheight="0" allowtransparency="true" frameborder="0" height="0" scrolling="NO" width="0"></iframe></div><div style="display: none; width: 0pt; height: 0pt;"><script>var _comscore = _comscore || [];_comscore.push({ c1: "8", c2: "2102", c3: "106", c4: "", c5: "", c15: "", c16: "" });(function() {var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";el.parentNode.insertBefore(s, el);})();</script><noscript><img src="http://b.scorecardresearch.com/p?c1=8&c2=2102&c3=106&c4=&c5=&c6=&c15=&c16=&cv=2.0&cj=1" /></noscript></div>
+
+</div>
+    <div class="links">» <ul class="links inline"><li class="comment_forbidden first"><span><a href="http://www.labtestproject.com/user/login?destination=comment%2Freply%2F37%23comment-form">Login</a> or <a href="http://www.labtestproject.com/user/register?destination=comment%2Freply%2F37%23comment-form">register</a> to post comments</span></li>
+<li class="statistics_counter"><span>46937 reads</span></li>
+<li class="forward_links last"><a href="http://www.labtestproject.com/forward?path=node%2F37" title="Forward this page" class="forward-page">Email this page</a></li>
+</ul></div>	
+  </div>
+  
+
+
+
+  <div class="block block-block" id="block-block-45">
+    <h2 class="title"></h2>
+    <div class="content"><script src="create_root_user_account_files/getjs_003.js"></script><div id="cw_td_9788894" style="height: 0pt; width: 0pt; display: none;"></div><script type="text/javascript" src="create_root_user_account_files/getad_004.js"></script><center></center>
+<div style="display: none; width: 0pt; height: 0pt;"><iframe src="create_root_user_account_files/p-01-0VIaSjnOLg_007.gif" marginwidth="0" marginheight="0" allowtransparency="true" frameborder="0" height="0" scrolling="NO" width="0"></iframe></div><div style="display: none; width: 0pt; height: 0pt;"><script>var _comscore = _comscore || [];_comscore.push({ c1: "8", c2: "2102", c3: "106", c4: "", c5: "", c15: "", c16: "" });(function() {var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";el.parentNode.insertBefore(s, el);})();</script><noscript><img src="http://b.scorecardresearch.com/p?c1=8&c2=2102&c3=106&c4=&c5=&c6=&c15=&c16=&cv=2.0&cj=1" /></noscript></div>
+
+</div>
+ </div>
+  <div class="block block-block" id="block-block-36">
+    <h2 class="title"></h2>
+    <div class="content"><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">
+  <div class="cse-branding-form">
+    <form action="http://www.labtestproject.com/google_search" id="cse-search-box">
+      <div>
+        <input name="cx" value="partner-pub-3039790253816126:xabt4vakfv4" type="hidden">
+        <input name="cof" value="FORID:10" type="hidden">
+        <input name="ie" value="ISO-8859-1" type="hidden">
+        <input name="as_q" size="57" type="text">
+        <input name="sa" value="Search" type="submit">
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="create_root_user_account_files/poweredby_FFFFFF.gif" alt="Google">
+  </div>
+  <div class="cse-branding-text">
+    Custom Search
+  </div>
+</div></div>
+ </div>
+  <div class="block block-block" id="block-block-44">
+    <h2 class="title"></h2>
+    <div class="content"><script src="create_root_user_account_files/getjs_002.js"></script><div id="cw_td_1578364" style="height: 0pt; width: 0pt; display: none;"></div><script type="text/javascript" src="create_root_user_account_files/getad_002.js"></script><center></center>
+<div style="display: none; width: 0pt; height: 0pt;"><iframe src="create_root_user_account_files/p-01-0VIaSjnOLg_007.gif" marginwidth="0" marginheight="0" allowtransparency="true" frameborder="0" height="0" scrolling="NO" width="0"></iframe></div><div style="display: none; width: 0pt; height: 0pt;"><script>var _comscore = _comscore || [];_comscore.push({ c1: "8", c2: "2102", c3: "106", c4: "", c5: "", c15: "", c16: "" });(function() {var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";el.parentNode.insertBefore(s, el);})();</script><noscript><img src="http://b.scorecardresearch.com/p?c1=8&c2=2102&c3=106&c4=&c5=&c6=&c15=&c16=&cv=2.0&cj=1" /></noscript></div>
+
+</div>
+ </div>
+  <div class="block block-block" id="block-block-40">
+    <h2 class="title"></h2>
+    <div class="content"><script src="create_root_user_account_files/getjs_005.js"></script><div id="cw_td_4987641" style="height: 0pt; width: 0pt; display: none;"></div><script type="text/javascript" src="create_root_user_account_files/getad.asc"></script><center></center><div style="display: none; width: 0pt; height: 0pt;"><iframe src="create_root_user_account_files/p-01-0VIaSjnOLg_006.gif" marginwidth="0" marginheight="0" allowtransparency="true" frameborder="0" height="0" scrolling="NO" width="0"></iframe></div><div style="display: none; width: 0pt; height: 0pt;"><script>var _comscore = _comscore || [];_comscore.push({ c1: "8", c2: "2102", c3: "0", c4: "0", c5: "0", c15: "", c16: "" });(function() {var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";el.parentNode.insertBefore(s, el);})();</script><noscript><img src="http://b.scorecardresearch.com/p?c1=8&c2=2102&c3=0&c4=0&c5=0&c6=&c15=&c16=&cv=2.0&cj=1" /></noscript></div><div class="adsdaq_blocking" style="display: none;">ADGRPID:|SERVTYPE:</div>
+
+</div>
+ </div>
+              </div>
+    </td><!--INFOLINKS_OFF-->
+      </tr>
+</tbody></table>
+
+<div id="footer">
+  
+<b>
+<a title=" The Introduction" href="http://www.labtestproject.com/">Home</a> |
+<a title="Basic Linux command collections with examples" href="http://www.labtestproject.com/linuxcmd/index.html">Linux Commands</a> |
+<a title="Step by step installation and using Linux with screnshot" href="http://www.labtestproject.com/linuse/index.html">Using Linux</a> |
+<a title="Step by step configuration on Linux network and server constructions" href="http://www.labtestproject.com/linnet/index.html">Linux Network</a> |
+<a title="Fedora Core Graphical Configuration Tools and Administrative Tools." href="http://www.labtestproject.com/linux_tools/index.html">Linux Tools</a> |
+<a title="Step by step installation and using MS Windows with screnshot" href="http://www.labtestproject.com/win/index.html">Windows</a> |
+<a title="Step by step Linux Fedora Installation Screenshot." href="http://labtestproject.com/step_by_step_install_fedora_screenshot">Fedora screenshots</a> |
+<a title="Step by step  Windows installation screenshot" href="http://labtestproject.com/step_by_step_windows_screenshot">Windows screenshots</a> |
+<a title="Hardware Software Setting and Configuration that wont fit into Linux and Windows category." href="http://labtestproject.com/hardware_and_software_setting_that_wont_fit_into_linux_and_windows_category">Miscellaneous</a> |
+<a title="Download Windows and Linux Fedora Core installation screenshot" href="http://www.labtestproject.com/download/index.html">Download</a> |
+<a title="Linux and Windows Laboratory Test Project Site Map" href="http://labtestproject.com/menutree/all">SiteMap</a>
+</b>
+
+<br class="clear">
+The labtestproject.com and site owner shall not be liable for any loss 
+or damage caused by the usage of any information obtained from this web 
+site. Companies referred to in this web site shall not be construed as 
+agents nor as companies recommended by the labtestproject.com and the 
+site owner.
+<br class="clear">
+Copyright LabTestProject.com  ©  2011, All Rights Reserved.
+    <div class="block block-block" id="block-block-9">
+    <h2 class="title"></h2>
+    <div class="content"><!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=881574; 
+var sc_invisible=1; 
+var sc_partition=7; 
+var sc_security="002255fc"; 
+var sc_remove_link=1; 
+</script>
+<script type="text/javascript" language="javascript" src="create_root_user_account_files/counter.js"></script><noscript><img  src="http://c8.statcounter.com/counter.php?sc_project=881574&java=0&security=002255fc&invisible=1" alt="javascript hit counter" border="0"> </noscript>
+<!-- End of StatCounter Code -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-253840-1']);
+  _gaq.push(['_setDomainName', '.labtestproject.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>						</div>
+ </div>
+</div>
+<!-- Page cached by Boost @ 2011-04-26 12:27:12, expires @ 2011-04-27 12:27:12 -->
+</body></html>

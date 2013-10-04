@@ -1,0 +1,48 @@
+
+
+Method I
+
+void dirC(char * inName="cher.txt", char * outName="cher.root") {
+
+   ifstream in;
+   Float_t buff[5];
+
+   in.open(inName);
+   TFile *f = new TFile(outName,"RECREATE");
+   
+   TNtuple *ntuple = new TNtuple("cher","direct Cher",
+				 "x1:x2:dang:ang:cher");
+   while (1) {
+     in >>buff[0]>>buff[1]>>buff[2]>>buff[3]>>buff[4];
+     if (!in.good()) break;
+     ntuple->Fill(buff);
+   }
+   
+
+   in.close();
+   f->cd();
+   f->Write();
+   f->Close();
+}
+
+
+
+
+
+
+Method II
+
+  std::string inputFile;
+  cout << "Give the input file :";
+  cin  >> inputFile;
+  cout << endl;
+  ifstream data_in;
+  data_in.open(inputFile.c_str());
+
+  //if(inputFile.!is_open)
+    //{
+      //cerr << "There is no such file!\n";
+      //exit(8);
+    //}
+
+

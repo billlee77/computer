@@ -1,0 +1,41 @@
+For reason I’m still trying to untangle, I encountered some really terrible conflicts this afternoon with an SVN checkin that didn’t complete properly, leaving me with a few locked directories that wouldn’t respond to “svn cleanup”.
+
+Using these instructions, I was able to get the directories sorted out:
+
+   1. Move offending directories out of working copy and to a safe place (e.g. desktop)
+   2. Run svn cleanup
+   3. Run svn up
+
+This actually restored the messed-up directories. Some files were reverted and some deleted files restored; once the entire working copy is cleaned up, you can use the backup copies of the directories to copy back in your changes.
+
+But before I could do that, I was left with a half-dozen individual file conflicts with the following messages:
+
+
+$ svn st
+?   C some_file.php
+    > local delete, incoming delete upon update
+?   C some_other_file.php
+    > local delete, incoming delete upon update
+... etc.
+
+
+Thankfully, these were files that I did want to delete, so even without instructions I wasn’t afraid to trial-and-error my way to the following fix:
+
+
+$ touch some_file.php some_other_file.php
+$ svn revert some_file.php some_other_file.php
+
+
+Once you’ve created the files, SVN can revert them, which leaves them in unversioned status:
+
+
+$ svn st
+?    some_file.php
+?    some_other_file.php
+
+
+And then you can just delete them from the command line or whatever file manager you use.
+
+*Phew*
+
+Once that was done I redid some deletions that had been overwritten by the update that cleaned up the directories, and all was right in the world.

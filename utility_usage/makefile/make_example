@@ -1,0 +1,61 @@
+//***********************************************
+For c++
+
+CC=g++
+CFLAGS=-c -Wall
+LDFLAGS=
+SOURCES=main.cpp hello.cpp factorial.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+EXECUTABLE=hello
+
+all: $(SOURCES) $(EXECUTABLE)
+	
+$(EXECUTABLE): $(OBJECTS) 
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@
+
+//***********************************************
+For gfortran
+
+FC = gfortran
+FFLAGS = -fdefault-real-8 -std=f95
+OBJS = mymodule.o\
+myprogram.o\
+mysubroutine.o
+
+.SUFFIXES: .f90 .o .mod
+
+.f90.o:
+$(FC) $(FFLAGS) -c $<
+
+myprogram: $(OBJS)
+$(FC) $(FFLAGS) $(OBJS) -o $@
+
+clean:
+rm *.o
+rm *.mod
+rm myprogram
+
+
+
+//***********************************************
+Self example for gfortran
+
+FC = gfortran
+FCFLAGS =-O3 -march=i486 -DCPU=868
+all:cloud
+cloud:ran1.o gasdev.o anglis.o cloud.f
+	$(FC) $(FCFLAGS) -o cloud ran1.o gasdev.o anglis.o cloud.f
+ran1.o:ran1.f 
+	$(FC) $(FCFLAGS) -c ran1.f
+gasdev.o:gasdev.f
+	$(FC) $(FCFLAGS) -c gasdev.f
+anglis.o:anglis.f
+	$(FC) $(FCFLAGS) -c anglis.f
+clean:
+	rm -rf *.o
+
+
+

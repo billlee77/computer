@@ -1,0 +1,73 @@
+! calculation on conic section tolerance for Hardin Optical
+clear
+scale -40 40 8 0 1 1
+autoscale yaxis
+set yleadz 1
+destroy i iff i>100.
+enable echo
+label\xaxis `Dist along Mirror (cm)'
+label\yaxis `Diff from R=115cm Sphere (mm)'
+
+R=115.
+ff=R/2.
+xx=(i-50)/1.2
+
+K=0  ! conic constant for sphere
+ysph=(xx**2/R)/(1+sqrt(1-(K+1)*(xx/R)**2))
+!col 1
+!graph xx ysph
+!col 3
+!ysph2=R-sqrt(R**2-xx**2)
+!graph\noaxes xx ysph2
+!text `Sphere R=115'
+
+K=-1  ! conic constant for parabola
+ypar=(xx**2/R)/(1+sqrt(1-(K+1)*(xx/R)**2))
+!col 2
+!graph\noaxes xx ypar
+!ypar2=(xx**2)/(4.*ff)
+!col 4
+!graph\noaxes xx ypar2
+!text `Parabola f=57.5'
+
+ydif=abs(ypar-ysph)*10.
+col 1
+graph xx ydif
+!text `Sphere'
+text `Parabola f=57.5cm'
+
+goto aa
+
+K=-0.25
+y0p25=(xx**2/R)/(1+sqrt(1-(K+1)*(xx/R)**2))
+ydif0p25=abs(ypar-y0p25)*10.
+col 2
+graph\noaxes xx ydif0p25
+
+K=-0.50
+y0p50=(xx**2/R)/(1+sqrt(1-(K+1)*(xx/R)**2))
+ydif0p50=abs(ypar-y0p50)*10.
+col 2
+graph\noaxes xx ydif0p50
+
+K=-0.75
+y0p75=(xx**2/R)/(1+sqrt(1-(K+1)*(xx/R)**2))
+ydif0p75=abs(ypar-y0p75)*10.
+col 2
+graph\noaxes xx ydif0p75
+
+! line indicating maximum scratch width for 60-40 surface quality.
+col 3
+xline[1]=-40
+xline[2]=40
+yline[1]=0.06
+yline[2]=0.06
+line\graph xline yline
+! line indicating maximum dig depth for 60-40 surface quality.
+col 4
+yline[1]=0.40
+yline[2]=0.40
+line\graph xline yline
+
+aa:
+window 0

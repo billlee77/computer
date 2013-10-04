@@ -1,0 +1,128 @@
+********************************************************************************
+***                                                                          ***
+*** PHYSICA                      VERSION # 2.77               November  2005 ***
+*** Copyright (C) 1992,...,2005                              Joseph L. Chuma ***
+***                           All rights reserved                            ***
+***                                                                          ***
+***  Enter NEWS to get the latest information on new commands and features   ***
+***  Latest news added on November 21, 2005                                  ***
+***  Journal file: physica.journal                                           ***
+***                                                                          ***
+***            UNAUTHORIZED COMMERCIAL USE IS STRICTLY PROHIBITED            ***
+***                                                                          ***
+*** Physica 3.0 for the Windows environment has been released under the name ***
+*** Extrema. See www.extremasoftware.com                                     ***
+***                                                                          ***
+********************************************************************************
+User: billlee   Date: 10-Jan-2011 13:46:09
+ Default graphics hardcopy device: PostScript: colour, paper size A
+ executing initialization file: /home/billlee/.physicarc
+ HYSICA: exe radius.pcm 
+ vector X has been created with 7 values
+ vector Z12 has been created with 7 values
+ vector Z34 has been created with 7 values
+ vector SPHERE1 has been created with 7 values
+ vector ERR has been created with 7 values
+ vector Y has been created with 7 values
+ vector Z23 has been created with 7 values
+ vector Z14 has been created with 7 values
+ vector SPHERE2 has been created with 7 values
+ #  x               z12             z34             sphere1         err         
+    
+ -------------------------------------------------------------------------------
+ ---
+ 1  6.03            14.31           14.66           11.25           0.2         
+   
+ 2  11.11           20.66           21.21           17.78           0.2         
+   
+ 3  16.19           24.32           24.87           21.68           0.2         
+   
+ 4  21.27           25.91           25.58           22.98           0.2         
+   
+ 5  26.35           24.62           25.19           21.68           0.2         
+   
+ 6  31.43           20.91           21.1            17.78           0.2         
+   
+ 7  36.51           14.64           14.9            11.25           0.2         
+   
+ #  y               z23             z14             sphere2        
+ ------------------------------------------------------------------
+ 1  4.76            11.84           12.16           8.59          
+ 2  9.84            18.1            18.31           15.14         
+ 3  14.92           22.08           22.36           19.04         
+ 4  20              23.52           23.59           20.34         
+ 5  25.08           22.74           22.22           19.04         
+ 6  30.16           19.07           18.25           15.14         
+ 7  35.24           11.22           11.65           8.59          
+  Hardcopy file: length.eps
+  Hardcopy file: width.eps
+ HYSICA: exe radius2.pcm 
+ vector X has been created with 7 values
+ vector Z12 has been created with 7 values
+ vector Z34 has been created with 7 values
+ vector SPHERE has been created with 7 values
+ vector ERR has been created with 7 values
+ vector Y has been created with 7 values
+ vector Z23 has been created with 7 values
+ vector Z14 has been created with 7 values
+ vector SPHERE2 has been created with 7 values
+  Iter&      A12       Residual    Step Size
+      1     1.00       92.8       1.00
+      2    0.264       3.56       1.00
+      3    0.264       3.56       1.00
+  number of degrees of freedom = 6
+  total CHISQ = 3.56011851
+  sqrt( CHISQ/point ) = 7.13153811E-01
+  CHISQ/(degrees of freedom) = 5.93353085E-01
+  confidence level = 73.5954772%
+  
+ PARAMETER            VALUE               E1             E2
+  A12                 0.26388              7.79194E-02    6.00208E-02
+  Iter&      A34       Residual    Step Size
+      1     1.00       93.4       1.00
+      2    0.270       5.60       1.00
+      3    0.270       5.60       1.00
+  number of degrees of freedom = 6
+  total CHISQ = 5.60119054
+  sqrt( CHISQ/point ) = 8.94522262E-01
+  CHISQ/(degrees of freedom) = 9.33531757E-01
+  confidence level = 46.9311797%
+  
+ PARAMETER            VALUE               E1             E2
+  A34                 0.26976              7.79194E-02    7.52853E-02
+  Hardcopy file: diff1.eps
+ #  y               z23             z14             h_sphere2      
+ ------------------------------------------------------------------
+ 1  4.76            8.64            8.96            8.59688444    
+ 2  9.84            14.9            15.11           15.1467546    
+ 3  14.92           18.88           19.16           19.0559223    
+ 4  20              20.32           20.39           20.35556      
+ 5  25.08           19.54           19.02           19.0559223    
+ 6  30.16           15.87           15.05           15.1467546    
+ 7  35.24           8.02            8.45            8.59688444    
+  Iter&      A23       Residual    Step Size
+      1     1.00       80.3       1.00
+      2    0.327       9.75       1.00
+      3    0.327       9.75       1.00
+  number of degrees of freedom = 6
+  total CHISQ = 9.75368389
+  sqrt( CHISQ/point ) = 1.18041663
+  CHISQ/(degrees of freedom) = 1.62561398
+  confidence level = 13.5415549%
+  
+ PARAMETER            VALUE               E1             E2
+  A23                 0.32651              8.01784E-02    0.10223
+  Iter&      A14       Residual    Step Size
+      1     1.00       123.       1.00
+      2    0.117       1.82       1.00
+      3    0.117       1.82       1.00
+  number of degrees of freedom = 6
+  total CHISQ = 1.81937145
+  sqrt( CHISQ/point ) = 5.09813895E-01
+  CHISQ/(degrees of freedom) = 3.03228575E-01
+  confidence level = 93.5538792%
+  
+ PARAMETER            VALUE               E1             E2
+  A14                 0.11685              8.01784E-02    4.41512E-02
+  Hardcopy file: diff2.eps
+ HYSICA: exit

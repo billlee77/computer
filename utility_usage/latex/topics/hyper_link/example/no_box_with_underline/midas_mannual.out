@@ -1,0 +1,15 @@
+\BOOKMARK [1][-]{section.1}{Setup Before Installation}{}
+\BOOKMARK [1][-]{section.2}{Packages checkout and compilation}{}
+\BOOKMARK [2][-]{subsection.2.1}{Install MIDAS}{section.2}
+\BOOKMARK [2][-]{subsection.2.2}{Install ROOTANA}{section.2}
+\BOOKMARK [2][-]{subsection.2.3}{Install ROODY}{section.2}
+\BOOKMARK [2][-]{subsection.2.4}{ROOT Configuration Comments}{section.2}
+\BOOKMARK [1][-]{section.3}{Configurations \046 Trouble shoot}{}
+\BOOKMARK [2][-]{subsection.3.1}{Setup Multiple Experiments}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Exptab File}{section.3}
+\BOOKMARK [2][-]{subsection.3.3}{Sourcing steup.sh}{section.3}
+\BOOKMARK [2][-]{subsection.3.4}{Resolve the Root Privilege Issue}{section.3}
+\BOOKMARK [1][-]{section.4}{Get started with an example experiment}{}
+\BOOKMARK [1][-]{section.5}{MIDAS Analyser}{}
+\BOOKMARK [2][-]{subsection.5.1}{Covert .mid file to .root File}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{Covert .mid file to .asc file}{section.5}

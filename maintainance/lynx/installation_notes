@@ -1,0 +1,185 @@
+# Wenliang Li
+# Date: 14/Oct/2011
+
+Step 1: Network Configuration
+
+	Delete eth0 in network configuration.
+	Set "Connect automatically" for eth1 
+
+
+Step 2: Disk Partitioning:
+	/dev/sda1             243M  /boot
+	/dev/sda2              22G  /
+	/dev/sda5             433G  /home
+	/dev/sda6             456G  /nobackup
+	/dev/sdb1             917G  /dsk2
+	/dev/sdc1             917G  /dsk3
+	/dev/sdd1             917G  /dsk4
+	swap				    8G  
+
+	Note: all disks are formated in EXT4.
+
+
+Step 3: Create Users and Groups
+
+	Huberg
+	Garth Huberg
+	UserID:	 500
+	GroupID: 500
+
+	g4user
+	G4 user
+	UserID:  501
+	GroupID: 501
+
+	acqu
+	AcquRoot
+	UserID:  504
+	GroupID: 504
+
+	misha
+	Mikhail
+	User:	 505
+	GroupID: 505
+
+	billlee
+	Bill Li
+	UserID:  510
+	GroupId: 510
+
+	sichelll
+	Lee Sichello
+	UserID:  511
+	Group:	 511
+
+
+Step 4: Update and Package Installation
+
+	package installed please reference to the package_install_14_Oct_11.txt
+	
+	list including: root, latex, gimp. svn.....
+
+
+
+Step 5: Restore configuration for /etc settings
+
+	$ cp aliases hosts hosts.allow hosts.deny /etc
+    $ cp cupsd.conf /etc/cpus
+	$ cp ssh_config /etc/ssh
+	$ cp httpd.conf /etc/http/config
+
+
+Step 6: Disk labelling and mounting
+	* please use gparted if not familiar with e2label
+
+	label /dev/sdb1 as dsk2   mount at  /dsk2
+	label /dev/sdc1 as dsk3   mount at  /dsk3
+	label /dev/sdd1 as dsk4   mount at  /dsk4
+
+
+    Please add the additional lines to /etc/fstab file
+
+	LABEL=dsk2		/dsk2			ext4	defaults	1 2
+	#LABEL=dsk3		/dsk3 			ext4	defaults	1 2
+	#LABEL=dsk4		/dsk4			ext4	defaults	1 2
+
+	We only want to mount dsk2, as dsk3 and dsk4 are currently unused.
+
+
+Step 7: configure Graphics
+
+
+	$ yum install yum-conf-elrepo
+	$ yum --enablerepo=elrepo install kmod-nvidia
+
+	Add to /etc/X11/xorg.conf file:
+
+    *********************
+	# added by gh, 03.02.07
+	# to keep paw++ and physica window from being overwritten by other jobs
+        Option "backingstore"
+    *********************
+
+	at the Section "Screen"
+
+Step 8: Configure clhep, geant, physica, xdvi
+
+	clhep: 
+		$./configure, 
+		$make
+		$make install
+
+	geant:
+		Extracting data file
+		
+		$./configure -build
+		Build QT vis, opengl-x11 and open-qt driver
+
+		$./configure -install
+
+	physica: 
+		copy from larch or other computer to /home/apps
+
+		make softlink
+		$ ln -s /home/apps/physica.xx.xx.xx physica
+
+		make softlink to /usr/local/bin/physica
+		$ ln -s /home/apps/physica/physica /usr/local/bin/physica
+
+    xdvi:
+		download xdvik-22.84.16 to /home/apps
+		$ ln -s xdvik-22.84.16 xdvi
+		$ cd xdvi
+		$ ./configure
+		$ make
+		$ make install
+
+	
+	Note that ROOT is install from repository. For python support, please install root-python package
+
+
+Step 9: Backup modified fstab, xorg.conf and httpd
+	
+
+Step 10:Enabling httpd apache
+		
+	Firewall: 
+		Enable http prts:80
+
+	serviceconf:
+		Enable httpd service
+
+	Restart httpd as root:
+		$ /etc/init.d/httpd restart
+
+	Note taht: At this point, a fullly configured httpd.conf should aready been copied into /etc/httpd/conf/
+	
+
+
+
+Step 11: Sleep dsk3 and dsk4
+
+	At the moment we do not need to use dsk3 and dsk4 therefore we are going to sleep them:
+	Executing as root:
+		$ /sbin/hdparm -Y /dev/sdc1
+		$ /sbin/hdparm -Y /dev/sdd1
+
+	
+	Then we add them in the startup command
+
+	Add these two lines to /etc/rc.local
+		$ /sbin/hdparm -Y /dev/sdc1
+		$ /sbin/hdparm -Y /dev/sdd1
+
+
+/*--------------------------------------------------
+
+Date: 19/Oct/2011
+
+Skype2.1 Problem with microphone!!
+
+Solution: Download skype2.2 static version
+ 		  $ mv skype2.2_static /home/apps
+		  $ ln -s /home/apps/skype2.2_static/skype /usr/local/bin/skype 
+
+

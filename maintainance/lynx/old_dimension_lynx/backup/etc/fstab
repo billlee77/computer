@@ -1,0 +1,19 @@
+
+#
+# /etc/fstab
+# Created by anaconda on Wed Mar 16 14:26:57 2011
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+LABEL=lyx_slash 	/                       ext4    defaults        1 1
+LABEL=lyx_boot		/boot                   ext4    defaults        1 2
+LABEL=lyx_home		/home                   ext4    defaults        1 2
+UUID=06669c50-5a72-4381-9e48-7378c196bdea swap                    swap    defaults        0 0
+tmpfs                   /dev/shm                tmpfs   defaults        0 0
+devpts                  /dev/pts                devpts  gid=5,mode=620  0 0
+sysfs                   /sys                    sysfs   defaults        0 0
+proc                    /proc                   proc    defaults        0 0
+
+# Additional Hard Drive
+/dev/sdb1		/dsk2			ext4	defaults	1 2

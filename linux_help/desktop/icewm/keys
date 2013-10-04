@@ -1,0 +1,5 @@
+key "Alt+Ctrl+comma" gnome-terminal
+key "Alt+Ctrl+period" firefox
+key "Alt+Ctrl+slash" firefox
+key "Alt+Ctrl+s" skype
+key "Alt+Ctrl+q" cd ~/bin/linuxqq_v1.0.2_i386 && qq

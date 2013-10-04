@@ -1,0 +1,517 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+
+
+
+<script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/tab.js"></script>
+<script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/browserdetect.js"></script>
+<link rel="stylesheet" type="text/css" href="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/tab1.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Creating a Header/Footer to be Used on all Pages</title>
+
+
+<meta name="generator" content="WordPress 3.0.5"> <!-- leave this for stats -->
+
+<link rel="stylesheet" href="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/style.css" type="text/css" media="screen">
+
+<link rel="alternate" type="application/rss+xml" title="HTMLCenter RSS Feed" href="http://feeds.feedburner.com/Htmlcentercom">
+<link rel="pingback" href="http://www.htmlcenter.com/xmlrpc.php">
+    <!--[if IE]>
+        <link href="http://static.centernetworks.com/images/StyleSheetie.css" rel="stylesheet" type="text/css" />
+    <![endif]--> 
+    <!--[if IE 6]>
+        <link href="http://static.centernetworks.com/images/StyleSheetie6.css" rel="stylesheet" type="text/css" />
+    <![endif]-->   
+
+<link rel="alternate" type="application/rss+xml" title="HTMLCenter Web Development Blog » Creating a Header/Footer to be Used on all Pages Comments Feed" href="http://www.htmlcenter.com/blog/creating-a-headerfooter-to-be-used-on-all-pages/feed/">
+<link rel="stylesheet" id="msw_wpfm_scan-css" href="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/wordpress-file-monitor.html" type="text/css" media="all">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.htmlcenter.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.htmlcenter.com/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="HTMLCenter Web Development Blog" href="http://www.htmlcenter.com/">
+<link rel="start" title="Welcome!" href="http://www.htmlcenter.com/blog/welcome/">
+<link rel="prev" title="An Interesting Tidbit About W3C’s Validators" href="http://www.htmlcenter.com/blog/an-interesting-tidbit-about-w3cs-validators/">
+<link rel="next" title="Object-Oriented Programming – Parents and Children" href="http://www.htmlcenter.com/blog/object-oriented-programming-parents-and-children/">
+<link rel="shortlink" href="http://www.htmlcenter.com/?p=517">
+
+<!-- All in One SEO Pack 1.6.13 by Michael Torbert of Semper Fi Web Design[612,669] -->
+<meta name="description" content="I referenced this in a post from a few months ago, but never bothered to expound on it. You cannot use cascading style sheets (CSS) to create headers, footers">
+<meta name="keywords" content="footer,header,htmlcenter news,javascript,php,repeatable content,server side includes,ssi,vbscript">
+<link rel="canonical" href="http://www.htmlcenter.com/blog/creating-a-headerfooter-to-be-used-on-all-pages/">
+<!-- /all in one seo pack -->
+<link rel="stylesheet" href="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/wp-page-numbers.css" type="text/css" media="screen"><script src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/in.js" async="" type="text/javascript"></script></head><body><div id="itxtexclude"><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/init"></script><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/ga.js"></script><link rel="stylesheet" type="text/css" href="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/itxtcss_1304971413.css" id="itxtcss"><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/ui_1306248450.js"></script><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/tmpl_1305658400.js"></script><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/metrics_1299511498.js"></script><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/itxt_1305749995.js"></script><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/fx_1286533523.js"></script><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/debug_1301668411.js"></script><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/data_1307015294.js"></script><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/core_1305750000.js"></script></div>
+<script language="javascript" type="text/javascript">
+<!--
+function clearThis(obj)
+{
+    obj.value = '';
+}
+function dropdown_nav1(the_form)
+{
+   var w = the_form.selectedIndex;
+   var url_add = the_form.options[w].value;
+   window.location.href = url_add;
+}
+//-->
+</script>
+<div id="wrapper">
+<div id="page">
+<div id="headercontainer">
+    <div id="header">
+        <div id="header_logo"><a href="http://www.htmlcenter.com/"><img src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/header_logo.gif" alt="" height="68" width="248"></a></div>
+            <div id="header_right">
+                <div id="headernav">
+                	<ul>
+                		<li class="headerfeedburner"><a href="http://feeds.feedburner.com/Htmlcentercom"><img class="rss" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/rss_xml.gif" alt="" height="12" width="12">&nbsp;Subscribe</a></li>
+                		<li><a href="http://htmlcenter.com/advertising-on-htmlcenter/">Advertise</a></li>
+                		<li><a href="http://www.htmlcenter.com/contacts/">Contact Us</a></li>
+                		<li><a href="http://htmlcenter.com/about-htmlcenter/">About Us</a></li>
+                		<li class="headernavnewsletter">
+	<a href="http://forums.htmlcenter.com/register.php?s=&amp;action=signup" class="pillnav">Register</a>
+	
+</li>
+                	</ul>
+                </div>
+                <div id="header_tabs">
+                    <div id="navtabs">
+                        <ul>
+    <li class="selected"><a href="http://www.htmlcenter.com/">home</a></li>
+    <li class="unselected"><a href="http://www.htmlcenter.com/tutorials/index.cfm">tutorials</a></li>
+    <li class="unselected"><a href="http://forums.htmlcenter.com/">forums</a></li>
+    <li class="unselected"><a href="http://www.htmlcenter.com/reviews/">reviews</a></li>
+    <li class="unselected"><a href="http://htmlcenter.com/">blog</a></li>
+    <li class="unselected"><a href="http://www.htmlcenter.com/web-development-job-search/">jobs</a></li>
+                            	<li class="drop">
+                        		<form action="" name="myform1" method="post" style="margin: 0px;">
+                        		    <select name="mylist" onchange="dropdown_nav1(this)" class="dropdown_small">
+                        		        <option value="/reviews/index.cfm/general" selected="selected">Top Links</option>
+                        		        <option value="http://htmlcenter.com/blog/ascii-chart/">ASCII Chart</option>
+                        		        <option value="http://htmlcenter.com">Blog</option>
+                        				<option value="http://htmlcenter.com/blog/rgb-color-chart/">Color Chart</option>
+                        				<option value="http://htmlcenter.com/blog/web-server-error-codes/">Error Codes</option>
+                        				<option value="http://htmlcenter.com/blog/meta-tags/">Meta Tags</option>
+										<option value="http://forums.htmlcenter.com/programming-scripting/2822-all-you-need-search-engine-optimization-seo.html">SEO Resources</option>
+                        				<option value="http://forums.htmlcenter.com/programming-scripting/">Scripting Forum</option>
+                        		    </select>
+                        		</form>
+                        	</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="header_dividerbar">
+                    
+                    </div>
+        <div id="topbanner_search">
+            <div id="topbanner">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6035777964660725";
+/* htmlc728-2011 */
+google_ad_slot = "6459981771";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><ins id="aswift_0_anchor" style="display: block; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins>
+</div>
+            <form action="http://htmlcenter.com/searchresults.php" id="cse-search-box">
+			<input name="cx" value="010520761037442223198:fkfgixhd3nq" type="hidden">
+    <input name="cof" value="FORID:11" type="hidden">
+    <input name="ie" value="UTF-8" type="hidden">
+            <div id="topsearch">
+            <div id="search_header">search</div>
+            <div id="search_box"><input name="q" size="31" style="width: 225px;" class="formfonttext" type="text"></div>
+            <div id="search_button"><input src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/top_search_button.gif" alt="Go" type="image"></div>
+            </div>
+            </form>
+      </div>
+</div><!-- END HEADER -->
+
+	<div id="sidebar">
+		<ul id="sidebar_main_list">
+						
+<div>
+			<li class="categories"><h2>Categories</h2><ul>	<li class="cat-item cat-item-77"><a href="http://www.htmlcenter.com/blog/category/book-reviews/" title="View all posts filed under Book Reviews">Book Reviews</a>
+</li>
+	<li class="cat-item cat-item-19"><a href="http://www.htmlcenter.com/blog/category/css-tutorials/" title="View all posts filed under CSS Tutorials">CSS Tutorials</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://www.htmlcenter.com/blog/category/design/" title="View all posts filed under Design Topics">Design Topics</a>
+</li>
+	<li class="cat-item cat-item-116"><a href="http://www.htmlcenter.com/blog/category/design-tutorials/" title="View all posts filed under Design Tutorials">Design Tutorials</a>
+</li>
+	<li class="cat-item cat-item-47"><a href="http://www.htmlcenter.com/blog/category/general-web-tutorials/" title="View all posts filed under General Tutorials">General Tutorials</a>
+</li>
+	<li class="cat-item cat-item-108"><a href="http://www.htmlcenter.com/blog/category/graphic-tool-reviews/" title="View all posts filed under Graphic Tool Reviews">Graphic Tool Reviews</a>
+</li>
+	<li class="cat-item cat-item-120"><a href="http://www.htmlcenter.com/blog/category/hardware/" title="View all posts filed under Hardware">Hardware</a>
+</li>
+	<li class="cat-item cat-item-66"><a href="http://www.htmlcenter.com/blog/category/html-tutorials/" title="View all posts filed under HTML Tutorials">HTML Tutorials</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.htmlcenter.com/blog/category/htmlcenter/" title="View all posts filed under HTMLCenter News">HTMLCenter News</a>
+</li>
+	<li class="cat-item cat-item-465"><a href="http://www.htmlcenter.com/blog/category/interviews/" title="View all posts filed under Interviews">Interviews</a>
+</li>
+	<li class="cat-item cat-item-36"><a href="http://www.htmlcenter.com/blog/category/javascript-tutorials/" title="View all posts filed under Javascript Tutorials">Javascript Tutorials</a>
+</li>
+	<li class="cat-item cat-item-32"><a href="http://www.htmlcenter.com/blog/category/php-tutorials/" title="View all posts filed under PHP Tutorials">PHP Tutorials</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.htmlcenter.com/blog/category/programming/" title="View all posts filed under programming">Programming Tutorials</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.htmlcenter.com/blog/category/software/" title="View all posts filed under Software">Software Reviews</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.htmlcenter.com/blog/category/usability-tutorials/" title="View all posts filed under Usability Tutorials">Usability Tutorials</a>
+</li>
+	<li class="cat-item cat-item-166"><a href="http://www.htmlcenter.com/blog/category/vbscript-tutorials/" title="View all posts filed under VBScript Tutorials">VBScript Tutorials</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://www.htmlcenter.com/blog/category/web-20/" title="View all posts filed under Web 2.0">Web 2.0</a>
+</li>
+	<li class="cat-item cat-item-128"><a href="http://www.htmlcenter.com/blog/category/web-news/" title="View all posts filed under Web News">Web News</a>
+</li>
+	<li class="cat-item cat-item-73"><a href="http://www.htmlcenter.com/blog/category/web-software-reviews/" title="View all posts filed under Web Software Reviews">Web Software Reviews</a>
+</li>
+</ul></li>
+			</div>	
+					
+			<div style="background-color: rgb(255, 255, 255); padding-left: 10px;">
+			<!-- BEGIN RICH-MEDIA Burst Network CODE -->
+<script type="text/javascript" language="JavaScript">
+rnum=Math.round(Math.random() * 100000);
+ts=String.fromCharCode(60);
+if (window.self != window.top) {nf=''} else {nf='NF/'};
+document.write(ts+'script src="http://www.burstnet.com/cgi-bin/ads/ad3249a.cgi/v=2.3S/sz=120x600A/'+rnum+'/'+nf+'RETURN-CODE/JS/">'+ts+'/script>');
+</script><script src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/a_003.html"></script><a href="http://www.burstnet.com/ads/ad3249a-map.cgi/SZ=120X600A/VTS=2unJB.MoG3/V=2.3S/BRC=4575/BCPG33354.55647.61984/" target="_blank"><img src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/text_link_ads_A_120x600.gif" height="600" width="120" border="0"></a><noscript><a href="http://www.burstnet.com/ads/ad3249a-map.cgi/ns/v=2.3S/sz=120x600A/" target="_top">
+<img src="http://www.burstnet.com/cgi-bin/ads/ad3249a.cgi/ns/v=2.3S/sz=120x600A/" border="0" alt="Click Here" /></a>
+</noscript>
+<!-- END Burst Network CODE -->
+</div>
+			
+				<div>
+
+					</div></ul>
+	</div>
+
+
+	<div id="content">
+
+	
+
+
+		<div class="post" id="post-517">
+				<h2 class="postheader">
+					<span class="date">Sep  <strong>8 </strong></span>
+					<a class="headerlink" href="http://www.htmlcenter.com/blog/creating-a-headerfooter-to-be-used-on-all-pages/" rel="bookmark" title="Permanent Link to Creating a Header/Footer to be Used on all Pages">Creating a Header/Footer to be Used on all Pages</a>
+					<span class="headermeta">Written by: Curtiss | </span>
+				</h2>
+<div style="clear: both;">
+<div style="float: left; padding-right: 10px;"><iframe src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/like_002.html" style="border: medium none; overflow: hidden; width: 70px; height: 21px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div>
+<div style="float: left; margin-right: 0pt; padding-right: 0pt;"><iframe title="Twitter For Websites: Tweet Button" style="width: 110px; height: 20px;" class="twitter-share-button twitter-count-horizontal" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/tweet_button.html" allowtransparency="true" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/widgets.js"></script></div>
+<div style="padding-right: 10px; padding-top: 2px;"><script src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/hostedbadge.html"></script><iframe src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/a_002.html" style="border: medium none; overflow: hidden; width: 74px; height: 18px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div>
+</div>
+
+			<div class="entry"><div id="intelliTxt">
+				<p>I referenced this in <a href="http://htmlcenter.com/blog/a-simple-introduction-to-css/">a post from a few months ago</a>,
+ but never bothered to expound on it. You cannot use cascading style 
+sheets (CSS) to create headers, footers or menus that will be re-used on
+ all of your pages. Instead, you have to use server-side includes (SSI).</p>
+<p>There are a handful of ways to use SSI, and they are available in 
+most all of the Web development languages used today. Although I think 
+the use of repeating headers and footers is somewhat outdated, opting 
+more for using templates that dynamically include your content, I’m 
+going to try to teach you a few ways to include your headers, footers 
+and/or menus on all of your pages.</p>
+<p><span id="more-517"></span></p>
+<h2>Standard SSI</h2>
+<p>Standard SSI requires little more than an apache Web server (which is
+ the standard when running on a *nix platform) and access to either your
+ httpd.conf file (which is the main file used to configure an apache Web
+ server) or the ability to use htaccess files to set specific 
+configurations.</p>
+<p>You can find a <a href="http://www.ssi-developer.net/ssi/enabling-ssi.shtml">good tutorial explaining how to enable SSI on your Web server</a> at SSI Developer.</p>
+<h3>Using SSI</h3>
+<p>To use SSI, all you need to do is create a single HTML file that 
+contains just the HTML you want to repeat. For instance, if you want to 
+use the same menu on every single page, put only the HTML of that menu 
+in its own HTML file. I will create an example:</p>
+<pre>&lt;ul id="navmenu"&gt;
+&lt;li&gt;&lt;a href="page1.shtml"&gt;Menu Item One&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="page2.shtml"&gt;Menu Item Two&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="page3.shtml"&gt;Menu Item Three&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="page4.shtml"&gt;Menu Item Four&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>Do not include any extranneous information in the file, such as a 
+doctype, a “head”, etc., unless you plan to use this include file to 
+declare that information on all of your pages.</p>
+<p>Save that file as something sensible, like “navmenu.shtml”. Then, 
+edit each of the files into which you would like to include this menu. 
+In each of those files, wherever you would like your navigation menu to 
+appear, you simply add the following line of code:</p>
+<pre>&lt;!-- #include file="navmenu.shtml" --&gt;
+</pre>
+<p>Keep in mind that the file’s location will be relative to the file in
+ which you include it. Therefore, if “navmenu.shtml” is in a different 
+directory than the file you are editing, you will need to include the 
+full relative path to navmenu.shtml.</p>
+<p>If you want to use a path relative to the root of your Web server, 
+you will need to use “virtual” instead of “file”. Virtual is also useful
+ if you want to include CGI scripts in your pages.</p>
+<h2>VBScript Includes</h2>
+<p>VBScript uses the same syntax to include files as standard SSI. To 
+include a file within a VBScript ASP file, you simply need to use the 
+same line of code I used above.</p>
+<pre>&lt;!-- #include file="navmenu.shtml" --&gt;
+</pre>
+<p>Again, if you want to use a path relative to the root of your Web server, you will need to use virtual instead of file.</p>
+<pre>&lt;!-- #include virtual="/navmenu.shtml" --&gt;
+</pre>
+<p>Keep in mind, however, that your include calls need to be made 
+outside of your VBScript code tags. You cannot use include calls inside 
+of code tags.</p>
+<h2>PHP Includes</h2>
+<p>PHP has its own method of allowing you to include files, and it is 
+rather robust. PHP actually offers five traditional ways for you to 
+include content in a file (as well as a few other non-traditional 
+methods).</p>
+<p>The main calls I will discuss in this article are include, include_once, virtual, require and require_once.</p>
+<h3>include and include_once</h3>
+<p>Include and include_once are the standard ways of including one file 
+inside of another. As the names would imply, include will execute each 
+time the containing script is called, while include_once will only 
+execute one time during the PHP session. This can be helpful if you 
+include one file more than once in a particular page, and that file 
+happens to call another include statement to include various functions 
+or variable definitions. Other than that, there is not much difference 
+between the include and include_once functions. The usage is very 
+simple:</p>
+<pre>include('/path/to/my/file.php');
+</pre>
+<p>The path you use in your include statement can be one of many 
+different types of paths. The path can be relative to the file in which 
+the include function is called, it can be the absolute path on your Web 
+server, it can be a URL (if url_fopen wrappers are enabled) or it can be
+ a path relative to the include directory that’s configured in your PHP 
+installation. PHP will automatically attempt to locate the file in all 
+of those locations before giving up. The standard usage, however, is to 
+use the absolute path to the include file.</p>
+<h3>require and require_once</h3>
+<p>Require and require_once are very similar to include and 
+include_once. However, if PHP fails to locate the “required” file, the 
+interpreter will throw a warning letting you know that the file could 
+not be located. With standard include statements, no error or warning is
+ thrown if the file can’t be found.</p>
+<h3>virtual</h3>
+<p>Virtual is really an apache command that’s executed through PHP. It 
+cannot be used if you have PHP running as a CGI rather than as an apache
+ module.</p>
+<p>Virtual is generally used to execute perl (or other CGI) commands 
+within your PHP file. The usage is similar to the include and require 
+statements.</p>
+<h2>Javascript Includes</h2>
+<p>Although I am discussing these in this article, it is important to 
+note that javascript includes are actually client-side includes, and are
+ completely dependent on the user’s software configuration (as is any 
+javascript).</p>
+<p>However, since I was writing an article explaining how to include 
+files inside of other files, I though I would touch on javascript 
+includes.</p>
+<p>A javascript include is exactly the same as using an external 
+javascript file. However, typically, when using javascript as an 
+include, you would be using the javascript to actually output something 
+into the browser rather than just storing and running various functions.</p>
+<pre>&lt;script type="text/javascript" language="javascript" src="navmenu.js"&gt;&lt;/script&gt;</pre>
+<p>If you are planning to use javascript includes for any reason, 
+remember that the code in your javascript file has to be javascript. In 
+other words, rather than simply using:</p>
+<pre>&lt;ul id="navmenu"&gt;
+&lt;li&gt;&lt;a href="page1.shtml"&gt;Menu Item One&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="page2.shtml"&gt;Menu Item Two&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="page3.shtml"&gt;Menu Item Three&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="page4.shtml"&gt;Menu Item Four&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+<p>you will need to create that HTML using javascript, similar to:</p>
+<pre>var navmenu = document.createElement('ul');
+navmenu.id = "navmenu";
+for(var i=1;i&lt;=4;i++) {
+var navitem = document.createElement('li');
+var navlink = document.createElement('a');
+navlink.href = "page"+i+".html";
+navlink.appendChild(document.createTextNode("Menu Item "+i));
+navitem.appendChild(navlink);
+}
+document.body.appendChild(navmenu);</pre>
+<p>Using javascript includes can be helpful in a number of ways, but 
+should be avoided for any heavy lifting, simply because it is completely
+ dependent on your visitors.</p>
+<h2>Conclusion</h2>
+<p>I hope this tutorial has been somewhat helpful. I only touched on 
+very basic information, as I know there are already a lot of great 
+tutorials out there going into great detail on each of the items 
+discussed in this article. However, it’s actually somewhat rare to see 
+any information about all of them together.</p>
+<p>As you can see, there are a number of ways you include your headers, 
+footers and/or navigation menus in all of your pages. You should choose 
+the method that works best for you, and is easiest for you to implement.</p>
+
+
+<p><strong>Related posts:</strong></p><ol><li><a href="http://www.htmlcenter.com/blog/rewrite-and-redirect-for-iis-sort-of/" rel="bookmark" title="Permanent Link: Rewrite and Redirect for IIS – Sort of">Rewrite and Redirect for IIS – Sort of</a></li>
+<li><a href="http://www.htmlcenter.com/blog/creating-a-photo-slideshow-with-nero-vision/" rel="bookmark" title="Permanent Link: Creating A Photo Slideshow With Nero Vision">Creating A Photo Slideshow With Nero Vision</a></li>
+<li><a href="http://www.htmlcenter.com/blog/how-your-pages-should-be-laid-out/" rel="bookmark" title="Permanent Link: How Your Pages Should Be Laid Out">How Your Pages Should Be Laid Out</a></li>
+</ol>	
+		</div></div>	
+
+<div style="clear: both;">
+<div style="float: left; padding-right: 10px;"><iframe src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/like_002.html" style="border: medium none; overflow: hidden; width: 70px; height: 21px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div>
+<div style="float: left; margin-right: 0pt; padding-right: 0pt;"><iframe title="Twitter For Websites: Tweet Button" style="width: 110px; height: 20px;" class="twitter-share-button twitter-count-horizontal" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/tweet_button_002.html" allowtransparency="true" frameborder="0" scrolling="no"></iframe><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/widgets.js"></script></div>
+<div style="padding-right: 10px; padding-top: 2px;"><script src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/hostedbadge.html"></script><iframe src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/a_002.html" style="border: medium none; overflow: hidden; width: 74px; height: 18px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div>
+</div>
+		</div>
+<div style="text-align: center;" align="center"><script type="text/javascript"><!--
+   e9 = new Object();
+   e9.size = "336x280,300x250";
+   e9.noAd = 1;
+//--></script><br>
+<script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/tags.js"></script><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/displayAd.js"></script><center><script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/j.ad"></script><center><a target="_blank" href="http://a.tribalfusion.com/h.click/akmOfZbWUQSTHn4mUFxQrJsYTMy5TYc5EMRnqjGXbZbfTW7WmAMBns7nmHnC3Tvh3tip46jGmUrKYVn0YsF2XGBnmqb25UZbPTrnFUAYYRTYRSc3NQtFx1HJqT6jN3cZb4YUYBTmqq2UICnFaCuSX3w9MhPpZb21TPpu9UBoSmHoSEhPSYJDZbEaWp/http://a.tribalfusion.com"><img src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/37536.gif" height="1" width="1" border="0"></a></center></center>
+
+
+</div>
+	
+<!-- You can start editing here. -->
+
+
+			<!-- If comments are open, but there are no comments. -->
+
+	 
+
+
+<div id="respond">
+
+<h3>Leave a Reply</h3>
+
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.htmlcenter.com/blog/creating-a-headerfooter-to-be-used-on-all-pages/#respond" style="display: none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="http://www.htmlcenter.com/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input name="author" id="author" size="22" tabindex="1" aria-required="true" type="text">
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input name="email" id="email" size="22" tabindex="2" aria-required="true" type="text">
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input name="url" id="url" size="22" tabindex="3" type="text">
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></small></p>-->
+
+<p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" id="submit" tabindex="5" value="Submit Comment" type="submit">
+<input name="comment_post_ID" value="517" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p>
+
+</form>
+
+</div>
+
+
+	
+	</div>
+
+		<div id="secondarycontent">
+			<table width="255" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td valign="top" align="center"><div style="margin-bottom: 3px;"><a title="Clicky Web Analytics" href="http://getclicky.com/8655"><img alt="Clicky Web Analytics" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/clicky-125.gif" border="0"></a></div></td><td valign="top" align="center"><div style="margin-bottom: 3px;"><a href="http://www.cloudcontacts.com/"><img src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/cloudcontacts1.jpg" alt="CloudContacts" title="CloudContacts" height="125" width="125" border="0"></a></div></td></tr>
+</tbody></table>
+
+<br clear="all"><br clear="all">
+    
+
+<div id="myTabGroup" class="TabStyleContainer"><div class="TabStyleTabList"><div class="TabStyleTabActive" id="tab1_tab"><a style="" href="#">HTMLCenter Discussion Forums</a></div></div><div class="TabStyleContent"><div class="mainbodyforums" id="tab1" style="display: block;">
+    <ul>
+            <li><a class="intl" href="http://forums.htmlcenter.com/t5516.html" target="_self" title="Top 5 Wordpress plugins">Top 5 Wordpress plugins</a>&nbsp;<span style="font-size: 8pt;"></span></li>
+            <li><a class="intl" href="http://forums.htmlcenter.com/t5486.html" target="_self" title="Powerful Elements in List Building">Powerful Elements in List Building</a>&nbsp;<span style="font-size: 8pt;">(2 replies)</span></li>
+            <li><a class="intl" href="http://forums.htmlcenter.com/t5514.html" target="_self" title="Undefined offset: 0">Undefined offset: 0</a>&nbsp;<span style="font-size: 8pt;"></span></li>
+            <li><a class="intl" href="http://forums.htmlcenter.com/t5512.html" target="_self" title="preg_match_all tr/td/th problem">preg_match_all tr/td/th problem</a>&nbsp;<span style="font-size: 8pt;">(3 replies)</span></li>
+            <li><a class="intl" href="http://forums.htmlcenter.com/t5185.html" target="_self" title="Google Chrome">Google Chrome</a>&nbsp;<span style="font-size: 8pt;">(6 replies)</span></li>
+            <li><a class="intl" href="http://forums.htmlcenter.com/t5344.html" target="_self" title="database in alphabetical order">database in alphabetical order</a>&nbsp;<span style="font-size: 8pt;">(4 replies)</span></li>
+            <li><a class="intl" href="http://forums.htmlcenter.com/t5511.html" target="_self" title="Advantages of Captcha1">Advantages of Captcha1</a>&nbsp;<span style="font-size: 8pt;">(1 reply)</span></li>
+            <li><a class="intl" href="http://forums.htmlcenter.com/t4527.html" target="_self" title="Funny advertisements">Funny advertisements</a>&nbsp;<span style="font-size: 8pt;">(23 replies)</span></li>
+            <li><a class="intl" href="http://forums.htmlcenter.com/t5504.html" target="_self" title="Focus point and input field text colour">Focus point and input field text colour</a>&nbsp;<span style="font-size: 8pt;">(4 replies)</span></li>
+            <li><a class="intl" href="http://forums.htmlcenter.com/t5510.html" target="_self" title="ALT and TITLE tag as Descriptive elements">ALT and TITLE tag as Descriptive elements</a>&nbsp;<span style="font-size: 8pt;"></span></li>
+        </ul>
+</div></div></div>
+<script type="text/javascript">
+
+tabs = new TabGroup('myTabGroup');
+tabs.add('tab1', 'HTMLCenter Discussion Forums');
+tabs.draw();
+tabs.focus('tab1');
+
+</script><br clear="all">
+<script type="text/javascript"><!--
+google_ad_client = "pub-6035777964660725";
+/* 250x250, created 2/23/08 */
+google_ad_slot = "6414772110";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 250px;"><ins id="aswift_1_anchor" style="display: block; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 250px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="250" scrolling="no" width="250"></iframe></ins></ins>
+
+<div style="width: 250px; margin-top: 10px;">
+<img src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/cnheader.png" alt="" height="142" width="250" border="0"><br>
+<ul>
+<li style="padding-bottom: 3px;"><a class="intl" href="http://feedproxy.google.com/%7Er/Centernetworks-/%7E3/uD0V5PGLJWU/web-jobs-june-13">Web Jobs – June 13</a></li><li style="padding-bottom: 3px;"><a class="intl" href="http://feedproxy.google.com/%7Er/Centernetworks-/%7E3/2JhdZ_3fauQ/workflow-wordpress">Adding a Bit of Workflow to WordPress</a></li><li style="padding-bottom: 3px;"><a class="intl" href="http://feedproxy.google.com/%7Er/Centernetworks-/%7E3/KRTRekaP0v8/web-jobs-june-7">Web Jobs – June 7</a></li><li style="padding-bottom: 3px;"><a class="intl" href="http://feedproxy.google.com/%7Er/Centernetworks-/%7E3/SEd2lN9-t8k/walmart-drops-price-iphone-4-147">Walmart Drops Price of iPhone 4 to $147</a></li><li style="padding-bottom: 3px;"><a class="intl" href="http://feedproxy.google.com/%7Er/Centernetworks-/%7E3/2vRCHZth73U/groupon-define-subscriber-important-industry">How Does Groupon Define “Subscriber”? And Why It’s Important for the Industry</a></li><li style="padding-bottom: 3px;"><a class="intl" href="http://feedproxy.google.com/%7Er/Centernetworks-/%7E3/eh6VHW8fKU8/web-jobs-june-1">Web Jobs – June 1</a></li><li style="padding-bottom: 3px;"><a class="intl" href="http://feedproxy.google.com/%7Er/Centernetworks-/%7E3/YgwfhMW-ZWg/groupon-offers-large-referral-bonuses">Groupon Offers $30 Referral Bonuses For Some Customers</a></li><li style="padding-bottom: 3px;"><a class="intl" href="http://feedproxy.google.com/%7Er/Centernetworks-/%7E3/OMmJYtR97wM/startup-entrepreneurial-readings-holiday-weekend">Startup &amp; Entrepreneurial Readings For The Memorial Holiday Weekend</a></li><li style="padding-bottom: 3px;"><a class="intl" href="http://feedproxy.google.com/%7Er/Centernetworks-/%7E3/4Eg7mbrWe3c/austin-airport-free-wi-fi">Austin Airport Finally Gets Free Wi-Fi…Somewhat Free</a></li><li style="padding-bottom: 3px;"><a class="intl" href="http://feedproxy.google.com/%7Er/Centernetworks-/%7E3/vlDLC_6nH7o/fresh-web-jobs-may-24">Fresh Web Jobs – May 24</a></li></ul>
+</div>
+		</div>
+		</div><br clear="left">
+<div id="footer_container">
+    <div id="footer_copy1">© 1996-2011 HTMLCenter - All Rights Reserved | <a href="http://www.htmlcenter.com/">Home</a> | <a href="http://htmlcenter.com/advertising-on-htmlcenter">Advertising</a> | <a href="http://www.htmlcenter.com/contacts/index.cfm">Contact Us</a> | <a href="http://htmlcenter.com/privacy-policy/">Privacy Policy</a></div>
+    <div id="footer_htmlclogo"></div>
+    </div>
+</div>
+
+
+
+
+
+
+				
+
+
+<!-- start Vibrant Media IntelliTXT script section -->
+<script type="text/javascript" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/front.asp"></script>
+<!-- end Vibrant Media IntelliTXT script section -->
+<script src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-173657-1";
+urchinTracker();
+</script>
+<script src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/8655.js" type="text/javascript"></script>
+<noscript><p><img alt="Clicky" src="http://static.getclicky.com/8655ns.gif" /></p></noscript>
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://htmlcenter.com/piwika/" : "http://htmlcenter.com/piwika/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/piwik.js" type="text/javascript"></script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://htmlcenter.com/piwika/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tag -->
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Minified using disk
+Page Caching using disk (enhanced)
+
+Served from: www.htmlcenter.com @ 2011-06-14 02:58:02 --><div style="display: none; visibility: hidden;" id="itxttt" class="itxtrst itxtrstdiv"><div id="itxtshadow" class="itxtrst itxtrstdiv"><div class="itxtrst itxtrstdiv itxtshdw itxttl"><div class="itxtrst itxtrstdiv" style="width: 765px; height: 641px;"><img class="itxtrst itxtrstimg" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/lg_shadow_sprite.png" height="641" width="765"></div></div><div class="itxtrst itxtrstdiv itxtshdw itxtbl"><div class="itxtrst itxtrstdiv" style="width: 765px; height: 641px;"><img class="itxtrst itxtrstimg" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/lg_shadow_sprite.png" height="641" width="765"></div></div><div class="itxtrst itxtrstdiv itxtshdw itxttr"><div class="itxtrst itxtrstdiv" style="width: 765px; height: 641px;"><img class="itxtrst itxtrstimg" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/lg_shadow_sprite.png" height="641" width="765"></div></div><div class="itxtrst itxtrstdiv itxtshdw itxtbr"><div class="itxtrst itxtrstdiv" style="width: 765px; height: 641px;"><img class="itxtrst itxtrstimg" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/lg_shadow_sprite.png" height="641" width="765"></div></div><div class="itxtrst itxtrstdiv itxtshdw itxttm"><div class="itxtrst itxtrstdiv" style="width: 765px; height: 641px;"><img class="itxtrst itxtrstimg" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/lg_shadow_sprite.png" height="641" width="765"></div></div><div class="itxtrst itxtrstdiv itxtshdw itxtbm"><div class="itxtrst itxtrstdiv" style="width: 765px; height: 641px;"><img class="itxtrst itxtrstimg" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/lg_shadow_sprite.png" height="641" width="765"></div></div><div class="itxtrst itxtrstdiv itxtshdw itxtfill"><div class="itxtrst itxtrstdiv" style="width: 765px; height: 641px;"><img class="itxtrst itxtrstimg" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/lg_shadow_sprite.png" height="641" width="765"></div></div><div class="itxtrst itxtrstdiv itxtshdw itxttail"><div class="itxtrst itxtrstdiv" style="width: 765px; height: 641px;"><img class="itxtrst itxtrstimg" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/lg_shadow_sprite.png" height="641" width="765"></div></div></div><div id="itxtchrome" class="itxtrst itxtrstdiv"><div style="background-color: rgb(251, 251, 251);" class="itxtrst itxtrstdiv" backgroundcolor="#fbfbfb" id="itxtcontentbg"></div><div style="position: absolute;" id="itxtslideout" class="itxtrst itxtrstdiv"><div style="width: 100%; height: 100%; background-color: rgb(84, 84, 84); opacity: 0.85; -moz-border-radius: 7px 7px 7px 7px;" class="itxtrst itxtrstdiv"></div><div class="itxtrst itxtrstdiv" style="position: absolute; left: 0pt; top: 0pt; width: 100%; height: 21px; line-height: 21px; color: white; font-size: 11px; font-weight: bold;"><img class="itxtrst itxtrstimg" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/close_off.gif" style="vertical-align: middle; float: right; margin-right: 4px; margin-top: 4px;"><span class="itxtrst itxtrstspan" style="margin-left: 20px; line-height: 21px;">${sspl}</span></div><div class="itxtrst itxtrstdiv" style="overflow: hidden; position: absolute; left: 20px; top: 21px; width: 100%;"></div></div><div id="itxtheader" class="itxtrst itxtrstdiv"><div class="itxtrst itxtrstdiv itxttrc"><a class="itxtrst itxtrsta" target="_blank"><img class="itxtrst itxtrstimg itxtvmlogo" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/vm_logo2009.gif"></a><a class="itxtrst itxtrsta" target="_blank"><img class="itxtrst itxtrstimg itxtwhat" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/what_off.gif" alt="${swti}" title="${swti}"></a><img class="itxtrst itxtrstimg itxtclose" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/close_off_002.gif" alt="${scls}" title="${scls}"></div><div class="itxtrst itxtrstdiv itxttlc"><div class="itxtrst itxtrstdiv itxtadv">${SSPL}</div></div><div class="itxtrst itxtrstdiv itxtcrnhldr"><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(253, 254, 255); margin-left: 6px; margin-right: 6px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(246, 246, 246); margin-left: 4px; margin-right: 4px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(244, 244, 244); margin-left: 2px; margin-right: 2px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(241, 240, 240); margin-left: 2px; margin-right: 2px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(238, 237, 238); margin-left: 1px; margin-right: 1px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(236, 236, 236); margin-left: 1px; margin-right: 1px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(235, 235, 234); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(235, 235, 235); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(235, 235, 235); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(231, 231, 230); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(207, 207, 207); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(209, 209, 210); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(211, 211, 211); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(216, 215, 213); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(221, 221, 217); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(225, 224, 217); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(229, 228, 219); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(233, 233, 220); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(235, 235, 220); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(237, 236, 221); margin-left: 0px; margin-right: 0px;"></div><div class="itxtrst itxtrstdiv itxtcrn" style="background-color: rgb(228, 228, 228); margin-left: 0px; margin-right: 0px;"></div></div></div><div id="itxtfooter" class="itxtrst itxtrstdiv"><div class="itxtrst itxtrstdiv itxtftr" style="margin-left: 1px; margin-right: 1px;"></div><div class="itxtrst itxtrstdiv itxtftr" style="margin-left: 1px; margin-right: 1px;"></div><div class="itxtrst itxtrstdiv itxtftr" style="margin-left: 2px; margin-right: 2px;"></div><div class="itxtrst itxtrstdiv itxtftr" style="margin-left: 2px; margin-right: 2px;"></div><div class="itxtrst itxtrstdiv itxtftr" style="margin-left: 4px; margin-right: 4px;"></div><div class="itxtrst itxtrstdiv itxtftr" style="margin-left: 6px; margin-right: 6px;"></div></div><div style="width: 46px; height: 22px;" id="itxttail" class="itxtrst itxtrstdiv"><div class="itxtrst itxtrstdiv" style="margin-left: 10px; margin-right: 2px;"></div><div class="itxtrst itxtrstdiv" style="margin-left: 10px; margin-right: 4px;"></div><div class="itxtrst itxtrstdiv" style="margin-left: 9px; margin-right: 6px;"></div><div class="itxtrst itxtrstdiv" style="margin-left: 9px; margin-right: 8px;"></div><div class="itxtrst itxtrstdiv" style="margin-left: 8px; margin-right: 10px;"></div><div class="itxtrst itxtrstdiv" style="margin-left: 8px; margin-right: 12px;"></div><div class="itxtrst itxtrstdiv" style="margin-left: 7px; margin-right: 14px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 7px; margin-right: 16px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 6px; margin-right: 18px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 6px; margin-right: 20px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 5px; margin-right: 22px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 5px; margin-right: 24px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 4px; margin-right: 26px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 4px; margin-right: 28px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 3px; margin-right: 30px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 3px; margin-right: 32px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 2px; margin-right: 34px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 2px; margin-right: 36px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 1px; margin-right: 38px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 1px; margin-right: 40px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 0px; margin-right: 42px;"></div><div class="itxtrst itxtrstdiv" style="background-color: rgb(255, 255, 255); margin-left: 0px; margin-right: 44px;"></div></div><div id="itxtdrawerfooter" class="itxtrst itxtrstdiv"></div><div style="overflow: hidden; width: 300px; height: 100px;" id="itxtcontent" class="itxtrst itxtrstdiv"><div class="itxtrst itxtrstdiv" id="itxtcontentLdg" style="position: absolute; display: none; width: 300px; height: 100px;"><img class="itxtrst itxtrstimg" src="Creating%20a%20Header_Footer%20to%20be%20Used%20on%20all%20Pages_files/loading.gif" id="itxtcontentLdgImg" style="position: absolute; left: 50%; top: 50%; margin-left: 0px; margin-top: 0px;"></div></div></div></div></body></html>

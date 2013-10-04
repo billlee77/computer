@@ -1,0 +1,7 @@
+% fmftempl.t1 -- generated automatically from fmftempl.log
+% Think twice before editing THIS file!
+\fmfL(19.99944,10.39125,t){$\gamma ,Z$}
+\fmfL(2.3384,-1.2983,rt){$e^-$}
+\fmfL(2.3384,26.29837,rb){$e^+$}
+\fmfL(37.66046,-1.2983,lt){$\bar f'$}
+\fmfL(37.66046,26.29837,lb){$f$}

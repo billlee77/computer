@@ -1,0 +1,1282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" class="client-js" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+<title>LaTeX/Page Layout - Wikibooks, open books for an open world</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="generator" content="MediaWiki 1.20wmf10">
+<link rel="alternate" type="application/x-wiki" title="Edit" href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit">
+<link rel="edit" title="Edit" href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit">
+<link rel="shortcut icon" href="http://en.wikibooks.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikibooks.org/w/opensearch_desc.php" title="Wikibooks (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikibooks.org/w/api.php?action=rsd">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Wikibooks Atom feed" href="http://en.wikibooks.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="Page_Layout_files/load.css" type="text/css" media="all">
+<link rel="stylesheet" href="Page_Layout_files/readerfeedback.css" type="text/css" media="all"><style type="text/css">.js-messagebox{margin:1em 5%;padding:0.5em 2.5%;border:1px solid #ccc;background-color:#fcfcfc;font-size:0.8em}.js-messagebox .js-messagebox-group{margin:1px;padding:0.5em 2.5%;border-bottom:1px solid #ddd}.js-messagebox .js-messagebox-group:last-child{border-bottom:thin none transparent}
+
+/* cache key: enwikibooks:resourceloader:filter:minify-css:7:8b08bdc91c52a9ffba396dccfb5b473c */
+
+</style><style type="text/css">.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+
+/* cache key: enwikibooks:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */
+
+</style><style type="text/css">.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;font-size:0.8em;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;font-size:0.8em;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{font-size:0.8em;color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+
+/* cache key: enwikibooks:resourceloader:filter:minify-css:7:d3d0fccf9f8cf3b31866dd3fd3326a6a */
+
+</style><style type="text/css">#mw-panel.collapsible-nav .portal{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAABCAMAAAA7MLYKAAAAS1BMVEXb29vy8vLv7+/c3NzZ2dni4uLr6+vt7e3s7Ozw8PDn5+fj4+Ph4eHd3d3f39/o6Ojl5eXp6enx8fHa2trg4ODq6urk5OTz8/PY2NjolWftAAAAO0lEQVR4XrXAhwGAMAgEQB5I71X3n9QpPHqAGZidt2e02G8yedciQkv1/YPqIpFSdzbp9tjGsd4xhwl8yuMKHhkJhm8AAAAASUVORK5CYII=) left top no-repeat;background:url(//bits.wikimedia.org/static-1.20wmf10/extensions/Vector/modules/images/portal-break.png?2012-08-20T14:13:20Z) left top no-repeat!ie;padding:0.25em 0 !important;margin:-11px 9px 10px 11px}#mw-panel.collapsible-nav .portal h5{color:#4D4D4D;font-weight:normal;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAD1BMVEX////d3d2ampqxsbF5eXmCtCYvAAAAAXRSTlMAQObYZgAAADBJREFUeF6dzNEJACAMA1HdINQJCp1Ebv+ZlLYLaD4f4cbnDNi6MAO8KCHJ+7X02j3mzgMQe93HcQAAAABJRU5ErkJggg==) left center no-repeat;background:url(//bits.wikimedia.org/static-1.20wmf10/extensions/Vector/modules/images/open.png?2012-08-20T14:13:20Z) left center no-repeat!ie;padding:4px 0 3px 1.5em;margin-bottom:0}#mw-panel.collapsible-nav .portal h5:hover{cursor:pointer;text-decoration:none}#mw-panel.collapsible-nav .portal h5 a{color:#4D4D4D;text-decoration:none}#mw-panel.collapsible-nav .portal .body{background:none !important;padding-top:0;display:none}#mw-panel.collapsible-nav .portal .body ul li{padding:0.25em 0} #mw-panel.collapsible-nav .portal.first h5{display:none}#mw-panel.collapsible-nav .portal.first{background-image:none;margin-top:0} #mw-panel.collapsible-nav .portal.persistent .body{display:block}#mw-panel.collapsible-nav .portal.persistent h5{background:none !important;padding-left:0.7em;cursor:default}#mw-panel.collapsible-nav .portal.persistent .body{margin-left:0.5em} #mw-panel.collapsible-nav .portal.collapsed h5{color:#0645AD;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAgMAAABinRfyAAAADFBMVEX///95eXnd3d2dnZ3aAo3QAAAAAXRSTlMAQObYZgAAADFJREFUeF5dyzEKACAMA0CXolNe2Id09Kl5igZahWY4AiGjZwmIuS9GEcJfY63Ix88Bol4EYP1O7JMAAAAASUVORK5CYII=) left center no-repeat;background:url(//bits.wikimedia.org/static-1.20wmf10/extensions/Vector/modules/images/closed-ltr.png?2012-08-20T14:13:20Z) left center no-repeat!ie;margin-bottom:0}#mw-panel.collapsible-nav .portal.collapsed h5 a{color:#0645AD}#mw-panel.collapsible-nav .portal.collapsed h5:hover{text-decoration:underline}
+
+/* cache key: enwikibooks:resourceloader:filter:minify-css:7:7bbb63348961b5b1185f0f9a7c4de5c3 */
+
+</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="Page_Layout_files/load_002.css" type="text/css" media="all">
+<style type="text/css" media="all">a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+
+/* cache key: enwikibooks:resourceloader:filter:minify-css:7:c34bf104bfa86a6b82ad98966aa7c446 */
+</style>
+
+<script src="Page_Layout_files/load_004.js" type="text/javascript"></script><script src="Page_Layout_files/load_007.js" type="text/javascript"></script>
+<script type="text/javascript">if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"LaTeX/Page_Layout","wgTitle":"LaTeX/Page Layout","wgCurRevisionId":2385369,"wgArticleId":42440,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["LaTeX"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"LaTeX/Page_Layout","wgRestrictionEdit":[],"wgRestrictionMove":[],"wgSearchNamespaces":[0,4,112],"wgVectorEnabledModules":{"collapsiblenav":true,"collapsibletabs":true,"editwarning":true,"expandablesearch":false,"footercleanup":false,"sectioneditlinks":false,"simplesearch":true,"experiments":true},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"hidesig":true,"templateEditor":false,"templates":false,"preview":false,"previewDialog":false,"publish":false,"toc":false},"wgFeedbackParams":{"tags":{"reliability":3,"completeness":2,"npov":2,"presentation":1}},"wgAjaxFeedback":{"sendingMsg":"Submitting …","sentMsg":"Thank you!"},"wgFlaggedRevsParams":{"tags":{"value":{"levels":3,"quality":2,"pristine":3}}},"wgStableRevisionId":2289714,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","Geo":{"city":"","country":""},"wgNoticeProject":"wikibooks"});
+}</script><script type="text/javascript">if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":0,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":false,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":3
+,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":0,"flaggedrevsstable":0,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":true,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs102":false,"searchNs103":false,"searchNs108":false,"searchNs109":false,"searchNs110":false,"searchNs111":false,"searchNs112":true,"searchNs113":false,"gadget-extlinks":1,"gadget-commons-file":1,"gadget-toolboxcompat":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.
+tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+
+/* cache key: enwikibooks:resourceloader:filter:minify-js:7:73c7fd9b32f09ca4e03afb736e277ea1 */
+}</script>
+<script type="text/javascript">if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax","ext.centralNotice.bannerController"]);
+}</script><script type="text/javascript" src="Page_Layout_files/load_002.js"></script>
+<style type="text/css">/*<![CDATA[*/
+.source-latex {line-height: normal;}
+.source-latex li, .source-latex pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for latex
+ * CSS class: source-latex, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.latex.source-latex .de1, .latex.source-latex .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.latex.source-latex  {font-family:monospace;}
+.latex.source-latex .imp {font-weight: bold; color: red;}
+.latex.source-latex li, .latex.source-latex .li1 {font-weight: normal; vertical-align:top;}
+.latex.source-latex .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.latex.source-latex .li2 {font-weight: bold; vertical-align:top;}
+.latex.source-latex .kw1 {color: #800000;}
+.latex.source-latex .co1 {color: #2C922C; font-style: italic;}
+.latex.source-latex .es0 {color: #000000; font-weight: bold;}
+.latex.source-latex .sy0 {color: #E02020; }
+.latex.source-latex .st0 {color: #000000;}
+.latex.source-latex .re1 {color: #8020E0; font-weight: normal;}
+.latex.source-latex .re2 {color: #C08020; font-weight: normal;}
+.latex.source-latex .re3 {color: #8020E0; font-weight: normal;}
+.latex.source-latex .re4 {color: #800000; font-weight: normal;}
+.latex.source-latex .re5 {color: #00008B; font-weight: bold;}
+.latex.source-latex .re6 {color: #800000; font-weight: normal;}
+.latex.source-latex .re7 {color: #0000D0; font-weight: normal;}
+.latex.source-latex .re8 {color: #C00000; font-weight: normal;}
+.latex.source-latex .re9 {color: #2020C0; font-weight: normal;}
+.latex.source-latex .re10 {color: #800000; font-weight: normal;}
+.latex.source-latex .re11 {color: #E00000; font-weight: normal;}
+.latex.source-latex .re12 {color: #800000; font-weight: normal;}
+.latex.source-latex .ln-xtra, .latex.source-latex li.ln-xtra, .latex.source-latex div.ln-xtra {background-color: #ffc;}
+.latex.source-latex span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-bash {line-height: normal;}
+.source-bash li, .source-bash pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for bash
+ * CSS class: source-bash, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.bash.source-bash .de1, .bash.source-bash .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.bash.source-bash  {font-family:monospace;}
+.bash.source-bash .imp {font-weight: bold; color: red;}
+.bash.source-bash li, .bash.source-bash .li1 {font-weight: normal; vertical-align:top;}
+.bash.source-bash .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.bash.source-bash .li2 {font-weight: bold; vertical-align:top;}
+.bash.source-bash .kw1 {color: #000000; font-weight: bold;}
+.bash.source-bash .kw2 {color: #c20cb9; font-weight: bold;}
+.bash.source-bash .kw3 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .co0 {color: #666666; font-style: italic;}
+.bash.source-bash .co1 {color: #800000;}
+.bash.source-bash .co2 {color: #cc0000; font-style: italic;}
+.bash.source-bash .co3 {color: #000000; font-weight: bold;}
+.bash.source-bash .co4 {color: #666666;}
+.bash.source-bash .es1 {color: #000099; font-weight: bold;}
+.bash.source-bash .es2 {color: #007800;}
+.bash.source-bash .es3 {color: #007800;}
+.bash.source-bash .es4 {color: #007800;}
+.bash.source-bash .es5 {color: #780078;}
+.bash.source-bash .es_h {color: #000099; font-weight: bold;}
+.bash.source-bash .br0 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .sy0 {color: #000000; font-weight: bold;}
+.bash.source-bash .st0 {color: #ff0000;}
+.bash.source-bash .st_h {color: #ff0000;}
+.bash.source-bash .nu0 {color: #000000;}
+.bash.source-bash .re0 {color: #007800;}
+.bash.source-bash .re1 {color: #007800;}
+.bash.source-bash .re2 {color: #007800;}
+.bash.source-bash .re4 {color: #007800;}
+.bash.source-bash .re5 {color: #660033;}
+.bash.source-bash .ln-xtra, .bash.source-bash li.ln-xtra, .bash.source-bash div.ln-xtra {background-color: #ffc;}
+.bash.source-bash span.xtra { display:block; }
+
+/*]]>*/
+</style><script src="Page_Layout_files/geoiplookup.js"></script><!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.20wmf10/vector/csshover.min.htc")}</style><![endif]--><link href="Page_Layout_files/index.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="Page_Layout_files/index_004.js"></script><script type="text/javascript" src="Page_Layout_files/index_006.js"></script><script type="text/javascript" src="Page_Layout_files/index_003.js"></script><script type="text/javascript" src="Page_Layout_files/index_013.js"></script><script type="text/javascript" src="Page_Layout_files/index_010.js"></script><script type="text/javascript" src="Page_Layout_files/index_012.js"></script><script type="text/javascript" src="Page_Layout_files/index_009.js"></script><script type="text/javascript" src="Page_Layout_files/index.js"></script><script type="text/javascript" src="Page_Layout_files/index_008.js"></script><script type="text/javascript" src="Page_Layout_files/index_005.js"></script><script type="text/javascript" src="Page_Layout_files/index_007.js"></script><link href="Page_Layout_files/index_002.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="Page_Layout_files/index_011.js"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-LaTeX_Page_Layout skin-vector action-view vector-animateLayout">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content" class="mw-body">
+			<a id="top"></a>
+			<div class="js-messagebox" id="mw-js-message" style="display:none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><!-- CentralNotice --><script>mw.centralNotice.initialize();</script></div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading"><span dir="auto">LaTeX/Page Layout</span></h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+								<!-- tagline -->
+				<div id="siteSub">From Wikibooks, open books for an open world</div>
+				<!-- /tagline -->
+								<!-- subtitle -->
+				<div id="contentSub"><span class="subpages">&lt; <a href="http://en.wikibooks.org/wiki/LaTeX" title="LaTeX">LaTeX</a></span><div id="mw-fr-revisiontag" class="flaggedrevs_basic plainlinks noprint"><img class="flaggedrevs-icon" src="Page_Layout_files/1.png" alt="Unreviewed changes are displayed on this page" title="Unreviewed changes are displayed on this page">The <a class="external text" href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;stable=1">latest reviewed version</a> was <a class="external text" href="http://en.wikibooks.org/w/index.php?title=Special:Log&amp;type=review&amp;page=LaTeX/Page_Layout">checked</a> on <i>20 March 2012</i>. There are <a class="external text" href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;oldid=2289714&amp;diff=cur&amp;diffonly=0">6 pending changes</a> awaiting review.</div>
+</div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodycontent -->
+				<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><table class="wikitable collapsible selected" style="background-color: rgb(238, 255, 238); float: right; clear: right; border: 1px solid rgb(136, 187, 136); padding: 0.5em; font-size: small; text-align: left; width: 20%; margin: 0.5em;">
+<tbody><tr>
+<th><span class="action"><a><img src="Page_Layout_files/MediaWiki_Vector_skin_right_arrow.png"></a></span>
+<div class="floatright"><a href="http://commons.wikimedia.org/wiki/File:LaTeX_logo.svg" class="image"><img alt="LaTeX logo.svg" src="Page_Layout_files/60px-LaTeX_logo.png" height="25" width="60"></a></div>
+<p><a href="http://en.wikibooks.org/wiki/LaTeX" title="LaTeX">LaTeX</a></p>
+</th>
+</tr>
+<tr style="display: none;">
+<td>Getting Started
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Introduction" title="LaTeX/Introduction">Introduction</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Basics" title="LaTeX/Basics">Basics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Errors_and_Warnings" title="LaTeX/Errors and Warnings">Errors and Warnings</a></li>
+</ol>
+<p>Formatting</p>
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Document_Structure" title="LaTeX/Document Structure">Document Structure</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Useful_Measurement_Macros" title="LaTeX/Useful Measurement Macros">Useful Measurement Macros</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Text_Formatting" title="LaTeX/Text Formatting">Text Formatting</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Paragraph_Formatting" title="LaTeX/Paragraph Formatting">Paragraph Formatting</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Colors" title="LaTeX/Colors">Colors</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Fonts" title="LaTeX/Fonts">Fonts</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/List_Structures" title="LaTeX/List Structures">List Structures</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Tables" title="LaTeX/Tables">Tables</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Title_Creation" title="LaTeX/Title Creation">Title creation</a></li>
+<li><strong class="selflink">Page Layout</strong></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Importing_Graphics" title="LaTeX/Importing Graphics">Importing Graphics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions" title="LaTeX/Floats, Figures and Captions">Floats, Figures and Captions</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Footnotes_and_Margin_Notes" title="LaTeX/Footnotes and Margin Notes">Footnotes and Margin Notes</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Hyperlinks" title="LaTeX/Hyperlinks">Hyperlinks</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing" title="LaTeX/Labels and Cross-referencing">Labels and Cross-referencing</a></li>
+</ol>
+<p>Creating Graphics</p>
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Creating_Graphics" title="LaTeX/Creating Graphics">Creating Graphics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Picture" title="LaTeX/Picture">Picture</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/PGF/TikZ" title="LaTeX/PGF/TikZ">PGF/TikZ</a></li>
+<li><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/PSTricks&amp;action=edit&amp;redlink=1" class="new" title="LaTeX/PSTricks (does not exist)">PSTricks</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Xy-pic" title="LaTeX/Xy-pic">Xy-pic</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Creating_3D_graphics" title="LaTeX/Creating 3D graphics">Creating 3D graphics</a></li>
+</ol>
+<p>Technical Texts</p>
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Mathematics" title="LaTeX/Mathematics">Mathematics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics" title="LaTeX/Advanced Mathematics">Advanced Mathematics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Theorems" title="LaTeX/Theorems">Theorems</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Chemical_Graphics" title="LaTeX/Chemical Graphics">Chemical Graphics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Algorithms_and_Pseudocode" title="LaTeX/Algorithms and Pseudocode">Algorithms and Pseudocode</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Linguistics" title="LaTeX/Linguistics">Linguistics</a></li>
+</ol>
+<p>Special Pages</p>
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Indexing" title="LaTeX/Indexing">Indexing</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Glossary" title="LaTeX/Glossary">Glossary</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management" title="LaTeX/Bibliography Management">Bibliography Management</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/More_Bibliographies" title="LaTeX/More Bibliographies">More Bibliographies</a></li>
+</ol>
+<p>Special Documents</p>
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Letters" title="LaTeX/Letters">Letters</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Presentations" title="LaTeX/Presentations">Presentations</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Teacher%27s_Corner" title="LaTeX/Teacher's Corner">Teacher's Corner</a></li>
+</ol>
+<p>Advanced Topics</p>
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/General_Guidelines" title="LaTeX/General Guidelines">General Guidelines</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Customizing_LaTeX" title="LaTeX/Customizing LaTeX">Customizing LaTeX</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Packages" title="LaTeX/Packages">Packages</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Advanced_Topics" title="LaTeX/Advanced Topics">Advanced Topics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Collaborative_Writing_of_LaTeX_Documents" title="LaTeX/Collaborative Writing of LaTeX Documents">Collaborative Writing of LaTeX Documents</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Export_To_Other_Formats" title="LaTeX/Export To Other Formats">Export To Other Formats</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Internationalization" title="LaTeX/Internationalization">Internationalization</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Accents" title="LaTeX/Accents">Accents and Special Characters</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Tips_and_Tricks" title="LaTeX/Tips and Tricks">Tips / Tricks</a></li>
+</ol>
+<p>Appendices</p>
+<ol>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Authors" title="LaTeX/Authors">Authors</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Links" title="LaTeX/Links">Useful Links</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Installation" title="LaTeX/Installation">Installation</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Packages/Installing_Extra_Packages" title="LaTeX/Packages/Installing Extra Packages">Installing Extra Packages</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Package_Reference" title="LaTeX/Package Reference">Package Reference</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Sample_LaTeX_documents" title="LaTeX/Sample LaTeX documents">Sample LaTeX documents</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Index" title="LaTeX/Index">Index</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Command_Glossary" title="LaTeX/Command Glossary">Command Glossary</a></li>
+</ol>
+</td>
+</tr>
+<tr style="display: none;">
+<td>
+<p><small><a class="external text" href="http://en.wikibooks.org/w/index.php?title=Template:LaTeX/Top&amp;action=edit">edit this box</a> • <a class="external text" href="http://en.wikibooks.org/w/index.php?title=Template:LaTeX/Contents&amp;action=edit">edit the TOC</a></small></p>
+</td>
+</tr>
+</tbody></table>
+<p>Latex and the document class will normally take care of page layout 
+issues for you. For submission to an academic publication, this entire 
+topic will be out of your hands, as the publishers want to control the 
+presentation. However, for your own documents, there are some obvious 
+settings that you may wish to change: margins, page orientation and 
+columns, to name but three. The purpose of this tutorial is to show you 
+how to configure your pages.</p>
+<table id="toc" class="toc">
+<tbody><tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+<span class="toctoggle">&nbsp;[<a href="#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Page_dimensions"><span class="tocnumber">1</span> <span class="toctext">Page dimensions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Top_margin_above_Chapter"><span class="tocnumber">1.1</span> <span class="toctext">Top margin above Chapter</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Page_size_issues"><span class="tocnumber">1.2</span> <span class="toctext">Page size issues</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Page_orientation"><span class="tocnumber">2</span> <span class="toctext">Page orientation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Change_orientation_of_specific_part"><span class="tocnumber">2.1</span> <span class="toctext">Change orientation of specific part</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Change_orientation_of_floating_environment"><span class="tocnumber">2.2</span> <span class="toctext">Change orientation of floating environment</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Page_styles"><span class="tocnumber">3</span> <span class="toctext">Page styles</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Standard_page_styles"><span class="tocnumber">3.1</span> <span class="toctext">Standard page styles</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Customising_with_fancyhdr"><span class="tocnumber">3.2</span> <span class="toctext">Customising with fancyhdr</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Another_approach_with_fancyhdr"><span class="tocnumber">3.3</span> <span class="toctext">Another approach with fancyhdr</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Page_n_of_m"><span class="tocnumber">3.4</span> <span class="toctext">Page <i>n</i> of <i>m</i></span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Alternative_packages"><span class="tocnumber">3.5</span> <span class="toctext">Alternative packages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Multi-column_pages"><span class="tocnumber">4</span> <span class="toctext">Multi-column pages</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Manual_page_formatting"><span class="tocnumber">5</span> <span class="toctext">Manual page formatting</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Widows_and_orphans"><span class="tocnumber">6</span> <span class="toctext">Widows and orphans</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Summary"><span class="tocnumber">7</span> <span class="toctext">Summary</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=1" title="Edit section: Page dimensions">edit</a>]</span> <span class="mw-headline" id="Page_dimensions">Page dimensions</span></h2>
+<p>A page in Latex is defined by myriad internal parameters. Each 
+parameter corresponds to the length of an element of the page, for 
+example, <code>\paperheight</code> is the physical height of the page. 
+Here you can see a diagram showing all the variables defining the page. 
+All sizes are given in Postscript Points (pt), there are 72pt in an inch
+ or 1pt = 0.3527mm.</p>
+<div style="float:left;margin-right:2em">
+<div class="floatleft"><a href="http://commons.wikimedia.org/wiki/File:Latex_layout.svg" class="image"><img alt="Latex layout.svg" src="Page_Layout_files/500px-Latex_layout.png" height="694" width="500"></a></div>
+</div>
+<div style="column-count:2; -moz-column-count:2; -webkit-column-count:2; ms-column-count:2; -o-column-count:2; column-width:20em; -moz-column-width:20em; -webkit-column-width:20em; -ms-column-width:20em; -o-column-width:20em;">
+<ol>
+<li>one inch + <tt>\hoffset</tt></li>
+<li>one inch + <tt>\voffset</tt></li>
+<li><tt>\oddsidemargin</tt> = 31pt</li>
+<li><tt>\topmargin</tt> = 20pt</li>
+<li><tt>\headheight</tt> = 12pt</li>
+<li><tt>\headsep</tt> = 25pt</li>
+<li><tt>\textheight</tt> = 592pt</li>
+<li><tt>\textwidth</tt> = 390pt</li>
+</ol>
+<ol start="9">
+<li><tt>\marginparsep</tt> = 10pt</li>
+<li><tt>\marginparwidth</tt> = 35pt</li>
+<li><tt>\footskip</tt> = 30pt</li>
+</ol>
+<ul>
+<li><tt>\marginparpush</tt> = 7pt (not shown)</li>
+<li><tt>\hoffset</tt> = 0pt</li>
+<li><tt>\voffset</tt> = 0pt</li>
+<li><tt>\paperwidth</tt> = 597pt</li>
+<li><tt>\paperheight</tt> = 845pt</li>
+</ul>
+</div>
+<p>It will not have been immediately obvious - because it doesn't really
+ cause any serious problems - that the default page size for all 
+standard document classes is <i>US letter</i>. This is shorter by 18 mm 
+(about 3/4 inch), and slightly wider by 8 mm (about 1/4 inch), compared 
+to A4 (which is the standard in almost all the rest of the world). While
+ this is not a serious issue (most printers will print the document 
+without any problems), it is possible to specify alternative sizes:</p>
+<p><span class="mw-geshi latex source-latex"><span class="sy0">\</span><span class="kw1">documentclass</span><span class="sy0">[</span><span class="re2">a4paper</span><span class="sy0">]{</span><span class="re9">article</span><span class="sy0">}</span></span></p>
+<p>The above example illustrates how to pass the optional argument to the <tt>\documentclass</tt>,
+ which will then modify the page dimensions accordingly. The standard 
+document classes that are a part of Latex are built to be fairly 
+generic, which is why you have the flexibility of specifying the page 
+size. Other classes may have different options (or none at all). 
+Normally, 3rd party classes come with some documentation to let you 
+know.</p>
+<p>Readers from a word processing background are probably thinking why 
+there is so much white space surrounding the text. There is a good 
+reason, and it's all down to readability. Have a look in a few books, 
+and pick a few lines at random. Count the number of characters per line.
+ I bet the average is about 66. Studies have shown that it's easier to 
+read text when there are 60-70 characters per line - and it would seem 
+that 66 is the optimal number. Therefore, the page margins are set to 
+ensure that readability remains as good as possible. Also, white space 
+is often left in the inner margin for the assumption that the document 
+will be bound.</p>
+<p>However, those who want to read on iPads or other handheld digital 
+devices need to create documents without the extra whitespace. In order 
+to create PDF documents with optimal handheld viewing, not only must the
+ text field and margins be adjusted, so must the page size. To do this, 
+use the setlength command to adjust the parameters "pdfpagewidth" and 
+"pdfpagelength" to the appropriate dimensions. If you are looking for a 
+sensible dimension, consider following the paper size used by the 
+Supreme Court of the United States, 441pt. by 666pt (or 6.125 inches by 
+9.25 inches), which looks great on the iPad. You could also use the 
+Supreme Court's text field size of 297 pt by 513 pt, but this is too 
+wide for font's other than Century Schoolbook, the font required by the 
+Supreme Court.</p>
+<p>If you wish to change the margins of your document, there are many ways to do so:</p>
+<ul>
+<li>Simply use the <code>fullpage</code> package for somewhat standardized smaller margins (around an inch):</li>
+</ul>
+<p><span class="mw-geshi latex source-latex"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">{</span><span class="re9">fullpage</span><span class="sy0">}</span></span></p>
+<p>For an even greater effect give it the <code>cm</code> option (around 1.5cm):</p>
+<p><span class="mw-geshi latex source-latex"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">[</span><span class="re2">cm</span><span class="sy0">]{</span><span class="re9">fullpage</span><span class="sy0">}</span></span></p>
+<ul>
+<li>Use the <code>a4wide</code> package for a page with A4 document size with smaller margins.</li>
+</ul>
+<ul>
+<li>Use the <code>geometry</code> package. This package allows you to 
+specify the 4 margins without needing to remember the particular page 
+dimensions commands. You can enter the measures in centimeters and 
+inches as well. Use <code>cm</code> for centimeters and <code>in</code> 
+for inches after each value (e.g: 1.0in or 2.54cm). Note that by default
+ (i.e. without any options) this package already reduces the margins, so
+ for a 'standard layout' you may not need to specify anything. These 
+values are relative to the edge of paper (0in) and go inward it. It may 
+be implemented as follows:</li>
+</ul>
+<p><span class="mw-geshi latex source-latex"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">[</span><span class="re2">top=tlength, bottom=blength, left=llength, right=rlength</span><span class="sy0">]{</span><span class="re9">geometry</span><span class="sy0">}</span></span></p>
+<ul>
+<li>Edit individual page dimension variables described above, using the <code>\addtolength</code> and <code>\setlength</code> commands. For instance,</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="re12">\oddsidemargin</span>=-1cm
+<span class="sy0">\</span><span class="kw1">setlength</span><span class="sy0">{</span><span class="re9">\<span class="kw1">textwidth</span><span class="sy0">}{</span>6.5in<span class="sy0">}</span>
+<span class="re12">\addtolength</span><span class="sy0">{</span><span class="re12">\voffset</span>}{-5pt</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>Additionally, there are several packages designed to solve the 
+problem of varying pages sizes, which override any defaults setup by the
+ document class. One of the most versatile packages for page layout is 
+the <code>geometry</code> package. For instance, to set the page size, add the following to your preamble:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">[</span><span class="re2">a4paper</span><span class="sy0">]{</span><span class="re9">geometry</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>The <code>geometry</code> package has many pre-defined page sizes, like <code>a4paper</code>, built in. Others include: <code>a0paper</code>, <code>a1paper</code>, ..., <code>a6paper</code>, <code>b0paper</code>, <code>b1paper</code>, ..., <code>b6paper</code>, <code>letterpaper</code>, <code>legalpaper</code>, <code>executivepaper</code>.</p>
+<p>To explicitly change the paper dimensions using the <code>geometry</code> package, the paperwidth and paperheight options can be used. For example:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">[</span><span class="re2">margin=1in, paperwidth=5.5in, paperheight=8.5in</span><span class="sy0">]{</span><span class="re9">geometry</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<ul>
+<li>A quick way to eliminate the difference in position between even and odd numbered pages would be setting the values to <b>evensidemargin</b> and <b>oddsidemargin</b> to the half of odd's default:</li>
+</ul>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">setlength</span><span class="sy0">{</span><span class="re9"><span class="re12">\oddsidemargin</span><span class="sy0">}{</span>15.5pt<span class="sy0">}</span> 
+<span class="sy0">\</span><span class="kw1">setlength</span><span class="sy0">{</span><span class="re12">\evensidemargin</span>}{15.5pt</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>The value of <b>evensidemargin</b> is larger than <b>oddsidemargin</b>
+ in the two-sided default layout, as one could wish to write notes on 
+the side of the page. The side for the large margin is chosen opposite 
+to the side where pages are conjucted together.</p>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=2" title="Edit section: Top margin above Chapter">edit</a>]</span> <span class="mw-headline" id="Top_margin_above_Chapter">Top margin above Chapter</span></h3>
+<p>The top margin above a chapter can be changed using the <code>titlesec</code> package. Example: <a target="_blank" rel="nofollow" class="external autonumber" href="http://www.ctex.org/documents/packages/layout/titlesec.pdf">[1]</a></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">{</span><span class="re9">titlesec<span class="sy0">}</span>
+<span class="re12">\titlespacing*</span><span class="sy0">{\</span><span class="kw1">chapter</span><span class="sy0">}{</span>0pt<span class="sy0">}{</span>-50pt<span class="sy0">}{</span>20pt<span class="sy0">}</span>
+<span class="re12">\titleformat</span><span class="sy0">{\</span><span class="kw1">chapter</span><span class="sy0">}[</span><span class="re2">display</span><span class="sy0">]{</span><span class="re12">\normalfont</span><span class="sy0">\</span><span class="kw1">huge</span><span class="sy0">\</span><span class="kw1">bfseries</span><span class="sy0">}{</span><span class="re12">\chaptertitlename</span><span class="sy0">\</span> <span class="re12">\thechapter</span><span class="sy0">}{</span>20pt<span class="sy0">}{</span><span class="re12">\Huge</span></span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>The command <code>\titleformat</code> must be used when the spacing of a chapter is changed. In case of a section this command can be omitted.</p>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=3" title="Edit section: Page size issues">edit</a>]</span> <span class="mw-headline" id="Page_size_issues">Page size issues</span></h3>
+<p>If you intend to get a pdf in the end, there are basically three ways:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="bash source-bash">
+<pre class="de1">TeX =<span class="sy0">&gt;</span> PDF
+TeX =<span class="sy0">&gt;</span> DVI =<span class="sy0">&gt;</span> PDF
+TeX =<span class="sy0">&gt;</span> DVI =<span class="sy0">&gt;</span> PS =<span class="sy0">&gt;</span> PDF
+</pre></div>
+</div>
+<p>Which are in general obtained with</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="bash source-bash">
+<pre class="de1">pdflatex myfile               <span class="co0"># TeX =&gt; PDF</span>
+latex myfile                  <span class="co0"># TeX =&gt; DVI</span>
+dvipdf myfile                 <span class="co0"># DVI =&gt; PDF</span>
+dvips myfile <span class="re5">-o</span> myfile.ps     <span class="co0"># DVI =&gt; PS</span>
+<span class="kw2">ps2pdf</span> myfile.ps myfile.pdf   <span class="co0"># PS =&gt; PDF</span>
+</pre></div>
+</div>
+<p>With all the available Ghostscript versions, the safest way to always get the right paper size in the end is to add</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">documentclass</span><span class="sy0">[</span><span class="re2">...,a4paper,...</span><span class="sy0">]{</span><span class="re9">...<span class="sy0">}</span>
+<span class="re12">\special</span>{papersize=210mm,297mm</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>to the tex file, <code>-t a4</code> after dvips and <code>-sPAPERSIZE=a4</code> after the ps2pdf. For pdflatex to work fine, using the package <code>geometry</code> usually works.</p>
+<p>If you want US Letter instead, replace "210mm,297mm" by "8.5in,11in" and "a4" by "letter".</p>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=4" title="Edit section: Page orientation">edit</a>]</span> <span class="mw-headline" id="Page_orientation">Page orientation</span></h2>
+<p>When you talk about changing page orientation, it usually means 
+changing to landscape mode, since portrait is the default. I shall 
+introduce two slightly different styles of changing orientation.</p>
+<p>The first is for when you want all of your document to be in 
+landscape from the very beginning. There are various packages available 
+to achieve this, but the one I prefer is the <code>geometry</code> package. All you need to do is call the package, with <i>landscape</i> as an option:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">[</span><span class="re2">landscape</span><span class="sy0">]{</span><span class="re9">geometry</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>Although, if you intend to use <code>geometry</code> to set your paper size, don't add the <code>\usepackage</code> commands twice, simply string all the options together, separating with a comma:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">[</span><span class="re2">a4paper,landscape</span><span class="sy0">]{</span><span class="re9">geometry</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=5" title="Edit section: Change orientation of specific part">edit</a>]</span> <span class="mw-headline" id="Change_orientation_of_specific_part">Change orientation of specific part</span></h3>
+<p>The second method is for when you are writing a document in portrait,
+ but you have some contents, like a large diagram or table that would be
+ displayed better on a landscape page. However, you still want the 
+consistency of your headers and footers appearing the same place as the 
+other pages.</p>
+<p>The <code>lscape</code> package is for this very purpose. It supplies a <code>landscape</code>
+ environment, and anything inside is basically rotated. No actual page 
+dimensions are changed. This approach is more applicable to books or 
+reports than to typical academic publications. Using <code>pdflscape</code> instead of <code>lscape</code>
+ when generating a PDF document will make the page appear right side up 
+when viewed: the single page that is in landscape format will be 
+rotated, while the rest will be left in portrait orientation.</p>
+<p>Also, to get a table to appear correctly on a landscaped page, one must place the <code>tabular</code> environment inside a <code>table</code> environment, which is itself inside the <code>landscape</code> environment. e.g., it should look like this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="re8">\begin</span><span class="sy0">{</span><span class="re9"><span class="re7">landscape</span><span class="sy0">}</span>
+<span class="re8">\begin</span><span class="sy0">{</span><span class="re7">table</span></span><span class="sy0">}</span>
+<span class="sy0">\</span><span class="kw1">centering</span>     <span class="co1">% optional, probably makes it look better to have it centered on the page</span>
+<span class="re8">\begin</span><span class="sy0">{</span><span class="re9"><span class="re7">tabular</span><span class="sy0">}{</span>....<span class="sy0">}</span>
+.......
+<span class="re8">\end</span><span class="sy0">{</span><span class="re7">tabular</span><span class="sy0">}</span>
+<span class="re8">\end</span><span class="sy0">{</span><span class="re7">table</span><span class="sy0">}</span>
+<span class="re8">\end</span><span class="sy0">{</span><span class="re7">landscape</span></span><span class="sy0">}</span>
+</pre></div>
+</div>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=6" title="Edit section: Change orientation of floating environment">edit</a>]</span> <span class="mw-headline" id="Change_orientation_of_floating_environment">Change orientation of floating environment</span></h3>
+<p>If you use the above code, you will see that the table is inserted 
+where it is in the code. It will not be floated! To fix this you need 
+the package <code>rotating</code></p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="re8">\begin</span><span class="sy0">{</span><span class="re9"><span class="re7">table</span><span class="sy0">}[</span><span class="re2">p</span><span class="sy0">]</span>
+        <span class="sy0">\</span><span class="kw1">centering</span>
+        <span class="re12">\rotatebox</span><span class="sy0">{</span>90<span class="sy0">}{</span>
+                <span class="re8">\begin</span><span class="sy0">{</span><span class="re7">minipage</span><span class="sy0">}{</span><span class="re12">\textheight</span><span class="sy0">}</span>
+                <span class="re8">\begin</span><span class="sy0">{</span><span class="re7">tabular</span><span class="sy0">}{</span>|l|l|l|<span class="sy0">}</span>
+                        ...
+                <span class="re8">\end</span><span class="sy0">{</span><span class="re7">tabular</span><span class="sy0">}</span>
+                <span class="re8">\end</span><span class="sy0">{</span><span class="re7">minipage</span><span class="sy0">}</span>
+        <span class="sy0">}</span>
+<span class="re8">\end</span><span class="sy0">{</span><span class="re7">table</span></span><span class="sy0">}</span>
+</pre></div>
+</div>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=7" title="Edit section: Page styles">edit</a>]</span> <span class="mw-headline" id="Page_styles">Page styles</span></h2>
+<p>Page styles in Latex terms refers not to page dimensions, but to the 
+running headers and footers of a document. These headers typically 
+contain document titles, chapter or section numbers/names, and page 
+numbers.</p>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=8" title="Edit section: Standard page styles">edit</a>]</span> <span class="mw-headline" id="Standard_page_styles">Standard page styles</span></h3>
+<p>The possibilities of changing the headers in plain Latex are actually quite limited. There are two commands available: <code>\pagestyle{<i>style</i>}</code> will apply the specified style to the current and all subsequent pages, and <code>\thispagestyle{<i>style</i>}</code> will only affect the current page. The possible styles are:</p>
+<table>
+<tbody><tr>
+<td><b>empty</b></td>
+<td>Both header and footer are clear</td>
+</tr>
+<tr>
+<td><b>plain</b></td>
+<td>Header is clear, but the footer contains the page number in the center.</td>
+</tr>
+<tr>
+<td><b>headings</b></td>
+<td>Footer is blank, header displays information according to document class (e.g., section name) and page number top right.</td>
+</tr>
+<tr>
+<td><b>myheadings</b></td>
+<td>Page number is top right, and it is possible to control the rest of the header.</td>
+</tr>
+</tbody></table>
+<p>With myheadings, the commands <code>\markright</code> (in the standard document classes, book, report and article) and <code>\markboth</code>
+ (only in the book class) are used to control the headings. The 
+following commands placed at the beginning of an article document will 
+set the header of all pages to contain "John Smith" top left, "On page 
+styles" centered and the page number top right:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">pagestyle</span><span class="sy0">{</span><span class="re9">myheadings<span class="sy0">}</span>
+<span class="re12">\markright</span><span class="sy0">{</span>John Smith<span class="sy0">\</span><span class="kw1">hfill</span> On page styles<span class="sy0">\</span><span class="kw1">hfill</span></span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>An issue to look out for is that the major sectioning commands (<code>\part</code>, <code>\chapter</code> or <code>\maketitle</code>) specify a <code>\thispagestyle{plain}</code>. So, if you wish to suppress all styles by inserting a <code>\pagestyle{empty}</code>
+ at the beginning of your document, then the style command at each 
+section will override your initial rule, for those pages only. To 
+achieve the intended result one can follow the new section commands with
+ <code>\thispagestyle{empty}</code>. The <code>\part</code> command, 
+however, cannot be fixed this way, because it sets the page style, but 
+also advances to the next page, so that \thispagestyle{} cannot be 
+applied to that page. Another approach is to simply write <code>\usepackage{nopageno}</code> in the preamble. This package will make <code>\pagestyle{plain}</code> have the same effect as <code>\pagestyle{empty}</code>, effectively suppressing page numbering when it is used.</p>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=9" title="Edit section: Customising with fancyhdr">edit</a>]</span> <span class="mw-headline" id="Customising_with_fancyhdr">Customising with <tt>fancyhdr</tt></span></h3>
+<p>To get better control over the headers, one can use the package <code>fancyhdr</code>
+ written by Piet van Oostrum. It provides several commands that allow 
+you to customize the header and footer lines of your document. For a 
+more complete guide, the author of the package produced this <a target="_blank" rel="nofollow" class="external text" href="http://www.ctan.org/tex-archive/macros/latex/contrib/fancyhdr/fancyhdr.pdf">documentation</a>.</p>
+<p>The tricky problem when customizing headers and footers is to get 
+things like running section and chapter names in there. Standard LaTeX 
+accomplishes this with a two-stage approach (although an alternative 
+one-stage mechanism is provided by the package <code>titleps</code>). In the header and footer definition, you use the commands <span class="mw-geshi latex source-latex"><span class="re12">\rightmark</span></span> and <span class="mw-geshi latex source-latex"><span class="re12">\leftmark</span></span>
+ to represent the current section and chapter heading, respectively. The
+ values of these two commands are overwritten whenever a chapter or 
+section command is processed. For ultimate flexibility, the <span class="mw-geshi latex source-latex"><span class="sy0">\</span><span class="kw1">chapter</span></span> command and its friends do not redefine <span class="mw-geshi latex source-latex"><span class="re12">\rightmark</span></span> and <span class="mw-geshi latex source-latex"><span class="re12">\leftmark</span></span> themselves. They call yet another command (<span class="mw-geshi latex source-latex"><span class="re12">\chaptermark</span></span>, <span class="mw-geshi latex source-latex"><span class="re12">\sectionmark</span></span>, or <span class="mw-geshi latex source-latex"><span class="re12">\subsectionmark</span></span>) that is responsible for redefining <span class="mw-geshi latex source-latex"><span class="re12">\rightmark</span></span> and <span class="mw-geshi latex source-latex"><span class="re12">\leftmark</span></span>, except if they are starred -- in such a case, <span class="mw-geshi latex source-latex"><span class="re12">\markboth</span><span class="sy0">{</span><span class="re9">Chapter/Section name}{</span><span class="sy0">}</span></span> must be used inside the sectioning command if header and footer lines are to be updated.</p>
+<p>If you want to change the look of the chapter name in the header line, you need only "renew" the <span class="mw-geshi latex source-latex"><span class="re12">\chaptermark</span></span> command.</p>
+<p>To begin, add the following lines to your preamble:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">{</span><span class="re9">fancyhdr<span class="sy0">}</span>
+<span class="sy0">\</span><span class="kw1">setlength</span><span class="sy0">{</span><span class="re12">\headheight</span><span class="sy0">}{</span>15.2pt<span class="sy0">}</span>
+<span class="sy0">\</span><span class="kw1">pagestyle</span>{fancy</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>The second line will prevent LaTeX from giving a warning. Both the 
+header and footer comprise three elements each according to its 
+horizontal position (left, centre or right). To set their values, the 
+following commands are available:</p>
+<table>
+<tbody><tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\lhead</span><span class="sy0">[</span><span class="re2">&lt;lh-even&gt;</span><span class="sy0">]{</span><span class="re9">&lt;lh-odd&gt;</span><span class="sy0">}</span></span></td>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\chead</span><span class="sy0">[</span><span class="re2">&lt;ch-even&gt;</span><span class="sy0">]{</span><span class="re9">&lt;ch-odd&gt;</span><span class="sy0">}</span></span></td>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\rhead</span><span class="sy0">[</span><span class="re2">&lt;rh-even&gt;</span><span class="sy0">]{</span><span class="re9">&lt;rh-odd&gt;</span><span class="sy0">}</span></span></td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\lfoot</span><span class="sy0">[</span><span class="re2">&lt;lf-even&gt;</span><span class="sy0">]{</span><span class="re9">&lt;lf-odd&gt;</span><span class="sy0">}</span></span></td>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\cfoot</span><span class="sy0">[</span><span class="re2">&lt;cf-even&gt;</span><span class="sy0">]{</span><span class="re9">&lt;cf-odd&gt;</span><span class="sy0">}</span></span></td>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\rfoot</span><span class="sy0">[</span><span class="re2">&lt;rf-even&gt;</span><span class="sy0">]{</span><span class="re9">&lt;rf-odd&gt;</span><span class="sy0">}</span></span></td>
+</tr>
+</tbody></table>
+<p>Hopefully, the behaviour of the above commands is fairly intuitive: if it has <i>head</i> in it, it affects the head etc, and obviously, <i>l</i>, <i>c</i> and <i>r</i>
+ means left, centre and right respectively. Documents can be either one-
+ or two-sided. Articles are by default one-sided, books are two-sided. 
+Two-sided documents differentiate the left (even) and right (odd) pages,
+ whereas one-sided do not.</p>
+<p>Watch out: if you provide long text in two different "parts" only in 
+the footer or only in the header, you might see overlapping text. There 
+are special commands you can use as arguments:</p>
+<table>
+<tbody><tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\thepage</span></span></td>
+<td>number of the current page</td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\leftmark</span></span></td>
+<td>current chapter name printed like "CHAPTER 3. THIS IS THE CHAPTER TITLE"</td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\rightmark</span></span></td>
+<td>current section name printed like "1.6. THIS IS THE SECTION TITLE"</td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\chaptername</span></span></td>
+<td>the name <i>chapter</i> in the current language. If this is English, it will display "Chapter"</td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\thechapter</span></span></td>
+<td>current chapter number</td>
+</tr>
+<tr>
+<td><span class="mw-geshi latex source-latex"><span class="re12">\thesection</span></span></td>
+<td>current section number</td>
+</tr>
+</tbody></table>
+<p>Note that <span class="mw-geshi latex source-latex"><span class="re12">\leftmark</span></span> and <span class="mw-geshi latex source-latex"><span class="re12">\rightmark</span></span>
+ convert the names to uppercase, whichever was the formatting of the 
+text. If you want them to print the actual name of the chapter without 
+converting it to uppercase use the following command:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">renewcommand</span><span class="sy0">{</span><span class="re9"><span class="re12">\chaptermark</span><span class="sy0">}[</span><span class="re2">1</span><span class="sy0">]{</span><span class="re12">\markboth</span><span class="sy0">{</span>#1<span class="sy0">}{}}</span>
+<span class="sy0">\</span><span class="kw1">renewcommand</span><span class="sy0">{</span><span class="re12">\sectionmark</span><span class="sy0">}[</span><span class="re2">1</span><span class="sy0">]{</span><span class="re12">\markright</span>{#1}{}</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>now <span class="mw-geshi latex source-latex"><span class="re12">\leftmark</span></span> and <span class="mw-geshi latex source-latex"><span class="re12">\rightmark</span></span>
+ will just print the name of the chapter and section, without number and
+ without affecting the formatting. Note that these redefinitions must be
+ inserted <i>after</i> the first call of <span class="mw-geshi latex source-latex"><span class="sy0">\</span><span class="kw1">pagestyle</span><span class="sy0">{</span><span class="re9">fancy</span><span class="sy0">}</span></span>. The standard book formatting of the <span class="mw-geshi latex source-latex"><span class="re12">\chaptermark</span></span> is:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">renewcommand</span><span class="sy0">{</span><span class="re9"><span class="re12">\chaptermark</span><span class="sy0">}[</span><span class="re2">1</span><span class="sy0">]{</span><span class="re12">\markboth</span><span class="sy0">{</span><span class="re12">\MakeUppercase</span><span class="sy0">{</span><span class="re12">\chaptername</span><span class="sy0">\</span> <span class="re12">\thechapter</span>.\ #1}}{}</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>Moreover, with the following commands you can define the thickness of the decorative lines on both the header and the footer:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">renewcommand</span><span class="sy0">{</span><span class="re9"><span class="re12">\headrulewidth</span><span class="sy0">}{</span>0.5pt<span class="sy0">}</span>
+<span class="sy0">\</span><span class="kw1">renewcommand</span><span class="sy0">{</span><span class="re12">\footrulewidth</span>}{0pt</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>The first line for the header, the second for the footer. Setting it to zero means that there will be no line.</p>
+<p>An example:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="re12">\fancyhf</span><span class="sy0">{</span><span class="re9"><span class="sy0">}</span>
+ 
+<span class="re12">\lhead</span><span class="sy0">{</span>Andrew Roberts<span class="sy0">}</span>
+<span class="re12">\rhead</span><span class="sy0">{\</span><span class="kw1">today</span><span class="sy0">}</span>
+<span class="re12">\rfoot</span><span class="sy0">{</span><span class="re12">\thepage</span></span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>It is often necessary to clear any defaults or a previous style 
+definition, and the first line of the above example will do this. The 
+commands are an alternative interface to customising the headers/footers
+ that fancyhdr offers, and so by not passing anything to them, it 
+assumes that you want it all blank.</p>
+<p>The result of these commands will put my name at the top left, todays
+ date at the top right, and the current page number at the bottom right 
+of the page. Even if the document class was two-sided, because no 
+optional text has been supplied for the even pages, the style will be 
+used for all pages.</p>
+<p>This approach has a serious bad point: some pages like the title or 
+the beginning of each chapter have no header or footer, but with the 
+code we have shown <i>every</i> page will get the same output. There is a way to solve this problem: you can use the <i>fancyplain</i> style. If you do so, you can use the command <span class="mw-geshi latex source-latex"><span class="re12">\fancyplain</span><span class="sy0">{</span><span class="re9">...}{...</span><span class="sy0">}</span></span> inside <span class="mw-geshi latex source-latex"><span class="re12">\lhead</span><span class="sy0">{</span><span class="re9">...</span><span class="sy0">}</span></span> etc.</p>
+<p>When LaTeX wants to create a page with an empty style, it will insert the first argument of <code>fancyplain</code>, in all the other cases it will use the second argument. So, an improved version of the previous code would be:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">pagestyle</span><span class="sy0">{</span><span class="re9">fancyplain<span class="sy0">}</span>
+ 
+<span class="re12">\fancyhf</span><span class="sy0">{}</span>
+ 
+<span class="re12">\lhead</span><span class="sy0">{</span><span class="re12">\fancyplain</span><span class="sy0">{}{</span>Andrew Roberts<span class="sy0">}}</span>
+<span class="re12">\rhead</span><span class="sy0">{</span><span class="re12">\fancyplain</span><span class="sy0">{}{\</span><span class="kw1">today</span><span class="sy0">}}</span>
+<span class="re12">\rfoot</span><span class="sy0">{</span><span class="re12">\fancyplain</span><span class="sy0">{}{</span><span class="re12">\thepage</span>}</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>It has the same behavior of the previous code, but you will get empty
+ header and footer in the title and at the beginning of chapters.</p>
+<p>For two-sided, it's common to mirror the style of opposite pages, you tend to think in terms of <i>inner</i> and <i>outer</i>. So, the same example as above for two-sided is:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="re12">\lhead</span><span class="sy0">[</span><span class="re2">Andrew Roberts</span><span class="sy0">]{</span><span class="re9"><span class="sy0">}</span>
+<span class="re12">\rhead</span><span class="sy0">[</span><span class="re2"><span class="sy0">]{</span>Andrew Roberts<span class="sy0">}</span>
+<span class="re12">\lhead</span>[</span><span class="re2">]{\<span class="kw1">today</span><span class="sy0">}</span>
+<span class="re12">\rhead</span><span class="sy0">[\</span><span class="kw1">today</span></span><span class="sy0">]{}</span>
+<span class="re12">\lfoot</span><span class="sy0">[</span><span class="re2"><span class="re12">\thepage</span></span><span class="sy0">]{}</span>
+<span class="re12">\rfoot</span><span class="sy0">[</span><span class="sy0">]{</span><span class="re12">\thepage</span></span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>This is effectively saying my name is top outer, todays date is top 
+inner, and current page number is bottom outer. You can use the <code>fancyplain</code> command within them for two-sided documents, too.</p>
+<p>As an example, here is the complete code of a basic configuration you could use for a real document:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">{</span><span class="re9">fancyhdr<span class="sy0">}</span>
+<span class="sy0">\</span><span class="kw1">setlength</span><span class="sy0">{</span><span class="re12">\headheight</span><span class="sy0">}{</span>15pt<span class="sy0">}</span>
+ 
+<span class="sy0">\</span><span class="kw1">pagestyle</span><span class="sy0">{</span>fancyplain<span class="sy0">}</span>
+<span class="sy0">\</span><span class="kw1">renewcommand</span><span class="sy0">{</span><span class="re12">\chaptermark</span><span class="sy0">}[</span><span class="re2">1</span><span class="sy0">]{</span><span class="re12">\markboth</span><span class="sy0">{</span>#1<span class="sy0">}{}}</span>
+ 
+<span class="re12">\lhead</span><span class="sy0">{</span><span class="re12">\fancyplain</span><span class="sy0">{}{</span><span class="re12">\thepage</span><span class="sy0">}}</span>
+<span class="re12">\chead</span><span class="sy0">{}</span>
+<span class="re12">\rhead</span><span class="sy0">{</span><span class="re12">\fancyplain</span><span class="sy0">{}{\</span><span class="kw1">textit</span><span class="sy0">{</span><span class="re12">\leftmark</span><span class="sy0">}}}</span>
+<span class="re12">\lfoot</span><span class="sy0">{}</span>
+<span class="re12">\cfoot</span><span class="sy0">{}</span>
+<span class="re12">\rfoot</span>{</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p><i>NB. If you want to make the <b>article class two-sided</b>, use</i> <b><code>\documentclass[twoside]{article}</code></b>.</p>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=10" title="Edit section: Another approach with fancyhdr">edit</a>]</span> <span class="mw-headline" id="Another_approach_with_fancyhdr">Another approach with <tt>fancyhdr</tt></span></h3>
+<p>If you want to get different style for even and odd pages, there is another possible way, still using <code>fancyhdr</code>. Start again with:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="re12">\fancyhf</span><span class="sy0">{</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>it will just delete the current heading/footer configuration, so you 
+can make your own. Now you can create what you want using the command <code>\fancyhead</code> for header and <tt>\fancyfoot</tt> for footer. They work in the same way, so we'll explain only the first one. The syntax is:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="re12">\fancyhead</span><span class="sy0">[</span><span class="re2">selectors</span><span class="sy0">]{</span><span class="re9">output you want</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>The selectors are the following:</p>
+<table>
+<tbody><tr>
+<td><b>E</b></td>
+<td>even page</td>
+</tr>
+<tr>
+<td><b>O</b></td>
+<td>odd page</td>
+</tr>
+<tr>
+<td><b>L</b></td>
+<td>left side</td>
+</tr>
+<tr>
+<td><b>C</b></td>
+<td>centered</td>
+</tr>
+<tr>
+<td><b>R</b></td>
+<td>right side</td>
+</tr>
+</tbody></table>
+<p>so <b>CE</b> will refer to the center of the even pages and <b>RO</b> to the right side of the odd pages. Whether it is header or footer, depends if you are using <code>\fancyhead</code> or <code>\fancyfoot</code>. You can use multiple selectors separated by a comma. Here is an example:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="re12">\fancyhead</span><span class="sy0">[</span><span class="re2">CE</span><span class="sy0">]{</span><span class="re9">Author's Name<span class="sy0">}</span>
+<span class="re12">\fancyhead</span><span class="sy0">[</span><span class="re2">CO</span><span class="sy0">]{\</span><span class="kw1">today</span><span class="sy0">}</span>
+<span class="re12">\fancyfoot</span><span class="sy0">[</span><span class="re2">LE,RO</span><span class="sy0">]{</span><span class="re12">\thepage</span></span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>it will print author's name on the center of the header of the even 
+pages, the date of the current day on the center of the odd pages and 
+the current page number on the left side of even pages <i>and</i> on the
+ right size of the odd pages. Finally, in order to have the pages at the
+ beginning of any chapter really plain, you could redefine the <i>plain</i> style, for example to have a really plain page when you want. The command to use is <code>\fancypagestyle{plain}{...}</code> and the argument can contain all the commands explained before. An example is the following:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="re12">\fancypagestyle</span><span class="sy0">{</span><span class="re9">plain</span><span class="sy0">}{</span> <span class="co1">%</span>
+<span class="re12">\fancyhf</span><span class="sy0">{</span><span class="sy0">}</span> <span class="co1">% remove everything</span>
+<span class="sy0">\</span><span class="kw1">renewcommand</span><span class="sy0">{</span><span class="re9"><span class="re12">\headrulewidth</span>}{0pt</span><span class="sy0">}</span> <span class="co1">% remove lines as well</span>
+<span class="sy0">\</span><span class="kw1">renewcommand</span><span class="sy0">{</span><span class="re9"><span class="re12">\footrulewidth</span>}{0pt}</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>Finally, here is the complete code of a possible style you could use for a two-sided document:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">{</span><span class="re9">fancyhdr<span class="sy0">}</span>
+<span class="sy0">\</span><span class="kw1">setlength</span><span class="sy0">{</span><span class="re12">\headheight</span><span class="sy0">}{</span>15pt<span class="sy0">}</span>
+ 
+<span class="sy0">\</span><span class="kw1">pagestyle</span><span class="sy0">{</span>fancy<span class="sy0">}</span>
+<span class="sy0">\</span><span class="kw1">renewcommand</span><span class="sy0">{</span><span class="re12">\chaptermark</span><span class="sy0">}[</span><span class="re2">1</span><span class="sy0">]{</span><span class="re12">\markboth</span><span class="sy0">{</span>#1<span class="sy0">}{}}</span>
+<span class="sy0">\</span><span class="kw1">renewcommand</span><span class="sy0">{</span><span class="re12">\sectionmark</span><span class="sy0">}[</span><span class="re2">1</span><span class="sy0">]{</span><span class="re12">\markright</span><span class="sy0">{</span>#1<span class="sy0">}{}}</span>
+ 
+<span class="re12">\fancyhf</span><span class="sy0">{}</span>
+<span class="re12">\fancyhead</span><span class="sy0">[</span><span class="re2">LE,RO</span><span class="sy0">]{</span><span class="re12">\thepage</span><span class="sy0">}</span>
+<span class="re12">\fancyhead</span><span class="sy0">[</span><span class="re2">RE</span><span class="sy0">]{\</span><span class="kw1">textit</span><span class="sy0">{</span><span class="re12">\nouppercase</span><span class="sy0">{</span><span class="re12">\leftmark</span><span class="sy0">}}}</span>
+<span class="re12">\fancyhead</span><span class="sy0">[</span><span class="re2">LO</span><span class="sy0">]{\</span><span class="kw1">textit</span><span class="sy0">{</span><span class="re12">\nouppercase</span><span class="sy0">{</span><span class="re12">\rightmark</span><span class="sy0">}}}</span>
+ 
+<span class="re12">\fancypagestyle</span>{plain</span><span class="sy0">}{</span> <span class="co1">%</span>
+<span class="re12">\fancyhf</span><span class="sy0">{</span><span class="sy0">}</span> <span class="co1">% remove everything</span>
+<span class="sy0">\</span><span class="kw1">renewcommand</span><span class="sy0">{</span><span class="re9"><span class="re12">\headrulewidth</span>}{0pt</span><span class="sy0">}</span> <span class="co1">% remove lines as well</span>
+<span class="sy0">\</span><span class="kw1">renewcommand</span><span class="sy0">{</span><span class="re9"><span class="re12">\footrulewidth</span>}{0pt}</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=11" title="Edit section: Page n of m">edit</a>]</span> <span class="mw-headline" id="Page_n_of_m">Page <i>n</i> of <i>m</i></span></h3>
+<p>Some people like to put the current page number in context with the 
+whole document. LaTeX only provides access to the current page number. 
+However, you can use the <code>lastpage</code> package to find the total number of pages, like this:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">usepackage</span><span class="sy0">{</span><span class="re9">lastpage<span class="sy0">}</span>
+...
+<span class="re12">\cfoot</span><span class="sy0">{</span><span class="re12">\thepage</span><span class="sy0">\</span> of <span class="re4">\pageref</span>{LastPage}</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p><i>Note the capital letters</i>. Also, add a backslash after <code>\thepage</code>
+ to ensure adequate space between the page number and 'of'. And recall, 
+when using references, that you have to run LaTeX an extra time to 
+resolve the cross-references.</p>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=12" title="Edit section: Alternative packages">edit</a>]</span> <span class="mw-headline" id="Alternative_packages">Alternative packages</span></h3>
+<p>Other packages for page styles are <code>scrpage2</code>, very similiar to <code>fancyhdr</code>, and <code>titleps</code>, which takes a one-stage approach, without having to use <code>\leftmark</code> or <code>\rightmark</code>.</p>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=13" title="Edit section: Multi-column pages">edit</a>]</span> <span class="mw-headline" id="Multi-column_pages">Multi-column pages</span></h2>
+<p>It is common to see articles and conference proceedings formatted 
+with two columns of text. However, such publishers will usually provide 
+you with their own document class, which automatically implements this 
+format, without you having to do anything. It is very easy to format 
+your page in this way. If you are using a standard Latex document class,
+ then you can simply pass the optional argument <i>twocolumn</i> to the document class: <code>\documentclass[twocolumn]{article}</code> which will give the desired effect.</p>
+<p>While this simple addition will do the job 9 out of 10 times, it is 
+widely acknowledged that there are many limitations of this approach, 
+and that the <code>multicol</code> package is much more useful for handling multiple columns. It has several advantages:</p>
+<ul>
+<li>Can support up to ten columns.</li>
+<li>Implements a <i>multicols</i> environment, therefore, it is possible to mix the number of columns within a document.</li>
+<li>Additionally, the environment can be nested inside other environments, such as <code>figure</code>.</li>
+<li><code>Multicol</code> outputs <i>balanced</i> columns, whereby the columns on the final page will be of roughly equal length.</li>
+<li>Vertical rules between columns can be customised.</li>
+<li>Column environments can be easily customised locally or globally.</li>
+</ul>
+<p>Floats are not fully supported by this environment. It can only cope if you use the starred forms of the float commands (e.g., <code>\begin{figure*}</code>
+ ) which makes the float span all columns. This is not hugely 
+problematic, since floats of the same width as a column may be too 
+small, and you would probably want to span them anyway. See <a href="http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions#Wide_figures_in_two_column_documents" title="LaTeX/Floats, Figures and Captions">this section</a> for a more detailed discussion.</p>
+<p>To create a typical two-column layout:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="re8">\begin</span><span class="sy0">{</span><span class="re9"><span class="re7">multicols</span><span class="sy0">}{</span>2<span class="sy0">}</span>
+  lots of text
+<span class="re8">\end</span><span class="sy0">{</span><span class="re7">multicols</span></span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>The parameter <code>\columnseprule</code> holds the width of the 
+vertical rules. By default, the lines are omitted as this parameter is 
+set to a length of 0pt. Do the following before the beginning of the 
+environment:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">setlength</span><span class="sy0">{</span><span class="re9"><span class="re12">\columnseprule</span>}{1pt</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>This will draw a thin line of 1pt in width. A thick line would not 
+look very pleasing, however, you are free to put in any length of your 
+choosing. Also, to change the horizontal space in between columns (the 
+default is set at 10pt, which is quite narrow) then you need to change 
+the <code>\columnsep</code> parameter:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">setlength</span><span class="sy0">{</span><span class="re9"><span class="re12">\columnsep</span>}{20pt</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>To force a break in a column, the command <code>\columnbreak</code> is used in a <code>multicols</code> environment.</p>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=14" title="Edit section: Manual page formatting">edit</a>]</span> <span class="mw-headline" id="Manual_page_formatting">Manual page formatting</span></h2>
+<p>There may be instances, especially in very long documents, such as 
+books, that LaTeX will not get all page breaks looking as good as it 
+could. It may, therefore, be necessary to manually tweak the page 
+formatting. Of course, you should only do this at the very final stage 
+of producing your document, once all the content is complete. LaTeX 
+offers the following:</p>
+<table class="wikitable">
+<tbody><tr>
+<td><tt>\newline</tt></td>
+<td>Breaks the line at the point of the command.</td>
+</tr>
+<tr>
+<td><tt>\\</tt></td>
+<td>Breaks the line at the point of the command; it is a shorter version
+ of the previous command, but it does exactly the same thing.</td>
+</tr>
+<tr>
+<td><tt>\\*</tt></td>
+<td>Breaks the line at the point of the command and additionally prohibits a page break after the forced line break</td>
+</tr>
+<tr>
+<td><tt>\linebreak[number]</tt></td>
+<td>Breaks the line at the point of the command. The <i>number</i> you 
+provide as an argument represents the priority of the command in a range
+ from 0 (it will be easily ignored) to 4 (do it anyway). LaTeX will try 
+to produce the best line breaks possible. If it cannot, it will decide 
+whether including the linebreak or not according to the priority you 
+have provided.</td>
+</tr>
+<tr>
+<td><tt>\newpage</tt></td>
+<td>Ends the current page and starts a new one.</td>
+</tr>
+<tr>
+<td><tt>\pagebreak[number]</tt></td>
+<td>Breaks the current page at the point of the command. The optional <i>number</i> argument sets the priority in a scale from 0 to 4.</td>
+</tr>
+<tr>
+<td><tt>\nopagebreak[number]</tt></td>
+<td>Stops the page being broken at the point of the command. The optional <i>number</i> argument sets the priority in a scale from 0 to 4.</td>
+</tr>
+<tr>
+<td><tt>\clearpage</tt></td>
+<td>Ends the current page and causes any floats encountered in the input, but yet to appear, to be printed.</td>
+</tr>
+</tbody></table>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=15" title="Edit section: Widows and orphans">edit</a>]</span> <span class="mw-headline" id="Widows_and_orphans">Widows and orphans</span></h2>
+<table class="plainlinks noprint messagebox notice" style="width: 250px; float: right; clear: right; margin: 0px 0px 0px 10px;">
+<tbody><tr style="vertical-align: middle;">
+<td style="padding: 0.1em; text-align: center; vertical-align: middle; width: 45px; border: medium none;"><img alt="Wikipedia-logo.png" src="Page_Layout_files/40px-Wikipedia-logo.png" height="40" width="40"></td>
+<td style="color: black; text-align: left; vertical-align: middle; padding: 0.5em 0.5em 0.5em 0em; border: medium none;">
+<p><a target="_blank" href="http://en.wikipedia.org/wiki/" class="extiw" title="w:">Wikipedia</a> has related information at <a target="_blank" class="external text" href="http://en.wikipedia.org/wiki/Widows_and_orphans"><i><b>Widows and orphans</b></i></a></p>
+</td>
+</tr>
+</tbody></table>
+<p>In professional books, it's not desirable to have single lines at the
+ beginning or end of a page. In typesetting such situations are called 
+'widows' and 'orphans'. Normally it is possible that widows and orphans 
+appear in LaTeX documents. You can try to deal with them using manual 
+page formatting, but there's also an automatic solution.</p>
+<p>LaTeX has a parameter for 'penalty' for widows and orphans ('club 
+lines' in LaTeX terminology). With the greater penalty LaTeX will try 
+more to avoid widows and orphans. You can try to increase these 
+penalties by putting following commands in your document preamble:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="re12">\widowpenalty</span>=300
+<span class="re12">\clubpenalty</span>=300
+</pre></div>
+</div>
+<p>If this does not help, you can try increasing these values even more,
+ to a maximum of 10000. However, it is not recommended to set this value
+ too high, as setting it to 10000 forbids LaTeX from doing this 
+altogether, which might result in strange behavior.</p>
+<p>It also helps to have rubber band values for the space between paragraphs:</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="sy0">\</span><span class="kw1">setlength</span><span class="sy0">{</span><span class="re9">\<span class="kw1">parskip</span>}{3ex plus 2ex minus 2ex</span><span class="sy0">}</span>
+</pre></div>
+</div>
+<p>Alternatively, you can use the <tt>needspace</tt> package to <i>reserve</i> some lines and thus to prevent page breaking for those lines.</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr">
+<div class="latex source-latex">
+<pre class="de1"><span class="re12">\needspace</span><span class="sy0">{</span><span class="re9">5<span class="re12">\baselineskip</span></span><span class="sy0">}</span>
+Some
+text
+on
+5
+lines.
+</pre></div>
+</div>
+<h2><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit&amp;section=16" title="Edit section: Summary">edit</a>]</span> <span class="mw-headline" id="Summary">Summary</span></h2>
+<p>This tutorial is relatively short, largely due to the fact that the 
+whole LaTeX ethos is to concentrate on the content, and let LaTeX 
+(and/or other typographers who have developed suitable document classes)
+ decide on the best presentation. The next step to achieve greater 
+control of page layout is to set about designing your own class. 
+Unfortunately, that is not a straightforward task, and is often best 
+left to the professionals!</p>
+<p><br></p>
+<table style="border: 1px solid black;" class="noprint" cellpadding="2" cellspacing="0" width="100%">
+<tbody><tr>
+<td bgcolor="#FFFFE0" width="33%"><a href="http://en.wikibooks.org/wiki/LaTeX/Title_Creation" title="LaTeX/Title Creation">Previous: Title Creation</a></td>
+<td align="center" bgcolor="#FFFFE0" width="33%"><a href="http://en.wikibooks.org/wiki/LaTeX" title="LaTeX">Index</a></td>
+<td align="right" bgcolor="#FFFFE0" width="33%"><a href="http://en.wikibooks.org/wiki/LaTeX/Importing_Graphics" title="LaTeX/Importing Graphics">Next: Importing Graphics</a></td>
+</tr>
+</tbody></table>
+<p><i>This page uses material from Andy Roberts' <a target="_blank" rel="nofollow" class="external text" href="http://www.andy-roberts.net/writing/latex">Getting to grips with LaTeX</a> with permission from the author.</i></p>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 1303/1000000
+Post-expand include size: 7989/2048000 bytes
+Template argument size: 763/2048000 bytes
+Highest expansion depth: 10/40
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key enwikibooks:pcache:idhash:42440-0!*!0!default!!en!4!* and timestamp 20120803171950 -->
+</div>				<!-- /bodycontent -->
+								<!-- printfooter -->
+				<div class="printfooter">
+				Retrieved from "<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;oldid=2385369">http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;oldid=2385369</a>"				</div>
+				<!-- /printfooter -->
+												<!-- catlinks -->
+				<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://en.wikibooks.org/wiki/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://en.wikibooks.org/wiki/Category:LaTeX" title="Category:LaTeX">LaTeX</a></li></ul></div></div>				<!-- /catlinks -->
+												<!-- dataAfterContent -->
+				<div id="mw-data-after-content">
+	<form method="post" action="/w/index.php?title=Special:ReaderFeedback&amp;action=submit" id="mw-feedbackform"><fieldset class="feedback_reviewform noprint"><legend><strong>What do you think of this page?</strong></legend>
+<p><i>Please take a moment to rate this page below. Your feedback is valuable and helps us improve our website.</i>
+</p><span id="mw-feedbackselects"><b><label for="wpreliability">Reliability</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wpreliability" id="wpreliability" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+<b><label for="wpcompleteness">Completeness</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wpcompleteness" id="wpcompleteness" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+<b><label for="wpnpov">Neutrality</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wpnpov" id="wpnpov" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+<b><label for="wppresentation">Presentation</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wppresentation" id="wppresentation" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+</span><input disabled="disabled" value="Submit" id="submitfeedback" accesskey="b" title="Submit review [alt-shift-b]" type="submit"><input value="Special:ReaderFeedback" name="title" type="hidden">
+<input value="LaTeX/Page_Layout" name="target" type="hidden">
+<input value="2385369" name="oldid" type="hidden">
+<input value="2a316035181050709700a5f87f139da3" name="validatedParams" type="hidden"><input value="submit" name="action" type="hidden">
+<input value="+\" name="wpEditToken" type="hidden">
+<input name="commentary" size="12" style="display: none;">
+</fieldset></form>
+</div>
+				<!-- /dataAfterContent -->
+								<div class="visualClear"></div>
+				<!-- debughtml -->
+								<!-- /debughtml -->
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+		<li id="pt-createaccount"><a href="http://en.wikibooks.org/w/index.php?title=Special:UserLogin&amp;returnto=LaTeX%2FPage+Layout&amp;type=signup" class="">Create account</a></li>
+		<li id="pt-login"><a href="http://en.wikibooks.org/w/index.php?title=Special:UserLogin&amp;returnto=LaTeX%2FPage+Layout" class="" title="You are encouraged to log in; however, it is not mandatory [alt-shift-o]" accesskey="o">Log in</a></li>
+	</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="http://en.wikibooks.org/wiki/LaTeX/Page_Layout" title="View the content page [alt-shift-c]" accesskey="c">Book</a></span></li>
+					<li id="ca-talk"><span><a href="http://en.wikibooks.org/wiki/Talk:LaTeX/Page_Layout" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+	<h4>
+		</h4>
+	<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="collapsible"><span><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;stable=1">Read</a></span></li>
+					<li id="ca-current" class="collapsible collapsible selected"><span><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;stable=0&amp;redirect=no" title="View this page with the pending changes [alt-shift-v]" accesskey="v">Latest draft</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=edit" title="You can edit this page. Please use the preview button before saving [alt-shift-e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible"><span><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="/w/index.php" id="searchform">
+				<div id="simpleSearch">
+						<input autocomplete="off" placeholder="Search" tabindex="1" name="search" title="Search Wikibooks [alt-shift-f]" accesskey="f" id="searchInput" type="text">						<button type="submit" name="button" title="Search the pages for this text" id="searchButton" width="12" height="13"><img src="Page_Layout_files/search-ltr.png" alt="Search"></button>								<input name="title" value="Special:Search" type="hidden">
+		</div>
+	</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint collapsible-nav">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(&quot;//upload.wikimedia.org/wikibooks/en/b/bc/Wiki.png&quot;);" href="http://en.wikibooks.org/wiki/Main_Page" title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- Navigation -->
+<div class="portal first persistent" id="p-Navigation">
+	<h5>Navigation</h5>
+	<div class="body">
+		<ul>
+			<li id="n-mainpage"><a href="http://en.wikibooks.org/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main Page</a></li>
+			<li id="n-help"><a href="http://en.wikibooks.org/wiki/Help:Contents" title="Find help on how to use and edit Wikibooks">Help</a></li>
+			<li id="n-Browse"><a href="http://en.wikibooks.org/wiki/Wikibooks:Card_Catalog_Office" title="Check out what Wikibooks has to offer">Browse</a></li>
+			<li id="n-Cookbook"><a href="http://en.wikibooks.org/wiki/Cookbook:Table_of_Contents" title="Learn recipes from around the world">Cookbook</a></li>
+			<li id="n-Wikijunior"><a href="http://en.wikibooks.org/wiki/Wikijunior" title="Books for children">Wikijunior</a></li>
+			<li id="n-Featured-books"><a href="http://en.wikibooks.org/wiki/Wikibooks:Featured_books" title="The best of Wikibooks">Featured books</a></li>
+			<li id="n-recentchanges"><a href="http://en.wikibooks.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+			<li id="n-sitesupport"><a href="http://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20120717SB001&amp;uselang=en" title="Support Wikibooks">Donations</a></li>
+			<li id="n-randomrootpage"><a href="http://en.wikibooks.org/wiki/Special:Randomrootpage">Random book</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /Navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- Community -->
+<div class="portal expanded" id="p-Community">
+	<h5 tabindex="2"><a href="#">Community</a></h5>
+	<div style="display: block;" class="body">
+		<ul>
+			<li id="n-Reading-room"><a href="http://en.wikibooks.org/wiki/Wikibooks:Reading_room" title="Discuss Wikibooks-related questions and concerns with others">Reading room</a></li>
+			<li id="n-portal"><a href="http://en.wikibooks.org/wiki/Wikibooks:Community_Portal" title="Find your way around the Wikibooks community">Community portal</a></li>
+			<li id="n-currentevents"><a href="http://en.wikibooks.org/wiki/Wikibooks:Reading_room/Bulletin_Board" title="Important community news">Bulletin Board</a></li>
+			<li id="n-maintenance"><a href="http://en.wikibooks.org/wiki/Wikibooks:Maintenance" title="Frequent tasks that you can help with">Help out!</a></li>
+			<li id="n-Policies-and-guidelines"><a href="http://en.wikibooks.org/wiki/Wikibooks:Policies_and_guidelines" title="Pages detailing important rules and procedures">Policies and guidelines</a></li>
+			<li id="n-contact"><a href="http://en.wikibooks.org/wiki/Wikibooks:Contact_us" title="Alternative methods of communication">Contact us</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /Community -->
+
+<!-- TOOLBOX -->
+<div class="portal collapsed" id="p-tb">
+	<h5 tabindex="3"><a href="#">Toolbox</a></h5>
+	<div class="body">
+		<ul>
+			<li id="t-whatlinkshere"><a href="http://en.wikibooks.org/wiki/Special:WhatLinksHere/LaTeX/Page_Layout" title="A list of all wiki pages that link here [alt-shift-j]" accesskey="j">What links here</a></li>
+			<li id="t-recentchangeslinked"><a href="http://en.wikibooks.org/wiki/Special:RecentChangesLinked/LaTeX/Page_Layout" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+			<li id="t-upload"><a href="http://commons.wikimedia.org/wiki/Commons:Upload" title="Upload files [alt-shift-u]" accesskey="u">Upload file</a></li>
+			<li id="t-specialpages"><a href="http://en.wikibooks.org/wiki/Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+			<li id="t-permalink"><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;oldid=2385369" title="Permanent link to this revision of the page">Permanent link</a></li>
+<li id="t-cite"><a href="http://en.wikibooks.org/w/index.php?title=Special:Cite&amp;page=LaTeX%2FPage_Layout&amp;id=2385369" title="Information on how to cite this page">Cite this page</a></li><li id="t-rating"><a href="http://en.wikibooks.org/w/index.php?title=Special:RatingHistory&amp;target=LaTeX/Page_Layout">Page rating</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+
+<!-- Sister projects -->
+<div class="portal collapsed" id="p-Sister_projects">
+	<h5 tabindex="4"><a href="#">Sister projects</a></h5>
+	<div class="body">
+		<ul>
+			<li id="n-Wikipedia"><a href="http://en.wikipedia.org/wiki/Main_Page">Wikipedia</a></li>
+			<li id="n-Wikiversity"><a href="http://en.wikiversity.org/wiki/Wikiversity:Main_Page">Wikiversity</a></li>
+			<li id="n-Wiktionary"><a href="http://en.wiktionary.org/wiki/Wiktionary:Main_Page">Wiktionary</a></li>
+			<li id="n-Wikiquote"><a href="http://en.wikiquote.org/wiki/Main_Page">Wikiquote</a></li>
+			<li id="n-Wikisource"><a href="http://en.wikisource.org/wiki/Main_Page">Wikisource</a></li>
+			<li id="n-Wikinews"><a href="http://en.wikinews.org/wiki/Main_Page">Wikinews</a></li>
+			<li id="n-Commons"><a href="http://commons.wikimedia.org/wiki/Main_Page">Commons</a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- /Sister projects -->
+
+<!-- coll-print_export -->
+<div class="portal collapsed" id="p-coll-print_export">
+	<h5 tabindex="5"><a href="#">Print/export</a></h5>
+	<div class="body">
+		<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="http://en.wikibooks.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=LaTeX%2FPage+Layout" title="Create a book or page collection" rel="nofollow">Create a collection</a></li><li id="coll-download-as-rl"><a href="http://en.wikibooks.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=LaTeX%2FPage+Layout&amp;oldid=2385369&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;printable=yes" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li></ul>	</div>
+</div>
+
+<!-- /coll-print_export -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 30 July 2012, at 12:13.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikibooks.org/wiki/Wikibooks:Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display: none;"></a>;
+additional terms may apply. See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="http://en.wikibooks.org/wiki/Wikibooks:Welcome" title="Wikibooks:Welcome">About Wikibooks</a></li>
+											<li id="footer-places-disclaimer"><a href="http://en.wikibooks.org/wiki/Wikibooks:General_disclaimer" title="Wikibooks:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-mobileview"><a href="http://en.m.wikibooks.org/w/index.php?title=LaTeX/Page_Layout&amp;mobileaction=toggle_view_mobile" class="noprint">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://wikimediafoundation.org/"><img src="Page_Layout_files/wikimedia-button.png" alt="Wikimedia Foundation" height="31" width="88"></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="Page_Layout_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></a>
+					</li>
+				</ul>
+						<div style="clear:both"></div>
+		</div>
+		<!-- /footer -->
+		<script type="text/javascript">if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script src="Page_Layout_files/load.js" type="text/javascript"></script>
+<script type="text/javascript">if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready","mediawiki.legacy.mwsuggest","ext.gadget.extlinks","ext.vector.collapsibleNav","ext.vector.collapsibleTabs","ext.vector.editWarning","ext.vector.simpleSearch","ext.flaggedRevs.advanced"], null, true);
+}</script><script type="text/javascript" src="Page_Layout_files/load_003.js"></script><script type="text/javascript" src="Page_Layout_files/load_005.js"></script>
+<script src="Page_Layout_files/index_002.js" type="text/javascript"></script>
+<script src="Page_Layout_files/index_014.js" type="text/javascript"></script>
+<script src="Page_Layout_files/readerfeedback.js" type="text/javascript"></script>
+<script src="Page_Layout_files/load_006.js" type="text/javascript"></script>
+<!-- Served by mw30 in 0.139 secs. -->
+	
+
+<div class="suggestions" style="top: 73px; width: 204px; display: none; left: auto; right: 37.2px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

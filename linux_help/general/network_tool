@@ -1,0 +1,11 @@
+# Search network
+	iwlist scan
+
+# Turn on/off the network
+	ifconfig wlan0 up/down
+
+# Examine the wireless network
+ 	iwconfig
+
+# Check ssh login attempt
+   	cat /var/log/auth.log | grep sshd

@@ -1,0 +1,6 @@
+#Add 0 to each digit !
+:%s/\d/\00/g 
+
+
+
+

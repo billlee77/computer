@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>feynMP</title>
+	</head><body>
+	<p align="right"><a href="http://osksn2.hep.sci.osaka-u.ac.jp/%7Etaku/osx/macsoft.html">[Mac OS X Softwares]</a>,
+					<a href="http://osksn2.hep.sci.osaka-u.ac.jp/%7Etaku/osx/mac_setup.html">[Setting up Mac]</a>
+	</p>
+	
+	<h1>feynMF/feynMP - Drawing Feynman Diagram</h1>
+		<img src="feynmp_files/tree.jpeg" alt="tree diagram">
+		<p>feynMFis a tool made by Thorsten Ohl to draw Feynman diagrams in LaTeX.
+		</p>
+		<p>There are two ways to make Feynman diagrams; feynMF makes diagrams as special bitmap fonts,
+				whereas feynMP makes diagrams as EPS files.
+				Here, I will describe how to use feynMP, since it is simpler and the output is cleaner
+				(as I learned at <a href="http://www.r.dendai.ac.jp/%7Ekiriki/ptex/">pTeX forum</a>).
+			</p>
+			<p>I also assume that you have latex or 
+				<a href="http://osksn2.hep.sci.osaka-u.ac.jp/%7Etaku/osx/install_xtexgsgv.html">platex installed</a>, and have 
+				<a href="http://www.uoregon.edu/%7Ekoch/texshop/texshop.html">TeXShop</a> for Mac OS X,
+				but even otherwise you should be able to follow.</p>
+
+		<h2>How to install feynMF/feynMP</h2>
+			<ol>
+				<li>Download  <strong>feynmf.zip</strong> from 
+					<a href="http://www.ctan.org/tex-archive/macros/latex/contrib/feynmf/">
+					CTAN site</a>.</li>
+				<li>Expand the zip file (by double clicking). (On Leopard, the folder shows up under "Downloads" in Dock.)</li>
+				<li>From Terminal, go into the feynmf directory (
+					on Leopard, ~/Downloads/feynmf), and type<br>
+					% latex (or platex) feynmf.ins
+				</li>
+				<li>Next, copy 4 files into specific directories.
+					If you are the only person who uses feynmf, 
+					you can copy them under your home directory.<br>
+					If you are using platex (to also handle Japanese) (with or without 
+Mac OS X TeXShop), the directory is "~/texmf/" as shown below.  If you 
+are using teTeX + TeXShop, the directory is "~/Library/TeXShop/", 
+instead.
+					<pre>	% mkdir -p ~/texmf/tex/feynmf
+	% mkdir -p ~/texmf/metafont/feynmf
+	% mkdir -p ~/texmf/metapost/feynmf
+	% cp feynmf.sty ~/texmf/tex/feynmf
+	% cp feynmp.sty ~/texmf/tex/feynmf
+	% cp feynmf.mf ~/texmf/metafont/feynmf
+	% cp feynmp.mp ~/texmf/metapost/feynmf
+					</pre>
+				</li>
+			</ol>
+		<h2>A simple example</h2>
+			<ol>
+				<li>With TeXShop, let's make a simple diagram.  Make simple latex source, my_gluon.tex,  as follows.
+					<pre>	\documentclass{article}
+	\usepackage{feynmp}
+	\begin{document}
+	    \unitlength = 1mm
+	    \begin{fmffile}{gluon}
+	        \begin{fmfgraph}(40,25)
+	            \fmfleft{in}
+	            \fmfright{out}
+	            \fmf{curly}{in,out}
+	        \end{fmfgraph}
+	    \end{fmffile}
+	\end{document}
+					</pre>
+				</li>
+				<li>Typeset it by hitting "Typeset" button.  This will create gluon.mp in the same directory as my_gluon.tex.</li>
+				<li>On Terminal, change directory to whre my_gluon.tex exists, and do
+					<pre>	% mpost gluon
+					</pre>
+					This will read gluon.mp and create gluon.1 which is actually an EPS file.
+				</li>
+				<li>Typeset the latex file again.  Voilla! A curly gluon line <br>
+					<img src="feynmp_files/gluon.jpeg" alt="gluon"><br>will show up.</li>
+			</ol>
+		<h2>How to draw something more useful</h2>
+			<ul>
+				<li>Easiest way to learn is to follow 
+					<a href="http://osksn2.hep.sci.osaka-u.ac.jp/%7Etaku/osx/fmfsamples.pdf">some usual samples</a>.<br>
+				
+				Everytime you change the diagram, make sure you <b>run mpost</b> for the mp file.<br>
+				The <a href="http://osksn2.hep.sci.osaka-u.ac.jp/%7Etaku/osx/feynmp.zip">latex source file</a> of the above samples is also available.</li>
+				<li>There are three parts of official tutorials on feynMF:
+				<a href="http://consult.cern.ch/cnls/220/node57.html">Part 1</a>,
+				<a href="http://consult.cern.ch/cnls/221/node63.html">Part 2</a> and
+				<a href="http://consult.cern.ch/cnls/222/node38.html">Part 3</a>.
+				</li>
+				<li>A <a href="http://www.pd.infn.it/TeX/doc/latex/feynmf/manual.pdf">
+					complrehensive manual</a> 
+					comes with the feynmf package.  
+					When you try examples in the manual, make sure you surrond the 
+					example by something like:
+					<pre>	\documentclass{article}
+	\usepackage{feynmp}
+	\begin{document}
+	    \unitlength = 1mm
+	    \begin{fmffile}{foo}
+	        \begin{fmfgraph}(40,25)
+	        	..... example ...
+	        \end{fmfgraph}
+	    \end{fmffile}
+	\end{document}
+					</pre>
+					The file name (shown as "foo" above) should be named properly.
+				</li>
+			</ul>
+		<h2>Tips</h2>
+			<ul>
+				<li>Do not put space characters between vertecies.
+					You should write like
+					<pre>	\fmfleft{v1,v2,v3}     ,
+					</pre>
+					and not like
+					<pre>	fmfleft{v1, v2, v3}   .
+					</pre>
+					Otherwise, you will get get a message like:
+					<pre>	feynmf: warning: dangling vertex `v1' colliding with `v2'.
+	feynmf: Have you seen the warning messages above?
+					</pre>
+					when you run mp.
+				</li>
+				<li>The size of the diagram given in \begin{fmfgraph}(x,y) is in <b>parenthesis</b>, 
+					not curly brackets.</li>
+				<li>Here is <a href="http://osksn2.hep.sci.osaka-u.ac.jp/%7Etaku/osx/feynmp_latexit.html">how to create Feynman diagrams using LaTeXiT</a>.  
+					This is a great way to make diagrams for Keynote slides, etc..</li>
+			</ul>
+
+<hr>
+	March 4, 2010,  Taku Yamanaka
+	</body></html>

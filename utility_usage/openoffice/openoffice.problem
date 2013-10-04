@@ -1,0 +1,9 @@
+
+#Error Message
+/opt/openoffice.org3/program/soffice.bin: error while loading shared libraries: libuno_sal.so.3: cannot open shared object file: No such file or directory
+
+#solution
+su
+cd /opt/openoffice.org/basis3.0
+mv ure-link ure-link.backup
+ln -s /usr/lib/openoffice.org/ure ure-link

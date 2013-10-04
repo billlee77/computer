@@ -1,0 +1,140 @@
+# file:  .cshrc
+
+# this file is executed each time that UNIX starts a new shell
+# at login, it is executed prior to .login 
+# it should contain aliases and shell variable definitions that have to be
+# repeated whenever you start a new shell
+
+# cshrc files should never contain anything that will generate output!
+
+# Garth Huber   94.12.07
+
+ if ($?loopcount) then
+    set loopcount = `expr $loopcount + 1`
+ else
+    set loopcount = 1
+endif
+
+ if ($?path) then
+ else
+    set path=(. $HOME/bin)
+ endif
+
+# ************************** #
+#  OS -SPECIFIC ASSIGNMENTS  #
+# ************************** #
+
+setenv machine `hostname -s`
+setenv MYUNAME `uname`
+setenv MTYP `uname -m`
+setenv OSNAME `uname -s`
+setenv OSTYP `uname -s`
+
+
+if (( $machine == "gridiron" || $machine == "castiron" || $machine =~ node* )) then 
+#
+# Gridiron, Castiron or CPU farm
+#
+#  CERNLIB
+   setenv CERN_ROOT /usr/local/lib64/cernlib/2006
+   setenv CERN_LIB $CERN_ROOT/lib 
+   setenv PATH $CERN_ROOT/bin:$PATH
+   setenv LD_LIBRARY_PATH /usr/lib64:/lib64:$CERN_LIB
+#  ROOT, GEANT4 stuff
+   setenv WORK_BASE /backedup/gridiron/hadron/$USER
+   setenv APPS_BASE /backedup/gridiron/hadron/apps
+   setenv ROOTSYS $APPS_BASE/root
+   setenv ROOT $APPS_BASE/root
+   if ( $loopcount <2 ) set path=($ROOTSYS/bin $APPS_BASE/jas3 $path)
+   if ( $loopcount <2 ) setenv LD_LIBRARY_PATH .:$APPS_BASE/geant4/lib/Linux-g++:$ROOTSYS/lib:$APPS_BASE/clhep/install/lib:/usr/local/lib:$LD_LIBRARY_PATH
+
+   setenv PYTHONPATH $ROOTSYS/lib 
+   setenv CLHEP_LIB_DIR $APPS_BASE/clhep/install/lib
+   setenv CLHEP_BASE_DIR  $APPS_BASE/clhep/install
+   setenv CLHEP_INCLUDE_DIR $APPS_BASE/clhep/include
+#   setenv CLHEP_LIB CLHEP
+   setenv a2_ana /nobackup/gridiron/hadron/huberg/a2_ana
+#
+else
+#
+# Standard Linux Installations
+#
+ if ( $machine != "polaris" ) then
+#  AcquRoot
+   setenv ACQU_LVL 4v4
+#  CERNLIB
+   if ( $MACHTYPE == "x86_64" ) then    # x86_64
+      setenv CERN_ROOT /usr/lib64/cernlib/2006
+   else      # i386
+      setenv CERN_ROOT /usr/lib/cernlib/2006
+   endif
+   setenv CERN_LIB $CERN_ROOT/lib 
+   if ( $loopcount <2 ) setenv PATH $CERN_ROOT/bin:$PATH
+   if ( $MACHTYPE == "x86_64" ) then    # x86_64
+      setenv LD_LIBRARY_PATH /usr/lib64:/lib64:$CERN_LIB
+   else      # i386
+      setenv LD_LIBRARY_PATH /usr/lib:/lib:$CERN_LIB
+   endif 
+#  ROOT, GEANT4 stuff
+   setenv WORK_BASE /home/billee
+   setenv APPS_BASE /home/apps
+   setenv ROOTSYS $APPS_BASE/root
+   setenv ROOT $APPS_BASE/root
+   if ( $loopcount <2 ) set path=($ROOTSYS/bin /home/apps/jas3 /home/apps/dawn $path)
+   if ( $loopcount <2 ) setenv LD_LIBRARY_PATH .:/home/apps/geant4/lib/Linux-g++:$ROOTSYS/lib:/usr/local/lib:$LD_LIBRARY_PATH
+   setenv CLHEP_LIB_DIR /usr/local/lib
+   setenv CLHEP_BASE_DIR /usr/local
+   setenv CLHEP_INCLUDE_DIR /usr/local/include
+#   setenv CLHEP_LIB CLHEP
+#   setenv a2_ana /home/huberg/r2d2/a2_ana
+   setenv DAWN_PS_PREVIEWER gv
+   setenv G4DAWNFILE_VIEWER 'dawn -d'
+ endif
+endif
+
+ set noclobber notify filec
+ set history = 100
+ set old=$cwd
+
+# alias cd 'set old=$cwd; chdir \!*; echo $cwd'
+
+# alias cl clear
+# alias cp "cp -p"
+# alias dir  ls -Fla
+# alias disp 'setenv DISPLAY 142.3.164.48:0.0'
+# alias dds 'ls -Fl | grep ^d'
+# alias help apropos
+# alias hi  history -r
+# alias h "history -r | more -c"
+# alias j jobs -l
+# alias lo exit
+# alias log logout
+# alias pu 'rm -i *~ .*~ #*'
+# alias jlpr 'rlpr -Hjlabprt.jlab.org -Ppscolor6'
+# alias rm rm -i
+# alias Rm /bin/rm
+# 
+
+alias ls ls --color=always
+
+ unsetenv TERMCAP
+ setenv TERM vt100
+
+# setenv PRINTER las2605
+# setenv POST_SCRIPT las2605
+
+ alias la "ls -a"
+ alias ll "ls -al"
+
+ if ($loopcount <2) set path=(. $HOME/bin $path)
+
+
+setenv PYTHONPATH $ROOTSYS/lib
+setenv LD_LIBRARY_PATH $ROOTSYS/lib:$LD_LIBRARY_PATH
+setenv PATH /home/gridiron/li479/apps/wired/bin:$PATH
+
+
+setenv PATH /home/gridiron/li479/geant4/bin/Linux-g++:$PATH
+
+#bash
+

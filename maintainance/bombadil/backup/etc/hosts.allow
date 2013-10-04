@@ -1,0 +1,22 @@
+# /etc/hosts.allow: list of hosts that are allowed to access the system.
+#                   See the manual pages hosts_access(5) and hosts_options(5).
+#
+# Example:    ALL: LOCAL @some_netgroup
+#             ALL: .foobar.edu EXCEPT terminalserver.foobar.edu
+#
+# If you're going to protect the portmapper use the name "portmap" for the
+# daemon name. Remember that you can only use the keyword "ALL" and IP
+# addresses (NOT host or domain names) for the portmapper, as well as for
+# rpc.mountd (the NFS mount daemon). See portmap(8) and rpc.mountd(8)
+# for further information.
+#
+portmap: 142.3.164.51 142.3.164.52 142.3.164.60 142.3.165.25 24.72.133.39
+ALL: .phys.uregina.ca 65.87.245.116 .xw.ca
+# Note: 129.57.* is the jlab_guest network
+# 70.169.140.85 is the SURA Resfac
+# 24.72.133.39 is polaris
+# 71.17.149.20 204.83.19.141 are temporary for Lee Sichello
+# 71.17.17.246 for Bill Li
+sshd sshd2: phys.uregina.ca  .jlab.org .xw.ca 142.3. 129.57.* 70.169.140.85 .westgrid.ca 71.17.17.246 71.17.149.20 204.83.19.141
+sshdfwd-X11: phys.uregina.ca .jlab.org .xw.ca 142.3. 129.57.* 70.169.140.85 .westgrid.ca 71.17.17.246 71.17.149.20 204.83.19.141
+sendmail: ALL

@@ -1,0 +1,135 @@
+
+\begin{figure}[t]
+
+%/*--------------------------------------------------
+% Method 1 Equation in Figure
+
+% \begin{equation}
+% \nonumber
+% \begin{fmffile}{simplelabels}
+% \begin{fmfgraph*}(70,40)
+% \fmfleft{i1,i2}
+% \fmfright{o1,o2}
+% \fmflabel{$e^-$}{i1}
+% \fmflabel{$e^-$}{i2}
+% \fmflabel{$P$}{o1}
+% \fmflabel{$P$}{o2}
+% \fmf{fermion}{i1,v1,i2}
+% \fmf{fermion}{o1,v2,o2}
+% \fmf{photon,label=$\gamma$}{v1,v2}
+% \end{fmfgraph*}
+% \end{fmffile}
+% ~\quad
+% \begin{fmffile}{simplelabels2}
+% \begin{fmfgraph*}(70,40)
+% \fmfleft{i1,i2}
+% \fmfright{o1,o2}
+% \fmflabel{$e^-$}{i1}
+% \fmflabel{$e^-$}{i2}
+% \fmflabel{$P$}{o1}
+% \fmflabel{$P$}{o2}
+% \fmf{fermion}{i1,v1,i2}
+% \fmf{fermion}{o1,v2,o2}
+% %\fmf{photon,label=$W^-$,tension=0.5,l.side=right,label=$\gamma,,Z^0$}{v1,v2}
+% % \fmf{photon,label=$W^-$,tension=0.5,l.side=right, dashes}{v1,v2}
+% \fmf{dashes,label=$Z^0$}{v1,v2}
+% \end{fmfgraph*}
+% \end{fmffile}
+% \end{equation}
+% 
+% \caption{sadfasf}
+% 
+% \end{figure}
+
+
+
+%/*--------------------------------------------------
+% Method 2 
+
+
+
+% \begin{figure}[t]
+% \begin{minipage}[b]{.5\linewidth}
+% \centering\large 
+% % \begin{pspicture}(-0.5,-1.25)(10,1.25)
+% 
+% \begin{fmffile}{simplelabels}
+% \begin{fmfgraph*}(70,40)
+% \fmfleft{i1,i2}
+% \fmfright{o1,o2}
+% \fmflabel{$e^-$}{i1}
+% \fmflabel{$e^-$}{i2}
+% \fmflabel{$P$}{o1}
+% \fmflabel{$P$}{o2}
+% \fmf{fermion}{i1,v1,i2}
+% \fmf{fermion}{o1,v2,o2}
+% \fmf{photon,label=$\gamma$}{v1,v2}
+% \end{fmfgraph*}
+% \end{fmffile}
+% 
+% % \end{pspicture}
+% %\subcaption{A subfigure}\label{fig:1a}
+% \end{minipage}%
+% \begin{minipage}[b]{.5\linewidth}
+% \centering\large 
+% % \begin{pspicture}(-0.5,-1.25)(10,1.25)
+% \begin{fmffile}{simplelabels2}
+% \begin{fmfgraph*}(70,40)
+% \fmfleft{i1,i2}
+% \fmfright{o1,o2}
+% \fmflabel{$e^-$}{i1}
+% \fmflabel{$e^-$}{i2}
+% \fmflabel{$P$}{o1}
+% \fmflabel{$P$}{o2}
+% \fmf{fermion}{i1,v1,i2}
+% \fmf{fermion}{o1,v2,o2}
+% %\fmf{photon,label=$W^-$,tension=0.5,l.side=right,label=$\gamma,,Z^0$}{v1,v2}
+% % \fmf{photon,label=$W^-$,tension=0.5,l.side=right, dashes}{v1,v2}
+% \fmf{dashes,label=$Z^0$}{v1,v2}
+% \end{fmfgraph*}
+% \end{fmffile}
+%\end{minipage}
+
+
+
+%/*--------------------------------------------------
+% Method 3 Direct Method
+
+
+
+\subfigure[a] {
+\centering\large 
+\begin{fmffile}{simplelabels}
+\begin{fmfgraph*}(70,40)
+\fmfleft{i1,i2}
+\fmfright{o1,o2}
+\fmflabel{$e^-$}{i1}
+\fmflabel{$e^-$}{i2}
+\fmflabel{$P$}{o1}
+\fmflabel{$P$}{o2}
+\fmf{fermion}{i1,v1,i2}
+\fmf{fermion}{o1,v2,o2}
+\fmf{photon,label=$\gamma$}{v1,v2}
+\end{fmfgraph*}
+\end{fmffile}
+}%
+\subfigure[a] {
+\centering\large 
+\begin{fmffile}{simplelabels2}
+\begin{fmfgraph*}(70,40)
+\fmfleft{i1,i2}
+\fmfright{o1,o2}
+\fmflabel{$e^-$}{i1}
+\fmflabel{$e^-$}{i2}
+\fmflabel{$P$}{o1}
+\fmflabel{$P$}{o2}
+\fmf{fermion}{i1,v1,i2}
+\fmf{fermion}{o1,v2,o2}
+\fmf{dashes,label=$Z^0$}{v1,v2}
+\end{fmfgraph*}
+\end{fmffile}
+}
+
+
+\caption{A figure}\label{fig:1}
+\end{figure}

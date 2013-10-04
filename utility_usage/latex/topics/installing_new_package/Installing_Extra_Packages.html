@@ -1,0 +1,816 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="linux firefox firefox3 gecko gecko1" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+<title>LaTeX/Packages/Installing Extra Packages - Wikibooks, collection of open-content textbooks</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="generator" content="MediaWiki 1.16wmf4">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikibooks.org/w/index.php?title=LaTeX/Packages/Installing_Extra_Packages&amp;action=edit">
+<link rel="edit" title="Edit this page" href="http://en.wikibooks.org/w/index.php?title=LaTeX/Packages/Installing_Extra_Packages&amp;action=edit">
+<link rel="shortcut icon" href="http://en.wikibooks.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikibooks.org/w/opensearch_desc.php" title="Wikibooks (en)">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Wikibooks Atom feed" href="http://en.wikibooks.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="Installing_Extra_Packages_files/main-ltr.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Installing_Extra_Packages_files/shared.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Installing_Extra_Packages_files/commonPrint.css" type="text/css" media="print">
+<link rel="stylesheet" href="Installing_Extra_Packages_files/flaggedrevs.css" type="text/css" media="all">
+<link rel="stylesheet" href="Installing_Extra_Packages_files/combined.css" type="text/css" media="all">
+<link rel="stylesheet" href="Installing_Extra_Packages_files/jquery-ui-1.css" type="text/css" media="all">
+<link rel="stylesheet" href="Installing_Extra_Packages_files/readerfeedback.css" type="text/css" media="all">
+<link rel="stylesheet" href="Installing_Extra_Packages_files/index_002.css" type="text/css" media="all">
+<link rel="stylesheet" href="Installing_Extra_Packages_files/index_007.css" type="text/css" media="print">
+<link rel="stylesheet" href="Installing_Extra_Packages_files/index.css" type="text/css" media="handheld">
+<link rel="stylesheet" href="Installing_Extra_Packages_files/index_004.css" type="text/css" media="all">
+<link rel="stylesheet" href="Installing_Extra_Packages_files/index_003.css" type="text/css" media="all">
+<script type="text/javascript">
+var skin="vector",
+stylepath="http://bits.wikimedia.org/skins-1.5",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/wiki/$1",
+wgScriptPath="/w",
+wgScriptExtension=".php",
+wgScript="/w/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://en.wikibooks.org",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="LaTeX/Packages/Installing_Extra_Packages",
+wgTitle="LaTeX/Packages/Installing Extra Packages",
+wgAction="view",
+wgArticleId=112762,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=1927577,
+wgVersion="1.16wmf4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Wikibooks", "5": "Wikibooks talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "102": "Cookbook", "103": "Cookbook talk", "108": "Transwiki", "109": "Transwiki talk", "110": "Wikijunior", "111": "Wikijunior talk", "112": "Subject", "113": "Subject talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "wikibooks": 4, "wikibooks_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "cookbook": 102, "cookbook_talk": 103, "transwiki": 108, "transwiki_talk": 109, "wikijunior": 110, "wikijunior_talk": 111, "subject": 112, "subject_talk": 113, "wb": 4, "wj": 110, "cat": 14, "cook": 102, "sub": 112, "image": 6, "image_talk": 7},
+wgSiteName="Wikibooks",
+wgCategories=["LaTeX"],
+wgDBname="enwikibooks",
+wgMWSuggestTemplate="http://en.wikibooks.org/w/api.php?action=opensearch\x26search={searchTerms}\x26namespace={namespaces}\x26suggest",
+wgSearchNamespaces=[0, 4, 112],
+wgMWSuggestMessages=["with suggestions", "no suggestions"],
+wgRestrictionEdit=[],
+wgRestrictionMove=[],
+wgFlaggedRevsParams={"tags": {"value": {"levels": 3, "quality": 2, "pristine": 3}}},
+wgStableRevisionId=0,
+wgCollapsibleNavBucketTest=false,
+wgCollapsibleNavForceNewVersion=false,
+wgVectorPreferences={"collapsiblenav": {"enable": 1}, "editwarning": {"enable": 1}, "simplesearch": {"enable": 1, "disablesuggest": 0}},
+wgVectorEnabledModules={"collapsiblenav": true, "collapsibletabs": true, "editwarning": true, "expandablesearch": false, "footercleanup": false, "simplesearch": true},
+wgFeedbackParams={"tags": {"reliability": 3, "completeness": 2, "npov": 2, "presentation": 1}},
+wgAjaxFeedback={"sendingMsg": "Submitting …", "sentMsg": "Thank you!"},
+Geo={"city": "", "country": ""},
+wgNoticeProject="wikibooks";
+</script><script src="Installing_Extra_Packages_files/wikibits.js" type="text/javascript"></script>
+<script type="text/javascript" src="Installing_Extra_Packages_files/jquery.js"></script>
+<script src="Installing_Extra_Packages_files/ajax.js" type="text/javascript"></script>
+<script src="Installing_Extra_Packages_files/mwsuggest.js" type="text/javascript"></script>
+<script src="Installing_Extra_Packages_files/plugins.js" type="text/javascript"></script>
+<script src="Installing_Extra_Packages_files/Vector.js" type="text/javascript"></script>
+<script type="text/javascript">mw.usability.addMessages({'vector-collapsiblenav-more':'More languages','vector-editwarning-warning':'Leaving this page may cause you to lose any changes you have made.\nIf you are logged in, you can disable this warning in the \"Editing\" section of your preferences.','vector-simplesearch-search':'Search','vector-simplesearch-containing':'containing...'});</script>
+<script src="Installing_Extra_Packages_files/index_012.php" type="text/javascript"></script><style type="text/css">
+#centralNotice .siteNoticeSmall {display:none;}
+#centralNotice.collapsed .siteNoticeBig {display:none;}
+#centralNotice.collapsed .siteNoticeSmall {display:block;}
+</style>
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.5/vector/csshover.htc")}</style><![endif]-->
+<script src="Installing_Extra_Packages_files/index_005.php" type="text/javascript"></script><script type="text/javascript" src="Installing_Extra_Packages_files/index_003.php"></script><script type="text/javascript" src="Installing_Extra_Packages_files/index_011.php"></script><script type="text/javascript" src="Installing_Extra_Packages_files/index_010.php"></script><script type="text/javascript" src="Installing_Extra_Packages_files/index_006.php"></script><script type="text/javascript" src="Installing_Extra_Packages_files/index_008.php"></script><script type="text/javascript" src="Installing_Extra_Packages_files/index_002.php"></script><script type="text/javascript" src="Installing_Extra_Packages_files/index_009.php"></script><script type="text/javascript" src="Installing_Extra_Packages_files/index_004.php"></script><script type="text/javascript" src="Installing_Extra_Packages_files/index.php"></script><link href="Installing_Extra_Packages_files/index_005.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="Installing_Extra_Packages_files/flaggedrevs.js"></script><link href="Installing_Extra_Packages_files/index_006.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="Installing_Extra_Packages_files/index_007.php"></script>
+<script type="text/javascript">FlaggedRevs.messages = {"diffToggleShow": "show those changes", "diffToggleHide": "hide those changes", "logToggleShow": "show stability log", "logToggleHide": "hide stability log", "logDetailsShow": "show details", "logDetailsHide": "hide details", "toggleShow": "(+)", "toggleHide": "(-)"};</script>
+<script type="text/javascript" src="Installing_Extra_Packages_files/readerfeedback.js"></script>
+</head><body class="mediawiki ltr ns-0 ns-subject page-LaTeX_Packages_Installing_Extra_Packages skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display: none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><div id="centralNotice" class="expanded"><style type="text/css">
+ /* Common style for 2010 banners */
+ /* Hide the collapsed banner */
+ #centralNotice.collapsed .cn-fundraiser-banner {
+  display: none;
+ }
+
+ /* Suppress lock icon for secure links */
+ #content a[href^="https://"], .link-https {
+  background-image: none !important;
+  padding: 0 !important;
+ }
+
+ /* Set a grey border, grey background, etc. */
+ .cn-fundraiser-banner {
+  position: relative;
+  border: 1px solid silver;
+  background-color: #fbfbfb;
+  margin-bottom: 0.5em !important;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align:center;
+ }
+
+ /* Put the little X in the top-right corner */
+ #cn-toggle-box {
+  position: absolute;
+  z-index: 1000;
+  top: .2em;
+  right: .2em;
+ }
+
+ /* Bold, blue text */
+ .cn-blue-text {
+  font-weight: bold;
+  font-family: Helvetica, Verdana, sans-serif;
+  color: #6e98c2;
+  text-align: center;
+  font-size: 1.3em;
+ }
+
+ /* Bigger bold, blue text */
+ .cn-bold-blue-text {
+  font-size: 2.25em;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  color: navy;
+  text-align: center;
+  padding: 0.5em !important;
+  line-height: 1em;
+ }
+
+ .cn-bottom-right-float {
+  position: absolute;
+  z-index: 1000;
+  right: 1em;
+  bottom: 1em;
+ }
+
+ a.cn-full-banner-click {
+  display:block;
+  position:relative;
+  height:100%;
+  width:100%;
+ }
+</style>
+
+<style type="text/css">
+ #centralNotice.collapsed #JA1banner3{
+  display: none;
+ }
+
+ #JA1banner3{
+  position: relative;
+  border: solid 1px silver;
+  background-color: #1e1e1e;
+  height: 172px;
+  background-image: url(http://upload.wikimedia.org/centralnotice/images/Jimmy-window-light.jpg);
+  background-position: right top;
+  background-repeat: no-repeat;
+  margin-bottom: 0.5em !important;
+ }
+
+ #JA1banner3-text {
+  padding: 1em 50px .75em .5em !important;
+  overflow: hidden;
+  color: #333333;
+  font-family: helvetica, arial, monospace;
+  font-weight: normal;
+  text-align: left;
+  font-size: 2.25em;
+  line-height: 1.125em;
+  cursor: pointer;
+  background-color: transparent;
+ }
+
+ #cn-toggle-box {
+  position: absolute;
+  z-index: 1000;
+  top: .2em;
+  right: .2em;
+ }
+
+ #JA1banner3 a:hover {
+  text-decoration: underline;
+  color: #333333;
+ }
+ 
+#notice-button {
+  position:relative;
+  top: 5px;
+  background-image: url(http://upload.wikimedia.org/wikipedia/foundation/8/8f/Please_read_Button.png);
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 84px;
+ }
+</style>
+
+
+
+
+<div id="JA1banner3">
+
+<a class="variable_lp cn-full-banner-click" href="http://wikimediafoundation.org/wiki/WMFJA1/en?utm_medium=sitenotice&amp;utm_campaign=weekendtesting&amp;utm_source=2010_JA1_Banner3_button_EN1&amp;country_code=CA">
+
+
+<div id="JA1banner3-text">
+
+   <span> Please read:<br>A personal appeal from <br> Wikipedia founder Jimmy Wales </span> 
+<div id="notice-button"></div>      
+</div>
+
+</a>
+
+ <div id="cn-toggle-box">
+ <a href="#" onclick="toggleNotice();return false"><img src="Installing_Extra_Packages_files/closewindow.png" alt="Close" height="11" width="11" border="0"></a>
+ </div>
+</div></div><!-- centralNotice loads here --><script type="text/javascript" language="JavaScript">
+/* <![CDATA[ */
+document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3eYou are invited to \x3cspan class=\"plainlinks\"\x3e\x3ca href=\"http://www.unisanet.unisa.edu.au/TellUS2/SurveyForm.asp?ID=7970\" class=\"external text\" rel=\"nofollow\"\x3eshare your experiences with Wikibooks\x3c/a\x3e as part of a research project approved by the University of South Australia\'s Human Research Ethics Committee. The Research Information Sheet, which will be emailed to you, provides more detailed information about the aims of the research and interviews.\n\x3c/p\x3e\x3c/div\x3e");
+/* ]]> */
+</script><div id="localNotice"><p>You are invited to <span class="plainlinks"><a href="http://www.unisanet.unisa.edu.au/TellUS2/SurveyForm.asp?ID=7970" class="external text" rel="nofollow">share your experiences with Wikibooks</a>
+ as part of a research project approved by the University of South 
+Australia's Human Research Ethics Committee. The Research Information 
+Sheet, which will be emailed to you, provides more detailed information 
+about the aims of the research and interviews.
+</span></p></div>
+</div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">LaTeX/Packages/Installing Extra Packages</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Wikibooks, the open-content textbooks collection</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"><span class="subpages">&lt; <a href="http://en.wikibooks.org/wiki/LaTeX" title="LaTeX">LaTeX</a>&nbsp;| <a href="http://en.wikibooks.org/wiki/LaTeX/Packages" title="LaTeX/Packages">Packages</a></span><div id="mw-fr-revisiontag" class="flaggedrevs_notice plainlinks noprint"><img class="flaggedrevs-icon" src="Installing_Extra_Packages_files/1.png" alt="Pending changes are displayed on this page" title="Pending changes are displayed on this page">This page may need to be <a href="http://en.wikibooks.org/wiki/Help:Revision_review" title="Help:Revision review">reviewed</a> for quality.</div></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<div class="noprint" style="background-color: rgb(238, 255, 238); border: 1px solid rgb(136, 187, 136); padding: 0.5em; font-size: small; text-align: left; float: right; clear: right; width: 20%; margin: 0.5em;">
+<div class="floatright"><a href="http://en.wikibooks.org/wiki/File:LaTeX_logo.svg" class="image"><img alt="LaTeX logo.svg" src="Installing_Extra_Packages_files/60px-LaTeX_logo.png" height="25" width="60"></a></div>
+<p><b><a href="http://en.wikibooks.org/wiki/LaTeX" title="LaTeX">LaTeX</a></b><br></p>
+<hr>
+<ul>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Introduction" title="LaTeX/Introduction">Introduction</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Absolute_Beginners" title="LaTeX/Absolute Beginners">Absolute Beginners</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Basics" title="LaTeX/Basics">Basics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Document_Structure" title="LaTeX/Document Structure">Document Structure</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Errors_and_Warnings" title="LaTeX/Errors and Warnings">Errors and Warnings</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Title_Creation" title="LaTeX/Title Creation">Titles</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management" title="LaTeX/Bibliography Management">Bibliography Management</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Tables" title="LaTeX/Tables">Tables</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Formatting" title="LaTeX/Formatting">Formatting</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Page_Layout" title="LaTeX/Page Layout">Page Layout</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Mathematics" title="LaTeX/Mathematics">Mathematics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics" title="LaTeX/Advanced Mathematics">Advanced Mathematics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Theorems" title="LaTeX/Theorems">Theorems</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Labels_and_Cross-referencing" title="LaTeX/Labels and Cross-referencing">Labels and Cross-referencing</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Indexing" title="LaTeX/Indexing">Indexing</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Glossary" title="LaTeX/Glossary">Glossary</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Algorithms_and_Pseudocode" title="LaTeX/Algorithms and Pseudocode">Algorithms and Pseudocode</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Letters" title="LaTeX/Letters">Letters</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Teacher%27s_Corner" title="LaTeX/Teacher's Corner">Teacher's Corner</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Importing_Graphics" title="LaTeX/Importing Graphics">Importing Graphics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Creating_Graphics" title="LaTeX/Creating Graphics">Creating Graphics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions" title="LaTeX/Floats, Figures and Captions">Floats, Figures and Captions</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Presentations" title="LaTeX/Presentations">Presentations</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Hyperlinks" title="LaTeX/Hyperlinks">Hyperlinks</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Colors" title="LaTeX/Colors">Colors</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Packages" title="LaTeX/Packages">Packages</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Advanced_Topics" title="LaTeX/Advanced Topics">Advanced Topics</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Customizing_LaTeX" title="LaTeX/Customizing LaTeX">Customizing LaTeX</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Multiple_files" title="LaTeX/Multiple files">Multiple files</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Collaborative_Writing_of_LaTeX_Documents" title="LaTeX/Collaborative Writing of LaTeX Documents">Collaborative Writing</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Tips_and_Tricks" title="LaTeX/Tips and Tricks">Tips / Tricks</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/General_Guidelines" title="LaTeX/General Guidelines">General Guidelines</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Export_To_Other_Formats" title="LaTeX/Export To Other Formats">Export To Other Formats</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Internationalization" title="LaTeX/Internationalization">Internationalization</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Accents" title="LaTeX/Accents">Accents and Special Characters</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Useful_Measurement_Macros" title="LaTeX/Useful Measurement Macros">Useful Measurement Macros</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Index" title="LaTeX/Index">Index</a></li>
+<li><a href="http://en.wikibooks.org/wiki/LaTeX/Command_Glossary" title="LaTeX/Command Glossary">Command Glossary</a></li>
+</ul>
+<hr>
+<p><small><a href="http://en.wikibooks.org/w/index.php?title=Template:LaTeX/Top&amp;action=edit" class="external text" rel="nofollow">edit this box</a></small></p>
+</div>
+<p>Most LaTeX installations come with a large set of pre-installed style
+ packages, but many more are available on the net. The main place to 
+look for style packages on the Internet is CTAN ( <a href="http://www.ctan.org/" class="external free" rel="nofollow">http://www.ctan.org/</a>
+ ). Once you have identified a package you need and haven't already got 
+(or you have got it and need to update it), use the indexes on any CTAN 
+server to find the package you need and the directory where it can be 
+downloaded from.</p>
+<p>If on a debian system, there is an alternative way of installing packages, through synaptics package manager.</p>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Packages/Installing_Extra_Packages&amp;action=edit&amp;section=1" title="Edit section: Downloading packages">edit</a>]</span> <span class="mw-headline" id="Downloading_packages">Downloading packages</span></h3>
+<p>What you need to look for is always two files, one ending in <tt>.dtx</tt> and the other in <tt>.ins</tt>.
+ The first is a DOCTeX file, which combines the package program and its 
+documentation in a single file. The second is the installation routine 
+(much smaller). You must always download both files. If the two files 
+are not there, it means one of two things:</p>
+<ul>
+<li><i>Either</i> the package is part of a much larger bundle which you shouldn't normally update unless you change version of LaTeX;</li>
+<li><i>or</i> it's one of a few rare or unusual packages still supplied as a single <tt>.sty</tt> file intended for the now obsolete LaTeX 2.09</li>
+</ul>
+<p>Download both files to a temporary directory. There will often be a <tt>readme.txt</tt> with a brief description of the package. You should of course read this file first.</p>
+<h3><span class="editsection">[<a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Packages/Installing_Extra_Packages&amp;action=edit&amp;section=2" title="Edit section: Installing a package">edit</a>]</span> <span class="mw-headline" id="Installing_a_package">Installing a package</span></h3>
+<p>There are four steps to installing a LaTeX package:</p>
+<p>1. <b>Extract the files</b> Run LaTeX on the <tt>.ins</tt> file. That
+ is, open the file in your editor and process it as if it were a LaTeX 
+document (which it is), or if you prefer, type latex followed by the <tt>.ins</tt> filename in a command window in your temporary directory. This will extract all the files needed from the <tt>.dtx</tt>
+ file (which is why you must have both of them present in the temporary 
+directory). Note down or print the names of the files created if there 
+are a lot of them (read the log file if you want to see their names 
+again).</p>
+<p>2. <b>Create the documentation</b> Run LaTeX on the <tt>.dtx</tt> 
+file. You might need to run it twice or more, to get the 
+cross-references right (just like any other LaTeX document). This will 
+create a <tt>.dvi</tt> file of documentation explaining what the package
+ is for and how to use it. If you prefer to create PDF then run pdfLaTeX
+ instead. If you created a <tt>.idx</tt> as well, it means that the 
+document contains an index, too. If you want the index to be created 
+properly, follow the steps in the <a href="http://en.wikibooks.org/wiki/LaTeX/Indexing" title="LaTeX/Indexing">indexing</a> section. Sometimes you will see that a <tt>.glo</tt> (glossary) file has been produced. Run the following command instead:</p>
+<pre>makeindex -s gglo.ist -o name.gls name.glo
+</pre>
+<p>3. <b>Install the files</b> While the documentation is printing, move
+ or copy the files created in step 1 from your temporary directory to 
+the right place[s] in your TeX local installation directory tree - 
+always your 'local' directory tree, <i>a)</i> to prevent your new package accidentally overwriting files in the main TeX directories; and <i>b)</i>
+ to avoid your newly-installed files being overwritten when you next 
+update your version of TeX. The "right place" sometimes causes 
+confusion, especially if your TeX installation is old or does not 
+conform to the TeX Directory Structure. For a TDS-conformant system, 
+this is either <i>a)</i> for LaTeX packages, a suitably-named subdirectory of <tt>texmf-local/tex/latex/</tt>; or <i>b)</i> a suitably-named sub-directory of <tt>texmf-local/</tt>
+ for files like BIBTeX styles which are not just for LaTeX but can be 
+used in other TeX systems. "Suitably-named" means sensible and 
+meaningful (and probably short). For a package like paralist, for 
+example, I'd call the directory <tt>paralist</tt>. Often there is just a <tt>.sty</tt>
+ file to move but in the case of complex packages there may be more, and
+ they may belong in different locations. For example, new BibTeX 
+packages or font packages will typically have several files to install. 
+This is why it is a good idea to create a sub-directory for the package 
+rather than dump the files into misc along with other unrelated stuff. 
+If there are configuration or other files, read the documentation to 
+find out if there is a special or preferred location to move them to.</p>
+<p>For expample: MiKTeX 2.7 ot later (in Windows enviroment), you will find the directory to be in <i>Program Files/MiKTeX 2.7</i>
+ (the exact name of folder varies with the version of MiKTeX installed).
+ According to the tabel you'll find lower on this page, move the files 
+into appropriate folders of the MiKTeX file directory (create new 
+folders in directories, if needed).</p>
+<p><br></p>
+<table class="wikitable">
+<caption>Where to put files from packages</caption>
+<tbody><tr>
+<th>Type</th>
+<th>Directory (under <tt>texmf-local/</tt>)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>.cls</td>
+<td>tex/latex/base</td>
+<td>Document class file</td>
+</tr>
+<tr>
+<td>.sty</td>
+<td>tex/latex/<i>packagename</i></td>
+<td>Style file: the normal package content</td>
+</tr>
+<tr>
+<td>.bst</td>
+<td>bibtex/bst/<i>packagename</i></td>
+<td>BibTeX style</td>
+</tr>
+<tr>
+<td>.mf</td>
+<td>fonts/source/public/<i>typeface</i></td>
+<td>METAFONT outline</td>
+</tr>
+<tr>
+<td>.fd</td>
+<td>tex/latex/mfnfss</td>
+<td>Font Definition files for METAFONT fonts</td>
+</tr>
+<tr>
+<td>.fd</td>
+<td>tex/latex/psnfss</td>
+<td>Font Definition files for PostScript Type 1 fonts</td>
+</tr>
+<tr>
+<td>.pfb</td>
+<td>/fonts/type1/<i>foundry</i>/<i>typeface</i></td>
+<td>PostScript Type 1 outline</td>
+</tr>
+<tr>
+<td>.afm</td>
+<td>/fonts/afm/<i>foundry</i>/<i>typeface</i></td>
+<td>Adobe Font Metrics for Type 1 fonts</td>
+</tr>
+<tr>
+<td>.tfm</td>
+<td>/fonts/tfm/<i>foundry</i>/<i>typeface</i></td>
+<td>TeX Font Metrics for METAFONT and Type 1 fonts</td>
+</tr>
+<tr>
+<td>.vf</td>
+<td>/fonts/vf/<i>foundry</i>/<i>typeface</i></td>
+<td>TeX virtual fonts</td>
+</tr>
+<tr>
+<td>.dvi</td>
+<td>/doc</td>
+<td>package documentation</td>
+</tr>
+<tr>
+<td>.pdf</td>
+<td>/doc</td>
+<td>package documentation</td>
+</tr>
+<tr>
+<td>others</td>
+<td>tex/latex/<i>packagename</i></td>
+<td>other types of file unless instructed otherwise</td>
+</tr>
+</tbody></table>
+<p>4. <b>Update your index</b> Finally, run your TeX indexer program to 
+update the package database. This program comes with every modern 
+version of TeX and is variously called depending on the LaTeX 
+distribution you use (Read the documentation that came with your 
+installation to find out which it is):</p>
+<dl>
+<dd>
+<ul>
+<li>teTeX, TeX Live, fpTeX: <tt>texhash</tt></li>
+<li>web2c: <tt>mktexlsr</tt></li>
+<li>MikTeX: <tt>initexmf --update-fndb</tt> (or use the GUI)</li>
+<li>MiKTeX 2.7 ot later versions, installed on Widows XP or later 
+versions of Windows: Start -&gt; All Programs -&gt; MikTex -&gt; 
+Settings. In <i>Settings</i> menu choose the first tab and click on <i>Refresh FNDB</i>-button
+ (MikTex will then check the Program Files directory and update the list
+ of File Name DataBase). After that just verify by clicking 'OK'.</li>
+</ul>
+</dd>
+</dl>
+<pre>This last step is utterly essential, otherwise nothing will work.
+</pre>
+<p>The reason this process has not been automated widely is that there 
+are still thousands of installations which do not conform to the TDS, 
+such as old shared Unix systems and some Microsoft Windows systems, so 
+there is no way for an installation program to guess where to put the 
+files: you have to know this. There are also systems where the owner, 
+user, or installer has chosen not to follow the recommended TDS 
+directory structure, or is unable to do so for political or security 
+reasons (such as a shared system where she cannot write to a protected 
+directory). The reason for having the <tt>texmf-local</tt> directory (called <tt>texmf.local</tt>
+ on some systems) is to provide a place for local modifications or 
+personal updates, especially if you are a user on a shared or managed 
+system (Unix, Linux, VMS, Windows NT/2000/XP, etc.) where you may not 
+have write-access to the main TeX installation directory tree. You can 
+also have a personal <tt>texmf</tt> subdirectory in your own login 
+directory. Your installation must be configured to look in these 
+directories first, however, so that any updates to standard packages 
+will be found there before the superseded copies in the main <tt>texmf</tt> tree. All modern TeX installations should do this anyway, but if not, you can edit <tt>texmf/web2c/texmf.cnf</tt> yourself.</p>
+<p><br></p>
+<table class="wikitable">
+<caption>Where to put files from packages</caption>
+<tbody><tr>
+<th>Type</th>
+<th>Directory (under <tt>texmf-local/</tt>)</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>.cls</td>
+<td>tex/latex/base</td>
+<td>Document class file</td>
+</tr>
+<tr>
+<td>.sty</td>
+<td>tex/latex/<i>packagename</i></td>
+<td>Style file: the normal package content</td>
+</tr>
+<tr>
+<td>.bst</td>
+<td>bibtex/bst/<i>packagename</i></td>
+<td>BibTeX style</td>
+</tr>
+<tr>
+<td>.mf</td>
+<td>fonts/source/public/<i>typeface</i></td>
+<td>METAFONT outline</td>
+</tr>
+<tr>
+<td>.fd</td>
+<td>tex/latex/mfnfss</td>
+<td>Font Definition files for METAFONT fonts</td>
+</tr>
+<tr>
+<td>.fd</td>
+<td>tex/latex/psnfss</td>
+<td>Font Definition files for PostScript Type 1 fonts</td>
+</tr>
+<tr>
+<td>.pfb</td>
+<td>/fonts/type1/<i>foundry</i>/<i>typeface</i></td>
+<td>PostScript Type 1 outline</td>
+</tr>
+<tr>
+<td>.afm</td>
+<td>/fonts/afm/<i>foundry</i>/<i>typeface</i></td>
+<td>Adobe Font Metrics for Type 1 fonts</td>
+</tr>
+<tr>
+<td>.tfm</td>
+<td>/fonts/tfm/<i>foundry</i>/<i>typeface</i></td>
+<td>TeX Font Metrics for METAFONT and Type 1 fonts</td>
+</tr>
+<tr>
+<td>.vf</td>
+<td>/fonts/vf/<i>foundry</i>/<i>typeface</i></td>
+<td>TeX virtual fonts</td>
+</tr>
+<tr>
+<td>.dvi</td>
+<td>/doc</td>
+<td>package documentation</td>
+</tr>
+<tr>
+<td>.pdf</td>
+<td>/doc</td>
+<td>package documentation</td>
+</tr>
+<tr>
+<td>others</td>
+<td>tex/latex/<i>packagename</i></td>
+<td>other types of file unless instructed otherwise</td>
+</tr>
+</tbody></table>
+<p><br></p>
+<table style="border: 1px solid black;" class="noprint" width="100%" cellpadding="2" cellspacing="0">
+<tbody><tr>
+<td width="33%" bgcolor="#ffffe0">&nbsp;</td>
+<td width="33%" align="center" bgcolor="#ffffe0"><a href="http://en.wikibooks.org/wiki/LaTeX" title="LaTeX">Index</a></td>
+<td width="33%" align="right" bgcolor="#ffffe0">&nbsp;</td>
+</tr>
+</tbody></table>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 56/1000000
+Post-expand include size: 2894/2048000 bytes
+Template argument size: 0/2048000 bytes
+Expensive parser function count: 0/500
+-->
+
+<!-- Saved in parser cache with key enwikibooks:pcache:idhash:112762-0!1!0!default!!en!4 and timestamp 20101114050005 -->
+<div class="printfooter">
+Retrieved from "<a href="http://en.wikibooks.org/wiki/LaTeX/Packages/Installing_Extra_Packages">http://en.wikibooks.org/wiki/LaTeX/Packages/Installing_Extra_Packages</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://en.wikibooks.org/wiki/Special:Categories" title="Special:Categories">Category</a>: <span dir="ltr"><a href="http://en.wikibooks.org/wiki/Category:LaTeX" title="Category:LaTeX">LaTeX</a></span></div></div>				<!-- /catlinks -->
+												<!-- dataAfterContent -->
+				<div id="mw-data-after-content">
+	<form method="post" action="/w/index.php?title=Special:ReaderFeedback&amp;action=submit" id="mw-feedbackform"><fieldset class="feedback_reviewform noprint"><legend><strong>What do you think of this page?</strong></legend>
+<p><i>Please take a moment to rate this page below. Your feedback is valuable and helps us improve our website.</i>
+</p><span id="mw-feedbackselects"><b><label for="wpreliability">Reliability</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wpreliability" id="wpreliability" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+<b><label for="wpcompleteness">Completeness</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wpcompleteness" id="wpcompleteness" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+<b><label for="wpnpov">Neutrality</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wpnpov" id="wpnpov" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+<b><label for="wppresentation">Presentation</label>:</b>&nbsp;<select class="rfb-rating-option--1" name="wppresentation" id="wppresentation" onchange="updateFeedbackForm()"><option class="rfb-rating-option-4" value="4">Excellent</option>
+<option class="rfb-rating-option-3" value="3">High</option>
+<option class="rfb-rating-option-2" value="2">Fair</option>
+<option class="rfb-rating-option-1" value="1">Low</option>
+<option class="rfb-rating-option-0" value="0">Poor</option>
+<option value="-1" selected="selected">(unsure)</option>
+</select>
+</span><input disabled="disabled" value="Submit" id="submitfeedback" accesskey="b" title="Submit review [alt-shift-b]" type="submit"><input value="Special:ReaderFeedback" name="title" type="hidden">
+<input value="LaTeX/Packages/Installing_Extra_Packages" name="target" type="hidden">
+<input value="1927577" name="oldid" type="hidden">
+<input value="cb0dcad1d79f66813be2543873d6ba8f" name="validatedParams" type="hidden"><input value="submit" name="action" type="hidden">
+<input value="+\" name="wpEditToken" type="hidden">
+<input name="commentary" size="12" style="display: none;">
+</fieldset></form>
+</div>
+				<!-- /dataAfterContent -->
+								<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li id="pt-prefswitch-link-anon"><a href="http://en.wikibooks.org/w/index.php?title=Special:UsabilityInitiativePrefSwitch&amp;from=LaTeX%2FPackages%2FInstalling_Extra_Packages" title="Learn about new features" class="no-text-transform">New features</a></li>
+					<li id="pt-login"><a href="http://en.wikibooks.org/w/index.php?title=Special:UserLogin&amp;returnto=LaTeX/Packages/Installing_Extra_Packages" title="You are encouraged to log in; however, it is not mandatory [alt-shift-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><a href="http://en.wikibooks.org/wiki/LaTeX/Packages/Installing_Extra_Packages" title="View the content page [alt-shift-c]" accesskey="c"><span>Book</span></a></li>
+					<li id="ca-talk" class="new"><a href="http://en.wikibooks.org/w/index.php?title=Talk:LaTeX/Packages/Installing_Extra_Packages&amp;action=edit&amp;redlink=1" title="Discussion about the content page [alt-shift-t]" accesskey="t"><span>Discussion</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><a href="http://en.wikibooks.org/wiki/LaTeX/Packages/Installing_Extra_Packages"><span>Read</span></a></li>
+					<li id="ca-edit"><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Packages/Installing_Extra_Packages&amp;action=edit" title="You can edit this page. Please use the preview button before saving [alt-shift-e]" accesskey="e"><span>Edit</span></a></li>
+					<li id="ca-history" class="collapsible "><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Packages/Installing_Extra_Packages&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h"><span>View history</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="/w/index.php" id="searchform">
+		<input name="title" value="Special:Search" type="hidden">
+				<div id="simpleSearch">
+			<input autocomplete="off" class="placeholder" tabindex="1" id="searchInput" name="search" title="Search Wikibooks [alt-shift-f]" accesskey="f" value="Search" type="text">
+			<button id="searchButton" type="submit" name="button" title="Search the pages for this text"><img src="Installing_Extra_Packages_files/search-ltr.png" alt="Search"></button>
+		</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint collapsible-nav">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(&quot;http://upload.wikimedia.org/wikibooks/en/b/bc/Wiki.png&quot;);" href="http://en.wikibooks.org/wiki/Main_Page" title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- Navigation -->
+<div class="portal first persistent" id="p-Navigation">
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-mainpage"><a href="http://en.wikibooks.org/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main Page</a></li>
+					<li id="n-help"><a href="http://en.wikibooks.org/wiki/Help:Contents" title="Find help on how to use and edit Wikibooks">Help</a></li>
+					<li id="n-Browse"><a href="http://en.wikibooks.org/wiki/Wikibooks:Card_Catalog_Office" title="Check out what Wikibooks has to offer">Browse</a></li>
+					<li id="n-Cookbook"><a href="http://en.wikibooks.org/wiki/Cookbook:Table_of_Contents" title="Learn recipes from around the world">Cookbook</a></li>
+					<li id="n-Wikijunior"><a href="http://en.wikibooks.org/wiki/Wikijunior" title="Books for children">Wikijunior</a></li>
+					<li id="n-Featured-books"><a href="http://en.wikibooks.org/wiki/Wikibooks:Featured_books" title="The best of Wikibooks">Featured books</a></li>
+					<li id="n-recentchanges"><a href="http://en.wikibooks.org/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+					<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Donate" title="Support Wikibooks">Donations</a></li>
+				<li id="n-randbook"><a title="Show me a random book! [alt-shift-x]" accesskey="x" href="javascript:showRandBook();"><span>Random book</span></a></li></ul>
+			</div>
+</div>
+
+<!-- /Navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- Community -->
+<div class="portal expanded" id="p-Community">
+	<h5 tabindex="2">Community</h5>
+	<div style="display: block;" class="body">
+				<ul>
+					<li id="n-Reading-room"><a href="http://en.wikibooks.org/wiki/Wikibooks:Reading_room" title="Discuss Wikibooks-related questions and concerns with others">Reading room</a></li>
+					<li id="n-portal"><a href="http://en.wikibooks.org/wiki/Wikibooks:Community_Portal" title="Find your way around the Wikibooks community">Community portal</a></li>
+					<li id="n-currentevents"><a href="http://en.wikibooks.org/wiki/Wikibooks:Reading_room/Bulletin_Board" title="Important community news">Bulletin Board</a></li>
+					<li id="n-maintenance"><a href="http://en.wikibooks.org/wiki/Wikibooks:Maintenance" title="Frequent tasks that you can help with">Help out!</a></li>
+					<li id="n-Policies-and-guidelines"><a href="http://en.wikibooks.org/wiki/Wikibooks:Policies_and_guidelines" title="Pages detailing important rules and procedures">Policies and guidelines</a></li>
+					<li id="n-contact"><a href="http://en.wikibooks.org/wiki/Wikibooks:Contact_us" title="Alternative methods of communication">Contact us</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /Community -->
+
+<!-- coll-print_export -->
+<div class="portal collapsed" id="p-coll-print_export">
+	<h5 tabindex="3">Print/export</h5>
+	<div class="body">
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="http://en.wikibooks.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=LaTeX%2FPackages%2FInstalling+Extra+Packages" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="http://en.wikibooks.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=LaTeX%2FPackages%2FInstalling+Extra+Packages&amp;oldid=1927577&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Packages/Installing_Extra_Packages&amp;printable=yes" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li></ul>			</div>
+</div>
+
+<!-- /coll-print_export -->
+
+<!-- TOOLBOX -->
+<div class="portal collapsed" id="p-tb">
+	<h5 tabindex="4">Toolbox</h5>
+	<div class="body">
+		<ul><li id="google-trick-search"><a href="http://www.google.com/custom?sa=Google+Search&amp;domains=en.wikibooks.org/wiki/LaTeX&amp;sitesearch=en.wikibooks.org/wiki/LaTeX">Search this book</a></li>
+					<li id="t-whatlinkshere"><a href="http://en.wikibooks.org/wiki/Special:WhatLinksHere/LaTeX/Packages/Installing_Extra_Packages" title="List of all wiki pages that link here [alt-shift-j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="http://en.wikibooks.org/wiki/Special:RecentChangesLinked/LaTeX/Packages/Installing_Extra_Packages" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+																																					<li id="t-upload"><a href="http://commons.wikimedia.org/wiki/Commons:Upload" title="Upload files [alt-shift-u]" accesskey="u">Upload file</a></li>
+											<li id="t-specialpages"><a href="http://en.wikibooks.org/wiki/Special:SpecialPages" title="List of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="http://en.wikibooks.org/w/index.php?title=LaTeX/Packages/Installing_Extra_Packages&amp;oldid=1927577" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-rating"><a href="http://en.wikibooks.org/w/index.php?title=Special:RatingHistory&amp;target=LaTeX/Packages/Installing_Extra_Packages">Page rating</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 3 September 2010, at 11:32.</li>
+																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikibooks.org/wiki/Wikibooks:Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display: none;"></a>;
+additional terms may apply. See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="http://en.wikibooks.org/wiki/Wikibooks:About" title="Wikibooks:About">About Wikibooks</a></li>
+																							<li id="footer-places-disclaimer"><a href="http://en.wikibooks.org/wiki/Wikibooks:General_disclaimer" title="Wikibooks:General disclaimer">Disclaimers</a></li>
+															</ul>
+										<ul id="footer-icons" class="noprint">
+								<li id="footer-icon-poweredby"><a href="http://www.mediawiki.org/"><img src="Installing_Extra_Packages_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></a></li>
+												<li id="footer-icon-copyright"><a href="http://wikimediafoundation.org/"><img src="Installing_Extra_Packages_files/wikimedia-button.png" alt="Wikimedia Foundation" height="31" width="88"></a></li>
+							</ul>
+			<div style="clear: both;"></div>
+		</div>
+		<!-- /footer -->
+		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		
+<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<script type="text/javascript" src="Installing_Extra_Packages_files/a"></script>		<!-- Served by srv196 in 0.155 secs. -->			<div class="suggestions" style="top: 74px; width: 188px; display: none; left: auto; right: 42px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

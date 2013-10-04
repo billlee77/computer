@@ -1,0 +1,21 @@
+# Domian name										
+	@www.co.cc
+	Account E-mail: wenliang.billlee@gmail.com
+	password: 77yalikesaianna=
+	Domain name 1 : wenliangli.co.cc
+
+*****************************************************
+
+# Client abroad
+
+	@ www.host-ed.net
+		e-mail used: wenliang.billlee@gmail.com
+		pass: 77yalikesaianna=
+
+	@ www.000webhost.com
+		FTP Hostname : ftp.wenliangli.co.cc or 184.82.98.149
+		FTP Username : a5990442
+		FTP Password : 77anna=
+		Account E-mail : wenliang.billlee@gmail.com
+		Account password: 77yalikesaianna=
+

@@ -1,0 +1,18 @@
+#!/bin/csh
+
+#PBS -N batch_job_orig_mirror_old_interleaving_Plot2D
+#PBS -r n
+#PBS -e /nobackup/gridiron/hadron/li479/log/batch_job_orig_mirror_old_interleaving_Plot2D.err
+#PBS -o /nobackup/gridiron/hadron/li479/log/batch_job_orig_mirror_old_interleaving_Plot2D.log
+#PBS -m abe
+#PBS -M wenliang.billlee@gmail.com
+#PBS -q hadron
+#PBS -l walltime=5:00:00
+
+date
+
+cd /dsk2/billlee/scratch/batch_test/batch_job_orig_mirror_old_interleaving
+/home/billlee/geant4/SHMS_HeavyGasCer/Plots2D/src/main
+
+date
+exit

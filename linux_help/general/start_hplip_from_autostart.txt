@@ -1,0 +1,2 @@
+# Remove or Rename file under
+	/etc/xdg/autostart/hplip-systray.desktop

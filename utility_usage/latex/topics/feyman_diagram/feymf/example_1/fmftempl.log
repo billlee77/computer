@@ -1,0 +1,17 @@
+This is MetaPost, Version 0.993 (Web2C 7.5.6) (mem=mpost 2012.2.17)  9 NOV 2012 23:33
+**fmftempl.mf
+(fmftempl.mf
+! I can't find file `feynmf'.
+l.2 input feynmf
+                
+Please type another input file name: 
+! I can't find file `feynmf'.
+l.2 input feynmf
+                
+Please type another input file name: 
+! Emergency stop.
+l.2 input feynmf
+                
+End of file on the terminal!
+
+

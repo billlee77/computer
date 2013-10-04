@@ -1,0 +1,7 @@
+# Remove the used stuff from Xubuntu 9.04
+sudo apt-get purge usplash-theme-ubuntu ubuntu-desktop thunderbird pidgin evolution-common xsane abiword rhythmbox tomboy xchat gnumeric brasero gedit gcalctool f-spot pysdm gnome-games gbrainy
+
+
+# Remove the used stuff from Xubuntu 10.04
+sudo apt-get purge usplash-theme-ubuntu ubuntu-desktop thunderbird pidgin evolution-common xsane abiword rhythmbox tomboy xchat gnumeric brasero gedit gcalctool f-spot pysdm gnome-games gbrainy gwibber ubuntu-wallpapers ubuntu-standard ubuntu-artwork  ristretto  gnome-mahjongg gnomine 	aisleriot ekiga  pidgin-libnotify  thunderbird abiword  pidgin gconf-editor xchat yelp gnome-power-manager gnome-system-monitor gnome-system-tools xfce4-clipman-plugin onboard xfce4-notes-plugin dia eog  python-pygoocanvas libgoocanvas-common checkbox-gtk ubufox  mousepad  xfce4-clipman  libpolkit-gtk-1-0  catfish byobu  gcalctool simple-scan   quadrapassel gnomine gnome-mahjongg aisleriot  empathy  python-telepathy   empathy-common xchat gnome-sudoku exaile parole transmission-common xfce4-notes
+

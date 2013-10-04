@@ -1,0 +1,5 @@
+# To resolve the konqueror flash-plugin issue 
+gnash-klash konq-plugins 
+
+# Then
+Settings->Configure Conqueror..... Plugins..... Scan for new plugins

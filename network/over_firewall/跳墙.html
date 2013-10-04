@@ -1,0 +1,906 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=x-gbk">
+<title>用谷歌服务器翻墙-GAppProxy代理安装使用详细教程 - 『技巧教程』 -  绿叶社区 — 值得收藏，才值得分享！ - Powered by Discuz!</title>
+<meta name="keywords" content="谷歌,服务器,GAppProxy,教程,代理,分享,精品,收藏,软件,音乐,视频,游戏,壁纸,皮肤">
+<meta name="description" content=" 绿叶社区 前言（也叫废话）本教程主要面向喜欢自己动手丰衣足食的朋友有一定的动手能力和折腾的精神本教程默认读者已经知道翻墙和代理的意思及电脑的一般操作有一 ... - Discuz! Board">
+<meta name="generator" content="Discuz! 7.2">
+<meta name="author" content="Discuz! Team and Comsenz UI Team">
+<meta name="copyright" content="2001-2009 Comsenz Inc.">
+<meta name="MSSmartTagsPreventParsing" content="True">
+<meta http-equiv="MSThemeCompatible" content="Yes">
+<meta http-equiv="x-ua-compatible" content="ie=7">
+<link rel="archives" title="绿叶社区" href="http://www.lvleaf.com/archiver/">
+<link rel="stylesheet" type="text/css" href="%E8%B7%B3%E5%A2%99_files/style_42_common.css"><link rel="stylesheet" type="text/css" href="%E8%B7%B3%E5%A2%99_files/scriptstyle_42_viewthread.css">
+<script type="text/javascript">var STYLEID = '42', IMGDIR = 'images/default', VERHASH = 'S8k', charset = 'gbk', discuz_uid = 0, cookiedomain = '', cookiepath = '/', attackevasive = '0', disallowfloat = 'newthread', creditnotice = '2|叶子|片,3|贡献|点', gid = parseInt('3'), fid = parseInt('256'), tid = parseInt('8960')</script>
+<script src="%E8%B7%B3%E5%A2%99_files/common.js" type="text/javascript"></script>
+</head><body id="viewthread" onkeydown="if(event.keyCode==27) return false;">
+
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+
+<div id="header">
+<div class="wrap s_clear">
+<h2><a href="http://www.lvleaf.com/index.php" title="绿叶社区"><img src="%E8%B7%B3%E5%A2%99_files/logo.gif" alt="绿叶社区" border="0"></a></h2>		
+<div id="umenu">			
+<div class="uleft"></div>
+<div class="umid">
+<a href="http://www.lvleaf.com/register.php" onclick="showWindow('register', this.href);return false;" class="noborder">注册会员</a>
+<a href="http://www.lvleaf.com/logging.php?action=login" onclick="showWindow('login', this.href);return false;">登录</a>
+</div>
+<div class="uright"></div>
+</div>
+<div id="ad_headerbanner"><a href="#" target="_blank"><img src="%E8%B7%B3%E5%A2%99_files/ad.gif" border="0"></a></div>
+<div id="menu">
+<ul>
+<li class="current"><a href="http://www.lvleaf.com/index.php" hidefocus="true" id="mn_index">首页</a></li><li><a id="mn_plugin_sign_sign" href="http://www.lvleaf.com/plugin.php?id=sign:sign">每日签到</a></li><li class="menu_2"><a href="http://www.lvleaf.com/search.php" hidefocus="true" id="mn_search">搜索</a></li><li class="menu_4"><a href="http://www.lvleaf.com/faq.php" hidefocus="true" id="mn_faq">帮助</a></li></ul>
+<script type="text/javascript">
+var currentMenu = $('mn_') ? $('mn_') : $('mn_index');
+currentMenu.parentNode.className = 'current';
+</script>
+</div>
+</div>
+<div id="myprompt_menu" style="display: none;" class="promptmenu">
+<div class="promptcontent">
+<ul class="s_clear"><li style="display: none;"><a id="prompt_pm" href="http://www.lvleaf.com/pm.php?filter=newpm" target="_blank">私人消息 (0)</a></li><li style="display: none;"><a id="prompt_announcepm" href="http://www.lvleaf.com/pm.php?filter=announcepm" target="_blank">公共消息 (0)</a></li><li style="display: none;"><a id="prompt_task" href="http://www.lvleaf.com/task.php?item=doing" target="_blank">论坛任务 (0)</a></li><li style="display: none;"><a id="prompt_systempm" href="http://www.lvleaf.com/notice.php?filter=systempm" target="_blank">系统消息 (0)</a></li><li style="display: none;"><a id="prompt_friend" href="http://www.lvleaf.com/notice.php?filter=friend" target="_blank">好友消息 (0)</a></li><li style="display: none;"><a id="prompt_threads" href="http://www.lvleaf.com/notice.php?filter=threads" target="_blank">帖子消息 (0)</a></li><li style="display: none;"><a id="prompt_dps_preply" href="http://www.lvleaf.com/notice.php?filter=dps_preply" target="_blank">帖内回复 (0)</a></li></ul>
+</div>
+</div>
+</div>
+
+<script src="%E8%B7%B3%E5%A2%99_files/viewthread.js" type="text/javascript"></script>
+<script type="text/javascript">zoomstatus = parseInt(1);var imagemaxwidth = '600';var aimgcount = new Array();</script>
+
+<div id="nav">
+<a href="http://www.lvleaf.com/index.php" id="fjump" onmouseover="showMenu({'ctrlid':this.id})" class="dropmenu">绿叶社区</a> &#187; <a href="http://www.lvleaf.com/forum-256-1.html">『技巧教程』</a> &#187; 用谷歌服务器翻墙-GAppProxy代理安装使用详细教程</div>
+
+
+
+<style type="text/css">
+
+/* dps_preply button */
+.dps_preply_btn { background: transparent url('plugins/dps_preply/images//button.gif') no-repeat scroll 0 50%; }
+
+/* dps_preply float */
+.dps_preply_float { padding: 0; }
+.dps_preply_float div.infonotice { overflow: hidden; margin: 0; padding: 0; }
+.dps_preply_float div.infonotice .right { color: #666; }
+.dps_preply_float div.editor .editor_tb { width: 354px; }
+.dps_preply_float div.submitdiv { clear: both; overflow: hidden; margin-top: 10px; }
+.dps_preply_float div.submitdiv .left { margin-top: 3px; }
+
+/* dps_preply title */
+.dps_preply_title { margin-top: 10px; height: 27px; border: 1px solid #E3EDF5; background: #EBF2F8; font-size: 12px; }
+.dps_preply_title div { margin: 7px 0 0 8px; font-weight: bold; }
+
+/* dps_preply item */
+.dps_preply_items { margin: 0 0 40px 0; font-size: 12px; }
+.dps_preply_items table { margin: 0; border: 0; }
+.dps_preply_items table td { padding: 10px; border-bottom: 1px dashed #CCCCCC; font-size: 12px; }
+.dps_preply_items table td.preply { }
+.dps_preply_items table td.preply .info { overflow: hidden; height: 25px; }
+.dps_preply_items table td.preply .info .avatar { width: 35px; }
+.dps_preply_items table td.preply .info .avatar img { width: 25px; height: 25px; }
+.dps_preply_items table td.preply .info .data { margin-top: 5px; }
+.dps_preply_items table td.preply .info .data a { font-weight: bold; }
+.dps_preply_items table td.preply .info .right { margin-top: 5px; }
+.dps_preply_items table td.preply .info .right a { margin-left: 8px; }
+.dps_preply_items table td.preply .message { margin: 8px 5px 0 5px; font-size: 14px; }
+.dps_preply_items table td.mine { background: #F5F5F5; }
+
+</style>
+
+<script type="text/javascript">
+
+function dps_preply_pid(pid, page, getnode) {
+var getnode = isUndefined(getnode) ? ($('dps_preply_' + pid + '_node') ? false : true) : getnode;
+var name = getnode ? 'dps_preply_' + pid : 'dps_preply_' + pid + '_node';
+var page = isUndefined(page) || !page ? $('dps_preply_' + pid).getAttribute('page') : page;
+ajaxget('plugin.php?id=dps_preply:preply&act=page&tid=8960&pid=' + pid + '&p=' + page + (getnode ? '&getnode=yes' : '') + '&s=' + Math.random(), name, null);
+}
+
+function dps_preply_delete(pid, rid) {
+showDialog('您确定要删除这个帖内回复吗?', 'confirm', '确认删除', function () {
+ajaxget('plugin.php?id=dps_preply:preply&act=delete&tid=8960&pid=' + pid + '&rid=' + rid + '&s=' + Math.random(), '', '', null, null, 'showDialog(\'指定的帖内回复删除成功。\', \'notice\', \'删除成功\', null, 0); dps_preply_pid(\'' + pid + '\', 1, true);');
+});
+}
+
+</script>
+
+
+<div class="ad_text" id="ad_text"><table summary="Text Ad" cellpadding="0" cellspacing="1"><tbody><tr><td width="100%"><p style="color: darkgreen;" align="center">
+〓〓〓〓〓
+<strong><a href="http://www.lvleaf.com/thread-6622-1-1.html"><span style="color: rgb(255, 0, 0);">绿叶QQ讨论群</span></a></strong>
+|
+<a href="http://www.lvleaf.com/thread-1301-1-1.html">获得叶子 </a> 
+|
+<a href="http://www.lvleaf.com/thread-4277-1-1.html">广告严打</a>
+|
+<a href="http://www.lvleaf.com/thread-2-1-1.html"><strong><span style="color: rgb(255, 0, 0);">版主申请</span></strong></a>
+|
+<a href="http://www.lvleaf.com/thread-6698-1-1.html">纳米盘米人</a>
+|
+<a href="http://www.lvleaf.com/thread-4832-1-1.html">积分说明</a>
+| <font color="#ff0000">解压密码 www.lvleaf.com </font> 〓〓〓〓〓
+</p> </td></tr>
+</tbody></table></div>
+<div id="wrap" class="wrap s_clear threadfix">
+<div class="forumcontrol">
+<table cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="modaction">
+</td>
+<td>
+<span class="pageback"><a href="http://www.lvleaf.com/forum-256-1.html">返回列表</a></span>
+<span class="postbtn" id="newspecial" prompt="post_newthread" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"><a href="http://www.lvleaf.com/post.php?action=newthread&amp;fid=256" onclick="showWindow('newthread', this.href);return false;">发帖</a></span>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+
+<div id="postlist" class="mainbox viewthread"><div id="post_30352"><table id="pid30352" summary="pid30352" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="postauthor" rowspan="2">
+<div class="postinfo">
+<a target="_blank" href="http://www.lvleaf.com/space.php?uid=2" style="margin-left: 20px; font-weight: 800;">pluwen</a>
+</div>
+<div class="popupmenu_popup userinfopanel" id="userinfo30352" style="display: none; position: absolute; margin-top: -11px;">
+<div class="popavatar">
+<div id="userinfo30352_ma"></div>
+<ul class="profile_side">
+<li class="pm"><a href="http://www.lvleaf.com/pm.php?action=new&amp;uid=2" onclick="hideMenu('userinfo30352');showWindow('sendpm', this.href);return false;" title="发短消息">发短消息</a></li>
+<li style="text-indent: 0pt;"><a target="_blank" href="http://settings.messenger.live.com/Conversation/IMMe.aspx?invitee=a54c6c2af88d0b64@apps.messenger.live.com&amp;mkt=zh-cn" title="MSN 聊天"><img style="border-style: none; margin-right: 5px; vertical-align: middle;" src="%E8%B7%B3%E5%A2%99_files/presenceimage.gif" width="16" height="16">MSN 聊天</a></li>
+<li class="buddy"><a href="http://www.lvleaf.com/my.php?item=buddylist&amp;newbuddyid=2&amp;buddysubmit=yes" target="_blank" id="ajax_buddy_0" title="加为好友" onclick="ajaxmenu(this, 3000);doane(event);">加为好友</a></li>
+</ul>
+</div>
+<div class="popuserinfo">
+<p>
+<a href="http://www.lvleaf.com/space-uid-2.html" target="_blank">pluwen</a>
+<em>(pluwen)</em><em>当前在线
+</em>
+</p>
+<p class="customstatus">绿叶创始人</p>
+<dl class="s_clear"><dt>UID</dt><dd>2&nbsp;</dd><dt>帖子</dt><dd>1795&nbsp;</dd><dt>精华</dt><dd>83&nbsp;</dd><dt>积分</dt><dd>3768&nbsp;</dd><dt>叶子</dt><dd>10659 片&nbsp;</dd><dt>贡献</dt><dd>491 点&nbsp;</dd><dt>阅读权限</dt><dd>255&nbsp;</dd><dt>性别</dt><dd>男&nbsp;</dd><dt>在线时间</dt><dd>1452 小时&nbsp;</dd><dt>注册时间</dt><dd>2008-3-8&nbsp;</dd><dt>最后登录</dt><dd>2009-12-18&nbsp;</dd></dl>
+<div class="imicons">
+<a href="http://www.lvleaf.com/" target="_blank" title="查看个人网站"><img src="%E8%B7%B3%E5%A2%99_files/forumlink.gif" alt="查看个人网站"></a><a href="http://www.lvleaf.com/space-uid-2.html" target="_blank" title="查看详细资料"><img src="%E8%B7%B3%E5%A2%99_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+ <div>
+<div class="avatar" onmouseover="showauthor(this, 'userinfo30352')"><a href="http://www.lvleaf.com/space-uid-2.html" target="_blank"><img src="%E8%B7%B3%E5%A2%99_files/02_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://www.lvleaf.com/uc_server/images/noavatar_middle.gif'"></a></div>
+<p><em><a href="http://www.lvleaf.com/faq.php?action=grouppermission&amp;searchgroupid=1" target="_blank"><font color="#00bb00">管理员</font></a></em></p>
+</div>
+<p><img src="%E8%B7%B3%E5%A2%99_files/star_level3.gif" alt="Rank: 15"><img src="%E8%B7%B3%E5%A2%99_files/star_level2.gif" alt="Rank: 15"><img src="%E8%B7%B3%E5%A2%99_files/star_level2.gif" alt="Rank: 15"></p>
+<dl class="profile s_clear"><dt>UID</dt><dd>2&nbsp;</dd><dt>帖子</dt><dd>1795&nbsp;</dd><dt>叶子</dt><dd>10659 片&nbsp;</dd><dt>贡献</dt><dd>491 点&nbsp;</dd><dt>最后登录</dt><dd>2009-12-18&nbsp;</dd></dl><p><img src="%E8%B7%B3%E5%A2%99_files/medal1.gif" alt="最佳贡献" title="最佳贡献"><img src="%E8%B7%B3%E5%A2%99_files/medal2.gif" alt="最佳人气" title="最佳人气"></p>
+</td>
+<td class="postcontent">
+<div id="threadstamp"></div><div class="postinfo">
+<strong><a title="复制本帖链接" id="postnum30352" href="javascript:;" onclick="setCopy('http://www.lvleaf.com/viewthread.php?tid=8960', '帖子地址已经复制到剪贴板')">楼主</a>
+<em class="rpostno" title="跳转到指定楼层">跳转到 <input id="rpostnovalue" size="3" class="txtarea" onkeydown="if(event.keyCode==13) {$('rpostnobtn').click();return false;}" type="text"><span id="rpostnobtn" onclick="window.location='redirect.php?ptid=8960&amp;ordertype=0&amp;postno='+$('rpostnovalue').value">&#187;</span></em>
+<a href="http://www.lvleaf.com/viewthread.php?tid=8960&amp;extra=&amp;ordertype=1" class="left">倒序看帖</a>
+</strong>
+<div class="posterinfo">
+<div class="pagecontrol">
+<a href="http://www.lvleaf.com/viewthread.php?action=printable&amp;tid=8960" target="_blank" class="print left">打印</a>
+<div class="msgfsize right">
+<label>字体大小: </label><small onclick="$('postlist').className='mainbox viewthread'" title="正常">t</small><big onclick="$('postlist').className='mainbox viewthread t_bigfont'" title="放大">T</big>
+</div>
+</div>
+<div class="authorinfo">
+<img class="authicon" id="authicon30352" src="%E8%B7%B3%E5%A2%99_files/online_admin.gif" onclick="showauthor(this, 'userinfo30352')">
+<em id="authorposton30352">发表于 2009-11-14 01:52</em>
+ | <a href="http://www.lvleaf.com/viewthread.php?tid=8960&amp;page=1&amp;authorid=2" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div>
+<div class="defaultpost">
+<div id="ad_thread2_0"></div><div class="ad_pip" id="ad_thread3_0"><script type="text/JavaScript"> 
+alimama_pid="mm_11992715_1507686_7363638"; 
+alimama_titlecolor="0000FF"; 
+alimama_descolor ="000000"; 
+alimama_bgcolor="FFFFFF"; 
+alimama_bordercolor="E6E6E6"; 
+alimama_linkcolor="008000"; 
+alimama_bottomcolor="FFFFFF"; 
+alimama_anglesize="0"; 
+alimama_bgpic="0"; 
+alimama_icon="0"; 
+alimama_sizecode="22"; 
+alimama_width=120; 
+alimama_height=240; 
+alimama_type=2; 
+</script> 
+<script src="%E8%B7%B3%E5%A2%99_files/inf.js" type="text/javascript"> 
+</script><img src="%E8%B7%B3%E5%A2%99_files/alimamal_002.html" name="alimamatmpf0.15273181729242413" id="alimamatmpf0.15273181729242413" style="border: 0px none ; margin: 0px; padding: 0px; width: 0px; height: 0px; vertical-align: baseline;" border="0"><iframe name="alimamaf0.15273181729242413" id="alimamaf0.15273181729242413" border="0" marginwidth="0" marginheight="0" style="width: 120px; height: 240px;" src="%E8%B7%B3%E5%A2%99_files/alimama.html" scrolling="no" frameborder="0"></iframe></div><div id="ad_thread4_0"></div>
+<div class="postmessage firstpost">
+<div id="threadtitle">
+<h1>用谷歌服务器翻墙-GAppProxy代理安装使用详细教程</h1>
+<div class="threadtags">
+<a href="http://www.lvleaf.com/tag-%25B9%25C8%25B8%25E8.html" target="_blank">谷歌</a>, <a href="http://www.lvleaf.com/tag-%25B7%25FE%25CE%25F1%25C6%25F7.html" target="_blank">服务器</a>, <a href="http://www.lvleaf.com/tag-GAppProxy.html" target="_blank">GAppProxy</a>, <a href="http://www.lvleaf.com/tag-%25BD%25CC%25B3%25CC.html" target="_blank">教程</a>, <a href="http://www.lvleaf.com/tag-%25B4%25FA%25C0%25ED.html" target="_blank">代理</a></div>
+</div>
+<div class="t_msgfontfix">
+<table cellpadding="0" cellspacing="0"><tbody><tr><td class="t_msgfont" id="postmessage_30352"><font color="darkred"><strong><font size="4">前言（也叫废话）</font></strong><br>
+</font>本教程主要面向喜欢自己动手丰衣足食的朋友<br>
+有一定的动手能力和折腾的精神<br>
+本教程默认读者已经知道翻墙和代理的意思及<span href="tag.php?name=%B5%E7%C4%D4" onclick="tagshow(event)" class="t_tag">电脑</span>的一般操作<br>
+有一定翻墙经验者更适合本教程<br>
+<br>
+<font size="4"><font color="darkred"><strong>一、基础知识准备</strong></font></font><br>
+<strong><font size="4"><font color="#8b0000"></font></font></strong><br>
+ <br>
+<strong>1、GAppProxy</strong> 是什么？ <br>
+<strong>GAppProxy</strong> 是基于 <a href="http://appengine.google.com/" target="_blank"><font color="#800080"><span href="tag.php?name=Google" onclick="tagshow(event)" class="t_tag">Google</span> app engine</font></a>，为教育网用户提供一个免费的国际代理。由于借助了 <strong>Google</strong> 强大的服务器，所有也适用于公网的代理。 <br>
+<br>
+<strong>2、Google app engine</strong> 是什么？ <br>
+<strong>Google app engine</strong> 是 <strong>Google</strong> 提供的一个在线应用程序平台，支持 <strong>Python</strong>。简单的说是在 <strong>Google app engine</strong> 上面直接运行用 <strong>Python</strong> 写的程序，由 <strong>Google app engine</strong> 提供<span href="tag.php?name=%CD%F8%C2%E7" onclick="tagshow(event)" class="t_tag">网络</span>空间和带宽。 <br>
+<br>
+3、用 <strong>GAppProxy</strong> 能干什么？ <br>
+<strong>如果你在教育网</strong>，你可以把 <strong>GAppProxy</strong> 当作一个国际代理服务器，类似<span href="tag.php?name=%CB%D1%B9%B7" onclick="tagshow(event)" class="t_tag">搜狗</span><span href="tag.php?name=%E4%AF%C0%C0%C6%F7" onclick="tagshow(event)" class="t_tag">浏览器</span>的教育网加速。<br>
+<strong>如果你在公网</strong>，正常情况下用不到 <strong>GAppProxy</strong>，但如果想访问某些特殊网站或者是被墙的网站，还是用得到的。<br>
+<font size="4"><font color="darkred"><strong>二、注册 </strong></font></font><a href="http://appengine.google.com/" target="_blank"><font size="4"><font color="darkred"><strong>Google App Engine</strong></font></font></a><font size="4"><font color="darkred"><strong>:</strong></font></font> <br>
+<br>
+1、用 <strong>Google 账户</strong> 登录 <strong><a href="http://appengine.google.com/" target="_blank">Google App Engine</a></strong> 后，点击 <strong>Create an Application</strong> 创建一个应用程序。 <br>
+
+
+<span style="position: absolute; display: none;" id="attach_4178" onmouseover="showMenu({'ctrlid':this.id,'pos':'13'})"><img src="%E8%B7%B3%E5%A2%99_files/attachimg.gif" border="0"></span>
+<img src="%E8%B7%B3%E5%A2%99_files/attachment_006.bin" file="attachment.php?aid=NDE3OHw4NTZkZWQ4MHwxMjYxMTM5NTE1fGFmNjFQdHh5bGN1VFY1Smd3S2dENmFEeHBmdVlvSzFRaC9hQXZFM3dTOFVNaHdz&amp;noupdate=yes" thumbimg="1" id="aimg_4178" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" alt="1.png" width="408" height="251">
+
+<div class="t_attach" id="aimg_4178_menu" style="position: absolute; z-index: 301; opacity: 1; left: 207.5px; top: 896.4px; display: none;">				
+<a href="http://www.lvleaf.com/attachment.php?aid=NDE3OHw4NTZkZWQ4MHwxMjYxMTM5NTE1fGFmNjFQdHh5bGN1VFY1Smd3S2dENmFEeHBmdVlvSzFRaC9hQXZFM3dTOFVNaHdz&amp;nothumb=yes" title="1.png" target="_blank"><strong><span href="tag.php?name=%CF%C2%D4%D8" onclick="tagshow(event)" class="t_tag">下载</span></strong></a> (15.11 KB)<br>
+
+<div class="t_smallfont">2009-11-14 01:12</div>
+
+</div>
+
+<br>
+<br>
+2、输入<span href="tag.php?name=%CA%D6%BB%FA" onclick="tagshow(event)" class="t_tag">手机</span>号码，接受创建验证码，必须有此过程，否则无法注册成功。<br>
+
+
+<span style="position: absolute; display: none;" id="attach_4179" onmouseover="showMenu({'ctrlid':this.id,'pos':'13'})"><img src="%E8%B7%B3%E5%A2%99_files/attachimg.gif" border="0"></span>
+<img src="%E8%B7%B3%E5%A2%99_files/attachment_005.bin" file="attachment.php?aid=NDE3OXxkNTk2OTE5ZHwxMjYxMTM5NTE1fGFmNjFQdHh5bGN1VFY1Smd3S2dENmFEeHBmdVlvSzFRaC9hQXZFM3dTOFVNaHdz&amp;noupdate=yes" thumbimg="1" id="aimg_4179" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" alt="2.png" width="415" height="366">
+
+<div class="t_attach" id="aimg_4179_menu" style="position: absolute; z-index: 301; opacity: 1; left: 207.5px; top: 1187.8px; display: none;">				
+<a href="http://www.lvleaf.com/attachment.php?aid=NDE3OXxkNTk2OTE5ZHwxMjYxMTM5NTE1fGFmNjFQdHh5bGN1VFY1Smd3S2dENmFEeHBmdVlvSzFRaC9hQXZFM3dTOFVNaHdz&amp;nothumb=yes" title="2.png" target="_blank"><strong>下载</strong></a> (19.64 KB)<br>
+
+<div class="t_smallfont">2009-11-14 01:12</div>
+
+</div>
+
+<br>
+<br>
+3、几分钟后手机会收到验证码，输入验证码后就进入了创建应用程序的详细设置界面。<br>
+<br>
+<br>
+
+
+<span style="position: absolute; display: none;" id="attach_4180" onmouseover="showMenu({'ctrlid':this.id,'pos':'13'})"><img src="%E8%B7%B3%E5%A2%99_files/attachimg.gif" border="0"></span>
+<img src="%E8%B7%B3%E5%A2%99_files/attachment_003.bin" file="attachment.php?aid=NDE4MHwxM2M5YzE0NXwxMjYxMTM5NTE1fGFmNjFQdHh5bGN1VFY1Smd3S2dENmFEeHBmdVlvSzFRaC9hQXZFM3dTOFVNaHdz&amp;noupdate=yes" thumbimg="1" id="aimg_4180" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" alt="3.jpg" width="492" height="500">
+
+<div class="t_attach" id="aimg_4180_menu" style="position: absolute; z-index: 301; opacity: 1; left: 207.5px; top: 1630.2px; display: none;">				
+<a href="http://www.lvleaf.com/attachment.php?aid=NDE4MHwxM2M5YzE0NXwxMjYxMTM5NTE1fGFmNjFQdHh5bGN1VFY1Smd3S2dENmFEeHBmdVlvSzFRaC9hQXZFM3dTOFVNaHdz&amp;nothumb=yes" title="3.jpg" target="_blank"><strong>下载</strong></a> (159.48 KB)<br>
+
+<div class="t_smallfont">2009-11-14 01:12</div>
+
+</div>
+
+<br>
+<br>
+4、填写 <strong>Application Identifier</strong> (输入你想要的应用程序地址，相应会得到一个 yourname.appspot.com 的域名，记住这个) 和 <strong>Application Title</strong> (标题，随意啦)以及勾选同意服务条款，点 <strong>Save</strong> 即完成创建。<br>
+<br>
+<strong><font size="4"><font color="darkred">三、下载本次翻墙用到的<span href="tag.php?name=%C8%ED%BC%FE" onclick="tagshow(event)" class="t_tag">软件</span></font></font></strong><br>
+<br>
+1、下载 <a href="http://www.python.org/" target="_blank"><font color="#cc3300">Python</font></a> 和 <a href="http://code.google.com/appengine/downloads.html" target="_blank"><font color="#cc3300">Google App Engine SKD</font></a>&nbsp;&nbsp;（如有更新以此行为准）<br>
+直接下载地址: <a href="http://www.python.org/ftp/python/2.6.1/python-2.6.1.msi" target="_blank"><font color="#cc3300">Python</font></a> | <a href="http://googleappengine.googlecode.com/files/GoogleAppEngine_1.2.7.msi" target="_blank"><font color="#cc3300">Google App Engine SDK</font></a>&nbsp;&nbsp;<br>
+（省事下载方式，如果突然无法访问，请将地址中的“http”换成“https”或者相反）<br>
+2、下载 <a href="http://code.google.com/p/gappproxy/downloads/list" target="_blank"><font color="#cc3300">GappProxy</font></a> 和 <strong>fetch<span href="tag.php?name=Server" onclick="tagshow(event)" class="t_tag">Server</span></strong> （同上）<br>
+直接下载地址: <a href="http://gappproxy.googlecode.com/files/GAppProxy-1.0.0beta.exe" target="_blank"><font color="#cc3300">GappProxy</font></a> | <a href="http://gappproxy.googlecode.com/files/fetchserver-1.0.0beta-fix.tar.gz" target="_blank"><font color="#cc3300">fetchServer</font></a>&nbsp;&nbsp;（同上）<br>
+<br>
+<strong><font size="4"><font color="darkred">四、安装软件并调整设置</font></font></strong><br>
+<br>
+1、<a href="http://www.python.org/" target="_blank"><font color="#cc3300">Python</font></a> 和 <a href="http://code.google.com/appengine/downloads.html" target="_blank"><font color="#cc3300">Google App Engine SKD</font></a> 按照默认目录直接安装<br>
+<br>
+2、解压缩 <strong>fetchServer</strong> <span href="tag.php?name=%CE%C4%BC%FE" onclick="tagshow(event)" class="t_tag">文件</span>夹至 <strong>Google App Engine SKD</strong> 安装目录，使路径变为 "<strong>X:\Program Files\Google\google_appengine\fetchserver"</strong><br>
+最终结果在 <strong>"X:\Program Files\Google\google_appengine\fetchserver" </strong>文件夹中能找到 "<strong>app.yaml</strong>" 文件<br>
+<br>
+3、用记事本打开刚解压的 <strong>app.yaml</strong> 文件，修改第一行 <strong>your_application_name</strong> 为刚才输入的 <strong>Application Identifier </strong>就是yourname.appspot.com 中的 <strong>yourname</strong>。<font color="red"><strong>注意：</strong></font>紧接着"<strong><font color="red"><font color="#444444">your_application_name"</font></font></strong><font color="red"><font color="#444444">后面的"<strong>version"</strong>不要删除，否则会出错</font></font><br>
+<br>
+4、上传 <strong>fetchserver</strong><br>
+<br>
+打开<strong>命令提示符</strong>(点击 开始 &gt; 运行 &gt; cmd)<br>
+进入 <strong>X:\Program
+Files\Google\google_appengine 目录(输入 cd X:\Program
+Files\Google\google_appengine\ 即可)，输入以下命令行: appcfg.py update fetchserver</strong>，回车，会要求你输入 Google 账户及密码，之后关闭结束上传。<br>
+<br>
+5、测试 <strong>fetchserver</strong>：打开浏览器，进入 http://<strong>yourname</strong>.appspot.com/fetch.py 如果得到下面的页面，证明安装成功。 <br>
+
+
+<span style="position: absolute; display: none;" id="attach_4181" onmouseover="showMenu({'ctrlid':this.id,'pos':'13'})"><img src="%E8%B7%B3%E5%A2%99_files/attachimg.gif" border="0"></span>
+<img src="%E8%B7%B3%E5%A2%99_files/attachment_002.bin" file="attachment.php?aid=NDE4MXw1YTY1MzhhMHwxMjYxMTM5NTE1fGFmNjFQdHh5bGN1VFY1Smd3S2dENmFEeHBmdVlvSzFRaC9hQXZFM3dTOFVNaHdz&amp;noupdate=yes" thumbimg="1" id="aimg_4181" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" alt="4.jpg" width="500" height="190">
+
+<div class="t_attach" id="aimg_4181_menu" style="position: absolute; z-index: 301; opacity: 1; left: 207.5px; top: 2873.4px; display: none;">				
+<a href="http://www.lvleaf.com/attachment.php?aid=NDE4MXw1YTY1MzhhMHwxMjYxMTM5NTE1fGFmNjFQdHh5bGN1VFY1Smd3S2dENmFEeHBmdVlvSzFRaC9hQXZFM3dTOFVNaHdz&amp;nothumb=yes" title="4.jpg" target="_blank"><strong>下载</strong></a> (41.55 KB)<br>
+
+<div class="t_smallfont">2009-11-14 01:35</div>
+
+</div>
+
+<br>
+<br>
+<strong><font size="4"><font color="darkred">五、代理软件及浏览器设置</font></font></strong><br>
+<br>
+1、代理软件设置<br>
+将 <strong>GappProxy</strong> 解压至任意文件夹，打开 <strong>gui.exe，</strong>勾选 <strong>Use FetchServer</strong> <br>
+输入 <a href="http://yourname.appspot.com/fetch.py" target="_blank">http://<strong>yourname</strong>.appspot.com/fetch.py</a> ，点 <strong>save</strong>，顺手点击 <strong>Status</strong> 确认代理运行正常。 <br>
+
+
+<span style="position: absolute; display: none;" id="attach_4182" onmouseover="showMenu({'ctrlid':this.id,'pos':'13'})"><img src="%E8%B7%B3%E5%A2%99_files/attachimg.gif" border="0"></span>
+<img src="%E8%B7%B3%E5%A2%99_files/attachment.bin" file="attachment.php?aid=NDE4MnxlNDAxMjEwZXwxMjYxMTM5NTE1fGFmNjFQdHh5bGN1VFY1Smd3S2dENmFEeHBmdVlvSzFRaC9hQXZFM3dTOFVNaHdz&amp;noupdate=yes" thumbimg="1" id="aimg_4182" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" alt="5.JPG" width="416" height="199">
+
+<div class="t_attach" id="aimg_4182_menu" style="position: absolute; z-index: 301; opacity: 1; left: 207.5px; top: 3190.6px; display: none;">				
+<a href="http://www.lvleaf.com/attachment.php?aid=NDE4MnxlNDAxMjEwZXwxMjYxMTM5NTE1fGFmNjFQdHh5bGN1VFY1Smd3S2dENmFEeHBmdVlvSzFRaC9hQXZFM3dTOFVNaHdz&amp;nothumb=yes" title="5.JPG" target="_blank"><strong>下载</strong></a> (38.13 KB)<br>
+
+<div class="t_smallfont">2009-11-14 01:40</div>
+
+</div>
+
+<br>
+<br>
+点击quit关闭软件，再次运行 <strong>gui.exe</strong> ，现在软件才正式开始生效<br>
+<br>
+2、浏览器设置<br>
+IE：<span href="tag.php?name=%B9%A4%BE%DF" onclick="tagshow(event)" class="t_tag">工具</span>-<span href="tag.php?name=Internet" onclick="tagshow(event)" class="t_tag">Internet</span>选项-连接-局域网设置，添加 <strong>127.0.0.1:8000</strong> 代理服务器<br>
+
+
+<span style="position: absolute; display: none;" id="attach_4183" onmouseover="showMenu({'ctrlid':this.id,'pos':'13'})"><img src="%E8%B7%B3%E5%A2%99_files/attachimg.gif" border="0"></span>
+<img src="%E8%B7%B3%E5%A2%99_files/attachment_004.bin" file="attachment.php?aid=NDE4M3wyNTA5MjI4Y3wxMjYxMTM5NTE1fGFmNjFQdHh5bGN1VFY1Smd3S2dENmFEeHBmdVlvSzFRaC9hQXZFM3dTOFVNaHdz&amp;noupdate=yes" thumbimg="1" id="aimg_4183" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" alt="6.png" width="36" height="18">
+
+<div class="t_attach" id="aimg_4183_menu" style="position: absolute; display: none;">				
+<a href="http://www.lvleaf.com/attachment.php?aid=NDE4M3wyNTA5MjI4Y3wxMjYxMTM5NTE1fGFmNjFQdHh5bGN1VFY1Smd3S2dENmFEeHBmdVlvSzFRaC9hQXZFM3dTOFVNaHdz&amp;nothumb=yes" title="6.png" target="_blank"><strong>下载</strong></a> (44.97 KB)<br>
+
+<div class="t_smallfont">2009-11-14 01:45</div>
+
+</div>
+
+<br>
+其他浏览器自行设置<br>
+<br>
+到此已经可以开始访问墙外的网站了，包括https的网站<br>
+<br>
+<strong><font size="4"><font color="#8b0000">七、感谢组织及个人</font></font></strong><br>
+<strong><font size="4"><font color="#8b0000"></font></font></strong><br>
+感谢<a href="http://skydao.com/post/google-app-engine-to-do-with-personal-proxy-server-second-edition/" target="_blank">天空岛</a>、<a href="http://www.appinn.com/install-gappproxy-guide/" target="_blank">小众软件</a>、<a href="http://appengine.google.com/" target="_blank">Google App Engine</a>、<a href="http://code.google.com/p/gappproxy/downloads/list" target="_blank">GappProxy</a>、<a href="http://www.python.org/" target="_blank">Python</a><br>
+其实最后还是再次感谢<span href="tag.php?name=%B9%C8%B8%E8" onclick="tagshow(event)" class="t_tag">谷歌</span>童鞋为我们提供这么好的东西<br>
+让我们看到了墙外的世界<br>
+极度感谢。。。<br>
+<br>
+本教程由pluwen童鞋整理发布，相关链接已更新（截止2009-11-14）</td></tr></tbody></table>
+<div id="relatedtags">
+
+<div class="taglinks">
+
+
+<div>
+<h4>绿叶社区</h4>
+
+<ul>
+<li><a href="http://www.lvleaf.com/viewthread.php?tid=9191" target="_blank">谷歌金山词霸升级2009.12.1.173版本</a></li><li><a href="http://www.lvleaf.com/viewthread.php?tid=9117" target="_blank">谷歌金山词霸升级2.0.1.170</a></li><li><a href="http://www.lvleaf.com/viewthread.php?tid=8763" target="_blank">谷歌金山词霸 2.0 修订某些情况下和Win7 Aero服务冲突的问题</a></li><li><a href="http://www.lvleaf.com/viewthread.php?tid=8750" target="_blank">谷歌金山词霸2.0版正式发布</a></li>
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
+<script src="%E8%B7%B3%E5%A2%99_files/tag.html" type="text/javascript" reload="1"></script>
+</div>
+
+
+<div id="dps_preply_30352" page="">
+
+
+
+</div>
+
+
+<div id="post_rate_div_30352"></div>
+<div class="modact"><a href="http://www.lvleaf.com/misc.php?action=viewthreadmod&amp;tid=8960" title="主题操作记录" onclick="showWindow('viewthreadmod', this.href);return false;">本主题由 pluwen 于 2009-11-14 01:56 设置高亮</a></div><div class="useraction nrate">
+<a href="javascript:;" onclick="showDialog($('favoritewin').innerHTML, 'info', '收藏/关注')">收藏</a>
+<a href="javascript:;" id="share" onclick="showDialog($('sharewin').innerHTML, 'info', '分享')">分享</a>
+<div id="ajax_recommendlink">
+<div id="recommendv" onclick="switchrecommendv()" title="主题评价指数" style="display: none;">0</div>
+<ul id="recommendav" onclick="switchrecommendv()" title="主题评价指数" class="recommend_act s_clear">
+<li id="recommendv_add" title="顶的人数">0</li>
+<li id="recommendv_subtract" title="踩的人数">0</li>
+</ul>
+<ul class="recommend_act s_clear">
+<li><a id="recommend_add" href="http://www.lvleaf.com/logging.php?action=login" onclick="showWindow('login', this.href);return false;">顶</a></li>
+<li><a id="recommend_subtract" href="http://www.lvleaf.com/logging.php?action=login" onclick="showWindow('login', this.href);return false;">踩</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+</td></tr>
+<tr><td class="postcontent postbottom">
+<div class="signatures" style="max-height: 100px;">希望绿叶社区越办越好</div>
+<div id="ad_thread1_0"></div></td>
+</tr>
+<tr>
+<td class="postauthor"></td>
+<td class="postcontent">
+<div class="postactions">
+<div class="postact s_clear">
+<em>
+</em>
+<p>
+</p>
+</div>
+</div>
+
+</td>
+</tr>
+<tr class="threadad">
+<td class="postauthor"></td>
+<td class="adcontent">
+<div id="ad_interthread"></div></td>
+</tr>
+</tbody></table>
+<script type="text/javascript" reload="1">aimgcount[30352] = [4178,4179,4180,4181,4182,4183];attachimgshow(30352);</script>
+</div><div id="post_30382"><table id="pid30382" summary="pid30382" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="postauthor" rowspan="2">
+<div class="postinfo">
+<a target="_blank" href="http://www.lvleaf.com/space.php?uid=33584" style="margin-left: 20px; font-weight: 800;">♂小恶魔♂</a>
+</div>
+<div class="popupmenu_popup userinfopanel" id="userinfo30382" style="display: none; position: absolute; margin-top: -11px;">
+<div class="popavatar">
+<div id="userinfo30382_ma"></div>
+<ul class="profile_side">
+<li class="pm"><a href="http://www.lvleaf.com/pm.php?action=new&amp;uid=33584" onclick="hideMenu('userinfo30382');showWindow('sendpm', this.href);return false;" title="发短消息">发短消息</a></li>
+<li class="buddy"><a href="http://www.lvleaf.com/my.php?item=buddylist&amp;newbuddyid=33584&amp;buddysubmit=yes" target="_blank" id="ajax_buddy_1" title="加为好友" onclick="ajaxmenu(this, 3000);doane(event);">加为好友</a></li>
+</ul>
+</div>
+<div class="popuserinfo">
+<p>
+<a href="http://www.lvleaf.com/space-uid-33584.html" target="_blank">♂小恶魔♂</a>
+<em>当前离线
+</em>
+</p>
+
+<dl class="s_clear"><dt>UID</dt><dd>33584&nbsp;</dd><dt>帖子</dt><dd>2874&nbsp;</dd><dt>精华</dt><dd>0&nbsp;</dd><dt>积分</dt><dd>1517&nbsp;</dd><dt>叶子</dt><dd>7802 片&nbsp;</dd><dt>贡献</dt><dd>16 点&nbsp;</dd><dt>阅读权限</dt><dd>255&nbsp;</dd><dt>性别</dt><dd>男&nbsp;</dd><dt>在线时间</dt><dd>804 小时&nbsp;</dd><dt>注册时间</dt><dd>2009-4-11&nbsp;</dd><dt>最后登录</dt><dd>2009-12-18&nbsp;</dd></dl>
+<div class="imicons">
+<a href="http://www.lvleaf.com/space-uid-33584.html" target="_blank" title="查看详细资料"><img src="%E8%B7%B3%E5%A2%99_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+ <div>
+<div class="avatar" onmouseover="showauthor(this, 'userinfo30382')"><a href="http://www.lvleaf.com/space-uid-33584.html" target="_blank"><img src="%E8%B7%B3%E5%A2%99_files/84_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://www.lvleaf.com/uc_server/images/noavatar_middle.gif'"></a></div>
+<p><em><a href="http://www.lvleaf.com/faq.php?action=grouppermission&amp;searchgroupid=1" target="_blank"><font color="#00bb00">管理员</font></a></em></p>
+</div>
+<p><img src="%E8%B7%B3%E5%A2%99_files/star_level3.gif" alt="Rank: 15"><img src="%E8%B7%B3%E5%A2%99_files/star_level2.gif" alt="Rank: 15"><img src="%E8%B7%B3%E5%A2%99_files/star_level2.gif" alt="Rank: 15"></p>
+<dl class="profile s_clear"><dt>UID</dt><dd>33584&nbsp;</dd><dt>帖子</dt><dd>2874&nbsp;</dd><dt>叶子</dt><dd>7802 片&nbsp;</dd><dt>贡献</dt><dd>16 点&nbsp;</dd><dt>最后登录</dt><dd>2009-12-18&nbsp;</dd></dl></td>
+<td class="postcontent">
+<div class="postinfo">
+<strong><a title="复制本帖链接" id="postnum30382" href="javascript:;" onclick="setCopy('http://www.lvleaf.com/redirect.php?goto=findpost&amp;ptid=8960&amp;pid=30382', '帖子地址已经复制到剪贴板')">沙发</a>
+</strong>
+<div class="posterinfo">
+<div class="pagecontrol">
+</div>
+<div class="authorinfo">
+<img class="authicon" id="authicon30382" src="%E8%B7%B3%E5%A2%99_files/online_admin.gif" onclick="showauthor(this, 'userinfo30382')">
+<em id="authorposton30382">发表于 2009-11-14 22:09</em>
+ | <a href="http://www.lvleaf.com/viewthread.php?tid=8960&amp;page=1&amp;authorid=33584" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div>
+<div class="defaultpost">
+<div id="ad_thread2_1"></div><div class="ad_pip" id="ad_thread3_1"><script type="text/JavaScript"> 
+alimama_pid="mm_11992715_1507686_7363638"; 
+alimama_titlecolor="0000FF"; 
+alimama_descolor ="000000"; 
+alimama_bgcolor="FFFFFF"; 
+alimama_bordercolor="E6E6E6"; 
+alimama_linkcolor="008000"; 
+alimama_bottomcolor="FFFFFF"; 
+alimama_anglesize="0"; 
+alimama_bgpic="0"; 
+alimama_icon="0"; 
+alimama_sizecode="22"; 
+alimama_width=120; 
+alimama_height=240; 
+alimama_type=2; 
+</script> 
+<script src="%E8%B7%B3%E5%A2%99_files/inf.js" type="text/javascript"> 
+</script></div><div id="ad_thread4_1"></div>
+<div class="postmessage">
+<div class="t_msgfontfix">
+<table cellpadding="0" cellspacing="0"><tbody><tr><td class="t_msgfont" id="postmessage_30382">教程啊，不错，支持。<br>
+翻墙虽然有用，不过一般还是用不到。</td></tr></tbody></table>
+</div>
+
+
+<div id="dps_preply_30382" page="">
+
+
+
+</div>
+
+
+<div id="post_rate_div_30382"></div>
+</div>
+
+</div>
+</td></tr>
+<tr><td class="postcontent postbottom">
+<div id="ad_thread1_1"></div></td>
+</tr>
+<tr>
+<td class="postauthor"></td>
+<td class="postcontent">
+<div class="postactions">
+<div class="postact s_clear">
+<em>
+</em>
+<p>
+<a href="javascript:;" onclick="scrollTo(0,0);">TOP</a>
+</p>
+</div>
+</div>
+
+</td>
+</tr>
+<tr class="threadad">
+<td class="postauthor"></td>
+<td class="adcontent">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_30383"><table id="pid30383" summary="pid30383" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="postauthor" rowspan="2">
+<div class="postinfo">
+<a target="_blank" href="http://www.lvleaf.com/space.php?uid=42508" style="margin-left: 20px; font-weight: 800;">Hedwig</a>
+</div>
+<div class="popupmenu_popup userinfopanel" id="userinfo30383" style="display: none; position: absolute; margin-top: -11px;">
+<div class="popavatar">
+<div id="userinfo30383_ma"></div>
+<ul class="profile_side">
+<li class="pm"><a href="http://www.lvleaf.com/pm.php?action=new&amp;uid=42508" onclick="hideMenu('userinfo30383');showWindow('sendpm', this.href);return false;" title="发短消息">发短消息</a></li>
+<li class="buddy"><a href="http://www.lvleaf.com/my.php?item=buddylist&amp;newbuddyid=42508&amp;buddysubmit=yes" target="_blank" id="ajax_buddy_2" title="加为好友" onclick="ajaxmenu(this, 3000);doane(event);">加为好友</a></li>
+</ul>
+</div>
+<div class="popuserinfo">
+<p>
+<a href="http://www.lvleaf.com/space-uid-42508.html" target="_blank">Hedwig</a>
+<em>当前离线
+</em>
+</p>
+
+<dl class="s_clear"><dt>UID</dt><dd>42508&nbsp;</dd><dt>帖子</dt><dd>1&nbsp;</dd><dt>精华</dt><dd>0&nbsp;</dd><dt>积分</dt><dd>1&nbsp;</dd><dt>叶子</dt><dd>4 片&nbsp;</dd><dt>贡献</dt><dd>0 点&nbsp;</dd><dt>阅读权限</dt><dd>2&nbsp;</dd><dt>在线时间</dt><dd>0 小时&nbsp;</dd><dt>注册时间</dt><dd>2009-11-14&nbsp;</dd><dt>最后登录</dt><dd>2009-11-14&nbsp;</dd></dl>
+<div class="imicons">
+<a href="http://www.lvleaf.com/space-uid-42508.html" target="_blank" title="查看详细资料"><img src="%E8%B7%B3%E5%A2%99_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+ <div>
+<div class="avatar" onmouseover="showauthor(this, 'userinfo30383')"><a href="http://www.lvleaf.com/space-uid-42508.html" target="_blank"><img src="%E8%B7%B3%E5%A2%99_files/noavatar_middle.gif" onerror="this.onerror=null;this.src='http://www.lvleaf.com/uc_server/images/noavatar_middle.gif'"></a></div>
+<p><em><a href="http://www.lvleaf.com/faq.php?action=grouppermission&amp;searchgroupid=10" target="_blank">新手上路</a></em></p>
+</div>
+<p></p>
+<dl class="profile s_clear"><dt>UID</dt><dd>42508&nbsp;</dd><dt>帖子</dt><dd>1&nbsp;</dd><dt>叶子</dt><dd>4 片&nbsp;</dd><dt>贡献</dt><dd>0 点&nbsp;</dd><dt>最后登录</dt><dd>2009-11-14&nbsp;</dd></dl></td>
+<td class="postcontent">
+<div class="postinfo">
+<strong><a title="复制本帖链接" id="postnum30383" href="javascript:;" onclick="setCopy('http://www.lvleaf.com/redirect.php?goto=findpost&amp;ptid=8960&amp;pid=30383', '帖子地址已经复制到剪贴板')">藤椅</a>
+</strong>
+<div class="posterinfo">
+<div class="pagecontrol">
+</div>
+<div class="authorinfo">
+<img class="authicon" id="authicon30383" src="%E8%B7%B3%E5%A2%99_files/online_member.gif" onclick="showauthor(this, 'userinfo30383');">
+<em id="authorposton30383">发表于 2009-11-14 22:15</em>
+ | <a href="http://www.lvleaf.com/viewthread.php?tid=8960&amp;page=1&amp;authorid=42508" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div>
+<div class="defaultpost">
+<div id="ad_thread2_2"></div><div class="ad_pip" id="ad_thread3_2"><script type="text/JavaScript"> 
+alimama_pid="mm_11992715_1507686_7363638"; 
+alimama_titlecolor="0000FF"; 
+alimama_descolor ="000000"; 
+alimama_bgcolor="FFFFFF"; 
+alimama_bordercolor="E6E6E6"; 
+alimama_linkcolor="008000"; 
+alimama_bottomcolor="FFFFFF"; 
+alimama_anglesize="0"; 
+alimama_bgpic="0"; 
+alimama_icon="0"; 
+alimama_sizecode="22"; 
+alimama_width=120; 
+alimama_height=240; 
+alimama_type=2; 
+</script> 
+<script src="%E8%B7%B3%E5%A2%99_files/inf.js" type="text/javascript"> 
+</script></div><div id="ad_thread4_2"></div>
+<div class="postmessage">
+<div class="t_msgfontfix">
+<table cellpadding="0" cellspacing="0"><tbody><tr><td class="t_msgfont" id="postmessage_30383">测试 fetchserver 時總500 Server Error</td></tr></tbody></table>
+</div>
+
+
+<div id="dps_preply_30383" page="1">
+
+
+<div class="dps_preply_title"><div>帖内回复</div></div>
+<div id="dps_preply_30383_node" class="dps_preply_items">
+<table cellpadding="0" cellspacing="0"><tbody><tr><td class="preply">
+<div class="info">
+<div class="left avatar"><img src="%E8%B7%B3%E5%A2%99_files/02_avatar_small.jpg" onerror="this.onerror=null;this.src='http://www.lvleaf.com/uc_server/images/noavatar_small.gif'"></div>
+<div class="left data"><a href="http://www.lvleaf.com/space-uid-2.html" target="_blank" class="lightlink">pluwen</a> 在 2009-11-15 16:22 说:</div>
+<div class="right">
+
+</div>
+</div>
+<div class="message">可以下载最新的文件版本<br>
+再试试</div>
+</td></tr></tbody></table>
+
+</div>
+
+
+</div>
+
+
+<div id="post_rate_div_30383"></div>
+</div>
+
+</div>
+</td></tr>
+<tr><td class="postcontent postbottom">
+<div id="ad_thread1_2"></div></td>
+</tr>
+<tr>
+<td class="postauthor"></td>
+<td class="postcontent">
+<div class="postactions">
+<div class="postact s_clear">
+<em>
+</em>
+<p>
+<a href="javascript:;" onclick="scrollTo(0,0);">TOP</a>
+</p>
+</div>
+</div>
+
+</td>
+</tr>
+<tr class="threadad">
+<td class="postauthor"></td>
+<td class="adcontent">
+</td>
+</tr>
+</tbody></table>
+</div><div id="post_31046"><table id="pid31046" summary="pid31046" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="postauthor" rowspan="2">
+<div class="postinfo">
+<a target="_blank" href="http://www.lvleaf.com/space.php?uid=40912" style="margin-left: 20px; font-weight: 800;">光彩盛年.L2</a>
+</div>
+<div class="popupmenu_popup userinfopanel" id="userinfo31046" style="display: none; position: absolute; margin-top: -11px;">
+<div class="popavatar">
+<div id="userinfo31046_ma"></div>
+<ul class="profile_side">
+<li class="pm"><a href="http://www.lvleaf.com/pm.php?action=new&amp;uid=40912" onclick="hideMenu('userinfo31046');showWindow('sendpm', this.href);return false;" title="发短消息">发短消息</a></li>
+<li class="buddy"><a href="http://www.lvleaf.com/my.php?item=buddylist&amp;newbuddyid=40912&amp;buddysubmit=yes" target="_blank" id="ajax_buddy_3" title="加为好友" onclick="ajaxmenu(this, 3000);doane(event);">加为好友</a></li>
+</ul>
+</div>
+<div class="popuserinfo">
+<p>
+<a href="http://www.lvleaf.com/space-uid-40912.html" target="_blank">光彩盛年.L2</a>
+<em>当前离线
+</em>
+</p>
+
+<dl class="s_clear"><dt>UID</dt><dd>40912&nbsp;</dd><dt>帖子</dt><dd>1&nbsp;</dd><dt>精华</dt><dd>0&nbsp;</dd><dt>积分</dt><dd>1&nbsp;</dd><dt>叶子</dt><dd>4 片&nbsp;</dd><dt>贡献</dt><dd>0 点&nbsp;</dd><dt>阅读权限</dt><dd>2&nbsp;</dd><dt>在线时间</dt><dd>0 小时&nbsp;</dd><dt>注册时间</dt><dd>2009-9-28&nbsp;</dd><dt>最后登录</dt><dd>2009-12-2&nbsp;</dd></dl>
+<div class="imicons">
+<a href="http://www.lvleaf.com/space-uid-40912.html" target="_blank" title="查看详细资料"><img src="%E8%B7%B3%E5%A2%99_files/userinfo.gif" alt="查看详细资料"></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+ <a name="lastpost"></a><div>
+<div class="avatar" onmouseover="showauthor(this, 'userinfo31046')"><a href="http://www.lvleaf.com/space-uid-40912.html" target="_blank"><img src="%E8%B7%B3%E5%A2%99_files/noavatar_middle.gif" onerror="this.onerror=null;this.src='http://www.lvleaf.com/uc_server/images/noavatar_middle.gif'"></a></div>
+<p><em><a href="http://www.lvleaf.com/faq.php?action=grouppermission&amp;searchgroupid=10" target="_blank">新手上路</a></em></p>
+</div>
+<p></p>
+<dl class="profile s_clear"><dt>UID</dt><dd>40912&nbsp;</dd><dt>帖子</dt><dd>1&nbsp;</dd><dt>叶子</dt><dd>4 片&nbsp;</dd><dt>贡献</dt><dd>0 点&nbsp;</dd><dt>最后登录</dt><dd>2009-12-2&nbsp;</dd></dl></td>
+<td class="postcontent">
+<div class="postinfo">
+<strong><a title="复制本帖链接" id="postnum31046" href="javascript:;" onclick="setCopy('http://www.lvleaf.com/redirect.php?goto=findpost&amp;ptid=8960&amp;pid=31046', '帖子地址已经复制到剪贴板')">板凳</a>
+</strong>
+<div class="posterinfo">
+<div class="pagecontrol">
+</div>
+<div class="authorinfo">
+<img class="authicon" id="authicon31046" src="%E8%B7%B3%E5%A2%99_files/online_member.gif" onclick="showauthor(this, 'userinfo31046');">
+<em id="authorposton31046">发表于 2009-12-2 20:11</em>
+ | <a href="http://www.lvleaf.com/viewthread.php?tid=8960&amp;page=1&amp;authorid=40912" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div>
+<div class="defaultpost">
+<div id="ad_thread2_3"></div><div class="ad_pip" id="ad_thread3_3"><script type="text/JavaScript"> 
+alimama_pid="mm_11992715_1507686_7363638"; 
+alimama_titlecolor="0000FF"; 
+alimama_descolor ="000000"; 
+alimama_bgcolor="FFFFFF"; 
+alimama_bordercolor="E6E6E6"; 
+alimama_linkcolor="008000"; 
+alimama_bottomcolor="FFFFFF"; 
+alimama_anglesize="0"; 
+alimama_bgpic="0"; 
+alimama_icon="0"; 
+alimama_sizecode="22"; 
+alimama_width=120; 
+alimama_height=240; 
+alimama_type=2; 
+</script> 
+<script src="%E8%B7%B3%E5%A2%99_files/inf.js" type="text/javascript"> 
+</script></div><div id="ad_thread4_3"></div>
+<div class="postmessage">
+<div class="t_msgfontfix">
+<table cellpadding="0" cellspacing="0"><tbody><tr><td class="t_msgfont" id="postmessage_31046">NN的 找的就是它</td></tr></tbody></table>
+</div>
+
+
+<div id="dps_preply_31046" page="1">
+
+
+<div class="dps_preply_title"><div>帖内回复</div></div>
+<div id="dps_preply_31046_node" class="dps_preply_items">
+<table cellpadding="0" cellspacing="0"><tbody><tr><td class="preply">
+<div class="info">
+<div class="left avatar"><img src="%E8%B7%B3%E5%A2%99_files/21_avatar_small.jpg" onerror="this.onerror=null;this.src='http://www.lvleaf.com/uc_server/images/noavatar_small.gif'"></div>
+<div class="left data"><a href="http://www.lvleaf.com/space-uid-21.html" target="_blank" class="lightlink">windson</a> 在 2009-12-2 21:24 说:</div>
+<div class="right">
+
+</div>
+</div>
+<div class="message">被你找对了。。</div>
+</td></tr></tbody></table>
+
+</div>
+
+
+</div>
+
+
+<div id="post_rate_div_31046"></div>
+</div>
+
+</div>
+</td></tr>
+<tr><td class="postcontent postbottom">
+<div id="ad_thread1_3"></div></td>
+</tr>
+<tr>
+<td class="postauthor"></td>
+<td class="postcontent">
+<div class="postactions">
+<div class="postact s_clear">
+<em>
+</em>
+<p>
+<a href="javascript:;" onclick="scrollTo(0,0);">TOP</a>
+</p>
+</div>
+</div>
+
+</td>
+</tr>
+<tr class="threadad">
+<td class="postauthor"></td>
+<td class="adcontent">
+</td>
+</tr>
+</tbody></table>
+</div></div>
+
+<div id="postlistreply" class="mainbox viewthread"><div id="post_new" class="viewthread_table" style="display: none;"></div></div>
+
+<form method="post" name="modactions" id="modactions">
+<input name="formhash" value="62aefed5" type="hidden">
+<input name="optgroup" type="hidden">
+<input name="operation" type="hidden">
+<input name="listextra" value="" type="hidden">
+</form>
+
+<script type="text/javascript">var tagarray = ['新手','Windows','Beta','下载','新人','Build','软件','记录','中文版','官方','浏览器','工具','Chrome','Final','Google','Vista','拼音','搜狗','输入法','简体中文','迅雷','测试版','影音','mp3','Linux','系统','论坛','FireFox','简体','驱动','Opera','经典','功能','Ubuntu','Mac','中文','微软','体验','绿色','文件','预览','电脑','语言','中国','网络','皮肤','Microsoft','游戏','快车','破解','Adobe','Mozilla','主题','男人','女人','Alpha','谷歌','绿叶','世界之窗','Server','Office','WinRAR','字幕','视频','Security','WordPress','解决','Internet','uTorrent','音乐','精灵','Live','火箭','社区','周杰伦','北京','amp','推荐','鼠标','NVIDIA','pack','搞笑','Player','百度','Nginx','字体','eMule','TheWorld','手机','壁纸','女生','电驴','美国','烈火','广告','FlashGet','BitComet','Dev','Leopard','DVD'];var tagencarray = ['%D0%C2%CA%D6','Windows','Beta','%CF%C2%D4%D8','%D0%C2%C8%CB','Build','%C8%ED%BC%FE','%BC%C7%C2%BC','%D6%D0%CE%C4%B0%E6','%B9%D9%B7%BD','%E4%AF%C0%C0%C6%F7','%B9%A4%BE%DF','Chrome','Final','Google','Vista','%C6%B4%D2%F4','%CB%D1%B9%B7','%CA%E4%C8%EB%B7%A8','%BC%F2%CC%E5%D6%D0%CE%C4','%D1%B8%C0%D7','%B2%E2%CA%D4%B0%E6','%D3%B0%D2%F4','mp3','Linux','%CF%B5%CD%B3','%C2%DB%CC%B3','FireFox','%BC%F2%CC%E5','%C7%FD%B6%AF','Opera','%BE%AD%B5%E4','%B9%A6%C4%DC','Ubuntu','Mac','%D6%D0%CE%C4','%CE%A2%C8%ED','%CC%E5%D1%E9','%C2%CC%C9%AB','%CE%C4%BC%FE','%D4%A4%C0%C0','%B5%E7%C4%D4','%D3%EF%D1%D4','%D6%D0%B9%FA','%CD%F8%C2%E7','%C6%A4%B7%F4','Microsoft','%D3%CE%CF%B7','%BF%EC%B3%B5','%C6%C6%BD%E2','Adobe','Mozilla','%D6%F7%CC%E2','%C4%D0%C8%CB','%C5%AE%C8%CB','Alpha','%B9%C8%B8%E8','%C2%CC%D2%B6','%CA%C0%BD%E7%D6%AE%B4%B0','Server','Office','WinRAR','%D7%D6%C4%BB','%CA%D3%C6%B5','Security','WordPress','%BD%E2%BE%F6','Internet','uTorrent','%D2%F4%C0%D6','%BE%AB%C1%E9','Live','%BB%F0%BC%FD','%C9%E7%C7%F8','%D6%DC%BD%DC%C2%D7','%B1%B1%BE%A9','amp','%CD%C6%BC%F6','%CA%F3%B1%EA','NVIDIA','pack','%B8%E3%D0%A6','Player','%B0%D9%B6%C8','Nginx','%D7%D6%CC%E5','eMule','TheWorld','%CA%D6%BB%FA','%B1%DA%D6%BD','%C5%AE%C9%FA','%B5%E7%C2%BF','%C3%C0%B9%FA','%C1%D2%BB%F0','%B9%E3%B8%E6','FlashGet','BitComet','Dev','Leopard','DVD'];parsetag(30352);</script>
+<div class="forumcontrol s_clear">
+<table class="narrow" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td class="modaction">
+</td>
+<td>
+<span class="pageback"><a href="http://www.lvleaf.com/forum-256-1.html">返回列表</a></span>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+
+<div class="popupmenu_popup" id="fjump_menu" style="display: none;">
+<dl><dt><a href="http://www.lvleaf.com/index.php?gid=241">绿叶 - 操作系统</a></dt><dd><ul><li><a href="http://www.lvleaf.com/forum-239-1.html">『Windows 7 专区』</a></li><li><a href="http://www.lvleaf.com/forum-7-1.html">『Windows Vista 专区』</a></li><li><a href="http://www.lvleaf.com/forum-235-1.html">『Windows 2008 专区』</a></li><li><a href="http://www.lvleaf.com/forum-242-1.html">『Windows XP 专区』</a></li><li><a href="http://www.lvleaf.com/forum-88-1.html">『Mac OS X 专区』</a></li><li><a href="http://www.lvleaf.com/forum-89-1.html">『Linux 专区』</a></li></ul></dd></dl><dl><dt><a href="http://www.lvleaf.com/index.php?gid=258">绿叶 - 软件专区</a></dt><dd><ul><li><a href="http://www.lvleaf.com/forum-8-1.html">『软件更新』</a></li><li><a href="http://www.lvleaf.com/forum-73-1.html">『资源分享』</a></li><li><a href="http://www.lvleaf.com/forum-257-1.html">『精简软件分享』</a></li><li><a href="http://www.lvleaf.com/forum-252-1.html">『绿叶工作室』</a></li><li><a href="http://www.lvleaf.com/forum-259-1.html">『Chorme 专区』</a></li></ul></dd></dl><dl><dt><a href="http://www.lvleaf.com/index.php?gid=3">绿叶 - 技术交流</a></dt><dd><ul><li><a href="http://www.lvleaf.com/forum-240-1.html">『硬件专区』</a></li><li><a href="http://www.lvleaf.com/forum-12-1.html">『系统安全』</a></li><li><a href="http://www.lvleaf.com/forum-13-1.html">『美化专区』</a></li><li class="current"><a href="http://www.lvleaf.com/forum-256-1.html">『技巧教程』</a></li><li><a href="http://www.lvleaf.com/forum-254-1.html">『求助专区』</a></li><li class="sub"><a href="http://www.lvleaf.com/forum-255-1.html">『求助存档』</a></li></ul></dd></dl><dl><dt><a href="http://www.lvleaf.com/index.php?gid=17">绿叶 - 休闲娱乐</a></dt><dd><ul><li><a href="http://www.lvleaf.com/forum-18-1.html">『绿叶水吧』</a></li><li><a href="http://www.lvleaf.com/forum-248-1.html">『音乐无限』</a></li><li><a href="http://www.lvleaf.com/forum-21-1.html">『视频分享』</a></li><li><a href="http://www.lvleaf.com/forum-24-1.html">『游戏世界』</a></li></ul></dd></dl><dl><dt><a href="http://www.lvleaf.com/index.php?gid=1">绿叶 - 社区事务</a></dt><dd><ul><li><a href="http://www.lvleaf.com/forum-221-1.html">『新手报到』</a></li><li><a href="http://www.lvleaf.com/forum-6-1.html">『社区公告』</a></li><li><a href="http://www.lvleaf.com/forum-243-1.html">『意见建议』</a></li></ul></dd></dl></div>
+
+<div id="favoritewin" style="display: none;">
+<h5>
+<a href="javascript:;" onclick="ajaxget('my.php?item=favorites&amp;tid=8960', 'favorite_msg');return false;" class="lightlink">[收藏此主题]</a>&nbsp;
+<a href="javascript:;" onclick="ajaxget('my.php?item=attention&amp;action=add&amp;tid=8960', 'favorite_msg');return false;" class="lightlink">[关注此主题的新回复]</a>
+</h5>
+<span id="favorite_msg"></span>
+</div>
+
+<div id="sharewin" style="display: none;">
+<h5>
+<a href="javascript:;" onclick="setCopy('用谷歌服务器翻墙-GAppProxy代理安装使用详细教程\nhttp://www.lvleaf.com/viewthread.php?tid=8960', '帖子地址已经复制到剪贴板<br />您可以用快捷键 Ctrl + V 粘贴到 QQ、MSN 里。')" class="lightlink">[通过 QQ、MSN 分享给朋友]</a><br><br>
+</h5>
+</div>
+
+</div><div class="ad_footerbanner" id="ad_footerbanner1"></div><div class="ad_footerbanner" id="ad_footerbanner2"><script type="text/JavaScript"> 
+alimama_pid="mm_11992715_1507686_4966252"; 
+alimama_titlecolor="0000FF"; 
+alimama_descolor ="000000"; 
+alimama_bgcolor="FFFFFF"; 
+alimama_bordercolor="E6E6E6"; 
+alimama_linkcolor="008000"; 
+alimama_bottomcolor="FFFFFF"; 
+alimama_anglesize="0"; 
+alimama_bgpic="0"; 
+alimama_icon="0"; 
+alimama_sizecode="15"; 
+alimama_width=950; 
+alimama_height=90; 
+alimama_type=2; 
+</script> 
+<script src="%E8%B7%B3%E5%A2%99_files/inf.js" type="text/javascript"> 
+</script><img src="%E8%B7%B3%E5%A2%99_files/alimamal.html" name="alimamatmpf0.10548873582380314" id="alimamatmpf0.10548873582380314" style="border: 0px none ; margin: 0px; padding: 0px; width: 0px; height: 0px; vertical-align: baseline;" border="0"><iframe name="alimamaf0.10548873582380314" id="alimamaf0.10548873582380314" border="0" marginwidth="0" marginheight="0" style="width: 950px; height: 90px;" src="%E8%B7%B3%E5%A2%99_files/alimama_002.html" scrolling="no" frameborder="0"></iframe></div>
+<div id="footer">
+<div class="wrap s_clear">
+<div id="footlink">
+<p>
+<strong><a href="http://www.lvleaf.com/" target="_blank">LvLeaF Studio.</a></strong>
+( <a href="http://www.miibeian.gov.cn/" target="_blank">苏ICP备08112334号</a>)<span class="pipe">|</span><a href="mailto:pluwen@lvleaf.com">联系我们</a>
+<span class="pipe">|</span><a href="http://www.lvleaf.com/archiver/" target="_blank">Archiver</a><span class="pipe">|</span><a href="http://www.lvleaf.com/wap/" target="_blank">WAP</a><span class="pipe">| <script>document.title=document.title.substring(0,document.title.search("Powered by Discuz!")-3)</script>
+
+<script src="%E8%B7%B3%E5%A2%99_files/stat.html" language="JavaScript" charset="gb2312"></script><a href="http://www.cnzz.com/stat/website.php?web_id=1478148" target="_blank" title="站长统计">站长统计</a><img src="%E8%B7%B3%E5%A2%99_files/stat.htm" border="0" width="0" height="0">
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="%E8%B7%B3%E5%A2%99_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7485740-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+| <a href="http://www.lvleaf.com/sitemap_index.xml">谷歌</a>
+| <a href="http://www.lvleaf.com/sitemap_baidu.xml">百度</a></span></p>
+<p class="smalltext">
+GMT+8, 2009-12-18 20:31, <span id="debuginfo">Processed in 0.080042 second(s), 6 queries</span>.
+</p>
+</div>
+<div id="rightinfo">
+<p>Powered by <strong><a href="http://www.discuz.net/" target="_blank">Discuz!</a></strong> <em>7.2</em></p>
+<p class="smalltext">&#169; 2001-2009 <a href="http://www.comsenz.com/" target="_blank">Comsenz Inc.</a></p>
+</div></div>
+</div>
+</body></html>

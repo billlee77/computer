@@ -1,0 +1,401 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index,nofollow">
+
+<title>FilePermissions - Community Ubuntu Documentation</title>
+<script type="text/javascript" src="FilePermissions_files/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="FilePermissions_files/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="FilePermissions_files/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="FilePermissions_files/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="FilePermissions_files/projection.css">
+
+<!-- css only for MSIE browsers -->
+<!--[if IE]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/htdocs/ubuntunew/css/msie.css">
+<![endif]-->
+
+
+
+<link rel="Start" href="https://help.ubuntu.com/community/UserDocumentation">
+<link rel="Alternate" title="Wiki Markup" href="https://help.ubuntu.com/community/FilePermissions?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="https://help.ubuntu.com/community/FilePermissions?action=print">
+<link rel="Search" href="https://help.ubuntu.com/community/FindPage">
+<link rel="Index" href="https://help.ubuntu.com/community/TitleIndex">
+<link rel="Glossary" href="https://help.ubuntu.com/community/WordIndex">
+<link rel="Help" href="https://help.ubuntu.com/community/HelpOnFormatting">
+</head><body dir="ltr" lang="en">
+
+<div id="round" class="roundme">
+<img id="topcap" alt="" src="FilePermissions_files/cap-top.png">
+<div id="layout" class="container clear-block">
+<div id="header">
+<div id="logo-floater">
+<h1><a href="http://help.ubuntu.com/" title="Ubuntu Documentation"><img alt="Ubuntu" id="logo" src="FilePermissions_files/logo.png"></a></h1>
+</div>
+
+<noscript>
+ <form action="http://www.google.com/cse" id="cse-search-box">
+   <div>
+     <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />
+     <input type="hidden" name="ie" value="UTF-8" />
+     <input type="text" name="q" size="27" />
+     <input type="submit" name="sa" value="Search" />
+   </div>
+ </form>
+</noscript>
+
+<script>
+ document.write('<form action="https://help.ubuntu.com/search.html" id="cse-search-box">');
+ document.write('  <div>');
+ document.write('    <input type="hidden" name="cof" value="FORID:9" />');
+ document.write('    <input type="hidden" name="cx" value="004599128559784038176:vj_p0xo-nng" />');
+ document.write('    <input type="hidden" name="ie" value="UTF-8" />');
+ document.write('    <input type="text" name="q" size="27" />');
+ document.write('    <input type="submit" name="sa" value="Search" />');
+ document.write('  </div>');
+ document.write('</form>');
+</script><form action="https://help.ubuntu.com/search.html" id="cse-search-box">  <div>    <input name="cof" value="FORID:9" type="hidden">    <input name="cx" value="004599128559784038176:vj_p0xo-nng" type="hidden">    <input name="ie" value="UTF-8" type="hidden">    <input name="q" size="27" type="text">    <input name="sa" value="Search" type="submit">  </div></form>
+
+<div id="sitename"><a href="https://help.ubuntu.com/community"><img src="FilePermissions_files/help-faq.png"><span>Community Documentation</span></a></div>
+</div> <!--header-->
+<ul id="loginbar"><li><a href="https://help.ubuntu.com/community/FilePermissions?action=login" id="login" rel="nofollow">Login to Edit</a></li></ul>
+
+
+<!--1-->
+<div id="page" dir="ltr" lang="en">
+
+<!--2-->
+
+<div id="breadcrumbs">
+<a href="https://help.ubuntu.com/">Ubuntu Documentation</a> &gt; <a href="https://help.ubuntu.com/community">Community Documentation</a> &gt; <a class="backlink" href="https://help.ubuntu.com/community/FilePermissions?action=fullsearch&amp;context=180&amp;value=linkto%3A%22FilePermissions%22" rel="nofollow" title="Click to do a full-text search for this title">FilePermissions</a>
+</div>
+
+
+<ul id="pagelocation">
+<li><a class="backlink" href="https://help.ubuntu.com/community/FilePermissions?action=fullsearch&amp;context=180&amp;value=linkto%3A%22FilePermissions%22" rel="nofollow" title="Click to do a full-text search for this title">FilePermissions</a></li>
+</ul>
+
+<!--3--><div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-3"></span><div><table style="margin: 0pt 0pt 1em 1em; background: rgb(241, 241, 237) none repeat scroll 0% 0%; float: right; font-size: 0.9em; width: 40%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"><tbody><tr>  <td style="padding: 0.5em;"><p class="line891"></p><div class="table-of-contents"><p class="table-of-contents-heading">Contents</p><ol><li><a href="#Understanding%20and%20Using%20File%20Permissions">Understanding and Using File Permissions</a></li><li><a href="#Permissions%20in%20Action">Permissions in Action</a></li><li><a href="#Changing%20Permissions">Changing Permissions</a><ol><li><a href="#chmod%20with%20Letters">chmod with Letters</a></li><li><a href="#chmod%20with%20Numbers">chmod with Numbers</a></li><li><a href="#chmod%20with%20sudo">chmod with sudo</a></li></ol></li><li><a href="#Recursive%20Permission%20Changes">Recursive Permission Changes</a><ol><li><a href="#Recursive%20chmod%20with%20-R%20and%20sudo">Recursive chmod with -R and sudo</a></li><li><a href="#Recursive%20chmod%20using%20find,%20pipemill,%20and%20sudo">Recursive chmod using find, pipemill, and sudo</a></li></ol></li><li><a href="#Warning%20with%20Recursive%20chmod">Warning with Recursive chmod</a></li><li><a href="#Changing%20the%20File%20Owner%20and%20Group">Changing the File Owner and Group</a></li><li><a href="#Changing%20Permissions%20For%20Volumes%20With%20umask">Changing Permissions For Volumes With umask</a></li><li><a href="#ACLs">ACLs</a></li><li><a href="#File%20removal">File removal</a></li><li><a href="#Sticky%20Bit">Sticky Bit</a></li><li><a href="#See%20also">See also</a></li><li><a href="#ToDo">ToDo</a></li></ol></div></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><span class="anchor" id="line-6"></span><p class="line867">
+</p><h2 id="Understanding and Using File Permissions">Understanding and Using File Permissions</h2>
+<span class="anchor" id="line-7"></span><span class="anchor" id="line-8"></span><p class="line874">In
+Linux and Unix, everything is a file. Directories are files, files are
+files and devices are files. Devices are usually referred to as a node;
+however, they are still files. All of the files on a system have
+permissions that allow or prevent others from viewing, modifying or
+executing. If the file is of type Directory then it restricts different
+actions than files and device nodes. The super user "root" has the
+ability to access any file on the system. Each file has access
+restrictions with permissions, user restrictions with owner/group
+association. Permissions are referred to as bits. <span class="anchor" id="line-9"></span><span class="anchor" id="line-10"></span></p><p class="line862">To change or edit files that are owned by root, <strong>sudo</strong> must be used - please see <a href="https://help.ubuntu.com/community/RootSudo">RootSudo</a> for details. <span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span></p><p class="line862">If the owner read &amp; execute bit are on, then the permissions are: <span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span></p><pre>-r-x------</pre><span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span><p class="line874">There are three types of access restrictions: <span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span></p><div><table><tbody><tr>  <td><p class="line862"> <strong>Permission</strong></p></td>
+  <td><p class="line862"> <strong>Action</strong></p></td>
+  <td><p class="line862"> <strong>chmod option</strong></p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-20"></span><p class="line862"> read</p></td>
+  <td><p class="line862">       (view)  </p></td>
+  <td><p class="line862">r or 4</p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-21"></span><p class="line862"> write</p></td>
+  <td><p class="line862">      (edit)  </p></td>
+  <td><p class="line862">w or 2</p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-22"></span><p class="line862"> execute</p></td>
+  <td><p class="line862">    (execute)       </p></td>
+  <td><p class="line862">x or 1</p></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-23"></span><span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><p class="line874">There are also three types of user restrictions: <span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span></p><div><table><tbody><tr>  <td><p class="line862"> <strong>User</strong></p></td>
+  <td><p class="line862"> <strong><em>ls</em> output</strong></p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-28"></span><p class="line862"> owner</p></td>
+  <td><p class="line891"><tt>-rwx------</tt></p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-29"></span><p class="line862"> group</p></td>
+  <td><p class="line891"><tt>----rwx---</tt></p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-30"></span><p class="line862"> other</p></td>
+  <td><p class="line891"><tt>-------rwx</tt></p></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span><p class="line874">Directories have directory permissions. The directory permissions restrict different actions than with files or device nodes. <span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span></p><div><table><tbody><tr>  <td><p class="line862"> <strong>Permission</strong></p></td>
+  <td><p class="line862"> <strong>Action</strong></p></td>
+  <td><p class="line862"> <strong>chmod option</strong></p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-36"></span><p class="line862"> read</p></td>
+  <td><p class="line862">       (view contents, i.e. ls command)        </p></td>
+  <td><p class="line862">r or 4</p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-37"></span><p class="line862"> write</p></td>
+  <td><p class="line862">      (create or remove files from dir)       </p></td>
+  <td><p class="line862">w or 2</p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-38"></span><p class="line862"> execute</p></td>
+  <td><p class="line862">    (cd into directory)     </p></td>
+  <td><p class="line862">x or 1</p></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-39"></span><span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span><ul><li><p class="line862">read restricts or allows viewing the directories contents, i.e. <em>ls</em> command <span class="anchor" id="line-42"></span></p></li><li><p class="line862">write restricts or allows creating new files or deleting files in the directory. (Caution: <strong>write
+access for a directory allows deleting of files in the directory even
+if the user does not have write permissions for the file!</strong>) <span class="anchor" id="line-43"></span></p></li><li><p class="line862">execute restricts or allows changing into the directory, i.e. <em>cd</em> command <span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span><span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span></p></li></ul><p class="line867">
+</p><h2 id="Permissions in Action">Permissions in Action</h2>
+<span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><p class="line867"><span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span><span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span></p><pre>user@host:/home/user$ ls -l /etc/hosts
+-rw-r--r--  1 root root 288 2005-11-13 19:24 /etc/hosts
+user@host:/home/user$</pre><span class="anchor" id="line-54"></span><span class="anchor" id="line-55"></span><p class="line874">Using the example above we have the file "/etc/hosts" which is owned by the user root and belongs to the root group. <span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span></p><p class="line874">What are the permissions from the above /etc/hosts ls output? <span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span></p><p class="line867"><span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span><span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span></p><pre>-rw-r--r--
+
+owner = Read &amp; Write (rw-)
+group = Read (r--)
+other = Read (r--)</pre><span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span><span class="anchor" id="line-68"></span><p class="line867">
+</p><h2 id="Changing Permissions">Changing Permissions</h2>
+<span class="anchor" id="line-69"></span><span class="anchor" id="line-70"></span><p class="line874">The
+command to use when modifying permissions is chmod. There are two ways
+to modify permissions, with numbers or with letters. Using letters is
+easier to understand for most people. When modifying permissions be
+careful not to create security problems. Some files are configured to
+have very restrictive permissions to prevent unauthorized access. For
+example, the /etc/shadow file (file that stores all local user
+passwords) does not have permissions for regular users to read or
+otherwise access. <span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span></p><p class="line867"><span class="anchor" id="line-73"></span><span class="anchor" id="line-74"></span><span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><span class="anchor" id="line-82"></span><span class="anchor" id="line-83"></span><span class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span></p><pre>user@host:/home/user# ls -l /etc/shadow
+-rw-r-----  1 root shadow 869 2005-11-08 13:16 /etc/shadow
+user@host:/home/user#
+
+Permissions:
+owner = Read &amp; Write (rw-)
+group = Read (r--)
+other = None (---)
+
+Ownership:
+owner = root
+group = shadow</pre><span class="anchor" id="line-86"></span><span class="anchor" id="line-87"></span><span class="anchor" id="line-88"></span><p class="line867">
+</p><h3 id="chmod with Letters">chmod with Letters</h3>
+<span class="anchor" id="line-89"></span><span class="anchor" id="line-90"></span><p class="line867"><span class="anchor" id="line-91"></span><span class="anchor" id="line-92"></span></p><pre>Usage: chmod {options} filename</pre><span class="anchor" id="line-93"></span><span class="anchor" id="line-94"></span><div><table><tbody><tr>  <td><p class="line862"> <strong>Options</strong></p></td>
+  <td><p class="line862"> <strong>Definition</strong></p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-95"></span><p class="line862"> u </p></td>
+  <td><p class="line862"> owner </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-96"></span><p class="line862"> g </p></td>
+  <td><p class="line862"> group </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-97"></span><p class="line862"> o </p></td>
+  <td><p class="line862"> other </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-98"></span><p class="line862"> x </p></td>
+  <td><p class="line862"> execute </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-99"></span><p class="line862"> w </p></td>
+  <td><p class="line862"> write </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-100"></span><p class="line862"> r </p></td>
+  <td><p class="line862"> read </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-101"></span><p class="line862"> + </p></td>
+  <td><p class="line862"> add permission </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-102"></span><p class="line862"> - </p></td>
+  <td><p class="line862"> remove permission </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-103"></span><p class="line862"> = </p></td>
+  <td><p class="line862"> set permission </p></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-104"></span><span class="anchor" id="line-105"></span><p class="line874">Here are a few examples of chmod usage with letters (try these out on your system). <span class="anchor" id="line-106"></span><span class="anchor" id="line-107"></span></p><p class="line874">First create some empty files: <span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span><span class="anchor" id="line-110"></span><span class="anchor" id="line-111"></span><span class="anchor" id="line-112"></span><span class="anchor" id="line-113"></span><span class="anchor" id="line-114"></span><span class="anchor" id="line-115"></span><span class="anchor" id="line-116"></span></p><pre>user@host:/home/user$ touch file1 file2 file3 file4
+user@host:/home/user$ ls -l
+total 0
+-rw-r--r--  1 user user 0 Nov 19 20:13 file1
+-rw-r--r--  1 user user 0 Nov 19 20:13 file2
+-rw-r--r--  1 user user 0 Nov 19 20:13 file3
+-rw-r--r--  1 user user 0 Nov 19 20:13 file4</pre><span class="anchor" id="line-117"></span><p class="line874">Add owner execute bit: <span class="anchor" id="line-118"></span><span class="anchor" id="line-119"></span><span class="anchor" id="line-120"></span><span class="anchor" id="line-121"></span><span class="anchor" id="line-122"></span></p><pre>user@host:/home/user$ chmod u+x file1
+user@host:/home/user$ ls -l file1
+-rwxr--r--  1 user user 0 Nov 19 20:13 file1</pre><span class="anchor" id="line-123"></span><p class="line862">Add other write &amp; execute bit: <span class="anchor" id="line-124"></span><span class="anchor" id="line-125"></span><span class="anchor" id="line-126"></span><span class="anchor" id="line-127"></span><span class="anchor" id="line-128"></span></p><pre>user@host:/home/user$ chmod o+wx file2
+user@host:/home/user$ ls -l file2
+-rw-r--rwx  1 user user 0 Nov 19 20:13 file2</pre><span class="anchor" id="line-129"></span><p class="line874">Remove group read bit: <span class="anchor" id="line-130"></span><span class="anchor" id="line-131"></span><span class="anchor" id="line-132"></span><span class="anchor" id="line-133"></span><span class="anchor" id="line-134"></span></p><pre>user@host:/home/user$ chmod g-r file3
+user@host:/home/user$ ls -l file3
+-rw----r--  1 user user 0 Nov 19 20:13 file3</pre><span class="anchor" id="line-135"></span><p class="line874">Add read, write and execute to everyone: <span class="anchor" id="line-136"></span><span class="anchor" id="line-137"></span><span class="anchor" id="line-138"></span><span class="anchor" id="line-139"></span><span class="anchor" id="line-140"></span><span class="anchor" id="line-141"></span></p><pre>user@host:/home/user$ chmod ugo+rwx file4
+user@host:/home/user$ ls -l file4
+-rwxrwxrwx  1 user user 0 Nov 19 20:13 file4
+user@host:/home/user$</pre><span class="anchor" id="line-142"></span><span class="anchor" id="line-143"></span><span class="anchor" id="line-144"></span><p class="line867">
+</p><h3 id="chmod with Numbers">chmod with Numbers</h3>
+<span class="anchor" id="line-145"></span><span class="anchor" id="line-146"></span><p class="line867"><span class="anchor" id="line-147"></span><span class="anchor" id="line-148"></span></p><pre>Usage: chmod {options} filename</pre><span class="anchor" id="line-149"></span><span class="anchor" id="line-150"></span><div><table><tbody><tr>  <td><p class="line862"> <strong>Options</strong></p></td>
+  <td><p class="line862"> <strong>Definition</strong></p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-151"></span><p class="line862"> <tt>#--</tt> </p></td>
+  <td><p class="line862"> owner </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-152"></span><p class="line862"> <tt>-#-</tt> </p></td>
+  <td><p class="line862"> group </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-153"></span><p class="line862"> <tt>--#</tt> </p></td>
+  <td><p class="line862"> other </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-154"></span><p class="line862"> 1 </p></td>
+  <td><p class="line862"> execute </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-155"></span><p class="line862"> 2 </p></td>
+  <td><p class="line862"> write </p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-156"></span><p class="line862"> 4 </p></td>
+  <td><p class="line862"> read </p></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-157"></span><span class="anchor" id="line-158"></span><p class="line874">Owner,
+Group and Other is represented by three numbers. To get the value for
+the options determine the type of access needed for the file then add. <span class="anchor" id="line-159"></span><span class="anchor" id="line-160"></span></p><p class="line874">For example if you want a file that has -rw-rw-rwx permissions you will use the following: <span class="anchor" id="line-161"></span><span class="anchor" id="line-162"></span></p><div><table><tbody><tr>  <td><p class="line862"> <strong>Owner</strong></p></td>
+  <td><p class="line862"> <strong>Group</strong></p></td>
+  <td><p class="line862"> <strong>Other</strong></p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-163"></span><p class="line862"> read &amp; write</p></td>
+  <td><p class="line862"> read &amp; write </p></td>
+  <td><p class="line862"> read, write &amp; execute</p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-164"></span><p class="line862"> 4+2=6 </p></td>
+  <td><p class="line862"> 4+2=6 </p></td>
+  <td><p class="line862"> 4+2+1=7 </p></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-165"></span><span class="anchor" id="line-166"></span><p class="line867"><span class="anchor" id="line-167"></span><span class="anchor" id="line-168"></span></p><pre>user@host:/home/user$ chmod 667 filename</pre><span class="anchor" id="line-169"></span><span class="anchor" id="line-170"></span><p class="line874">Another example if you want a file that has --w-r-x--x permissions you will use the following: <span class="anchor" id="line-171"></span><span class="anchor" id="line-172"></span></p><div><table><tbody><tr>  <td><p class="line862"> <strong>Owner</strong></p></td>
+  <td><p class="line862"> <strong>Group</strong></p></td>
+  <td><p class="line862"> <strong>Other</strong></p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-173"></span><p class="line862"> write</p></td>
+  <td><p class="line862"> read &amp; execute </p></td>
+  <td><p class="line862"> execute</p></td>
+</tr>
+<tr>  <td><span class="anchor" id="line-174"></span><p class="line862"> 2 </p></td>
+  <td><p class="line862"> 4+1=5 </p></td>
+  <td><p class="line862"> 1 </p></td>
+</tr>
+</tbody></table></div><span class="anchor" id="line-175"></span><span class="anchor" id="line-176"></span><p class="line867"><span class="anchor" id="line-177"></span><span class="anchor" id="line-178"></span></p><pre>user@host:/home/user$ chmod 251 filename</pre><span class="anchor" id="line-179"></span><span class="anchor" id="line-180"></span><p class="line874">Here are a few examples of chmod usage with numbers (try these out on your system). <span class="anchor" id="line-181"></span><span class="anchor" id="line-182"></span></p><p class="line874">First create some empty files: <span class="anchor" id="line-183"></span><span class="anchor" id="line-184"></span><span class="anchor" id="line-185"></span><span class="anchor" id="line-186"></span><span class="anchor" id="line-187"></span><span class="anchor" id="line-188"></span><span class="anchor" id="line-189"></span><span class="anchor" id="line-190"></span><span class="anchor" id="line-191"></span></p><pre>user@host:/home/user$ touch file1 file2 file3 file4
+user@host:/home/user$ ls -l
+total 0
+-rw-r--r--  1 user user 0 Nov 19 20:13 file1
+-rw-r--r--  1 user user 0 Nov 19 20:13 file2
+-rw-r--r--  1 user user 0 Nov 19 20:13 file3
+-rw-r--r--  1 user user 0 Nov 19 20:13 file4</pre><span class="anchor" id="line-192"></span><p class="line874">Add owner execute bit: <span class="anchor" id="line-193"></span><span class="anchor" id="line-194"></span><span class="anchor" id="line-195"></span><span class="anchor" id="line-196"></span><span class="anchor" id="line-197"></span></p><pre>user@host:/home/user$ chmod 744 file1
+user@host:/home/user$ ls -l file1
+-rwxr--r--  1 user user 0 Nov 19 20:13 file1</pre><span class="anchor" id="line-198"></span><p class="line862">Add other write &amp; execute bit: <span class="anchor" id="line-199"></span><span class="anchor" id="line-200"></span><span class="anchor" id="line-201"></span><span class="anchor" id="line-202"></span><span class="anchor" id="line-203"></span></p><pre>user@host:/home/user$ chmod 647 file2
+user@host:/home/user$ ls -l file2
+-rw-r--rwx  1 user user 0 Nov 19 20:13 file2</pre><span class="anchor" id="line-204"></span><p class="line874">Remove group read bit: <span class="anchor" id="line-205"></span><span class="anchor" id="line-206"></span><span class="anchor" id="line-207"></span><span class="anchor" id="line-208"></span><span class="anchor" id="line-209"></span></p><pre>user@host:/home/user$ chmod 604 file3
+user@host:/home/user$ ls -l file3
+-rw----r--  1 user user 0 Nov 19 20:13 file3</pre><span class="anchor" id="line-210"></span><p class="line874">Add read, write and execute to everyone: <span class="anchor" id="line-211"></span><span class="anchor" id="line-212"></span><span class="anchor" id="line-213"></span><span class="anchor" id="line-214"></span><span class="anchor" id="line-215"></span><span class="anchor" id="line-216"></span></p><pre>user@host:/home/user$ chmod 777 file4
+user@host:/home/user$ ls -l file4
+-rwxrwxrwx  1 user user 0 Nov 19 20:13 file4
+user@host:/home/user$</pre><span class="anchor" id="line-217"></span><span class="anchor" id="line-218"></span><p class="line867">
+</p><h3 id="chmod with sudo">chmod with sudo</h3>
+<span class="anchor" id="line-219"></span><span class="anchor" id="line-220"></span><p class="line862">Changing permissions on files that you do not have ownership of: (<strong>Note</strong>
+that changing permissions the wrong way on the wrong files can quickly
+mess up your system a great deal! Please be careful when using <strong>sudo</strong>!) <span class="anchor" id="line-221"></span><span class="anchor" id="line-222"></span><span class="anchor" id="line-223"></span><span class="anchor" id="line-224"></span><span class="anchor" id="line-225"></span><span class="anchor" id="line-226"></span><span class="anchor" id="line-227"></span><span class="anchor" id="line-228"></span><span class="anchor" id="line-229"></span><span class="anchor" id="line-230"></span><span class="anchor" id="line-231"></span></p><pre>user@host:/home/user$ ls -l /usr/local/bin/somefile
+-rw-r--r--  1 root root 550 2005-11-13 19:45 /usr/local/bin/somefile
+user@host:/home/user$
+
+user@host:/home/user$ sudo chmod o+x /usr/local/bin/somefile
+
+user@host:/home/user$ ls -l /usr/local/bin/somefile
+-rw-r--r-x  1 root root 550 2005-11-13 19:45 /usr/local/bin/somefile
+user@host:/home/user$</pre><span class="anchor" id="line-232"></span><span class="anchor" id="line-233"></span><span class="anchor" id="line-234"></span><p class="line867">
+</p><h2 id="Recursive Permission Changes">Recursive Permission Changes</h2>
+<span class="anchor" id="line-235"></span><span class="anchor" id="line-236"></span><p class="line874">To
+change the permissions of multiple files and directories with one
+command. Please note the warning in the chmod with sudo section and the
+Warning with Recursive chmod section. <span class="anchor" id="line-237"></span><span class="anchor" id="line-238"></span></p><p class="line867">
+</p><h3 id="Recursive chmod with -R and sudo">Recursive chmod with -R and sudo</h3>
+<span class="anchor" id="line-239"></span><p class="line874">To change all the permissions of each file and folder under a specified directory at once, use sudo chmod with -R <span class="anchor" id="line-240"></span><span class="anchor" id="line-241"></span><span class="anchor" id="line-242"></span><span class="anchor" id="line-243"></span><span class="anchor" id="line-244"></span><span class="anchor" id="line-245"></span><span class="anchor" id="line-246"></span><span class="anchor" id="line-247"></span></p><pre>user@host:/home/user$ sudo chmod 777 -R /path/to/someDirectory
+user@host:/home/user$ ls -l
+total 3
+-rwxrwxrwx  1 user user 0 Nov 19 20:13 file1
+drwxrwxrwx  2 user user 4096 Nov 19 20:13 folder
+-rwxrwxrwx  1 user user 0 Nov 19 20:13 file2</pre><span class="anchor" id="line-248"></span><span class="anchor" id="line-249"></span><p class="line867">
+</p><h3 id="Recursive chmod using find, pipemill, and sudo">Recursive chmod using find, pipemill, and sudo</h3>
+<span class="anchor" id="line-250"></span><span class="anchor" id="line-251"></span><p class="line874">To
+assign reasonably secure permissions to files and folders/directories,
+it's common to give files a permission of 644, and directories a 755
+permission, since chmod -R assigns to both. Use sudo, the find command,
+and a pipemill to chmod as in the following examples. <span class="anchor" id="line-252"></span><span class="anchor" id="line-253"></span></p><p class="line874">To change permission of only files under a specified directory. <span class="anchor" id="line-254"></span><span class="anchor" id="line-255"></span><span class="anchor" id="line-256"></span><span class="anchor" id="line-257"></span><span class="anchor" id="line-258"></span><span class="anchor" id="line-259"></span><span class="anchor" id="line-260"></span><span class="anchor" id="line-261"></span></p><pre>user@host:/home/user$ sudo find /path/to/someDirectory -type f -print0 | xargs -0 sudo chmod 644
+user@host:/home/user$ ls -l
+total 3
+-rw-r--r--  1 user user 0 Nov 19 20:13 file1
+drwxrwxrwx  2 user user 4096 Nov 19 20:13 folder
+-rw-r--r--  1 user user 0 Nov 19 20:13 file2</pre><span class="anchor" id="line-262"></span><p class="line874">To change permission of only directories under a specified directory (including that directory): <span class="anchor" id="line-263"></span><span class="anchor" id="line-264"></span><span class="anchor" id="line-265"></span><span class="anchor" id="line-266"></span><span class="anchor" id="line-267"></span><span class="anchor" id="line-268"></span><span class="anchor" id="line-269"></span><span class="anchor" id="line-270"></span></p><pre>user@host:/home/user$ sudo find /path/to/someDirectory -type d -print0 | xargs -0 sudo chmod 755 
+user@host:/home/user$ ls -l
+total 3
+-rw-r--r--  1 user user 0 Nov 19 20:13 file1
+drwxr--r--  2 user user 4096 Nov 19 20:13 folder
+-rw-r--r--  1 user user 0 Nov 19 20:13 file2</pre><span class="anchor" id="line-271"></span><span class="anchor" id="line-272"></span><p class="line867">
+</p><h2 id="Warning with Recursive chmod">Warning with Recursive chmod</h2>
+<span class="anchor" id="line-273"></span><p class="line874">WARNING: Although it's been said, it's worth mentioning in context of a gotcha typo.  Please note, <span class="anchor" id="line-274"></span>Recursively
+deleting or chown-ing files are extremely dangerous. You will not be
+the first, nor the last, person to add one too many spaces into the
+command. This example will hose your system: <span class="anchor" id="line-275"></span><span class="anchor" id="line-276"></span><span class="anchor" id="line-277"></span></p><pre>user@host:/home/user$ sudo chmod -R / home/john/Desktop/tempfiles</pre><span class="anchor" id="line-278"></span><p class="line874">Note the space between the first / and home. <span class="anchor" id="line-279"></span><span class="anchor" id="line-280"></span></p><p class="line874">You have been warned. <span class="anchor" id="line-281"></span><span class="anchor" id="line-282"></span></p><p class="line867">
+</p><h2 id="Changing the File Owner and Group">Changing the File Owner and Group</h2>
+<span class="anchor" id="line-283"></span><p class="line862">A file's owner can be changed using the <tt>chown</tt> command.  For example, to change the <tt>foobar</tt> file's owner to <tt>tux</tt>:  <span class="anchor" id="line-284"></span><span class="anchor" id="line-285"></span><span class="anchor" id="line-286"></span></p><pre>user@host:/home/user$ sudo chown tux foobar</pre><span class="anchor" id="line-287"></span><span class="anchor" id="line-288"></span><p class="line862">To change the <tt>foobar</tt> file's group to <tt>penguins</tt>, you could use <strong>either</strong> <tt>chgrp</tt> or <tt>chown</tt> with special syntax: <span class="anchor" id="line-289"></span><span class="anchor" id="line-290"></span><span class="anchor" id="line-291"></span></p><pre>user@host:/home/user$ sudo chgrp penguins foobar</pre><span class="anchor" id="line-292"></span><p class="line867"><span class="anchor" id="line-293"></span><span class="anchor" id="line-294"></span></p><pre>user@host:/home/user$ sudo chown :penguins foobar</pre><span class="anchor" id="line-295"></span><span class="anchor" id="line-296"></span><p class="line862">Finally, to change the <tt>foobar</tt> file's owner to <tt>tux</tt> and the group to <tt>penguins</tt> with a single command, the syntax would be: <span class="anchor" id="line-297"></span><span class="anchor" id="line-298"></span><span class="anchor" id="line-299"></span></p><pre>user@host:/home/user$ sudo chown tux:penguins foobar</pre><span class="anchor" id="line-300"></span><span class="anchor" id="line-301"></span><p class="line867"><img alt="&lt;!&gt;" src="FilePermissions_files/attention.png" title="&lt;!&gt;" width="15" height="15"> Note that, by default, you must use <tt>sudo</tt> to change a file's owner or group. <span class="anchor" id="line-302"></span><span class="anchor" id="line-303"></span><span class="anchor" id="line-304"></span></p><p class="line867">
+</p><h2 id="Changing Permissions For Volumes With umask">Changing Permissions For Volumes With umask</h2>
+<span class="anchor" id="line-305"></span><span class="anchor" id="line-306"></span><p class="line862">This section has been moved: <a href="https://help.ubuntu.com/community/Fstab">Fstab</a> <span class="anchor" id="line-307"></span><span class="anchor" id="line-308"></span></p><p class="line867">
+</p><h2 id="ACLs">ACLs</h2>
+<span class="anchor" id="line-309"></span><span class="anchor" id="line-310"></span><p class="line874">Posix ACLs are a way of achieving a finer granularity of permissions than is possible with the standard Unix file permissions. <span class="anchor" id="line-311"></span><span class="anchor" id="line-312"></span></p><p class="line874">To enable Posix ACLs, install the acl package <span class="anchor" id="line-313"></span><span class="anchor" id="line-314"></span><span class="anchor" id="line-315"></span></p><pre>sudo apt-get install acl</pre><span class="anchor" id="line-316"></span><span class="anchor" id="line-317"></span><p class="line874">Documentation can then be found in the online man pages: <span class="anchor" id="line-318"></span><span class="anchor" id="line-319"></span></p><ul><li>man acl <span class="anchor" id="line-320"></span></li><li>man setfacl <span class="anchor" id="line-321"></span></li><li>man getfacl <span class="anchor" id="line-322"></span><span class="anchor" id="line-323"></span></li></ul><p class="line874">The Eiciel package allows GUI access to ACLs through the Nautilus file manager. <span class="anchor" id="line-324"></span><span class="anchor" id="line-325"></span></p><p class="line867">
+</p><h2 id="File removal">File removal</h2>
+<span class="anchor" id="line-326"></span><p class="line874">To remove a file you cannot delete use  <span class="anchor" id="line-327"></span><span class="anchor" id="line-328"></span></p><p class="line867"><span class="anchor" id="line-329"></span><span class="anchor" id="line-330"></span></p><pre>sudo rm -rf filename</pre><span class="anchor" id="line-331"></span><span class="anchor" id="line-332"></span><p class="line874">where filename is the name and path of the file to delete. <span class="anchor" id="line-333"></span><span class="anchor" id="line-334"></span></p><p class="line862">Be
+careful when you do this, since the -r option makes the file removal
+recursive and the -f will force the removal even for files which are
+not writable. See the <em>rm</em> man page for details. <span class="anchor" id="line-335"></span><span class="anchor" id="line-336"></span></p><p class="line867">
+</p><h2 id="Sticky Bit">Sticky Bit</h2>
+<span class="anchor" id="line-337"></span><span class="anchor" id="line-338"></span><p class="line874">All public directories should be configured with sticky bit. <span class="anchor" id="line-339"></span>The Sticky bit prevent users from altering or replacing any <span class="anchor" id="line-340"></span>other user's files.  <span class="anchor" id="line-341"></span><span class="anchor" id="line-342"></span></p><p class="line867"><span class="anchor" id="line-343"></span><span class="anchor" id="line-344"></span></p><pre>chmod u+t &lt;directory&gt;</pre><span class="anchor" id="line-345"></span><span class="anchor" id="line-346"></span><p class="line874">The 'u' adds the sticky bit to the user; 'g' to group; and 'o' for others. <span class="anchor" id="line-347"></span>The '+' adds the sticky bit and the '-' removes it from a &lt;directory&gt; or a &lt;file&gt;. <span class="anchor" id="line-348"></span><span class="anchor" id="line-349"></span><span class="anchor" id="line-350"></span><span class="anchor" id="line-351"></span><span class="anchor" id="line-352"></span><span class="anchor" id="line-353"></span></p><p class="line867">
+</p><h2 id="See also">See also</h2>
+<span class="anchor" id="line-354"></span><ul><li><p class="line891"><em>man chmod</em> <span class="anchor" id="line-355"></span></p></li><li><p class="line891"><em>man chown</em> <span class="anchor" id="line-356"></span></p></li><li><p class="line891"><em>man chgrp</em> <span class="anchor" id="line-357"></span></p></li><li><p class="line891"><a href="https://help.ubuntu.com/community/FindingFiles">FindingFiles</a>  <span class="anchor" id="line-358"></span><span class="anchor" id="line-359"></span></p></li></ul><p class="line867"></p><hr class="hr2"><p class="line874"> <span class="anchor" id="line-360"></span><span class="anchor" id="line-361"></span></p><p class="line867">
+</p><h2 id="ToDo">ToDo</h2>
+<span class="anchor" id="line-362"></span><span class="anchor" id="line-363"></span><ul><li>sticky bit <span class="anchor" id="line-364"></span></li><li>umask (add file and directory umask section, with specific focus on security) <span class="anchor" id="line-365"></span></li><li><p class="line862">* <em>Suggestion: I often use <tt>find</tt> instead of <tt>chmod&nbsp;-R</tt>,
+because it's easier to differentiate between files and directories that
+way. Yes, I know about the 'X' permission, but I don't trust it.</em> <span class="anchor" id="line-366"></span><span class="anchor" id="line-367"></span></p></li></ul><p class="line867"></p><hr><p class="line874"> <span class="anchor" id="line-368"></span><span class="anchor" id="bottom"></span></p></div><p id="pageinfo" class="info" dir="ltr" lang="en">FilePermissions  (last edited 2009-10-06 16:29:05 by <span title="https://login.launchpad.net/+id/CdxEFpk @ nhcc83209.med.navy.mil[199.208.83.209]"><a class="interwiki" href="https://launchpad.net/%7Esean-harris" title="https://login.launchpad.net/+id/CdxEFpk @ nhcc83209.med.navy.mil[199.208.83.209]">sean.harris</a></span>)</p>
+
+<ul class="pagelinks">
+<li><a class="nbinfo" href="https://help.ubuntu.com/community/FilePermissions?action=info" rel="nofollow">Page History</a></li>
+</ul>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+<hr width="550">
+
+  <div id="ubuntulinks">
+	<p>
+	      The material on this wiki is available under a free license, see <a href="https://help.ubuntu.com/community/License">Copyright / License</a> for details<br><b>You</b> can contribute to this wiki, see <a href="https://help.ubuntu.com/community/WikiGuide">Wiki Guide</a> for details
+	</p><br>
+  </div>
+<script src="FilePermissions_files/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1018242-7";
+urchinTracker();
+__utmSetVar('UbuntuWiki');
+</script>
+<script type="text/javascript">
+function togglebar() {
+    obj = document.getElementById('editbar');
+    obj2 = document.getElementById('showbarspan');
+    obj3 = document.getElementById('showbar');
+    if (obj.style.position == 'fixed') {
+        obj.style.position = 'static';
+	obj3.style.bottom = '0';
+        obj2.innerHTML = 'Show';
+    } else {
+        obj.style.position = 'fixed';
+        obj2.innerHTML = 'Hide';
+        obj3.style.bottom = '25px';
+    }
+    return false;
+}
+</script>
+
+
+</div> <!-- footer -->
+</div> <!-- layout -->
+<img id="bottomcap" alt="" src="FilePermissions_files/cap-bottom.png">
+</div> <!-- round -->
+</body></html>

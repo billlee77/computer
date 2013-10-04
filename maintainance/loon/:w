@@ -1,0 +1,149 @@
+Date: 02/05/2011
+
+Step 1: Disk Patitioning
+
+Name		  Size			Partion
+sda1 		  250MB			/Boot
+sda2		  20GB			/
+sda3		 4094MB			/swep
+sda4		Extended
+sda5		rest			/home
+
+
+
+
+Step 2: Create Users and Groups
+
+Huberg
+Garth Huberg
+UserID:	 500
+GroupID: 500
+
+Billlee
+Bill Li
+UserID:  510
+GroupId: 510
+
+g4user
+G4 user
+UserID:  501
+GroupID: 501
+
+acqu
+AcquRoot
+UserID:  504
+GroupID: 504
+
+dpaudyal
+Dilli Paudyal
+User:	 514
+GroupID: 514
+
+
+sichelll
+Lee Sichello
+UserID:  511
+Group:	 511
+
+Step 3: Configuration
+		
+		Restoreing hosts, hosts_denny, hosts_allow, aliases into /etc/
+
+		Configuring /etc/ssh/ssh_config, by adding 
+			X11FORWARDING yes
+		
+		Configuring CUPS:
+		localhost:631/printers
+		copy over cups.config from /home/custom/etc.
+		/etc/cups/cupsd.conf
+
+		Tick in the configuration : run command as login shell
+		
+		Obtain RPM-GPG keys for atrpm, key is stored in 
+		/etc/pki/rpm-gpg
+
+Step 4:	restoring logwatch into /etc/cron.daily/:	
+
+		cp logwacth form lichen:/usr/share/logwatch
+		linking 0logwatch with /usr/share/logwatch/scripts/logwatch.pl
+		create dir: /var/cache/logwatch
+
+
+
+Step 5: Package Installed
+		skype vim-x11 gv gimp pine pdftool skype latex gvim emacs vnc openoffice vncserver tkdiff xfig java tgif svn flash icewm unrar alacarte policycoreutils-gui xcircuit qcad paw x11vnc pdf-tool a2ps logwatch php apcupsd filezilla gparted vnc-server
+
+Step 6: Enable service 
+		Use the service configuration tool in: Main Manu-> System-> Administration-> Services
+		Enable the service: httpd 
+
+
+Step 7: Setting Firewall
+		
+ 		User Firewall configuration tool in: Main Manu-> System-> Administration-> Firewall
+		Allow SSH 							22/tcp  
+		Allow WWW (HTTP)					80/tcp
+		Allow Network Printing Client(IPP)	631/udp
+
+Step 8: selinux Setting Change
+		In order to allow httpd access /home/user/public_html file, selinux mode need to be changed from Enforcing mode to permissive.
+		To do this we need to configure in
+
+		/etc/selinux/config
+		change SELINUX=enforcing to SELINUX=permissive
+		
+		Then /home/user/public_html is accessable
+
+Step 9: Edit /etc/Hosts and terminal preference
+
+
+
+
+/*--------------------------------------------------
+Date: 19/Otc/2011
+
+HP Color laserjet 2605 is connected to loon,
+thus CUPS Server needs to be configured on loon
+
+
+Step 1: Enable CUPS port in application->administration->FIREWALL
+
+Step 2: Set SElinux to permissive mode; restart
+
+Step 3: Share the printer, execute as root:
+		$/sbin/cupsctl --share-printers
+
+		Optionally:
+		$/usr/sbin/cupsctl --share-printers --remote-any
+		$/usr/sbin/cupsctl 'BrowseLocalProtocols="cups dnssd lpd smb"'
+
+Step 4: Make server accessable from other subnets:
+
+		$/usr/sbin/cupsctl BrowsePoll=server:port
+
+		for our case:
+		$/usr/sbin/cupsctl BrowsePoll=BrowsePoll 142.3.165.28:631
+		or	
+		$/usr/sbin/cupsctl BrowsePoll=BrowsePoll loon.phys.uregina.ca:631
+
+		For more information on the setup, please reference:
+			http://localhost:631/help/sharing.html?TOPIC=Getting+Started&QUERY=
+
+Step 5: Edit /etc/cups/cupsd.conf file to allow access to the server
+
+		Find section and change it into :
+	
+			<Location />
+			  Order allow,deny
+			#  Allow all
+			  allow 142.3.165*
+			  #allow lynx.phys.uregina.ca
+			  #aeny all
+			</Location>
+
+		As result only first floor of LAB building can access this
+
+
+
+
+

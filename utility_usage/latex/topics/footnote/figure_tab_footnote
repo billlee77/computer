@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<style type="text/css">
+<!--
+body
+{
+  font-family:verdana,arial,sans;
+  font-size:10px;
+  background:#5CBB5C
+}
+
+div.index
+{
+  width:140px;
+  border-width:1px 1px 1px 0px;
+  border-style: solid;
+  border-color: black;
+  padding:2px;
+  position:absolute;
+  left:0px;
+  top:110px;
+  background:#C0E673;
+}
+
+div.index_item a
+{
+  color:black;
+  text-decoration:none;
+}
+
+div.index_item a:hover
+{
+  text-decoration:underline;
+}
+
+div.content
+{
+  border:1px solid black;
+  position:absolute;
+  left:150px;
+  top:110px;
+  font-size:12px;
+  right:10px;
+  padding:10px;
+  min-height:200px;
+  text-align:justify;
+  background:#407380;
+  color:#CFE1E6;
+}
+
+div.content a
+{
+  color:#CFE1E6;
+}
+
+div.ads
+{
+  border:1px solid black;
+  position:absolute;
+  left:150px;
+  top:-1px;
+  height:94px;
+  right:10px;
+  background:#49B493;
+  text-align:center;
+  padding:4px;
+}
+
+div.ctr
+{
+  background:#49B493;
+  position:absolute;
+  border-width:0 1px 1px 0;
+  border-style:solid;
+  border-color:black;
+  width:140px;
+  top:0px;
+  left:0px;
+  height:98px;
+  padding:2px;
+}
+
+pre
+{
+  padding:0px;
+  margin:0px;
+  color:#CFE6CF;
+  width:100%;
+  background:#408040;
+}
+
+-->
+</style>
+</head><body>
+<div class="ads">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7082730129308090";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+google_ad_channel ="";
+google_color_border = "408040";
+google_color_bg = "5CB85C";
+google_color_link = "408040";
+google_color_text = "black";
+google_color_url = "408040";
+//--></script>
+<script type="text/javascript" src="radio.wihome.net_files/show_ads.js">
+</script><script src="radio.wihome.net_files/expansion_embed.js"></script><script src="radio.wihome.net_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display: inline-table; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><ins id="google_ads_frame1_anchor" style="display: block; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="radio.wihome.net_files/ads.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins>
+</div>
+<div class="index"><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=ADF" title="ADF">ADF</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Beer" title="Beer">Beer</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Beer" title="Beer">Beer</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=C:Fortran_calls" title="C:Fortran calls">C:Fortran calls</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=CPMD_output_files:_TRAJECTORY" title="CPMD output files: TRAJECTORY">CPMD output files: T...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=CPMD_stuff" title="CPMD stuff">CPMD stuff</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Clay" title="Clay">Clay</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Current_events" title="Current events">Current events</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=DPD" title="DPD">DPD</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=DPD%27ing_people" title="DPD'ing people">DPD'ing people</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=DPD_stuff" title="DPD stuff">DPD stuff</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Description_of_the_CPMD_pseudopotential_format" title="Description of the CPMD pseudopotential format">Description of the C...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Events:schools" title="Events:schools">Events:schools</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Fortran" title="Fortran">Fortran</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=How_to_burn_music_to_a_cd_without_k3b,_etc." title="How to burn music to a cd without k3b, etc.">How to burn music to...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=How_to_find_large_%28useless%29_files?" title="How to find large (useless) files?">How to find large (u...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=How_to_install_Fedora_using_PXEboot" title="How to install Fedora using PXEboot">How to install Fedor...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=How_to_make_and_install_shfsmount" title="How to make and install shfsmount">How to make and inst...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=How_to_paste_two_data_files" title="How to paste two data files">How to paste two dat...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=How_to_take_separate_columns_from_a_file" title="How to take separate columns from a file">How to take separate...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=How_to_write_music_to_a_cd_without_k3b,_etc." title="How to write music to a cd without k3b, etc.">How to write music t...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Howto_write_an_article" title="Howto write an article">Howto write an artic...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=ICT" title="ICT">ICT</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=ITS" title="ITS">ITS</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=ITS:Lingo" title="ITS:Lingo">ITS:Lingo</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=LaTeX:captions" title="LaTeX:captions">LaTeX:captions</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=LaTeX:concateps" title="LaTeX:concateps">LaTeX:concateps</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=LaTeX:dvi2ps2pdf" title="LaTeX:dvi2ps2pdf">LaTeX:dvi2ps2pdf</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=LaTeX:ps2ps" title="LaTeX:ps2ps">LaTeX:ps2ps</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=LaTeX:tablefootnotes" title="LaTeX:tablefootnotes">LaTeX:tablefootnotes</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=LaTeX_stuff" title="LaTeX stuff">LaTeX stuff</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Latex" title="Latex">Latex</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Links:Etc" title="Links:Etc">Links:Etc</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Links:News_sites" title="Links:News sites">Links:News sites</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Links:Utilities" title="Links:Utilities">Links:Utilities</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Linux:Fedora" title="Linux:Fedora">Linux:Fedora</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Linux:Mandrake" title="Linux:Mandrake">Linux:Mandrake</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Linux:Redhat" title="Linux:Redhat">Linux:Redhat</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Linux:Suse" title="Linux:Suse">Linux:Suse</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Linux_stuff" title="Linux stuff">Linux stuff</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=List_of_allowed_journals_for_literature_talks" title="List of allowed journals for literature talks">List of allowed jour...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=List_of_common_mispronunciations" title="List of common mispronunciations">List of common mispr...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=List_of_common_misspellings" title="List of common misspellings">List of common missp...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=MAiO4mAiO" title="MAiO4mAiO">MAiO4mAiO</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Movies" title="Movies">Movies</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Mp3_to_wav" title="Mp3 to wav">Mp3 to wav</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Multiple_images_next_to_eachother" title="Multiple images next to eachother">Multiple images next...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=PHP" title="PHP">PHP</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Phase_Fielding_people" title="Phase Fielding people">Phase Fielding peopl...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Phase_Fields" title="Phase Fields">Phase Fields</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Pictures:equations" title="Pictures:equations">Pictures:equations</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Posters" title="Posters">Posters</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Powerpoint" title="Powerpoint">Powerpoint</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Presentation_facilities_in_B4.32" title="Presentation facilities in B4.32">Presentation facilit...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Presentations" title="Presentations">Presentations</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Printersettings1.gif" title="Printersettings1.gif">Printersettings1.gif</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Printersettings2.gif" title="Printersettings2.gif">Printersettings2.gif</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Printersettings3.gif" title="Printersettings3.gif">Printersettings3.gif</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Promotion:_teaching" title="Promotion: teaching">Promotion: teaching</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Promotion:quick_guide" title="Promotion:quick guide">Promotion:quick guid...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=RTTR" title="RTTR">RTTR</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Script:rendermovie" title="Script:rendermovie">Script:rendermovie</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Script:untar" title="Script:untar">Script:untar</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Security:Physical" title="Security:Physical">Security:Physical</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Security:Windows" title="Security:Windows">Security:Windows</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Setting_up_e-mail_filters" title="Setting up e-mail filters">Setting up e-mail fi...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Submitting_an_article_to_a_journal" title="Submitting an article to a journal">Submitting an articl...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Surfactants" title="Surfactants">Surfactants</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=The_new_groupmeeting_rules_for_literature_talks" title="The new groupmeeting rules for literature talks">The new groupmeeting...</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Upload_log" title="Upload log">Upload log</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=VMD" title="VMD">VMD</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Vi" title="Vi">Vi</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Wav_to_mp3" title="Wav to mp3">Wav to mp3</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Windows" title="Windows">Windows</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Wma_to_wav" title="Wma to wav">Wma to wav</a></div><div class="index_item"><a href="http://radio.wihome.net/wiki/?article=Zeolite_stuff" title="Zeolite stuff">Zeolite stuff</a></div></div><div class="content"><div class="articlebox"><h1>LaTeX:tablefootnotes</h1>Use the \footnotemark<a href="http://radio.wihome.net/wiki/number"></a> command:
+
+<pre> \begin{table}</pre>
+<pre> \begin{tabular}{l|l|l|l}\hline</pre>
+<pre> column 1 &amp; column 2 &amp; column 3\footnotemark[1] &amp; column 4\footnotemark[2] \\\hline</pre>
+<pre> row 1    &amp; data 1   &amp; data 2                   &amp; data 3                   \\</pre>
+<pre> row 2    &amp; data 1   &amp; data 2                   &amp; data 3                   \\</pre>
+<pre> row 3    &amp; data 1   &amp; data 2                   &amp; data 3                   \\\hline </pre>
+<pre> \end{tabular}</pre>
+<pre> \footnotetext[1]{table footnote 1}</pre>
+<pre> \footnotetext[2]{table footnote 2}</pre>
+<pre> \caption{Table with rows, columns and footnotes}</pre>
+<pre> \label{tbl:data}</pre>
+<pre> \end{table}</pre>
+
+and specify the content of the footnote with \footnotetext<a href="http://radio.wihome.net/wiki/number"></a>{footnote contents}. 
+
+Notes:
+<ul>
+<li>If you want to have footnotes inside captions, (sub)section titles etc, you should use \protect\footnotemark<a href=""></a> instead.</li>
+<li>Normally LaTeX does the numbering of footnotes for you, so you 
+should be very careful when mixing normal \footnote{} and \footnotemark<a href=""></a>. You may want to increase the footnote counter using \addtocounter{footnote}{N}, after you've manually added your footnotes.</li>
+<li>In RevTex 4 \footnote works inside tables (still not inside captions
+ and section titles), but the behavior is different from using 
+\footnotemark. Footnotes made with \footnote inside a table, get typeset
+ in letters ('a', 'b' etc), and are located directly below the table 
+instead of at the bottom of the page.</li>
+<li>In the standard implementation of RevTeX 4, using the \footnote 
+command in the text, the footnotes are added to the bibliography. You 
+can change this behavior by the class option ''nofootinbib''.</li>
+<li>More <a href="http://www.texnik.de/footnotes/footnotes.phtml"> footnote fun!</a></li>
+</ul>
+</div></div><div class="ctr">2 pageviews</div>
+</body></html>

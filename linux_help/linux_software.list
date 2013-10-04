@@ -1,0 +1,71 @@
+# Basic diagram drawing
+Dia
+
+# Image minipulation
+gimp
+
+# Circuit Drawing
+xcircuit
+
+# Plotting
+IDL GDL physica PXY matliab ROOT Gnuplot latex Grace
+
+# 2D plot
+QCAD xfig
+
+# 3D plot
+Blender
+
+# CAD
+freecad QCAD draftsight 
+
+# CAD Drawing Viewer
+lx-viewer DWGSee
+
+# Animation software
+ffmepeg
+
+# Fax
+efax
+
+# Charting 
+QQ empathy pidgin
+
+# Comparing the file differences
+tkdiff
+
+# Security 
+selinux
+
+# Print Service
+a2ps
+
+# Logwatch
+logwatch
+
+# Send mail from shell
+mailutils
+
+# Service Management 
+bum
+
+# Calendar
+evolution remind seamonkey net_calender application
+
+# Software Framework
+metaspliot
+
+# Data acquisition system
+MIDAS (Multi Instance Data Acquisition System)
+
+# UPS Management
+apcupsd
+
+# Web Broswer
+firefox konqueror
+
+# Web Build
+bluefish quanta-plus
+
+# Download
+multiget

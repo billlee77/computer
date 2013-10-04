@@ -1,0 +1,1857 @@
+<html lang="en"><head>
+
+<title>Parted User's Manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="description" content="Parted User's Manual">
+<meta name="generator" content="makeinfo 4.13">
+<link title="Top" rel="top" href="#Top">
+<link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
+<!--
+Copyright (C) 1999-2010 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled ``GNU
+Free Documentation License''.-->
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+  pre.display { font-family:inherit }
+  pre.format  { font-family:inherit }
+  pre.smalldisplay { font-family:inherit; font-size:smaller }
+  pre.smallformat  { font-family:inherit; font-size:smaller }
+  pre.smallexample { font-size:smaller }
+  pre.smalllisp    { font-size:smaller }
+  span.sc    { font-variant:small-caps }
+  span.roman { font-family:serif; font-weight:normal; } 
+  span.sansserif { font-family:sans-serif; font-weight:normal; } 
+--></style>
+</head><body>
+<h1 class="settitle">Parted User's Manual</h1>
+<div class="node">
+<a name="Top"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Introduction">Introduction</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#dir">(dir)</a>
+
+</div>
+
+<h2 class="unnumbered">GNU Parted User Manual</h2>
+
+<!-- WTF doesn't texi2html include the titlepage? -->
+<p>Copyright © 1999-2010 Free Software Foundation, Inc.
+
+  </p><p>Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections, with no Front-Cover Texts, and with no Back-Cover
+Texts.  A copy of the license is included in the section entitled &#8220;GNU
+Free Documentation License&#8221;.
+
+</p><p>This document describes the use of GNU Parted, a program for creating,
+destroying, resizing, checking and copying hard drive partitions, and
+the file systems on them.
+
+  </p><p>This document applies roughly to version <strong>2.3</strong> of GNU Parted.
+
+  </p><p>The original version was written by Andrew Clausen in text format. 
+Richard M. Kreuter translated it into Texinfo format in 2002, to be heavily
+edited by Leslie P. Polzer in 2006.
+
+  </p><div class="shortcontents">
+<h2>Short Contents</h2>
+<ul>
+<a href="#Top">GNU Parted User Manual</a>
+<a href="#Introduction">1 Introduction</a>
+<a href="#Using-Parted">2 Using Parted</a>
+<a href="#Related-information">3 Related information</a>
+<a href="#Copying-This-Manual">Appendix A Copying This Manual</a>
+<a href="#History">Appendix B This manual's history</a>
+<a href="#Concept-index">Index</a>
+</ul>
+</div>
+
+<ul class="menu">
+<li><a accesskey="1" href="#Introduction">Introduction</a>:                 Overview
+</li><li><a accesskey="2" href="#Using-Parted">Using Parted</a>:                 Partitioning a Hard Drive
+</li><li><a accesskey="3" href="#Related-information">Related information</a>:          Further reading on related topics
+</li><li><a accesskey="4" href="#Copying-This-Manual">Copying This Manual</a>:          How to make copies of this manual
+</li><li><a accesskey="5" href="#History">History</a>:                      This manual's history
+</li><li><a accesskey="6" href="#Concept-index">Concept index</a>:                Concept index
+</li></ul>
+
+<div class="node">
+<a name="Introduction"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Using-Parted">Using Parted</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Top">Top</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<h2 class="chapter">1 Introduction</h2>
+
+<ul class="menu">
+<li><a accesskey="1" href="#Overview">Overview</a>:                     GNU Parted and prerequisite knowledge
+</li><li><a accesskey="2" href="#Software-Required">Software Required</a>:            GNU Parted's software dependencies
+</li><li><a accesskey="3" href="#Supported-Platforms">Supported Platforms</a>:          Where you can use GNU Parted
+</li><li><a accesskey="4" href="#License">License</a>:                      What you may and may not do with GNU Parted
+</li><li><a accesskey="5" href="#Compiling">Compiling</a>:                    How to build GNU Parted
+</li><li><a accesskey="6" href="#Static-binaries">Static binaries</a>:              How to get and use a static version of GNU
+                                Parted
+</li></ul>
+
+<div class="node">
+<a name="Overview"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Software-Required">Software Required</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Introduction">Introduction</a>
+
+</div>
+
+<h3 class="section">1.1 Overview of GNU Parted</h3>
+
+<p><a name="index-description-of-parted-1"></a><a name="index-overview-2"></a><a name="index-parted-description-3"></a><a name="index-bugs_002c-reporting-4"></a><a name="index-reporting-bugs-5"></a><a name="index-contacting-developers-6"></a>
+GNU Parted is a program for creating, destroying, resizing, checking
+and copying partitions, and the file systems on them.
+
+  </p><p>This is useful for creating space for new operating systems, for
+reorganizing disk usage, for copying data between hard disks and for
+&#8220;disk imaging&#8221; &#8212; replicating an installation on another computer.
+
+  </p><p>This documentation is written with the assumption that the reader
+has some understanding of partitioning and file systems.  If you want to
+learn more about these, the upcoming GNU Storage Guide is recommended
+reading.
+
+  </p><p>GNU Parted was designed to minimize the chance of data loss.  For
+example, it was designed to avoid data loss during interruptions (like
+power failure) and performs many safety checks.  However, there could
+be bugs in GNU Parted, so you should back up your important files before
+running Parted. 
+Also note that reiserfs support relies on libreiserfs, which does not
+fulfil the aforementioned requirement.  The same holds for any external
+tools like <kbd>ntfsresize</kbd>.
+
+  </p><p>The GNU Parted homepage is <a href="http://www.gnu.org/software/parted">http://www.gnu.org/software/parted</a>.  The
+library and frontend themselves can be downloaded from
+<a href="ftp://ftp.gnu.org/gnu/parted">ftp://ftp.gnu.org/gnu/parted</a>. 
+You can also find a listing of mailing lists, notes for contributing and
+more useful information on the web site.
+
+  </p><p>Please send bug reports to <a href="mailto:bug-parted@gnu.org">bug-parted@gnu.org</a>.  When sending bug
+reports, please include the version of GNU Parted. 
+Please include the output from these commands (for disk <samp><span class="file">/dev/hda</span></samp>):
+
+</p><pre class="example">     # <kbd>parted /dev/hda print unit s print unit chs print</kbd>
+</pre>
+  <p>Feel free to ask for help on this list &#8212; just check that your question
+isn't answered here first.  If you don't understand the documentation,
+please tell us, so we can explain it better.  General philosophy is:
+if you need to ask for help, then something needs to be fixed so you
+(and others) don't need to ask for help.
+
+  </p><p>Also, we'd love to hear your ideas :-)
+
+</p><div class="node">
+<a name="Software-Required"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Supported-Platforms">Supported Platforms</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Overview">Overview</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Introduction">Introduction</a>
+
+</div>
+
+<h3 class="section">1.2 Software Required for the use of Parted</h3>
+
+<p><a name="index-software-dependencies-7"></a><a name="index-required-software-8"></a><a name="index-libuuid-9"></a><a name="index-e2fsprogs-10"></a><a name="index-readline-11"></a><a name="index-gettext-12"></a>
+If you're installing or compiling Parted yourself, you'll need to
+have some other programs installed.  If you are compiling Parted,
+you will need both the normal and devel packages of these programs
+installed:
+
+     </p><ul>
+<li>libuuid, part of the e2fsprogs package.  If you don't have this,
+you can get it from:
+
+     <p>	<a href="http://web.mit.edu/tytso/www/linux/e2fsprogs.html">http://web.mit.edu/tytso/www/linux/e2fsprogs.html</a>
+
+     </p><p>If you want to compile Parted and e2fsprogs, note that you will need to
+<kbd>make install</kbd> and <kbd>make install-libs</kbd> e2fsprogs.
+
+     </p></li><li>GNU Readline (optional), available from
+
+     <p>	<a href="ftp://ftp.gnu.org/gnu/readline">ftp://ftp.gnu.org/gnu/readline</a>
+
+     </p><p>If you are compiling Parted, and you don't have readline, you can
+disable Parted's readline support with the <kbd>--disable-readline</kbd>
+option for <samp><span class="command">configure</span></samp>.
+
+     </p></li><li>GNU gettext (or compatible software) for compilation, if
+internationalisation support is desired.
+
+     <p>	<a href="ftp://ftp.gnu.org/gnu/gettext">ftp://ftp.gnu.org/gnu/gettext</a>
+
+     </p></li><li>libreiserfs, if you want reiserfs support:
+
+     <p>	<a href="http://reiserfs.osdn.org.ua/">http://reiserfs.osdn.org.ua</a>
+
+     </p><p>Note that parted will automatically detect libreiserfs at runtime, and enable
+reiserfs support.  libreiserfs is new, and hasn't been widely tested yet.
+
+  </p></li></ul>
+
+<div class="node">
+<a name="Supported-Platforms"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#License">License</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Software-Required">Software Required</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Introduction">Introduction</a>
+
+</div>
+
+<h3 class="section">1.3 Platforms on which GNU Parted runs</h3>
+
+<p><a name="index-supported-platforms-13"></a><a name="index-platforms_002c-supported-14"></a>
+Hopefully, this list will grow a lot.  If you do not have one of these
+platforms, then you can use a rescue disk and a static binary of GNU Parted. 
+See <a href="#Static-binaries">Static binaries</a>.
+
+     </p><dl>
+<dt>GNU/Linux</dt><dd>Linux versions 2.0 and up, on Alpha, x86 PCs, PC98, Macintosh PowerPC, Sun hardware.
+
+     <br></dd><dt>GNU/Hurd</dt><dd></dd></dl>
+
+  <p>GNU libc 2.1 or higher is required.  You can probably use older versions
+by using the &#8216;<samp><span class="samp">--disable-nls</span></samp>&#8217; option. See <a href="#Compiling">Building GNU Parted</a>. (Note: I think we have now dropped this requirement.  TODO:
+check if libc 2.0 works!)
+
+</p><div class="node">
+<a name="License"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Compiling">Compiling</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Supported-Platforms">Supported Platforms</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Introduction">Introduction</a>
+
+</div>
+
+<h3 class="section">1.4 Terms of distribution for GNU Parted</h3>
+
+<p><a name="index-license-terms-15"></a><a name="index-terms-of-distribution-16"></a><a name="index-gnu-gpl-17"></a><a name="index-gpl-18"></a>
+GNU Parted is free software, covered by the GNU General Public License
+Version 2.  This should have been included with the Parted distribution,
+in the COPYING file.  If not, write to the Free Software Foundation,
+Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+
+  </p><p>Libparted is considered part of GNU Parted.  It is covered by the GNU
+General Public License.  It is NOT released under the GNU Lesser General
+Public License (LGPL).
+
+</p><div class="node">
+<a name="Compiling"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Static-binaries">Static binaries</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#License">License</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Introduction">Introduction</a>
+
+</div>
+
+<h3 class="section">1.5 Building GNU Parted</h3>
+
+<p><a name="index-compiling-parted-19"></a><a name="index-building-parted-20"></a>
+If you want to compile GNU Parted, this is generally done with:
+
+</p><pre class="example">     $ <kbd>./configure</kbd>
+     $ <kbd>make</kbd>
+</pre>
+  <p>However, there are a few options for <samp><span class="command">configure</span></samp>:
+
+     </p><dl>
+<dt><code>--without-readline</code></dt><dd>turns off use of readline.  This is useful for making rescue disks,
+etc., where few libraries are available.
+
+     <br></dd><dt><code>--disable-debug</code></dt><dd>don't include assertions
+
+     <br></dd><dt><code>--disable-dynamic-loading</code></dt><dd>disables dynamic loading of some libraries (only libreiserfs for now,
+although we hope to expand this).  Dynamic loading is useful because it
+allows you to reuse libparted shared libraries even when you don't know
+if some libraries will be available.  It has a small overhead (mainly
+linking with libdl), so it may be useful to disable it on bootdisks if
+you don't need the flexibility.
+
+     <br></dd><dt><code>--disable-fs</code></dt><dd>disable all file system support
+
+     <br></dd><dt><code>--disable-nls</code></dt><dd>turns off native language support.  This is useful for use with old
+versions of glibc, or a trimmed down version of glibc suitable for
+rescue disks.
+
+     <br></dd><dt><code>--disable-shared</code></dt><dd>turns off shared libraries.  This may be necessary for use with old
+versions of GNU libc, if you get a compile error about a &#8220;spilled
+register&#8221;.  Also useful for boot/rescue disks.
+
+     <br></dd><dt><code>--disable-Werror</code></dt><dd>ignore warning messages in compilation
+
+     <br></dd><dt><code>--enable-discover-only</code></dt><dd>support only reading/probing (reduces size considerably)
+
+     <br></dd><dt><code>--enable-mtrace</code></dt><dd>enable malloc() debugging
+
+     <br></dd><dt><code>--enable-read-only</code></dt><dd>disable writing (for debugging)
+
+  </dd></dl>
+
+<div class="node">
+<a name="Static-binaries"></a>
+<p></p><hr>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Compiling">Compiling</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Introduction">Introduction</a>
+
+</div>
+
+<h3 class="section">1.6 Using static binaries of GNU Parted</h3>
+
+<p><a name="index-static-binary-21"></a><a name="index-unsupported-platforms-22"></a><a name="index-resizing-root-device-23"></a>
+
+</p><h4 class="subsection">1.6.1 Introduction</h4>
+
+<p>If you want to run GNU Parted on a machine without GNU/Linux installed, or you
+want to resize a root or boot partition, you will need to use a boot disk.
+
+  </p><p>Special boot disk images for GNU Parted used to be available, but with the
+emergence of a plethora of rescue disks and Live CDs that all
+include GNU Parted this is no longer necessary. 
+However, please note that these disks often ship with out-of-date
+versions of Parted.  To compensate for this a static binary
+of the latest GNU Parted version is available, which you can use thus:
+
+<!-- There should be instructions for CD and USB here. -->
+</p><h4 class="subsection">1.6.2 Creating the Parted disk</h4>
+
+     <ol start="1" type="1">
+<li>Boot your system
+
+     </li><li>Download <samp><span class="file">parted-static-VERSION.tgz</span></samp> from <a href="ftp://ftp.gnu.org/gnu/parted/static">ftp://ftp.gnu.org/gnu/parted/static</a>
+</li><li>Unpack the tarball, resulting in a file called &#8220;parted.static".
+
+     </li><li>Insert a floppy.
+
+     </li><li>Do a low-level format on it (on GNU/Linux this can be achieved with
+      the tool &#8220;fdformat" from the &#8220;util-linux" package. 
+      This is basically a sanity check because floppy disks often
+      contain bad blocks.
+
+     </li><li>Create a file system. Example:
+
+     <pre class="example">          $ <kbd>parted /dev/fd0 mklabel loop mkpartfs ext2 0 1.4</kbd>
+</pre>
+     </li><li>Mount the floppy disk, e.g.,
+
+     <pre class="example">          $ <kbd>mount -t ext2 /dev/fd0 /mnt/floppy</kbd>
+</pre>
+     </li><li>Copy <samp><span class="file">parted.static</span></samp> to the floppy, e.g.,
+
+     <pre class="example">          $ <kbd>cp parted.static /mnt/floppy</kbd>
+</pre>
+     </li><li>Unmount the floppy, e.g.,
+
+     <pre class="example">          $ <kbd>umount /mnt/floppy</kbd>
+</pre>
+     </li></ol>
+
+<h4 class="subsection">1.6.3 Using the Parted disk</h4>
+
+     <ol start="1" type="1">
+<li>Choose a rescue disk that suits you.
+
+     </li><li>Boot off your rescue disk.  Mount the disk you copied Parted onto.
+
+     </li><li>Run Parted.  For example,
+
+     <pre class="example">          # <kbd>cd /mnt/floppy</kbd>
+          # <kbd>./parted-static</kbd>
+</pre>
+     </li></ol>
+
+<div class="node">
+<a name="Using-Parted"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Related-information">Related information</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Introduction">Introduction</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<h2 class="chapter">2 Using Parted</h2>
+
+<p><a name="index-commands-24"></a>
+
+</p><ul class="menu">
+<li><a accesskey="1" href="#Partitioning">Partitioning</a>:                     Disk partitioning in context
+</li><li><a accesskey="2" href="#Running-Parted">Running Parted</a>:                   Partitioning with Parted
+</li><li><a accesskey="3" href="#Invoking-Parted">Invoking Parted</a>:                  Parted's invocation options and commands
+</li><li><a accesskey="4" href="#Command-explanations">Command explanations</a>:             Full explanation of parted's commands
+</li></ul>
+
+<div class="node">
+<a name="Partitioning"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Running-Parted">Running Parted</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Using-Parted">Using Parted</a>
+
+</div>
+
+<h3 class="section">2.1 Introduction to Partitioning</h3>
+
+<p><a name="index-partitioning-overview-25"></a>
+Unfortunately, partitioning your disk is rather complicated.  This is
+because there are interactions between many different systems that need
+to be taken into consideration.
+
+  </p><p>This manual used to introduce the reader to these systems and their
+working.  This content has moved to the GNU Storage Guide.
+
+</p><div class="node">
+<a name="Running-Parted"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Invoking-Parted">Invoking Parted</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Partitioning">Partitioning</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Using-Parted">Using Parted</a>
+
+</div>
+
+<h3 class="section">2.2 Using GNU Parted</h3>
+
+<p><a name="index-modes-of-use-26"></a>
+Parted has two modes: command line and interactive.  Parted should
+always be started with:
+
+</p><pre class="example">     # <kbd>parted </kbd><var>device</var>
+</pre>
+  <p class="noindent">where <var>device</var> is the hard disk device to edit.  (If you're
+lazy and omit the DEVICE argument, Parted will attempt to guess which
+device you want.)
+
+  </p><p>In command line mode, this is followed by one or more commands.  For
+example:
+
+</p><pre class="example">     # <kbd>parted /dev/sda resize 1 52Mb 104Mb mkfs 2 fat16</kbd>
+</pre>
+  <p class="noindent">Options (like <kbd>--help</kbd>) can only be specified on the
+command line.
+
+  </p><p>In interactive mode, commands are entered one at a time at a prompt, and
+modify the disk immediately.  For example:
+
+</p><pre class="example">     (parted) <kbd>resize 1 52.0005Mb 104.5Mb</kbd>
+     (parted) <kbd>mkfs 2 fat16</kbd>
+</pre>
+  <p class="noindent">Unambiguous abbreviations are allowed.  For example, you can
+type &#8220;p&#8221; instead of &#8220;print&#8221;, and &#8220;resi&#8221; instead of &#8220;resize&#8221;. 
+Commands can be typed either in English, or your native language (if
+your language has been translated).  This may create ambiguities. 
+Commands are case-insensitive.
+
+  </p><p>Numbers indicating partition locations can be whole numbers or decimals. 
+The suffix selects the unit, which may be one of those described in
+<a href="#unit">unit</a>, except CHS and compact.  If no suffix is given, then the default
+unit is assumed.  Negative numbers count back from the end of the disk,
+with &#8220;-1s&#8221; indicating the end of the disk.  Parted will compute sensible
+ranges for the locations you specify (e.g. a range of +/- 500 MB when you
+specify the location in &#8220;G&#8221;). Use the sector unit &#8220;s&#8221; to specify exact
+locations.
+
+  </p><p>If you don't give a parameter to a command, Parted will prompt you for it. 
+For example:
+
+</p><pre class="example">     (parted) <kbd>resize 1</kbd>
+     Start? <kbd>0Gb</kbd>
+     End? <kbd>40Gb</kbd>
+</pre>
+  <p>Parted will always warn you before doing something that is potentially
+dangerous, unless the command is one of those that is inherently
+dangerous (viz., rm, mklabel and mkfs).  For example, if you attempt to
+shrink a partition &#8220;too much&#8221; (i.e., by more than the free space
+available), Parted will automatically reduce the shrinkage so that the
+partition is the smallest it can be without losing data.  If this size is
+significantly different from the size requested, Parted will warn you. 
+Since many partitioning systems have complicated constraints, Parted will
+usually do something slightly different to what you asked.  (For example,
+create a partition starting at 10.352Mb, not 10.4Mb)
+If the calculated values differ too much, Parted will ask you for
+confirmation.
+
+  </p><p>Currently ext3 filesystem functionality does not work. To manage ext3 type
+filesystems use tools like resize2fs or mke2fs.  Note that the currently
+supported ext2 filesystem will be deprecated once ext3 support is finalized. 
+Further note that ext3 support will have limited functionality that is yet
+to be defined.  Use tools like resize2fs (8) and mke2fs (8) to manage these
+types of filesystems.
+
+</p><div class="node">
+<a name="Invoking-Parted"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Command-explanations">Command explanations</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Running-Parted">Running Parted</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Using-Parted">Using Parted</a>
+
+</div>
+
+<h3 class="section">2.3 Command Line Options</h3>
+
+<p><a name="index-options-at-invocation-27"></a><a name="index-commands_002c-overview-28"></a><a name="index-invocation-options-29"></a>
+When invoked from the command line, Parted supports the following syntax:
+
+</p><pre class="example">     # <kbd>parted [</kbd><var>option</var><kbd>] </kbd><var>device</var><kbd> [</kbd><var>command</var><kbd> [</kbd><var>argument</var><kbd>]]</kbd>
+</pre>
+  <p>Available options and commands follow.  For detailed explanations of the
+use of Parted commands, see <a href="#Command-explanations">Command explanations</a>. Options begin
+with a hyphen, commands do not:
+
+  </p><p>Options:
+
+     </p><dl>
+<dt>&#8216;<samp><span class="samp">-h</span></samp>&#8217;</dt><dt>&#8216;<samp><span class="samp">--help</span></samp>&#8217;</dt><dd>display a help message
+
+     <br></dd><dt>&#8216;<samp><span class="samp">-s</span></samp>&#8217;</dt><dt>&#8216;<samp><span class="samp">--script</span></samp>&#8217;</dt><dd>never prompt the user
+
+     <br></dd><dt>&#8216;<samp><span class="samp">-a alignment-type</span></samp>&#8217;</dt><dt>&#8216;<samp><span class="samp">--align alignment-type</span></samp>&#8217;</dt><dd>Set alignment for newly created partitions, valid alignment types are:
+none, cylinder, minimal and optimal.
+
+     <br></dd><dt>&#8216;<samp><span class="samp">-v</span></samp>&#8217;</dt><dt>&#8216;<samp><span class="samp">--version</span></samp>&#8217;</dt><dd>display the version
+</dd></dl>
+
+<div class="node">
+<a name="Command-explanations"></a>
+<p></p><hr>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Invoking-Parted">Invoking Parted</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Using-Parted">Using Parted</a>
+
+</div>
+
+<h3 class="section">2.4 Parted Session Commands</h3>
+
+<p><a name="index-command-syntax-30"></a><a name="index-detailed-command-listing-31"></a><a name="index-commands_002c-detailed-listing-32"></a>
+GNU Parted provides the following commands:
+
+</p><ul class="menu">
+<li><a accesskey="1" href="#align_002dcheck">align-check</a>
+</li><li><a accesskey="2" href="#check">check</a>
+</li><li><a accesskey="3" href="#cp">cp</a>
+</li><li><a accesskey="4" href="#help">help</a>
+</li><li><a accesskey="5" href="#mklabel">mklabel</a>
+</li><li><a accesskey="6" href="#mkfs">mkfs</a>
+</li><li><a accesskey="7" href="#mkpart">mkpart</a>
+</li><li><a accesskey="8" href="#mkpartfs">mkpartfs</a>
+</li><li><a accesskey="9" href="#move">move</a>
+</li><li><a href="#name">name</a>
+</li><li><a href="#print">print</a>
+</li><li><a href="#quit">quit</a>
+</li><li><a href="#rescue">rescue</a>
+</li><li><a href="#resize">resize</a>
+</li><li><a href="#rm">rm</a>
+</li><li><a href="#select">select</a>
+</li><li><a href="#set">set</a>
+</li><li><a href="#unit">unit</a>
+</li></ul>
+
+<div class="node">
+<a name="align-check"></a>
+<a name="align_002dcheck"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#check">check</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.1 align-check</h4>
+
+<p><a name="index-align_002dcheck_002c-command-description-33"></a><a name="index-command-description_002c-align_002dcheck-34"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>align-check</b><var> align-type n<a name="index-align_002dcheck-35"></a></var><br>
+<blockquote>
+       <p>Determine whether the starting sector of partition <var>n</var>
+meets the disk's selected alignment criteria. 
+<var>align-type</var> must be &#8216;<samp><span class="samp">minimal</span></samp>&#8217;, &#8216;<samp><span class="samp">optimal</span></samp>&#8217;
+or an abbreviation. 
+When in script mode, if the partition does not meet the alignment
+requirement, exit with status 1;  otherwise (including on older
+kernels for which alignment data is not available), continue processing
+any remaining commands. 
+Without <samp><span class="option">--script</span></samp>, print either &#8216;<samp><var>N</var><span class="samp"> aligned</span></samp>&#8217;
+or &#8216;<samp><var>N</var><span class="samp"> not aligned</span></samp>&#8217;.
+
+       </p><p>Example:
+
+     </p><pre class="example">          (parted) <kbd>align-check minimal 1</kbd>
+          1 aligned
+</pre>
+       </blockquote></div>
+
+<div class="node">
+<a name="check"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#cp">cp</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#align_002dcheck">align-check</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.2 check</h4>
+
+<p><a name="index-check_002c-command-description-36"></a><a name="index-command-description_002c-check-37"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>check</b><var> number<a name="index-check-38"></a></var><br>
+<blockquote>
+       <p>Checks if the file system on partition <var>number</var> has
+any errors.
+
+       </p><p>Example:
+
+     </p><pre class="example">          (parted) <kbd>check 1</kbd>
+</pre>
+       <p>Check the file system on partition 1. 
+</p></blockquote></div>
+
+<div class="node">
+<a name="cp"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#help">help</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#check">check</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.3 cp</h4>
+
+<p><a name="index-cp_002c-command-description-39"></a><a name="index-command-description_002c-cp-40"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>cp</b> [<var>from-device</var>]<var> from-number to-number<a name="index-cp-41"></a></var><br>
+<blockquote>
+       <p>Copies the file system on the partition <var>from-number</var> to partition
+<var>to-number</var>, deleting the original contents of the destination
+partition.
+
+       </p><p>An optional device parameter, <var>from-device</var> can be given, which
+specifies which device the source partition is on.
+
+       </p><p>Supported file systems:
+          </p><ul>
+<li>ext2
+(provided the destination partition is larger than the source partition)
+
+          </li><li>fat16, fat32
+</li><li>linux-swap
+(equivalent to mkswap on destination partition)
+</li><li>reiserfs (if libreiserfs is installed)
+
+       </li></ul>
+
+       <p>Example:
+
+     </p><pre class="example">          (parted) <kbd>cp /dev/hdb 2 3</kbd>
+</pre>
+       <!-- FIXME: this doesn't format right. -->
+       <p>Copy partition 2 of <samp><span class="file">/dev/hdb</span></samp> (i.e., <samp><span class="file">/dev/hdb2</span></samp>) to partition
+on 3, on the device Parted was loaded with, destroying the original
+contents of partition 3. 
+</p></blockquote></div>
+
+<div class="node">
+<a name="help"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#mklabel">mklabel</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#cp">cp</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.4 help</h4>
+
+<p><a name="index-help_002c-command-description-42"></a><a name="index-command-description_002c-help-43"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>help</b> [<var>command</var>]<var><a name="index-help-44"></a></var><br>
+<blockquote>
+       <p>Prints general help, or help on <var>command</var>.
+
+       </p><p>Example:
+
+     </p><pre class="example">          (parted) <kbd>help resize</kbd>
+</pre>
+       <p>Print help for the resize command. 
+</p></blockquote></div>
+
+<div class="node">
+<a name="mklabel"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#mkfs">mkfs</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#help">help</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.5 mklabel</h4>
+
+<p><a name="index-mklabel_002c-command-description-45"></a><a name="index-command-description_002c-mkindex-46"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>mklabel</b><var> label-type<a name="index-mklabel-47"></a></var><br>
+<blockquote>
+       <p>Creates a new disk label, of type <var>label-type</var>.  The new disk label
+will have no partitions.  This command (normally) won't technically
+destroy your data, but it will make it basically unusable,
+and you will need to use the rescue command (see <a href="#Related-information">Related information</a>)
+to recover any partitions. 
+Parted works on all partition tables.  <a rel="footnote" href="#fn-1" name="fnd-1"><sup>1</sup></a>
+
+       </p><p><var>label-type</var> must be one of these supported disk labels:
+          </p><ul>
+<li>bsd
+</li><li>loop (raw disk access)
+</li><li>gpt
+</li><li>mac
+</li><li>msdos
+</li><li>pc98
+</li><li>sun
+</li></ul>
+
+       <p>Example:
+
+     </p><pre class="example">          (parted) <kbd>mklabel msdos</kbd>
+</pre>
+       <p>Create an MS-DOS disk label.  This is still the most common disk label for
+PCs. 
+</p></blockquote></div>
+
+<div class="node">
+<a name="mkfs"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#mkpart">mkpart</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#mklabel">mklabel</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.6 mkfs</h4>
+
+<p><a name="index-mkfs_002c-command-description-48"></a><a name="index-command-description_002c-mkfs-49"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>mkfs</b><var> number fs-type<a name="index-mkfs-50"></a></var><br>
+<blockquote>
+       <p>Makes a file system <var>fs-type</var> on partition <var>number</var>, destroying
+all data that resides on that partition.
+
+       </p><p>Supported file systems:
+          </p><ul>
+<li>ext2
+</li><li>fat16, fat32
+</li><li>linux-swap
+</li><li>reiserfs (if libreiserfs is installed)
+</li></ul>
+
+       <p>Example:
+
+     </p><pre class="example">          (parted) <kbd>mkfs 2 fat32</kbd>
+</pre>
+       <p>Make a <var>fat32</var> file system on partition 2. 
+</p></blockquote></div>
+
+<div class="node">
+<a name="mkpart"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#mkpartfs">mkpartfs</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#mkfs">mkfs</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.7 mkpart</h4>
+
+<p><a name="index-mkpart_002c-command-description-51"></a><a name="index-command-description_002c-mkpart-52"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>mkpart</b> [<var>part-type fs-type name</var>]<var> start end<a name="index-mkpart-53"></a></var><br>
+<blockquote>
+       <p>Creates a new partition, <em>without</em> creating a new file system on
+that partition.  This is useful for creating partitions for file systems
+(or LVM, etc.) that Parted doesn't support.  You may specify a file
+system type, to set the appropriate partition code in the partition
+table for the new partition.  <var>fs-type</var> is required for data
+partitions (i.e., non-extended partitions).  <var>start</var> and <var>end</var>
+are the offset from the beginning of the disk, that is, the &#8220;distance&#8221;
+from the start of the disk.
+
+       </p><p><var>part-type</var> is one of &#8216;<samp><span class="samp">primary</span></samp>&#8217;, &#8216;<samp><span class="samp">extended</span></samp>&#8217; or &#8216;<samp><span class="samp">logical</span></samp>&#8217;,
+and may be specified only with &#8216;<samp><span class="samp">msdos</span></samp>&#8217; or &#8216;<samp><span class="samp">dvh</span></samp>&#8217; partition tables. 
+A <var>name</var> must be specified for a &#8216;<samp><span class="samp">gpt</span></samp>&#8217; partition table. 
+Neither <var>part-type</var> nor <var>name</var> may be used with a &#8216;<samp><span class="samp">sun</span></samp>&#8217;
+partition table.
+
+       </p><p><var>fs-type</var> must be one of these supported file systems:
+          </p><ul>
+<li>ext2
+</li><li>fat16, fat32
+</li><li>hfs, hfs+, hfsx
+</li><li>linux-swap
+</li><li>NTFS
+</li><li>reiserfs
+</li><li>ufs
+</li></ul>
+
+       <p>Example:
+
+     </p><pre class="example">          (parted) <kbd>mkpart logical 0.0 692.1</kbd>
+</pre>
+       <p>Create a logical partition that will contain an ext2 file system.  The
+partition will start at the beginning of the disk, and end 692.1
+megabytes into the disk.
+
+       </p></blockquote></div>
+
+<div class="node">
+<a name="mkpartfs"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#move">move</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#mkpart">mkpart</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.8 mkpartfs</h4>
+
+<p><a name="index-mkpartfs_002c-command-description-54"></a><a name="index-command-description_002c-mkpartfs-55"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>mkpartfs</b><var> part-type fs-type start end<a name="index-mkpartfs-56"></a></var><br>
+<blockquote>
+       <p>Creates a new partition of type <var>part-type</var> with a new file system
+of type <var>fs-type</var> on it.  The new partition will start <var>start</var>
+megabytes, and end <var>end</var> megabytes from the beginning of the disk. 
+Do not use this command to recover a deleted partition (use mkpart
+instead).  Using this command is discouraged.  Instead use mkpart
+to create an empty partition, and then use external tools like mke2fs (8)
+to create the filesystem.
+
+       </p><p><var>part-type</var> is one of: primary, extended, logical.  Extended and logical
+are only used for msdos and dvh disk labels.
+
+       </p><p><var>fs-type</var> must be one of these supported file systems:
+          </p><ul>
+<li>ext2
+</li><li>fat16, fat32
+</li><li>linux-swap
+</li><li>reiserfs (if libreiserfs is installed)
+</li></ul>
+
+       <p>Example:
+
+     </p><pre class="example">          (parted) <kbd>mkpartfs logical ext2 440 670</kbd>
+</pre>
+       <p>Make a logical partition and write an ext2 file system, starting 440
+megabytes and ending 670 megabytes from the beginning of the disk. 
+</p></blockquote></div>
+
+<div class="node">
+<a name="move"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#name">name</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#mkpartfs">mkpartfs</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.9 move</h4>
+
+<p><a name="index-move_002c-command-description-57"></a><a name="index-command-description_002c-move-58"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>move</b><var> number start end<a name="index-move-59"></a></var><br>
+<blockquote>
+       <p>Moves partition on the disk, by moving its beginning to <var>start</var>. 
+You can't move a partition so that the old and new positions overlap. 
+That is, you can only move partitions into free space.  If you want
+to resize a partition in-place, use <samp><span class="command">resize</span></samp>.
+
+       </p><p>Move never changes the partition number.
+
+       </p><p>Supported file systems:
+          </p><ul>
+<li>ext2
+(provided the destination partition is larger than the source partition)
+
+          </li><li>fat16, fat32
+
+          </li><li>linux-swap
+
+          </li><li>reiserfs (if libreiserfs is installed)
+</li></ul>
+
+       <p>Example:
+
+     </p><pre class="example">          (parted) move 2 150M 500M
+</pre>
+       <p>Move the partition numbered 2 so that it begins 150 megabytes from the start of
+the disk, and ends 500 megabytes from the start.
+
+       </p></blockquote></div>
+
+<div class="node">
+<a name="name"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#print">print</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#move">move</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.10 name</h4>
+
+<p><a name="index-name_002c-command-description-60"></a><a name="index-command-description_002c-name-61"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>name</b><var> number name<a name="index-name-62"></a></var><br>
+<blockquote>
+       <p>Sets the name for the partition <var>number</var> (GPT, Mac, MIPS and PC98 only). 
+The name can be placed in quotes.
+
+       </p><p>Example:
+
+     </p><pre class="example">          (parted) <kbd>name 2 'Secret Documents'</kbd>
+</pre>
+       <p>Set the name of partition 2 to `Secret Documents'. 
+</p></blockquote></div>
+
+<div class="node">
+<a name="print"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#quit">quit</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#name">name</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.11 print</h4>
+
+<p><a name="index-print_002c-command-description-63"></a><a name="index-command-description_002c-print-64"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>print</b> [<var>number</var>]<var><a name="index-print-65"></a></var><br>
+<blockquote>
+       <p>Displays the partition table on the device parted is editing, or
+detailed information about a particular partition.
+
+       </p><p>Example:
+
+     </p><pre class="example">          (parted) <kbd>print</kbd>
+          Disk geometry for /dev/hda: 0.000-2445.679 megabytes
+          Disk label type: msdos
+          Minor    Start       End     Type      Filesystem  Flags
+          1          0.031    945.000  primary   fat32       boot, lba
+          2        945.000   2358.562  primary   ext2
+          3       2358.562   2445.187  primary   linux-swap
+          (parted) <kbd>print 1</kbd>
+          Minor: 1
+          Flags: boot, lba
+          File System: fat32
+          Size:            945.000Mb (0%)
+          Minimum size:     84.361Mb (0%)
+          Maximum size:   2445.679Mb (100%)
+</pre>
+       </blockquote></div>
+
+<div class="node">
+<a name="quit"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#rescue">rescue</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#print">print</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.12 quit</h4>
+
+<p><a name="index-quit_002c-command-description-66"></a><a name="index-command-description_002c-quit-67"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>quit</b><var><a name="index-quit-68"></a></var><br>
+<blockquote>
+       <p>Quits Parted.
+
+     <!-- RMK: generality: the following will apply to any operating system on -->
+     <!-- which parted will run, not only Linux-based ones. -->
+     <!-- clausen: yeah... just that the way hurd and linux work are totally -->
+     <!-- different, and it's actually very hard to speak in general.  Need to -->
+     <!-- discuss this more -->
+       </p><p>It is only after Parted exits that the Linux kernel knows about the changes
+Parted has made to the disks.  However, the changes caused by typing your
+commands will <em>probably</em> be made to the disk immediately after typing a
+command.  However, the operating system's cache and the disk's hardware cache
+may delay this. 
+</p></blockquote></div>
+
+<div class="node">
+<a name="rescue"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#resize">resize</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#quit">quit</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.13 rescue</h4>
+
+<p><a name="index-rescue_002c-command-description-69"></a><a name="index-command-description_002c-rescue-70"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>rescue</b><var> start end<a name="index-rescue-71"></a></var><br>
+<blockquote><p>Rescue a lost partition that used to be located approximately between
+<var>start</var> and <var>end</var>.  If such a partition is found, Parted will
+ask you if you want to create a partition for it.  This is useful if you
+accidently deleted a partition with parted's rm command, for example.
+
+       </p><p>Example:
+
+     </p><pre class="example">          (parted) <kbd>print</kbd>
+          Disk geometry for /dev/hdc: 0.000-8063.507 megabytes
+          Disk label type: msdos
+          Minor    Start       End     Type      Filesystem  Flags
+          1          0.031   8056.032  primary   ext3
+          (parted) <kbd>rm</kbd>
+          Partition number? 1
+          (parted) <kbd>print</kbd>
+          Disk geometry for /dev/hdc: 0.000-8063.507 megabytes
+          Disk label type: msdos
+          Minor    Start       End     Type      Filesystem  Flags
+</pre>
+       <p>OUCH!  We deleted our ext3 partition!!!  Parted comes to the rescue...
+
+     </p><pre class="example">          (parted) <kbd>rescue</kbd>
+          Start? 0
+          End? 8056
+          Information: A ext3 primary partition was found at 0.031MB -&gt;
+          8056.030MB.  Do you want to add it to the partition table?
+          Yes/No/Cancel? <kbd>y</kbd>
+          (parted) <kbd>print</kbd>
+          Disk geometry for /dev/hdc: 0.000-8063.507 megabytes
+          Disk label type: msdos
+          Minor    Start       End     Type      Filesystem  Flags
+          1          0.031   8056.032  primary   ext3
+</pre>
+       <p>It's back!  :)
+
+       </p></blockquote></div>
+
+<div class="node">
+<a name="resize"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#rm">rm</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#rescue">rescue</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.14 resize</h4>
+
+<p><a name="index-resize_002c-command-description-72"></a><a name="index-command-description_002c-resize-73"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>resize</b><var> number start end<a name="index-resize-74"></a></var><br>
+<blockquote>
+       <p>Resizes the partition with number <var>number</var>.  The partition will start
+<var>start</var> from the beginning of the disk, and end <var>end</var> from the
+beginning of the disk.  resize never changes the partition number.  Extended
+partitions can be resized only so long as the new extended partition
+completely contains all logical partitions.
+
+       </p><p>Note that Parted can manipulate partitions whether or not they have been
+defragmented, so you do not need to defragment the disk before
+using Parted.
+
+       </p><p>Supported file systems:
+          </p><ul>
+<li>ext2 &#8211; restriction: the new <var>start</var> must be the same as
+the old <var>start</var>. 
+</li><li>fat16, fat32
+</li><li>hfs, hfs+, hfsx &#8211; restriction: the new <var>start</var> must be the same as
+the old <var>start</var> and the new <var>end</var> must be smaller than the old
+<var>end</var>. 
+</li><li>linux-swap
+</li><li>reiserfs (if libreiserfs is installed)
+</li></ul>
+
+       <p>Example:
+
+     </p><pre class="example">          (parted) <kbd>resize 3 200M 850M</kbd>
+</pre>
+       <p>Resize partition 3, so that it begins 200 megabytes and ends 850
+megabytes from the beginning of the disk. 
+</p></blockquote></div>
+
+<div class="node">
+<a name="rm"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#select">select</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#resize">resize</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.15 rm</h4>
+
+<p><a name="index-rm_002c-command-description-75"></a><a name="index-command-description_002c-rm-76"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>rm</b><var> number<a name="index-rm-77"></a></var><br>
+<blockquote>
+       <p>Removes the partition with number <var>number</var>.  If you accidently delete
+a partition with this command, use mkpart (<em>not</em> mkpartfs) to
+recover it.  Also, you can use the gpart program (see <a href="#Related-information">Related information</a>)
+to recover damaged disk labels.
+
+       </p><p>Note for msdos disk labels: if you delete a logical partition, all
+logical partitions with a larger partition number will be renumbered.  For
+example, if you delete a logical partition with a partition number of 6,
+then logical partitions that were number 7, 8 and 9 would be renumbered
+to 6, 7 and 8 respectively.  This means, for example, that you have to
+update <samp><span class="file">/etc/fstab</span></samp> on GNU/Linux systems.
+
+       </p><p>Example:
+
+     </p><pre class="example">          (parted) <kbd>rm 3</kbd>
+</pre>
+       <p>Remove partition 3. 
+</p></blockquote></div>
+
+<div class="node">
+<a name="select"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#set">set</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#rm">rm</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.16 select</h4>
+
+<p><a name="index-select_002c-command-description-78"></a><a name="index-command-description_002c-select-79"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>select</b><var> device<a name="index-select-80"></a></var><br>
+<blockquote>
+       <p>Selects the device, <var>device</var>, for Parted to edit.  The device can
+be a Linux hard disk device, a partition, a software RAID device or
+LVM logical volume.
+
+       </p><p>Example:
+
+     </p><pre class="example">          (parted) <kbd>select /dev/hdb</kbd>
+</pre>
+       <p>Select <samp><span class="file">/dev/hdb</span></samp> (the slave device on the first ide controller on
+Linux) as the device to edit. 
+</p></blockquote></div>
+
+<div class="node">
+<a name="set"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#unit">unit</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#select">select</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.17 set</h4>
+
+<p><a name="index-set_002c-command-description-81"></a><a name="index-command-description_002c-set-82"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>set</b><var> number flag state<a name="index-set-83"></a></var><br>
+<blockquote>
+       <p>Changes a flag on the partition with number <var>number</var>.  A flag can be
+either &#8220;on&#8221; or &#8220;off&#8221;.  Some or all of these flags will be available,
+depending on what disk label you are using:
+
+          </p><dl>
+<dt>&#8216;<samp><span class="samp">bios_grub</span></samp>&#8217;</dt><dd>(GPT) - Enable this to record that the selected partition is a
+GRUB BIOS partition.
+
+          <br></dd><dt>&#8216;<samp><span class="samp">boot</span></samp>&#8217;</dt><dd>(Mac, MS-DOS, PC98) - should be enabled if you want to boot off the
+partition.  The semantics vary between disk labels.  For MS-DOS disk
+labels, only one partition can be bootable.  If you are installing LILO
+on a partition that partition must be bootable. 
+For PC98 disk labels, all ext2 partitions must be bootable (this is
+enforced by Parted).
+
+          <br></dd><dt>&#8216;<samp><span class="samp">lba</span></samp>&#8217;</dt><dd>(MS-DOS) - this flag can be enabled to tell MS DOS, MS Windows 9x and
+MS Windows ME based operating systems to use Linear (LBA) mode.
+
+          <br></dd><dt>&#8216;<samp><span class="samp">root</span></samp>&#8217;</dt><dd>(Mac) - this flag should be enabled if the partition is the root device
+to be used by Linux.
+
+          <br></dd><dt>&#8216;<samp><span class="samp">swap</span></samp>&#8217;</dt><dd>(Mac) - this flag should be enabled if the partition is the swap
+device to be used by Linux.
+
+          <br></dd><dt>&#8216;<samp><span class="samp">hidden</span></samp>&#8217;</dt><dd>(MS-DOS, PC98) - this flag can be enabled to hide partitions from
+Microsoft operating systems.
+
+          <br></dd><dt>&#8216;<samp><span class="samp">raid</span></samp>&#8217;</dt><dd>(MS-DOS) - this flag can be enabled to tell linux the partition is a
+software RAID partition.
+
+          <br></dd><dt>&#8216;<samp><span class="samp">LVM</span></samp>&#8217;</dt><dd>(MS-DOS) - this flag can be enabled to tell linux the partition is a
+physical volume.
+
+          <br></dd><dt>&#8216;<samp><span class="samp">PALO</span></samp>&#8217;</dt><dd>(MS-DOS) - this flag can be enabled so that the partition can be used
+by the Linux/PA-RISC boot loader, palo.
+
+          <br></dd><dt>&#8216;<samp><span class="samp">PREP</span></samp>&#8217;</dt><dd>(MS-DOS) - this flag can be enabled so that the partition can be used
+as a PReP boot partition on PowerPC PReP or IBM RS6K/CHRP hardware.
+
+          <br></dd><dt>&#8216;<samp><span class="samp">DIAG</span></samp>&#8217;</dt><dd>(MS-DOS) - Enable this to indicate that a partition can be used
+as a diagnostics / recovery partition.
+
+       </dd></dl>
+
+       <p>The print command displays all enabled flags for each partition.
+
+       </p><p>Example:
+
+     </p><pre class="example">          (parted) <kbd>set 1 boot on</kbd>
+</pre>
+       <p>Set the &#8216;<samp><span class="samp">boot</span></samp>&#8217; flag on partition 1. 
+</p></blockquote></div>
+
+<div class="node">
+<a name="unit"></a>
+<p></p><hr>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#set">set</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Command-explanations">Command explanations</a>
+
+</div>
+
+<h4 class="subsection">2.4.18 unit</h4>
+
+<p><a name="index-unit_002c-command-description-84"></a><a name="index-command-description_002c-unit-85"></a>
+
+</p><div class="defun">
+&#8212; Command: <b>unit</b><var> unit<a name="index-unit-86"></a></var><br>
+<blockquote>
+       <p>Selects the current default unit that Parted will use to display
+locations and capacities on the disk and to interpret those given
+by the user if they are not suffixed by an <var>unit</var>.
+
+       </p><p><var>unit</var> may be one of:
+
+          </p><dl>
+<dt>&#8216;<samp><span class="samp">s</span></samp>&#8217;</dt><dd>sector (n bytes depending on the sector size, often 512)
+
+          <br></dd><dt>&#8216;<samp><span class="samp">B</span></samp>&#8217;</dt><dd>byte
+
+          <br></dd><dt>&#8216;<samp><span class="samp">kB</span></samp>&#8217;</dt><dd>kilobyte (1000 bytes)
+
+          <br></dd><dt>&#8216;<samp><span class="samp">MB</span></samp>&#8217;</dt><dd>megabyte (1000000 bytes)
+
+          <br></dd><dt>&#8216;<samp><span class="samp">GB</span></samp>&#8217;</dt><dd>gigabyte (1000000000 bytes)
+
+          <br></dd><dt>&#8216;<samp><span class="samp">TB</span></samp>&#8217;</dt><dd>terabyte (1000000000000 bytes)
+
+          <br></dd><dt>&#8216;<samp><span class="samp">%</span></samp>&#8217;</dt><dd>percentage of the device (between 0 and 100)
+
+          <br></dd><dt>&#8216;<samp><span class="samp">cyl</span></samp>&#8217;</dt><dd>cylinders (related to the BIOS CHS geometry)
+
+          <br></dd><dt>&#8216;<samp><span class="samp">chs</span></samp>&#8217;</dt><dd>cylinders, heads, sectors addressing (related to the BIOS CHS geometry)
+
+          <br></dd><dt>&#8216;<samp><span class="samp">compact</span></samp>&#8217;</dt><dd>This is a special unit that defaults to megabytes for input, and picks a
+unit that gives a compact human readable representation for output. 
+</dd></dl>
+
+       <p>The default unit apply only for the output and when no unit is
+specified after an input number.  Input numbers can be followed by
+an unit (without any space or other character between them), in
+which case this unit apply instead of the default unit for this
+particular number, but CHS and cylinder units are not supported as
+a suffix.  If no suffix is given, then the default unit is assumed. 
+Parted will compute sensible ranges for the locations you specify
+(e.g. a range of +/- 500 MB when you specify the location in &#8220;G&#8221;)
+and will select the nearest location in this range from the one you
+wrote that satisfies constraints from both the operation, the
+filesystem being worked on, the disk label, other partitions and so
+on.  Use the sector unit &#8220;s&#8221; to specify exact locations (if they
+do not satisfy all constraints, Parted will ask you for the nearest
+solution).  Note that negative numbers count back from the end of
+the disk, with &#8220;-1s&#8221; pointing to the end of the disk.
+
+       </p><p>Example:
+
+     </p><pre class="example">          (parted) unit compact
+          (parted) print
+          Disk geometry for /dev/hda: 0kB - 123GB
+          Disk label type: msdos
+          Number  Start   End     Size    Type      File system  Flags
+          1       32kB    1078MB  1077MB  primary   reiserfs     boot
+          2       1078MB  2155MB  1078MB  primary   linux-swap
+          3       2155MB  123GB   121GB   extended
+          5       2155MB  7452MB  5297MB  logical   reiserfs
+          (parted) unit chs print
+          Disk geometry for /dev/hda: 0,0,0 - 14946,225,62
+          BIOS cylinder,head,sector geometry: 14946,255,63.  Each cylinder
+          is 8225kB.
+          Disk label type: msdos
+          Number  Start       End         Type      File system  Flags
+          1       0,1,0       130,254,62  primary   reiserfs     boot
+          2       131,0,0     261,254,62  primary   linux-swap
+          3       262,0,0     14945,254,62 extended
+          5       262,2,0     905,254,62  logical   reiserfs
+          (parted) unit mb print
+          Disk geometry for /dev/hda: 0MB - 122942MB
+          Disk label type: msdos
+          Number  Start   End     Size    Type      File system  Flags
+          1       0MB     1078MB  1077MB  primary   reiserfs     boot
+          2       1078MB  2155MB  1078MB  primary   linux-swap
+          3       2155MB  122935MB 120780MB extended
+          5       2155MB  7452MB  5297MB  logical   reiserfs
+</pre>
+       </blockquote></div>
+
+<div class="node">
+<a name="Related-information"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Copying-This-Manual">Copying This Manual</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Using-Parted">Using Parted</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<h2 class="chapter">3 Related information</h2>
+
+<p><a name="index-further-reading-87"></a><a name="index-related-documentation-88"></a>
+If you want to find out more information, please see the GNU Parted web site.
+
+  </p><p>These files in the Parted distribution contain further information:
+
+     </p><ul>
+<li><kbd>ABOUT-NLS</kbd> - information about using Native Language Support, and the Free Translation Project.
+
+     </li><li><kbd>AUTHORS</kbd> - who wrote what.
+
+     </li><li><kbd>ChangeLog</kbd> - record of changes made to Parted.
+
+     </li><li><kbd>COPYING</kbd> - the GNU General Public License, the terms under which GNU Parted may be distributed.
+
+     </li><li><kbd>COPYING.DOC</kbd> - the GNU Free Documentation Licence, the term under
+which Parted's documentation may be distributed.
+
+     </li><li><kbd>INSTALL</kbd> &#8212; how to compile and install Parted, and most other free
+software
+
+  </li></ul>
+
+<div class="node">
+<a name="Copying-This-Manual"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#History">History</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Related-information">Related information</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<h2 class="appendix">Appendix A Copying This Manual</h2>
+
+<ul class="menu">
+<li><a accesskey="1" href="#GNU-Free-Documentation-License">GNU Free Documentation License</a>:   License for copying this manual
+</li></ul>
+
+<div class="node">
+<a name="GNU-Free-Documentation-License"></a>
+<p></p><hr>
+Up:&nbsp;<a rel="up" accesskey="u" href="#Copying-This-Manual">Copying This Manual</a>
+
+</div>
+
+<h3 class="appendixsec">A.1 GNU Free Documentation License</h3>
+
+<p><a name="index-FDL_002c-GNU-Free-Documentation-License-89"></a></p><div align="center">Version 1.1, March 2000</div>
+
+<pre class="display">     Copyright © 2000, 2009-2010 Free Software Foundation, Inc.
+     51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA
+     
+     Everyone is permitted to copy and distribute verbatim copies
+     of this license document, but changing it is not allowed.
+</pre>
+     <ol start="0" type="1">
+<li>PREAMBLE
+
+     <p>The purpose of this License is to make a manual, textbook, or other
+written document <dfn>free</dfn> in the sense of freedom: to assure everyone
+the effective freedom to copy and redistribute it, with or without
+modifying it, either commercially or noncommercially.  Secondarily,
+this License preserves for the author and publisher a way to get
+credit for their work, while not being considered responsible for
+modifications made by others.
+
+     </p><p>This License is a kind of &#8220;copyleft&#8221;, which means that derivative
+works of the document must themselves be free in the same sense.  It
+complements the GNU General Public License, which is a copyleft
+license designed for free software.
+
+     </p><p>We have designed this License in order to use it for manuals for free
+software, because free software needs free documentation: a free
+program should come with manuals providing the same freedoms that the
+software does.  But this License is not limited to software manuals;
+it can be used for any textual work, regardless of subject matter or
+whether it is published as a printed book.  We recommend this License
+principally for works whose purpose is instruction or reference.
+
+     </p></li><li>APPLICABILITY AND DEFINITIONS
+
+     <p>This License applies to any manual or other work that contains a
+notice placed by the copyright holder saying it can be distributed
+under the terms of this License.  The &#8220;Document&#8221;, below, refers to any
+such manual or work.  Any member of the public is a licensee, and is
+addressed as &#8220;you&#8221;.
+
+     </p><p>A &#8220;Modified Version&#8221; of the Document means any work containing the
+Document or a portion of it, either copied verbatim, or with
+modifications and/or translated into another language.
+
+     </p><p>A &#8220;Secondary Section&#8221; is a named appendix or a front-matter section of
+the Document that deals exclusively with the relationship of the
+publishers or authors of the Document to the Document's overall subject
+(or to related matters) and contains nothing that could fall directly
+within that overall subject.  (For example, if the Document is in part a
+textbook of mathematics, a Secondary Section may not explain any
+mathematics.)  The relationship could be a matter of historical
+connection with the subject or with related matters, or of legal,
+commercial, philosophical, ethical or political position regarding
+them.
+
+     </p><p>The &#8220;Invariant Sections&#8221; are certain Secondary Sections whose titles
+are designated, as being those of Invariant Sections, in the notice
+that says that the Document is released under this License.
+
+     </p><p>The &#8220;Cover Texts&#8221; are certain short passages of text that are listed,
+as Front-Cover Texts or Back-Cover Texts, in the notice that says that
+the Document is released under this License.
+
+     </p><p>A &#8220;Transparent&#8221; copy of the Document means a machine-readable copy,
+represented in a format whose specification is available to the
+general public, whose contents can be viewed and edited directly and
+straightforwardly with generic text editors or (for images composed of
+pixels) generic paint programs or (for drawings) some widely available
+drawing editor, and that is suitable for input to text formatters or
+for automatic translation to a variety of formats suitable for input
+to text formatters.  A copy made in an otherwise Transparent file
+format whose markup has been designed to thwart or discourage
+subsequent modification by readers is not Transparent.  A copy that is
+not &#8220;Transparent&#8221; is called &#8220;Opaque&#8221;.
+
+     </p><p>Examples of suitable formats for Transparent copies include plain
+<span class="sc">ascii</span> without markup, Texinfo input format, LaTeX input format,
+<acronym>SGML</acronym> or <acronym>XML</acronym> using a publicly available
+<acronym>DTD</acronym>, and standard-conforming simple <acronym>HTML</acronym> designed
+for human modification.  Opaque formats include PostScript,
+<acronym>PDF</acronym>, proprietary formats that can be read and edited only by
+proprietary word processors, <acronym>SGML</acronym> or <acronym>XML</acronym> for which
+the <acronym>DTD</acronym> and/or processing tools are not generally available,
+and the machine-generated <acronym>HTML</acronym> produced by some word
+processors for output purposes only.
+
+     </p><p>The &#8220;Title Page&#8221; means, for a printed book, the title page itself,
+plus such following pages as are needed to hold, legibly, the material
+this License requires to appear in the title page.  For works in
+formats which do not have any title page as such, &#8220;Title Page&#8221; means
+the text near the most prominent appearance of the work's title,
+preceding the beginning of the body of the text.
+
+     </p></li><li>VERBATIM COPYING
+
+     <p>You may copy and distribute the Document in any medium, either
+commercially or noncommercially, provided that this License, the
+copyright notices, and the license notice saying this License applies
+to the Document are reproduced in all copies, and that you add no other
+conditions whatsoever to those of this License.  You may not use
+technical measures to obstruct or control the reading or further
+copying of the copies you make or distribute.  However, you may accept
+compensation in exchange for copies.  If you distribute a large enough
+number of copies you must also follow the conditions in section 3.
+
+     </p><p>You may also lend copies, under the same conditions stated above, and
+you may publicly display copies.
+
+     </p></li><li>COPYING IN QUANTITY
+
+     <p>If you publish printed copies of the Document numbering more than 100,
+and the Document's license notice requires Cover Texts, you must enclose
+the copies in covers that carry, clearly and legibly, all these Cover
+Texts: Front-Cover Texts on the front cover, and Back-Cover Texts on
+the back cover.  Both covers must also clearly and legibly identify
+you as the publisher of these copies.  The front cover must present
+the full title with all words of the title equally prominent and
+visible.  You may add other material on the covers in addition. 
+Copying with changes limited to the covers, as long as they preserve
+the title of the Document and satisfy these conditions, can be treated
+as verbatim copying in other respects.
+
+     </p><p>If the required texts for either cover are too voluminous to fit
+legibly, you should put the first ones listed (as many as fit
+reasonably) on the actual cover, and continue the rest onto adjacent
+pages.
+
+     </p><p>If you publish or distribute Opaque copies of the Document numbering
+more than 100, you must either include a machine-readable Transparent
+copy along with each Opaque copy, or state in or with each Opaque copy
+a publicly-accessible computer-network location containing a complete
+Transparent copy of the Document, free of added material, which the
+general network-using public has access to download anonymously at no
+charge using public-standard network protocols.  If you use the latter
+option, you must take reasonably prudent steps, when you begin
+distribution of Opaque copies in quantity, to ensure that this
+Transparent copy will remain thus accessible at the stated location
+until at least one year after the last time you distribute an Opaque
+copy (directly or through your agents or retailers) of that edition to
+the public.
+
+     </p><p>It is requested, but not required, that you contact the authors of the
+Document well before redistributing any large number of copies, to give
+them a chance to provide you with an updated version of the Document.
+
+     </p></li><li>MODIFICATIONS
+
+     <p>You may copy and distribute a Modified Version of the Document under
+the conditions of sections 2 and 3 above, provided that you release
+the Modified Version under precisely this License, with the Modified
+Version filling the role of the Document, thus licensing distribution
+and modification of the Modified Version to whoever possesses a copy
+of it.  In addition, you must do these things in the Modified Version:
+
+          </p><ol start="1" type="A">
+<li>Use in the Title Page (and on the covers, if any) a title distinct
+from that of the Document, and from those of previous versions
+(which should, if there were any, be listed in the History section
+of the Document).  You may use the same title as a previous version
+if the original publisher of that version gives permission.
+
+          </li><li>List on the Title Page, as authors, one or more persons or entities
+responsible for authorship of the modifications in the Modified
+Version, together with at least five of the principal authors of the
+Document (all of its principal authors, if it has less than five).
+
+          </li><li>State on the Title page the name of the publisher of the
+Modified Version, as the publisher.
+
+          </li><li>Preserve all the copyright notices of the Document.
+
+          </li><li>Add an appropriate copyright notice for your modifications
+adjacent to the other copyright notices.
+
+          </li><li>Include, immediately after the copyright notices, a license notice
+giving the public permission to use the Modified Version under the
+terms of this License, in the form shown in the Addendum below.
+
+          </li><li>Preserve in that license notice the full lists of Invariant Sections
+and required Cover Texts given in the Document's license notice.
+
+          </li><li>Include an unaltered copy of this License.
+
+          </li><li>Preserve the section entitled &#8220;History&#8221;, and its title, and add to
+it an item stating at least the title, year, new authors, and
+publisher of the Modified Version as given on the Title Page.  If
+there is no section entitled &#8220;History&#8221; in the Document, create one
+stating the title, year, authors, and publisher of the Document as
+given on its Title Page, then add an item describing the Modified
+Version as stated in the previous sentence.
+
+          </li><li>Preserve the network location, if any, given in the Document for
+public access to a Transparent copy of the Document, and likewise
+the network locations given in the Document for previous versions
+it was based on.  These may be placed in the &#8220;History&#8221; section. 
+You may omit a network location for a work that was published at
+least four years before the Document itself, or if the original
+publisher of the version it refers to gives permission.
+
+          </li><li>In any section entitled &#8220;Acknowledgments&#8221; or &#8220;Dedications&#8221;,
+preserve the section's title, and preserve in the section all the
+substance and tone of each of the contributor acknowledgments
+and/or dedications given therein.
+
+          </li><li>Preserve all the Invariant Sections of the Document,
+unaltered in their text and in their titles.  Section numbers
+or the equivalent are not considered part of the section titles.
+
+          </li><li>Delete any section entitled &#8220;Endorsements&#8221;.  Such a section
+may not be included in the Modified Version.
+
+          </li><li>Do not retitle any existing section as &#8220;Endorsements&#8221;
+or to conflict in title with any Invariant Section.
+          </li></ol>
+
+     <p>If the Modified Version includes new front-matter sections or
+appendices that qualify as Secondary Sections and contain no material
+copied from the Document, you may at your option designate some or all
+of these sections as invariant.  To do this, add their titles to the
+list of Invariant Sections in the Modified Version's license notice. 
+These titles must be distinct from any other section titles.
+
+     </p><p>You may add a section entitled &#8220;Endorsements&#8221;, provided it contains
+nothing but endorsements of your Modified Version by various
+parties&#8212;for example, statements of peer review or that the text has
+been approved by an organization as the authoritative definition of a
+standard.
+
+     </p><p>You may add a passage of up to five words as a Front-Cover Text, and a
+passage of up to 25 words as a Back-Cover Text, to the end of the list
+of Cover Texts in the Modified Version.  Only one passage of
+Front-Cover Text and one of Back-Cover Text may be added by (or
+through arrangements made by) any one entity.  If the Document already
+includes a cover text for the same cover, previously added by you or
+by arrangement made by the same entity you are acting on behalf of,
+you may not add another; but you may replace the old one, on explicit
+permission from the previous publisher that added the old one.
+
+     </p><p>The author(s) and publisher(s) of the Document do not by this License
+give permission to use their names for publicity for or to assert or
+imply endorsement of any Modified Version.
+
+     </p></li><li>COMBINING DOCUMENTS
+
+     <p>You may combine the Document with other documents released under this
+License, under the terms defined in section 4 above for modified
+versions, provided that you include in the combination all of the
+Invariant Sections of all of the original documents, unmodified, and
+list them all as Invariant Sections of your combined work in its
+license notice.
+
+     </p><p>The combined work need only contain one copy of this License, and
+multiple identical Invariant Sections may be replaced with a single
+copy.  If there are multiple Invariant Sections with the same name but
+different contents, make the title of each such section unique by
+adding at the end of it, in parentheses, the name of the original
+author or publisher of that section if known, or else a unique number. 
+Make the same adjustment to the section titles in the list of
+Invariant Sections in the license notice of the combined work.
+
+     </p><p>In the combination, you must combine any sections entitled &#8220;History&#8221;
+in the various original documents, forming one section entitled
+&#8220;History&#8221;; likewise combine any sections entitled &#8220;Acknowledgments&#8221;,
+and any sections entitled &#8220;Dedications&#8221;.  You must delete all sections
+entitled &#8220;Endorsements.&#8221;
+
+     </p></li><li>COLLECTIONS OF DOCUMENTS
+
+     <p>You may make a collection consisting of the Document and other documents
+released under this License, and replace the individual copies of this
+License in the various documents with a single copy that is included in
+the collection, provided that you follow the rules of this License for
+verbatim copying of each of the documents in all other respects.
+
+     </p><p>You may extract a single document from such a collection, and distribute
+it individually under this License, provided you insert a copy of this
+License into the extracted document, and follow this License in all
+other respects regarding verbatim copying of that document.
+
+     </p></li><li>AGGREGATION WITH INDEPENDENT WORKS
+
+     <p>A compilation of the Document or its derivatives with other separate
+and independent documents or works, in or on a volume of a storage or
+distribution medium, does not as a whole count as a Modified Version
+of the Document, provided no compilation copyright is claimed for the
+compilation.  Such a compilation is called an &#8220;aggregate&#8221;, and this
+License does not apply to the other self-contained works thus compiled
+with the Document, on account of their being thus compiled, if they
+are not themselves derivative works of the Document.
+
+     </p><p>If the Cover Text requirement of section 3 is applicable to these
+copies of the Document, then if the Document is less than one quarter
+of the entire aggregate, the Document's Cover Texts may be placed on
+covers that surround only the Document within the aggregate. 
+Otherwise they must appear on covers around the whole aggregate.
+
+     </p></li><li>TRANSLATION
+
+     <p>Translation is considered a kind of modification, so you may
+distribute translations of the Document under the terms of section 4. 
+Replacing Invariant Sections with translations requires special
+permission from their copyright holders, but you may include
+translations of some or all Invariant Sections in addition to the
+original versions of these Invariant Sections.  You may include a
+translation of this License provided that you also include the
+original English version of this License.  In case of a disagreement
+between the translation and the original English version of this
+License, the original English version will prevail.
+
+     </p></li><li>TERMINATION
+
+     <p>You may not copy, modify, sublicense, or distribute the Document except
+as expressly provided for under this License.  Any other attempt to
+copy, modify, sublicense or distribute the Document is void, and will
+automatically terminate your rights under this License.  However,
+parties who have received copies, or rights, from you under this
+License will not have their licenses terminated so long as such
+parties remain in full compliance.
+
+     </p></li><li>FUTURE REVISIONS OF THIS LICENSE
+
+     <p>The Free Software Foundation may publish new, revised versions
+of the GNU Free Documentation License from time to time.  Such new
+versions will be similar in spirit to the present version, but may
+differ in detail to address new problems or concerns.  See
+<a href="http://www.gnu.org/copyleft/">http://www.gnu.org/copyleft/</a>.
+
+     </p><p>Each version of the License is given a distinguishing version number. 
+If the Document specifies that a particular numbered version of this
+License &#8220;or any later version&#8221; applies to it, you have the option of
+following the terms and conditions either of that specified version or
+of any later version that has been published (not as a draft) by the
+Free Software Foundation.  If the Document does not specify a version
+number of this License, you may choose any version ever published (not
+as a draft) by the Free Software Foundation.
+       </p></li></ol>
+
+<h4 class="appendixsubsec">A.1.1 ADDENDUM: How to use this License for your documents</h4>
+
+<p>To use this License in a document you have written, include a copy of
+the License in the document and put the following copyright and
+license notices just after the title page:
+
+</p><pre class="smallexample">       Copyright (C)  <var>year</var>  <var>your name</var>.
+       Permission is granted to copy, distribute and/or modify this document
+       under the terms of the GNU Free Documentation License, Version 1.3
+       or any later version published by the Free Software Foundation;
+       with the Invariant Sections being <var>list their titles</var>, with the
+       Front-Cover Texts being <var>list</var>, and with the Back-Cover Texts being <var>list</var>.
+       A copy of the license is included in the section entitled ``GNU
+       Free Documentation License''.
+</pre>
+  <p>If you have no Invariant Sections, write &#8220;with no Invariant Sections&#8221;
+instead of saying which ones are invariant.  If you have no
+Front-Cover Texts, write &#8220;no Front-Cover Texts&#8221; instead of
+&#8220;Front-Cover Texts being <var>list</var>&#8221;; likewise for Back-Cover Texts.
+
+  </p><p>If your document contains nontrivial examples of program code, we
+recommend releasing these examples in parallel under your choice of
+free software license, such as the GNU General Public License,
+to permit their use in free software.
+
+<!-- Local Variables: -->
+<!-- ispell-local-pdict: "ispell-dict" -->
+<!-- End: -->
+</p><div class="node">
+<a name="History"></a>
+<p></p><hr>
+Next:&nbsp;<a rel="next" accesskey="n" href="#Concept-index">Concept index</a>,
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#Copying-This-Manual">Copying This Manual</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<h2 class="appendix">Appendix B This manual's history</h2>
+
+<p><a name="index-history-of-this-manual-90"></a>
+This manual was based on the file <kbd>USER</kbd> included in GNU Parted version
+1.4.22 source distribution.  The GNU Parted source distribution is
+available at <a href="http://www.gnu.org/software/parted/manual/ftp.gnu.org/gnu/parted">ftp.gnu.org/gnu/parted</a>.
+
+  </p><p>Initial Texinfo formatting by Richard M. Kreuter, 2002.
+
+  </p><p>Maintainance by Andrew Clausen from 2002 to 2005 and by Leslie P. Polzer
+from July 2005 onwards.
+
+  </p><p>This manual is distributed under the GNU Free Documentation License,
+version 1.1 or later, at your discretion, any later version published
+by the Free Software Foundation; with no Invariant Sections, with no
+Front-Cover Texts, and with no Back-Cover Texts.  See <a href="#Copying-This-Manual">Copying This Manual</a>, for details.
+
+</p><div class="node">
+<a name="Concept-index"></a>
+<p></p><hr>
+Previous:&nbsp;<a rel="previous" accesskey="p" href="#History">History</a>,
+Up:&nbsp;<a rel="up" accesskey="u" href="#Top">Top</a>
+
+</div>
+
+<h2 class="unnumbered">Index</h2>
+
+<ul class="index-cp" compact="compact">
+<li><a href="#index-align_002dcheck_002c-command-description-33">align-check, command description</a>: <a href="#align_002dcheck">align-check</a></li>
+<li><a href="#index-bugs_002c-reporting-4">bugs, reporting</a>: <a href="#Overview">Overview</a></li>
+<li><a href="#index-building-parted-20">building parted</a>: <a href="#Compiling">Compiling</a></li>
+<li><a href="#index-check_002c-command-description-36">check, command description</a>: <a href="#check">check</a></li>
+<li><a href="#index-command-description_002c-align_002dcheck-34">command description, align-check</a>: <a href="#align_002dcheck">align-check</a></li>
+<li><a href="#index-command-description_002c-check-37">command description, check</a>: <a href="#check">check</a></li>
+<li><a href="#index-command-description_002c-cp-40">command description, cp</a>: <a href="#cp">cp</a></li>
+<li><a href="#index-command-description_002c-help-43">command description, help</a>: <a href="#help">help</a></li>
+<li><a href="#index-command-description_002c-mkfs-49">command description, mkfs</a>: <a href="#mkfs">mkfs</a></li>
+<li><a href="#index-command-description_002c-mkindex-46">command description, mkindex</a>: <a href="#mklabel">mklabel</a></li>
+<li><a href="#index-command-description_002c-mkpart-52">command description, mkpart</a>: <a href="#mkpart">mkpart</a></li>
+<li><a href="#index-command-description_002c-mkpartfs-55">command description, mkpartfs</a>: <a href="#mkpartfs">mkpartfs</a></li>
+<li><a href="#index-command-description_002c-move-58">command description, move</a>: <a href="#move">move</a></li>
+<li><a href="#index-command-description_002c-name-61">command description, name</a>: <a href="#name">name</a></li>
+<li><a href="#index-command-description_002c-print-64">command description, print</a>: <a href="#print">print</a></li>
+<li><a href="#index-command-description_002c-quit-67">command description, quit</a>: <a href="#quit">quit</a></li>
+<li><a href="#index-command-description_002c-rescue-70">command description, rescue</a>: <a href="#rescue">rescue</a></li>
+<li><a href="#index-command-description_002c-resize-73">command description, resize</a>: <a href="#resize">resize</a></li>
+<li><a href="#index-command-description_002c-rm-76">command description, rm</a>: <a href="#rm">rm</a></li>
+<li><a href="#index-command-description_002c-select-79">command description, select</a>: <a href="#select">select</a></li>
+<li><a href="#index-command-description_002c-set-82">command description, set</a>: <a href="#set">set</a></li>
+<li><a href="#index-command-description_002c-unit-85">command description, unit</a>: <a href="#unit">unit</a></li>
+<li><a href="#index-command-syntax-30">command syntax</a>: <a href="#Command-explanations">Command explanations</a></li>
+<li><a href="#index-commands-24">commands</a>: <a href="#Using-Parted">Using Parted</a></li>
+<li><a href="#index-commands_002c-detailed-listing-32">commands, detailed listing</a>: <a href="#Command-explanations">Command explanations</a></li>
+<li><a href="#index-commands_002c-overview-28">commands, overview</a>: <a href="#Invoking-Parted">Invoking Parted</a></li>
+<li><a href="#index-compiling-parted-19">compiling parted</a>: <a href="#Compiling">Compiling</a></li>
+<li><a href="#index-contacting-developers-6">contacting developers</a>: <a href="#Overview">Overview</a></li>
+<li><a href="#index-cp_002c-command-description-39">cp, command description</a>: <a href="#cp">cp</a></li>
+<li><a href="#index-description-of-parted-1">description of parted</a>: <a href="#Overview">Overview</a></li>
+<li><a href="#index-detailed-command-listing-31">detailed command listing</a>: <a href="#Command-explanations">Command explanations</a></li>
+<li><a href="#index-e2fsprogs-10">e2fsprogs</a>: <a href="#Software-Required">Software Required</a></li>
+<li><a href="#index-FDL_002c-GNU-Free-Documentation-License-89">FDL, GNU Free Documentation License</a>: <a href="#GNU-Free-Documentation-License">GNU Free Documentation License</a></li>
+<li><a href="#index-further-reading-87">further reading</a>: <a href="#Related-information">Related information</a></li>
+<li><a href="#index-gettext-12">gettext</a>: <a href="#Software-Required">Software Required</a></li>
+<li><a href="#index-gnu-gpl-17">gnu gpl</a>: <a href="#License">License</a></li>
+<li><a href="#index-gpl-18">gpl</a>: <a href="#License">License</a></li>
+<li><a href="#index-help_002c-command-description-42">help, command description</a>: <a href="#help">help</a></li>
+<li><a href="#index-history-of-this-manual-90">history of this manual</a>: <a href="#History">History</a></li>
+<li><a href="#index-invocation-options-29">invocation options</a>: <a href="#Invoking-Parted">Invoking Parted</a></li>
+<li><a href="#index-libuuid-9">libuuid</a>: <a href="#Software-Required">Software Required</a></li>
+<li><a href="#index-license-terms-15">license terms</a>: <a href="#License">License</a></li>
+<li><a href="#index-mkfs_002c-command-description-48">mkfs, command description</a>: <a href="#mkfs">mkfs</a></li>
+<li><a href="#index-mklabel_002c-command-description-45">mklabel, command description</a>: <a href="#mklabel">mklabel</a></li>
+<li><a href="#index-mkpart_002c-command-description-51">mkpart, command description</a>: <a href="#mkpart">mkpart</a></li>
+<li><a href="#index-mkpartfs_002c-command-description-54">mkpartfs, command description</a>: <a href="#mkpartfs">mkpartfs</a></li>
+<li><a href="#index-modes-of-use-26">modes of use</a>: <a href="#Running-Parted">Running Parted</a></li>
+<li><a href="#index-move_002c-command-description-57">move, command description</a>: <a href="#move">move</a></li>
+<li><a href="#index-name_002c-command-description-60">name, command description</a>: <a href="#name">name</a></li>
+<li><a href="#index-options-at-invocation-27">options at invocation</a>: <a href="#Invoking-Parted">Invoking Parted</a></li>
+<li><a href="#index-overview-2">overview</a>: <a href="#Overview">Overview</a></li>
+<li><a href="#index-parted-description-3">parted description</a>: <a href="#Overview">Overview</a></li>
+<li><a href="#index-partitioning-overview-25">partitioning overview</a>: <a href="#Partitioning">Partitioning</a></li>
+<li><a href="#index-platforms_002c-supported-14">platforms, supported</a>: <a href="#Supported-Platforms">Supported Platforms</a></li>
+<li><a href="#index-print_002c-command-description-63">print, command description</a>: <a href="#print">print</a></li>
+<li><a href="#index-quit_002c-command-description-66">quit, command description</a>: <a href="#quit">quit</a></li>
+<li><a href="#index-readline-11">readline</a>: <a href="#Software-Required">Software Required</a></li>
+<li><a href="#index-related-documentation-88">related documentation</a>: <a href="#Related-information">Related information</a></li>
+<li><a href="#index-reporting-bugs-5">reporting bugs</a>: <a href="#Overview">Overview</a></li>
+<li><a href="#index-required-software-8">required software</a>: <a href="#Software-Required">Software Required</a></li>
+<li><a href="#index-rescue_002c-command-description-69">rescue, command description</a>: <a href="#rescue">rescue</a></li>
+<li><a href="#index-resize_002c-command-description-72">resize, command description</a>: <a href="#resize">resize</a></li>
+<li><a href="#index-resizing-root-device-23">resizing root device</a>: <a href="#Static-binaries">Static binaries</a></li>
+<li><a href="#index-rm_002c-command-description-75">rm, command description</a>: <a href="#rm">rm</a></li>
+<li><a href="#index-select_002c-command-description-78">select, command description</a>: <a href="#select">select</a></li>
+<li><a href="#index-set_002c-command-description-81">set, command description</a>: <a href="#set">set</a></li>
+<li><a href="#index-software-dependencies-7">software dependencies</a>: <a href="#Software-Required">Software Required</a></li>
+<li><a href="#index-static-binary-21">static binary</a>: <a href="#Static-binaries">Static binaries</a></li>
+<li><a href="#index-supported-platforms-13">supported platforms</a>: <a href="#Supported-Platforms">Supported Platforms</a></li>
+<li><a href="#index-terms-of-distribution-16">terms of distribution</a>: <a href="#License">License</a></li>
+<li><a href="#index-unit_002c-command-description-84">unit, command description</a>: <a href="#unit">unit</a></li>
+<li><a href="#index-unsupported-platforms-22">unsupported platforms</a>: <a href="#Static-binaries">Static binaries</a></li>
+  </ul><div class="footnote">
+<hr>
+<a name="texinfo-footnotes-in-document"></a><h4>Footnotes</h4><p class="footnote"><small>[<a name="fn-1" href="#fnd-1">1</a>]</small> Everyone seems to
+have a different word for &#8220;disk label&#8221; &#8212; these are all the same
+thing: partition table, partition map.</p>
+
+  <hr></div>
+
+</body></html>

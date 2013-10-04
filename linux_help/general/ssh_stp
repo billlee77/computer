@@ -1,0 +1,7 @@
+# Never add 'bash' in the tcsh
+
+#Excute local command in sftpshell
+lls
+lcd dir
+...
+

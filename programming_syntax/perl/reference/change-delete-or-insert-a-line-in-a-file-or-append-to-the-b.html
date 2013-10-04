@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <title>In Perl, how do I change, delete, or insert a line in a file, or append to the beginning of a file? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+
+    
+    <script src="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/adzerk1_2_4_43adzerk2_2_17_45.js" async="" type="text/javascript"></script><script src="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/ga.js" async="" type="text/javascript"></script><script src="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" src="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/jquery.js"></script>
+    <script type="text/javascript" src="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/all.css">
+    
+    <meta name="relativepagescore" content="108013">
+    <link rel="canonical" href="http://stackoverflow.com/questions/4388304/in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'In Perl, how do I change, delete, or insert a line in a file, or append to the beginning of a file?'" href="http://stackoverflow.com/feeds/question/4388304">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:4388304});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '4388304');
+            
+                
+        });
+    </script>
+
+
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"https://stackauth.com","serverTime":1346870813,"styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q\u0026A for professional and enthusiast programmers","isNoticesTabEnabled":true,"enableSocialMediaInSharePopup":true},"user":{"isAnonymous":true,"fkey":"6d07991ff926b2578401d94723b94d68","notificationsUnviewedCount":0,"inboxUnviewedCount":-1}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"d1cd9a23171c","js/moderator.js":"79cf1c340a4d","js/full-anon.js":"6460f26b3b59","js/full.js":"bcac60e02456","js/wmd.js":"93b92575f8bc","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"6eb68240242f","js/help.js":"fc9fb0517db2","js/tageditor.js":"c1ba807b32aa","js/tageditornew.js":"bd66fabe1c71","js/inline-tag-editing.js":"be882e188985","js/revisions.js":"8c6bcd93b7fe","js/probes.js":"beb933322ff0","js/review.js":"b234fa4ff85f"});
+        
+    </script>
+<script src="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/full-anon.js" type="text/javascript" async=""></script><script src="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/prettify-full.js" type="text/javascript" async=""></script><link rel="stylesheet" type="text/css" href="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/sidebar.css"></head>
+<body class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    
+
+
+
+
+
+
+
+
+
+<span id="hlinks-user">
+
+</span>
+<span id="hlinks-nav">
+                   <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f4388304%2fin-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b">log in</a>
+
+ <span class="lsep">|</span>
+                    <a href="http://careers.stackoverflow.com/">careers</a>
+
+ <span class="lsep">|</span>
+
+</span>
+<span id="hlinks-custom">
+        <a href="http://chat.stackoverflow.com/">chat</a>
+
+ <span class="lsep">|</span>
+            <a href="http://meta.stackoverflow.com/">meta</a>
+
+ <span class="lsep">|</span>
+        <a href="http://stackoverflow.com/about">about</a>
+
+ <span class="lsep">|</span>
+    <a href="http://stackoverflow.com/faq">faq</a>
+
+</span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get" autocomplete="off">
+                    <div>
+                        <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" maxlength="140" size="28" type="text">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Article">
+<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+<div id="question-header">
+    <h1 itemprop="name"><a href="http://stackoverflow.com/questions/4388304/in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b" class="question-hyperlink">In Perl, how do I change, delete, or insert a line in a file, or append to the beginning of a file?</a></h1>
+</div>
+<div id="mainbar">
+
+
+
+<div class="question" id="question" data-questionid="4388304">
+    
+    <div class="everyonelovesstackoverflow" id="adzerk1"><a href="http://engine.adzerk.net/redirect/0/2565/2444/8277/09371465a4514253825b379dc76224f4/43/1178/4215/634824676140003770/?keywords=perl%2cfile%2cinsert%2cappend%2cperl-faq" rel="nofollow" target="_blank" title=""><img src="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/2565.bin" title="" alt="" border="0" height="90" width="728"></a><img src="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/v.gif" height="0" width="0"></div>
+
+    
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+
+<div class="vote">
+    <input value="4388304" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">8</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>4</b></div>   
+ 
+</div>
+
+    </td>
+    
+<td class="postcell">
+<div>          
+    <div class="post-text" itemprop="description">
+        <p>I want to make changes to the contents of a file by 
+modifying, deleting or inserting lines or appending to the beginning of 
+the file. How can I do that in Perl?</p>
+
+<hr>
+
+<p>This is a <a href="http://faq.perl.org/perlfaq5.html#How_do_I_change_dele" rel="nofollow">question</a> from the <a href="http://faq.perl.org/" rel="nofollow">official FAQ</a>. We're <a href="http://meta.stackoverflow.com/questions/24244/can-we-import-the-perlfaq-into-stackoverflow">importing the perlfaq to Stack Overflow</a>.</p>
+
+    </div>            
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/perl" class="post-tag" title="show questions tagged 'perl'" rel="tag">perl</a> <a href="http://stackoverflow.com/questions/tagged/file" class="post-tag" title="show questions tagged 'file'" rel="tag">file</a> <a href="http://stackoverflow.com/questions/tagged/insert" class="post-tag" title="show questions tagged 'insert'" rel="tag">insert</a> <a href="http://stackoverflow.com/questions/tagged/append" class="post-tag" title="show questions tagged 'append'" rel="tag">append</a> <a href="http://stackoverflow.com/questions/tagged/perl-faq" class="post-tag" title="show questions tagged 'perl-faq'" rel="tag">perl-faq</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/q/4388304" title="short permalink to this question" class="short-link" id="link-post-4388304">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4388304/edit" title="">improve this question</a></div>
+    </td>
+    <td class="post-signature owner">
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    asked
+ <span title="2010-12-08 14:00:50Z" class="relativetime">Dec 8 '10 at 14:00</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/532928/perlfaq"><div class=""><img src="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/69bf6bcfee2020466a8fa972a7ff5edf.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/532928/perlfaq">perlfaq</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">246</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="10 bronze badges"><span class="badge3"></span><span class="badgecount">10</span></span>
+        </div>
+    </div>
+
+        <br class="cbt">
+        <div class="accept-rate supernova" title="this user has accepted an answer for 0 of 7 eligible questions">0% accept rate</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>    </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4388304" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-9825910" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">possible duplicate of <a href="http://stackoverflow.com/questions/2322140/how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-beginning">How do I change, delete, or insert a line in a file, or append to the beginning of a file in Perl?</a></span> –&nbsp;<a href="http://stackoverflow.com/users/183172/martin-clayton" title="26783 reputation" class="comment-user">martin clayton</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(9825910, 0)" href="#comment9825910_4388304"><span title="2011-11-06 12:35:26Z">Nov 6 '11 at 12:35</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>    
+</div>
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>1 Answer</h2>
+            <div id="tabs">
+                <a href="http://stackoverflow.com/questions/4388304/in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://stackoverflow.com/questions/4388304/in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://stackoverflow.com/questions/4388304/in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>    
+    </div>    
+
+
+
+
+
+  
+    <a name="4388309"></a>
+    <div id="answer-4388309" class="answer" data-answerid="4388309">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input value="4388309" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">12</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>(This is the <a href="http://faq.perl.org/perlfaq5.html#How_do_I_change_dele" rel="nofollow">official perlfaq answer</a>, minus any subsequent edits)</p>
+
+<p>The basic idea of inserting, changing, or deleting a line from a text file
+involves reading and printing the file to the point you want to make the
+change, making the change, then reading and printing the rest of the file.
+Perl doesn't provide random access to lines (especially since the record
+input separator, <code>$/</code>, is mutable), although modules such as
+<a href="http://search.cpan.org/perldoc/Tie%3a%3aFile" rel="nofollow">Tie::File</a> can fake it.</p>
+
+<p>A Perl program to do these tasks takes the basic form of opening a file,
+printing its lines, then closing the file:</p>
+
+<pre class="lang-perl prettyprint"><code><span class="pln">open </span><span class="kwd">my</span><span class="pln"> $in</span><span class="pun">,</span><span class="pln"> &nbsp;</span><span class="str">'&lt;'</span><span class="pun">,</span><span class="pln"> &nbsp;$file &nbsp; &nbsp; &nbsp;or </span><span class="kwd">die</span><span class="pln"> </span><span class="str">"Can't read old file: $!"</span><span class="pun">;</span><span class="pln"><br>open </span><span class="kwd">my</span><span class="pln"> $out</span><span class="pun">,</span><span class="pln"> </span><span class="str">'&gt;'</span><span class="pun">,</span><span class="pln"> </span><span class="str">"$file.new"</span><span class="pln"> or </span><span class="kwd">die</span><span class="pln"> </span><span class="str">"Can't write new file: $!"</span><span class="pun">;</span><span class="pln"><br><br></span><span class="kwd">while</span><span class="pun">(</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">$in</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">print</span><span class="pln"> $out $_</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br><br>close $out</span><span class="pun">;</span><span class="pln"><br></span></code></pre>
+
+<p>Within that basic form, add the parts that you need to insert, change, or
+delete lines.</p>
+
+<p>To prepend lines to the beginning, print those lines before you enter the
+loop that prints the existing lines.</p>
+
+<pre class="lang-perl prettyprint"><code><span class="pln">open </span><span class="kwd">my</span><span class="pln"> $in</span><span class="pun">,</span><span class="pln"> &nbsp;</span><span class="str">'&lt;'</span><span class="pun">,</span><span class="pln"> &nbsp;$file &nbsp; &nbsp; &nbsp;or </span><span class="kwd">die</span><span class="pln"> </span><span class="str">"Can't read old file: $!"</span><span class="pun">;</span><span class="pln"><br>open </span><span class="kwd">my</span><span class="pln"> $out</span><span class="pun">,</span><span class="pln"> </span><span class="str">'&gt;'</span><span class="pun">,</span><span class="pln"> </span><span class="str">"$file.new"</span><span class="pln"> or </span><span class="kwd">die</span><span class="pln"> </span><span class="str">"Can't write new file: $!"</span><span class="pun">;</span><span class="pln"><br><br></span><span class="kwd">print</span><span class="pln"> $out </span><span class="str">"# Add this line to the top\n"</span><span class="pun">;</span><span class="pln"> </span><span class="com"># &lt;--- HERE'S THE MAGIC</span><span class="pln"><br><br></span><span class="kwd">while</span><span class="pun">(</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">$in</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">print</span><span class="pln"> $out $_</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br><br>close $out</span><span class="pun">;</span><span class="pln"><br></span></code></pre>
+
+<p>To change existing lines, insert the code to modify the lines inside the
+while loop. In this case, the code finds all lowercased versions of "perl"
+and uppercases them. The happens for every line, so be sure that you're
+supposed to do that on every line!</p>
+
+<pre class="lang-perl prettyprint"><code><span class="pln">open </span><span class="kwd">my</span><span class="pln"> $in</span><span class="pun">,</span><span class="pln"> &nbsp;</span><span class="str">'&lt;'</span><span class="pun">,</span><span class="pln"> &nbsp;$file &nbsp; &nbsp; &nbsp;or </span><span class="kwd">die</span><span class="pln"> </span><span class="str">"Can't read old file: $!"</span><span class="pun">;</span><span class="pln"><br>open </span><span class="kwd">my</span><span class="pln"> $out</span><span class="pun">,</span><span class="pln"> </span><span class="str">'&gt;'</span><span class="pun">,</span><span class="pln"> </span><span class="str">"$file.new"</span><span class="pln"> or </span><span class="kwd">die</span><span class="pln"> </span><span class="str">"Can't write new file: $!"</span><span class="pun">;</span><span class="pln"><br><br></span><span class="kwd">print</span><span class="pln"> $out </span><span class="str">"# Add this line to the top\n"</span><span class="pun">;</span><span class="pln"><br><br></span><span class="kwd">while</span><span class="pun">(</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">$in</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; s</span><span class="pun">/\</span><span class="pln">b</span><span class="pun">(</span><span class="pln">perl</span><span class="pun">)\</span><span class="pln">b</span><span class="pun">/</span><span class="typ">Perl</span><span class="pun">/</span><span class="pln">g</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">print</span><span class="pln"> $out $_</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br><br>close $out</span><span class="pun">;</span><span class="pln"><br></span></code></pre>
+
+<p>To change only a particular line, the input line number, $., is useful.
+First read and print the lines up to the one you want to change. Next, read
+the single line you want to change, change it, and print it. After that,
+read the rest of the lines and print those:</p>
+
+<pre class="lang-perl prettyprint"><code><span class="kwd">while</span><span class="pun">(</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">$in</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> &nbsp; </span><span class="com"># print the lines before the change</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">print</span><span class="pln"> $out $_</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">last</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> $</span><span class="pun">.</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">4</span><span class="pun">;</span><span class="pln"> </span><span class="com"># line number before change</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">my</span><span class="pln"> $line </span><span class="pun">=</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">$in</span><span class="pun">&gt;;</span><span class="pln"><br>$line </span><span class="pun">=~</span><span class="pln"> s</span><span class="pun">/\</span><span class="pln">b</span><span class="pun">(</span><span class="pln">perl</span><span class="pun">)\</span><span class="pln">b</span><span class="pun">/</span><span class="typ">Perl</span><span class="pun">/</span><span class="pln">g</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">print</span><span class="pln"> $out $line</span><span class="pun">;</span><span class="pln"><br><br></span><span class="kwd">while</span><span class="pun">(</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">$in</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">)</span><span class="pln"> &nbsp; </span><span class="com"># print the rest of the lines</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">print</span><span class="pln"> $out $_</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p>To skip lines, use the looping controls. The next in this example skips
+comment lines, and the last stops all processing once it encounters either
+<code>__END__</code> or <code>__DATA__</code>.</p>
+
+<pre class="lang-perl prettyprint"><code><span class="kwd">while</span><span class="pun">(</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">$in</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">next</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">/^\</span><span class="pln">s</span><span class="pun">+</span><span class="com">#/; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; # skip comment lines</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">last</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">/^</span><span class="pln">__</span><span class="pun">(</span><span class="kwd">END</span><span class="pun">|</span><span class="pln">DATA</span><span class="pun">)</span><span class="pln">__$</span><span class="pun">/;</span><span class="pln"> &nbsp;</span><span class="com"># stop at end of code marker</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">print</span><span class="pln"> $out $_</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p>Do the same sort of thing to delete a particular line by using next to skip
+the lines you don't want to show up in the output. This example skips every
+fifth line:</p>
+
+<pre class="lang-perl prettyprint"><code><span class="kwd">while</span><span class="pun">(</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">$in</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">next</span><span class="pln"> </span><span class="kwd">unless</span><span class="pln"> $</span><span class="pun">.</span><span class="pln"> </span><span class="pun">%</span><span class="pln"> </span><span class="lit">5</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">print</span><span class="pln"> $out $_</span><span class="pun">;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p>If, for some odd reason, you really want to see the whole file at once
+rather than processing line-by-line, you can slurp it in (as long as you can
+fit the whole thing in memory!):</p>
+
+<pre class="lang-perl prettyprint"><code><span class="pln">open </span><span class="kwd">my</span><span class="pln"> $in</span><span class="pun">,</span><span class="pln"> &nbsp;</span><span class="str">'&lt;'</span><span class="pun">,</span><span class="pln"> &nbsp;$file &nbsp; &nbsp; &nbsp;or </span><span class="kwd">die</span><span class="pln"> </span><span class="str">"Can't read old file: $!"</span><span class="pln"><br>open </span><span class="kwd">my</span><span class="pln"> $out</span><span class="pun">,</span><span class="pln"> </span><span class="str">'&gt;'</span><span class="pun">,</span><span class="pln"> </span><span class="str">"$file.new"</span><span class="pln"> or </span><span class="kwd">die</span><span class="pln"> </span><span class="str">"Can't write new file: $!"</span><span class="pun">;</span><span class="pln"><br><br></span><span class="kwd">my</span><span class="pln"> </span><span class="lit">@lines</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">local</span><span class="pln"> $</span><span class="pun">/;</span><span class="pln"> </span><span class="pun">&lt;</span><span class="pln">$in</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">};</span><span class="pln"> </span><span class="com"># slurp!</span><span class="pln"><br><br>&nbsp; &nbsp; </span><span class="com"># do your magic here</span><span class="pln"><br><br></span><span class="kwd">print</span><span class="pln"> $out </span><span class="lit">@lines</span><span class="pun">;</span><span class="pln"><br></span></code></pre>
+
+<p>Modules such as <a href="http://search.cpan.org/perldoc/File%3a%3aSlurp" rel="nofollow">File::Slurp</a>
+and <a href="http://search.cpan.org/perldoc/Tie%3a%3aFile" rel="nofollow">Tie::File</a> can help with that
+too. If you can, however, avoid reading the entire file at once. Perl won't
+give that memory back to the operating system until the process finishes.</p>
+
+<p>You can also use Perl one-liners to modify a file in-place. The following
+changes all 'Fred' to 'Barney' in inFile.txt, overwriting the file with the
+new contents. With the <code>-p</code> switch, Perl wraps a while loop around the code
+you specify with <code>-e</code>, and <code>-i</code> turns on in-place editing. The current
+line is in <code>$_</code>. With <code>-p</code>, Perl automatically prints the value of <code>$_</code> at
+the end of the loop. See <a href="http://perldoc.perl.org/perlrun.html" rel="nofollow">perlrun</a> for more details.</p>
+
+<pre class="lang-perl prettyprint"><code><span class="pln">perl </span><span class="pun">-</span><span class="pln">pi </span><span class="pun">-</span><span class="pln">e </span><span class="str">'s/Fred/Barney/'</span><span class="pln"> inFile</span><span class="pun">.</span><span class="pln">txt<br></span></code></pre>
+
+<p>To make a backup of inFile.txt, give -i a file extension to add:</p>
+
+<pre class="lang-perl prettyprint"><code><span class="pln">perl </span><span class="pun">-</span><span class="pln">pi</span><span class="pun">.</span><span class="pln">bak </span><span class="pun">-</span><span class="pln">e </span><span class="str">'s/Fred/Barney/'</span><span class="pln"> inFile</span><span class="pun">.</span><span class="pln">txt<br></span></code></pre>
+
+<p>To change only the fifth line, you can add a test checking <code>$.</code>, the input
+line number, then only perform the operation when the test passes:</p>
+
+<pre class="lang-perl prettyprint"><code><span class="pln">perl </span><span class="pun">-</span><span class="pln">pi </span><span class="pun">-</span><span class="pln">e </span><span class="str">'s/Fred/Barney/ if $. == 5'</span><span class="pln"> inFile</span><span class="pun">.</span><span class="pln">txt<br></span></code></pre>
+
+<p>To add lines before a certain line, you can add a line (or lines!) before
+Perl prints <code>$_</code>:</p>
+
+<pre class="lang-perl prettyprint"><code><span class="pln">perl </span><span class="pun">-</span><span class="pln">pi </span><span class="pun">-</span><span class="pln">e </span><span class="str">'print "Put before third line\n" if $. == 3'</span><span class="pln"> inFile</span><span class="pun">.</span><span class="pln">txt<br></span></code></pre>
+
+<p>You can even add a line to the beginning of a file, since the current line
+prints at the end of the loop:</p>
+
+<pre class="lang-perl prettyprint"><code><span class="pln">perl </span><span class="pun">-</span><span class="pln">pi </span><span class="pun">-</span><span class="pln">e </span><span class="str">'print "Put before first line\n" if $. == 1'</span><span class="pln"> inFile</span><span class="pun">.</span><span class="pln">txt<br></span></code></pre>
+
+<p>To insert a line after one already in the file, use the <code>-n</code> switch. It's
+just like <code>-p</code> except that it doesn't print <code>$_</code> at the end of the loop, so
+you have to do that yourself. In this case, print <code>$_</code> first, then print the
+line that you want to add.</p>
+
+<pre class="lang-perl prettyprint"><code><span class="pln">perl </span><span class="pun">-</span><span class="pln">ni </span><span class="pun">-</span><span class="pln">e </span><span class="str">'print; print "Put after fifth line\n" if $. == 5'</span><span class="pln"> inFile</span><span class="pun">.</span><span class="pln">txt<br></span></code></pre>
+
+<p>To delete lines, only print the ones that you want.</p>
+
+<pre class="lang-perl prettyprint"><code><span class="pln">perl </span><span class="pun">-</span><span class="pln">ni </span><span class="pun">-</span><span class="pln">e </span><span class="str">'print unless /d/'</span><span class="pln"> inFile</span><span class="pun">.</span><span class="pln">txt<br></span></code></pre>
+
+<p>… or …</p>
+
+<pre class="lang-perl prettyprint"><code><span class="pln">perl </span><span class="pun">-</span><span class="pln">pi </span><span class="pun">-</span><span class="pln">e </span><span class="str">'next unless /d/'</span><span class="pln"> inFile</span><span class="pun">.</span><span class="pln">txt<br></span></code></pre>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/4388309" title="short permalink to this answer" class="short-link" id="link-post-4388309">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4388309/edit" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            edited
+                             <a href="http://stackoverflow.com/posts/4388309/revisions" title="show all edits to this post"><span title="2010-12-08 14:06:39Z" class="relativetime">Dec 8 '10 at 14:06</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature owner" align="right">   
+       
+
+    
+
+    <div class="user-info">
+        <div class="user-details">
+            <span class="community-wiki" title="This post is community owned as of Dec 8 '10 at 14:01. Votes do not generate reputation, and it can be edited by users with 100) rep">
+                community wiki
+            </span>
+        </div><br>
+        <div class="user-details">
+            <a id="history-4388309" href="http://stackoverflow.com/posts/4388309/revisions" title="show revision history for this post">
+2 revs<br>perlfaq            </a>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4388309" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+    <a name="new-answer"></a>
+    <form id="post-form" action="/questions/4388304/answer/submit" method="post" class="post-form">
+        <h2 class="space">Your Answer</h2>
+
+
+
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">  
+
+    
+    <div class="wmd-container">
+        <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+        <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="6d07991ff926b2578401d94723b94d68" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>            <div class="form-item">
+        <table>
+        <tbody><tr>
+            <td class="vm open-id-login">
+                <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f4388304%2fin-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b">log in</a>
+                <script type="text/javascript">
+                    StackExchange.ready(function () {
+                        StackExchange.helpers.onClickDraftSave('#login-link');
+                    });
+                </script>
+            </td>
+            <td class="orcell">
+                <div class="orword">or</div>
+                <div class="orline"></div>
+            </td>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="40" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but never shown</span>
+                </div>
+                <div>
+                    <label for="home-page">Home Page</label>
+                    <input id="home-page" name="home-page" size="40" maxlength="200" tabindex="107" type="text">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+           
+            <div class="form-submit cbt">
+            <input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+            <a href="#" class="discard-answer dno">discard</a>
+    <p class="privacy-policy-agreement">
+        By posting your answer, you agree to the 
+        <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and 
+        <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.
+    </p>
+        </div>
+    </form>
+
+
+
+        <h2 class="bottom-notice">
+                Not the answer you're looking for? 
+            Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/perl" class="post-tag" title="show questions tagged 'perl'" rel="tag">perl</a> <a href="http://stackoverflow.com/questions/tagged/file" class="post-tag" title="show questions tagged 'file'" rel="tag">file</a> <a href="http://stackoverflow.com/questions/tagged/insert" class="post-tag" title="show questions tagged 'insert'" rel="tag">insert</a> <a href="http://stackoverflow.com/questions/tagged/append" class="post-tag" title="show questions tagged 'append'" rel="tag">append</a> <a href="http://stackoverflow.com/questions/tagged/perl-faq" class="post-tag" title="show questions tagged 'perl-faq'" rel="tag">perl-faq</a> 
+                or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.
+        </h2>
+</div>
+</div>
+<div id="sidebar">
+
+
+
+     <script type="text/javascript">
+        window.showNewUser = true;
+
+            
+                (function(){
+                    var cs = window.sessionStorage && window.sessionStorage['tNewsletter'];
+                    var m = /:\/\/([^\/]*)/.exec(document.referrer);
+                    var h = {'www.reddit.com':1,'news.ycombinator.com':1};
+                    if(window.sessionStorage && (cs || (m && m.length == 2 && h[m[1]]))){
+                        showNewUser = false;
+                        StackExchange.ready(function(){
+                            StackExchange.newsletterAd.loader(m[1], cs);
+                        });
+                    }
+                    if (window.localStorage && showNewUser){
+                        var c = parseInt(localStorage['nuCounter'],10); 
+                        c = isNaN(c) ? 1 : c+1;
+                        window.localStorage['nuCounter'] = c; 
+                        showNewUser = c < 10;
+                    }
+                })()
+            
+     </script>
+    <div class="module newuser newuser-greeting" id="newuser-box" style="">
+        <h4>Hello World!</h4>
+        <div>
+            <p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p>
+            <p class="ar"><a href="http://stackoverflow.com/about?mnu=1">about »</a>&nbsp;&nbsp;&nbsp;<a href="http://stackoverflow.com/faq?mnu=1">faq »</a>
+            </p>
+        </div>
+    </div>
+     <script type="text/javascript">
+        if (showNewUser) {
+            document.getElementById('newuser-box').style.display = '';
+        }
+     </script>
+        <div class="module question-stats">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://stackoverflow.com/questions/tagged/perl" class="post-tag" title="show questions tagged 'perl'" rel="tag">perl</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">20784</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/file" class="post-tag" title="show questions tagged 'file'" rel="tag">file</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">15479</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/insert" class="post-tag" title="show questions tagged 'insert'" rel="tag">insert</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">3485</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/append" class="post-tag" title="show questions tagged 'append'" rel="tag">append</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">1468</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/perl-faq" class="post-tag" title="show questions tagged 'perl-faq'" rel="tag">perl-faq</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">8</span></span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left: 10px;"><p class="label-key" title="2010-12-08 14:00:50Z"><b>1 year ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left: 10px;"><p class="label-key"><b>4,186 times</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left: 10px;"><p class="label-key"><b><a href="http://stackoverflow.com/questions/4388304/in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b?lastactivity" class="lastactivity-link" title="2010-12-08 16:03:07Z">1 year ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+    
+<div class="module community-bulletin" data-tracker="cb=1">
+    <h4>Community Bulletin</h4>
+    <div class="related">
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://blog.stackoverflow.com/?cb=1" class="event-date" target="_blank">blog</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://blog.stackoverflow.com/2012/09/stack-exchange-api-v2-1/?cb=1" class="question-hyperlink" target="_blank">Stack Exchange API V2.1</a>
+            </div>
+            <br class="cbt">
+        </div>
+    </div>
+</div>    
+    
+        <script type="text/javascript">
+            var scriptSrc = "http://engine2.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45?keywords=perl,file,insert,append,perl-faq";
+            if (document.referrer) {
+                if (/\?/.test(scriptSrc))
+                    scriptSrc += "&";
+                else
+                    scriptSrc += "?";
+                scriptSrc += "xReferrer=" + document.referrer;
+            }
+            StackExchange.ready(function(){var z = document.createElement("script"); z.type = "text/javascript"; z.async = "true"; z.src = scriptSrc; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);});
+        </script>
+    
+    <div class="everyonelovesstackoverflow" id="adzerk2"><a href="http://engine.adzerk.net/redirect/0/8211/7472/8277/194766ae9b1c4560973ae3246ce61b1b/45/1178/13035/634824676140053600/?keywords=perl%2cfile%2cinsert%2cappend%2cperl-faq" rel="nofollow" target="_blank" title=""><img src="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/bd294ce7ff4c43b6aad4aa4169fb819b.jpg" title="" alt="" border="0" height="250" width="220"></a><img src="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/v_002.gif" height="0" width="0"></div>
+
+    
+    <div id="hireme"> <a href="http://careers.stackoverflow.com/jobs?a=12" class="top" target="_blank"></a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/23009/ruby-on-rails-web-applications-developer-gaggleup?a=rbtPA4w" target="_blank" title="Ruby on Rails Web Applications Developer, Intermediate Full-Time at GaggleUp. Click to learn more."> Ruby on Rails Web Applications Developer, Intermediate Full…<br> <span class="company">GaggleUp</span> <span class="location">Toronto, ON, Canada</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/22919/established-company-seeks-wordpress-developer-blue-mandala?a=r4T5cLC" target="_blank" title="Established Company seeks Wordpress Developer at Blue Mandala. Click to learn more."> Established Company seeks Wordpress Developer<br> <span class="company">Blue Mandala</span> <span class="location">Nelson, BC, Canada</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/23140/senior-software-engineer-nthgen-software?a=rl4MOHK" target="_blank" title="Senior Software Engineer at NthGen Software. Click to learn more."> Senior Software Engineer<br> <span class="company">NthGen Software</span> <span class="location">Toronto, ON, Canada</span> </a> </li> </ul> <img alt="" class="impression" src="in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b_files/rbtPA4w-r4T5cLC-rl4MOHK-12.gif" style="display: none;"></div>
+
+      
+    
+    <div class="module sidebar-linked">
+        <h4 id="h-linked">Linked</h4>
+        <div class="linked" data-tracker="lq=1">
+            <div class="spacer">
+<a href="http://stackoverflow.com/questions/2395570/why-does-my-p-one-liner-print-the-lines-im-trying-to-skip?lq=1" class="question-hyperlink">Why does my -p one-liner print the lines I'm trying to skip?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5158734/perl-how-do-i-remove-the-last-written-line-in-an-output-file?lq=1" class="question-hyperlink">Perl: how do I remove the last written line in an output file?</a>
+</div>
+
+        </div>
+    </div>
+    <div class="module sidebar-related">
+        <h4 id="h-related">Related</h4>
+        <div class="related" data-tracker="rq=1">
+            <div class="spacer">
+<a href="http://stackoverflow.com/questions/1033587/in-vim-how-to-append-insert-text-with-argdo?rq=1" class="question-hyperlink">in vim, how to append/insert text with argdo?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1110764/i-know-phps-read-write-and-append-but-can-you-insert-or-remove-last-line?rq=1" class="question-hyperlink">I know PHP's read, write, and append… but can you insert? or remove last line?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1694233/create-append-node-vs-innerhtml?rq=1" class="question-hyperlink">create/append node vs innerHTML</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2108878/how-can-i-append-the-file-foo2-txt-to-foo1-txt?rq=1" class="question-hyperlink">How can I append the file foo2.txt to foo1.txt?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2278527/how-do-i-replace-lines-in-the-middle-of-a-file-with-perl?rq=1" class="question-hyperlink">How do I replace lines in the middle of a file with Perl?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2322140/how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-beginning?rq=1" class="question-hyperlink">How do I change, delete, or insert a line in a file, or append to the beginning of a file in Perl?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2886290/how-can-i-insert-a-line-at-the-beginning-of-a-file-with-perls-tiefile?rq=1" class="question-hyperlink">How can I insert a line at the beginning of a file with Perl's Tie::File?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3167981/append-file-operation-in-ada?rq=1" class="question-hyperlink">Append file operation in Ada</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3767765/how-do-i-insert-a-line-in-a-file-to-the-beginning-of-a-file-in-perl?rq=1" class="question-hyperlink">How do I insert a line in a file to the beginning of a file in Perl?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4371714/how-do-i-profile-my-perl-programs?rq=1" class="question-hyperlink">How do I profile my Perl programs?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4376800/in-perl-how-do-i-remove-consecutive-pairs-of-characters-from-a-string?rq=1" class="question-hyperlink">In Perl, how do I remove consecutive pairs of characters from a string?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4400970/in-perl-how-do-i-process-an-entire-hash?rq=1" class="question-hyperlink">In Perl, how do I process an entire hash?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4445674/can-i-use-perl-regular-expressions-to-match-balanced-text?rq=1" class="question-hyperlink">Can I use Perl regular expressions to match balanced text?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4510550/using-perl-how-do-i-decode-or-create-those-encodings-on-the-web?rq=1" class="question-hyperlink">Using Perl, how do I decode or create those %-encodings on the web?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4605593/how-do-i-clear-the-screen-in-a-terminal-using-perl?rq=1" class="question-hyperlink">How do I clear the screen in a terminal using Perl?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4625408/where-can-i-find-a-formal-grammar-for-the-perl-programming-language?rq=1" class="question-hyperlink">Where can I find a formal grammar for the Perl programming language?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4648056/how-can-i-use-appendto-and-insertbefore-properly?rq=1" class="question-hyperlink">How can i use appendTo and insertBefore properly</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4706499/how-do-you-append-to-file-in-python?rq=1" class="question-hyperlink">How do you append to file in python?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5341377/can-someone-explain-this-perl-code-snippet?rq=1" class="question-hyperlink">Can someone explain this Perl code snippet?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5390811/append-to-keystore-file?rq=1" class="question-hyperlink">append to keystore file</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5931261/java-use-stringbuilder-to-insert-at-the-beginning?rq=1" class="question-hyperlink">java: use StringBuilder to insert at the beginning</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8012116/perl-append-prefix-looping-array?rq=1" class="question-hyperlink">Perl append prefix looping array</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/9975531/file-truncated-when-opened-in-perl?rq=1" class="question-hyperlink">File truncated, when opened in Perl</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10525715/scala-append-xml-to-file?rq=1" class="question-hyperlink">Scala - Append XML to file</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/10902905/how-to-append-to-file-using-ob-start?rq=1" class="question-hyperlink">How to append to file using ob_start</a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/4388304" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/4388304/ivc/8575');});
+</script>
+<noscript>
+    <div><img src="/posts/4388304/ivc/8575" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-perl</div></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://stackoverflow.com/about">about</a> |
+                <a href="http://stackoverflow.com/faq">faq</a> |
+                <a href="http://blog.stackexchange.com/?blb=1">blog</a> |
+                    <a href="http://chat.stackoverflow.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a> |
+                <a href="http://stackexchange.com/about/hiring">jobs</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+
+                <a onclick="StackExchange.switchMobile('on', '/questions/4388304/in-perl-how-do-i-change-delete-or-insert-a-line-in-a-file-or-append-to-the-b')">mobile</a> |
+
+                <b><a href="http://stackoverflow.com/help">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color:#ebf5f5;font-size:140%">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">■</span>&nbsp;<a href="http://diy.stackexchange.com/">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">■</span>&nbsp;<a href="http://gis.stackexchange.com/">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">■</span>&nbsp;<a href="http://electronics.stackexchange.com/">electrical&nbsp;engineering</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">■</span>&nbsp;<a href="http://android.stackexchange.com/">android</a>&nbsp;
+                        <span style="color:#2e4e60;font-size:140%">■</span>&nbsp;<a href="http://security.stackexchange.com/">security</a>&nbsp;
+                        <span style="color:#45bcb5;font-size:140%">■</span>&nbsp;<a href="http://bicycles.stackexchange.com/">bicycles</a>&nbsp;
+                        <span style="color:#00adee;font-size:140%">■</span>&nbsp;<a href="http://dba.stackexchange.com/">dba</a>&nbsp;
+                        <span style="color:#2edaf0;font-size:140%">■</span>&nbsp;<a href="http://drupal.stackexchange.com/">drupal</a>&nbsp;
+                        <span style="color:#213951;font-size:140%">■</span>&nbsp;<a href="http://sharepoint.stackexchange.com/">sharepoint</a>&nbsp;
+                        <span style="color:#73abb3;font-size:140%">■</span>&nbsp;<a href="http://scifi.stackexchange.com/">scifi &amp; fantasy</a>&nbsp;
+                        <span style="color:#23629F;font-size:140%">■</span>&nbsp;<a href="http://ux.stackexchange.com/">user experience</a>&nbsp;
+                        <span style="color:#faff72;font-size:140%">■</span>&nbsp;<a href="http://skeptics.stackexchange.com/">skeptics</a>&nbsp;
+                        <span style="color:#623121;font-size:140%">■</span>&nbsp;<a href="http://rpg.stackexchange.com/">rpg</a>&nbsp;
+                        <span style="color:#e4be88;font-size:140%">■</span>&nbsp;<a href="http://judaism.stackexchange.com/">judaism</a>&nbsp;
+                        <span style="color:#ffecb1;font-size:140%">■</span>&nbsp;<a href="http://mathematica.stackexchange.com/">mathematica</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2012.9.5.3942</div>
+                        </div>
+            <div id="copyright">
+                site design / logo © 2012 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            
+
+        </div>
+    </div>
+    
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|perl|file|insert|append|perl-faq|']); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    (function(){
+        var s=document.getElementsByTagName('script')[0];
+        var ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src='http://www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src='http://edge.quantserve.com/quant.js'; 
+        s.parentNode.insertBefore(sc,s);
+    })();
+    </script>
+    <script type="text/javascript">
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>    
+    
+
+</body></html>

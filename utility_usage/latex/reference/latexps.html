@@ -1,0 +1,548 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head>
+
+
+
+  
+    <title>High quality PDF output from LaTeX and TeX</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+    <meta name="description" content="Explanations on how to produce high quality PDF documents from
+      TeX and LaTeX sources, by using Type1 fonts.">
+
+    <meta name="keywords" content="HTML, URL, pdf, tex, latex, acrobat distiller, postscript,
+      type1, fonts">
+
+  </head><body link="#0000ff" text="black" vlink="#3d358c" alink="violet" bgcolor="white">
+
+<!-- Use table to layout menu and content -->
+<table border="0" cellpadding="5" cellspacing="0">
+  <!-- Start row with menu at left and content at right -->
+  <tbody><tr valign="top">
+    <td width="150" bgcolor="#ffff5e">
+      <!-- Start the menu -->
+      
+      
+      
+          <!-- Start menu table -->
+    <table border="0">
+      <tbody><tr>
+	<td align="center">
+	  <font face="sans-serif" size="-1">
+	  <a href="http://dsanta.users.ch/index.html">HOME</a>
+	  </font>
+	</td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+	<td align="left" bgcolor="#000000">
+	  <font color="#ffffff" face="sans-serif" size="-1"> &nbsp;
+	INFORMATION
+	  </font>
+	</td>
+      </tr>
+      <tr>
+	<td> <font face="sans-serif" size="-1"> &nbsp;&nbsp;
+	    <a href="http://dsanta.users.ch/cv.pdf">Curriculum vitae (PDF)</a>
+	  </font> </td>
+      </tr>
+      <tr>
+	<td> <font face="sans-serif" size="-1"> &nbsp;&nbsp;
+	    <a href="http://dsanta.users.ch/research/publications.html">
+	      Publication list</a>
+	  </font> </td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+	<td align="left" bgcolor="#000000">
+	  <font color="#ffffff" face="sans-serif" size="-1"> &nbsp;
+	    RESEARCH &amp; PROJECTS
+	  </font>
+	</td>
+      </tr>
+      <tr>
+	<td> <font face="sans-serif" size="-1"> &nbsp;&nbsp;
+	    <a href="http://dsanta.users.ch/projects.html">Projects</a>
+	  </font> </td>
+      </tr>
+      <tr>
+	<td> <font face="sans-serif" size="-1"> &nbsp;&nbsp;
+	    <a href="http://dsanta.users.ch/research/publications.html">
+	      Publications</a>
+	  </font> </td>
+      </tr>
+      <tr>
+	<td> <font face="sans-serif" size="-1"> &nbsp;&nbsp;
+	    <a href="http://dsanta.users.ch/teaching/index.html">
+	      Teaching</a>
+	  </font> </td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+	<td align="left" bgcolor="#000000">
+	  <font color="#ffffff" face="sans-serif" size="-1"> &nbsp;
+	   RESOURCES
+	  </font>
+	</td>
+      </tr>
+      <tr>
+	<td> <font face="sans-serif" size="-1"> &nbsp;&nbsp;
+	    <a href="http://dsanta.users.ch/resources/latex.html">TeX &amp; LaTeX</a>
+	  </font> </td>
+      </tr>
+      <tr>
+	<td> <font face="sans-serif" size="-1"> &nbsp;&nbsp;
+	    <a href="http://dsanta.users.ch/resources/linux.html">Linux</a>
+	  </font> </td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+	<td align="left" bgcolor="#000000">
+	  <font color="#ffffff" face="sans-serif" size="-1"> &nbsp;
+	   LINKS
+	  </font>
+	</td>
+      </tr>
+      <tr>
+	<td> <font face="sans-serif" size="-1"> &nbsp;&nbsp;
+	    <a href="http://www.visiowave.com/">VisioWave</a>
+	  </font> </td>
+      </tr>
+      <tr>
+	<td> <font face="sans-serif" size="-1"> &nbsp;&nbsp;
+	    <a href="http://itswww.epfl.ch/">ITS</a>
+	  </font> </td>
+      </tr>
+      <tr>
+	<td> <font face="sans-serif" size="-1"> &nbsp;&nbsp;
+	    <a href="http://mmspl.epfl.ch/">MultiMedia SPL</a>
+	  </font> </td>
+      </tr>
+      <tr>
+	<td> <font face="sans-serif" size="-1"> &nbsp;&nbsp;
+	    <a href="http://itswww.epfl.ch/index.php?module=people&amp;PEOPLE_MAN_OP=view&amp;PHPWS_MAN_ITEMS[]=88">
+	      My alumni ITS page</a>
+	  </font> </td>
+      </tr>
+      <tr><td>&nbsp;</td></tr>
+      <tr>
+	<td align="left" bgcolor="#000000">
+	  <font color="#ffffff" face="sans-serif" size="-1"> &nbsp;
+	    MISC
+	  </font>
+	</td>
+      </tr>
+      <tr>
+	<td> <font face="sans-serif" size="-1"> &nbsp;&nbsp;
+	    <a href="http://www.sbb.ch/fr/">
+	      Swiss Train Schedules</a>
+	  </font> </td>
+      </tr>
+<!-- Remove unfinished pages
+      <tr>
+	<td> <font size="-1" face="sans-serif"> &nbsp;&nbsp;
+	    <a href="../construction">Holidays in Chile</a>
+	  </font> </td>
+      </tr>
+      <tr>
+	<td> <font size="-1" face="sans-serif"> &nbsp;&nbsp;
+	    <a href="../construction">Skiing</a>
+	  </font> </td>
+      </tr>
+-->
+      <tr><td>&nbsp;</td></tr>
+    </tbody></table>
+    <!-- End menu table -->
+
+      <!-- End menu -->
+      <!-- Put the created with XEmacs and HTML 4.0 logos-->
+      <table border="0">
+	<tbody><tr>
+	  <td>
+	    <a href="http://www.xemacs.org/About/created.html" target="_top">
+	      <img src="latexps_files/cbxSmall.jpg" alt="Created by XEmacs" height="36" width="100" align="middle" border="0"></a>
+	  </td>
+	</tr>
+        <tr>
+          <td>
+            <a href="http://validator.w3.org/check/referer"><img src="latexps_files/vh40.png" alt="Valid HTML 4.0!" height="31" width="88" border="0"></a>
+          </td>
+        </tr>
+      </tbody></table>
+      <!-- End menu table cell -->
+    </td>
+    
+    <td>
+      <!-- Start page content -->
+
+
+    <h1 align="center">High quality PDF output from LaTeX and TeX</h1>
+
+    <p>When converting PostScript output from TeX or LaTeX to PDF,
+    the resulting documents are of very low quality, if no special
+    steps are taken to avoid font rendering problems.</p>
+
+    <p>There are several ways of producing PDF output from LaTeX/TeX
+    files. The one I use is to produce a PostScript file, using
+    dvips, and then convert that to PDF using Acrobat Distiller or
+    GhostScript's ps2pdf command. This is the approach covered here,
+    although some of it might be applicable to other ones.
+
+    </p><p>The problem is that by default TeX/LaTeX uses bitmap (i.e., Type 3)
+    fonts instead of scalable Type 1 or TrueType fonts. These bitmap fonts
+    are generated at the printer's resolution, which is typically 300 or 600
+    dpi. Changing the resolution of bitmap fonts is no easy task and
+    therefore the PDF readers produce terrible results when displaying these
+    fonts on the screen. Furthermore, printing quality can be quite deceiving
+    if the printer's resolution does not match the one of the bitmap
+    font.</p>
+
+    <p>The solution to the problem is to force TeX/LaTeX to use Type 1
+    fonts in the PostScript output (PS). Since these fonts are
+    scalable then the PDF file will display and print well at all
+    resolutions.
+
+    </p><p>In order to force Type 1 fonts there are basically two ways that I
+    know of: use the standard PostScript fonts and/or use Type 1 versions
+    of the Computer Modern fonts. These approaches can, in general, be used
+    together.
+
+    </p><p>Computer Modern (CM) fonts are the original TeX fonts designed
+    by Knuth, which are used by default in many TeX/LaTeX
+    distributions. There also exist the EC fonts, which are basically
+    the same but with an extended encoding, providing more characters
+    for non-English alphabets.
+
+    </p><p>Note that you can additionally use the <tt>hyperref</tt> package to
+    generate hyperlinked PDF files, as explained in my <a href="http://dsanta.users.ch/resources/hyperref.html">hyperref</a> page.
+
+    </p><h2>Short version</h2>
+
+    Follow these steps to get a good looking PDF file with LaTeX. If you still
+    experience problems, or are curious, keep on reading the long explanation.
+
+    <ol type="1">
+      <li>Make sure you have one of the following in your latex preamble.
+	<ol type="a">
+	  <li>To use the CM and EC fonts (usually recommended):
+	    <blockquote><tt>
+		\usepackage[T1]{fontenc}<br>
+		\usepackage{ae,aecompl}<br>
+	      </tt></blockquote>
+	    Optionally the <tt>aeguill</tt> package can also be loaded to get
+	    French guillemets.
+	  </li><li>To use standard PostScript fonts:
+	    <blockquote><tt>
+		\usepackage[T1]{fontenc}<br>
+		\usepackage{pslatex}<br>
+	      </tt></blockquote>
+
+	    Alternatively, you can use the <tt>pslatex</tt> command in step 2
+	    below instead of <tt>latex</tt>, which automatically includes the
+	    <tt>pslatex</tt> package.
+
+	</li></ol>
+      </li><li>Compile your latex file as usual. For example:
+	<blockquote><tt>
+	    latex file.tex
+	  </tt></blockquote>
+      </li><li>Convert to PostScript with the following command (replace
+	<tt>a4</tt> by <tt>letter</tt> if using US letter paper):
+	<blockquote><tt>
+	    dvips -t a4 -Ppdf file.dvi
+	  </tt></blockquote>
+	This will create a file with the same name and the <tt>.ps</tt>
+	extension.
+	If you have a dvips version earlier than 5.90 and you see problems
+	with ligatures (e.g., ff) being converted to strange characters use the
+	following:
+	<blockquote><tt>
+	    dvips -t a4 -Ppdf -G0 file.dvi
+	  </tt></blockquote>
+	(this can however create some problems with some versions of Acrobat
+	Reader). If you have an old dvips that does not have the pdf
+	pseudo printer, use
+
+	<blockquote><tt>
+	    dvips -t a4 -Pcmz -Pamz file.dvi -o
+	  </tt></blockquote>
+
+      </li><li>Convert the PostScript file to PDF with <tt>ps2pdf</tt> or using
+	Acrobat Distiller. For example:
+	<blockquote><tt>
+	    ps2pdf file.ps
+	  </tt></blockquote>
+    </li></ol>
+
+    <p>The file should now display and print with very good quality. Note that
+    when using the EC fonts, some characters may be poorly rendered since they
+    are not available as Type 1 fonts and a bitmap is used instead. This
+    should only affect some accented characters and eastern European
+    languages.
+
+    </p><h2>Long version</h2>
+
+    <h3>The font encoding</h3>
+
+    <p>LaTeX can use several font encodings. Typical installations use the OT1
+    encoding by default, which is the original encoding. However, this
+    encoding is suitable to English only. The more recent T1 encoding includes
+    accented characters and can handle hyphenation of words with accented
+    characters. T1 is therefore the recommended encoding. To define the
+    encoding include the following at the start of the LaTeX preamble:
+
+    </p><blockquote><tt>
+	\usepackage[T1]{fontenc}
+      </tt></blockquote>
+
+    <p>The type of encoding determines which font is used by default. The OT1
+    encoding uses the Computer Modern (CM) fonts, while the T1 encoding uses
+    the EC fonts, which are the same as CM but with more glyphs defined.
+
+    </p><h3>Using the Type 1 versions of CM or EC fonts</h3>
+
+    <p>Modern LaTeX distributions include Type 1 versions of the CM fonts,
+    under the collective name of <i>bluesky</i>. Otherwise they can be
+    obtained from <a href="http://www.ctan.org/">CTAN</a>. There are
+    unfortunately no freely available Type 1 version of the EC fonts, so they
+    need to be emulated from the CM ones.
+
+    </p><p>If you are using the OT1 encoding nothing particular needs to be done
+    to generate the DVI file. With the T1 encoding the following needs to be
+    included in your preamble:
+
+    </p><blockquote><tt>
+	\usepackage{ae,aecompl}
+      </tt></blockquote>
+
+    This will substitute the EC fonts with equivalents of the CM fonts, so
+    that Type 1 versions of the characters are available when generating the
+    PDF. The few symbols in the EC font that cannot be emulated from the ones
+    in the CM fonts are taken from the bitmap EC fonts.
+
+    <p>You can also include the <tt>aeguill</tt> package to get French
+    guillemets. Note that including the <tt>ae</tt> package will automatically
+    set your font encoding to T1.
+
+    </p><h3>Using standard PostScript fonts</h3>
+
+    <p>Alternatively to the CM or EC fonts one can use the standard PostScript
+    fonts for the document text. LaTeX includes some packages that replace the
+    CM or EC text fonts with standard PostScript fonts, which are Type 1 and
+    available in any PostScript or PDF printer or reader.
+
+    </p><p>There are several such packages, providing different font
+    substitutions. The main ones are: <tt>times</tt>, <tt>palatino</tt>,
+    <tt>newcent</tt> and <tt>bookman</tt>. The <tt>times</tt> package will use
+    Times-Roman for the roman font, Courier for typewriter and Helvetica for
+    sans serif. To use it add
+
+      </p><blockquote><tt>
+	\usepackage{times}
+      </tt></blockquote>
+
+    to your preamble. For more information on these and other similar packages
+    consult the <tt>psnfss2e</tt> documentation that comes with your LaTeX
+    system.
+
+    <p>Note that since the fonts are different from the CM or EC ones, the
+    output will be modified. Note also that equations still use the CM fonts
+    and thus equations that mix text and mathematical symbols can appear
+    distorted, due to the font mismatch.
+
+    </p><p>The <tt>pslatex</tt> package solves the font mismatch problem by
+    scaling the fonts and using a mix of Times-Roman italic, CM and other
+    fonts for the math mode. It is otherwise similar to the <tt>times</tt>
+    package. To use it add
+
+      </p><blockquote><tt>
+	\usepackage{pslatex}
+      </tt></blockquote>
+
+    to your preamble, instead of <tt>times</tt> or any other such
+    package. Alternatively, if you use the <tt>pslatex</tt> command to compile
+    your file, instead of <tt>latex</tt>, the package is automatically
+    included and no modification is necessary. Again, since the fonts are not
+    the same as the default CM or EC fonts the output will look different.
+
+    <p>No that, as far as I know, any package selecting PostScript fonts as
+    default cannot be used in conjunction with the <tt>ae</tt> and
+    <tt>aecompl</tt> packages since they both redefine the default font.
+
+    </p><h3>Generating a proper PS file</h3>
+
+    <p>In LaTeX distributions the <tt>dvips</tt> command will by default use
+    the bitmap CM fonts instead of the Type 1 versions. It is therefore
+    necessary to explicitly tell it to use the former. In recent LaTeX
+    distributions this is done with the command
+
+    </p><blockquote><tt>
+	dvips -Ppdf file.dvi
+      </tt>
+    </blockquote>
+
+    The <tt>pdf</tt> pseudo printer will use the Type 1 version of the fonts,
+    whenever available, and will set some other options to better match PDF
+    requirements (e.g., set a very high nominal resolution to avoid some
+    "optimizations"). It will create a file with the same name and a
+    <tt>.ps</tt> extension.
+
+    <p>Some versions of Acrobat Reader have problems with fonts that have
+    characters in positions where the standard Adobe fonts do not, as is the
+    case with most LaTeX fonts. To solve this problem the <tt>-G1</tt> switch
+    of dvips will relocate such characters to harmless
+    positions. This is enabled by default with the <tt>pdf</tt>
+    pseudo printer. On dvips versions earlier than 5.90 this will
+    however create problems with ligatures in some fonts, where they are
+    converted to strange characters. If you have such problems use the
+    <tt>-G0</tt> option to disable character remapping, such as:
+
+    </p><blockquote><tt>
+	dvips -Ppdf -G0 file.dvi
+      </tt>
+    </blockquote>
+
+    <p>Old versions of dvips do not have a <tt>pdf</tt> pseudo
+    printer. The use of Type 1 fonts can, however, be forced with the
+    following command line:
+
+    </p><blockquote><tt>
+	dvips -Pcmz -Pamz file.dvi -o
+      </tt>
+    </blockquote>
+
+    Note however that this will not set other options that benefit PDF
+    creation.
+
+    <p>If you have used the standard PostScript fonts instead of LaTeX CM or
+    EC fonts, the Type 1 versions are used by default (as they are only
+    available as Type 1). Nevertheless, some characters from the CM fonts are
+    still used and the special options for dvips are required to get optimal
+    results.
+
+    </p><p>There is also another issue that arises from TeX's poor handling of the
+    paper size. Although the DVI file will be typeset correctly for the paper
+    size specified in the document class options, dvips will not explicitely
+    set the paper size in the PS file, in an attempt to produce portable
+    PS. However, PS to PDF converters will assume a default size (typically US
+    letter) that may not match the actual paper size (typically A4 outside
+    North America). Furthermore, depending on the distribution dvips will
+    assume A4 or letter as the default paper size for converting from DVI to PS
+    coordinates. It is therefore safer, and often necessary, to explicitely
+    tell dvips to set the PS paper size with the <tt>-t</tt> option. For
+      example:
+
+    </p><blockquote><tt>
+	dvips -t a4 -Ppdf -G0 file.dvi
+      </tt></blockquote>
+
+    If you are using US letter paper replace <tt>a4</tt> by <tt>letter</tt>.
+
+    <h3>Converting to PDF</h3>
+
+    <p>The PS file generated above can be converted to PDF using Acrobat
+    Distiller or GhostScript's ps2pdf command. Using Distiller is rather
+    user-friendly and not covered here.
+
+    </p><p>GhostScript's ps2pdf utility does a very good job converting to
+    PDF. Note however that versions up to than 5.50 will convert any Type 1
+    font other than the standard PostScript fonts to Type 3 (i.e., bitmap)
+    fonts, so make sure you use version 6.50 at least.
+
+    </p><p>To convert to PDF use the command:
+
+    </p><blockquote><tt>
+	ps2pdf file.ps
+      </tt></blockquote>
+
+    This will create a file with the same name and the <tt>.pdf</tt>
+    extension. The PDF version used will be GhostScript's default, which is
+    currently 1.2. To generate specific PDF versions you can use the
+    <tt>ps2pdf12</tt>, <tt>ps2pdf13</tt> or <tt>ps2pdf14</tt> commands, which
+    will generate PDF files compatible with Acrobat Reader versions 3 and
+    later, 4 and later and 5 and later, respectively.
+
+    <p>Several profiles are provided that select different sets of options and
+      are similar to Distiller's settings. They are:
+
+    </p><ul>
+      <li><tt>/screen</tt> selects low-resolution output similar to
+	Distiller's "Screen Optimized" setting.
+      </li><li><tt>/printer</tt> selects output similar to
+	Distiller's "Print Optimized" setting.
+      </li><li><tt>/prepress</tt> selects output similar to
+	Distiller's "Prepress Optimized" setting.
+      </li><li><tt>/default</tt> selects good quality output for general purpose
+	use, even if the file size might be larger than in the
+	<tt>/screen</tt> profile.
+    </li></ul>
+
+    The profile can be selected with the <tt>-dPDFSETTINGS</tt> option. For
+    example:
+
+    <blockquote><tt>
+	ps2pdf13 -dPDFSETTINGS=/screen file.ps
+      </tt></blockquote>
+
+    <p>If the paper size was not explicitely set when creating the PS file, it
+      can be specified in the <tt>ps2pdf</tt> command line. For example:
+
+    </p><blockquote><tt>
+	ps2pdf13 -sPAPERSIZE=a4 -dPDFSETTINGS=/screen file.ps
+      </tt></blockquote>
+
+    Note that Acrobat Reader on Linux/Unix, up to at least version 5.06, has a
+    bug handling the paper size when printing. Although the page setup dialog
+    says A4 as the paper size, you have to select it again each time Acrobat
+    Reader is started, as the setting is only partially saved. If this is not
+    done, the printed file will have A4 set as the paper size but all the
+    computations done for letter, leading to bogus margins.
+
+    <p>More specific settings can also be set, refer to the Ps2pdf.htm file in
+    your GhostScript's documentation (you can find it <a href="http://www.ghostscript.com/doc/gnu/7.05/Ps2pdf.htm">here</a> for
+    version 7.05).
+
+
+      <!-- End of content -->
+      </p></td>
+    <!-- End of menu / content table layout -->
+    </tr></tbody></table>
+<!-- The document's last modified date, right justified -->
+    <p align="right">
+      <font face="sans-serif" size="-1">Last Modified:
+	Wednesday, 06-Apr-2005 20:42:44 W. Europe Daylight Time</font>
+    </p>
+    <hr>
+
+    <!-- The bottom matter, as contact info -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tbody><tr valign="top">
+	<td align="left">
+	  Diego Santa Cruz<br>
+	</td>
+	<td align="right">
+	      <script language="javascript" type="text/javascript">
+      <!--
+      var ma = "";
+      ma +="dsa";
+      ma += "nta";
+      ma += "@";
+      ma += "gen";
+      ma += "eva-";
+      ma += "li";
+      ma += "nk";
+      ma += ".";
+      ma += "ch";
+      document.write("<a href=\"mailto:"+ma+"\">"+ma+"</a>");
+      // -->
+    </script><a href="mailto:dsanta@geneva-link.ch">dsanta@geneva-link.ch</a>
+    <noscript>
+      <small>(enable JavaScript to see e-mail address)</small>
+    </noscript>
+
+	</td>
+      </tr>
+    </tbody></table>
+
+  </body></html>

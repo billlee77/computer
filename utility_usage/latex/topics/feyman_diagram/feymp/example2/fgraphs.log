@@ -1,0 +1,15 @@
+This is MetaPost, Version 0.641 (Web2C 7.5.4) (mem=mpost 2010.6.8)  19 NOV 2010 20:44
+**fgraphs
+(fgraphs.mp (/home/billlee/texmf/metapost/feynmf/feynmp.mp)
+write0 = `fgraphs.t1'.
+
+ [1] ) 
+Here is how much of MetaPost's memory you used:
+ 582 strings out of 31349
+ 5801 string characters out of 1226376
+ 21568 words of memory out of 1500000
+ 864 symbolic tokens out of 9500
+ 14i,62n,28p,100b stack positions out of 300i,300n,1500p,200000b
+ 0 string compactions (moved 0 characters, 0 strings)
+
+1 output file written: fgraphs.1

@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<!-- InstanceBegin template="/Templates/support.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Linux User Commands Tips</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<meta name="Description" content="How to maintain users in Linux - useradd - usermod - userdel">
+<meta name="Keywords" content="useradd,usermod,userdel,users,groups,security,passwords, passwd,su,tips,linux help,linux">
+<meta name="robots" content="index,follow">
+<meta name="revisit-after" content="30 days">
+<!-- InstanceEndEditable -->
+<script type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  			var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    		var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    		if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+		}
+		function MM_openBrWindow(theURL,winName,features) { //v2.0
+  			window.open(theURL,winName,features);
+		}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<script language="JavaScript1.2" type="text/javascript" src="users_files/mm_css_menu.js"></script>
+<link href="users_files/ahi.css" rel="stylesheet" type="text/css">
+<style type="text/css" media="screen">
+@import url("../fireworks/nav4.css");
+
+
+	
+
+	@import url("../fireworks/nav4.css");
+</style>
+</head><body onload="MM_preloadImages('../fireworks/images/nav4_r1_c1_f2.jpg','../fireworks/images/nav4_r2_c2_f2.jpg','../fireworks/images/nav4_r1_c1_f3.jpg','../fireworks/images/nav4_r2_c4_f2.jpg','../fireworks/images/nav4_r1_c1_f4.jpg','../fireworks/images/nav4_r2_c6_f2.jpg','../fireworks/images/nav4_r1_c1_f5.jpg','../fireworks/images/nav4_r2_c8_f2.jpg')">
+<table width="785" align="center" border="0" cellpadding="0" cellspacing="0">
+  	<tbody><tr>
+    	<td><a name="top" id="top"></a>&nbsp;
+    	  <div id="FWTableContainer571644454">
+    	    <table width="785" border="0" cellpadding="0" cellspacing="0">
+    	      <!-- fwtable fwsrc="nav4.png" fwpage="Page 1" fwbase="nav4.jpg" fwstyle="Dreamweaver" fwdocid = "571644454" fwnested="0" -->
+    	      <tbody><tr>
+    	        <td><img src="users_files/spacer.gif" alt="" name="undefined_2" id="undefined_2" height="1" width="250" border="0"></td>
+    	        <td><img src="users_files/spacer.gif" alt="" name="undefined_2" id="undefined_2" height="1" width="130" border="0"></td>
+    	        <td><img src="users_files/spacer.gif" alt="" name="undefined_2" id="undefined_2" height="1" width="5" border="0"></td>
+    	        <td><img src="users_files/spacer.gif" alt="" name="undefined_2" id="undefined_2" height="1" width="130" border="0"></td>
+    	        <td><img src="users_files/spacer.gif" alt="" name="undefined_2" id="undefined_2" height="1" width="5" border="0"></td>
+    	        <td><img src="users_files/spacer.gif" alt="" name="undefined_2" id="undefined_2" height="1" width="130" border="0"></td>
+    	        <td><img src="users_files/spacer.gif" alt="" name="undefined_2" id="undefined_2" height="1" width="5" border="0"></td>
+    	        <td><img src="users_files/spacer.gif" alt="" name="undefined_2" id="undefined_2" height="1" width="130" border="0"></td>
+    	        <td><img src="users_files/spacer.gif" alt="" name="undefined_2" id="undefined_2" height="1" width="1" border="0"></td>
+  	        </tr>
+    	      <tr>
+    	        <td rowspan="3"><img src="users_files/nav4_r1_c1.jpg" alt="" name="nav4_r1_c1" id="nav4_r1_c1" height="99" width="250" border="0"></td>
+    	        <td colspan="7"><img src="users_files/nav4_r1_c2.jpg" alt="" name="nav4_r1_c2" id="nav4_r1_c2" height="11" width="535" border="0"></td>
+    	        <td><img src="users_files/spacer.gif" alt="" name="undefined_2" id="undefined_2" height="11" width="1" border="0"></td>
+  	        </tr>
+    	      <tr>
+    	        <td><a href="javascript:;" onmouseout="MM_swapImgRestore();MM_menuStartTimeout(1000)" onmouseover="MM_menuShowMenu('MMMenuContainer0502210112_0', 'MMMenu0502210112_0',2,72,'nav4_r2_c2');MM_swapImage('nav4_r1_c1','','../fireworks/images/nav4_r1_c1_f2.jpg','nav4_r2_c2','','../fireworks/images/nav4_r2_c2_f2.jpg',1)"><img src="users_files/nav4_r2_c2.jpg" alt="" name="nav4_r2_c2" id="nav4_r2_c2" height="72" width="130" border="0"></a></td>
+    	        <td rowspan="3"><img src="users_files/nav4_r2_c3.jpg" alt="" name="nav4_r2_c3" id="nav4_r2_c3" height="94" width="5" border="0"></td>
+    	        <td><a href="javascript:;" onmouseout="MM_swapImgRestore();MM_menuStartTimeout(1000)" onmouseover="MM_menuShowMenu('MMMenuContainer0502213355_1', 'MMMenu0502213355_1',2,72,'nav4_r2_c4');MM_swapImage('nav4_r1_c1','','../fireworks/images/nav4_r1_c1_f3.jpg','nav4_r2_c4','','../fireworks/images/nav4_r2_c4_f2.jpg',1)"><img src="users_files/nav4_r2_c4.jpg" alt="" name="nav4_r2_c4" id="nav4_r2_c4" height="72" width="130" border="0"></a></td>
+    	        <td rowspan="3"><img src="users_files/nav4_r2_c5.jpg" alt="" name="nav4_r2_c5" id="nav4_r2_c5" height="94" width="5" border="0"></td>
+    	        <td><a href="javascript:;" onmouseout="MM_swapImgRestore();MM_menuStartTimeout(1000)" onmouseover="MM_menuShowMenu('MMMenuContainer0502220517_2', 'MMMenu0502220517_2',1,72,'nav4_r2_c6');MM_swapImage('nav4_r1_c1','','../fireworks/images/nav4_r1_c1_f4.jpg','nav4_r2_c6','','../fireworks/images/nav4_r2_c6_f2.jpg',1)"><img src="users_files/nav4_r2_c6.jpg" alt="" name="nav4_r2_c6" id="nav4_r2_c6" height="72" width="130" border="0"></a></td>
+    	        <td rowspan="3"><img src="users_files/nav4_r2_c7.jpg" alt="" name="nav4_r2_c7" id="nav4_r2_c7" height="94" width="5" border="0"></td>
+    	        <td><a href="javascript:;" onmouseout="MM_swapImgRestore();MM_menuStartTimeout(1000)" onmouseover="MM_menuShowMenu('MMMenuContainer0502213716_3', 'MMMenu0502213716_3',0,72,'nav4_r2_c8');MM_swapImage('nav4_r1_c1','','../fireworks/images/nav4_r1_c1_f5.jpg','nav4_r2_c8','','../fireworks/images/nav4_r2_c8_f2.jpg',1)"><img src="users_files/nav4_r2_c8.jpg" alt="" name="nav4_r2_c8" id="nav4_r2_c8" height="72" width="130" border="0"></a></td>
+    	        <td><img src="users_files/spacer.gif" alt="" name="undefined_2" id="undefined_2" height="72" width="1" border="0"></td>
+  	        </tr>
+    	      <tr>
+    	        <td rowspan="2"><img src="users_files/nav4_r3_c2.jpg" alt="" name="nav4_r3_c2" id="nav4_r3_c2" height="22" width="130" border="0"></td>
+    	        <td rowspan="2"><img src="users_files/nav4_r3_c4.jpg" alt="" name="nav4_r3_c4" id="nav4_r3_c4" height="22" width="130" border="0"></td>
+    	        <td rowspan="2"><img src="users_files/nav4_r3_c6.jpg" alt="" name="nav4_r3_c6" id="nav4_r3_c6" height="22" width="130" border="0"></td>
+    	        <td rowspan="2"><img src="users_files/nav4_r3_c8.jpg" alt="" name="nav4_r3_c8" id="nav4_r3_c8" height="22" width="130" border="0"></td>
+    	        <td><img src="users_files/spacer.gif" alt="" name="undefined_2" id="undefined_2" height="16" width="1" border="0"></td>
+  	        </tr>
+    	      <tr>
+    	        <td><img src="users_files/nav4_r4_c1.jpg" alt="" name="nav4_r4_c1" id="nav4_r4_c1" height="6" width="250" border="0"></td>
+    	        <td><img src="users_files/spacer.gif" alt="" name="undefined_2" id="undefined_2" height="6" width="1" border="0"></td>
+  	        </tr>
+  	      </tbody></table>
+    	    <div id="MMMenuContainer0502210112_0">
+    	      <div id="MMMenu0502210112_0" onmouseout="MM_menuStartTimeout(1000);" onmouseover="MM_menuResetTimeout();"> <a href="http://www.ahinc.com/services.html" id="MMMenu0502210112_0_Item_0" class="MMMIFVStyleMMMenu0502210112_0" onmouseover="MM_menuOverMenuItem('MMMenu0502210112_0');"> What&nbsp;We&nbsp;Do </a> <a href="http://www.ahinc.com/msaccess.htm" id="MMMenu0502210112_0_Item_1" class="MMMIVStyleMMMenu0502210112_0" onmouseover="MM_menuOverMenuItem('MMMenu0502210112_0');"> Custom&nbsp;Development </a> <a href="javascript:;" id="MMMenu0502210112_0_Item_2" class="MMMIVStyleMMMenu0502210112_0" onmouseover="MM_menuOverMenuItem('MMMenu0502210112_0','1');"> <span class="MMMenuItemSpanMMMenu0502210112_0">For&nbsp;the&nbsp;Web</span> <img src="users_files/arrows.gif" alt="" name="undefined_2" class="MMArrowStyleMMMenu0502210112_0" id="undefined_2" height="8" width="8"> </a> <a href="http://www.ahinc.com/maintenance.htm" id="MMMenu0502210112_0_Item_3" class="MMMIVStyleMMMenu0502210112_0" onmouseover="MM_menuOverMenuItem('MMMenu0502210112_0');"> Maintenance </a> <a href="http://www.ahinc.com/testimonial.htm" id="MMMenu0502210112_0_Item_4" class="MMMIVStyleMMMenu0502210112_0" onmouseover="MM_menuOverMenuItem('MMMenu0502210112_0');"> Testimonials </a> </div>
+    	      <div id="MMMenu0502210112_0_1" onmouseout="MM_menuStartTimeout(1000);" onmouseover="MM_menuResetTimeout();"> <a href="http://www.ahinc.com/webdev.htm" id="MMMenu0502210112_0_1_Item_0" class="MMMIFVStyleMMMenu0502210112_0_1" onmouseover="MM_menuOverMenuItem('MMMenu0502210112_0_1');"> Development </a> <a href="http://www.ahinc.com/webbasics.htm" id="MMMenu0502210112_0_1_Item_1" class="MMMIVStyleMMMenu0502210112_0_1" onmouseover="MM_menuOverMenuItem('MMMenu0502210112_0_1');"> Concepts </a> <a href="http://www.ahinc.com/webuse.htm" id="MMMenu0502210112_0_1_Item_2" class="MMMIVStyleMMMenu0502210112_0_1" onmouseover="MM_menuOverMenuItem('MMMenu0502210112_0_1');"> Usability </a> <a href="http://www.ahinc.com/metatags.htm" id="MMMenu0502210112_0_1_Item_3" class="MMMIVStyleMMMenu0502210112_0_1" onmouseover="MM_menuOverMenuItem('MMMenu0502210112_0_1');"> Metatags </a> </div>
+  	      </div>
+    	    <div id="MMMenuContainer0502213355_1">
+    	      <div id="MMMenu0502213355_1" onmouseout="MM_menuStartTimeout(1000);" onmouseover="MM_menuResetTimeout();"> <a href="http://www.ahinc.com/fsecure.htm" id="MMMenu0502213355_1_Item_0" class="MMMIFVStyleMMMenu0502213355_1" onmouseover="MM_menuOverMenuItem('MMMenu0502213355_1');"> Anti-Virus </a> <a href="http://www.ahinc.com/antispam.html" id="MMMenu0502213355_1_Item_1" class="MMMIVStyleMMMenu0502213355_1" onmouseover="MM_menuOverMenuItem('MMMenu0502213355_1');"> Anti-Spam </a> <a href="http://www.ahinc.com/yesican.htm" id="MMMenu0502213355_1_Item_2" class="MMMIVStyleMMMenu0502213355_1" onmouseover="MM_menuOverMenuItem('MMMenu0502213355_1');"> Business&nbsp;Accounting </a> <a href="http://www.ahinc.com/backup.htm" id="MMMenu0502213355_1_Item_3" class="MMMIVStyleMMMenu0502213355_1" onmouseover="MM_menuOverMenuItem('MMMenu0502213355_1');"> Backup&nbsp;EDGE </a> <a href="http://www.ahinc.com/digitalsignage.html" id="MMMenu0502213355_1_Item_4" class="MMMIVStyleMMMenu0502213355_1" onmouseover="MM_menuOverMenuItem('MMMenu0502213355_1');"> Digital&nbsp;Signage </a> <a href="http://www.ahinc.com/linux.htm" id="MMMenu0502213355_1_Item_5" class="MMMIVStyleMMMenu0502213355_1" onmouseover="MM_menuOverMenuItem('MMMenu0502213355_1');"> Linux </a> <a href="http://www.ahinc.com/scalix.html" id="MMMenu0502213355_1_Item_6" class="MMMIVStyleMMMenu0502213355_1" onmouseover="MM_menuOverMenuItem('MMMenu0502213355_1');"> Scalix </a> <a href="http://www.ahinc.com/products.htm" id="MMMenu0502213355_1_Item_7" class="MMMIVStyleMMMenu0502213355_1" onmouseover="MM_menuOverMenuItem('MMMenu0502213355_1');"> Shop&nbsp;OnLine </a> <a href="http://www.ahinc.com/docmgmt.html" id="MMMenu0502213355_1_Item_8" class="MMMIVStyleMMMenu0502213355_1" onmouseover="MM_menuOverMenuItem('MMMenu0502213355_1');"> Document&nbsp;Management </a> </div>
+  	      </div>
+    	    <div id="MMMenuContainer0502220517_2">
+    	      <div id="MMMenu0502220517_2" onmouseout="MM_menuStartTimeout(1000);" onmouseover="MM_menuResetTimeout();"> <a href="javascript:;" id="MMMenu0502220517_2_Item_0" class="MMMIFVStyleMMMenu0502220517_2" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2','1');"> <span class="MMMenuItemSpanMMMenu0502220517_2">Applications</span> <img src="users_files/arrows.gif" alt="" name="undefined_2" class="MMArrowStyleMMMenu0502220517_2" id="undefined_2" height="8" width="8"> </a> <a href="javascript:;" id="MMMenu0502220517_2_Item_1" class="MMMIVStyleMMMenu0502220517_2" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2','2');"> <span class="MMMenuItemSpanMMMenu0502220517_2">Business&nbsp;Info</span> <img src="users_files/arrows.gif" alt="" name="undefined_2" class="MMArrowStyleMMMenu0502220517_2" id="undefined_2" height="8" width="8"> </a> <a href="javascript:;" id="MMMenu0502220517_2_Item_2" class="MMMIVStyleMMMenu0502220517_2" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2','3');"> <span class="MMMenuItemSpanMMMenu0502220517_2">Hardware&nbsp;Info</span> <img src="users_files/arrows.gif" alt="" name="undefined_2" class="MMArrowStyleMMMenu0502220517_2" id="undefined_2" height="8" width="8"> </a> <a href="javascript:;" id="MMMenu0502220517_2_Item_3" class="MMMIVStyleMMMenu0502220517_2" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2','4');"> <span class="MMMenuItemSpanMMMenu0502220517_2">Microsoft&nbsp;Info</span> <img src="users_files/arrows.gif" alt="" name="undefined_2" class="MMArrowStyleMMMenu0502220517_2" id="undefined_2" height="8" width="8"> </a> <a href="http://www.ahinc.com/linux101/toc.html" id="MMMenu0502220517_2_Item_4" class="MMMIVStyleMMMenu0502220517_2" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2');"> Linux&nbsp;101 </a> <a href="http://www.ahinc.com/aix/index.htm" id="MMMenu0502220517_2_Item_5" class="MMMIVStyleMMMenu0502220517_2" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2');"> AIX&nbsp;101 </a> <a href="http://www.ahinc.com/online.htm" id="MMMenu0502220517_2_Item_6" class="MMMIVStyleMMMenu0502220517_2" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2');"> OnLine&nbsp;Help </a> <a href="http://request.ahinc.com/" id="MMMenu0502220517_2_Item_7" class="MMMIVStyleMMMenu0502220517_2" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2');"> Help&nbsp;Desk </a> <a href="http://www.ahinc.com/blog" target="_blank" id="MMMenu0502220517_2_Item_8" class="MMMIVStyleMMMenu0502220517_2" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2');"> Blog </a> </div>
+    	      <div id="MMMenu0502220517_2_1" onmouseout="MM_menuStartTimeout(1000);" onmouseover="MM_menuResetTimeout();"> <a href="http://www.ahinc.com/support/buedge.htm" id="MMMenu0502220517_2_1_Item_0" class="MMMIFVStyleMMMenu0502220517_2_1" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_1');"> Backup&nbsp;EDGE </a> <a href="http://www.ahinc.com/support/eudora.htm" id="MMMenu0502220517_2_1_Item_1" class="MMMIVStyleMMMenu0502220517_2_1" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_1');"> Eudora </a> <a href="http://www.ahinc.com/support/mysql.html" id="MMMenu0502220517_2_1_Item_2" class="MMMIVStyleMMMenu0502220517_2_1" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_1');"> mySQL </a> <a href="http://www.ahinc.com/support/pterm.htm" id="MMMenu0502220517_2_1_Item_3" class="MMMIVStyleMMMenu0502220517_2_1" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_1');"> PowerTerm </a> <a href="http://www.ahinc.com/support/unibasic.htm" id="MMMenu0502220517_2_1_Item_4" class="MMMIVStyleMMMenu0502220517_2_1" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_1');"> uniBasic </a> <a href="http://www.ahinc.com/support/yic.htm" id="MMMenu0502220517_2_1_Item_5" class="MMMIVStyleMMMenu0502220517_2_1" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_1');"> Business&nbsp;Pro&nbsp;&amp;&nbsp;Yes&nbsp;I&nbsp;Can </a> </div>
+    	      <div id="MMMenu0502220517_2_2" onmouseout="MM_menuStartTimeout(1000);" onmouseover="MM_menuResetTimeout();"> <a href="http://www.ahinc.com/business.htm" id="MMMenu0502220517_2_2_Item_0" class="MMMIFVStyleMMMenu0502220517_2_2" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_2');"> Analyze&nbsp;Your&nbsp;Needs </a> <a href="http://www.ahinc.com/hcopyrig.htm" id="MMMenu0502220517_2_2_Item_1" class="MMMIVStyleMMMenu0502220517_2_2" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_2');"> Software&nbsp;Ownership </a> <a href="http://www.ahinc.com/passwords.htm" id="MMMenu0502220517_2_2_Item_2" class="MMMIVStyleMMMenu0502220517_2_2" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_2');"> Password&nbsp;Creation </a> <a href="http://www.ahinc.com/presentations.htm" id="MMMenu0502220517_2_2_Item_3" class="MMMIVStyleMMMenu0502220517_2_2" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_2');"> Effective&nbsp;Presentations </a> </div>
+    	      <div id="MMMenu0502220517_2_3" onmouseout="MM_menuStartTimeout(1000);" onmouseover="MM_menuResetTimeout();"> <a href="http://www.ahinc.com/hhbus.htm" id="MMMenu0502220517_2_3_Item_0" class="MMMIFVStyleMMMenu0502220517_2_3" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_3');"> Buses </a> <a href="http://www.ahinc.com/cables.htm" id="MMMenu0502220517_2_3_Item_1" class="MMMIVStyleMMMenu0502220517_2_3" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_3');"> Cables </a> <a href="http://www.ahinc.com/hhchips.htm" id="MMMenu0502220517_2_3_Item_2" class="MMMIVStyleMMMenu0502220517_2_3" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_3');"> Chips </a> <a href="http://www.ahinc.com/dvd.html" id="MMMenu0502220517_2_3_Item_3" class="MMMIVStyleMMMenu0502220517_2_3" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_3');"> DVD </a> <a href="http://www.ahinc.com/hhmemory.htm" id="MMMenu0502220517_2_3_Item_4" class="MMMIVStyleMMMenu0502220517_2_3" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_3');"> Memory </a> <a href="http://www.ahinc.com/video.htm" id="MMMenu0502220517_2_3_Item_5" class="MMMIVStyleMMMenu0502220517_2_3" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_3');"> Monitors </a> <a href="http://www.ahinc.com/hhnetwor.htm" id="MMMenu0502220517_2_3_Item_6" class="MMMIVStyleMMMenu0502220517_2_3" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_3');"> Networks </a> <a href="http://www.ahinc.com/power.htm" id="MMMenu0502220517_2_3_Item_7" class="MMMIVStyleMMMenu0502220517_2_3" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_3');"> Power&nbsp;Protection </a> <a href="http://www.ahinc.com/raid.htm" id="MMMenu0502220517_2_3_Item_8" class="MMMIVStyleMMMenu0502220517_2_3" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_3');"> RAID </a> <a href="http://www.ahinc.com/scsi.htm" id="MMMenu0502220517_2_3_Item_9" class="MMMIVStyleMMMenu0502220517_2_3" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_3');"> SCSI </a> </div>
+    	      <div id="MMMenu0502220517_2_4" onmouseout="MM_menuStartTimeout(1000);" onmouseover="MM_menuResetTimeout();"> <a href="http://www.ahinc.com/ingeneral.html" id="MMMenu0502220517_2_4_Item_0" class="MMMIFVStyleMMMenu0502220517_2_4" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_4');"> Versions&nbsp;&amp;&nbsp;LIcenses </a> <a href="http://www.ahinc.com/office97.htm" id="MMMenu0502220517_2_4_Item_1" class="MMMIVStyleMMMenu0502220517_2_4" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_4');"> About&nbsp;Office </a> <a href="http://www.ahinc.com/wxp.htm" id="MMMenu0502220517_2_4_Item_2" class="MMMIVStyleMMMenu0502220517_2_4" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_4');"> Windows&nbsp;XP </a> <a href="http://www.ahinc.com/access2000.htm" id="MMMenu0502220517_2_4_Item_3" class="MMMIVStyleMMMenu0502220517_2_4" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_4');"> Access </a> <a href="http://www.ahinc.com/hexcel.htm" id="MMMenu0502220517_2_4_Item_4" class="MMMIVStyleMMMenu0502220517_2_4" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_4');"> Excel </a> <a href="http://www.ahinc.com/word_tips.htm" id="MMMenu0502220517_2_4_Item_5" class="MMMIVStyleMMMenu0502220517_2_4" onmouseover="MM_menuOverMenuItem('MMMenu0502220517_2_4');"> Word </a> </div>
+  	      </div>
+    	    <div id="MMMenuContainer0502213716_3">
+    	      <div id="MMMenu0502213716_3" onmouseout="MM_menuStartTimeout(1000);" onmouseover="MM_menuResetTimeout();"> <a href="http://www.ahinc.com/contact.html" id="MMMenu0502213716_3_Item_0" class="MMMIFVStyleMMMenu0502213716_3" onmouseover="MM_menuOverMenuItem('MMMenu0502213716_3');"> Contact&nbsp;Us </a> <a href="http://www.ahinc.com/whatsnew.htm" id="MMMenu0502213716_3_Item_1" class="MMMIVStyleMMMenu0502213716_3" onmouseover="MM_menuOverMenuItem('MMMenu0502213716_3');"> What's&nbsp;New </a> <a href="http://www.ahinc.com/horizon.htm" id="MMMenu0502213716_3_Item_2" class="MMMIVStyleMMMenu0502213716_3" onmouseover="MM_menuOverMenuItem('MMMenu0502213716_3');"> Horizon&nbsp;Newsletter </a> <a href="http://www.ahinc.com/sites.htm" id="MMMenu0502213716_3_Item_3" class="MMMIVStyleMMMenu0502213716_3" onmouseover="MM_menuOverMenuItem('MMMenu0502213716_3');"> Our&nbsp;Customers </a> <a href="http://www.ahinc.com/employment.html" id="MMMenu0502213716_3_Item_4" class="MMMIVStyleMMMenu0502213716_3" onmouseover="MM_menuOverMenuItem('MMMenu0502213716_3');"> Employment </a> </div>
+  	      </div>
+  	    </div></td>
+  	</tr>
+ 	<tr>
+    	<td width="784" align="left">
+        	<table width="785" background="users_files/bgsupport2.jpg" border="0" cellpadding="0" cellspacing="0">
+      			<tbody><tr>
+        			<td height="85" align="left">&nbsp;</td>
+      			</tr>
+    		</tbody></table>
+   		</td>
+  	</tr>
+  	<tr>
+    	<td>
+        	<table width="786" border="0" cellpadding="0" cellspacing="0">
+      			<tbody><tr>
+        			<td valign="top" width="140" align="left">
+                    	<table width="140" border="0" cellpadding="0" cellspacing="0">
+          					<tbody><tr>
+            					<td height="400" valign="top" width="140" align="left" background="users_files/nav3blank.jpg">
+									<!-- InstanceBeginEditable name="subnav" --><!-- #BeginLibraryItem "/Library/supportlinux.lbi" --><ul>
+   <li class="navLink"><a href="http://www.ahinc.com/linux101/linuxguidelines.htm">Guidelines</a></li>
+   <li class="navLink"><a href="http://www.ahinc.com/linux101/boot.htm">Boot/Shutdown</a></li>
+   <li class="navLink"><a href="http://www.ahinc.com/linux101/status.htm">System Status</a></li>
+   <li class="navLink"><a href="http://www.ahinc.com/linux101/structure.htm">Files</a></li>
+   <li class="navLink"><a href="http://www.ahinc.com/linux101/loginout.htm">Security</a></li>
+   <li class="navLink"><a href="http://www.ahinc.com/linux101/network.htm">Networking</a></li>
+   <li class="navLink"><a href="http://www.ahinc.com/linux101/printing.htm">Printing</a></li>
+   <li class="navLink"><a href="http://www.ahinc.com/linux101/utilities.htm">Utilities</a></li>
+   <li class="navLink"><a href="http://www.ahinc.com/linux101/backup.htm">Backup</a></li>
+   <li class="navLink"><a href="http://www.ahinc.com/linux101/email.htm">Email</a></li>
+   <li class="navLink"><a href="http://www.ahinc.com/linux101/ftpanon.htm">FTP</a></li>
+   <li class="navLink"><a href="http://www.ahinc.com/linux101/vi.htm"> vi commands </a></li>
+   <li class="navLink"><a href="http://www.ahinc.com/linux101/perl.htm">Perl</a></li>
+</ul>
+              <!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/supportlinuxsecurity.lbi" --><p class="subtitle">More...</p>
+<ul class="navLink">
+    <li><a href="http://www.ahinc.com/linux101/users.htm">Users</a></li>
+    <li><a href="http://www.ahinc.com/linux101/permission.htm">Permissions</a></li>
+</ul>
+              <!-- #EndLibraryItem --><!-- InstanceEndEditable -->
+                 				</td>
+          					</tr>
+        				</tbody></table>
+    				</td>
+        			<td valign="top" align="left">
+        				<table width="640" align="left" border="0" cellpadding="0" cellspacing="0">
+          					<tbody><tr>
+            					<td valign="top" width="40" align="left"><img src="users_files/curve.jpg" height="38" width="40"></td>
+            					<td class="supporttitle" valign="top" width="600" align="center">
+									<!-- InstanceBeginEditable name="title" -->              
+              Linux Users
+            <!-- InstanceEndEditable -->
+                 				</td>
+          					</tr>
+          					<tr>
+            					<td colspan="2" valign="top" align="left">
+									<!-- InstanceBeginEditable name="body" -->
+<div align="left"> 
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr> 
+      <td valign="top" width="4"></td>
+      <td valign="top" width="100%">        <table width="100%" border="0" cellpadding="2" cellspacing="0">
+          <tbody><tr> 
+            <!--msnavigation-->
+            <td valign="top" width="100%"><table width="90%" align="center" bgcolor="#c0c0c0" border="0" cellpadding="0" cellspacing="0">
+              <tbody><tr>
+                <td valign="top" width="50%" align="left"><ul class="navLink">
+                    <li><div align="left"><a href="#Adding%20a%20new%20user">Adding a new user</a> (useradd)</div></li>
+                  <li><div align="left"><a href="#Modify%20existing%20user">Modifying an existing user</a> (usermod)</div></li>
+                  <li><div align="left"><a href="#Where%20is%20user%20and%20group%20information%20stored">Where user and group information is stored</a></div></li>
+                </ul></td>
+                <td valign="top" width="50%" align="left"><ul class="navLink">
+                    <li><div align="left"><a href="#Deleting%20a%20user">Deleting a user</a> (userdel)</div></li>
+                  <li><div align="left"><a href="#User%27s%20Password">User's passwd</a> passwd </div></li>
+                  <li><div align="left"><a href="#Switch%20User">Switch User</a> su </div>
+                  </li>
+                </ul></td>
+              </tr>
+            </tbody></table>
+              <p>Every user who has access to a Linux system 
+                  needs a login and a password. Each user must belong to a primary 
+                  group and for security or access purposes can belong to several 
+                  secondary groups.</p>
+              <p><font class="RedText">In order to create new logins, modify or delete users, you must already 
+                be logged in as <b>root</b>.</font>&nbsp; 
+                The root login is the highest level and only certain individuals should have access to the root account.</p>
+              <p class="supportsubtitle"><a name="Adding a new user" class="supportsubtitle" id="Adding a new user">useradd - Adding a new user</a></p>
+              <p class="supportsection">Options: 
+              </p>
+              <ul>
+                <li><b>-d</b> home directory</li>
+                <li><b>-s</b> starting program (shell)</li>
+                <li><b>-p</b> password</li>
+                <li><strong>-g</strong> (primary group assigned to the users)</li>
+                <li><strong>-G</strong> (Other groups the user belongs to)</li>
+                <li><strong>-m</strong> (Create the user's home directory</li>
+</ul>
+              <p><em>Example: To add a new user with</em></p>
+              <ul>
+                <li>a primary group of <b>users</b></li>
+                <li>a second group <b>mgmt</b></li>
+                <li>starting shell<b> /bin/bash</b></li>
+                <li>password of <b>xxxx</b></li>
+                <li>home directory of<b> roger</b></li>
+                <li>create home directory</li>
+                <li>a login name of <b>roger</b></li>
+              </ul>
+              <blockquote>
+                <p><span class="supportGreen">useradd -gusers -Gmgmt -s/bin/shell -pxxxx -d/home/roger -m roger</span>
+                </p>
+              </blockquote>
+              <p><a href="#top" class="navLink">top of page</a></p>
+              <hr>
+              
+  <a name="Modify existing user" class="supportsubtitle" id="Modify existing user">usermod - Modifying existing user</a>
+              <p class="supportsection">Options:</p>
+              <ul>
+                <li><b>-d</b> home directory</li>
+                <li><b>-s</b> starting program (shell)</li>
+                <li><b>-p</b> password</li>
+                <li>-<strong>g</strong> (primary group assigned to the users)</li>
+                <li><strong>-G</strong> (Other groups the user belongs to)</li>
+              </ul>
+              <p><i>Example: To add the group 'others' to the user roger</i></p>
+              <blockquote>
+                <p><span class="supportGreen">usermod -Gothers roger</span>
+                </p>
+              </blockquote>
+              <p><a href="#top" class="navLink">top of page</a></p>
+              <hr>
+              
+ <a name="Deleting a user" class="supportsubtitle" id="Deleting a user">userdel - Deleting a user</a>
+              <p class="supportsection">Options:</p>
+              <ul>
+                <li><strong>-r</strong> (remove home directory)</li>
+              </ul>
+              <p><em>Example: To remove the user 'roger' and his home directory</em></p>
+              <blockquote>
+                <p><span class="supportGreen">userdel -r roger</span>
+                </p>
+              </blockquote>
+              <p><a href="#top" class="navLink">top of page</a></p>
+              <hr>
+              <p><a name="User's Password" class="supportsubtitle" id="User's Password">passwd - User's Password</a></p>
+              <p class="supportsection">Options:
+              </p>
+              <ul>
+                <li><strong>user's name</strong> (<font class="RedText">Only required if you are 
+                  root and want to change another user's password</font>)</li>
+              </ul>
+              <p><em>Example: To change the password for the account you are currently logged in as...</em></p>
+              <blockquote> 
+                <p><b>passwd</b><br>
+                  Enter <b>existing password</b><br>
+                  Enter <b>new password</b><br>
+                  Enter <b>new password again</b> (to validate)</p>
+              </blockquote>
+              <p><em>Example: To change the password for the user 'roger' (only you are logged in as root)...</em></p>
+              <blockquote> 
+                <p><span class="supportsection">passwd roger</span><br>
+                  Enter <span class="supportsection">existing password</span> (can be either roger's password or root's password)<br>
+                  Enter <span class="supportsection">new password</span><br>
+                  Enter <span class="supportsection">new password again</span> (to validate)</p>
+              </blockquote>
+              <p><a href="#top" class="navLink">top of page</a></p>
+              <hr>
+              
+  <a name="Where is user and group information stored" class="supportsubtitle" id="Where is user and group information stored">Where user and group information stored</a>
+              <p><strong>User names</strong> and primary groups are stored 
+                in <strong>/etc/passwd. </strong><font class="RedText">This file 
+                can be directly edited using the 'vi' editor, although this is 
+                <b>not recommended</b>. </font>Format of the file is...</p>
+              <ul>
+                <li>User (name normally all lower case)</li>
+                <li>Password (encrypted - only contains the letter 'x')</li>
+                <li>User ID (a unique number of each user)</li>
+                <li>Primary Group ID</li>
+                <li>Comment (Normally the person's full name)</li>
+                <li>Home directory (normally /home/&lt;user name&gt;</li>
+                <li>Default shell (normally /bin/bash)</li>
+              </ul>
+              <p>Each field is separated by a colon.</p>
+              <p><strong>Passwords</strong> for each user are stored in <strong>/etc/shadow</strong>. <font class="RedText">This 
+                file should only be changed using the <b>passwd</b> command.</font></p>
+              <p><strong>Group</strong> information is stored in<strong> /etc/group</strong>. This file 
+                can be directly edited using the 'vi' editor. Format of the file is...</p>
+              <ul>
+                <li>Group name</li>
+                <li>Group password (hardly ever used)</li>
+                <li>Group ID</li>
+                <li>User names (separated by commas)</li>
+              </ul>
+              <p>Each field is separated by a colon.</p>
+              <p class="supportsection"><b>Default files</b></p>
+              <p>When a new user is created, the default files and directories that are created 
+                are stored in <b>/etc/skel</b>.</p>
+              <p>This directory can be modified to fit your needs. <span class="RedText"><font>Modifications 
+                only effect new users and does not change anything for existing users.</font></span></p>
+              <p><a href="#top" class="navLink">top of page</a></p>
+              <hr>
+              
+ <a name="Switch User" class="supportsubtitle" id="Switch User">su - Switch User</a>
+              <p>To switch to another user, use the <b>su</b> command. This is most commonly 
+                used to switch to the root account.</p>
+              <blockquote> 
+                <p><em>Example: To switch to root account...</em><br>
+                  <span class="supportsection">su</span><br>
+                  Enter<span class="supportsection"> <b>root's passwd</b></span></p>
+                <p><em>Example: To switch to the user 'roger'...</em><br>
+                  <span class="supportsection">su roger</span><br>
+                  Enter<span class="supportsection"> roger's or root's passwd</span></p>
+                <p>To return to original user, enter <font class="supportsection" color="#006600">exit</font></p>
+<font class="supportsection" color="#006600">              </font></blockquote>
+<font class="supportsection" color="#006600">              </font><p><font class="supportsection" color="#006600"><a href="#top" class="navLink">top of page</a></font></p><font class="supportsection" color="#006600">            </font></td>
+          </tr>
+        </tbody></table> </td>
+    </tr>
+  </tbody></table>
+  </div>
+<!-- InstanceEndEditable -->
+             					</td>
+            				</tr>
+        				</tbody></table>
+     				</td>
+  				</tr>
+    		</tbody></table>
+     	</td>
+  	</tr>
+  <tr>
+    	<td>
+        	<table width="786" border="0" cellpadding="0" cellspacing="0">
+      			<tbody><tr>
+        			<td height="4" width="786" bgcolor="#006600"></td>
+      			</tr>
+      			<tr>
+        			<td valign="top" align="center">
+<!-- #BeginLibraryItem "/Library/TextNav.lbi" --><p class="navLink">
+<a href="http://www.ahinc.com/services.html">Services</a> | 
+<a href="http://www.ahinc.com/products.htm">Products</a> |
+<a href="http://www.ahinc.com/information.htm">Support</a> | <a href="http://www.ahinc.com/contact.html">About Us</a> | <a href="http://www.ahinc.com/privacy.html">Privacy Policy</a> | 
+<a href="http://www.ahinc.com/legal.html">Legal Stuff</a>
+</p>
+<!-- #EndLibraryItem -->
+					</td>
+      			</tr>
+      			<tr>
+        			<td align="center"><!-- #BeginLibraryItem "/Library/Legal.lbi" --><span class="subtitle">Email us at </span><a href="mailto:info@ahinc.com" class="navLink">Info@AHinc.com</a><br>
+<i>©  Advanced Horizons, Inc. All Rights Reserved</i><!-- #EndLibraryItem --></td>
+      			</tr>
+    		</tbody></table>
+      	</td>
+  </tr>
+</tbody></table>
+<!-- InstanceEnd --></body></html>

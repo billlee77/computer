@@ -1,0 +1,20 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{nomencl}
+\makenomenclature
+ 
+\begin{document}
+\tableofcontents
+\bigskip
+\section{First section}
+$\gamma = \int_1^\infty\left({1\over\lfloor x\rfloor}
+-{1\over x}\right)\,dx$
+\nomenclature{$\gamma$}{Euler–Mascheroni constant\nomrefpage}
+ 
+%\let\stdsection\section
+%\def\section*#1{\stdsection{#1}}
+\printnomenclature
+%\let\section\stdsection
+ 
+\section{Another section}
+Text
+\end{document}

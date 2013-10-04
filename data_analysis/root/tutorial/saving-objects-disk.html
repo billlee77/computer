@@ -1,0 +1,352 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="js" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Saving Objects to Disk | ROOT</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="prev" href="http://root.cern.ch/drupal/content/histograms-and-current-directory">
+<link rel="up" href="http://root.cern.ch/drupal/content/inputoutput">
+<link rel="next" href="http://root.cern.ch/drupal/content/saving-collections-disk">
+<link rel="shortcut icon" href="http://root.cern.ch/drupal/sites/default/files/favicon.ico" type="image/x-icon">
+  <link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/aggregator.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/book.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/node.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/defaults.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/system.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/system-menus.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/user.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/fckeditor.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/follow.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/geshifilter.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/mollom.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/shadowbox.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/shadowbox_002.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/views.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/style.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/blue.css">
+<link type="text/css" rel="stylesheet" media="all" href="saving-objects-disk_files/suckerfish_blue.css">
+  <script src="saving-objects-disk_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="saving-objects-disk_files/jquery_002.js"></script>
+<script type="text/javascript" src="saving-objects-disk_files/drupal.js"></script>
+<script type="text/javascript" src="saving-objects-disk_files/external.js"></script>
+<script type="text/javascript" src="saving-objects-disk_files/googleanalytics.js"></script>
+<script type="text/javascript" src="saving-objects-disk_files/mollom.js"></script>
+<script type="text/javascript" src="saving-objects-disk_files/shadowbox.js"></script>
+<script type="text/javascript" src="saving-objects-disk_files/shadowbox_auto.js"></script>
+<script type="text/javascript" src="saving-objects-disk_files/jquery.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/drupal/", "externalpdf": 0, "googleanalytics": { "trackOutgoing": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip|root" }, "shadowbox": { "animate": 1, "animateFade": 1, "animSequence": "wh", "auto_enable_all_images": 0, "auto_gallery": 0, "autoplayMovies": true, "continuous": 0, "counterLimit": "10", "counterType": "default", "displayCounter": 1, "displayNav": 1, "enableKeys": 1, "fadeDuration": "0.35", "handleOversize": "resize", "handleUnsupported": "link", "initialHeight": 160, "initialWidth": 320, "language": "en", "modal": false, "overlayColor": "#000", "overlayOpacity": "0.85", "players": null, "resizeDuration": "0.35", "showMovieControls": 1, "slideshowDelay": "0", "viewportPadding": 20, "useSizzle": 0 } });
+//--><!]]>
+</script>
+  <script type="text/javascript"> </script>
+      <style type="text/css">
+    #page {
+      width : 850px;
+    }
+    </style>
+        <style type="text/css">
+    body.sidebar-left #main {
+      margin-left: -180px;
+    }
+    body.sidebars #main {
+      margin-left: -180px;
+    }
+    body.sidebar-left #squeeze {
+      margin-left: 180px;
+    }
+    body.sidebars #squeeze {
+      margin-left: 180px;
+    }
+    #sidebar-left {
+      width: 180px;
+    }
+    </style>
+        <style type="text/css">
+    body.sidebar-right #main {
+      margin-right: -180px;
+    }
+    body.sidebars #main {
+      margin-right: -180px;
+    }
+    body.sidebar-right #squeeze {
+      margin-right: 180px;
+    }
+    body.sidebars #squeeze {
+      margin-right: 180px;
+    }
+    #sidebar-right {
+      width: 180px;
+    }
+    </style>
+        <style type="text/css">
+    body {
+      font-family : Arial, Verdana, sans-serif;
+    }
+    </style>
+      <!--[if lte IE 6]>
+<script type="text/javascript"> 
+    $(document).ready(function(){ 
+        $(document).pngFix(); 
+    }); 
+</script> 
+<![endif]-->
+    <!--[if IE]>
+<style type="text/css" media="all">@import "/drupal/sites/all/themes/newsflash/css/ie.css";</style>
+<![endif]-->
+      <!--[if lte IE 6]>
+<script type="text/javascript" src="http://root.cern.ch/drupal/sites/all/themes/newsflash/js/suckerfish.js"></script>
+<![endif]-->
+        <script type="text/javascript" src="saving-objects-disk_files/pickstyle.js"></script>
+</head><body class="sidebar-left">
+  <div id="page">
+    <div id="header" class="clear-block">
+      <div id="logo-title">
+                              <a href="http://root.cern.ch/drupal/" title="Home"> <img src="saving-objects-disk_files/rootdrawing-logo.png" alt="Home" id="logo"> </a>
+                        </div><!-- /logo-title -->
+      <div id="name-and-slogan">
+                      </div><!-- /name-and-slogan -->
+            <form action="/drupal/content/saving-objects-disk" accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div id="search" class="container-inline">
+  <div class="form-item" id="edit-search-theme-form-1-wrapper">
+ <label for="edit-search-theme-form-1">Search this site: </label>
+ <input maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" title="Enter the terms you wish to search for." class="form-text" type="text">
+</div>
+<input name="op" id="edit-submit" value="Search" class="form-submit" type="submit">
+<input name="form_build_id" id="form-a178c38935de3676913967d16cfb302e" value="form-a178c38935de3676913967d16cfb302e" type="hidden">
+<input name="form_id" id="edit-search-theme-form" value="search_theme_form" type="hidden">
+</div>
+
+</div></form>
+              <div id="primarymenu">
+                                            <ul class="links secondary-links"><li class="menu-306 first last"><a href="http://root.cern.ch/drupal/content/login" title="Login">Login</a></li>
+</ul> 
+                </div>
+                    <div style="clear: both;"></div>
+        <div id="suckerfishmenu" class="clear-block"> <div class="block block-menu" id="block-menu-menu-suckerfish">
+    <div class="content"><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/" title="">Home</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/news" title="">What's New</a></li>
+<li class="expanded"><a href="http://root.cern.ch/drupal/content/about" title="">About</a><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/root-development-team" title="ROOT Development Team">ROOT Development Team</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/what-are-we-working" title="What Are We Working On">What Are We Working On</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/schedule-and-events" title="Schedule and Events">Schedule and Events</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/former-root-developers" title="Former ROOT Developers">Former ROOT Developers</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/contributors" title="Contributors">Contributors</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/contact-us" title="Contact Us">Contact Us</a></li>
+<li class="leaf last"><a href="http://root.cern.ch/drupal/content/license" title="License">License</a></li>
+</ul></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/image" title="">Screenshots</a></li>
+<li class="expanded"><a href="http://root.cern.ch/drupal/content/downloading-root" title="">Download</a><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/installing-root-source" title="Installing ROOT from Source">Building ROOT</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-32-00-patch-release-notes" title="ROOT Version v5-32-00 Patch Release Notes">Patches v5-32-00</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-30-00-patch-release-notes" title="ROOT Version v5-30-00 Patch Release Notes">Patches v5-30-00</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-28-00-patch-release-notes" title="ROOT Version v5-28-00 Patch Release Notes">Patches v5-28-00</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-27-06-patch-release-notes" title="ROOT Version v5-27-06 Patch Release Notes">Patches v5-27-06</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-26-00-patch-release-notes" title="ROOT Version v5-26-00 Patch Release Notes">Patches v5-26-00</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-24-00-patch-release-notes" title="ROOT Version v5-24-00 Patch Release Notes">Patches v5-24-00</a></li>
+<li class="expanded"><a href="http://root.cern.ch/drupal/content/older-versions" title="Older Versions">Older Versions</a><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/root-version-v5-22-00-patch-release-notes" title="ROOT Version v5-22-00 Patch Release Notes">Patches v5-22-00</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-20-00-patch-release-notes" title="ROOT Version v5-20-00 Patch Release Notes">Patches v5-20-00</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-18-00-patch-release-notes" title="ROOT Version v5-18-00 Patch Release Notes">Patches v5-18-00</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-14-00-patch-release-notes" title="ROOT Version v5-14-00 Patch Release Notes">Patches v5-14-00</a></li>
+<li class="leaf last"><a href="http://root.cern.ch/drupal/content/root-version-v5-10-00-patch-release-notes" title="ROOT Version v5-10-00 Patch Release Notes">Patches v5-10-00</a></li>
+</ul></li>
+<li class="leaf last"><a href="http://root.cern.ch/drupal/content/download-statistics" title="Download Statistics">Download Statistics</a></li>
+</ul></li>
+<li class="expanded"><a href="http://root.cern.ch/drupal/content/documentation" title="">Documentation</a><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/architectural-overview" title="Architectural Overview">Architectural Overview</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/discovering-root" title="">Discovering ROOT</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/users-guide" title="User's Guide">User's Guide</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/reference-guide" title="Reference Guide">Reference Guide</a></li>
+<li class="leaf"><a href="http://root.cern.ch/root/html/tutorials/" title="">Tutorials</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/howtos" title="HowTo's">HowTo's</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/faq" title="">FAQ</a></li>
+<li class="expanded last"><a href="http://root.cern.ch/drupal/content/other-resources" title="Other Resources">Other Resources</a><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/publication-list" title="Publication List">Publication List</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/example-applications" title="Example Applications">Example Applications</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/tutorials-and-courses" title="Tutorials and Courses">Tutorials and Courses</a></li>
+<li class="leaf last"><a href="http://root.cern.ch/drupal/content/workshops" title="Workshops">Workshops</a></li>
+</ul></li>
+</ul></li>
+<li class="expanded"><a href="http://root.cern.ch/drupal/content/support" title="">Support</a><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/register-user" title="Register as User">Register as User</a></li>
+<li class="leaf"><a href="http://root.cern.ch/bugs" title="">Report a Bug</a></li>
+<li class="leaf last"><a href="http://root.cern.ch/drupal/content/search" title="Search">Search</a></li>
+</ul></li>
+<li class="expanded"><a href="http://root.cern.ch/phpBB3/" title="">Forum</a><ul class="menu"><li class="leaf first last"><a href="http://root.cern.ch/drupal/content/roottalk-digest" title="RootTalk Digest">RootTalk Digest</a></li>
+</ul></li>
+<li class="expanded last"><a href="http://root.cern.ch/drupal/content/developers-corner" title="">Developers</a><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/c-coding-conventions" title="">Coding Conventions</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/subversion-howto" title="Subversion HOWTO">Subversion</a></li>
+<li class="leaf"><a href="http://root.cern.ch/viewvc/" title="">ViewVC</a></li>
+<li class="leaf"><a href="http://root.cern.ch/lxr/" title="">LXR</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/nightlies" title="Nightlies">Nightlies</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/buildbot-overview" title="">Buildbot</a></li>
+<li class="leaf"><a href="https://coverity.cern.ch/defects/index.htm?projectId=10001" title="">Coverity</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/benchmarking" title="Benchmarking">Benchmarking</a></li>
+<li class="leaf last"><a href="http://root.cern.ch/drupal/content/developer-meetings" title="Developer Meetings">Developer Meetings</a></li>
+</ul></li>
+</ul></div></div>
+ </div>
+          </div><!-- /header -->
+            <div id="middlecontainer">
+              <div id="sidebar-left"><div class="block block-book" id="block-book-0">
+  <h2 class="title"><a href="http://root.cern.ch/drupal/content/inputoutput" class="book-title">Input/Output</a></h2>  <div class="content"><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/root-files-1">ROOT Files</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/accessing-root-file">Accessing a ROOT File</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/current-directory">The Current Directory</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/reading-and-writing-objects">Reading and Writing Objects.</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/objects-memory-and-objects-disk">Objects in Memory and Objects on Disk</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/saving-histograms-disk">Saving Histograms to Disk</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/histograms-and-current-directory">Histograms and the Current Directory</a></li>
+<li class="leaf active-trail"><a href="http://root.cern.ch/drupal/content/saving-objects-disk" class="active">Saving Objects to Disk</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/saving-collections-disk">Saving Collections to Disk</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/tfile-object-going-out-scope">A TFile Object Going Out of Scope</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/retrieving-objects-disk">Retrieving Objects from Disk</a></li>
+<li class="leaf last"><a href="http://root.cern.ch/drupal/content/subdirectories-and-navigation">Subdirectories and Navigation</a></li>
+</ul></div></div>
+<div class="block block-views" id="block-views-recent_stories-block_1">
+  <h2 class="title">What's New</h2>  <div class="content"><div class="view view-recent-stories view-id-recent_stories view-display-id-block_1 view-dom-id-1">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-created">
+                <span class="field-content">December 2, 2011, 16:31</span>
+  </div>
+  
+  <div class="views-field-title">
+                <span class="field-content"><a href="http://root.cern.ch/drupal/content/production-release-53200">Production release 5.32/00</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field-created">
+                <span class="field-content">November 24, 2011, 19:51</span>
+  </div>
+  
+  <div class="views-field-title">
+                <span class="field-content"><a href="http://root.cern.ch/drupal/content/patch-release-53005">Patch release 5.30/05</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field-created">
+                <span class="field-content">November 24, 2011, 19:49</span>
+  </div>
+  
+  <div class="views-field-title">
+                <span class="field-content"><a href="http://root.cern.ch/drupal/content/patch-release-52800h">Patch release 5.28/00h</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-4 views-row-even views-row-last">  
+  <div class="views-field-created">
+                <span class="field-content">November 10, 2011, 17:52</span>
+  </div>
+  
+  <div class="views-field-title">
+                <span class="field-content"><a href="http://root.cern.ch/drupal/content/release-candidate-53200-rc1">Release Candidate 5.32/00-rc1</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+  
+  
+  
+  
+  
+</div> </div></div>
+<div class="block block-blog" id="block-blog-0">
+  <h2 class="title">Recent Blog Posts</h2>  <div class="content"><div class="item-list"><ul><li class="first"><a href="http://root.cern.ch/drupal/content/christmas-tree">Christmas Tree</a></li>
+<li><a href="http://root.cern.ch/drupal/content/do-we-need-yet-another-custom-c-interpreter">Do we need yet another custom C++ interpreter?</a></li>
+<li><a href="http://root.cern.ch/drupal/content/trevolutionjs">TRevolution.js</a></li>
+<li><a href="http://root.cern.ch/drupal/content/compile-your-own-c-standard">Compile your own C++ standard!</a></li>
+<li><a href="http://root.cern.ch/drupal/content/dictionaries-cint-and-cling">Dictionaries in CINT and cling</a></li>
+<li><a href="http://root.cern.ch/drupal/content/cling-goes-public">cling goes public!</a></li>
+<li><a href="http://root.cern.ch/drupal/content/new-c-standard">New C++ Standard!</a></li>
+<li><a href="http://root.cern.ch/drupal/content/cern-c-standards-committee">CERN in the C++ Standards Committee</a></li>
+<li><a href="http://root.cern.ch/drupal/content/textinput-prompt">TextInput: The Prompt</a></li>
+<li class="last"><a href="http://root.cern.ch/drupal/content/release-candidate">Release Candidate</a></li>
+</ul></div><div class="more-link"><a href="http://root.cern.ch/drupal/blog" title="Read the latest blog entries.">more</a></div></div></div>
+<div class="block block-follow" id="block-follow-site">
+  <h2 class="title">Follow Us On</h2>  <div class="content"><div class="follow-links clearfix"><a href="http://twitter.com/ROOT_Project" class="follow-link follow-link-twitter follow-link-site" title="Follow us on Twitter">Twitter</a>
+</div></div></div>
+ </div>
+            <div id="main">
+        <div id="squeeze">
+                                    <div id="breadcrumb"> <div class="breadcrumb"><a href="http://root.cern.ch/drupal/">Home</a> » <a href="http://root.cern.ch/drupal/content/inputoutput">Input/Output</a></div> </div>
+                                          <div id="squeeze-content">
+            <div id="inner-content">
+                           <h1 class="title">Saving Objects to Disk</h1>
+              <div class="tabs"></div>
+                                          <div class="node">
+  
+  
+  
+  <div class="content"><h2>Saving Objects to Disk</h2>
+
+In addition to histograms and trees, you can save any object in a ROOT file. For example to save a canvas to
+the ROOT file you can use either TObject::Write() or TDirectory::WriteTObject(). The example:
+
+<div class="geshifilter"><pre class="cpp geshifilter-cpp" style="font-family: monospace;">root<span style="color: rgb(0, 128, 0);">[</span><span style="color: rgb(0, 128, 0);">]</span> c1<span style="color: rgb(0, 0, 64);">-</span><span style="color: rgb(0, 0, 128);">&gt;</span>Write<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span></pre></div>
+
+This is equivalent to:
+
+<div class="geshifilter"><pre class="cpp geshifilter-cpp" style="font-family: monospace;">root<span style="color: rgb(0, 128, 0);">[</span><span style="color: rgb(0, 128, 0);">]</span> f<span style="color: rgb(0, 0, 64);">-</span><span style="color: rgb(0, 0, 128);">&gt;</span>WriteTObject<span style="color: rgb(0, 128, 0);">(</span>c1<span style="color: rgb(0, 128, 0);">)</span></pre></div>
+
+For objects that do not inherit from TObject use:
+
+<div class="geshifilter"><pre class="cpp geshifilter-cpp" style="font-family: monospace;">root<span style="color: rgb(0, 128, 0);">[</span><span style="color: rgb(0, 128, 0);">]</span> f<span style="color: rgb(0, 0, 64);">-</span><span style="color: rgb(0, 0, 128);">&gt;</span>WriteObject<span style="color: rgb(0, 128, 0);">(</span>ptr,<span style="color: rgb(255, 0, 0);">"nameofobject"</span><span style="color: rgb(0, 128, 0);">)</span></pre></div>
+
+Another example:
+
+<div class="geshifilter"><pre class="cpp geshifilter-cpp" style="font-family: monospace;">root<span style="color: rgb(0, 128, 0);">[</span><span style="color: rgb(0, 128, 0);">]</span> TFile <span style="color: rgb(0, 0, 64);">*</span>f <span style="color: rgb(0, 0, 128);">=</span> <span style="color: rgb(0, 0, 221);">new</span> TFile<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(255, 0, 0);">"hsimple.root"</span>,<span style="color: rgb(255, 0, 0);">"UPDATE"</span><span style="color: rgb(0, 128, 0);">)</span>
+root<span style="color: rgb(0, 128, 0);">[</span><span style="color: rgb(0, 128, 0);">]</span> hpx<span style="color: rgb(0, 0, 64);">-</span><span style="color: rgb(0, 0, 128);">&gt;</span>Draw<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span>
+<span style="color: rgb(0, 0, 128);">&lt;</span>TCanvas<span style="color: rgb(0, 128, 128);">::</span><span style="color: rgb(0, 119, 136);">MakeDefCanvas</span><span style="color: rgb(0, 0, 128);">&gt;</span><span style="color: rgb(0, 128, 128);">:</span> created <span style="color: rgb(0, 0, 255);">default</span> TCanvas with name c1
+root<span style="color: rgb(0, 128, 0);">[</span><span style="color: rgb(0, 128, 0);">]</span> c1<span style="color: rgb(0, 0, 64);">-</span><span style="color: rgb(0, 0, 128);">&gt;</span>Write<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span>
+root<span style="color: rgb(0, 128, 0);">[</span><span style="color: rgb(0, 128, 0);">]</span> f<span style="color: rgb(0, 0, 64);">-</span><span style="color: rgb(0, 0, 128);">&gt;</span>ls<span style="color: rgb(0, 128, 0);">(</span><span style="color: rgb(0, 128, 0);">)</span>
+TFile<span style="color: rgb(0, 0, 64);">**</span> hsimple.<span style="color: rgb(0, 119, 136);">root</span>
+TFile<span style="color: rgb(0, 0, 64);">*</span> hsimple.<span style="color: rgb(0, 119, 136);">root</span>
+OBJ<span style="color: rgb(0, 128, 128);">:</span> TH1F hpx This is the px distribution <span style="color: rgb(0, 128, 128);">:</span> <span style="color: rgb(0, 0, 221);">0</span>
+KEY<span style="color: rgb(0, 128, 128);">:</span> TH1F hpx<span style="color: rgb(0, 128, 128);">;</span><span style="color: rgb(0, 0, 221);">2</span> This is the px distribution
+KEY<span style="color: rgb(0, 128, 128);">:</span> TH1F hpx<span style="color: rgb(0, 128, 128);">;</span><span style="color: rgb(0, 0, 221);">1</span> This is the px distribution
+KEY<span style="color: rgb(0, 128, 128);">:</span> TH2F hpxpy<span style="color: rgb(0, 128, 128);">;</span><span style="color: rgb(0, 0, 221);">1</span> py vs px
+KEY<span style="color: rgb(0, 128, 128);">:</span> TProfile hprof<span style="color: rgb(0, 128, 128);">;</span><span style="color: rgb(0, 0, 221);">2</span> Profile of pz versus px
+KEY<span style="color: rgb(0, 128, 128);">:</span> TProfile hprof<span style="color: rgb(0, 128, 128);">;</span><span style="color: rgb(0, 0, 221);">1</span> Profile of pz versus px
+KEY<span style="color: rgb(0, 128, 128);">:</span> TNtuple ntuple<span style="color: rgb(0, 128, 128);">;</span><span style="color: rgb(0, 0, 221);">1</span> Demo ntuple
+KEY<span style="color: rgb(0, 128, 128);">:</span> TCanvas c1<span style="color: rgb(0, 128, 128);">;</span><span style="color: rgb(0, 0, 221);">1</span> c1</pre></div>
+
+  <div id="book-navigation-331" class="book-navigation">
+    
+        <div class="page-links clear-block">
+              <a href="http://root.cern.ch/drupal/content/histograms-and-current-directory" class="page-previous" title="Go to previous page">‹ Histograms and the Current Directory</a>
+                    <a href="http://root.cern.ch/drupal/content/inputoutput" class="page-up" title="Go to parent page">up</a>
+                    <a href="http://root.cern.ch/drupal/content/saving-collections-disk" class="page-next" title="Go to next page">Saving Collections to Disk ›</a>
+          </div>
+    
+  </div>
+</div>
+  <div class="clear-block clear"></div>
+
+  
+</div>
+ 
+                                        </div><!-- /inner-content -->
+          </div><!-- /squeeze-content -->
+        </div><!-- /squeeze -->
+      </div><!-- /main -->
+          </div><!-- /middle-container -->
+    <div style="clear: both;"></div>
+            <div id="footer">
+                    <div id="footer-message"><p>© 1995-2011 The ROOT Team</p></div>
+          </div><!-- /footer -->
+  <div style="clear: both;"></div>
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+      Shadowbox.path = "/drupal/sites/all/libraries/shadowbox-3.0.2/";
+      Shadowbox.init(Drupal.settings.shadowbox);
+    
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-4564872-2"]);_gaq.push(["_trackPageview"]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = "/drupal/sites/default/files/googleanalytics/ga.js?t";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+//--><!]]>
+</script>
+  </div> <!-- /page -->
+<div id="sb-container"><div id="sb-overlay"></div><div id="sb-wrapper"><div id="sb-title"><div id="sb-title-inner"></div></div><div id="sb-wrapper-inner"><div id="sb-body"><div id="sb-body-inner"></div><div id="sb-loading"><div id="sb-loading-inner"><span>loading</span></div></div></div></div><div id="sb-info"><div id="sb-info-inner"><div id="sb-counter"></div><div id="sb-nav"><a id="sb-nav-close" title="Close" onclick="Shadowbox.close()"></a><a id="sb-nav-next" title="Next" onclick="Shadowbox.next()"></a><a id="sb-nav-play" title="Play" onclick="Shadowbox.play()"></a><a id="sb-nav-pause" title="Pause" onclick="Shadowbox.pause()"></a><a id="sb-nav-previous" title="Previous" onclick="Shadowbox.previous()"></a></div></div></div></div></div></body></html>

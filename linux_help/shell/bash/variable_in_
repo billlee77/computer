@@ -1,0 +1,8 @@
+#Here is a BIG GOOD hint!! YES!!!
+> x='foobar'
+> echo $x
+foobar
+> echo "$x"
+foobar
+> echo '$x'
+$x

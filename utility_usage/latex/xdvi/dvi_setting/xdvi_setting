@@ -1,0 +1,6 @@
+# In ~/xdvirc
+Change xdvi expertMode to 31
+
+#change the background of xdvi, in ~/.Xdefaults add the following
+xdvi*background: white
+xdvi*foreground: black

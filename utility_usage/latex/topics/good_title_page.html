@@ -1,0 +1,955 @@
+<html><head><title>LaTeX samples</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head><body>
+<p></p><hr width="50%"><center>
+<strong><large>01</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vfill
+  \begin{center}\leavevmode
+    \normalfont
+    {\LARGE \@title\par}%
+    \vskip 1cm
+    {\Large \@author\par}%
+    \vskip 1cm
+    {\Large \@date\par}%
+  \end{center}%
+  \vfill
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\title{Mon titre}
+\author{Moi-même}
+\date{mars 2001}
+\begin{document}
+\maketitle
+\sometext
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/01.ps.gz"><img src="0_files/01.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>02</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+% Une commande sembleble à \rlap ou \llap, mais centrant son argument
+\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+% Une commande centrant son contenu (à utiliser en mode vertical)
+\def\ligne#1{%
+  \hbox to \hsize{%
+    \vbox{\centering #1}}}%
+% Une comande qui met son premier argument à gauche, le second au 
+% milieu et le dernier à droite, la première ligne ce chacune de ces
+% trois boites coïncidant
+\def\haut#1#2#3{%
+  \hbox to \hsize{%
+    \rlap{\vtop{\raggedright #1}}%
+    \hss
+    \clap{\vtop{\centering #2}}%
+    \hss
+    \llap{\vtop{\raggedleft #3}}}}%
+% Idem, mais cette fois-ci, c'est la dernière ligne
+\def\bas#1#2#3{%
+  \hbox to \hsize{%
+    \rlap{\vbox{\raggedright #1}}%
+    \hss
+    \clap{\vbox{\centering #2}}%
+    \hss
+    \llap{\vbox{\raggedleft #3}}}}%
+% La commande \maketitle
+\def\maketitle{%
+  \thispagestyle{empty}\vbox to \vsize{%
+    \haut{}{\@blurb}{}
+    \vfill
+    \ligne{\Large \@title}
+    \vspace{5mm}
+    \ligne{\Large \@author}
+    \vspace{1mm}\ligne{\texttt{&lt;\@email&gt;}}
+    \vspace{1cm}
+    \vfill
+    \vfill
+    \bas{}{\@location, \@date}{}
+    }%
+  \cleardoublepage
+  }
+% Les commandes permettant de définir la date, le lieu, etc.
+\def\date#1{\def\@date{#1}}
+\def\author#1{\def\@author{#1}}
+\def\title#1{\def\@title{#1}}
+\def\location#1{\def\@location{#1}}
+\def\blurb#1{\def\@blurb{#1}}
+\def\email#1{\def\@email{#1}}
+% Valeurs par défaut
+\date{\today}
+\author{}
+\title{}
+\location{Paris}
+\blurb{}
+\email{no email address}
+\makeatother
+  \title{La tour de Teichmüller--Grothendieck}
+  \author{Vincent \textsc{Zoonekynd}}
+  \email{zoonek@math.jussieu.fr}
+  \date{le 31 octobre 2000}
+  \location{Paris}
+  \blurb{%
+    Université Paris 7 Denis Diderot \\
+    UFR de Mathématiques \\[1em]
+    Thèse en vue de l'obtention du diplôme de \\
+    docteur de l'université de Paris 7 \\
+    en mathématiques \\[1em]
+    Directeur de thèse : Georges \fsc{Maltsiniotis}
+    }%
+\begin{document}
+\maketitle
+\sometext
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/02.ps.gz"><img src="0_files/02.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>03</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\def\blurb{%
+  Université Paris 7 Denis Diderot \\
+  UFR de Mathématiques \\[1em]
+  Thèse en vue de l'obtention du diplôme de \\
+  docteur de l'université de Paris 7 \\
+  en mathématiques}
+\def\clap#1{\hbox to 0pt{\hss #1\hss}}%
+\def\ligne#1{%
+  \hbox to \hsize{%
+    \vbox{\centering #1}}}%
+\def\haut#1#2#3{%
+  \hbox to \hsize{%
+    \rlap{\vtop{\raggedright #1}}%
+    \hss
+    \clap{\vtop{\centering #2}}%
+    \hss
+    \llap{\vtop{\raggedleft #3}}}}%
+\def\bas#1#2#3{%
+  \hbox to \hsize{%
+    \rlap{\vbox{\raggedright #1}}%
+    \hss
+    \clap{\vbox{\centering #2}}%
+    \hss
+    \llap{\vbox{\raggedleft #3}}}}%
+\begin{document}
+\thispagestyle{empty}\vbox to .9\vsize{%
+  \vss
+  \vbox to 1\vsize{%
+    \haut{}{\blurb}{}
+    \vfill
+    \ligne{\Large La tour de Teichmüller--Grothendieck}
+    \vspace{5mm}
+    \ligne{\Large Vincent \fsc{Zoonekynd}}
+    \vfill
+    \ligne{%
+      \begin{tabular}{l}
+        Cette thèse a été soutenue le vendredi 22 juin 2001. \\
+        Le jury était constitué de 
+      \end{tabular}}
+    \vspace{5mm}
+    \ligne{%
+      \begin{tabular}{l}
+        Alain \textsc{Bruguières} \\
+        Bernhard \textsc{Keller} \\
+        Georges \textsc{Maltsiniotis} (directeur) \\
+        Ieke \textsc{Moerdijk} (rapporteur) \\
+        Pierre \textsc{Schapira} \\
+        Christoph \textsc{Sorger}
+      \end{tabular}
+      }
+    }%
+  \vss
+  }
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/03.ps.gz"><img src="0_files/03.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>04</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vfill
+  \begin{center}\leavevmode
+    \normalfont
+    {\LARGE \@title\par}%
+    \vskip 1cm
+    {\Large \@author\par}%
+    \vskip 1cm
+    {\Large \@date\par}%
+  \end{center}%
+  \vfill
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+%\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\sometext
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/04.ps.gz"><img src="0_files/04.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>05</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vfill
+  \begin{center}\leavevmode
+    \normalfont
+    {\LARGE\raggedleft \@author\par}%
+    \hrulefill\par
+    {\huge\raggedright \@title\par}%
+    \vskip 1cm
+%    {\Large \@date\par}%
+  \end{center}%
+  \vfill
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/05.ps.gz"><img src="0_files/05.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>06</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vfill
+  \begin{center}\leavevmode
+    \normalfont
+    {\LARGE\raggedleft \@author\par}%
+    \thickhrulefill\par
+    {\huge\raggedright \@title\par}%
+    \vskip 1cm
+%    {\Large \@date\par}%
+  \end{center}%
+  \vfill
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/06.ps.gz"><img src="0_files/06.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>07</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vskip 1cm
+  \begin{flushright}
+    \normalfont\Large\@author
+  \end{flushright}
+  \vfil
+  \hrule height 2pt
+  \par
+  \begin{center}
+    \huge \strut \@title \par
+  \end{center}
+  \hrule height 2pt
+  \par
+  \vfil
+  \vfil
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/07.ps.gz"><img src="0_files/07.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>08</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vskip 1cm
+  \begin{center}
+    \normalfont\LARGE\@author\par
+  \end{center}
+  \ifhmode\par\fi
+  \vskip 1cm
+  \hbox to \hsize{\hfill
+    \vrule height 2pt width.5\hsize
+    \hfill}%
+  \vskip 1cm
+  \begin{center}
+    \huge \strut \@title \par
+  \end{center}
+  \par
+  \vfil
+  \vfil
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/08.ps.gz"><img src="0_files/08.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>09</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vskip 1cm
+  \begin{flushright}
+    \normalfont\huge\@title\par
+  \end{flushright}
+  \vfil
+  \begin{flushright}
+    \LARGE \strut \@author \par
+  \end{flushright}
+  \par
+  \vfil
+  \vfil
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/09.ps.gz"><img src="0_files/09.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>10</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vskip 1cm
+  \begin{center}
+    \normalfont\huge\@title\par
+  \end{center}
+  \vskip 1cm
+  \thickhrulefill\par
+%  \hbox to \hsize{\hfill\vrule height 2pt width .5\hsize\hfill}%
+  \vfil
+  \begin{flushright}
+    \LARGE \strut \@author \par
+  \end{flushright}
+  \par
+  \vfil
+  \vfil
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/10.ps.gz"><img src="0_files/10.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>11</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vskip 1cm
+  \begin{center}
+    \normalfont\LARGE\@author\par
+  \end{center}
+  \vfil
+  \begin{center}
+    \huge \strut \@title \par
+  \end{center}
+  \par
+  \vfil
+  \vfil
+  \vfil
+  \vfil
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/11.ps.gz"><img src="0_files/11.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>12</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vskip 1cm
+  \begin{center}
+    \huge \strut \@title \par
+  \end{center}
+  \vfil
+  \begin{flushright}
+    \normalfont\LARGE\@author\par
+  \end{flushright}
+  \vfil
+  \vfil
+  \vfil
+  \vfil
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/12.ps.gz"><img src="0_files/12.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>13</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vskip 1cm
+  \begin{center}
+    \begin{tabular}{r}
+      {\huge \strut \@title}\\ \\ \\
+      {\normalfont\LARGE\@author}
+    \end{tabular}
+  \end{center}
+  \vfil
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/13.ps.gz"><img src="0_files/13.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>14</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+    \reset@font
+    \null
+    \vskip 10\p@
+    \hbox{\mbox{\hspace{3em}}%
+      \vrule depth 0.6\textheight%
+      \mbox{\hspace{2em}}
+      \vbox{
+        \vskip 40\p@
+        \begin{flushleft}
+          \Large \@author \par
+        \end{flushleft}
+        \vskip 80\p@
+        \begin{flushleft}
+          \huge \bfseries \@title \par
+        \end{flushleft}
+        \vfil
+        }}
+    \null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+}
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/14.ps.gz"><img src="0_files/14.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>15</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+    \reset@font
+    \null
+    \vskip 50\p@
+    \begin{center}
+      \hrule
+      \vskip 1pt 
+      \hrule
+      \vskip 1pt
+      {\huge \bfseries \strut \@title \strut}\par
+      \vskip 1pt
+      \hrule
+      \vskip 1pt
+      \hrule
+    \end{center}
+    \vskip 50\p@
+    \begin{flushright}
+      \Large \@author \par
+    \end{flushright}
+    \vfil
+    \null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+}
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/15.ps.gz"><img src="0_files/15.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>16</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+    \reset@font
+    \null
+    \vskip 50\p@
+    \begin{center}
+      \hrule height 1pt
+      \vskip 1pt 
+      \hrule
+      \vskip 3pt
+      {\huge \bfseries \strut \@title \strut}\par
+      \vskip 1pt
+      \hrule
+      \vskip 1pt
+      \hrule height 1pt
+    \end{center}
+    \vskip 50\p@
+    \begin{flushright}
+      \Large \@author \par
+    \end{flushright}
+    \vfil
+    \null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+}
+
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/16.ps.gz"><img src="0_files/16.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>17</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+    \reset@font
+    \null\vfil
+    \begin{flushleft}
+      \huge \@title
+    \end{flushleft}
+    \par
+    \hrule height 1pt
+    \par
+    \begin{flushright}
+      \LARGE \@author \par
+    \end{flushright}
+    \vskip 60\p@
+    \vfil\null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+}
+
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/17.ps.gz"><img src="0_files/17.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>18</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+    \reset@font
+    \null\vfil
+    \begin{flushleft}
+      \huge \@title
+    \end{flushleft}
+    \par
+    \hrule height 4pt
+    \par
+    \begin{flushright}
+      \LARGE \@author \par
+    \end{flushright}
+    \vskip 60\p@
+    \vfil\null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+}
+
+
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/18.ps.gz"><img src="0_files/18.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>19</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+    \reset@font
+    \null\vfil
+    \hrule height 4pt
+    \vskip 10\p@
+    \begin{flushright}
+      \LARGE 
+      \strut \@title \par
+      \vskip 30\p@
+      \strut \@author
+    \end{flushright}
+    \vskip 5\p@
+    \hrule height 4pt
+    \vskip 60\p@
+    \vfil\null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+}
+
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/19.ps.gz"><img src="0_files/19.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>20</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\usepackage{psboxit,pstricks}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+    \reset@font
+    \null\vfil
+    \begin{flushleft}
+      \huge
+      \strut\red\@title
+    \end{flushleft}
+    \vskip 10\p@
+    \psboxit{box 1 0 0 setrgbcolor fill}{\hbox to \hsize{%
+        \white \LARGE \strut \hspace{0.5ex}\@author}}
+    \vskip 60\p@
+    \vfil\null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+}
+
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/20.ps.gz"><img src="0_files/20.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>21</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\usepackage{psboxit,pstricks}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\begingroup
+  \null\thispagestyle{empty}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+    \reset@font
+    \vskip 10\p@
+    \begin{flushleft}
+      \huge
+      \strut\red\@title
+    \end{flushleft}
+    \psboxit{box 1 0 0 setrgbcolor fill}{\hbox to \hsize{%
+        \white \strut \hspace{0.5ex}\@author}}
+    \vskip 40\p@
+  \endgroup
+  \setcounter{footnote}{0}%
+}
+
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\sometext
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/21.ps.gz"><img src="0_files/21.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>22</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\usepackage{psboxit,pstricks}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\null\begingroup\thispagestyle{empty}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+    \reset@font
+    \vskip 10\p@
+    \begin{flushleft}
+      \huge
+      \strut\@title
+    \end{flushleft}
+    \psboxit{box 0 0 0 setrgbcolor fill}{\hbox to \hsize{%
+        \white \strut \hfill\@author}\hspace{0.5ex}}
+    \vskip 40\p@
+    \endgroup
+  \setcounter{footnote}{0}%
+}
+
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\sometext
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/22.ps.gz"><img src="0_files/22.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>23</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\usepackage{graphicx}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+    \reset@font
+    \null
+    \vskip 10\p@
+    \hbox{\mbox{%
+        \hspace{4pt}%
+        \fbox{\includegraphics[width=3em]{dessin}}%
+        \hspace{4pt}
+        }%
+      \vrule depth 0.9\textheight%
+      \mbox{\hspace{2em}}
+      \vtop{% %%%%%%%%%%%%%%%%%%
+        \vskip 40\p@
+        \begin{flushleft}
+          \Large \@author \par
+        \end{flushleft}
+        \vskip 80\p@
+        \begin{flushleft}
+          \huge \bfseries \@title \par
+        \end{flushleft}
+        \vfil
+        }}
+    \null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+}
+
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/23.ps.gz"><img src="0_files/23.gif" height="842" width="596"></a></center>
+<p></p><hr width="50%"><center>
+<strong><large>24</large></strong>
+</center><hr width="50%">
+<pre>\documentclass{sample}
+\usepackage{pstricks,pst-grad}
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \null\vfil
+    \vskip 60\p@
+    \begin{center}%
+      \psframe[fillstyle=gradient,gradangle=45](0,1)(15,-1)%
+      \hbox to 15cm{\hfill \Huge\bfseries
+        \raisebox{-0.5\height}{\@title}%
+        \hfill}%
+      \vskip 3em%
+      {\large
+        \lineskip .75em%
+        \begin{tabular}[t]{c}%
+          \mbox{}\hfill\@author
+        \end{tabular}\par}%
+      \vskip 1.5em%
+%      {\large \hfill \@date \par}%       % Set date in \large size.
+    \end{center}\par
+    \@thanks
+    \vfil\null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+  %\let\thanks\relax\let\maketitle\relax
+  %\gdef\@thanks{}\gdef\@author{}\gdef\@title{}%
+}
+
+
+\makeatother
+\author{Isidore Ducasse, Comte de Lautréamont}
+\author{Lautréamont}
+\title{Les Chants de Maldoror}
+\date{1874}
+\begin{document}
+\maketitle
+\end{document}
+</pre>
+<p></p><center><a href="http://zoonek.free.fr/LaTeX/LaTeX_samples_title/24.ps.gz"><img src="0_files/24.gif" height="842" width="596"></a></center>
+<p></p><hr><pre>Automatically generated
+ven avr 20 13:13:30 CEST 2001
+Vincent Zoonekynd &lt;zoonek@math.jussieu.fr&gt;
+</pre>
+</body></html>

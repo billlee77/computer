@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Traditional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title>LaTeX Line and Page Breaking</title></head><body>
+<h1>LaTeX Line and Page Breaking</h1>
+
+ The first  thing  LaTeX  does  when  processing  ordinary  text  is to
+ translate  your input  file into a string  of glyphs  and spaces.   To
+ produce a printed document, this string must be broken into lines, and
+ these lines must be broken into pages.   In some environments,  you do
+ the line breaking yourself with the \\ command, but LaTeX usually does
+ it for you. The available commands are
+<ul>
+  <li><a href="#linebr"><tt>\\</tt></a> start a new paragraph.
+  </li><li><a href="#linebr"><tt>\\*</tt></a> start a new line but not a new
+      paragraph.
+  </li><li><a href="#hyph"><tt>\-</tt></a> OK to hyphenate a word here.
+  </li><li><a href="#clrdblpage">\cleardoublepage</a> flush all material and
+       start a new page, start new odd numbered page.
+  </li><li><a href="#clrpage">\clearpage</a> plush all material and start a new
+       page.
+  </li><li><a href="#hyphw">\hyphenation</a> enter a sequence pf exceptional
+       hyphenations.
+  </li><li><a href="#linebreak">\linebreak</a> allow to break the line here.
+  </li><li><a href="#newline">\newline</a> request a new line.
+  </li><li><a href="#newpage">\newpage</a> request a new page.
+  </li><li><a href="#nolinebreak">\nolinebreak</a> no line break should happen
+         here.
+  </li><li><a href="#nopagebreak">\nopagebreak</a> no page break should happen
+         here.
+  </li><li><a href="#pagebreak">\pagebreak</a> encourage page break.
+</li></ul>
+
+<hr>
+<h3><a name="linebr">\\</a></h3>
+<pre> \\[*][extra-space]
+</pre>
+ The \\ command  tells LaTeX to start  a new line.   It has an optional
+ argument, extra-space, that specifies how much extra vertical space is
+ to be inserted before the next line.  This can be a negative amount.
+<p>
+ The \\* command is the same as the ordinary  \\ command except that it
+ tells LaTeX not to start a new page after the line.
+
+</p><hr>
+<h3><a name="hyph">\-</a></h3>
+ The \- command  tells  LaTeX  that it may hyphenate  the word  at that
+ point.   LaTeX is very good at hyphenating,  and it will usually  find
+ all correct  hyphenation  points.   The  \- command  is used  for  the
+ exceptional cases, as e.g.
+<pre> man\-u\-script
+</pre>
+
+<hr>
+<h3><a name="clrdblpage">\cleardoublepage</a></h3>
+ The \cleardoublepage  command  ends the current  page  and causes  all
+ figures  and tables  that  have  so far appeared  in the  input  to be
+ printed.  In a two-sided printing style, it also makes the next page a
+ right-hand (odd-numbered) page, producing a blank page if necessary.
+
+<hr>
+<h3><a name="clrpage">\clearpage</a></h3>
+ The \clearpage  command  ends the current  page and causes all figures
+ and tables that have so far appeared in the input to be printed.
+
+<hr>
+<h3><a name="hyphw">\hyphenation</a></h3>
+<pre> \hyphenation{words}
+</pre>
+ The \hyphenation  command declares  allowed hyphenation  points, where
+ words  is  a list  of  words,  separated  by  spaces,  in  which  each
+ hyphenation point is indicated by a - character, e.g.
+<pre>  \hyphenation{man-u-script man-u-stripts ap-pen-dix}
+</pre>
+
+<hr>
+<h3><a name="linebreak">\linebreak</a></h3>
+<pre> \linebreak[number]
+</pre>
+ The \linebreak  command  tells LaTeX to break the current  line at the
+ point of the command.   With the optional  argument,  number,  you can
+ convert the \linebreak command from a demand to a request.  The number
+ must  be a number  from  0 to 4.  The  higher  the  number,  the  more
+ insistent the request is.
+<p>
+ The \linebreak  command causes LaTeX to stretch the line so it extends
+ to the right margin.
+
+</p><hr>
+<h3><a name="newline">\newline</a></h3>
+ The \newline  command breaks the line right where it is.  The \newline
+ command can be used only in paragraph mode.
+
+<hr>
+<h3><a name="newpage">\newpage</a></h3>
+ The \newpage command ends the current page.
+
+<hr>
+<h3><a name="nolinebreak">\nolinebreak</a></h3>
+<pre> \nolinebreak[number]
+</pre>
+ The \nolinebreak command prevents LaTeX from breaking the current line
+ at the point of the command.  With the optional argument,  number, you
+ can convert the \nolinebreak  command from a demand to a request.  The
+ number must be a number from 0 to 4.  The higher the number,  the more
+ insistent the request is.
+
+<hr>
+<h3><a name="nopagebreak">\nopagebreak</a></h3>
+<pre> \nopagebreak[number]
+</pre>
+ The \nopagebreak command prevents LaTeX form breaking the current page
+ at the point of the command.  With the optional argument,  number, you
+ can convert the \nopagebreak  command from a demand to a request.  The
+ number must be a number from 0 to 4.  The higher the number,  the more
+ insistent the request is.
+
+
+<hr>
+<h3><a name="pagebreak">\pagebreak</a></h3>
+<pre> \pagebreak[number]
+</pre>
+ The \pagebreak  command  tells LaTeX to break the current  page at the
+ point of the command.   With the optional  argument,  number,  you can
+ convert the \pagebreak command from a demand to a request.  The number
+ must  be a number  from  0 to 4.  The  higher  the  number,  the  more
+ insistent the request is.
+
+
+<hr>
+<p>
+<a href="http://www.personal.ceu.hu/tex/latex.htm">Back to the main LaTeX page.</a>
+</p></body></html>

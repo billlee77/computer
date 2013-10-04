@@ -1,0 +1,3 @@
+# Resovle the ntfs usb issue
+
+yum install ntfs-3g

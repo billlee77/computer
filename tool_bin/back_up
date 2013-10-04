@@ -1,0 +1,14 @@
+sudo cp /etc/hosts /home/custom/etc/hosts
+sudo cp /etc/hosts.allow /home/custom/etc/hosts.allow
+sudo cp /etc/hosts.deny /home/custom/etc/hosts.deny
+sudo cp /etc/aliases /home/custom/etc/aliases
+sudo cp /etc/httpd/conf/httpd.conf /home/custom/etc/httpd.conf
+sudo cp /etc/cups/cupsd.conf /home/custom/etc/cupsd.conf
+sudo cp /etc/ssh/ssh_config /home/custom/etc/ssh_config
+sudo cp /usr/share/logwatch/default.conf/logwatch.conf /home/custom/etc/logwatch.conf
+sudo cp /usr/share/logwatch/scripts/logwatch.pl /home/custom/etc/logwatch.pl
+sudo cp -r .addressbook .pinerc .bashrc .cshrc .login .vimrc bin/ /home/custom/bill/
+
+
+
+

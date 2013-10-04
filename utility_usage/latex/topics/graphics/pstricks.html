@@ -1,0 +1,858 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><head>
+<title>/PSTricks/examples</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+<body topmargin="2" alink="#ff0000" bgcolor="#ffffff" link="#0000CC" text="#000000" vlink="#800080">
+
+<link rel="shortcut icon" href="http://tug.org/PSTricks/favicon.ico">
+<title>PSTricks - Graphics for TeX and LaTeX</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="keywords" content="TUG DANTE typesetting typography TeX LaTeX graphics CTAN PostScript">
+<link rel="stylesheet" href="pstricks_files/tugstyle.css">
+<table bgcolor="#E5E5E5" width="100%">
+<tbody><tr><td align="center" valign="middle"><br>
+<form method="post" action="/PSTricks/main.cgi">
+<input name="search" size="13" maxlength="99">
+<br><input name="search" value="Search" type="submit">
+</form></td>
+<td align="center" valign="middle" width="100%"><font size="+2">
+<b>Welcome to the PSTricks web site</b></font><br><br>
+<b>Examples</b></td>
+<td align="center" valign="middle"><a href="http://tug.org/">
+<img src="pstricks_files/logonavyongrey.jpg" alt="TUG logo" border="0" width="80"></a></td></tr>
+<tr>
+<td valign="top" width="10%">
+<hr><table align="top">
+<tbody><tr>
+<td>
+    <a href="http://tug.org/PSTricks/main.cgi">Main page</a>
+</td>
+</tr>
+<tr>
+<td>
+    <hr>
+    <a href="http://tug.org/PSTricks/main.cgi?file=index"><b>Index</b></a>
+    <hr>
+</td>
+</tr>
+<tr>
+<td>
+    <a href="http://tug.org/PSTricks/main.cgi?file=pstricks.bug&amp;verb=1">Bug list</a>
+</td>
+</tr>
+<tr>
+<td>
+    <a href="http://tug.org/PSTricks/main.cgi?file=doc/docs"><b>Documentation</b></a>
+</td>
+</tr>
+<tr>
+<td>
+    <a href="http://tug.org/PSTricks/main.cgi?file=doc/pst-doc.err&amp;verb=1">Doc errors</a>
+</td>
+</tr>
+<tr>
+<td>
+    <a href="http://tug.org/PSTricks/main.cgi?file=examples"><b>Examples</b></a>
+</td>
+</tr>
+<tr>
+<td>
+    <a href="http://tug.org/PSTricks/main.cgi?file=Examples/Gallery/Gallery"><b>2D Gallery</b></a>
+</td>
+</tr>
+<tr>
+<td>
+    <a href="http://tug.org/PSTricks/main.cgi?file=Examples/Gallery3D/Gallery3D"><b>3D Gallery</b></a>
+</td>
+</tr>
+<tr>
+<td>
+    <a href="http://tug.org/PSTricks/main.cgi?file=packages">Packages</a>
+    <hr>
+</td>
+</tr>
+<tr>
+<td>
+    <a href="http://tug.org/PSTricks/main.cgi?file=misc/references">References</a>
+    <hr>
+</td>
+</tr>
+
+<tr>
+<td>
+    <a href="http://mirror.ctan.org/">CTAN</a><br>
+    <b>Search CTAN:</b><br>
+    <a href="http://dante.ctan.org/search.html">Germany</a><br>
+    <a href="http://www.ucc.ie/cgi-bin/ctan">Ireland</a><br>
+    <a href="http://cam.ctan.org/seach.html">United Kingdom</a><br>
+    <a href="http://tug.ctan.org/search.html">USA</a>
+</td>
+</tr>
+<tr>
+<td>
+    <hr>
+    <a href="http://tug.org/PSTricks/PSTricks-stat.cgi">Statistics</a></td>
+    
+
+</tr>
+<tr>
+<td>
+    <p>&nbsp;</p>
+    <a href="http://www.uit.co.uk/BK-PSTricks/HomePage"><img src="pstricks_files/PSTricks-UIT.jpg" height="192px" width="133px"></a>
+    <br>Extended translation of the the 5th edition
+<!--  width="133px" height="192px" -->
+</td>
+</tr>
+<tr>
+<td>
+    <p>&nbsp;</p>
+    <a href="http://www.lob.de/isbn/9783865414038@dan"><img src="pstricks_files/PSTricks6.jpg" height="192px" width="133px"></a>
+    <br>the 6th edition, total of 1008 pages, includes 64 color pages 
+<!--  width="133px" height="192px" -->
+</td>
+</tr>
+<tr>
+<td>
+    <p>&nbsp;</p>
+<!--    <a href="http://www.lob.de/isbn/9783865414960@dan"><img src="http://www.lehmanns.de/media/24022371" width="133px" height="192px"></img></a>-->
+    <a href="http://archiv.dante.de/%7Eherbert/Books/index.html"><img src="pstricks_files/24022371.jpeg" height="192px" width="133px"></a>--&gt;
+    <br>1st edition, 212 pages, includes 32 color pages 
+<!--  width="133px" height="192px" -->
+</td>
+</tr>
+<tr>
+<td>
+    <p>&nbsp;</p>
+    <a href="http://www.lob.de/isbn/9783865414625@dan">
+    <img src="pstricks_files/Intro.png" height="192px" width="133px"></a><br>
+</td>
+</tr>
+<tr>
+<td>
+    <p>&nbsp;</p>
+    <a href="http://www.uit.co.uk/BK-LREF/HomePage"><img src="pstricks_files/RefE.png" height="192px" width="133px"></a>
+</td>
+</tr>
+<tr>
+<td>
+    <p>&nbsp;</p>
+    <a href="http://www.lob.de/isbn/9783865413536@dan">
+    <img src="pstricks_files/beamer1.png" height="192px" width="133px"></a><br>
+</td>
+</tr>
+<tr>
+<td>
+    <p>&nbsp;</p>
+    <a href="http://www.lob.de/isbn/9783865414854@dan">
+    <img src="pstricks_files/Mathe.png" height="192px" width="133px"></a><br>
+</td>
+</tr>
+<tr>
+<td>
+    <p>&nbsp;</p>
+    <a href="http://www.uit.co.uk/BK-TTWL/HomePage"><img src="pstricks_files/ttwl.png" height="192px" width="133px"></a>
+</td>
+</tr>
+<tr>
+</tr><tr>
+<td>
+    <p>&nbsp;</p>
+    <a href="http://www.uit.co.uk/BK-TMWL/HomePage"><img src="pstricks_files/Mathe-E.jpg" height="192px" width="133px"></a>
+</td>
+</tr>
+<tr>
+<td>
+    <p>&nbsp;</p>
+    <a href="http://www.lob.de/isbn/9783865413703@dan">
+    <img src="pstricks_files/Tabellen2.jpg" height="192px" width="133px"></a><br>
+</td>
+</tr>
+<tr>
+<td>
+    <p>&nbsp;</p>
+    <a href="http://www.lob.de/isbn/9783865413666@dan">
+    <img src="pstricks_files/LaTeXRef2.jpg" height="192px" width="133px"></a><br>
+</td>
+</tr>
+<tr>
+<td>
+    <p>&nbsp;</p>
+    <a href="http://www.lob.de/isbn/9780321508920@dan">
+	<img src="pstricks_files/tlgc2.jpg" height="192px" width="133px"></a>
+    <br>the 2nd edition, total of 960 pages, includes 32 color pages 
+</td>
+</tr>
+
+</tbody></table>
+</td>
+<td colspan="2" bgcolor="#FFFFFF" valign="top"><table>
+<tbody><tr>
+<td bgcolor="#D2D2D2">&nbsp;</td>
+<td bgcolor="#D2D2D2">
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/examples">2D-Plots </a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/3D/examples">3D-Plots</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2A2"><b>A</b></td>
+<td bgcolor="#D2D2A2">
+<a href="#abacus">abacus</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Animation/gif/gif">Animated gif Image</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Animation/basics">Animated PDF</a>&nbsp;|&nbsp; 
+<a href="#arc0">Arcs</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/psarrows">Arrows </a>&nbsp;|&nbsp; 
+<a href="#associativity">Associativity</a>&nbsp;|&nbsp; 
+<a href="#power">Asynchronous motor</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/psaxes">Axes in a 2D Coordinate System</a>&nbsp;|&nbsp; 
+<a href="#airfoil">Airfoil</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2D2"><b>B</b></td>
+<td bgcolor="#D2D2D2">
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-node/nodes#bib">Bibtex -- how it works</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-node/psmatrix/psmatrix#flowchart">braces</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Charts/chart#barI">Bar charts</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/background">Borderline</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Logos/logos#bookcover">Book cover </a>&nbsp;|&nbsp; 
+<a href="http://mirror.ctan.org/info/examples/PSTricks4_de">Book examples (4th ed.)</a>&nbsp;|&nbsp; 
+<a href="http://mirror.ctan.org/info/examples/PSTricks5_de">Book examples (5th ed.)</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Box/boxes">Boxes</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Box/boxfill">Boxfill</a>&nbsp;|&nbsp; 
+<a href="#bracket">Bracket Table</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2A2"><b>C</b></td>
+<td bgcolor="#D2D2A2">
+<a href="#cards">Cards</a>&nbsp;|&nbsp; 
+<a href="#cascdiv">Cascading Division</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Charts/chart">Charts</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Chem/chem">Chemistry</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/clip">Clipping</a>&nbsp;|&nbsp; 
+<a href="#coils">Coils</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/overlay#text">Colored text     </a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Colors/colors">Colors</a>&nbsp;|&nbsp; 
+<a href="#communicate">Communication diagram</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=psmatrix/psmatrix#cd">Commutated Diagrams</a>&nbsp;|&nbsp; 
+<a href="#compass">Compass</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/3D/contour">Contour plots</a>&nbsp;|&nbsp; 
+<a href="#CPU">CPU symbol</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Chem/chem#lattice">Crystal lattice</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Gnuplot/gnuplot#fitting">Curve fitting</a>&nbsp;|&nbsp; 
+<a href="#airfoil">Curves</a>&nbsp;|&nbsp; 
+<a href="#cycloid">Cycloid</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2D2"><b>D</b></td>
+<td bgcolor="#D2D2D2">
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/DataExamples">data record plots</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Physics/physics#electron">Deflection of an electron in an electric field</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/DiffentialEquations">Differential equations </a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Lines/lines#digital">Digital Signals</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-tree/pst-tree#dir">Directory trees</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/misc#domino">Domino for Trigonometry </a>&nbsp;|&nbsp; 
+<a href="#dot">Dots</a>&nbsp;|&nbsp; 
+<a href="#dotError">Dots with error bars</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Lines/lines#double">Double lines</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/polar">Drawings in polar coordinates</a>&nbsp;|&nbsp; 
+<a href="#fixpoint">Drawings lines in a math function</a>&nbsp;|&nbsp; 
+<a href="http://www.perce.de/LaTeX/pstricks-add/pstricks-add-doc.pdf">Drawing Axes</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2A2"><b>E</b></td>
+<td bgcolor="#D2D2A2">
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Physics/physics#electron">Electron in an electric field</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Simple/simple#ellipse">Ellipse</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/3D/examples#ellipsoid">Ellipsoid</a>&nbsp;|&nbsp; 
+<a href="#dotError">Error bars</a>&nbsp;|&nbsp; 
+</td></tr>
+<tr>
+<td bgcolor="#D2D2D2"><b>F</b></td>
+<td bgcolor="#D2D2D2">
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/FunctionExamples#shadingbetween">filling areas between two curves</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Tiling/tiling">Filling and tiling</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Box/boxfill">Fill Styles</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Gnuplot/gnuplot#fitting">fitting</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-node/psmatrix/psmatrix#flowchart">Flowchart</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/FunctionExamples">function plots</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2A2"><b>G</b></td>
+<td bgcolor="#D2D2A2">
+<a href="#game">Game theory</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Charts/gantt">Gantt Charts</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Genealogy/genealogy">Genealogy trees</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Physics/physics#glidingBall">Gliding ball</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/gradient">Gradient Demo</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Grids/grids">Grids</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/grid">Grid plot</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Physics/physics#gyroscope">Gyroscope</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2D2"><b>H</b></td>
+<td bgcolor="#D2D2D2">
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Box/boxfill#hatchstyles">Hatchstyles</a>&nbsp;|&nbsp; 
+<a href="#hilbert">Hilbert curve</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/misc#hyperref">Hyperref with a PSTricks object </a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2A2"><b>I</b></td>
+<td bgcolor="#D2D2A2">
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/misc#hyperref">Image as a hyperref</a>&nbsp;|&nbsp; 
+<a href="#cards">Index Cards</a>&nbsp;|&nbsp; 
+<a href="#stain">Ink stain</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2D2"><b>J</b></td>
+<td bgcolor="#D2D2D2">
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2A2"><b>K</b></td>
+<td bgcolor="#D2D2A2">
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/misc#kv">Karnaugh-Veight-Table</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/diagrams/diagrams#kiviat">Kiviat diagrams</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Lines/knots">Knots</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2D2"><b>L</b></td>
+<td bgcolor="#D2D2D2">
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/polar#lemniscate">Lemniscate</a>&nbsp;|&nbsp; 
+<a href="#letterspace">Letterspacing</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Lines/lines#lineedge">Lineedge</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Lines/lines">Lines</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Logos/logos">Logos</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-node/nodes#loop">Loops</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Simple/simple#lorentz">Lorentz-Transformation</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2A2"><b>M</b></td>
+<td bgcolor="#D2D2A2">
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/FunctionExamples">math function plots</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/maxwell">Maxwell wheel</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Lines/michelson">Michelson experiment</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Simple/simple#lorentz">Minkowski-diagram</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Colors/colors">Mixed Color</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Grids/grids#mmPaper">mm paper</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Chem/chem#molecule">Molecules</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-node/nodes#multinc">Multiple connections</a>&nbsp;|&nbsp; 
+<a href="#multips"><code>\multips</code></a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2D2"><b>N</b></td>
+<td bgcolor="#D2D2D2">
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-node/nodes">Nodes</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2A2"><b>O</b></td>
+<td bgcolor="#D2D2A2">
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/optic">Optical Systems</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Oscilloscope/oszi">Oscilloscope</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Box/boxes#oval">Oval boxes</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/overlay">Overlays</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2D2"><b>P</b></td>
+<td bgcolor="#D2D2D2">
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/pageNo">Pagestyle</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/FunctionExamples#paraplot">Parametrical plots</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Animation/basics">PDF Animated </a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Physics/physics">Physics examples</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Charts/chart#pie0">Pie charts</a>&nbsp;|&nbsp; 
+<a href="#plot">Plot Style</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/pstplot">Plotting functions and data</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/polar">Polar coordinates</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Lines/lines#lineedge">Polygon</a>&nbsp;|&nbsp; 
+<a href="#power">Power scheme of an asynchronous motor</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/FunctionExamples#polynomial">PostScript procedures</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Presentation/presentation">Presentations</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-node/psmatrix/psmatrix#flowchart">\psbrace</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/clip"><code>\psclip</code></a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-node/psmatrix/psmatrix"><code>\psmatrix</code></a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/tabular1">pspicture environment in a tabular</a>&nbsp;|&nbsp; 
+<a href="#scalebox">\psscaleboxto</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-3d/pst-3d#pstilt">pstilt</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/pstlens/pstlens">pst-lens examples</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/DataExamples">pst-plot -- data records</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/FunctionExamples">pst-plot -- math function</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/misc#hyperref">PSTricks image as a hyperref</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2A2"><b>R</b></td>
+<td bgcolor="#D2D2A2">
+<a href="#radar">Radar example</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/randomWalk">Random Walks</a>&nbsp;|&nbsp; 
+<a href="#cards">Record Cards</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Dots/dots#relative">Relative coordinates</a>&nbsp;|&nbsp; 
+<a href="#ring">Ring diagram</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/textpath">Rotating text</a>&nbsp;|&nbsp; 
+<a href="#rot">Rotation</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2D2"><b>S</b></td>
+<td bgcolor="#D2D2D2">
+<a href="#scalebox">scalebox</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Lines/lines#lineedge">setlinejoin</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/FunctionExamples#shading">shaded areas under a curve</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Simple/simple">Simple examples</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Seminar/seminar">Slides</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Charts/chart#smith">Smith chart</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Coordinates/specialCoor">Special coordinates</a>&nbsp;|&nbsp; 
+<a href="#stain">Stain</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/3D/contour">surface plots</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/SWOT">SWOT diagram</a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2A2"><b>T</b></td>
+<td bgcolor="#D2D2A2">
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/tabularLines">Tabular with shaded regions</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/tabular1">Tabular and pspicture environment</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Text/textbox">Textboxes</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/textpath">Textpath Demo</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/misc#tilde">Tilde </a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Tiling/tiling">Tilings</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/misc#tooltips">Tooltips</a>&nbsp;|&nbsp; 
+<a href="#bracket">Tournament Bracket Table </a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/3D/examples#torus">Torus</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Colors/colors#transparency">Transparency colors</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-tree/pst-tree">Trees</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-plot/psaxes#trigLabels">Trigonometrical labels</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/misc#domino">Trigonometry - Domino </a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2D2"><b>U</b></td>
+<td bgcolor="#D2D2D2">
+<a href="http://tug.org/PSTricks/Examples/xunit.pdf">Unit-Values</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/uml">UML Demo </a>&nbsp;|&nbsp; 
+</td><td>&nbsp;</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2A2"><b>V</b></td>
+<td bgcolor="#D2D2A2">
+<a href="#vector">Vector Field</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/Box/boxes">Verbatim Boxes</a>&nbsp;|&nbsp; 
+<a href="http://tug.org/TeXnik/mainFAQ.cgi?file=verbatim/verbatim">Verbatim Mode</a>&nbsp;|&nbsp; 
+</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2D2"><b>W</b></td>
+<td bgcolor="#D2D2D2">
+<a href="http://tug.org/PSTricks/main.cgi?file=pst-node/nodes#balloon">Word balloon</a>&nbsp;|&nbsp; 
+</td>
+</tr>
+<tr>
+<td bgcolor="#D2D2A2"><b>Z</b></td>
+<td bgcolor="#D2D2A2">
+<a href="http://tug.org/PSTricks/main.cgi?file=Examples/pstlens/pstlens">Zoom effects</a>&nbsp;|&nbsp; 
+</td>
+</tr>
+</tbody></table>
+<br>
+<p></p><hr>
+
+<table>
+<tbody><tr>
+    <th><a name="cycloid">Cycloid curve</a></th>
+</tr>
+<tr>
+    <td><img src="pstricks_files/cycloid.png" alt="cycloid.png"></td>
+</tr>
+<tr>
+    <td><a href="http://tug.org/PSTricks/Examples/cycloid.tex"><img src="pstricks_files/tex40.png" border="0"></a><br>
+	<a href="http://tug.org/PSTricks/Examples/cycloid.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+</tr>
+</tbody></table>
+
+
+<hr>
+
+<table>
+<tbody><tr>
+    <th align="center"><a name="associativity">Associativity</a></th>
+    <th>&nbsp;&nbsp;&nbsp;</th>
+    <th align="center"><a name="ring"></a>Ring diagram</th>
+    <th>&nbsp;&nbsp;&nbsp;</th>
+    <th align="center"><a name="communicate">Communication diagram</a></th>
+    <th>&nbsp;&nbsp;&nbsp;</th>
+    <th align="center"><a name="multips"><code>\multips</code></a></th>
+</tr>
+<tr>
+    <td><a href="http://tug.org/PSTricks/Examples/Associativity.png"><img src="pstricks_files/Associativity.jpg" alt="asso.jpg"></a></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td><a href="http://tug.org/PSTricks/Examples/Ring.png"><img src="pstricks_files/Ring.jpg" alt="Ring.jpg"></a></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td><a href="http://tug.org/PSTricks/Examples/Communicate.png"><img src="pstricks_files/Communicate.jpg" alt="Communicate.jpg"></a></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td><a href="http://tug.org/PSTricks/Examples/multips.png"><img src="pstricks_files/multips.jpg" alt="multips.jpg"></a></td>
+</tr>
+<tr>
+    <td align="center"><a href="http://tug.org/PSTricks/Examples/Associativity.tex"><img src="pstricks_files/tex40.png" border="0"></a></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td align="center"><a href="http://tug.org/PSTricks/Examples/Ring.tex"><img src="pstricks_files/tex40.png" border="0"></a></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td align="center"><a href="http://tug.org/PSTricks/Examples/Communicate.tex"><img src="pstricks_files/tex40.png" border="0"></a></td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td align="center"><a href="http://tug.org/PSTricks/Examples/multips.tex"><img src="pstricks_files/tex40.png" border="0"></a></td>
+</tr>
+</tbody></table>
+<hr>
+
+<table>
+<tbody><tr>
+<td align="center" valign="top">
+  <strong><a name="bow"></a>bow</strong><br>
+  <img src="pstricks_files/bow.png" alt="bow.png">
+</td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td align="center" valign="top">
+  <strong><a name="game"></a>Game theory</strong><br>
+  <img src="pstricks_files/game0.png" alt="game0.png">
+</td>
+<td>&nbsp;&nbsp;&nbsp;</td>
+<td align="center" valign="top">
+  <strong><a name="abacus"></a>Abacus</strong><br>
+  <img src="pstricks_files/abacus.png" alt="game0.png">
+</td>
+</tr>
+<tr>
+    <td align="center">
+	<a href="http://tug.org/PSTricks/Examples/bow.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+    </td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td align="center">
+	<a href="http://tug.org/PSTricks/Examples/game0.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+	<a href="http://tug.org/PSTricks/Examples/game0.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+    <td>&nbsp;&nbsp;&nbsp;</td>
+    <td align="center">
+        <a href="http://tug.org/PSTricks/Examples/abacus.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+	<a href="http://tug.org/PSTricks/Examples/abacus.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+</tr>
+</tbody></table>
+<hr>
+
+<table>
+<tbody><tr>
+    <th align="center"><a name="rot">Rotation of objects</a></th>
+    <th align="center"></th>
+</tr>
+<tr>
+    <td><img src="pstricks_files/rot1.png" alt="rot1.png"></td>
+    <td><a href="http://tug.org/PSTricks/Examples/rot2.png" border="1" alt="rot3.png">
+	<img src="pstricks_files/rot2tn.png" alt="rot2tn.png"></a></td>
+    <td><img src="pstricks_files/rot0.png" alt="rot0.png"></td>
+</tr>
+<tr>
+    <td align="center">
+	<a href="http://tug.org/PSTricks/Examples/rot1.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+    	<a href="http://tug.org/PSTricks/Examples/rot1.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+    <td align="center">
+	<a href="http://tug.org/PSTricks/Examples/rot1.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+    	<a href="http://tug.org/PSTricks/Examples/rot1.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+    <td align="center">
+	<a href="http://tug.org/PSTricks/Examples/rot0.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+    	<a href="http://tug.org/PSTricks/Examples/rot0.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+</tr>
+</tbody></table>
+
+<hr>
+<table>
+<tbody><tr>
+    <th align="center"><a name="stain">Ink stain</a></th>
+    <th align="center"><a name="compass">Compass</a></th>
+</tr>
+<tr>
+    <td><img src="pstricks_files/stain.png" alt="stain.png"></td>
+    <td><img src="pstricks_files/compass.png" alt="compass.png"></td>
+    <td><a href="http://tug.org/PSTricks/Examples/rose.png"><img src="pstricks_files/rosetn.png" alt="rose.png"></a></td>
+</tr>
+<tr>
+    <td align="center">
+	<a href="http://tug.org/PSTricks/Examples/stain.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+    	<a href="http://tug.org/PSTricks/Examples/stain.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+    <td align="center">
+	<a href="http://tug.org/PSTricks/Examples/compass.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+    	<a href="http://tug.org/PSTricks/Examples/compass.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+    <td>
+	<a href="http://tug.org/PSTricks/Examples/Buch/bsp116.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+	<a href="http://tug.org/PSTricks/Examples/Buch/bsp116.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+</tr>
+</tbody></table>
+
+
+<hr>
+<table>
+<tbody><tr>
+    <th align="left"><a name="linedot"><strong>Special Lines and Dots</strong></a></th>
+</tr>
+<tr>
+    <td><img src="pstricks_files/line3.png" alt="line3.png"></td>
+</tr>
+<tr>
+    <td>
+	<a href="http://tug.org/PSTricks/Examples/line3.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+	<a href="http://tug.org/PSTricks/Examples/line3.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<table>
+<tbody><tr>
+    <th align="center"><strong><a name="fixpoint">Drawing Lines</a></strong></th>
+    <th align="center"><strong><a name="airfoil">Drawing an airfoil</a></strong></th>
+</tr>
+<tr>
+    <td><img src="pstricks_files/fixpoint.png" alt="fixpoint.png"></td>
+    <td><img src="pstricks_files/curve0.png" alt="curve0.png"></td>
+</tr>
+<tr>
+    <td align="center"><a href="http://tug.org/PSTricks/Examples/fixpoint.tex"><img src="pstricks_files/tex40.png" border="0"></a></td>
+    <td align="center"><a href="http://tug.org/PSTricks/Examples/curve0.tex"><img src="pstricks_files/tex40.png" border="0"></a></td>
+</tr>
+</tbody></table>
+<!-- airfoil curve pscurve -->
+
+
+<hr>
+
+
+<table>
+<tbody><tr>
+    <th><a name="hilbert">Hilbert curve</a></th>
+    <th><a name="arc0">Arcs</a></th>
+    <th><a name="CPU">CPU symbol</a></th>
+</tr>
+<tr>
+    <td><img src="pstricks_files/hilbert.png" alt="hilbert.png"></td>
+    <td><img src="pstricks_files/arc0.png" alt="arc0.png"></td>
+    <td><img src="pstricks_files/CPU.png" alt="CPU.png"></td>
+</tr>
+<tr>
+    <td><a href="http://tug.org/PSTricks/Examples/hilbert.tex"><img src="pstricks_files/tex40.png" border="0"></a><br>
+	<a href="http://tug.org/PSTricks/Examples/hilbert.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+    <td><a href="http://tug.org/PSTricks/Examples/arc0.tex"><img src="pstricks_files/tex40.png" border="0"></a><br>
+	<a href="http://tug.org/PSTricks/Examples/arc0.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+    <td><a href="http://tug.org/PSTricks/Examples/CPU.tex"><img src="pstricks_files/tex40.png" border="0"></a><br>
+	<a href="http://tug.org/PSTricks/Examples/CPU.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+</tr>
+</tbody></table>
+<p></p>
+
+<hr>
+<table>
+<tbody><tr>
+    <th align="center"><a name="bracket">A Bracket Table</a></th>
+</tr>
+<tr>
+    <td><img src="pstricks_files/bracket.png" alt="polar.png"></td>
+</tr>
+<tr>
+    <td><a href="http://tug.org/PSTricks/Examples/bracket.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+	<a href="http://tug.org/PSTricks/Examples/bracket.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+</tr>
+</tbody></table>
+<hr>
+
+<table>
+<tbody><tr>
+    <th><strong><a name="dot">Dots</a></strong></th>
+    <th><a name="plot"></a></th>
+    <th></th>
+</tr>
+<tr>
+    <td><img src="pstricks_files/dot.png" alt="polar.png"></td>
+    <td><img src="pstricks_files/line0.png" alt="line0.png"></td>
+    <td><img src="pstricks_files/line2.png" alt="line2.png"></td>
+</tr>
+<tr>    
+    <td>
+	<a href="http://tug.org/PSTricks/Examples/dot.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+	<a href="http://tug.org/PSTricks/Examples/dot.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+    <td>
+	<a href="http://tug.org/PSTricks/Examples/line0.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+	<a href="http://tug.org/PSTricks/Examples/line0.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+    <td>
+	<a href="http://tug.org/PSTricks/Examples/line2.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+	<a href="http://tug.org/PSTricks/Examples/line2.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+</tr>
+</tbody></table>
+
+
+<hr>
+<a name="vector"></a>
+<table>
+	<tbody><tr><td><img src="pstricks_files/vectorField.png" alt="vectorField.png"></td>
+	<td>
+	    <a href="http://tug.org/PSTricks/Examples/vectorField.tex"><img src="pstricks_files/tex40.png" border="0"></a> 
+	    <a href="http://tug.org/PSTricks/Examples/vectorField.pdf"><img src="pstricks_files/pdf40.png" border="0"></a> 
+	</td>
+</tr></tbody></table>
+
+<hr>
+<a name="cascdiv"></a>
+<table>
+	<tbody><tr><td><img src="pstricks_files/cascadediv0.png" alt="cascadediv0.png"></td>
+	<td><a href="http://tug.org/PSTricks/Examples/cascadediv.tex"><img src="pstricks_files/tex40.png" border="0"></a> with some more examples</td>
+</tr></tbody></table>
+
+<hr>
+<table>
+<tbody><tr>
+    <th><a name="cards">Cards</a></th>
+</tr>
+<tr>
+	<td><img src="pstricks_files/card0.png" alt="card0.png"></td>
+</tr>
+<tr>
+	<td align="center">
+	    <a href="http://tug.org/PSTricks/Examples/card.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+	    <a href="http://tug.org/PSTricks/Examples/card.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+	</td>
+</tr>	
+</tbody></table>
+
+<hr>
+
+<table>
+<tbody><tr>
+    <th colspan="2"><a name="dotError">Error bars</a></th>
+</tr>
+<tr>
+    <td><img src="pstricks_files/DotErrorBar.png" alt="DotErrorBar.png"></td>
+    <td><img src="pstricks_files/DotErrorBar2.png" alt="DotErrorBar2"></td>
+    <td><img src="pstricks_files/DotErrorBar3.png" alt="DotErrorBar3"></td>
+</tr>
+<tr>
+    <td>
+    </td><td colspan="2">The datafile must have entries like
+	<pre>x y dyMin dyMax</pre>
+	The first two values are the coordinates of the dot and the 
+	next two are the relative values of the error, 
+	f.ex.: <pre>3 2 -0.2 0.3</pre>
+</td></tr>
+<tr>
+    <td><a href="http://tug.org/PSTricks/Examples/DotErrorBar.tex"><img src="pstricks_files/tex40.png" border="0"></a> 
+	<a href="http://tug.org/PSTricks/Examples/DotErrorBar.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+    <td><a href="http://tug.org/PSTricks/Examples/DotErrorBar2.tex"><img src="pstricks_files/tex40.png" border="0"></a> 
+	<a href="http://tug.org/PSTricks/Examples/DotErrorBar2.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+    <td><a href="http://tug.org/PSTricks/Examples/DotErrorBar3.tex"><img src="pstricks_files/tex40.png" border="0"></a> 
+	<a href="http://tug.org/PSTricks/Examples/DotErrorBar3.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+</tr>
+<tr>
+    <td><img src="pstricks_files/DotErrorBar4.png" alt="DotErrorBar.png"></td>
+</tr>
+<tr>
+    <td><a href="http://tug.org/PSTricks/Examples/DotErrorBar4.tex"><img src="pstricks_files/tex40.png" border="0"></a> 
+	<a href="http://tug.org/PSTricks/Examples/DotErrorBar4.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+</tr>
+</tbody></table>
+<hr>
+
+<table>
+<tbody><tr>
+    <th align="center"><a name="scalebox">\psscaleboxto</a></th>
+    <th align="center"><a name="coils">coils</a></th>
+    <th align="center"><strong><a name="radar">Radar demo</a></strong></th>
+</tr>
+<tr>
+    <td><img src="pstricks_files/scalebox.png" alt="scalebox.png"></td>
+    <td><img src="pstricks_files/coils.png" alt="coils.png"></td>
+    <td><img src="pstricks_files/radar.png" alt="radar.png"></td>
+</tr>
+<tr>
+    <td align="center">
+        <a href="http://tug.org/PSTricks/Examples/scalebox.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+        <a href="http://tug.org/PSTricks/Examples/scalebox.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+    <td align="center"><a href="http://tug.org/PSTricks/Examples/coils.tex"><img src="pstricks_files/tex40.png" border="0"></a></td>
+    <td align="center">
+	<a href="http://tug.org/PSTricks/Examples/radar.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+	<a href="http://tug.org/PSTricks/Examples/radar.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td><td>
+</td></tr>
+</tbody></table>
+
+
+<hr>
+<table>
+<tbody><tr>
+	<th><a name="power">Power scheme</a></th>
+</tr>
+<tr>
+    <td><img src="pstricks_files/power.png" alt="power.png"></td>
+</tr>
+<tr>
+    <td>
+	<a href="http://tug.org/PSTricks/Examples/power.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+	<a href="http://tug.org/PSTricks/Examples/power.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td>
+</tr>
+</tbody></table>
+
+
+<hr>
+<table>
+<tbody><tr>
+    <th align="center"><strong><a name="letterspace">Letterspacing</a></strong></th>
+</tr>
+<tr>
+    <td><img src="pstricks_files/letterspacing.png" alt="letterspace.png" border="1"></td>
+</tr>
+<tr>
+    <td align="center">
+	<a href="http://tug.org/PSTricks/Examples/Text/letterspacing.tex"><img src="pstricks_files/tex40.png" border="0"></a>
+	<a href="http://tug.org/PSTricks/Examples/Text/letterspacing.pdf"><img src="pstricks_files/pdf40.png" border="0"></a>
+    </td><td>
+</td></tr>
+</tbody></table>
+
+<hr>
+<font size="-1">$Id: examples 1143 2012-09-07 14:23:04Z hvoss $</font>
+</td>
+</tr></tbody></table>
+<p></p>
+<center><small>local time: Sun Oct 28 02:45:57 CEST 2012
+; file is: 50.4325347222222 days old<br>contact webmaster _at_ perce.de
+</small></center>
+
+
+</body></html>

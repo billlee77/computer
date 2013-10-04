@@ -1,0 +1,616 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+    <title>How to read a file line by line</title>
+<meta http-equiv="Content-Language" content="en"><meta name="description" content="Intro Example Tips Bonus Initiate a Loop One of the most common errors of learning scripts bash on GNU / Linux is to read a file line by line, is to use a loop &quot;for&quot; (for line in $ (cat file.txt) do. ..), which in this example leads to an assessment..."><link rel="canonical" href="http://en.kioskea.net/faq/1757-how-to-read-a-file-line-by-line"><script src="1757-how-to-read-a-file-line-by-line_files/js.js" type="text/javascript"></script><link href="1757-how-to-read-a-file-line-by-line_files/css.css" rel="stylesheet" type="text/css" media="screen"><link href="1757-how-to-read-a-file-line-by-line_files/cssmodule.css" rel="stylesheet" type="text/css" media="screen">        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <link rel="alternate" type="application/rss+xml" title="News" href="http://en.kioskea.net/rss/">
+        </head><body id="" class="faq">
+    <div id="tt" style="display: none;">
+        <div id="tttop"></div><div id="ttcont"></div><div id="ttbot"></div>
+    </div>
+    <span class="tooltips" style="display: none;" id="ntt">
+        <span id="nttcont"></span>
+        <span class="arrowDown"></span>
+    </span>
+<div id="globalmsg" class="loadingMsg" style="display: none;"></div>
+<div id="header">
+        <div id="top">
+
+        <div style="float: left; margin-top: 6px;">
+            <a href="http://en.kioskea.net/" name="top" title="Kioskea.net"><img src="1757-how-to-read-a-file-line-by-line_files/logo.png" alt="Kioskea.net"></a>
+        </div>
+        <form action="/search/index" method="get" class="headerFooter">
+            <fieldset>
+                <legend>Recherche</legend>
+                <input id="searchform_input" name="q" class="search" value="file read in shell" onfocus="if($('searchform_focused').value==0){ $('searchform_input').value=''; $('searchform_focused').value=1; };" type="text">
+                <input id="searchform_focused" name="already_focused" value="1" type="hidden">
+                <input class="submit" value="OK" type="submit">
+            </fieldset>
+        </form><script type="text/javascript">
+            //<![CDATA[
+            q = refk();
+            if($('searchform_input')&&q&&q!=' ') {
+                $('searchform_input').value=q;
+                $('searchform_focused').value=1;
+            }
+            //]]>
+        </script>
+        <div id="topNav"><ul>
+    <li>
+        <a class="userName" href="http://en.kioskea.net/communaute/inscription.php3">Sign up for free</a>
+    </li>
+    <li><a href="http://en.kioskea.net/plan/">Site map</a></li>
+        <li id="language">
+        <a href="http://en.kioskea.net/communaute/lang.php3" class="boxButton">Language</a>
+        <div class="boxHover">
+            <ul>
+                                        <li><a href="http://www.commentcamarche.net/" lang="fr">French</a></li>
+                                            <li><a href="http://de.kioskea.net/" lang="de">German</a></li>
+                                            <li><a href="http://en.kioskea.net/" lang="en">English</a></li>
+                                            <li><a href="http://es.kioskea.net/" lang="es">Spanish</a></li>
+                                            <li><a href="http://it.kioskea.net/" lang="it">Italian</a></li>
+                                            <li><a href="http://pt.kioskea.net/" lang="pt">Portuguese</a></li>
+                                        </ul>
+        </div>
+    </li>
+                <li id="rss">
+        <a href="#" class="boxButton">RSS</a>
+        <div class="boxHover">
+            <ul>
+                                <li><a href="http://en.kioskea.net/rss/">News</a></li>
+                                    <li><a href="http://en.kioskea.net/rss/rss_faq_last.php3">FAQ</a></li>
+                                <li><a href="http://en.kioskea.net/rss/rss_download_last.php3">Software</a></li>
+                <li><a href="http://en.kioskea.net/rss/rss_download_updates.php3">Software - Updates</a></li>
+                                                </ul>
+        </div>
+    </li>
+        <li id="identification">
+        <a href="http://en.kioskea.net/communaute/" class="boxButton" id="a_boxbutton">
+                Login        </a>
+        <div class="boxHover" id="div_boxhover">
+            <form action="/faq/1757-how-to-read-a-file-line-by-line" method="post">
+                <fieldset>
+                    <legend>Identification</legend>
+                                            <label>Username</label>
+                    <input tabindex="1" name="login" onfocus="$('identification').className='focused';select();return true;" onblur="$('identification').className='';return true;" type="text">
+                    <label>Password</label> ( <a tabindex="3" href="http://en.kioskea.net/communaute/motdepasse.php3" class="passLost">forgot?</a> )
+                    <input tabindex="2" name="pass" value="" onfocus="$('identification').className='focused';select();return true;" onblur="$('identification').className='';return true;" type="password">
+                    <input name="log_in" class="submit" onfocus="$('identification').className='focused';return true;" onblur="$('identification').className='';return true;" value="Login" type="submit">
+                </fieldset>
+            </form>
+        </div>
+    </li>
+        </ul>
+</div>
+        <div class="ccmNetwork"><ul>
+                                                <li class="selected"><a href="http://en.kioskea.net/">High-Tech</a></li>
+                                                    <li class="ccmmsNet"><a href="http://health.kioskea.net/">Health</a></li>
+                                </ul><div class="clear"></div></div>
+                
+        <div class="socialHeader">            
+                                    <a href="http://en.kioskea.net/rss/" class="icoRssBig"></a>
+            <a target="_blank" href="http://itunes.apple.com/fr/app/forums-commentcamarche/id405061011" class="icoIphone"></a>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+
+    <div id="nav">
+        <div class="content">
+            <ul id="mmenu_ul_id" onmouseout="mmenu.tempo();">
+                                <li onmouseover="mmenu.select(this)"><a href="http://en.kioskea.net/">Home</a></li>
+                                <li onmouseover="mmenu.select(this)">
+                    <a href="http://en.kioskea.net/forum/">Forum</a>
+                                        </li>
+                                    <li class="selected current" onmouseover="mmenu.select(this)">
+                    <a href="http://en.kioskea.net/faq/">FAQ</a>
+                                        </li>
+                                    <li onmouseover="mmenu.select(this)">
+                    <a href="http://en.kioskea.net/download/">Download</a>
+                                        </li>
+                                    <li onmouseover="mmenu.select(this)">
+                    <a href="http://en.kioskea.net/news/">News</a>
+                                        </li>
+                                    <li onmouseover="mmenu.select(this)">
+                    <a href="http://en.kioskea.net/contents/">Reviews</a>
+                                        </li>
+                                    <li onmouseover="mmenu.select(this)">
+                    <a href="http://en.kioskea.net/guide/">Buying guide</a>
+                                        </li>
+                                </ul>
+                    </div>
+        <div class="bgShadow"></div>
+    </div>
+</div>
+    <div id="section">
+        <div id="topContent">
+<div id="ad_top" class="advertising">
+        <script type="text/javascript">
+<!--
+sas_pageid='10991/82115';
+sas_formatid=4785;
+sas_target='';
+SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//-->
+    </script><script id="SmartScr4785" src="1757-how-to-read-a-file-line-by-line_files/a_002.js"></script><script language="JavaScript" src="1757-how-to-read-a-file-line-by-line_files/vj_002.js"></script><script src="1757-how-to-read-a-file-line-by-line_files/adServer_002.html"></script><a href="http://ads.networldmedia.net/servlet/ajrotator/920063/0/cj?ajkey=V12F1B1AA01J-573I704L1482008E03A5968E03A596L989251L987153QL148905QQL4099270G00G0Q05E5B7B000003E&amp;ajlink=http%3a//bs.serving%2dsys.com/BurstingPipe/BannerRedirect.bs?cn=brd%26FlightID=2138730%26Page=%26PluID=0%26EyeblasterID=4494992%26Pos=4060239897588%26ord=%5btimestamp%5d" target="_blank"><img src="1757-how-to-read-a-file-line-by-line_files/32b94bd9-b0ed-4ed9-a880-899ba7097514.gif" height="title=&quot;&quot;" width="728" border="0"></a>
+<noscript>
+<a href="http://ads.networldmedia.net/servlet/ajrotator/920063/0/cj?ajkey=V12F1B1AA01J-573I704L1482008E03A5968E03A596L989251L987153QL148905QQL4099270G00G0Q05E5B7B000003E%26ajlink%3Dhttp://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=brd&FlightID=2138730&Page=&PluID=0&Pos=8731" target="_blank"><img src="http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=bsr&FlightID=2138730&Page=&PluID=0&Pos=8731" border=0 width=728 height=90></a>
+</noscript><script src="1757-how-to-read-a-file-line-by-line_files/genericJS.php" language="javascript"></script><script language="JavaScript" src="1757-how-to-read-a-file-line-by-line_files/showAdSpot.php"></script>
+</div>
+    	</div>
+        <div id="content">
+            <div id="tpl_2cols">
+<div class="topCol">
+    <!-- FIL ARIANE -->
+    <ul id="breadScrumb">
+        <li class="home"><a href="http://en.kioskea.net/" title="Home">Home</a> &#8250;</li>
+        <li><a href="http://en.kioskea.net/faq/" title="Tips">Tips</a> &#8250;</li>
+        <li><a href="http://en.kioskea.net/faq/operating-systems-4" title="Operating Systems">Operating Systems</a> &#8250;</li>
+        <li><a href="http://en.kioskea.net/faq/linux-97" title="Linux">Linux</a> &#8250;</li>
+        <li><a href="http://en.kioskea.net/faq/shell-371" title="Shell">Shell</a> &#8250;</li>
+        <li><a href="http://en.kioskea.net/faq/bash-372" title="Bash">Bash</a> &#8250;</li>
+        <li class="selected"><a href="http://en.kioskea.net/faq/1757-how-to-read-a-file-line-by-line" title="How to read a file line by line">How to read a file line by line</a></li>
+    </ul>
+    <!-- LIENS OPTIONS -->
+    <ul id="toolsLinks">
+        <li><a class="ftUnderline" href="javascript:ccmu.dom.print('http://static.ccm2.net/en.kioskea.net/_skin/_common/css/cssmodule.php?m=folders_print&amp;201102272203');" rel="nofollow">Print</a></li>
+    </ul>
+     <div class="clear"></div>
+</div>
+<div class="colMiddle">
+    <div class="ccmBox pad10"><script type="text/javascript">
+<!--
+var plus ='More';
+var minus ='Less';
+//-->
+</script>
+
+<div id="similiTable" class="hidelast">
+<div class="ftVerdana floatRight ftGrey2 ftUpp ftSize12">Around the same subject</div>
+
+<div><span style="margin-top: 4px;" class="icoSimiliGreen tick tickRight marR5 tickBlue"></span><a id="otherContentsLink2" href="http://en.kioskea.net/s/File%20read%20in%20shell" rel="nofollow" class="ftBlue ftSize12 ftVerdana ftBold ftUnderline">File read in shell</a></div>
+<div class="marT15"><span style="margin-top: 4px;" class="icoSimiliGreen tick tickRight marR5 tickBlue"></span>
+    <a href="http://en.kioskea.net/faq/10049-what-s-new-on-windows-phone-7" class="ftBlue ftSize13 ftUnderline ftVerdana">Windows Phone 7 Read File Line by line</a> <span class="ftGrey2 ftSize13 ftVerdana"> » Tips</span></div><div class="marT15"><span style="margin-top: 4px;" class="icoSimiliGreen tick tickRight marR5 tickBlue"></span>
+    <a href="http://en.kioskea.net/faq/998-parsing-a-binary-file-in-php" class="ftBlue ftSize13 ftUnderline ftVerdana">Php read file line by line and affect arguments</a> <span class="ftGrey2 ftSize13 ftVerdana"> » Tips</span></div><div class="marT15"><span style="margin-top: 4px;" class="icoSimiliGreen tick tickRight marR5 tickBlue"></span>
+    <a href="http://en.kioskea.net/faq/1451-sed-delete-one-or-more-lines-from-a-file" class="ftBlue ftSize13 ftUnderline ftVerdana">Unix reading a file line by line and delete</a> <span class="ftGrey2 ftSize13 ftVerdana"> » Tips</span></div><div class="marT15 last"><span style="margin-top: 4px;" class="icoSimiliGreen tick tickRight marR5 tickBlue"></span>
+    <a href="http://en.kioskea.net/faq/1050-write-in-a-batch-file-in-text-mode" class="ftBlue ftSize13 ftUnderline ftVerdana">Dos batch reading a text file line by line</a> <span class="ftGrey2 ftSize13 ftVerdana"> » Tips</span></div><div class="marT15 last"><span style="margin-top: 4px;" class="icoSimiliGreen tick tickRight marR5 tickBlue"></span>
+    <a href="http://en.kioskea.net/faq/11061-unix-shell-file-line-by-line" class="ftBlue ftSize13 ftUnderline ftVerdana">Unix for loop example read file line by line</a> <span class="ftGrey2 ftSize13 ftVerdana"> » Tips</span></div><div class="marT15 last"><span style="margin-top: 4px;" class="icoSimiliGreen tick tickRight marR5 tickBlue"></span>
+    <a href="http://en.kioskea.net/faq/1313-converting-dos-unix-and-vice-versa" class="ftBlue ftSize13 ftUnderline ftVerdana">Tab delimited files carriage return line feeds</a> <span class="ftGrey2 ftSize13 ftVerdana"> » Tips</span></div><div class="marT15 last"><span style="margin-top: 4px;" class="icoSimiliGreen tick tickRight marR5 tickBlue"></span>
+    <a href="http://en.kioskea.net/faq/403-command-prompts-for-windows" class="ftBlue ftSize13 ftUnderline ftVerdana">Add remove program file name command line</a> <span class="ftGrey2 ftSize13 ftVerdana"> » Tips</span></div><div class="marT15 last"><span style="margin-top: 4px;" class="icoSimiliGreen tick tickRight marR5 tickBlue"></span>
+    <a href="http://en.kioskea.net/contents/unix/unix-shell.php3" class="ftBlue ftSize13 ftUnderline ftVerdana">Add file to command line arguments unix</a> <span class="ftGrey2 ftSize13 ftVerdana"> » Reviews</span></div><div class="marT15 last"><span style="margin-top: 4px;" class="icoSimiliGreen tick tickRight marR5 tickBlue"></span>
+    <a href="http://en.kioskea.net/faq/5799-shell-script-copy-text-from-one-file-to-another" class="ftBlue ftSize13 ftUnderline ftVerdana">Shell file replace string line number</a> <span class="ftGrey2 ftSize13 ftVerdana"> » Tips</span></div><div class="marT15 last"><span style="margin-top: 4px;" class="icoSimiliGreen tick tickRight marR5 tickBlue"></span>
+    <a href="http://en.kioskea.net/faq/1454-inserting-text-in-a-file" class="ftBlue ftSize13 ftUnderline ftVerdana">Batch file echo new line to test document</a> <span class="ftGrey2 ftSize13 ftVerdana"> » Tips</span></div><div class="ftSize13 ftVerdana floatRight" style="margin-top: -15px;"><a href="#" onclick="if($('similiTable').className=='hidelast'){ $('similiTable').className=''; $('similiMore').innerHTML=minus;} else{ $('similiTable').className='hidelast'; $('similiMore').innerHTML=plus;} return false;" class="block ftNone"><span class="ftBlue ftBold ftUnderline" id="similiMore">More</span></a></div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+q = refk().replace(/</g,' ').replace(/>/g,' ').replace(/"/g,' ').replace(/&/g,' ');
+q = q.charAt(0).toUpperCase() + q.substr(1);
+
+if($('otherContentsLink2')&&q&&q!=' ') {
+     $('otherContentsLink2').href='/s/'+escape(q);
+     $('otherContentsLink2').innerHTML=q;
+}
+if($('new_question_button')&&q&&q!=' ') {
+     $('new_question_button').href=$('new_question_button').href+'?depose_string='+escape(q);
+}
+//]]>
+</script></div>
+<div class="titleContent">
+    <a name="topedit" style="float: left; visibility: hidden;"></a>
+    
+        <h1 id="art_title" class="ftSize20 ftBold">How to read a file line by line</h1>
+    </div>
+    <div class="clear"></div>
+    
+    <div class="container pad15 " id="article_ctn">
+        <div id="overlay" style="display: none;" class="loaderAjax"></div>
+        <div class="contentTemplate" id="article_cnt">
+
+<br><a name="how-to-read-a-file-line-by-line"></a><h1>How to read a file line by line</h1>
+
+<br><div id="toc" class="toc">
+
+<ul><li><a href="#intro">Intro</a>
+</li><li><a href="#example">Example</a>
+<ul><li><a href="#tips">Tips</a>
+</li><li><a href="#bonus">Bonus</a>
+</li></ul></li><li><a href="#initiate-a-loop">Initiate a Loop</a></li></ul>
+<br></div>
+<br><img src="1757-how-to-read-a-file-line-by-line_files/gAxYlbGv-linux-s-.png" alt="" style="display: block; float: right; clear: none;" width="102" border="0">
+<br><a name="intro"></a><h2>Intro</h2>
+
+<br>One of the most common errors of learning scripts <a href="http://en.kioskea.net/contents/unix/unix-shell.php3">bash</a>
+ on GNU / Linux is to read a file line by line, is to use a loop "for" 
+(for line in $ (cat file.txt) do. ..), which in this example leads to an
+ assessment for li not every word of the file.  
+<br>
+<br>
+<br>Sample output with a "for" loop :   
+<br>for line in $ (cat file.txt) do echo "$ line" done   
+<br><pre><i>This   
+is  
+the   
+row   
+No   
+1   
+This   
+is  
+the   
+row   
+No   
+2   
+This </i>  
+[...]   
+</pre>
+<br>The solution is to use a loop "while" coupled with the internal read.   
+<br>
+<br>But it is possible to get me the result with a loop "for" provided 
+to change the value of the variable $ IFS (Internal Field Separator, 
+internal field separator) before starting the loop. This is what we will
+ see more ...   
+<br>While loop   
+<br>
+<br>The loop "while" remains the most appropriate and easiest way to read a file line by line.   
+<br><span style="text-decoration: underline;">Syntax   </span>
+<br>
+<br><pre>while read line   
+do   
+    command   
+done &lt;file </pre>
+<br><a name="example"></a><h2>Example</h2>
+
+<br><span style="text-decoration: underline;">The starting file:   </span>
+<br><pre><i>This is the No. 1 line   
+
+</i><ul><li><i>This is the line 2   
+</i></li><li><i>This is the line 3   
+</i></li><li><i>This is the line 4   
+</i></li><li><i>This is the line 5 </i> </li></ul></pre>
+<br>
+<br><b>The instructions in command line:   </b>
+<br><pre>while read line; do echo -e "$line\n"; done &lt; file.txt</pre>
+<br>
+<br><span style="text-decoration: underline;">or in a  "bash" script:  </span> 
+<br><pre>#! / bin / bash   
+
+while read line   
+do   
+    echo-e "$ line \ n"   
+done &lt;file.txt   
+
+The output on the screen (stdout):   
+This is the line1
+
+This is the line2
+
+This is the line3   
+
+This is the line4   
+
+This is the line # 5 &lt;/ital&gt;  </pre>
+<br><a name="tips"></a><h3>Tips</h3>
+
+<br>It is entirely possible from a structured file (like an address book
+ or / etc / passwd for example), retrieve the values of each field and 
+assigned to several variables with the command "read" . Be careful to 
+properly assign the variable IFS "good field separator (space by 
+default).   
+<br>
+<br><b>Example:   </b>
+<br><pre>#! /bin/bash  
+
+while IFS=: read user pass uid gid full home shell  
+do  
+echo -e "$full :\n\  
+ Pseudo : $user\n\  
+ UID :\t $uid\n\  
+ GID :\t $gid\n\  
+ Home :\t $home\n\  
+ Shell :\t $shell\n\n"  
+done &lt; /etc/passwd</pre>
+<br><a name="bonus"></a><h3>Bonus</h3>
+
+<br><pre>while read i; do echo -e "Paramètre : $i"; done &lt; &lt;(echo -e "a\nab\nc")</pre>
+<br><a name="initiate-a-loop"></a><h2>Initiate a Loop</h2>
+
+<br>If the "while"  loop is the easiest method, it has its side effect. 
+It obliterates the formatting of lines including spaces and tabs - \   
+
+<ul><li>Moreover the"for"  loop coupled with a change of IFS helps keep the structure of the document output.   </li></ul>
+<br>
+<br><span style="text-decoration: underline;">Syntax</span>
+<br>
+<br><pre>old_IFS=$IFS      # save the field separator   
+IFS=$'\n'     # new field separator, the end of line   
+for line in $(cat fichier)  
+do  
+   command  
+done  
+IFS=$old_IFS     # restore default field separator </pre><div class="clear"></div><div class="adsense" style="border: 0pt none;"><div class="inlineBlock"><script type="text/javascript"><!--
+	google_ad_client = "pub-3295671961621260";
+	google_language = "en";
+	google_ad_type = "text";
+	google_ad_channel ="";
+        google_ad_width = 250;
+        google_ad_height = 250;
+        google_ad_format = "250x250_as";
+        google_color_border = "FFFFFF";
+        google_color_bg = "FFFFFF";
+        google_color_link = "3487BC";
+        google_color_text = "000000";
+        google_color_url = "999999";
+	//-->
+	</script>
+	<script type="text/javascript" src="1757-how-to-read-a-file-line-by-line_files/show_ads.js">
+	</script><script src="1757-how-to-read-a-file-line-by-line_files/show_ads_impl.js"></script><script src="1757-how-to-read-a-file-line-by-line_files/expansion_embed.js"></script><script src="1757-how-to-read-a-file-line-by-line_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display: inline-table; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 250px;"><ins id="google_ads_frame1_anchor" style="display: block; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 250px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="1757-how-to-read-a-file-line-by-line_files/ads.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="250" scrolling="no" width="250"></iframe></ins></ins></div></div>        <div class="bottomContent">
+            Published by <a href="http://en.kioskea.net/communaute/profil-deri58" class="ftBold">deri58</a> - <span class="ftGrey">Last update on July 14, 2010 10:31 AM by</span> <a href="http://en.kioskea.net/communaute/profil-jak58" class="ftBold">jak58</a>
+        </div>
+
+        </div>       
+    </div>
+
+    <script type="text/javascript">
+        <!--
+        articlesutils.config.tabs=[
+            ['article_tab', 'article_ctn'],
+            ['history_tab', 'history_ctn'],
+            ['diff_tab', 'diff_ctn']
+        ];
+        //-->
+    </script>
+
+    <div class="pagination2 marB15">
+    <table cellpadding="0" cellspacing="0">
+        <tbody><tr>
+            <td class="ico">
+                        <span class="icoPrevious"></span>
+                    </td>
+            <td class="prev">
+                        <a href="http://en.kioskea.net/faq/1756-bash-parameters" class="ftUnderline">[Bash]Parameters</a>
+                    </td>
+                       <td class="next">
+                        <a href="http://en.kioskea.net/faq/7643-bash-script-retrieve-filename" class="ftUnderline"><span></span>Bash script - Retrieve filename</a>
+                    </td>
+            <td class="ico">
+                        <span class="icoNext"></span>
+                    </td>
+        </tr>
+    </tbody></table>
+</div>
+<div class="bottomAd">
+    <script type="text/javascript">
+        sas_pageid='10991/82115';	// Page : commentcamarche/ope_spe
+        sas_formatid=5145;		// Format : 468x180 Big Box 468x180
+        sas_target='';			// Targeting
+        SmartAdServer(sas_pageid,sas_formatid,sas_target);
+    </script><script id="SmartScr5145" src="1757-how-to-read-a-file-line-by-line_files/a_004.js"></script>
+    <noscript>
+        <a href="http://www3.smartadserver.com/call/pubjumpi/10987/86487/5145/S/[timestamp]/?">
+            <img src="http://www3.smartadserver.com/call/pubi/10987/86487/5145/S/[timestamp]/?" border="0" alt="" />
+        </a>
+    </noscript>
+</div>
+</div>
+<div class="colRight">
+    <div id="shortcuts"></div>
+    <div class="asideBox">
+<script type="text/javascript">
+<!--
+var plus ='<span>More</span>';
+var minus ='<span>Less</span>';
+var simili_array =  {"How to read a file line by line":0,"Add file to command line arguments unix":9,"Add remove program file name command line":8,"Dos batch reading a text file line by line":5,"Php read file line by line and affect arguments":3,"Shell file replace string line number":10,"Shell script for reading a file from specified line numbers":1,"Tab delimited files carriage return line feeds":7,"Unix for loop example read file line by line":6,"Unix reading a file line by line and delete":4,"Windows phone 7 read file line by line":2};
+//-->
+</script>
+<div class="boxTitle">See also</div>
+<div class="clear"></div>
+<div class="hide" id="similishowhide">
+    <ul class="simili" id="simili_search"><li><span class="floatLeft"><span class="icoSimiliGreen tick tickRight marR10 tickRed" style="margin-top: 8px;"></span><a href="http://en.kioskea.net/s/file%20read%20in%20shell?qlc" class="title" id="first_simili_item" rel="nofollow"><span><span><span style="font-weight: bold;">File</span><span> <span style="font-weight: bold;">read</span> in </span></span><span style="font-weight: bold;">shell</span></span></a></span><div class="clear"></div></li><li class="last"><span class="floatLeft"><span class="icoSimiliGreen tick tickRight marR10 tickBlue" style="margin-top: 8px;"></span><a href="http://en.kioskea.net/s/Add%20file%20to%20command%20line%20arguments%20unix?qlc" class="title" rel="nofollow"><span>Add <span style="font-weight: bold;">file</span> to command line arguments unix</span></a></span><div class="clear"></div></li><li class="last"><span class="floatLeft"><span class="icoSimiliGreen tick tickRight marR10 tickBlue" style="margin-top: 8px;"></span><a href="http://en.kioskea.net/s/Add%20remove%20program%20file%20name%20command%20line?qlc" class="title" rel="nofollow"><span>Add remove program <span style="font-weight: bold;">file</span> name command line</span></a></span><div class="clear"></div></li><li class="last"><span class="floatLeft"><span class="icoSimiliGreen tick tickRight marR10 tickBlue" style="margin-top: 8px;"></span><a href="http://en.kioskea.net/s/Dos%20batch%20reading%20a%20text%20file%20line%20by%20line?qlc" class="title" rel="nofollow"><span><span>Dos batch <span style="font-weight: bold;">read</span>ing a text </span><span style="font-weight: bold;">file</span> line by line</span></a></span><div class="clear"></div></li><li><span class="floatLeft"><span class="icoSimiliGreen tick tickRight marR10 tickBlue" style="margin-top: 8px;"></span><a href="http://en.kioskea.net/s/Php%20read%20file%20line%20by%20line%20and%20affect%20arguments?qlc" class="title" rel="nofollow"><span><span>Php <span style="font-weight: bold;">read</span> </span><span style="font-weight: bold;">file</span> line by line and affect arguments</span></a></span><div class="clear"></div></li><li class="last"><span class="floatLeft"><span class="icoSimiliGreen tick tickRight marR10 tickBlue" style="margin-top: 8px;"></span><a href="http://en.kioskea.net/s/Shell%20file%20replace%20string%20line%20number?qlc" class="title" rel="nofollow"><span><span style="font-weight: bold;">Shell</span><span> <span style="font-weight: bold;">file</span> replace string line number</span></span></a></span><div class="clear"></div></li><li><span class="floatLeft"><span class="icoSimiliGreen tick tickRight marR10 tickBlue" style="margin-top: 8px;"></span><a href="http://en.kioskea.net/s/Shell%20script%20for%20reading%20a%20file%20from%20specified%20line%20numbers?qlc" class="title" rel="nofollow"><span><span style="font-weight: bold;">Shell</span><span><span> script for <span style="font-weight: bold;">read</span>ing a </span><span style="font-weight: bold;">file</span> from specified line numbers</span></span></a></span><div class="clear"></div></li><li class="last"><span class="floatLeft"><span class="icoSimiliGreen tick tickRight marR10 tickBlue" style="margin-top: 8px;"></span><a href="http://en.kioskea.net/s/Tab%20delimited%20files%20carriage%20return%20line%20feeds?qlc" class="title" rel="nofollow"><span>Tab delimited <span style="font-weight: bold;">file</span>s carriage return line feeds</span></a></span><div class="clear"></div></li><li class="last"><span class="floatLeft"><span class="icoSimiliGreen tick tickRight marR10 tickBlue" style="margin-top: 8px;"></span><a href="http://en.kioskea.net/s/Unix%20for%20loop%20example%20read%20file%20line%20by%20line?qlc" class="title" rel="nofollow"><span><span>Unix for loop example <span style="font-weight: bold;">read</span> </span><span style="font-weight: bold;">file</span> line by line</span></a></span><div class="clear"></div></li><li class="last"><span class="floatLeft"><span class="icoSimiliGreen tick tickRight marR10 tickBlue" style="margin-top: 8px;"></span><a href="http://en.kioskea.net/s/Unix%20reading%20a%20file%20line%20by%20line%20and%20delete?qlc" class="title" rel="nofollow"><span><span>Unix <span style="font-weight: bold;">read</span>ing a </span><span style="font-weight: bold;">file</span> line by line and delete</span></a></span><div class="clear"></div></li><li><span class="floatLeft"><span class="icoSimiliGreen tick tickRight marR10 tickBlue" style="margin-top: 8px;"></span><a href="http://en.kioskea.net/s/Windows%20phone%207%20read%20file%20line%20by%20line?qlc" class="title" rel="nofollow"><span><span>Windows phone 7 <span style="font-weight: bold;">read</span> </span><span style="font-weight: bold;">file</span> line by line</span></a></span><div class="clear"></div></li></ul>
+    <div class="showMore"><a href="#" class="block ftNone" onclick="if($('similishowhide').className=='hide'){ $('similishowhide').className='show';$('similiShowHideLbl').innerHTML=minus;} else{ $('similishowhide').className='hide';$('similiShowHideLbl').innerHTML=plus;} return false" rel="nofollow"><span class="tick tickRight tickBlue marR10"></span><span class="inlineBlock ftBlue ftBold pointer" id="similiShowHideLbl">More</span></a></div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+buffer='';
+for(key in simili_array){
+    key = key.replace(/</g,'&lt;').replace(/>/g,'&gt; ');
+    buffer += '<li';
+    if(simili_array[key]>= 4) { buffer += ' class="last"';}
+    buffer += '><span class="floatLeft"><span class="icoSimiliGreen tick tickRight marR10 ';
+    if(simili_array[key]==0) buffer += 'tickRed';
+    else buffer += 'tickBlue';
+    buffer += '" style="margin-top:8px"></span><a href="/s/'+encodeURIComponent(key)+'?qlc" class="title"';
+    if(simili_array[key]==0) buffer += ' id="first_simili_item"';
+    buffer += ' rel="nofollow">'+key+'</a></span><div class="clear"></div></li>';
+}
+$('simili_search').innerHTML=buffer;
+
+q=refk();
+if(q==''){
+q = "How to read a file line by line";
+}
+q = q.replace(/</g,' ').replace(/>/g,' ').replace(/"/g,' ').replace(/&/g,' ');
+if($('first_simili_item')&&q&&q!=' ') {
+a = $('first_simili_item');
+a.setAttribute('href','/s/'+escape(q)+'?qlc');
+a.innerHTML = q.charAt(0).toUpperCase() + q.substr(1);
+}
+h_j(q,$('similishowhide'));
+//]]>
+</script>
+</div>
+<div class="ad_right" id="bloc_middle">
+    <script type="text/javascript">
+    <!--
+    sas_pageid='10991/82115';
+    sas_formatid=4784;
+    sas_target='';
+    SmartAdServer(sas_pageid,sas_formatid,sas_target);
+    //-->
+    </script><script id="SmartScr4784" src="1757-how-to-read-a-file-line-by-line_files/a_003.js"></script><script language="JavaScript" src="1757-how-to-read-a-file-line-by-line_files/vj.js"></script><script src="1757-how-to-read-a-file-line-by-line_files/adServer.html"></script><a href="http://ads.networldmedia.net/servlet/ajrotator/920062/0/cj?ajkey=V12B05EA397J-573I704L1482008E03A5968E03A596L989249L987153QL148898QQL7407580G00G0Q05E5B7B1000030&amp;ajlink=http%3a//bs.serving%2dsys.com/BurstingPipe/BannerRedirect.bs?cn=brd%26FlightID=2138729%26Page=%26PluID=0%26EyeblasterID=4586230%26Pos=40602112834700%26ord=%5btimestamp%5d" target="_blank"><img src="1757-how-to-read-a-file-line-by-line_files/eff5dff2-5d5f-4427-9bd3-23b797c53cab.jpg" height="title=&quot;&quot;" width="300" border="0"></a>
+<noscript>
+<a href="http://ads.networldmedia.net/servlet/ajrotator/920062/0/cj?ajkey=V12B05EA397J-573I704L1482008E03A5968E03A596L989249L987153QL148898QQL7407580G00G0Q05E5B7B1000030%26ajlink%3Dhttp://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=brd&FlightID=2138729&Page=&PluID=0&Pos=2170" target="_blank"><img src="http://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=bsr&FlightID=2138729&Page=&PluID=0&Pos=2170" border=0 width=300 height=250></a>
+</noscript><script src="1757-how-to-read-a-file-line-by-line_files/genericJS_002.php" language="javascript"></script>
+
+</div>
+<div class="asideBox" id="needhelpbox">
+    <div class="boxTitle">
+        <span class="floatRight"><a href="#" class="ico option" title="Options" actid="optlink"></a><a href="http://en.kioskea.net/rss/rss_forum_sans_reponses.php3" class="ico newRss" title="Flux RSS"></a></span>
+        <a href="#" class="title" actid="hidelink">
+            <span class="arrowDown"></span>
+            They need your help        </a>        
+    </div>
+    <div id="nh_options" class="options" style="display: none;"></div>
+    <div class="content" id="nh_content"><ul>
+    <li>
+        <h3><a href="http://en.kioskea.net/forum/affich-535163-external-cd-drive-not-reading-sims-3">External CD drive not reading Sims 3?</a></h3>
+        <a href="http://en.kioskea.net/forum/hardware-2" class="ftGrey">Hardware</a>
+        <span class="postInfos">, 28/02</span>
+    </li>
+    <li>
+        <h3><a href="http://en.kioskea.net/forum/affich-535158-excel-count-if">Excel count if</a></h3>
+        <a href="http://en.kioskea.net/forum/office-software-25" class="ftGrey">Office software</a>
+        <span class="postInfos">, 28/02</span>
+    </li>
+    <li>
+        <h3><a href="http://en.kioskea.net/forum/affich-535154-farmville-wont-load-in-windows-7">Farmville wont load in WIndows 7</a></h3>
+        <a href="http://en.kioskea.net/forum/software-drivers-1" class="ftGrey">Software/Drivers</a>
+        <span class="postInfos">, 28/02</span>
+    </li>
+    <li>
+        <h3><a href="http://en.kioskea.net/forum/affich-535094-mac-document-erased-after-resetting-password">Mac document erased after resetting...</a></h3>
+        <a href="http://en.kioskea.net/forum/macos-14" class="ftGrey">MacOS</a>
+        <span class="postInfos">, 28/02</span>
+    </li>
+</ul>
+<a href="http://en.kioskea.net/forum/pending" title="All unanswered messages" class="buttonAsideBox">
+    All unanswered messages<span>&nbsp;</span>
+</a>
+
+<div class="clear"></div>
+<!-- Mode : content -->
+</div>
+</div>
+<div class="bloc_09" style="margin-bottom: 10px;">
+    <a target="_blank" rel="nofollow" href="http://www3.smartadserver.com/call/cliccommand/2420026/%5Btimestamp%5D?">
+        <img src="1757-how-to-read-a-file-line-by-line_files/supinfo.gif" alt="supinfo">
+    </a>
+    <img src="1757-how-to-read-a-file-line-by-line_files/timestamp.gif" alt="" height="1" width="1" border="0">
+</div><div class="ad_right" id="bloc_sponsor">
+    <script type="text/javascript">
+    sas_pageid='10991/82115';
+    sas_formatid=4787;
+    sas_target='';
+    SmartAdServer(sas_pageid,sas_formatid,sas_target);
+    </script><script id="SmartScr4787" src="1757-how-to-read-a-file-line-by-line_files/a.js"></script><script type="text/javascript" src="1757-how-to-read-a-file-line-by-line_files/show_ads.js">
+</script><script src="1757-how-to-read-a-file-line-by-line_files/show_ads_impl.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display: inline-table; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 300px;"><ins id="google_ads_frame2_anchor" style="display: block; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 300px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" src="1757-how-to-read-a-file-line-by-line_files/ads_002.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins> 
+
+
+</div></div>
+                
+                <div class="clear"></div>
+            </div>
+
+            <!-- NOUVEAU LOADING -->
+            <div class="newLoading" style="display: none;">
+                <div class="loaderNew"></div>
+            </div>
+        </div>
+    </div>
+<div class="clear"></div>
+<div id="footer">
+    <div id="bottom">
+        <ul class="noBorder">
+            <li>CCM-Benchmark Network                <ul>
+                                        <li><a href="http://www.commentcamarche.net/" lang="fr">www.commentcamarche.net</a></li>
+                                                    <li><a href="http://de.kioskea.net/" lang="de">de.kioskea.net</a></li>
+                                                    <li><a href="http://en.kioskea.net/" lang="en">en.kioskea.net</a></li>
+                                                    <li><a href="http://es.kioskea.net/" lang="es">es.kioskea.net</a></li>
+                                                    <li><a href="http://it.kioskea.net/" lang="it">it.kioskea.net</a></li>
+                                                    <li><a href="http://pt.kioskea.net/" lang="pt">pt.kioskea.net</a></li>
+                                
+                    <li><a href="http://health.kioskea.net/" lang="en">health.kioskea.net</a></li>
+                                                                            <li><a href="http://www.supinfo.com/" rel="nofollow">SUPINFO, école d'ingénieurs</a></li>
+                                    </ul>
+            </li>
+        </ul>
+
+                <ul class="footerBorder">
+            <li>Shortcuts                <ul>
+                    <li><a href="http://en.kioskea.net/contents/ccmguide/cgu-conditions-generales.php3">Terms of Use</a></li>
+                    <li><a href="http://en.kioskea.net/contents/ccmguide/ccmintro.php3">A propos de nous</a></li>
+                                            <li><a href="http://en.kioskea.net/contact/">Contact</a></li>
+                                        
+                    <li><a href="http://en.kioskea.net/contents/ccmguide/ccmcharte.php3">Charter</a></li>
+		    <li><a href="http://en.kioskea.net/guide/constructeurs.php3">Brands</a></li>                </ul>
+            </li>
+        </ul>
+        <ul class="footerBorder">
+            <li>
+                Glossary                <div id="glossary">
+                    <a href="http://en.kioskea.net/index/a">A</a>
+                    <a href="http://en.kioskea.net/index/b">B</a>
+                    <a href="http://en.kioskea.net/index/c">C</a>
+                    <a href="http://en.kioskea.net/index/d">D</a>
+                    <a href="http://en.kioskea.net/index/e">E</a>
+                    <a href="http://en.kioskea.net/index/f">F</a>
+                    <a href="http://en.kioskea.net/index/g">G</a>
+                    <a href="http://en.kioskea.net/index/h">H</a>
+                    <a href="http://en.kioskea.net/index/i">I</a>
+                    <a href="http://en.kioskea.net/index/j">J</a>
+                    <a href="http://en.kioskea.net/index/k">K</a>
+                    <a href="http://en.kioskea.net/index/l">L</a>
+                    <a href="http://en.kioskea.net/index/m">M</a>
+                    <a href="http://en.kioskea.net/index/n">N</a>
+                    <a href="http://en.kioskea.net/index/o">O</a>
+                    <a href="http://en.kioskea.net/index/p">P</a>
+                    <a href="http://en.kioskea.net/index/q">Q</a>
+                    <a href="http://en.kioskea.net/index/r">R</a>
+                    <a href="http://en.kioskea.net/index/s">S</a>
+                    <a href="http://en.kioskea.net/index/t">T</a>
+                    <a href="http://en.kioskea.net/index/u">U</a>
+                    <a href="http://en.kioskea.net/index/v">V</a>
+                    <a href="http://en.kioskea.net/index/w">W</a>
+                    <a href="http://en.kioskea.net/index/x">X</a>
+                    <a href="http://en.kioskea.net/index/y">Y</a>
+                    <a href="http://en.kioskea.net/index/z">Z</a>
+                    <a href="http://en.kioskea.net/index/0" class="buttonLarge">0-9</a>
+                </div>
+            </li>
+        </ul>
+        
+        <div class="footerBorder">
+                        <form action="/communaute/inscription.php3" class="headerFooter">
+                <fieldset>
+                    <legend>Recevez notre newsletter</legend>
+                    <input class="search" name="email" value="email" onfocus="select()" type="text">
+                    <input class="submit" value="OK" type="button">
+                </fieldset>
+            </form>
+                </div>
+        <div class="spacer">&nbsp;</div>
+    </div>
+</div>
+<div class="modoActionsNew" id="modo_div_new" style="display: none;"></div>
+<script type="text/javascript">
+<!--
+ccmboxes.boxes.needhelp = new ccmboxes.box(
+    'needhelpbox',
+    {options: 'nh_options', content: 'nh_content'},
+    {url: '/xhr/needhelp.php', reload: true}
+);
+//-->
+</script><script type="text/javascript">
+<!--
+xtnv = document;
+xtsd = "http://logc15";
+xtsite = "254140";
+xtn2 = "4";
+xtpage = "faq::1757-how-to-read-a-file-line-by-line";
+xtdmc = ".commentcamarche.net";
+xtprm = "";
+//-->
+</script>
+<script type="text/javascript" src="1757-how-to-read-a-file-line-by-line_files/xiti.js"></script><img src="1757-how-to-read-a-file-line-by-line_files/hit.gif" height="1" width="1">
+<noscript>
+    <img width="1" height="1" src="http://logc15.xiti.com/hit.xiti?s=254140&amp;s2=4&amp;p=faq%3A%3A1757-how-to-read-a-file-line-by-line" alt="" />
+</noscript><script src="1757-how-to-read-a-file-line-by-line_files/MainBTSJS.php"></script><div style="display: block; width: 0px; height: 0px; position: absolute;"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" id="NWM_ReloadInfo" height="0" width="0" align="middle"><param name="allowScriptAccess" value="always"><param name="movie" value="http://vitamine.networldmedia.net/bts/common/CookieBackup/ReloadInfo/ReloadInfo.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff"><embed src="1757-how-to-read-a-file-line-by-line_files/ReloadInfo.swf" quality="high" bgcolor="#ffffff" name="NWM_ReloadInfo" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" height="0" width="0" align="middle"></object><script event="fscommand(command,args)" for="NWM_ReloadInfo">NWM_ReloadInfo_DoFSCommand(command,args); </script></div><img style="position: absolute; top: 0pt; left: 0pt;" src="1757-how-to-read-a-file-line-by-line_files/generic12.gif" height="1" width="1"></body></html>

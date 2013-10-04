@@ -1,0 +1,431 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">  <title>Parameter-Passing Modes</title>
+</head><body bgcolor="white"><a name="top"><h1>Parameter-Passing Modes</h1></a>
+
+<hr>
+<h2>Contents</h2>
+<ul>
+  <li> <a href="#overview">Overview</a>
+  </li><li> <a href="#value">Value Parameters</a>
+  </li><li> <a href="#ref">Reference Parameters</a>
+  </li><li> <a href="#constRef">Const Reference Parameters</a>
+  </li><li> <a href="#ref">Array Parameters</a>
+  </li><li> <a href="#youTry1">Test Yourself #1</a>
+</li></ul>
+<hr>
+
+
+
+<a name="overview">
+<h2>Overview</h2></a>
+
+<p>
+In Java, all parameters are passed by value.
+In C++, a parameter can be passed by:
+</p><ol>
+  <li> value,
+  </li><li> reference, or
+  </li><li> const-reference
+</li></ol>
+Each parameter's mode is determined by the way it is specified in the
+function's header (the mode is the same for all calls to the function).
+For example:
+<ul>
+<pre>void f( int a, int &amp;b, const int &amp;c );
+</pre>
+</ul>
+Parameter <em>a</em> is a value parameter, <em>b</em> is a
+reference parameter, and <em>c</em> is a const-reference parameter.
+
+<p>
+<a name="value"><h2>Value Parameters</h2></a>
+</p><p>
+When a parameter is passed by value, a <em>copy</em> of the parameter is
+made.  Therefore, changes made to the formal parameter by the called
+function have no effect on the corresponding actual parameter.  For example:
+</p><ul>
+<pre>void f(int n) {
+    n++;
+}
+
+int main() {
+    int x = 2;
+    f(x);
+    cout &lt;&lt; x;  
+}
+</pre>
+</ul>
+In this example, <em>f's</em> parameter is passed by value.  Therefore,
+although <em>f</em>
+increments its formal parameter <em>n</em>, that has no effect on the actual
+parameter <em>x</em>.  The value output by the program is 2 (not 3).
+<p>
+Note that if a <em>pointer</em> is passed by value, then although the pointer
+itself is not affected by changes made to the corresponding formal parameter,
+the object pointed by the pointed <em>can</em> be changed.
+For example:
+</p><ul>
+<pre>void f(int *p) {
+    *p = 5;
+    p = NULL;
+}
+
+int main() {
+    int x=2;
+    int *q = &amp;x;
+    
+    f(q);
+
+    // here, x == 5, but q != NULL
+}
+</pre>
+</ul>
+In this example, <em>f's</em> parameter is passed by value.
+Therefore, the assignment <em>p = NULL;</em> in <em>f</em> has no
+effect on variable <em>q</em> in main (since <em>f</em> was passed a
+copy of <em>q</em>, not <em>q</em> itself).  However, the assignment
+<em>*p = 5:</em> in <em>f</em>, <b>does</b> change the value pointed
+to by <em>q</em>.  To understand why, consider what happens when the
+example program runs:
+<ul>
+<pre>After executing the two statements:
+    int x=2;
+    int *q = &amp;x;
+
+memory looks like this:
+
+       +---+
+    x: | 2 | &lt;--+
+       +---+    |
+                |
+       +---+    |
+    q: | --|----+
+       +---+
+
+Now function f is called; the value of q (which is the address of x)
+is copied into a new location named p:
+
+
+       +---+
+    x: | 2 | &lt;--+  &lt;--+
+       +---+    |     |
+                |     |
+       +---+    |     |
+    q: | --|----+     |
+       +---+          |
+                      |
+       +---+          |
+    p: | --|----------+
+       +---+
+
+Executing the two statements in f:
+    *p = 5;
+    p = NULL;
+
+causes the values of x (the thing pointed to by p) and p to be changed:
+
+       +---+
+    x: | 5 | &lt;--+
+       +---+    |
+                |
+       +---+    |
+    q: | --|----+
+       +---+     
+                 
+       +----+     
+    p: |NULL|
+       +----+
+
+However, note that q is NOT affected.
+</pre>
+</ul>
+
+<a name="ref"><h2>Reference Parameters</h2></a>
+<p>
+When a parameter is passed by reference, conceptually, the actual parameter
+itself is passed (and just given a new name -- the name of the corresponding
+formal parameter).  Therefore, any changes made to the formal parameter
+<em>do</em> affect the actual parameter.
+For example:
+</p><ul>
+<pre>void f(int &amp;n) {
+    n++;
+}
+
+int main() {
+    int x = 2;
+    f(x);
+    cout &lt;&lt; x;  
+}
+</pre>
+</ul>
+In this example, <em>f's</em> parameter is passed by reference.
+Therefore, the assignment to <em>n</em> in <em>f</em> is actually
+changing variable <em>x</em>, so the output of this program is 3.
+
+<p>
+When you write a function whose purpose is to compute two or more values,
+it makes sense to use reference parameters (since a function can
+<em>return</em> only one result).
+For example, if you want to read a list of integers from a file, and you
+want to know both how many integers were read, as well as the average value
+that was read, you might use a function like the following:
+</p><ul>
+<pre>void f(istream &amp;input, int &amp;numRead, double &amp;average) {
+    int k, sum = 0;
+    numRead = 0;
+
+    while (intput &gt;&gt; k) {
+        numRead++;
+	sum += k;
+    }
+    average = (double)sum/numRead;
+}
+</pre>
+</ul>
+Another common use of reference parameters is for a function that swaps
+two values:
+<ul>
+<pre>void swap( int &amp;j, int &amp;k ) {
+    int tmp = j;
+    j = k;
+    j = tmp;
+}
+</pre>
+</ul>
+This is useful, for example, in sorting an array, when it is often necessary
+to swap two array elements.  The following code swaps the
+<em>j</em><sup>th</sup>
+and <em>k</em><sup>th</sup> elements of array <em>A</em>:
+<ul>
+<pre>swap(A[j], A[k]);
+</pre>
+</ul>
+
+<a name="constRef"><h2>Const-Reference Parameters</h2></a>
+<p>
+Another reason to use reference parameters is when you don't want the
+function to modify an actual parameter, but the actual parameter
+is very large, and you want to avoid the overhead of creating a copy.
+Of course, this only works if the function does not modify its formal
+parameter.
+To be sure that the actual parameter is not "accidentally" modified,
+you should use a <b>const-reference</b> parameter.  Declaring the
+parameter to be <em>const</em> tells the compiler that it should not
+be changed; if the function does change the parameter, you will get a
+compile-time warning (possibly an error on some systems).
+For example:
+</p><ul>
+<pre>void f(const IntList &amp;L) {
+ -- the code here cannot modify L or the compiler will complain --
+}
+</pre>
+</ul>
+The potential use of a const-reference parameter is the reason why
+member functions that do not modify any data members should be
+declared <em>const</em>.  For example, suppose that the
+<em>IntList</em> <em>Print</em> member function was not declared
+const.  Then the following code would cause a compile-time error:
+<ul>
+<pre>void f(const IntList &amp;L) {
+  L.Print(cout);
+}
+</pre>
+</ul>
+Because <em>L</em> is a const-reference parameter, it is the
+compiler's job to be sure that <em>L</em> is not modified by
+<em>f</em> (and that means that no data members of <em>L</em> are
+modified).  The compiler doesn't know how the <em>Print</em> function
+is implemented; it only knows how it was declared, so if it is not
+declared const, it assumes the worst, and complains that function
+<em>f</em> modifies its const-reference parameter <em>L</em>.
+
+<a name="array"><h2>Array Parameters</h2></a>
+<p>
+Another unfortunate thing about C++ arrays is that they are <em>always</em>
+passed by reference (even though you don't declare them to be reference
+parameters).  For example:
+</p><ul>
+<pre>void f(int A[]) {
+    A[0] = 5;
+}
+
+int main() {
+    int B[10];
+    B[0] = 2;
+    f(B);
+    cout &lt;&lt; B[0] &lt;&lt; endl;  // the output is 5
+}
+</pre>
+</ul>
+Although <em>f's</em> parameter looks like it is passed by value
+(there is no &amp;), since it is an array it is actually passed by
+reference, so the assignment to <em>A[0]</em> is really assigning to
+<em>B[0]</em>, and the program prints 5 (not 2).
+<p>
+If you want to pass an array by value, you should use a <b>vector</b>,
+not a regular C++ array (see the last section in the notes on C++
+classes for information about vectors).
+
+</p><p>
+<a name="youTry1">
+<hr>
+<center>
+<u><b>TEST YOURSELF NOW</b></u>
+</center></a>
+</p><p>
+</p><ol>
+  <li> Consider the following code segment.
+<ul>
+<pre>void Mystery( int &amp; a, int &amp; b, int c )
+{
+     a = b + c;
+     b = 0;
+     c = 0;
+}
+
+void Print()
+{
+     int x = 0, y = 1, z = 2;
+
+     Mystery(x, y, z);
+     cout &lt;&lt; x &lt;&lt; " " &lt;&lt; y &lt;&lt; " " &lt;&lt; z;
+     Mystery(x, y, z);
+     cout &lt;&lt; x &lt;&lt; " " &lt;&lt; y &lt;&lt; " " &lt;&lt; z &lt;&lt; endl;
+}
+</pre>
+</ul>
+      What is output when function <em>Print</em> is called?
+      <p>
+      A. 0 1 2 0 1 2
+      <br>
+      B. 3 0 0 3 0 0
+      <br>
+      C. 0 1 2 3 0 0
+      <br>
+      D. 3 0 2 2 0 2
+      <br>
+      E. 3 0 0 0 0 0
+
+      </p><p>
+      </p></li><li> A function called <em>Sqrt</em>, which is intended to compute and
+      return the square root of its integer parameter, has been written.
+      When the function is tested, it is observed that, although the correct
+      value is returned, the argument passed to <em>Sqrt</em> is always zero
+      after the function call.
+      Which of the following is the most likely explanation for this problem?
+      <p>
+      A. <em>Sqrt</em> is written using recursion; it should be written using
+      iteration.
+      <br>
+      B. <em>Sqrt</em> is written using iteration; it should be written using
+      recursion.
+      <br>
+      C. <em>Sqrt</em>'s parameter is a value parameter; it should be a
+      reference parameter.
+      <br>
+      D. <em>Sqrt</em>'s parameter is a reference parameter; it should be a
+      value parameter.
+      <br>
+      E. <em>Sqrt</em>'s parameter is a const reference parameter; it should
+      be a value parameter.
+
+      </p><p>
+      </p></li><li>
+      Consider the following program.
+<ul>
+<pre>#include &lt;iostream&gt;
+
+void Sum(int a, int b, int &amp; c)
+{
+     a = b + c;
+     b = a + c;
+     c = a + b;
+}
+
+int main()
+{
+     int x=2, y=3;
+
+     Sum(x, y, y);
+     cout &lt;&lt; x &lt;&lt; " " &lt;&lt; y &lt;&lt; endl;
+     return 0;
+}
+</pre>
+</ul>
+
+      What happens when this program is compiled and executed?
+      <p>
+      A. There is a compile-time error because in the call
+      <em>Sum(x, y, y)</em>,
+      variable <em>y</em> is passed both by value and by reference.
+      <br>
+      B. There is a run-time error because in the call <em>Sum(x, y, y)</em>,
+      variable <em>y</em> is passed both by value and by reference.
+      <br>
+      C. The program compiles and executes without error.
+      The output is: 2 3
+      <br>
+      D. The program compiles and executes without error.
+      The output is: 6 9
+      <br>
+      E. The program compiles and executes without error.
+      The output is: 2 15
+
+      </p><p>
+      Questions 4 and 5 refer to the following function.
+</p><ul>
+<pre>bool Mystery(const vector &lt;int&gt; &amp; A)
+// precondition: A is sorted
+{
+     int k;
+
+     for (k=1; k&lt;A.size(); k++)
+     {
+          if (A[k-1] == A[k]) return true;
+     }
+     return false;
+}
+</pre>
+</ul>
+      </li><li> Which of the following best explains what function <em>Mystery</em>
+      does?
+      <p>
+      A. Always returns true.
+      <br>
+      B. Always returns false.
+      <br>
+      C. Determines whether vector <em>A</em> really is sorted.
+      <br>
+      D. Determines whether vector <em>A</em> contains any duplicate values.
+      <br>
+      E. Determines whether all values in vector <em>A</em> are the same.
+      </p><p>
+      </p></li><li>
+      Which of the following best explains why <em>A</em> is a reference
+      parameter?
+      <p>
+      A. <em>A</em> may be modified by function <em>Mystery</em>;
+      thus, it must be a reference parameter.
+      <br>
+      B. <em>A</em> is indexed by function <em>Mystery</em>;
+      thus, it must be a reference parameter.
+      <br>
+      C. <em>A</em>'s <em>size</em> member function is used by function
+      <em>Mystery</em>;
+      thus, it must be a reference parameter.
+      <br>
+      D. It is more efficient to pass <em>A</em> by reference than by value.
+      <br>
+      E. There is no reason for <em>A</em> to be a reference parameter.
+</p></li></ol>
+<hr>
+
+Answers:<br>
+1. D<br>
+2. D<br>
+3. E<br>
+4. D<br>
+5. D<br>
+
+</body></html>

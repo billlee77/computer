@@ -1,0 +1,6 @@
+#kill all process of other user COMPLETELY
+
+pkill -u username
+
+
+

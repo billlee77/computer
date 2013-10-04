@@ -1,0 +1,2 @@
+#change the owner of the disk
+	sudo chown username /file

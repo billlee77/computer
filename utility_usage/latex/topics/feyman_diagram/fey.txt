@@ -1,0 +1,30 @@
+/*--------------------------------------------------
+# feymp and feymf Usage
+
+	$ latex file.tex
+	$ latex file.tex
+	$ mplot graph.mp
+	$ latex file.tex
+
+
+/*--------------------------------------------------
+# Setting up feymp, feymf and mplot 
+
+  Create User dir texmf and sub-dir 
+    $ mkdir /home/user/texmf
+    $ cd /home/user/texmf
+	$ mkdir metapost tex
+	$ mkdir tex/feymp tex/feymf
+  Move .sty and .mp files into the right spots
+    $ mv /path/to/feymp.sty tex/feymp/
+    $ mv /path/to/feymf.sty tex/feymf/
+    $ mv /path/to/feymp.mp /path/to/feymf.mp metapost
+    $ texhash
+ 
+
+# Some tip on Feyman diagram
+
+After any significant modification, delete all mf file associate file i.e. .mf .log .etc
+
+
+

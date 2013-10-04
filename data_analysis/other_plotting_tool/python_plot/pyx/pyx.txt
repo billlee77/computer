@@ -1,0 +1,10 @@
+# Define a function & using it
+
+def lissajousdata(k):
+    return sin(2*k), cos(3*k)
+
+
+g.plot(graph.data.paramfunction("t", min, max, "x, y = f(t)",
+                                context={"f": lissajousdata}))
+
+

@@ -1,0 +1,15 @@
+# make mtfs partition
+mkntfs
+
+# view mount the partition 
+use pysdm
+
+# format partition 
+use fdisk or Gnome Partition Editor
+
+# change mount 
+change /etc/fstab
+
+# label partition & check parition name
+	e2label /dev/sdb1 DW160
+	e2label /dev/sdb1

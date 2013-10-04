@@ -1,0 +1,473 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<title>Geant4 Vis Tutorial using the OpenGL Event Display</title>
+</head><body><h1>
+<a href="http://www.opengl.org/">
+<img src="G4OpenGLTutorial_files/ogl.gif" alt="OpenGL logo" height="97" width="220"></a>
+<br>
+Geant4 Workshop Visualization Tutorial using the OpenGL Event Display
+</h1>
+
+<ul>
+<li><a href="#intro">
+Introduction</a>
+</li><li><a href="#applicationinstall">
+Installing OpenGL</a> (but usually you will find you already have it)
+</li><li><a href="#applicationbuild">
+Rebuilding Geant4 to Include OpenGL</a>
+</li><li><a href="#applicationrun">
+Running Geant4 with OpenGL</a>
+</li><li><a href="#recap">
+Recap of Geant4 Commands Used in this Tutorial</a>
+</li><li><a href="#resources">
+Further Resources</a>
+</li></ul>
+
+
+<h2><a name="intro">
+Introduction</a></h2>
+This tutorial has been updated for use at the October 2003
+<a href="http://conferences.fnal.gov/g4tutorial/">
+Fermilab Geant4 Tutorial</a>, but is also designed for use by anyone else who wants to learn
+OpenGL Visualization for Geant4.
+
+<p>
+This tutorial can be used on its own, but gives the most comprehensive introduction to
+Geant4 visualization when used as part of the following full set of documents:
+</p><ul>
+<li><a href="http://conferences.fnal.gov/g4tutorial/g4cd/Documentation/WorkshopExercises/README.html">
+Geant 4 Tutorial</a>
+</li><li><a href="http://conferences.fnal.gov/g4tutorial/g4cd/Slides/Fermilab/G4VisTutorial.pdf">
+Introduction to Geant4 Visualization</a>
+</li><li><a href="http://conferences.fnal.gov/g4tutorial/g4cd/Documentation/Visualization/G4WIREDTutorial/G4WIREDTutorial.html">
+Geant4 Workshop Visualization Tutorial using the WIRED Event Display</a>
+</li><li><a href="http://conferences.fnal.gov/g4tutorial/g4cd/Documentation/Visualization/G4DAWNTutorial/G4DAWNTutorial.html">
+Geant4 Workshop Visualization Tutorial using the DAWN Event Display</a>
+</li><li><a href="http://conferences.fnal.gov/g4tutorial/g4cd/Documentation/Visualization/G4OpenGLTutorial/G4OpenGLTutorial.html">
+Geant4 Workshop Visualization Tutorial using the OpenGL Event Display</a>
+</li></ul>
+
+<p>
+While some Geant4 visualization drivers are always included by default in your Geant4 build
+(because they require no external libraries), OpenGL is not included by default.
+You must explicitly add OpenGL to your build by setting an environment variable and then
+remaking.
+</p><p>
+At the time of this writing, OpenGL for Geant4 only works on Linux, not Windows.
+But stay tuned for updates - that situation is likely to change soon (OpenGL is included
+as part of the Windows operating system, but Geant4's OpenGL driver is not correctly
+designed yet to take advantage of that version).
+
+
+</p><hr><h2><a name="applicationinstall">
+Installing OpenGL (but usually you will find you already have it)</a></h2>
+OpenGL is a standard Linux system component, and should be part of the RedHat or Debian
+distribution, so you probably already have it installed.
+<br>
+&nbsp;<hr><h2><a name="applicationbuild">
+Rebuilding Geant4 to Include OpenGL</a></h2>
+
+The pre-built Geant4 that you used in an earlier tutorial does not include OpenGL.
+This is done both to make the pre-built version more portable and to make the pre-built version
+able to run with JAIDA/JAS.  Unfortunately, you cannot run JAIDA/JAS if OpenGL is in your build.
+<ul>
+<li>
+The problem is that the OpenGL libraries pre-load the library libXt.so which makes the Java virtual
+machine crash when it tries to open its first Window - expect a fix when JDK 1.5 comes out.
+</li><li>
+For now, you can run Geant4 with either JAIDA/JAS or OpenGL, but you cannot run with both at the same time.
+</li></ul>
+
+<p>
+<a name="modes">Geant4 has several different modes in which it can run OpenGL.</a>
+We will just show you one mode, the easiest to get started, but you may later want to experiment with the
+other powerful modes.
+</p><ul>
+<li>
+OpenGLX runs OpenGL in the "Immediate" mode.  This mode draws directly to the screen, using the minimum
+amount of memory (important for very complex images).  The drawback is that if you cover the image with
+another window, when you uncover the image it will not reappear (until you trigger a new draw from Geant4).
+</li><li>
+OpenGLSX runs OpenGL in "Display List" (double buffered) mode.  This uses more memory, but it allows XWindows
+to redraw the image automatically if you cover and then uncover the window.
+</li><li>
+OpenGLXM runs OpenGL in "Immediate" mode and also includes a Motif interface which allows you to graphically
+control the image rotation, etc.  It requires additional (Motif) libraries on your machine.
+</li><li>
+OpenGLSXM runs OpenGL in "Display List" mode and also includes a Motif interface which allows you to graphically
+control the image rotation, etc.  It requires additional (Motif) libraries on your machine.
+</li></ul>
+<br>
+For details on using these other OpenGL modes (necessary libraries, environment variables, etc.), see the
+Geant4 Visualization README file:
+<br>
+<a href="http://pcitapiww.cern.ch/geant4/source/source/geant4.5.2/source/visualization/README">
+geant4/source/visualisation/README</a>
+
+<p>
+Set some environment variables before you rebuild Geant4:
+</p><ul>
+<li>
+Make the build include OpenGL:
+<pre>   setenv G4VIS_BUILD_OPENGLX_DRIVER 1
+</pre>
+</li><li>
+While you're at it, this is a good time to set the other Geant4 environment variable that tells
+Geant4 to Run with OpenGL.  Geant4 has the Build and Run controlled by separate environment variables
+so that you can have to option of building in code that you might not want to run all the time
+(so you could build with OpenGL but choose to run sometimes without it).
+<pre>   setenv G4VIS_USE_OPENGLX 1
+   setenv OGLHOME /usr/X11R6
+</pre>
+</li></ul>
+<p>
+You now have the correct environment to rebuild Geant4 with OpenGL (and without JAIDA/JAS).
+</p><ul>
+<li>
+Rebuild the base of Geant4 as follows:
+<font size="2">
+</font><p><font size="2">touch $G4INSTALL/source/visualization/management/src/G4VisManager.cc<br>
+(cd $G4INSTALL/source/visualization/OpenGL; make clean)<br>
+(cd $G4INSTALL/source/interfaces; make clean)<br>
+(cd $G4INSTALL/source/; make)<br>
+(cd $G4INSTALL/source/; make libmap)</font><br>
+</p></li><li>
+Rebuild the A01 example as follows:
+<pre>   cd /path/to/A01
+   gmake clean
+   gmake
+</pre>
+</li></ul>
+
+
+<hr><h2><a name="applicationrun">
+Running Geant4 with OpenGL</a></h2>
+
+Now for the easy part.  Since OpenGL runs directly from Geant4, you just start Geant4
+and then issue a few visualization commands.
+<ul>
+<li>
+We will show how to run with the examples/extended/analysis/A01 example, but the same
+set of commands will work to visualize any example (always assuming you have correctly
+set the envirnment variables as described above).
+</li><li>
+Remember that, even if you didn't set it at build time, you must at least set the
+following environment variable at run time:
+<pre>   setenv G4VIS_USE_OPENGLX 1
+</pre>
+</li><li>
+<a name="xwindows">
+Also, this might be good time to check that your xwindows setup is correct for our purposes</a>.
+<ul>
+<li>
+If you are running Geant4 on a remote machine (using the machine in front of you just as a terminal),
+make sure you have your XWindows client running.
+</li><li>
+Make sure your terminal is correctly set to accept connections from the machine where you are running Geant4.
+</li><li>
+You might need to explicitly set display from the machine on which you are running Geant4 to make it display
+to you terminal.
+</li><li>
+It is beyond the scope if this tutorial to advise on all XWindows problems, but it is always helpful
+to try a test with a simple application such as xclock.
+</li></ul>
+
+</li><li>
+Run the example:
+<pre>   cd /path/to/A01
+   ../bin/$G4SYSTEM/A01app
+</pre>
+<br>
+The first part of the response from Geant4 will include a list of currently
+available graphics drivers.  Make sure it includes "OpenGLImmediateX (OGLIX)".
+If it doesn't, your environment variables were not set correct at build or run time:
+<pre>**********************************************
+ Geant4 version $Name: geant4-05-02-ref-00 $
+                                (27-June-2003)
+             Copyright : Geant4 Collaboration
+**********************************************
+Visualization Manager instantiating...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully chosen to use the following graphics systems.
+Current available graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  GAGTree (GAGTree)
+  G4HepRepFile (HepRepFile)
+  G4HepRep (HepRepXML)
+  RayTracer (RayTracer)
+  VRML1FILE (VRML1FILE)
+  VRML2FILE (VRML2FILE)
+  OpenGLImmediateX (OGLIX)
+  OpenGLStoredX (OGLSX)
+</pre>
+<br>
+G4's response will end with:
+<pre>******************************************
+**                                      **
+** Using standard Geant4 transportation **
+**                                      **
+******************************************
+Idle
+</pre>
+</li><li>
+Open the visualization driver:
+<pre>   /vis/open OGLIX
+</pre>
+<br>
+A graphics window should appear as follows
+(if no window appears, check whether there is a problem with your XWindows setup.
+Consider some of the relevant hints <a href="#xwindows">above</a>):
+<br>
+<img src="G4OpenGLTutorial_files/OPENGL1.gif" height="635" width="608">
+</li><li>
+Create a new, empty scene, attach a scene to the scenehandler and declare that the world volume should
+be added to the scene.  Be sure to get the correct, mix-case spelling of "sceneHandler" in the second command:
+<pre>   /vis/scene/create
+   /vis/scene/add/volume
+   /vis/sceneHandler/attach
+</pre>
+<br>
+By the way, if you reverse the order of those last two commands, it will still work, but the second command
+will then give you the following error message which is really just a warning that nothing has yet been filled
+into the scene.
+<pre>   ERROR: G4VSceneHandler::ProcessScene:
+   No run-duration models in scene data.
+</pre>
+</li><li>
+Finally, output the image:
+<pre>   /vis/viewer/flush
+</pre>
+<br>
+The image should appear in the OpenGL window:
+<img src="G4OpenGLTutorial_files/OPENGL2.gif" height="635" width="608">
+</li><li>
+Remember that in the OpenGL mode that we are using, "Immediate" mode, the image is drawn directly to the
+screen with no Display List (backing store).  This means that if the window is covered and then unconvered,
+the image will not redraw.  Make sure the OpenGL window is unobstructed before you issue the flush command.
+You can always repeat that command to redraw the window.
+</li><li>
+Next, change the view angle by providing a theta and phi "camera" angle (again taking care about the correct
+mixed case in the command):
+<pre>   /vis/viewer/set/viewpointThetaPhi 70 20
+</pre>
+<br>
+<img src="G4OpenGLTutorial_files/OPENGL3.gif" height="635" width="608">
+</li><li>
+Next, zoom in by a factor of 2:
+<pre>   /vis/viewer/zoom 2
+</pre>
+<br>
+<img src="G4OpenGLTutorial_files/OPENGL4.gif" height="635" width="608">
+</li><li>
+To reset to the initial default view:
+<pre>   /vis/viewer/reset
+</pre>
+</li><li>
+Type "help" to see a list of other available commands:
+<pre>Command directory path : /
+ Sub-directories :
+ 1) /control/   UI control commands.
+ 2) /units/   Available units.
+ 3) /geometry/   Geometry control commands.
+ 4) /tracking/   TrackingManager and SteppingManager control commands.
+ 5) /event/   EventManager control commands.
+ 6) /run/   Run control commands.
+ 7) /random/   Random number status control commands.
+ 8) /particle/   Particle control commands.
+ 9) /process/   Process Table control commands.
+ 10) /vis/   Visualization commands.
+ 11) /mydet/   A01 detector setup control commands.
+ 12) /hits/   Sensitive detectors and Hits
+ 13) /gun/   Particle Gun control commands.
+ Commands :
+
+Type the number ( 0:end, -n:n level back ) :
+</pre>
+<br>
+Navigate the help system by typing in the numbers that correspond to the various commands.
+Item 10 gives the visualization commands.
+And then item 6 gives the viewer commands:
+<pre>Guidance :
+Operations on Geant4 viewers.
+
+ Sub-directories :
+ 1) /vis/viewer/set/   Set view parameters of current viewer.
+ Commands :
+ 2) clear * /vis/viewer/clear [<viewer-name>]
+ 3) create * /vis/viewer/create  [<scene-handler>] [<viewer-name>] [<pixels>]
+ 4) dolly * /vis/viewer/dolly [<increment>] [<unit>]
+ 5) dollyTo * /vis/viewer/dollyTo [<distance>] [<unit>]
+ 6) flush * /vis/viewer/flush [<viewer-name>]
+ 7) lightsThetaPhi * /vis/viewer/lightsThetaPhi  [<theta>] [<phi>] [deg|rad]
+ 8) lightsVector * /vis/viewer/lightsVector  [<x>] [<y>] [<z>]
+ 9) list * /vis/viewer/list [<viewer-name>] [<verbosity>]
+ 10) pan * /vis/viewer/pan [<right-increment>] [<up-increment>] [<unit>]
+ 11) panTo * /vis/viewer/panTo [<right>] [<up>] [<unit>]
+ 12) refresh * /vis/viewer/refresh [<viewer-name>]
+ 13) remove * /vis/viewer/remove <viewer-name>
+ 14) reset * /vis/viewer/reset [<viewer-name>]
+ 15) select * /vis/viewer/select <viewer-name>
+ 16) update * /vis/viewer/update [<viewer-name>]
+ 17) show * Synonym for "/vis/viewer/update" - see that command for guidance.
+ 18) viewpointThetaPhi * /vis/viewer/viewpointThetaPhi  [<theta>] [<phi>] [deg|r
+ad]
+ 19) viewpointVector * /vis/viewer/viewpointVector  [<x>] [<y>] [<z>]
+ 20) zoom * /vis/viewer/zoom [<multiplier>]
+ 21) zoomTo * /vis/viewer/zoomTo [<factor>]
+</factor></multiplier></z></y></x></phi></theta></viewer-name></viewer-name></viewer-name></viewer-name></viewer-name></unit></up></right></unit></up-increment></right-increment></verbosity></viewer-name></z></y></x></phi></theta></viewer-name></unit></distance></unit></increment></pixels></viewer-name></scene-handler></viewer-name></pre>
+</li><li>
+Try another view:
+<pre>   /vis/viewer/set/viewpointThetaPhi 40 40
+</pre>
+<br>
+<img src="G4OpenGLTutorial_files/OPENGL5.gif" height="635" width="608">
+</li><li>
+Then change the center using the pan command and zoom in a factor of 4:
+<pre>   /vis/viewer/panTo -5 -1
+   /vis/viewer/zoom 4.
+</pre>
+<br>
+<img src="G4OpenGLTutorial_files/OPENGL6.gif" height="635" width="608">
+</li><li>
+So far, we have just looked at detector geometry.  Now lets add some particles.
+<br>
+Declare that trajectories and hits should be added to the scene (previously we only
+had /vis/scene/add/volume):
+<pre>   /vis/scene/add/trajectories
+   /vis/scene/add/hits
+</pre>
+</li><li>
+Declare that particle trajectories should be stored (otherwise they are already
+deleted by the time the visualization system gets a change to show them):
+<pre>   /tracking/storeTrajectory 1
+</pre>
+</li><li>
+Run the beam:
+<pre>   /run/beamOn 1
+</pre>
+<br>
+<img src="G4OpenGLTutorial_files/OPENGL7.gif" height="635" width="608">
+</li><li>
+The output appears as soon as the /run/beamOn is complete since an update command is included in
+this example's RunAction class.  If you run some other example and find that the event doesn't
+draw automatically at the end of the run, just issue the following command:
+<pre>   /vis/viewer/flush
+</pre>
+</li><li>
+You can even put this command into a macro file and then cause this macro to be called at the end
+of each event by adding the macro name to the run command, as in:
+<pre>   /run/beamOn 1 my.mac
+</pre>
+</li><li>
+One last command for this quick tutorial.  You will have noticed in the previous image
+that the detector was drawn as a wireframe.
+Change this now by issuing the following command:
+<pre>   /vis/viewer/set/style surface
+   /run/beamOn 1
+</pre>
+The detector will then appear as a solid (though it is somewhat transparent, allowing you
+to still seee the tracks passing within).
+<br>
+<img src="G4OpenGLTutorial_files/OPENGL8.gif" height="635" width="608">
+</li><li>
+You can change this back with:
+<pre>   /vis/viewer/set/style wireframe
+   /run/beamOn 1
+</pre>
+Notice that the style command does not affect the hits.  They are always drawn as surfaces
+because of code in the relevant c++ classes (which override any style commands
+issued at run time):
+<pre>   src/A01EmCalorimeterHit.cc:  attribs.SetForceSolid(true);
+   src/A01HadCalorimeterHit.cc: attribs.SetForceSolid(true);
+   src/A01HodoscopeHit.cc:      attribs.SetForceSolid(true);
+</pre>
+</li><li>
+Geant4 visualization for OpenGL has many more options that you can best learn by playing around.
+If you get confused about the current view, just remember that you can reset with:
+<pre>   /vis/viewer/reset
+</pre>
+</li><li>
+This tutorial has only scratched the surface of Geant4's OpenGL capabilities.
+As mentioned <a href="#modes">above</a>,
+Geant4 has three other modes in which you can run OpenGL: "Display List,"
+"Immediate plus Motif" and "Immediate plus Display List".
+This tutorial was meant only to give you a brief, hands on introduction to this powerful tool
+and to encourage you to further explore its abilities.
+For the most complete information on OpenGL for Geant4, see the Geant4 Visualization README file:
+<br>
+<a href="http://pcitapiww.cern.ch/geant4/source/source/geant4.5.2/source/visualization/README">
+geant4/source/visualisation/README</a>
+</li><li>
+And for futher information on OpenGL and Mesa, see:
+<br>
+<a href="http://www.opengl.org/">http://www.opengl.org/</a>
+<br>
+<a href="http://www.mesa3d.org/">http://www.mesa3d.org</a> 
+</li></ul>
+
+
+<hr><h2><a name="recap">
+Recap of Geant4 Commands Used in this Tutorial</a></h2>
+If you need to quickly get back to where you were in the tutorial, it may be
+helpful to cut and paste a set of commands from this list:
+<pre>../bin/$G4SYSTEM/A01app
+/vis/open OGLIX
+/vis/scene/create
+/vis/scene/add/volume
+/vis/sceneHandler/attach
+/vis/viewer/flush
+/vis/viewer/set/viewpointThetaPhi 70 20
+/vis/viewer/zoom 2
+/vis/viewer/reset
+/vis/viewer/set/viewpointThetaPhi 40 40
+/vis/viewer/panTo -5 -1
+/vis/viewer/zoom 4.
+/vis/scene/add/trajectories
+/vis/scene/add/hits
+/tracking/storeTrajectory 1
+/run/beamOn 1
+/vis/viewer/set/style surface
+/run/beamOn 1
+/vis/viewer/set/style wireframe
+/run/beamOn 1
+</pre>
+
+
+<hr><h2><a name="resources">
+Further Resources</a></h2>
+<ul>
+<li>
+Geant4 Visualization README file:
+<br>
+<a href="http://pcitapiww.cern.ch/geant4/source/source/geant4.5.2/source/visualization/README">
+geant4/source/visualisation/README</a>
+</li><li>
+On-line documentation on Geant4visualisation:
+<br>
+<a href="http://cern.ch/geant4/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization">
+http://cern.ch/geant4/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization</a>
+</li><li>
+List of visualization commands:
+<br>
+<a href="http://cern.ch/geant4/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization/UIcommands/vis.txt">
+http://cern.ch/geant4/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/Visualization/UIcommands/vis.txt</a>
+</li><li>
+Questions, comments about Geant4 Visualization -Contact us through the Geant4 Visualization online forum:
+<br>
+<a href="http://geant4-hn.slac.stanford.edu:5090/HyperNews/public/get/visualization.html">
+http://geant4-hn.slac.stanford.edu:5090/HyperNews/public/get/visualization.html</a>
+</li></ul>
+
+
+<hr>
+<address>
+<a href="http://www.slac.stanford.edu/%7Eperl">Joseph Perl</a>
+</address>
+
+<br>14 October 2003
+
+</body></html>

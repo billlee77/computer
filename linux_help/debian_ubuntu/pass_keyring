@@ -1,0 +1,5 @@
+# TO dis-prompt the keyring password
+prompt$ seahorse
+->password
+->right click (change password)
+

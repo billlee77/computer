@@ -1,0 +1,94 @@
+# file:  .login
+
+# this file is executed once, at login, after .cshrc is executed
+# it should contain terminal initialization commands and environment variable
+# definitions inherited by other C shells that are started after login
+
+# Garth Huber   94.12.07
+
+echo "Executing /home/li479/.login"
+
+if ($?loopcount) then
+    set loopcount = `expr $loopcount + 1`
+ else
+    set loopcount = 2
+endif
+
+# AcquRoot
+if ( $machine != "polaris" ) then
+   if ( $loopcount <3 ) source ~/.acqu_environ_4v4
+endif
+
+if ( ! "$?PBS_ENVIRONMENT" ) then  # only interactive jobs
+
+# put title at top of xterm
+# 00.05.13
+
+# Set Xterm titlebar to current directory
+setenv MTYP `uname -m`
+
+if ( $machine != "gridiron" && $machine != "castiron" ) then # Standard Linux Installations
+#  set title at top of Intel Linux Xterm
+   source /home/li479/bin/settitle.sh
+   setenv TRIUMF_FONTS /home/apps/physica-2.77/
+   setenv PHYSICA_DIR /home/apps/physica-2.77/
+   setenv TD_HELP /home/apps/topdrawer-1.4e/doc/topdrawer4.0.gih
+
+   if ( $machine != "polaris" ) then
+#  ROOT, GEANT4 stuff
+     source /home/apps/geant4/.config/bin/Linux-g++/env.csh
+     if ( $loopcount <3 ) set path=($path $G4WORKDIR/bin)
+   endif
+
+else                               # GridIron
+#  set title at top of Intel Linux Xterm
+   source /home/gridiron/li479/bin/settitle.sh
+#  ROOT, GEANT4 stuff
+   source $APPS_BASE/geant4/.config/bin/Linux-g++/env.csh
+   if ( $loopcount <3 ) set path=($path $G4WORKDIR/bin)
+endif
+
+ tset -I -Q
+ umask 022
+ unsetenv TERMCAP
+ setenv TERM vt100
+
+ setenv EDITOR gvim
+ setenv EXINIT 'set redraw wm=8'
+ setenv TRIUMF_TERMINAL_TYPE X
+ setenv TRIUMF_PLOTTER_TYPE PS
+ setenv TRIUMF_FONTS /home/apps/physica-2.77/
+ setenv PHYSICA_DIR /home/apps/physica-2.77/
+ setenv TD_HELP /home/apps/topdrawer-1.4e/doc/topdrawer4.0.gih
+
+# this part selects the colors to display in the ls command
+ setenv LS_COLORS 'no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:ex=01;31:'
+
+# ROOT, GEANT4 stuff
+# source /home/apps/geant4/.config/bin/Linux-g++/env.csh
+# set path=($path $G4WORKDIR/bin )
+
+ echo " "
+ date
+ echo " "
+cd
+
+
+
+#*****************************************************
+
+#set prompt="%n@%m[\!] "
+#set prompt="`whoami`@`hostname`[\!] "
+#set prompt="%m> "
+#set prompt="`whoami`% "
+
+cd
+
+# # Default
+set prompt="%n@%m:%/%# "
+# 
+alias st 'sudo /usr/sbin/gdm-stop'
+# 
+
+# #Let us see bash works
+ bash

@@ -1,0 +1,23 @@
+.simple_overlay {
+	BORDER-RIGHT: #666 1px solid;
+	BORDER-TOP: #666 1px solid;
+	DISPLAY: none;
+	Z-INDEX: 10000;
+	MIN-HEIGHT: 200px;
+	BORDER-LEFT: #666 1px solid;
+	WIDTH: 675px;
+	BORDER-BOTTOM: #666 1px solid;
+	BACKGROUND-COLOR: #333;
+	moz-box-shadow: 0 0 90px 5px #000;
+	webkit-box-shadow: 0 0 90px #000
+}
+
+.simple_overlay .close {
+	RIGHT: -15px;
+	BACKGROUND-IMAGE: url(./close.png);
+	WIDTH: 35px;
+	CURSOR: pointer;
+	POSITION: absolute;
+	TOP: -15px;
+	HEIGHT: 35px
+}

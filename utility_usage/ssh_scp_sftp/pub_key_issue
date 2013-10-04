@@ -1,0 +1,15 @@
+
+#Due the Previlage error, the public key will not be functioning!
+
+ssh -v user@host
+
+it gives:
+Debug: Public key is given by /home/user/.ssh/id_dsa
+
+To resolve Error:
+Could not chdir to home directory /home/akshay/: Permission denied
+
+By running:
+sudo restorecon /home/user
+
+

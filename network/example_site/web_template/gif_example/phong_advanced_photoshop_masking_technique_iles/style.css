@@ -1,0 +1,115 @@
+
+A:link {
+	color:#5C6B80
+}
+
+A:visited {
+	color:#5C6B80
+}
+
+A:hover {
+	color:#8EA5C5
+}
+
+.number{
+	font-weight:bold;
+	font-family:garamond;
+	background:#646464;
+	color:white
+}
+
+.topic{
+	font-weight:bold;
+	font-family:garamond;
+	background:#DEDEDE
+}
+
+.sub_topic{
+	font-weight:normal;
+	font-family:garamond;
+
+}
+
+.sub{
+	font-weight:light;
+	font-family:garamond;
+
+}
+
+.text_body{
+	font-weight:light;
+	font-family:times
+	
+}
+
+.gt{
+
+	font-family:times new roman, serif;
+	background:#F2F2F2
+}
+
+.gs{
+
+	font-family:times new roman, serif;
+	background:#dedede
+}
+
+.action{
+
+}
+
+.indent{
+	margin-left:15
+}
+
+
+TD.mainTitle{
+	background:#f1f1f1;
+	font-weight:bold;
+	font-family:garamond;
+	font-size:21
+
+}
+
+TD.topBar{
+	font-size:3;
+	background:#000000;
+	height:10
+
+}
+
+.innerCaption{
+	
+	margin:10 10 10 10
+
+}
+
+
+
+A.superLink IMG {
+	border: 2px solid #000000;
+	filter:	progid:DXImageTransform.Microsoft.BasicImage(grayScale=1);
+			
+
+	}
+
+A.superLink:visited IMG {border: 2px solid #000000;
+	filter:	progid:DXImageTransform.Microsoft.BasicImage(grayScale=1);
+			
+
+	}
+	
+A.superLink:active IMG {
+	border: 2px solid #FF7F00; 
+	filter:	progid:DXImageTransform.Microsoft.BasicImage(grayScale=0);
+
+}
+
+A.superLink:visited:hover IMG {
+	border: 2px solid #5C6B80;
+	filter:	progid:DXImageTransform.Microsoft.BasicImage(grayScale=0)}
+
+A.superLink:hover IMG {
+	border: 2px solid #5C6B80;
+
+}

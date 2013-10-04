@@ -1,0 +1,16 @@
+There are three ways to pass a array to the function in c++:
+
+	* Pass as a pointer:
+		void foo(int* a)
+
+	* pass as a reference:
+		void foo(int(&a) [10])
+
+	* pass as array (pointer?):
+		void foo(int a[])
+
+
+	NOTE there are restriction as the second method to pass around array, the size of the array must be known, 
+	including the array size in main and function.
+
+

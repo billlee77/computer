@@ -1,0 +1,116 @@
+clear
+
+read data_pmt4.dat pos depth_0 depth_90 depth_180 depth_270
+!enable echo
+
+pos=pos*2.54
+depth_0 = depth_0*2.54
+depth_90 = depth_90*2.54
+depth_180 = depth_180*2.54
+depth_270 = depth_270*2.54
+depth_ave = (depth_0+depth_90+depth_180+depth_270)/4
+
+
+
+x = pos
+
+display `====================================================='
+! Average
+display `Average fitting results'
+
+y = depth_ave
+set pchar -1
+set color 1
+!graph x y 
+set pchar 0
+!set color 2
+!graph\noaxes x y
+set color 1
+
+scalar\vary r a b
+r = 13.2
+a = 6
+b = -11
+
+fit y = sqrt(r**2-(x-a)**2) + b
+fit\update yfit0
+
+set color 2
+graph x y-yfit0
+set color 1
+
+display `====================================================='
+! 0 Degree
+display `0 Degree fitting results'
+
+y = depth_0
+set pchar -1
+graph\noaxes x y-yfit0 
+set pchar 0
+graph\noaxes x y-yfit0 
+
+scalar\vary r a b
+r = 13.2
+a = 6
+b = -11
+
+fit y = sqrt(r**2-(x-a)**2) + b
+fit\update yfit
+
+
+display `====================================================='
+display `90 Degree fitting results'
+y = depth_90
+set pchar -1
+graph\noaxes x y-yfit0 
+set pchar 0
+graph\noaxes x y-yfit0 
+
+scalar\vary r a b
+r = 13.2
+a = 6
+b = -11
+
+fit y = sqrt(r**2-(x-a)**2) + b
+fit\update yfit
+
+
+display `====================================================='
+! 180 Degree
+display `180 Degree fitting results'
+y = depth_180
+set pchar -1
+graph\noaxes x y-yfit0 
+set pchar 0
+graph\noaxes x y-yfit0 
+
+scalar\vary r a b
+r = 13.2
+a = 6
+b = -11
+
+fit y = sqrt(r**2-(x-a)**2) + b
+fit\update yfit
+
+! 270 Degree
+
+display `====================================================='
+display `270 Degree fitting results'
+y = depth_270
+set pchar -1
+graph\noaxes x y-yfit0 
+set pchar 0
+!set color 2
+graph\noaxes x y-yfit0 
+set color 1
+
+scalar\vary r a b
+r = 13.2
+a = 6
+b = -11
+
+fit y = sqrt(r**2-(x-a)**2) + b
+fit\update yfit
+
+scale 0 6 6 -0.012 0.012 6
+replot

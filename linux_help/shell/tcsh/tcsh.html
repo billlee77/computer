@@ -1,0 +1,5338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Tcsh shell variables</title>
+<meta http-equiv="PICS-Label" content="(PICS-1.1 &quot;http://www.icra.org/ratingsv02.html&quot; l gen true r (cz 1 lz 1 nz 1 oz 1 vz 1) &quot;http://www.rsac.org/ratingsv01.html&quot; l gen true r (n 0 s 0 v 0 l 0) &quot;http://www.classify.org/safesurf/&quot; l gen true r (SS~~000 1))">
+<link rel="schema.DC" href="http://purl.org/DC/elements/1.0/">
+<link rel="SHORTCUT ICON" href="http://www.ibm.com/favicon.ico">
+<meta name="Owner" content="developerWorks Content/Raleigh/IBM">
+<meta name="DC.Language" scheme="rfc1766" content="en">
+<meta name="IBM.Country" content="ZZ">
+<meta name="Security" content="Public">
+<meta name="IBM.SpecialPurpose" content="SP001">
+<meta name="IBM.PageAttributes" content="sid=1003,1004">
+<meta name="Source" content="v16 Template Generator">
+<meta name="Robots" content="index,follow">
+<meta name="Abstract" content="Tcsh is one of the most popular UNIX shells. Learn how you can use tcsh shell variables to make your work easier and take advantage of tcsh's advanced security features.">
+<meta name="Description" content="Tcsh is one of the most popular UNIX shells. Learn how you can use tcsh shell variables to make your work easier and take advantage of tcsh's advanced security features.">
+<meta name="Keywords" content="csh, tcsh, UNIX, shell variables, arpan sen, sen, dddauca">
+<meta name="DC.Date" scheme="iso8601" content="2008-08-26">
+<meta name="DC.Type" scheme="IBM_ContentClassTaxonomy" content="CT316">
+<meta name="DC.Subject" scheme="IBM_SubjectTaxonomy" content="SWG10">
+<meta scheme="IBM_WTMCategory" name="IBM.WTMCategory" content="SOFDCAIXZZ">
+<meta name="DC.Rights" content="© Copyright&nbsp;IBM Corporation&nbsp;2008">
+<meta name="IBM.Effective" scheme="W3CDTF" content="2008-08-26">
+<meta name="title" content="Tcsh shell variables">
+
+<!-- HEADER_SCRIPTS_AND_CSS_INCLUDE -->
+<link href="tcsh_files/all.css" media="all" rel="stylesheet" title="www" type="text/css">
+<link href="tcsh_files/screen.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+<link href="tcsh_files/screen-uas.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+<link href="tcsh_files/screen-fonts.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+<link href="tcsh_files/handheld.css" media="handheld" rel="stylesheet" title="www" type="text/css">
+<link href="tcsh_files/print.css" media="print" rel="stylesheet" title="www" type="text/css">
+<link href="tcsh_files/overlay.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+
+<!-- dW-specific CSS -->
+<link href="tcsh_files/dw-screen.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+<link href="tcsh_files/dw-screen-comments-ratings-signin.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+<link href="tcsh_files/jquery.css" media="screen,projection" rel="stylesheet" title="www" type="text/css">
+<!-- xM Masthead/Footer -->
+<link href="tcsh_files/dw-mf0311.css" rel="stylesheet" title="www" type="text/css">
+<script src="tcsh_files/ibmcommon.js" type="text/javascript">//</script><link title="IBM Search" href="http://www.ibm.com/search/opensearch/description.xml" type="application/opensearchdescription+xml" rel="search">
+<script src="tcsh_files/dynamicnav.js" type="text/javascript">//</script>
+
+<!-- dW functional JS -->
+<script language="JavaScript" src="tcsh_files/urltactic.js" type="text/javascript"></script>
+<!-- Rating_START -->
+<script language="JavaScript" src="tcsh_files/showrating.js" type="text/javascript"></script>
+<style type="text/css">
+.metavalue {
+  display: none;
+}
+</style>
+<!-- Rating_END --><!-- RESERVED_HEADER_INCLUDE -->
+<script language="javascript" src="tcsh_files/ajax1.js" type="text/javascript"></script>
+<script language="javascript" src="tcsh_files/search_counter-maverick.js" type="text/javascript"></script>
+<script language="javascript" src="tcsh_files/request_referer_capture-maverick.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+ <!--
+ setDefaultQuery('');
+ //-->
+</script>
+<script language="JavaScript" type="text/javascript">
+ <!--
+ function openNewWindow(url,tar,arg){window.open(url,tar,arg);}
+ //-->
+</script>
+<!-- Include file support -->
+<script language="JavaScript" type="text/javascript">
+(function($) {
+	jQuery.extend({
+		getInc: function(u,d){
+			if(u==null)return;
+			jQuery.ajax({
+	    		type: "GET",
+			url: u,
+			dataType: "text",
+	        	success: function(t) {
+				jQuery(d).html(t);
+				ibmCommon.initShowHide(jQuery(d).children()[0]);			
+			},
+			async: true
+			});
+		}
+	});
+})(jQuery);
+</script>
+<script charset="UTF-8" src="tcsh_files/flash-detect.js" type="text/javascript" id="flashdetect"></script><script charset="UTF-8" src="tcsh_files/usen-utf8.js" type="text/javascript" id="mhMenu"></script><script charset="UTF-8" src="tcsh_files/Controller" type="text/javascript" id="wiBundle"></script></head><body id="ibm-com">
+<div id="ibm-top" class="ibm-landing-page">
+
+<!-- MASTHEAD_BEGIN -->
+<!-- MASTHEAD_BEGIN -->
+<div class="ibm-access"><a href="#ibm-content">Skip to main content</a></div>
+<div id="ibm-masthead-dw">
+  
+    <!-- TOP ROW -->    
+    <div id="dw-masthead-top-row">
+		<ul id="ibm-unav-home-dw">
+			<li id="ibm-logo">
+				<a href="http://www.ibm.com/us/en/"><img src="tcsh_files/ibm-smlogo.gif" alt="IBM®" height="16" width="44"></a>
+			</li>
+		</ul>
+        <ul id="ibm-mast-options-dw">
+		    <li id="dw-mast-top-0">
+				<a class="" href="http://www.ibm.com/developerworks/dwwi/DWAuthRouter?m=loginpage&amp;lang=en&amp;d=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Faix%2Flibrary%2Fau-tcsh%2Findex.html" title="">Sign in (or register)</a>
+			</li>
+		    <li id="dw-mast-top-1">
+				<a href="#SELECTLANG">English</a><img class="dw-preload" src="tcsh_files/arrow-down-active.gif" alt="" height="7" width="8">
+			</li>
+		    <li id="dw-mast-top-2" class="dw-mf-hide">
+				<a href="#">[userid] <img src="tcsh_files/photo.gif" alt="PHOTO" class="dw-mast-profimg" height="20" width="20"></a>
+			</li>
+		</ul>
+	</div>
+    
+    <!-- TOP ROW SLIDER -->
+    <div id="ibm-my-menu-dw">    
+        <div class="ibm-ribbon-pane-dw">
+            <div class="ibm-ribbon-section-dw">
+                <!-- Sign-in -->
+				<div class="dw-mast-columns">                
+					<div class="dw-mast-col-1-1">
+					    <div class="dw-mast-close">
+							<ul>
+								<li><a href="#">Close [x]</a></li>
+							</ul>
+						</div>
+						<div id="dw-mast-sso">
+							<div id="dw-mast-sso-reg">
+								<p>If you don't have an IBM ID and password, <a href="#" onclick="(function () {window.location='/developerworks/dwwi/DWAuthRouter?m=reg&amp;lang=en&amp;d='+encodeURIComponent(location.href);})();">register here</a>.</p>
+							</div>
+							<div id="signin_error_mf" class="no-display"></div>
+							<div id="dw-mast-sso-form">
+								<form id="sForm_mf" action="" method="post" name="sForm_name_mf" onsubmit="return false;">
+									<div id="dw-mast-sso-id" class="dw-mast-sso-id-en">
+										<label for="ibmid_mf">IBM ID:</label>
+										<input class="" id="ibmid_mf" name="ibmid_name_mf" maxlength="100" onkeypress="handleEP(event,this.form,'mf');" type="text">
+									</div>
+									<div id="dw-mast-sso-pw" class="dw-mast-sso-pw-en">
+										<label for="pw_mf">Password:</label>
+										<input class="" id="pw_mf" value="" name="pw_name_mf" maxlength="100" onkeypress="handleEP(event,this.form,'mf');" type="password">
+									</div>
+									<div id="dw-mast-sso-target" class="dw-mast-sso-target-en">
+										<label for="AfterSignIn_mf">After sign in:</label>
+										<select id="AfterSignIn_mf" name="AfterSignIn_name_mf">
+											<option selected="selected" value="">Stay on the current page</option>
+											<option value="/developerworks/mydeveloperworks/profiles/html/myProfileView.do?lang=en">My developerWorks profile</option>
+											<option value="/developerworks/mydeveloperworks/homepage?lang=en">My developerWorks home</option>
+										</select>
+									</div>					
+									<div id="dw-mast-sso-terms">
+										<p class="dw-mf-perm-box">
+											<input id="perm_mf" name="perm_name_mf" type="checkbox"><label for="perm_mf"> Keep me signed in.</label>
+										</p>
+										<p class="dw-mast-sso-terms-en">By clicking <strong>Submit</strong>, you agree to the <a href="https://www.ibm.com/developerworks/community/terms/">developerWorks terms of use</a>.</p>
+									</div>
+									<div>
+										<input class="dw-mf-submit-btn" name="ibm_submit_name_mf" value="Submit" onclick="signin('mf');return false;" type="submit">
+									</div>
+								</form>
+							</div>
+							<div id="dw-mast-sso-update">
+								<ul>
+									<li><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/dwwi/jsp/WSHelp.jsp?lang=en_US">Forgot your IBM ID?</a></li>
+								</ul>
+								<!--[if IE 9]><div class="dw-mf-update-ie9"><![endif]-->
+								<ul class="dw-mf-pwupdate">
+									<li><a class="ibm-forward-link" href="#" onclick="(function () {window.location='https://www.ibm.com/account/profile?page=forgot&amp;lang=en_US&amp;appname=ibm&amp;required=null&amp;d='+encodeURIComponent(getAuthUrl())+'%3Fm%3Dloginpage%26lang%3Den_US%26d%3D'+encodeURIComponent(location.href);})();">Forgot your password?</a></li>
+									<li><a class="ibm-forward-link" href="#" onclick="(function () {window.location='https://www.ibm.com/account/profile?page=chpw&amp;lang=en_US&amp;appname=ibm&amp;required=null&amp;d='+encodeURIComponent(location.href);})();">Change your password</a></li>
+								</ul>
+								<!--[if IE 9]></div><![endif]-->
+							</div>
+							<div id="dw-mast-sso-text">
+								<p>The first time you sign into developerWorks, a <strong>profile</strong>
+ is created for you.  This profile includes the first name, last name, 
+and display name you identified when you registered with developerWorks.
+  <strong>Select information in your developerWorks profile is displayed to the public, but you may edit the information at any time.</strong>  Your first name, last name (unless you choose to hide them), and display name will accompany the content that you post.</p>
+								<p class="dw-mf-secure">All information submitted is secure.</p>
+							</div>
+						</div>
+                    
+						<div id="dw-mast-dname" class="dw-mf-hide">
+							<p>The first time you sign in to developerWorks, a profile is 
+created for you, so you need to choose a display name.  Your display 
+name accompanies the content you post on developerworks.</p><p><strong>Please choose a display name between 3-31 characters</strong>.  Your display name must be unique in the developerWorks community and should not be your email address for privacy reasons.</p>
+							<div id="signin_dname_error_mf" class="no-display"></div>
+							<div id="dw-mast-dname-form">
+								<form id="dForm_mf" action="" method="post" name="dForm_name_mf" onsubmit="return false;">
+									<div id="dw-mast-dname-mf">
+										<label for="dname_mf">Display name:</label>
+										<input id="dname_mf" name="dname_name_mf" maxlength="31" size="25" onkeypress="handleEP(event,this.form,'mf');" type="text">
+									</div>
+									<div id="dw-mast-dname-terms">
+										<p>By clicking <strong>Submit</strong>, you agree to the <a href="https://www.ibm.com/developerworks/community/terms/">developerWorks terms of use</a>.</p>
+									</div>
+									<div>
+										<input class="dw-mf-submit-btn" name="dname_submit_name_mf" value="Submit" onclick="signin('mf');return false;" type="submit">
+									</div>
+								</form>								
+							</div>
+							<div id="dw-mast-dname-secure">
+								<p class="dw-mf-secure">All information submitted is secure.</p>
+							</div>
+						</div>
+
+						<div id="dw-mast-auth" class="dw-mf-hide">
+							<div>
+								<h2>My developerWorks:</h2>
+								<ul>
+									<li><a id="dw-mast-top-0-0" href="http://www.ibm.com/developerworks/mydeveloperworks/profiles/html/myProfileView.do?lang=en">My profile</a></li>
+									<li><a href="http://www.ibm.com/developerworks/mydeveloperworks/homepage?lang=en">My home</a></li>
+									<li><a href="http://www.ibm.com/developerworks/mydeveloperworks/groups/service/html/mycommunities?lang=en">My groups</a></li>
+								</ul>     
+							</div>
+							<div id="dw-mast-notify" class="dw-mf-hide">
+								<h2>My notifications:</h2>
+								<ul>
+									<li><a id="new_notify" href="http://www.ibm.com/developerworks/mydeveloperworks/homepage?lang=en">{[num_notify] new notifications}([num_notify] new notification)</a></li>
+									<li><a id="new_invite" href="http://www.ibm.com/developerworks/mydeveloperworks/profiles/html/wc.do?action=in&amp;requireAuth=true&amp;widgetId=friends&amp;lang=[lang]">{[num_invite] network requests}([num_invite] network request)</a></li>  
+								</ul>
+							</div>
+							<div class="dw-mast-more">
+								<ul class="ibm-link-list">
+									<li><a class="dw-more-link" href="#" onclick="signOut(); return false;"><strong>Sign out</strong></a></li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>					
+                   
+                </div>
+                <!-- Language selector --> 
+				<div class="dw-mast-columns">
+					<div class="dw-mast-col-2-1">
+						<h2>Select a language:</h2>
+						<ul>
+							<li><a id="dw-mast-top-1-0" href="http://www.ibm.com/developerworks/">English</a></li>
+							<li><a href="http://www.ibm.com/developerworks/cn/">中文</a></li>
+							<li><a href="http://www.ibm.com/developerworks/jp/">日本語</a></li>
+							<li><a href="http://www.ibm.com/developerworks/kr/">한국어</a></li>
+						</ul>
+					</div>
+					<div class="dw-mast-col-2-2">
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/ru/">Русский</a></li>
+							<li><a href="http://www.ibm.com/developerworks/br/">Português (Brasil)</a></li>
+							<li><a href="http://www.ibm.com/developerworks/ssa/">Español</a></li>
+							<li><a href="http://www.ibm.com/developerworks/vn/">Việt</a></li>
+						</ul>
+					</div>
+					<div class="dw-mast-close">
+						<ul>
+							<li><a href="#">Close [x]</a></li>
+						</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM ROW -->
+    <div id="ibm-universal-nav-dw">
+        <ul id="ibm-unav-links-dw">
+            <li id="ibm-unav-home-dwlogo">
+				<a href="http://www.ibm.com/developerWorks/"><img src="tcsh_files/dw-wordmark.gif" alt="developerWorks®" height="32" width="218"></a>
+            </li>
+        </ul>
+        <ul id="ibm-menu-links-dw">
+            <li id="dw-mast-nav-0"><a href="http://www.ibm.com/developerworks/topics/">Technical topics</a></li>
+            <li id="dw-mast-nav-1"><a href="http://www.ibm.com/developerworks/downloads/">Evaluation software</a></li>
+            <li id="dw-mast-nav-2"><a href="http://www.ibm.com/developerworks/community/">Community</a></li>
+            <li id="dw-mast-nav-3"><a href="http://www.ibm.com/developerworks/events/">Events</a></li>
+        </ul>
+			<form id="ibm-search-form" action="//www.ibm.com/search/csass/search/" method="get" name="form1">
+				<input name="sn" value="dw" type="hidden">
+				<input name="lang" value="en" type="hidden">
+				<input name="cc" value="US" type="hidden">
+				<input name="en" value="utf" type="hidden">
+				<input name="hpp" value="20" type="hidden">
+				<input name="dws" value="dw" type="hidden">
+				<p>
+				<label for="q"><img alt="Search developerWorks" src="tcsh_files/c_002.gif" height="1" width="1"></label>
+				<input value="Search developerWorks" name="q" maxlength="100" id="q" type="text">
+				<input id="ibm-search" class="ibm-btn-search" name="Search" value="Search" type="submit">
+				</p>
+			</form>
+    </div>
+    
+    <!-- BOTTOM ROW SLIDER -->
+    <div id="ibm-common-menu-dw">
+        <div class="ibm-ribbon-pane-dw dw-ribbon-pane-en">
+            <div class="ibm-ribbon-section-dw">
+				<!-- Technical topics category -->
+                <div class="dw-mast-columns">
+					<div class="dw-mast-col-3-1">
+						<h2>IBM products:</h2>
+						<ul>
+							<li><a id="dw-mast-nav-0-0" href="http://www.ibm.com/developerworks/aix/">AIX and UNIX</a></li>
+							<li><a href="http://www.ibm.com/developerworks/ibmi/">IBM i</a></li>
+							<li><a href="http://www.ibm.com/developerworks/data/">Information Management</a></li>
+							<li><a href="http://www.ibm.com/developerworks/lotus/">Lotus</a></li>
+							<li><a href="http://www.ibm.com/developerworks/rational/">Rational</a></li>
+							<li><a href="http://www.ibm.com/developerworks/tivoli/">Tivoli</a></li>  
+							<li><a href="http://www.ibm.com/developerworks/websphere/">WebSphere</a></li>     
+						</ul>     
+                    </div>
+					<div class="dw-mast-col-3-2">
+						<h2>Technologies:</h2>
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/java/">Java technology</a></li>
+							<li><a href="http://www.ibm.com/developerworks/linux/">Linux</a></li>
+							<li><a href="http://www.ibm.com/developerworks/opensource/">Open source</a></li>
+							<li><a href="http://www.ibm.com/developerworks/webservices/">SOA and web services</a></li>
+							<li><a href="http://www.ibm.com/developerworks/web/">Web development</a></li>  
+							<li><a href="http://www.ibm.com/developerworks/xml/">XML</a></li>     
+						</ul>
+                    </div>
+					<div class="dw-mast-col-3-3 dw-mast-col-3-3-en">
+						<h2>Solutions:</h2>
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/cloud/">Cloud computing</a></li>
+							<li><a href="http://www.ibm.com/developerworks/industry/">Industries</a></li>
+							<li><a href="http://www.ibm.com/developerworks/servicemanagement/">Integrated Service Management</a></li>
+						</ul>
+						<ul>
+							<li class="dw-mast-newgroup"><a href="http://www.ibm.com/developerworks/library/">Technical library</a></li>
+							<li><a href="http://www.ibm.com/developerworks/feeds/">Feeds and syndication</a></li>
+							<li><a href="https://www.ibm.com/developerworks/newsletter/">Newsletters</a></li>
+						</ul>        
+                    </div>
+                    <div class="dw-mast-more dw-mast-more-en">
+						<ul class="ibm-link-list">
+							<li><a class="dw-more-link" href="http://www.ibm.com/developerworks/topics/"><strong>More about Technical topics</strong></a></li>
+						</ul>
+                    </div>
+                    <div class="dw-mast-close">
+						<ul>
+							<li><a href="#">Close [x]</a></li>
+						</ul>
+                    </div>
+				</div>
+				<!-- Evaluation software category -->
+                <div class="dw-mast-columns">
+					<div class="dw-mast-col-1-1">
+						<h2>Find software by:</h2>
+						<ul>
+							<li><a id="dw-mast-nav-1-0" href="http://www.ibm.com/developerworks/downloads/product.html">IBM product</a></li>
+							<li><a href="http://www.ibm.com/developerworks/downloads/evalmethod.html">Evaluation method (Download, online trial, product beta, cloud)</a></li>
+							<li><a href="http://www.ibm.com/developerworks/downloads/industry.html">Industry</a></li>
+						</ul>            
+                    </div>
+                    <div class="dw-mast-more">
+						<ul class="ibm-link-list">
+							<li><a class="dw-more-link" href="http://www.ibm.com/developerworks/downloads/"><strong>More about Evaluation software</strong></a></li>
+						</ul>
+                    </div>
+                    <div class="dw-mast-close">
+						<ul>
+							<li><a href="#">Close [x]</a></li>
+						</ul>
+                    </div>
+				</div>
+				<!-- Community category -->
+                <div class="dw-mast-columns">
+					<div class="dw-mast-col-3-1">
+						<ul>
+							<li><a id="dw-mast-nav-2-0" href="https://www.ibm.com/developerworks/community/homepage/">My home</a></li>
+							<li><a href="https://www.ibm.com/developerworks/community/profiles/">Profiles</a></li>
+							<li><a href="https://www.ibm.com/developerworks/community/groups/">Groups</a></li>
+							<li><a href="https://www.ibm.com/developerworks/community/blogs/">Blogs</a></li>
+							<li><a href="https://www.ibm.com/developerworks/community/bookmarks/">Bookmarks</a></li>  
+						</ul>     
+                    </div>
+					<div class="dw-mast-col-3-2">
+						<ul>
+							<li><a href="https://www.ibm.com/developerworks/forums/">Forums</a></li>
+							<li><a href="https://www.ibm.com/developerworks/mydeveloperworks/wikis/">Wikis</a></li>
+							<li><a href="https://www.ibm.com/developerworks/community/files/">Files</a></li>
+							<li><a href="https://www.ibm.com/developerworks/community/activities/">Activities</a></li>
+							<li><a href="https://www.ibm.com/developerworks/community/podcasts/">Podcasts</a></li>     
+						</ul>
+                    </div>
+					<div class="dw-mast-col-3-3 dw-mast-col-3-3-en">
+						<ul>
+							<li><a href="http://www.ibm.com/developerworks/champion/">IBM Champion program</a></li>
+						</ul>
+                    </div>
+                    <div class="dw-mast-more dw-mast-more-en">
+						<ul class="ibm-link-list">
+							<li><a class="dw-more-link" href="http://www.ibm.com/developerworks/community/"><strong>More about Community</strong></a></li>
+						</ul>
+                    </div>
+                    <div class="dw-mast-close">
+						<ul>
+							<li><a href="#">Close [x]</a></li>
+						</ul>
+                    </div>
+				</div>
+				<!-- Events category -->
+                <div class="dw-mast-columns">
+					<div class="dw-mast-col-1-1">
+						<ul>
+							<li><a id="dw-mast-nav-3-0" href="http://www.ibm.com/developerworks/briefings/">Briefings</a></li>
+							<li><a href="http://www.ibm.com/developerworks/find/webcasts/">Webcasts</a></li>
+							<li><a href="http://www.ibm.com/developerworks/find/events/">Find events (briefings, webcasts, conferences...)</a></li>
+						</ul>            
+                    </div>
+                    <div class="dw-mast-more">
+						<ul class="ibm-link-list">
+							<li><a class="dw-more-link" href="http://www.ibm.com/developerworks/events/"><strong>More about Events</strong></a></li>
+						</ul>
+                    </div>
+                    <div class="dw-mast-close">
+						<ul>
+							<li><a href="#">Close [x]</a></li>
+						</ul>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div id="fdiv" class="ibm-access"><embed type="application/x-shockwave-flash" src="tcsh_files/connect.swf" id="sflash" name="sflash" quality="high" menu="false" wmode="window" movie="https://www.ibm.com/developerworks/js/dw-mf/connect.swf" swliveconnect="true" allowscriptaccess="always" height="1" width="1"></div>
+<!-- MASTHEAD_END --><!-- MASTHEAD_END -->
+
+<div id="ibm-pcon">
+
+<!-- CONTENT_BEGIN -->
+<div id="ibm-content">
+
+<!-- Navigation_Trail_BEGIN -->
+<!-- &nbsp; -->
+      <div id="ibm-content-head"><ul id="ibm-navigation-trail"><li class="ibm-first"><a href="http://www.ibm.com/developerworks/">developerWorks</a></li><li><a href="http://www.ibm.com/developerworks/aix/">AIX and UNIX</a></li><li><a href="http://www.ibm.com/developerworks/views/aix/library.jsp">Technical library</a></li></ul></div>
+<!-- Navigation_Trail_END -->
+
+<!-- dW_Summary Area_START -->
+<div id="dw-summary-article">
+
+<div class="dw-content-head">
+<h1>Tcsh shell variables</h1><p><em>Use and manipulate tcsh shell variables for fun and profit</em></p>
+</div>
+
+<div class="ibm-container-body ibm-two-column">
+
+<div class="ibm-column ibm-first">
+<div class="author"><a class="dwauthor" rel="#authortip1" href="#author1">Arpan Sen</a> (<a href="mailto:arpansen@gmail.com?subject=Tcsh%20shell%20variables&amp;cc=mmccrary@us.ibm.com">arpansen@gmail.com</a>), Independent author</div><div style="display: none;" id="authortip1" class="dwauthor-onload-state ibm-no-print">Arpan Sen is a lead engineer working on the development of software in
+                the electronic design automation industry. He has worked on several
+                flavors of UNIX, including Solaris, SunOS, HP-UX, and IRIX as well as
+                Linux and Microsoft Windows for several years. He takes a keen interest in
+                software performance-optimization techniques, graph theory, and parallel
+                computing. Arpan holds a post-graduate degree in software systems. You can
+                reach him at arpansen@gmail.com.</div>
+<p></p>
+<p><strong>Summary:</strong>&nbsp; Tcsh is one of the most popular UNIX®
+ shells. Learn how you can use tcsh shell variables to make your work 
+easier and how to take advantage of tcsh's advanced security features.</p>
+
+<div id="dw-tag-content" class="ibm-no-print"><p><b>Tags for this article:</b>&nbsp; <a href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix')">aix</a>, <a href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix_and_unix')">aix_and_unix</a>, <a href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=application_development')">application_development</a>, <a href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=system_administration')">system_administration</a>, <a href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=tcsh')">tcsh</a>, <a href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=tcsh_shell')">tcsh_shell</a>, <a href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=tools_and_utilities')">tools_and_utilities</a>, <a href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=unix')">unix</a></p></div><div id="dw-moretags-access" class="ibm-access"></div>
+<p class="ibm-no-print"></p><div id="dw-tag-this" class="ibm-no-print"><a class="ibm-external-link" onclick="jQuery.launchTagThisWindow(); return false;" href="#">Tag this!</a></div><div id="interestShow" class="ibm-no-print"><div id="dw-interest-anon"><a id="intAnonBtn" class="ibm-external-link" href="">Update My dW interests</a> (<a class="dw-interest" href="https://www.ibm.com/developerworks/dwwi/DWAuthRouter?m=loginpage&amp;d=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Faix%2Flibrary%2Fau-tcsh%2Findex.html">Log in</a> | <a class="dw-interest" href="#overlay" onclick="ibmCommon.Overlays.show('dwmyinterestadd', this);return false;">What's this?</a>) <a class="ibm-access" href="#dwmyinterestaddhelp">Skip to help for Update My dW interests</a></div></div>
+</div>
+
+<div class="ibm-column ibm-second">
+<p class="leading"><b>Date:</b>&nbsp; 26 Aug 2008
+<br><b>Level: </b>&nbsp;Intermediate
+<br class="ibm-ind-link"><b>PDF:</b>&nbsp; <a href="http://public.dhe.ibm.com/software/dw/aix/au-tcsh/au-tcsh-pdf.pdf">A4 and Letter</a> (43KB | 10 pages)<a class="ibm-external-link" href="http://www.adobe.com/products/acrobat/readstep2.html">Get Adobe® Reader®</a>
+<br><strong>Also available in:&nbsp;</strong>
+&nbsp;<a href="http://www.ibm.com/developerworks/cn/aix/library/au-tcsh/">Chinese</a>
+
+
+
+
+
+
+<br>
+<br><strong>Activity:</strong>&nbsp; 27108 views
+<br><strong>Comments:</strong> &nbsp; <span id="nCmts">0&nbsp;(<a class="dw-view-comment" href="#icomments">View</a>&nbsp;|&nbsp;<a onclick="showSignIn();return false;" href="#">Add comment</a> - Sign in)</span>
+<!-- Rating_Area_Begin -->
+</p><div id="art-rating-summary"><img alt="Average rating 5 stars based on 19 votes" src="tcsh_files/stars120x20-5b.jpg" class="dw-avg-rating"> Average rating (19 votes)<br><a class="dw-view-comment" href="#iratings">Rate this article</a></div>
+<!-- Rating_Area_End -->
+
+</div>
+
+</div>
+</div>
+<!-- dW_Summary_Area_END -->
+
+<!-- CONTENT_BODY -->
+<div id="ibm-content-body">
+
+<!-- MAIN_COLUMN_BEGIN -->
+<div id="ibm-content-main">
+
+<!-- Related_Searches_Area -->
+<!-- Related_Searches_Area_Begin -->
+<script type="text/javascript" language="javascript">
+	     capture_referrer();
+</script>
+
+<div id="dw-related-searches-article" style="display: block;">
+<div class="ibm-container ibm-alternate-two">
+<div class="ibm-container-body">
+
+<!--  START : HTML FOR ARTICLE SEARCH -->
+  <div id="article_results" style="display: block;">
+
+</div>
+<!--  END : HTML FOR ARTICLE SEARCH -->
+
+</div>
+</div>
+</div>
+<!-- Related_Searches_Area_End -->
+<!-- MAIN_COLUMN_CONTAINER_BEGIN -->
+<div class="ibm-container">
+
+<!-- MAIN_COLUMN_CONTENT_BEGIN -->
+<p>Tcsh, an enhancement of the original Berkeley UNIX C shell, is one of
+ the most popular UNIX shells. This article looks at some of the power 
+that tcsh brings to the table: it provides shell variables that make 
+several regular tasks less time consuming, and it also brings in 
+advanced security features like monitoring of users and their command 
+histories. All commands and scripts described in this article have been 
+tested with tcsh 6.15 (see the <a href="#resources">Resources</a> section).</p>
+
+<p><a name="N1005E"><span class="atitle">How to set shell variables</span></a></p>
+<p>Tcsh comes with several built-in shell variables. Some of these, like <code>rmstar</code> and <code>noclobber</code>, are boolean in nature, so I recommend that you use <code>set &lt;variablename&gt; </code> to turn them on. For other built-ins like <em>prompt</em>, you need to provide a value using <code>set &lt;variablename&gt;=&lt;value&gt;</code>. To unset a variable, use <code>unset &lt;variablename&gt;</code>. Listing 1 shows some basic examples.</p>
+
+<br><a name="listing1"><b>Listing 1. How to set/unset shell built-in variables</b></a><br><table width="70%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+tcsh# set prompt="arpan@tintin# "
+arpan@tintin# set autologout=1
+arpan@tintin# unset prompt
+ echo $autologout
+1
+ &lt;prompt has disappeared due to unset operation&gt;
+</pre></td></tr></tbody></table><br>
+
+<p>The next few sections describe some of the most useful features tcsh provides through shell built-ins. </p>
+
+<p><a name="N1008C"><span class="atitle">Prevent disaster with rm</span></a></p>
+<p>Perhaps the most common way of messing things up in UNIX is to inadvertently issue
+    <code>rm *</code>. Most users don't use the <code>-i</code> option with <code>rm</code>, thereby deleting the
+    files instantly. Tcsh defines a shell variable <code>rmstar</code>; 
+when
+    turned on, it provides the user with a prompt that requests 
+confirmation of the user's action. However, it doesn't work if the user 
+runs <code>rm –f *</code> at the command prompt. Listing 2 shows the use of <code>rmstar</code>.</p>
+
+<br><a name="listing2"><b>Listing 2. Using the rmstar shell variable</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin# pwd
+/home/arpan/scratchpad
+arpan@tintin# ls
+file1 file2
+arpan@tintin# set rmstar
+arpan@tintin# rm *
+Do you really want to delete all files? [n/y] n
+arpan@tintin# ls
+file1 file2
+arpan@tintin# unset rmstar
+arpan@tintin# rm * 
+arpan@tintin# ls
+arpan@tintin# 
+</pre></td></tr></tbody></table><br>
+
+<p><a name="N100B8"><span class="atitle">Prevent accidental overwriting of existing files</span></a></p>
+<p>Another typical doomsday scenario is the accidental overwriting of an
+ existing file. To prevent this from happening, always keep the <code>noclobber</code>
+ shell variable turned on. (This variable is also available in the csh 
+shell.) Note that this can only save you while you're trying to redirect
+ output to an existing file -- it isn't any help if you're using <code>cp</code> or <code>mv</code> to overwrite the file. See Listing 3. </p>
+
+<br><a name="listing3"><b>Listing 3. Using noclobber to prevent accidental file overwrite</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin# ls 
+file1 file2
+arpan@tintin# set noclobber
+arpan@tintin# echo testing &gt; file1
+file1: File exists.
+arpan@tintin# unset noclobber
+arpan@tintin# echo testing &gt; file1
+arpan@tintin# cat file1
+testing
+</pre></td></tr></tbody></table><br>
+
+<p>Also note that the shell operators <code>&gt;&gt;</code> and <code>&gt;!</code> override <code>noclobber</code>.
+ The former operator appends to the existing file (so data may still be 
+recovered), and the latter overwrites existing content. </p>
+<p><a name="N100E7"><span class="atitle">Automatic Tab completion</span></a></p>
+<p>When you're typing commands at the shell prompt, it speeds things up considerably if
+    you can type in part of the command string, click <strong>Tab</strong>,
+ and have the shell either complete the command string or provide 
+options for completion. This functionality is particularly useful with 
+long filenames -- you can key in the first few letters and let the shell
+ complete the filename. To enable this feature, you need to set the <code>autolist</code> shell variable. Listing 4 gives an example. </p>
+
+<br><a name="listing4"><b>Listing 4. Using autolist for automatic command completion</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin# ls
+this_is_a_big_file test.c threads.h
+arpan@tintin# set autolist
+arpan@tintin# vi t[TAB]
+this_is_a_big_file test.c term.h
+arpan@tintin# vi th[TAB]
+this_is_a_big_file threads.h
+</pre></td></tr></tbody></table><br>
+
+<p>In this example, <code>[TAB]</code> indicates clicking the Tab key. Type in <code><strong>vi thi[TAB]</strong></code> at the shell prompt, and the shell expands <code>thi[TAB]</code> to <code>this_is_a_big_file</code>.</p>
+<p><a name="N10116"><span class="atitle">Use addsuffix to distinguish directories during Tab completion</span></a></p>
+<p>If the <code>addsuffix</code> shell variable is set along with 
+automatic Tab completion, it's easier to distinguish folders because 
+tcsh suffixes them with a / character when a match is found. It suffixes
+ normal files with a space. Listing 5 shows a situation with a folder 
+named <em>documents</em> and a file named <em>deliverables</em> in the same folder; the user types in <code><strong>do[TAB]</strong></code>, and in response the shell displays <code>documents/</code>. If the addsuffix variable is unset, then tcsh displays only <code>documents</code>, which is inconvenient because you need to determine whether <em>documents</em> is a normal file or a folder. </p>
+
+<br><a name="listing5"><b>Listing 5. Using addsuffix for additional clarity while using autolist</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin# ls
+documents deliverables
+arpan@tintin# set autolist
+arpan@tintin# ls do[TAB]
+arpan@tintin# ls documents
+arpan@tintin# set addsuffix
+arpan@tintin# ls do[TAB]
+arpan@tintin# ls documents/
+arpan@tintin# unset autosuffix
+arpan@tintin# ls do[TAB]
+arpan@tintin# ls documents
+</pre></td></tr></tbody></table><br>
+
+<p><a name="N10144"><span class="atitle">Use the fignore shell variable to avoid accidental deletion</span></a></p>
+<p>It makes sense to restrict the automatic Tab-completion feature under
+ certain circumstances. For example, if vi is the most-used command in a
+ session, then you can save time if only text files come up during Tab 
+completion. Likewise, if .c and .cpp files aren't yet backed up and you 
+want to avoid accidental deletion at all cost, then it's best to avoid 
+files with .c/.cpp extensions during Tab completion so they aren't 
+deleted when you use <code>rm</code> followed by Tab completion. To prevent C/C++ file types from showing up during Tab completion, use <code>set fignore=(.c .cpp .h)</code>. See Listing 6. </p>
+
+<br><a name="listing6"><b>Listing 6. Using fignore to prevent source files from showing up during Tab completion</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin# set autolist
+arpan@tintin# ls
+memory.h memory.cpp kernel.c memory.o kernel.o
+arpan@tintin# rm m[TAB]
+memory.h memory.cpp memory.o
+arpan@tintin# set fignore=(.c .cpp .h)
+arpan@tintin# rm m[TAB]
+memory.o
+</pre></td></tr></tbody></table><br>
+
+<p>Note that if you use <code>rm</code> followed by Tab, as opposed to <code>m</code> followed by Tab, then all C/C++ source files appear. </p>
+<p><a name="N1016B"><span class="atitle">Automatically log out in case of no user activity</span></a></p>
+<p>Data security is a prime concern in all organizations. Leaving a 
+shell terminal open
+    inadvertently can potentially provide access to secure files, but 
+this happens all the time. You can solve this problem using the tcsh <code>autologout</code>
+ variable. When there is no user activity for a specific time (measured 
+in minutes), the user is logged off the system to tcsh (if it's the 
+login shell). If tcsh isn't the login shell, the user exits to the 
+previous shell, which isn't much help. Thus, it makes sense to have tcsh
+ as the login shell of choice in a secure environment. Listing 7 shows a
+ case of automatic logout due to inactivity. </p>
+<br><a name="listing7"><b>Listing 7. Automatic logout in case of inactivity</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin# rsh herge
+arpan@herge# set autologout=1
+arpan@herge# date
+Sat Jun 28 18:13:07 IST 2008
+
+&lt;After 1 min of inactivity&gt;
+
+arpan@herge# auto-logout
+Connection to herge closed. 
+arpan@tintin# date
+Sat Jun 28 18:14:10 IST 2008
+</pre></td></tr></tbody></table><br>
+
+<p><a name="N10183"><span class="atitle">Enhanced security in tcsh: Monitor everyone who's using the system</span></a></p>
+<p>Access to a restricted system must be continuously monitored. Tcsh provides the
+    built-in shell variable <code>watch</code>, which makes it easy to view
+    who is logging in and out of the system. The syntax is <code>set watch=(username1 ttyname1 username2 ttyname2 …)</code>. This monitors whether the user with username1 is logged on to terminal ttyname1. The special syntax <code>set watch=(any any)</code> lets you monitor all users across all system terminals. </p>
+<p>By default, watch checks the system for login/logout activity every 
+10 minutes. You can override this behavior by specifying the time 
+between activity checks as the first variable of the watch syntax: for 
+example, <code>set watch=(5 any any)</code>. See Listing 8.</p>
+
+<br><a name="listing8"><b>Listing 8. Using watch to check for login/logout activity</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin# set watch=(5 any any)
+&lt;checks for login/logout activity across system every 5 minutes)
+arpan@tintin# set watch=(b* any)
+&lt;check the login/logout activities of all users whose name starts with b across 
+    any terminal in the network&gt;
+</pre></td></tr></tbody></table><br>
+
+<p>Tcsh provides the built-in command <code>log</code>, which lists the terminals affected by watch variables and who's using them (see Listing 9). Note that using <code>log</code> without <code>watch</code> being set causes an error. </p>
+
+<br><a name="listing9"><b>Listing 9. Using log to check for terminal usage under watch</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin# log
+arpan has logged on pts/0 from 132.132.6.73
+root has logged on console
+zanies has logged pts/5 from 132.132.2.1
+</pre></td></tr></tbody></table><br>
+
+<p><a name="N101C3"><span class="atitle">Use the prompt variable to keep track of the current working directory</span></a></p>
+<p>Tcsh defines the <code>prompt</code> built-in shell variable, which 
+you can use to customize shell prompts. One of the most common UNIX 
+tasks is keeping track of which folder and machine you're currently in. 
+Instead of continuously using <code>pwd</code> and <code>hostname</code>, you can achieve the same effect by manipulating the <code>prompt</code> variable to reflect the current working directory and hostname. See Listing 10.</p>
+
+<br><a name="listing10"><b>Listing 10. Change the prompt variable to reflect the current working directory and host</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+tcsh-6.15$ pwd
+/home/arpan/ibm1
+tcsh-6.15$ hostname
+tintin
+tcsh-6.15$ echo $user
+arpan
+tcsh-6.15$ set prompt="$user@`hostname`[$cwd] "
+arpan@tintin[/home/arpan/ibm1] 
+</pre></td></tr></tbody></table><br>
+
+
+<p>But an issue remains with this approach: if you change to a different
+ folder, the prompt doesn't reflect the change. To make this change 
+continual as you switch folders, you use the special alias <code>cmdcwd</code>. If this alias is set, then tcsh executes the command that <code>cmdcwd</code> was aliased to after switching to a new folder. To reflect the changed folder in the prompt, <code>cmdcwd</code> must be aliased to the <code>set prompt</code> command (see Listing 11).</p>
+
+<br><a name="listing11"><b>Listing 11. Use the cmdcwd alias to reflect changed folders in the prompt</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+tcsh-6.15$ alias cmdcwd 'set prompt="$user@`hostname`[$cwd] " '
+tcsh-6.15$ cd 
+arpan@tintin[/home/arpan/ibm1] cd net
+arpan@tintin[/home/arpan/ibm1/net] 
+</pre></td></tr></tbody></table><br>
+
+<p>Note that this scheme works seamlessly with the <code>pushd</code> and <code>popd</code> commands as well, not just with <code>cd</code>
+ while changing folders. If you're using X-Windows, yet another smart 
+way to keep track of the current folder is to display the folder name on
+ the title bar of the xterm as you work your way across multiple 
+folders. </p>
+<p>For example, you can print some basic information on the xterm title bar using the
+    <code>echo</code> command. Type <code><strong>echo
+"[Ctrl-v][Esc]]2; Hello [Ctrl-v][Ctrl-g]"</strong></code> at the shell prompt. Note that <code> [Ctrl-v]</code> means to click the key combination <strong>Ctrl-V</strong>. Keying in this sequence displays the following at the shell prompt: <code>echo "^[]2; Hello ^G"</code>. On execution of this command, the xterm title bar displays <code>Hello</code>. Listing 12 shows how to display the current folder name in the xterm title bar along with the prompt. </p>
+
+<br><a name="listing12"><b>Listing 12. Use cmdcwd to change the prompt and set xterm title bar</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin[/home/arpan1/ibm1]# alias cwdcmd 'set prompt="$user@`hostname`[$cwd]# "; 
+    echo "^[]2;$cwd^G" '
+</pre></td></tr></tbody></table><br>
+
+
+<p><a name="N10238"><span class="atitle">Automatically correct invalid command usage</span></a></p>
+<p>Tcsh provides the built-in variable <code>correct</code>, which helps you correct invalid command usage. For example, if you want to invoke <code>perl</code> and have typed in <code>prl</code>, tcsh lets you correct it. Listing 13 gives an example. </p>
+
+<br><a name="listing13"><b>Listing 13. Automatically correct typos with tcsh</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin# set correct=cmd
+arpan@tintin# prl 
+CORRECT&gt;perl (y|n|e|a)? y
+..
+arpan@tintin# figner
+CORRECT&gt;finger (y|n|e|a)? y
+..
+</pre></td></tr></tbody></table><br>
+
+<p><a name="N10258"><span class="atitle">Periodic execution of specific commands</span></a></p>
+<p>One of the most common tasks system administrators need to do is 
+monitor disk usage and
+    take action if it nears 100%. Tcsh has a great feature that lets you
+ perform such periodic execution of events with ease. Alias <code>periodic</code> to the task you want to be executed on a periodic basis, and set the shell built-in <code>tperiod</code> equal to the number of minutes between executions of the task. Listing 14 shows how to use <code>tperiod</code> and <code>periodic</code>. Note that <code>periodic</code> is aliased to the script <code>checkdiskusage</code>, which checks for disk usage and is run by tcsh every 10 minutes.</p>
+
+<br><a name="listing14"><b>Listing 14. Use tcsh built-ins for periodic execution of commands</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin# set tperiod=10
+arpan@tintin# alias periodic checkdiskusage
+arpan@tintin# cat checkdiskusage
+df -k | awk -F" " '{print $5}' | grep "9[0-9]*"
+if ($status &lt;&gt; 0) then 
+  mail –s "disk quota exceeded 90%" root@officemail.com
+endif
+exit $status
+</pre></td></tr></tbody></table><br>
+
+<p><a name="N10284"><span class="atitle">Set a history file on a per-terminal basis</span></a></p>
+<p>It's fairly common to have the same user of a UNIX system logged on 
+from multiple terminals. To maintain the command execution history on a 
+per-terminal basis, you can use the <code>histfile</code> and <code>savehist</code> environment variables. The <code>histfile</code>
+ variable lets the user specify the name of the file where the command 
+execution history should be stored; the default is $HOME/.history. The <code>savehist</code> variable asks tcsh to store the user's last <em>N</em> commands on the shell prompt. The <code>histfile</code> variable definition in Listing 15 allows for multiple history files so you can monitor multiple terminals.</p>
+
+<br><a name="listing15"><b>Listing 15. Use the histfile and savehist variables to store the user's command history</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin# tty
+/dev/pts/0
+arpan@tintin# set savehist=25
+arpan@tintin# set histfile=~/.history_`tty | sed –e 's/\//_/g' `
+arpan@tintin# echo $histfile
+~/.history_dev_pts_0
+</pre></td></tr></tbody></table><br>
+
+<p><a name="N102AF"><span class="atitle">Monitor the time it takes to run a command</span></a></p>
+<p>To monitor the time it takes for a UNIX process to execute, you can set the <code>time</code> variable. The output displays the user time, kernel time, and
+    real elapsed time. <a href="#listing16">Listing 16</a> shows an example. </p>
+<p>Note that you can achieve the same output using tcsh's built-in <code>time</code> command, but the script change isn't minor -- every command must be prefixed with <code>time</code> (for example, <code>time du –sm /opt</code>). If you use the <code>time</code>
+ variable, the single line set time at the start of the script is good 
+enough to display the time it takes to run individual commands. </p>
+
+<br><a name="listing16"><b>Listing 16. Use time to display individual commands' execution time</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin# cat script
+set time
+du –sm /opt
+df –k /lib
+arpan@tintin# tcsh –f ./script
+198  /opt
+0.628u 0.008s 0:02.00 0.0%      0+0k 0+0io 0pf+0w
+Filesystem           1K-blocks      Used Available Use% Mounted on
+/dev/sda1             15773312     1125772  13846300   8% /
+0.000u 0.004s 0:00.02 0.0%      0+0k 0+0io 0pf+0w
+</pre></td></tr></tbody></table><br>
+
+<p><a name="N102DE"><span class="atitle">Debug shell scripts: Automatically print the exit value on error</span></a></p>
+<p>The shell variable <code>printexitvalue</code> is a useful feature of
+    tcsh that immensely aids script debugging. Typically, shell scripts and UNIX programs
+    return 0 on successful completion. If you set this variable, tcsh displays the exit
+    status whenever a script or program returns a non-zero value, thereby indicating a potential error. See Listing 17. </p>
+
+<br><a name="listing17"><b>Listing 17. Use printexitvalue for debugging</b></a><br><table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code-outline"><pre class="displaycode">
+arpan@tintin# set printexitvalue
+arpan@tintin# ls /tmp/opt
+ls: /tmp/opt: No such file or directory
+Exit 2
+arpan@tintin# cat error_script
+ls –l; return 2
+arpan@tintin# ./error_script
+./error_script: line 1: return: can only `return' from a function or sourced script
+Exit 1
+arpan@tintin# unset printexitvalue; ls /tmp/opt
+ls: /tmp/opt: No such file or directory
+</pre></td></tr></tbody></table><br>
+
+<p>Note that when you use this variable in conjunction with a shell 
+script, the non-zero return value of the script is displayed, not the 
+individual return values of commands or user programs that the script 
+may use internally. </p>
+<p><a name="N102F9"><span class="atitle">Conclusion</span></a></p>
+<p>Tcsh provides a gamut of shell variables and aliases, in addition to 
+supporting those that csh supplies. This article has focused mainly on 
+the variables that are unique to tcsh. The discussion covers only a 
+cross section of the variables; for a detailed discussion, see the <a href="#resources">Resources</a> section. </p>
+
+		<!-- CMA ID: 333145 --> <!-- Site ID: 1 --> <!-- XSLT stylesheet used to transform this file: dw-document-html-6.0.xsl -->
+<br>
+<p><a name="resources"><span class="atitle">Resources</span></a></p><p><b>Learn</b></p><ul><li>Get the latest tcsh <a href="http://www.tcsh.org/"> updates, downloads and FAQ</a>.<br><br></li><li>Visit the <a href="http://ccit.web.arizona.edu/index.php?id=1871"> Tcsh man pages</a>.<br><br></li><li>Read a <a href="http://www.bo.infn.it/alice/alice-doc/mll-doc/impgde/node23.html">brief introduction to many tcsh shell variables </a>.<br><br></li><li> Browse the <a href="http://www.ibm.com/developerworks/apps/SendTo?bookstore=safari">technology bookstore</a> for books on these and other technical topics. <br><br></li><li>
+		<a href="http://www-128.ibm.com/developerworks/podcast/">Podcasts</a>: Tune in and
+			catch up with IBM technical experts.
+	<br><br></li></ul><p><b>Get products and technologies</b></p><ul><li>
+		<a href="http://www-128.ibm.com/developerworks/downloads/?S_TACT=105AGY06&amp;amp;S_CMP=art">IBM
+			trial software</a>: Build your next development project with software for download
+			directly from developerWorks.
+	<br><br></li></ul><p><b>Discuss</b></p><ul><li>
+		Participate in the AIX and UNIX forums:
+			<ul>
+				<li><a href="http://www-128.ibm.com/developerworks/forums/dw_forum.jsp?forum=747&amp;amp;cat=72">AIX
+Forum</a>
+				</li>
+				<li><a href="http://www-128.ibm.com/developerworks/forums/dw_forum.jsp?forum=905&amp;amp;cat=72">AIX
+Forum for developers</a>
+				</li>
+				<li><a href="http://www-128.ibm.com/developerworks/forums/dw_forum.jsp?forum=907&amp;amp;cat=72">Cluster
+					Systems Management</a>
+				</li>
+				<li><a href="http://www-128.ibm.com/developerworks/forums/dw_forum.jsp?forum=935&amp;amp;cat=72">IBM
+					Support Assistant Forum</a>
+				</li>
+				<li><a href="http://www-128.ibm.com/developerworks/forums/dw_forum.jsp?forum=749&amp;amp;cat=72">Performance
+					Tools Forum</a> 
+				</li>
+				<li><a href="http://www.ibm.com/developerworks/forums/forum.jspa?forumID=748">Virtualization
+Forum</a>
+				</li>
+				<li>More <a href="http://www-128.ibm.com/developerworks/forums/dw_auforums.jsp">AIX and UNIX Forums</a>
+				</li>
+			</ul>
+  <br></li></ul>
+<p><a name="author"><span class="atitle">About the author</span></a></p><div class="ibm-container ibm-portrait-module ibm-alternate-two"><div class="ibm-container-body"><p><a name="author1"></a>Arpan Sen is a lead engineer working on the development of software in
+                the electronic design automation industry. He has worked on several
+                flavors of UNIX, including Solaris, SunOS, HP-UX, and IRIX as well as
+                Linux and Microsoft Windows for several years. He takes a keen interest in
+                software performance-optimization techniques, graph theory, and parallel
+                computing. Arpan holds a post-graduate degree in software systems. You can
+                reach him at arpansen@gmail.com.</p></div></div>
+<!-- MAIN_COLUMN_CONTENT_END -->
+
+<!-- OVERLAYS_START -->
+<!-- Report_Abuse_Start -->
+<div class="ibm-common-overlay ibm-no-print" id="reportabuseoverlay">
+   <div class="ibm-head"><p><a class="ibm-common-overlay-close" href="#">Close [x]</a></p></div>
+   <div class="ibm-body">
+      <div class="ibm-main">
+         <a class="ibm-access" name="reportabuseoverlay">Report abuse help</a>   
+         <div class="ibm-title"><h1>Report abuse</h1></div>
+         <div class="ibm-container ibm-alternate">
+            <p><strong>Thank you.</strong>  This entry has been flagged for moderator attention.</p>
+            <div class="ibm-overlay-rule"><hr></div>
+            <div class="ibm-buttons-row">
+               <input onclick="ibmCommon.Overlays.hide('reportabuseoverlay');return false;" class="ibm-btn-cancel-sec dw-btn-cancel-sec" name="ibm-cancel" value="Close" type="button">
+            </div>
+         </div>
+      </div> 
+   </div>
+<div class="ibm-footer"></div>
+</div>
+<!-- Report_Abuse_Error_Start -->
+<div class="ibm-common-overlay ibm-no-print" id="reportabuseoverlayerror">
+   <div class="ibm-head"><p><a class="ibm-common-overlay-close" href="#">Close [x]</a></p></div>
+   <div class="ibm-body">
+      <div class="ibm-main">
+         <a class="ibm-access" name="reportabuseoverlayerror">Report abuse help</a>   
+         <div class="ibm-title"><h1>Report abuse</h1></div>
+         <div class="ibm-container ibm-alternate">
+            <p class="ibm-ind-error"><strong>Report abuse submission failed.  Please try again later.</strong></p>
+            <div class="ibm-overlay-rule"><hr></div>
+            <div class="ibm-buttons-row">
+               <input onclick="ibmCommon.Overlays.hide('reportabuseoverlayerror');return false;" class="ibm-btn-cancel-sec dw-btn-cancel-sec" name="ibm-cancel" value="Close" type="button">
+            </div>
+         </div>
+      </div> 
+   </div>
+<div class="ibm-footer"></div>
+</div>
+<!-- Sign in OVERLAY STARTS HERE --> 
+<div class="ibm-common-overlay" id="signin_overlay">
+<div class="ibm-head">
+<p><a class="ibm-common-overlay-close" href="#" onclick="clearForm();">Close [x]</a></p>
+</div>
+<div class="ibm-body">
+<div class="ibm-main">
+<div class="ibm-title ibm-subtitle">
+<h1>developerWorks: Sign in</h1>
+<div id="ibm-overlay-error-signin" class="no-display"></div>
+</div>
+
+<div class="ibm-container ibm-alternate ibm-buttons-last">
+<div class="ibm-container-body">
+<p class="ibm-overlay-intro">If you don't have an IBM ID and password, <a href="#" onclick="(function () {window.location='/developerworks/dwwi/DWAuthRouter?m=reg&amp;d='+encodeURIComponent(location.href);})();">register here</a>.</p>
+<form class="ibm-column-form" id="sFormId" action="" method="post" name="sForm" onsubmit="return false;">
+<p><label for="ibmid">IBM ID:</label><span><input name="ibm-id" id="ibmid" size="25" class="required" onkeypress="handleEP(event,this.form);" type="text"><br><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/dwwi/jsp/WSHelp.jsp?lang=en_US">Forgot your IBM ID?</a></span>   
+</p> 
+<p><label for="password">Password:</label><span><input name="password" id="password" size="25" value="" class="required" onkeypress="handleEP(event,this.form);" type="password"><br><a class="ibm-forward-link" href="#" onclick="(function () {window.location='https://www.ibm.com/account/profile?page=forgot&amp;lang=en_US&amp;appname=ibm&amp;required=null&amp;d='+encodeURIComponent(getAuthUrl())+'%3Fm%3Dloginpage%26lang%3Den_US%26d%3D'+encodeURIComponent(location.href);})();">Forgot your password?</a><br><a class="ibm-forward-link" href="#" onclick="(function () {window.location='https://www.ibm.com/account/profile?page=chpw&amp;lang=en_US&amp;appname=ibm&amp;required=null&amp;d='+encodeURIComponent(location.href);})();">Change your password</a></span></p> 
+<p class="no-bottom-padding"> 
+   <label for="AfterSignIn">After sign in:</label> 
+   <span>
+
+      <select name="SignInAction" id="AfterSignIn">
+          <option selected="selected" value="">Stay on the current page</option>
+          <option value="/developerworks/mydeveloperworks/profiles/html/myProfileView.do">My developerWorks profile</option>
+          <option value="/developerworks/mydeveloperworks/homepage/">My developerWorks home</option>
+      </select>
+   </span>
+</p>
+<p class="dw-perm-box">
+	<span><input id="perm" name="perm_name" type="checkbox"><label for="perm"> Keep me signed in.</label></span>
+</p>
+<div class="ibm-overlay-rule"><hr></div>
+<p>By clicking <strong>Submit</strong>, you agree to the <a href="https://www.ibm.com/developerworks/community/terms/">developerWorks terms of use</a>.</p>
+<div class="ibm-buttons-row">
+   <p><input class="ibm-btn-arrow-pri" name="ibm-submit" value="Submit" onclick="signin();return false;" type="submit"><span class="ibm-sep">&nbsp;</span>
+<input value="Cancel" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="clearForm();ibmCommon.Overlays.hide('signin_overlay');return false;" type="button"></p>
+</div>
+</form>
+<div class="ibm-overlay-rule"><hr></div>
+<p>The first time you sign into developerWorks, a profile is created for
+ you. This profile includes the first name, last name, and display name 
+you identified when you registered with developerWorks. 
+<strong>Select information in your developerWorks profile is displayed to the public, but you may edit the information at any time</strong>. Your first name, last name (unless you choose to hide them), and display name will accompany the content that you post.</p>
+<div class="dw-overlay-legal"><p>All information submitted is secure.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="ibm-footer"></div>
+</div>
+<!-- Sign in OVERLAY ENDS HERE --> 
+ 
+
+<!-- Display name OVERLAY STARTS HERE --> 
+<div class="ibm-common-overlay" id="displayname_overlay">
+<div class="ibm-head">
+<p><a class="ibm-common-overlay-close" href="#" onclick="clearForm();">Close [x]</a></p>
+</div>
+<div class="ibm-body">
+<div class="ibm-main">
+<div class="ibm-title ibm-subtitle">
+<h1>Choose your display name</h1>
+<div id="ibm-overlay-error-dname" class="no-display"></div>
+</div>
+<div class="ibm-container ibm-alternate ibm-buttons-last">
+<div class="ibm-container-body">
+<p class="ibm-overlay-intro">The first time you sign in to 
+developerWorks, a profile is created for you, so you need to choose a 
+display name.  Your display name accompanies the content you post on 
+developerWorks.</p>
+<p><strong>Please choose a display name between 3-31 characters</strong>. Your display name must be unique in the developerWorks community and should not be your email address for privacy reasons.</p>
+<form id="dFormId" method="post" action="" name="dForm" onsubmit="return false;" class="ibm-column-form">
+<p><label for="displayname">Display name:</label><span><input name="displayname" id="displayname" size="25" onkeypress="handleEP(event,this.form);" type="text"></span><span class="ibm-form-note">(Must be between 3 – 31 characters.)</span>
+</p>
+
+<div class="ibm-overlay-rule"><hr>
+</div>
+<p>By clicking <strong>Submit</strong>, you agree to the <a href="https://www.ibm.com/developerworks/community/terms/">developerWorks terms of use</a>.</p>
+<div class="ibm-buttons-row">
+   <p><input class="ibm-btn-arrow-pri" name="ibm-submit" value="Submit" onclick="signin();return false;" type="submit"><span class="ibm-sep">&nbsp;</span>
+<input value="Cancel" name="ibm-cancel" class="ibm-btn-cancel-sec" onclick="clearForm();ibmCommon.Overlays.hide('displayname_overlay');return false;" type="button"></p>
+</div>
+</form>
+<div class="ibm-overlay-rule"><hr></div>
+<div class="dw-overlay-legal"><p>All information submitted is secure.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="ibm-footer"></div>
+</div>
+<!-- Display name OVERLAY ENDS HERE -->
+<!-- OVERLAYS_END -->
+
+<!-- RATINGS START -->
+<p class="ibm-no-print"><span class="atitle"><a name="iratings">Rate this article</a></span></p>
+<input id="art-rating" name="ratinga" value="5" type="hidden"><div id="art-rating-module"><p id="submitErr" class="ibm-ind-error" style="display: none;"><strong>Error: Submission failed. Please try again.</strong></p><p><span id="ratingSectUI"><img alt="Average rating 5 stars based on 19 votes" src="tcsh_files/stars120x20-5gw.jpg" class="dw-avg-rating"> Average rating (19 votes)</span></p><div class="ibm-container" id="ratingForm"><div class="ibm-container-body dw-container-ratings"><form class="dw-ratings-form" onsubmit="artRating.submitRating(); return false;"><input name="ratingstars" id="rat-1" value="1" type="radio"><label class="rating-label" id="star1" for="rat-1">1 star</label><img id="rat-1-img" alt="" title="1 star" src="tcsh_files/stars120x20-1w.jpg" class="rating-image"><span class="dw-rating-text">1 star</span><br><input name="ratingstars" id="rat-2" value="2" type="radio"><label id="star2" for="rat-2" class="rating-label">2 stars</label><img id="rat-2-img" alt="" title="2 stars" src="tcsh_files/stars120x20-2w.jpg" class="rating-image2"><span class="dw-rating-text">2 stars</span><br><input name="ratingstars" id="rat-3" value="3" type="radio"><label id="star3" for="rat-3" class="rating-label">3 stars</label><img id="rat-3-img" alt="" title="3 stars" src="tcsh_files/stars120x20-3w.jpg" class="rating-image2"><span class="dw-rating-text">3 stars</span><br><input name="ratingstars" id="rat-4" value="4" type="radio"><label id="star4" for="rat-4" class="rating-label">4 stars</label><img id="rat-4-img" alt="" title="4 stars" src="tcsh_files/stars120x20-4w.jpg" class="rating-image2"><span class="dw-rating-text">4 stars</span><br><input name="ratingstars" id="rat-5" value="5" type="radio"><label id="star5" for="rat-5" class="rating-label">5 stars</label><img id="rat-5-img" alt="" title="5 stars" src="tcsh_files/stars120x20-5w.jpg" class="rating-image2"><span class="dw-rating-text">5 stars</span><div class="ibm-buttons-row"><p class="ibm-first"><input value="Submit" name="ibm-submit" class="ibm-btn-arrow-pri dw-ratings-submit" type="submit"></p></div></form></div></div></div>
+<script language="JavaScript" type="text/javascript">
+// <![CDATA[
+   // widget div id and article id as args
+   window.artRating.init('art-rating-module','art-rating-summary');
+// ]]>
+</script>
+<!-- RATINGS END -->
+
+<!-- INLINE_COMMENTS_START -->
+<p class="ibm-no-print"><span class="atitle"><a name="icomments">Comments</a></span></p>
+<div id="threadShow"><div id="cmtTog" style=""><div class="ibm-container ibm-alternate-two dw-commentbox dw-noborder"><p id="cmtHead"><label for="newCmt"><strong>Add comment:</strong></label></p><div class="ibm-container-body dw-commentbox dw-noborder"><p id="signInSect"><a onclick="showSignIn();return false;" href="#">Sign in</a> or <a href="http://www.ibm.com/developerworks/dwwi/DWAuthRouter?m=register&amp;lang=&amp;d=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Faix%2Flibrary%2Fau-tcsh%2Findex.html%23icomments">register</a> to leave a comment.</p><p>Note: HTML elements are not supported within comments.</p><span id="infoCmt"></span><form focus="name" enctype="multipart/form-data" method="post" action="" name="form" class="ibm-column-form"><p><textarea disabled="disabled" cols="120" rows="5" name="newCmt" id="newCmt" class="dw-inoperable"></textarea><br></p><div id="notifiedSect"><label for="comment_notification"><span><input name="comment_notification" id="comment_notification" value="1" disabled="disabled" type="checkbox"><span id="notifyText" class="ibm-form-note">Notify me when a comment is added</span></span></label><span id="maxCharsCount" class="ibm-form-note"><span id="charCount">1000</span> characters left</span></div><br><br><p class="ibm-buttons-row"><input disabled="disabled" value="Post" jquery1275054459750="11" name="postCmt" id="postCmt" class="ibm-btn-arrow-sec dw-btn-arrow-sec" alt="Post your comment" type="button"><br><br></p></form></div></div><div id="topControl" class="ibm-container ibm-alternate-two dw-comment-totals" style="display: none;"><div class="ibm-container-body"><form id="selectComments" method="get" action=""><p><span class="dw-comment-totals-label"><strong>Total comments (<span id="numCmts">0</span>)</strong></span><span><img src="tcsh_files/c_002.gif" alt="" height="10" width="340"></span><span class="dw-how-many-comments-label" style="display: none;" id="dropdownCmts"><label for="howManyComments">Show:</label>&nbsp;<select name="comments" id="howManyComments" class="dw-how-many-comments"><option selected="selected" value="recent">Most recent comments   </option></select><input class="ibm-btn-go" name="ibm-go" value="Go" src="tcsh_files/short-btn.gif" alt="Go" type="image"><br></span></p></form></div></div><div id="cmtSect"><div class="comment"><div class="dw-icomment-container"><table class="dw-icomment-body" width="100%" cellpadding="0" cellspacing="0"><tbody><tr><td><p>Be the first to add a comment</p></td></tr></tbody></table></div></div></div></div><div id="bottomControl" class="ibm-container ibm-alternate-two dw-comment-totals" style="display: none;"><div class="ibm-container-body"><form id="selectComments2" method="get" action=""><p><span class="dw-comment-totals-label"><strong>Total comments (<span id="numCmts2">0</span>)</strong></span><span><img src="tcsh_files/c_002.gif" alt="" height="10" width="340"></span><span class="dw-how-many-comments-label" style="display: none;" id="dropdownCmts2"><label for="howManyComments2">Show:</label>&nbsp;<select name="comments" id="howManyComments2" class="dw-how-many-comments"><option selected="selected" value="recent">Most recent comments   </option></select><input class="ibm-btn-go" name="ibm-go" value="Go" src="tcsh_files/short-btn.gif" alt="Go" type="image"><br></span></p></form></div></div></div>
+<!-- INLINE_COMMENTS_END -->
+
+<p class="ibm-ind-link ibm-back-to-top"><a class="ibm-anchor-up-link" href="#ibm-pcon">Back to top</a></p>
+
+<!-- Overlays -->
+<!-- Zone/Leaf_Interest_Overlay_Start -->
+<div class="ibm-common-overlay ibm-no-print" id="dwmyinterestadd">
+<div class="ibm-head"><p><a class="ibm-common-overlay-close" href="#close">Close [x]</a></p></div>
+<div class="ibm-body">
+<div class="ibm-main">
+<a class="ibm-access" name="dwmyinterestaddhelp">Help: Update or add to My dW interests</a>   
+<div class="ibm-title"><h1>What's this?</h1></div>
+<div class="ibm-container ibm-alternate">
+<p>This little timesaver lets you update your My developerWorks profile 
+with just one click!  The general subject of this content (AIX and UNIX,
+ Information Management, Lotus, Rational, Tivoli, WebSphere, Java, 
+Linux, Open source, SOA and Web services, Web development, or XML) will 
+be added to the interests section of your profile, if it's not there 
+already.  You only need to be logged in to My developerWorks.</p>
+<p>And what's the point of adding your interests to your profile?  
+That's how you find other users with the same interests as yours, and 
+see what they're reading and contributing to the community.  Your 
+interests also help us recommend relevant developerWorks content to you.</p>
+<p><a href="https://www.ibm.com/developerworks/mydeveloperworks/profiles/home.do?lang=en">View your My developerWorks profile</a></p>
+<p class="ibm-access"><a href="#interestShow">Return from help</a></p>
+</div> 
+</div>
+</div>
+<div class="ibm-footer"></div>
+</div>
+
+<div class="ibm-common-overlay ibm-no-print" id="dwmyinterestremove">
+<div class="ibm-head"><p><a class="ibm-common-overlay-close" href="#close">Close [x]</a></p></div>
+<div class="ibm-body">
+<div class="ibm-main">
+<a class="ibm-access" name="dwmyinterestremovehelp">Help: Remove from My dW interests</a> 
+<div class="ibm-title"><h1>What's this?</h1></div>
+<div class="ibm-container ibm-alternate">
+<p>Removing this interest does not alter your profile, but rather 
+removes this piece of content from a list of all content for which 
+you've indicated interest.  In a future enhancement to My 
+developerWorks, you'll be able to see a record of that content.</p>
+<p><a href="https://www.ibm.com/developerworks/mydeveloperworks/profiles/home.do?lang=en">View your My developerWorks profile</a></p>
+<p class="ibm-access"><a href="#interestShow">Return from help</a></p>
+</div> 
+</div>
+</div>
+<div class="ibm-footer"></div>
+</div>
+<!-- Zone/Leaf_Interest_Overlay_End --></div>
+<!-- MAIN_COLUMN_CONTAINER_END -->
+
+<!-- Rating_Meta_BEGIN -->
+<!--Rating_Meta_BEGIN--><div class="metavalue">static.content.url=http://www.ibm.com/developerworks/js/artrating/</div><div class="metavalue">SITE_ID=1</div><div class="metavalue">Zone=AIX and UNIX</div><div class="metavalue">ArticleID=333145</div><div class="metavalue">ArticleTitle=Tcsh shell variables</div><div class="metavalue">publish-date=08262008</div><div class="metavalue">author1-email=arpansen@gmail.com</div><div class="metavalue">author1-email-cc=mmccrary@us.ibm.com</div><script language="javascript" type="text/javascript">document.write('<div class="metavalue">url='+location.href.replace('<', '%3C')+'</div>');</script><div class="metavalue">url=http://www.ibm.com/developerworks/aix/library/au-tcsh/index.html</div><!--Rating_Meta_END-->
+<!-- Rating_Meta_END -->
+
+</div>
+<!-- MAIN_COLUMN_END-->
+
+<!-- RIGHT_COLUMN_BEGIN -->
+<div id="ibm-content-sidebar">
+
+<!-- RIGHT_COLUMN_CONTENT_BEGIN --> 
+<div class="ibm-container"><h2>Table of contents</h2><div class="ibm-container-body"><img alt="" src="tcsh_files/c.gif" height="1" width="1"><ul class="ibm-bullet-list"><li><a class="ibm-feature-link" href="#N1005E">How to set shell variables</a></li><li><a class="ibm-feature-link" href="#N1008C">Prevent disaster with rm</a></li><li><a class="ibm-feature-link" href="#N100B8">Prevent accidental overwriting of existing files</a></li><li><a class="ibm-feature-link" href="#N100E7">Automatic Tab completion</a></li><li><a class="ibm-feature-link" href="#N10116">Use addsuffix to distinguish directories during Tab completion</a></li><li><a class="ibm-feature-link" href="#N10144">Use the fignore shell variable to avoid accidental deletion</a></li><li><a class="ibm-feature-link" href="#N1016B">Automatically log out in case of no user activity</a></li><li><a class="ibm-feature-link" href="#N10183">Enhanced security in tcsh: Monitor everyone who's using the system</a></li><li><a class="ibm-feature-link" href="#N101C3">Use the prompt variable to keep track of the current working directory</a></li><li><a class="ibm-feature-link" href="#N10238">Automatically correct invalid command usage</a></li><li><a class="ibm-feature-link" href="#N10258">Periodic execution of specific commands</a></li><li><a class="ibm-feature-link" href="#N10284">Set a history file on a per-terminal basis</a></li><li><a class="ibm-feature-link" href="#N102AF">Monitor the time it takes to run a command</a></li><li><a class="ibm-feature-link" href="#N102DE">Debug shell scripts: Automatically print the exit value on error</a></li><li><a class="ibm-feature-link" href="#N102F9">Conclusion</a></li><li><a class="ibm-feature-link" href="#resources">Resources</a></li><li><a class="ibm-feature-link" href="#author">About the author</a></li><li><a class="ibm-feature-link" href="#icomments">Comments</a></li></ul></div></div>
+<!--XSLT stylesheet used to transform this content: s-danube.xsl--><div class="ibm-container"><h2>Local resources</h2><div class="ibm-container-body"><img src="tcsh_files/spot-danube.jpg" alt="" height="58" width="188" border="0"><ul class="ibm-bullet-list"><li><a href="https://www.ibm.com/developerworks/mydeveloperworks/groups/service/html/communityview?communityUuid=ab443019-1134-4fbb-bc75-eccc1186b261" class="ibm-feature-link">Smarter Planet Comes to You</a></li><li><a href="http://www.ibm.com/partnerworld/iic/toronto.htm?S_TACT=105AGY81&amp;S_CMP=danube_ca_na" class="ibm-feature-link">IBM Innovation Center - Toronto, Canada</a></li><li><a href="http://www.ibm.com/developerworks/views/global/techbriefing.jsp?end_no=100&amp;lcl_sort_order=desc&amp;sort_order=asc&amp;expand=North+America+%28by+state%2Fprovince%29&amp;show_all=false&amp;start_no=1&amp;geo_by=All+Geographies&amp;sort_by=Date&amp;search_by=&amp;topic_by=All+Topics&amp;show_abstract=true?S_TACT=105AGY81&amp;S_CMP=danube_ca_na" class="ibm-feature-link">Technical Briefings in North America</a></li></ul></div></div>
+<!-- Tagging_Start -->
+<div id="dw-tag-cloud-container" class="ibm-container"><h2>Tags</h2>
+<div id="dw-tag-help"><a class="dwauthor" rel="#tagtip" id="dwtagtip"><img alt="Help" src="tcsh_files/help_icon.gif" height="16" width="16" align="top"></a></div>
+<div style="display: none;" id="tagtip" class="dwauthor-onload-state ibm-no-print">Use the <strong>search field</strong> to find all types of content in My developerWorks with that tag.<p>Use the <strong>slider bar</strong> to see more or fewer tags.</p><p>For articles in technology zones (such as Java technology, Linux, Open source, XML), <strong>Popular tags</strong> shows the top tags 
+for <em>all technology zones</em>.  For articles in product zones (such as Info Mgmt, Rational, WebSphere), <strong>Popular tags</strong> shows the top tags for <em>just that product zone</em>.</p><p>For articles in technology zones (such as Java technology, Linux, Open source, XML), <strong>My tags</strong> shows your tags for <em>all technology zones</em>.  For articles in product zones (such as Info Mgmt, Rational, WebSphere), <strong>My tags</strong> shows your tags for <em>just that product zone</em>.</p></div>
+<div class="ibm-access">Use the search field to find all types of content in My developerWorks with that tag.  <em>Popular tags</em> shows the top tags for this particular content zone (for example, Java technology, Linux, WebSphere).  <em>My tags</em> shows your tags for this particular content zone (for example, Java technology, Linux, WebSphere).</div>
+<div class="ibm-container-body">
+<div class="dw-tag-search"><form action="//www.ibm.com/developerworks/mydeveloperworks/bookmarks/html?lang=en" method="get" id="actualtagform" onsubmit="popupform(this, 'join')">
+<p><label for="tagfield"><strong>Search all tags</strong></label><input id="tagfield" name="tag" maxlength="20" size="17" type="text">&nbsp;<input src="tcsh_files/short-btn.gif" class="ibm-btn-view" alt="submit search" title="submit search" value="Search" type="image"></p></form></div>
+<div class="ibm-rule"><hr></div>
+<div id="dw-tag-select">
+<div id="dw-tag-select-popular"><p><strong>Popular article tags</strong>&nbsp;|&nbsp;<br><a id="a-my" href="javascript:;">My article tags</a><a href="#dw-tag-access" class="ibm-access">Skip to tags list</a></p></div>
+<div id="dw-tag-select-my" class="dw-hidetag"><p><a id="a-popular" href="javascript:;">Popular article tags</a>&nbsp;|&nbsp;<br><strong>My article tags</strong></p><a href="#dw-tag-access" class="ibm-access">Skip to tags list</a></div><div id="dw-tag-access" class="ibm-access"><h2>Popular tags</h2><ul>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f1-1">
+					
+					<a title="admin 7" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=admin&amp;lang=en')">
+					
+						
+						
+							admin	
+						
+					
+					<span class="ibm-access">(7)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f2-3">
+					
+					<a title="administrator 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=administrator&amp;lang=en')">
+					
+						
+						
+							administrator	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f3-6">
+					
+					<a title="administrators 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=administrators&amp;lang=en')">
+					
+						
+						
+							administrators	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+							
+							
+								
+							
+						
+				<li class="f4-100">
+					
+					<a title="aix 588" class="lotusF5 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix&amp;lang=en')">
+					
+						
+						
+							aix	
+						
+					
+					<span class="ibm-access">(588)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f5-1">
+					
+					<a title="aix_5l 7" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix_5l&amp;lang=en')">
+					
+						
+						
+							aix_5l	
+						
+					
+					<span class="ibm-access">(7)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f6-12">
+					
+					<a title="aix_7 12" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix_7&amp;lang=en')">
+					
+						
+						
+							aix_7	
+						
+					
+					<span class="ibm-access">(12)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+							
+								
+							
+							
+						
+				<li class="f7-78">
+					
+					<a title="aix_and_unix 224" class="lotusF4 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix_and_unix&amp;lang=en')">
+					
+						
+						
+							aix_and_unix	
+						
+					
+					<span class="ibm-access">(224)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+								
+							
+							
+							
+						
+				<li class="f8-42">
+					
+					<a title="application_development 46" class="lotusF3 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=application_development&amp;lang=en')">
+					
+						
+							application_d...	
+						
+						
+					
+					<span class="ibm-access">(46)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f9-6">
+					
+					<a title="arpan_sen 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=arpan_sen&amp;lang=en')">
+					
+						
+						
+							arpan_sen	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f10-10">
+					
+					<a title="articles 11" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=articles&amp;lang=en')">
+					
+						
+						
+							articles	
+						
+					
+					<span class="ibm-access">(11)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f11-1">
+					
+					<a title="audit 7" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=audit&amp;lang=en')">
+					
+						
+						
+							audit	
+						
+					
+					<span class="ibm-access">(7)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f12-10">
+					
+					<a title="authentication 11" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=authentication&amp;lang=en')">
+					
+						
+						
+							authentication	
+						
+					
+					<span class="ibm-access">(11)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f13-10">
+					
+					<a title="bash 11" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=bash&amp;lang=en')">
+					
+						
+						
+							bash	
+						
+					
+					<span class="ibm-access">(11)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f14-8">
+					
+					<a title="boost 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=boost&amp;lang=en')">
+					
+						
+						
+							boost	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f15-14">
+					
+					<a title="c 13" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=c&amp;lang=en')">
+					
+						
+						
+							c	
+						
+					
+					<span class="ibm-access">(13)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f16-8">
+					
+					<a title="command_line 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=command_line&amp;lang=en')">
+					
+						
+						
+							command_line	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f17-27">
+					
+					<a title="commands 24" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=commands&amp;lang=en')">
+					
+						
+						
+							commands	
+						
+					
+					<span class="ibm-access">(24)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f18-3">
+					
+					<a title="configuration 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=configuration&amp;lang=en')">
+					
+						
+						
+							configuration	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f19-8">
+					
+					<a title="cpu 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=cpu&amp;lang=en')">
+					
+						
+						
+							cpu	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f20-6">
+					
+					<a title="disk 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=disk&amp;lang=en')">
+					
+						
+						
+							disk	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f21-24">
+					
+					<a title="dw 21" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=dw&amp;lang=en')">
+					
+						
+						
+							dw	
+						
+					
+					<span class="ibm-access">(21)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f22-3">
+					
+					<a title="emacs 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=emacs&amp;lang=en')">
+					
+						
+						
+							emacs	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f23-3">
+					
+					<a title="hacmp 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=hacmp&amp;lang=en')">
+					
+						
+						
+							hacmp	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f24-15">
+					
+					<a title="ibm 14" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=ibm&amp;lang=en')">
+					
+						
+						
+							ibm	
+						
+					
+					<span class="ibm-access">(14)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f25-8">
+					
+					<a title="installation 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=installation&amp;lang=en')">
+					
+						
+						
+							installation	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f26-6">
+					
+					<a title="io 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=io&amp;lang=en')">
+					
+						
+						
+							io	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f27-12">
+					
+					<a title="java 12" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=java&amp;lang=en')">
+					
+						
+						
+							java	
+						
+					
+					<span class="ibm-access">(12)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f28-8">
+					
+					<a title="kdc 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=kdc&amp;lang=en')">
+					
+						
+						
+							kdc	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f29-18">
+					
+					<a title="ken_milberg 16" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=ken_milberg&amp;lang=en')">
+					
+						
+						
+							ken_milberg	
+						
+					
+					<span class="ibm-access">(16)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f30-30">
+					
+					<a title="kerberos 27" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=kerberos&amp;lang=en')">
+					
+						
+						
+							kerberos	
+						
+					
+					<span class="ibm-access">(27)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f31-31">
+					
+					<a title="ldap 29" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=ldap&amp;lang=en')">
+					
+						
+						
+							ldap	
+						
+					
+					<span class="ibm-access">(29)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+								
+							
+							
+							
+						
+				<li class="f32-48">
+					
+					<a title="linux 60" class="lotusF3 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=linux&amp;lang=en')">
+					
+						
+						
+							linux	
+						
+					
+					<span class="ibm-access">(60)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f33-19">
+					
+					<a title="lpar 17" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=lpar&amp;lang=en')">
+					
+						
+						
+							lpar	
+						
+					
+					<span class="ibm-access">(17)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f34-12">
+					
+					<a title="martin_brown 12" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=martin_brown&amp;lang=en')">
+					
+						
+						
+							martin_brown	
+						
+					
+					<span class="ibm-access">(12)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f35-15">
+					
+					<a title="martin_streicher 14" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=martin_streicher&amp;lang=en')">
+					
+						
+							martin_streich...	
+						
+						
+					
+					<span class="ibm-access">(14)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f36-28">
+					
+					<a title="memory 25" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=memory&amp;lang=en')">
+					
+						
+						
+							memory	
+						
+					
+					<span class="ibm-access">(25)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f37-18">
+					
+					<a title="migration 16" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=migration&amp;lang=en')">
+					
+						
+						
+							migration	
+						
+					
+					<span class="ibm-access">(16)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f38-6">
+					
+					<a title="monitoring 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=monitoring&amp;lang=en')">
+					
+						
+						
+							monitoring	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f39-19">
+					
+					<a title="nas 17" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=nas&amp;lang=en')">
+					
+						
+						
+							nas	
+						
+					
+					<span class="ibm-access">(17)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f40-22">
+					
+					<a title="network 19" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=network&amp;lang=en')">
+					
+						
+						
+							network	
+						
+					
+					<span class="ibm-access">(19)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f41-18">
+					
+					<a title="nfs 16" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=nfs&amp;lang=en')">
+					
+						
+						
+							nfs	
+						
+					
+					<span class="ibm-access">(16)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f42-15">
+					
+					<a title="nmon 14" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=nmon&amp;lang=en')">
+					
+						
+						
+							nmon	
+						
+					
+					<span class="ibm-access">(14)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f43-23">
+					
+					<a title="open_source 20" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=open_source&amp;lang=en')">
+					
+						
+						
+							open_source	
+						
+					
+					<span class="ibm-access">(20)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f44-27">
+					
+					<a title="operating_system 24" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=operating_system&amp;lang=en')">
+					
+						
+							operating_sys...	
+						
+						
+					
+					<span class="ibm-access">(24)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f45-6">
+					
+					<a title="optimizing 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=optimizing&amp;lang=en')">
+					
+						
+						
+							optimizing	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f46-3">
+					
+					<a title="p 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=p&amp;lang=en')">
+					
+						
+						
+							p	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f47-3">
+					
+					<a title="perf 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=perf&amp;lang=en')">
+					
+						
+						
+							perf	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+								
+							
+							
+							
+						
+				<li class="f48-48">
+					
+					<a title="performance 62" class="lotusF3 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=performance&amp;lang=en')">
+					
+						
+						
+							performance	
+						
+					
+					<span class="ibm-access">(62)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f49-3">
+					
+					<a title="porting 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=porting&amp;lang=en')">
+					
+						
+						
+							porting	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f50-14">
+					
+					<a title="power 13" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=power&amp;lang=en')">
+					
+						
+						
+							power	
+						
+					
+					<span class="ibm-access">(13)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f51-3">
+					
+					<a title="programming 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=programming&amp;lang=en')">
+					
+						
+						
+							programming	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f52-26">
+					
+					<a title="python 23" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=python&amp;lang=en')">
+					
+						
+						
+							python	
+						
+					
+					<span class="ibm-access">(23)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f53-3">
+					
+					<a title="san 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=san&amp;lang=en')">
+					
+						
+						
+							san	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f54-14">
+					
+					<a title="scripting 13" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=scripting&amp;lang=en')">
+					
+						
+						
+							scripting	
+						
+					
+					<span class="ibm-access">(13)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f55-37">
+					
+					<a title="security 37" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=security&amp;lang=en')">
+					
+						
+						
+							security	
+						
+					
+					<span class="ibm-access">(37)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f56-19">
+					
+					<a title="shell 17" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=shell&amp;lang=en')">
+					
+						
+						
+							shell	
+						
+					
+					<span class="ibm-access">(17)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f57-8">
+					
+					<a title="solaris 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=solaris&amp;lang=en')">
+					
+						
+						
+							solaris	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f58-34">
+					
+					<a title="speaking_unix 33" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=speaking_unix&amp;lang=en')">
+					
+						
+						
+							speaking_unix	
+						
+					
+					<span class="ibm-access">(33)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f59-22">
+					
+					<a title="ssh 19" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=ssh&amp;lang=en')">
+					
+						
+						
+							ssh	
+						
+					
+					<span class="ibm-access">(19)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f60-3">
+					
+					<a title="storage 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=storage&amp;lang=en')">
+					
+						
+						
+							storage	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f61-6">
+					
+					<a title="sysadmin 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=sysadmin&amp;lang=en')">
+					
+						
+						
+							sysadmin	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f62-18">
+					
+					<a title="system 16" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=system&amp;lang=en')">
+					
+						
+						
+							system	
+						
+					
+					<span class="ibm-access">(16)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+							
+								
+							
+							
+						
+				<li class="f63-61">
+					
+					<a title="system_administration 109" class="lotusF4 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=system_administration&amp;lang=en')">
+					
+						
+							system_admin...	
+						
+						
+					
+					<span class="ibm-access">(109)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f64-35">
+					
+					<a title="system_p 35" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=system_p&amp;lang=en')">
+					
+						
+						
+							system_p	
+						
+					
+					<span class="ibm-access">(35)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f65-15">
+					
+					<a title="systems_admin 14" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=systems_admin&amp;lang=en')">
+					
+						
+						
+							systems_admin	
+						
+					
+					<span class="ibm-access">(14)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f66-10">
+					
+					<a title="test 11" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=test&amp;lang=en')">
+					
+						
+						
+							test	
+						
+					
+					<span class="ibm-access">(11)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f67-8">
+					
+					<a title="testing 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=testing&amp;lang=en')">
+					
+						
+						
+							testing	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f68-15">
+					
+					<a title="tips 14" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=tips&amp;lang=en')">
+					
+						
+						
+							tips	
+						
+					
+					<span class="ibm-access">(14)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f69-17">
+					
+					<a title="toolkit 15" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=toolkit&amp;lang=en')">
+					
+						
+						
+							toolkit	
+						
+					
+					<span class="ibm-access">(15)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f70-38">
+					
+					<a title="tools 39" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=tools&amp;lang=en')">
+					
+						
+						
+							tools	
+						
+					
+					<span class="ibm-access">(39)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+							
+								
+							
+							
+						
+				<li class="f71-62">
+					
+					<a title="tools_and_utilities 113" class="lotusF4 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=tools_and_utilities&amp;lang=en')">
+					
+						
+							tools_and_ut...	
+						
+						
+					
+					<span class="ibm-access">(113)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f72-12">
+					
+					<a title="troubleshooting 12" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=troubleshooting&amp;lang=en')">
+					
+						
+							troubleshootin...	
+						
+						
+					
+					<span class="ibm-access">(12)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f73-30">
+					
+					<a title="tuning 27" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=tuning&amp;lang=en')">
+					
+						
+						
+							tuning	
+						
+					
+					<span class="ibm-access">(27)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f74-6">
+					
+					<a title="unit 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=unit&amp;lang=en')">
+					
+						
+						
+							unit	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+							
+								
+							
+							
+						
+				<li class="f75-80">
+					
+					<a title="unix 245" class="lotusF4 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=unix&amp;lang=en')">
+					
+						
+						
+							unix	
+						
+					
+					<span class="ibm-access">(245)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f76-3">
+					
+					<a title="vim 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=vim&amp;lang=en')">
+					
+						
+						
+							vim	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f77-18">
+					
+					<a title="vio 16" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=vio&amp;lang=en')">
+					
+						
+						
+							vio	
+						
+					
+					<span class="ibm-access">(16)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f78-12">
+					
+					<a title="vios 12" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=vios&amp;lang=en')">
+					
+						
+						
+							vios	
+						
+					
+					<span class="ibm-access">(12)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f79-21">
+					
+					<a title="virtualization 18" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=virtualization&amp;lang=en')">
+					
+						
+							virtualizatio...	
+						
+						
+					
+					<span class="ibm-access">(18)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f80-19">
+					
+					<a title="wpar 17" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=wpar&amp;lang=en')">
+					
+						
+						
+							wpar	
+						
+					
+					<span class="ibm-access">(17)</span>					
+					</a>&nbsp;
+				</li>
+					
+			</ul><p>End of Popular tags</p><h2>My tags</h2><div id="dw-tag-access-my" class="ibm-access"><center>To access My Tags, please <a href="http://www.ibm.com/developerworks/dwwi/DWAuthRouter?m=auth&amp;lang=en&amp;d=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Faix%2Flibrary%2Fau-tcsh%2Findex.html">sign in</a><p>Read Popular tags</p></center><br></div><p>End of My tags</p></div>
+<div id="dw-tag-cloud">
+	<div id="dogearTagCloud">
+		<div class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" id="content-slider"><a style="left: 0%;" class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a></div>
+		
+			
+						
+						
+						
+						
+						
+									
+			
+				<div id="ui-slider-scale"><p><span class="content-slider-more">More</span><span class="content-slider-less">Less</span></p></div>
+			
+		
+	    <div id="cloud-container">
+			<ul>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f1-1">
+					
+					<a title="admin 7" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=admin&amp;lang=en')">
+					
+						
+						
+							admin	
+						
+					
+					<span class="ibm-access">(7)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f2-3">
+					
+					<a title="administrator 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=administrator&amp;lang=en')">
+					
+						
+						
+							administrator	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f3-6">
+					
+					<a title="administrators 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=administrators&amp;lang=en')">
+					
+						
+						
+							administrators	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+							
+							
+								
+							
+						
+				<li class="f4-100">
+					
+					<a title="aix 588" class="lotusF5 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix&amp;lang=en')">
+					
+						
+						
+							aix	
+						
+					
+					<span class="ibm-access">(588)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f5-1">
+					
+					<a title="aix_5l 7" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix_5l&amp;lang=en')">
+					
+						
+						
+							aix_5l	
+						
+					
+					<span class="ibm-access">(7)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f6-12">
+					
+					<a title="aix_7 12" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix_7&amp;lang=en')">
+					
+						
+						
+							aix_7	
+						
+					
+					<span class="ibm-access">(12)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+							
+								
+							
+							
+						
+				<li class="f7-78">
+					
+					<a title="aix_and_unix 224" class="lotusF4 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix_and_unix&amp;lang=en')">
+					
+						
+						
+							aix_and_unix	
+						
+					
+					<span class="ibm-access">(224)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+								
+							
+							
+							
+						
+				<li class="f8-42">
+					
+					<a title="application_development 46" class="lotusF3 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=application_development&amp;lang=en')">
+					
+						
+							application_d...	
+						
+						
+					
+					<span class="ibm-access">(46)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f9-6">
+					
+					<a title="arpan_sen 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=arpan_sen&amp;lang=en')">
+					
+						
+						
+							arpan_sen	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f10-10">
+					
+					<a title="articles 11" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=articles&amp;lang=en')">
+					
+						
+						
+							articles	
+						
+					
+					<span class="ibm-access">(11)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f11-1">
+					
+					<a title="audit 7" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=audit&amp;lang=en')">
+					
+						
+						
+							audit	
+						
+					
+					<span class="ibm-access">(7)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f12-10">
+					
+					<a title="authentication 11" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=authentication&amp;lang=en')">
+					
+						
+						
+							authentication	
+						
+					
+					<span class="ibm-access">(11)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f13-10">
+					
+					<a title="bash 11" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=bash&amp;lang=en')">
+					
+						
+						
+							bash	
+						
+					
+					<span class="ibm-access">(11)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f14-8">
+					
+					<a title="boost 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=boost&amp;lang=en')">
+					
+						
+						
+							boost	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f15-14">
+					
+					<a title="c 13" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=c&amp;lang=en')">
+					
+						
+						
+							c	
+						
+					
+					<span class="ibm-access">(13)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f16-8">
+					
+					<a title="command_line 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=command_line&amp;lang=en')">
+					
+						
+						
+							command_line	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f17-27">
+					
+					<a title="commands 24" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=commands&amp;lang=en')">
+					
+						
+						
+							commands	
+						
+					
+					<span class="ibm-access">(24)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f18-3">
+					
+					<a title="configuration 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=configuration&amp;lang=en')">
+					
+						
+						
+							configuration	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f19-8">
+					
+					<a title="cpu 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=cpu&amp;lang=en')">
+					
+						
+						
+							cpu	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f20-6">
+					
+					<a title="disk 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=disk&amp;lang=en')">
+					
+						
+						
+							disk	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f21-24">
+					
+					<a title="dw 21" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=dw&amp;lang=en')">
+					
+						
+						
+							dw	
+						
+					
+					<span class="ibm-access">(21)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f22-3">
+					
+					<a title="emacs 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=emacs&amp;lang=en')">
+					
+						
+						
+							emacs	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f23-3">
+					
+					<a title="hacmp 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=hacmp&amp;lang=en')">
+					
+						
+						
+							hacmp	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f24-15">
+					
+					<a title="ibm 14" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=ibm&amp;lang=en')">
+					
+						
+						
+							ibm	
+						
+					
+					<span class="ibm-access">(14)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f25-8">
+					
+					<a title="installation 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=installation&amp;lang=en')">
+					
+						
+						
+							installation	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f26-6">
+					
+					<a title="io 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=io&amp;lang=en')">
+					
+						
+						
+							io	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f27-12">
+					
+					<a title="java 12" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=java&amp;lang=en')">
+					
+						
+						
+							java	
+						
+					
+					<span class="ibm-access">(12)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f28-8">
+					
+					<a title="kdc 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=kdc&amp;lang=en')">
+					
+						
+						
+							kdc	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f29-18">
+					
+					<a title="ken_milberg 16" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=ken_milberg&amp;lang=en')">
+					
+						
+						
+							ken_milberg	
+						
+					
+					<span class="ibm-access">(16)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f30-30">
+					
+					<a title="kerberos 27" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=kerberos&amp;lang=en')">
+					
+						
+						
+							kerberos	
+						
+					
+					<span class="ibm-access">(27)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f31-31">
+					
+					<a title="ldap 29" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=ldap&amp;lang=en')">
+					
+						
+						
+							ldap	
+						
+					
+					<span class="ibm-access">(29)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+								
+							
+							
+							
+						
+				<li class="f32-48">
+					
+					<a title="linux 60" class="lotusF3 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=linux&amp;lang=en')">
+					
+						
+						
+							linux	
+						
+					
+					<span class="ibm-access">(60)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f33-19">
+					
+					<a title="lpar 17" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=lpar&amp;lang=en')">
+					
+						
+						
+							lpar	
+						
+					
+					<span class="ibm-access">(17)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f34-12">
+					
+					<a title="martin_brown 12" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=martin_brown&amp;lang=en')">
+					
+						
+						
+							martin_brown	
+						
+					
+					<span class="ibm-access">(12)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f35-15">
+					
+					<a title="martin_streicher 14" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=martin_streicher&amp;lang=en')">
+					
+						
+							martin_streich...	
+						
+						
+					
+					<span class="ibm-access">(14)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f36-28">
+					
+					<a title="memory 25" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=memory&amp;lang=en')">
+					
+						
+						
+							memory	
+						
+					
+					<span class="ibm-access">(25)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f37-18">
+					
+					<a title="migration 16" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=migration&amp;lang=en')">
+					
+						
+						
+							migration	
+						
+					
+					<span class="ibm-access">(16)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f38-6">
+					
+					<a title="monitoring 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=monitoring&amp;lang=en')">
+					
+						
+						
+							monitoring	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f39-19">
+					
+					<a title="nas 17" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=nas&amp;lang=en')">
+					
+						
+						
+							nas	
+						
+					
+					<span class="ibm-access">(17)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f40-22">
+					
+					<a title="network 19" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=network&amp;lang=en')">
+					
+						
+						
+							network	
+						
+					
+					<span class="ibm-access">(19)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f41-18">
+					
+					<a title="nfs 16" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=nfs&amp;lang=en')">
+					
+						
+						
+							nfs	
+						
+					
+					<span class="ibm-access">(16)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f42-15">
+					
+					<a title="nmon 14" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=nmon&amp;lang=en')">
+					
+						
+						
+							nmon	
+						
+					
+					<span class="ibm-access">(14)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f43-23">
+					
+					<a title="open_source 20" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=open_source&amp;lang=en')">
+					
+						
+						
+							open_source	
+						
+					
+					<span class="ibm-access">(20)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f44-27">
+					
+					<a title="operating_system 24" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=operating_system&amp;lang=en')">
+					
+						
+							operating_sys...	
+						
+						
+					
+					<span class="ibm-access">(24)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f45-6">
+					
+					<a title="optimizing 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=optimizing&amp;lang=en')">
+					
+						
+						
+							optimizing	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f46-3">
+					
+					<a title="p 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=p&amp;lang=en')">
+					
+						
+						
+							p	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f47-3">
+					
+					<a title="perf 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=perf&amp;lang=en')">
+					
+						
+						
+							perf	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+								
+							
+							
+							
+						
+				<li class="f48-48">
+					
+					<a title="performance 62" class="lotusF3 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=performance&amp;lang=en')">
+					
+						
+						
+							performance	
+						
+					
+					<span class="ibm-access">(62)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f49-3">
+					
+					<a title="porting 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=porting&amp;lang=en')">
+					
+						
+						
+							porting	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f50-14">
+					
+					<a title="power 13" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=power&amp;lang=en')">
+					
+						
+						
+							power	
+						
+					
+					<span class="ibm-access">(13)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f51-3">
+					
+					<a title="programming 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=programming&amp;lang=en')">
+					
+						
+						
+							programming	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f52-26">
+					
+					<a title="python 23" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=python&amp;lang=en')">
+					
+						
+						
+							python	
+						
+					
+					<span class="ibm-access">(23)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f53-3">
+					
+					<a title="san 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=san&amp;lang=en')">
+					
+						
+						
+							san	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f54-14">
+					
+					<a title="scripting 13" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=scripting&amp;lang=en')">
+					
+						
+						
+							scripting	
+						
+					
+					<span class="ibm-access">(13)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f55-37">
+					
+					<a title="security 37" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=security&amp;lang=en')">
+					
+						
+						
+							security	
+						
+					
+					<span class="ibm-access">(37)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f56-19">
+					
+					<a title="shell 17" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=shell&amp;lang=en')">
+					
+						
+						
+							shell	
+						
+					
+					<span class="ibm-access">(17)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f57-8">
+					
+					<a title="solaris 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=solaris&amp;lang=en')">
+					
+						
+						
+							solaris	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f58-34">
+					
+					<a title="speaking_unix 33" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=speaking_unix&amp;lang=en')">
+					
+						
+						
+							speaking_unix	
+						
+					
+					<span class="ibm-access">(33)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f59-22">
+					
+					<a title="ssh 19" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=ssh&amp;lang=en')">
+					
+						
+						
+							ssh	
+						
+					
+					<span class="ibm-access">(19)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f60-3">
+					
+					<a title="storage 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=storage&amp;lang=en')">
+					
+						
+						
+							storage	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f61-6">
+					
+					<a title="sysadmin 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=sysadmin&amp;lang=en')">
+					
+						
+						
+							sysadmin	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f62-18">
+					
+					<a title="system 16" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=system&amp;lang=en')">
+					
+						
+						
+							system	
+						
+					
+					<span class="ibm-access">(16)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+							
+								
+							
+							
+						
+				<li class="f63-61">
+					
+					<a title="system_administration 109" class="lotusF4 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=system_administration&amp;lang=en')">
+					
+						
+							system_admin...	
+						
+						
+					
+					<span class="ibm-access">(109)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f64-35">
+					
+					<a title="system_p 35" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=system_p&amp;lang=en')">
+					
+						
+						
+							system_p	
+						
+					
+					<span class="ibm-access">(35)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f65-15">
+					
+					<a title="systems_admin 14" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=systems_admin&amp;lang=en')">
+					
+						
+						
+							systems_admin	
+						
+					
+					<span class="ibm-access">(14)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f66-10">
+					
+					<a title="test 11" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=test&amp;lang=en')">
+					
+						
+						
+							test	
+						
+					
+					<span class="ibm-access">(11)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f67-8">
+					
+					<a title="testing 10" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=testing&amp;lang=en')">
+					
+						
+						
+							testing	
+						
+					
+					<span class="ibm-access">(10)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f68-15">
+					
+					<a title="tips 14" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=tips&amp;lang=en')">
+					
+						
+						
+							tips	
+						
+					
+					<span class="ibm-access">(14)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f69-17">
+					
+					<a title="toolkit 15" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=toolkit&amp;lang=en')">
+					
+						
+						
+							toolkit	
+						
+					
+					<span class="ibm-access">(15)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f70-38">
+					
+					<a title="tools 39" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=tools&amp;lang=en')">
+					
+						
+						
+							tools	
+						
+					
+					<span class="ibm-access">(39)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+							
+								
+							
+							
+						
+				<li class="f71-62">
+					
+					<a title="tools_and_utilities 113" class="lotusF4 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=tools_and_utilities&amp;lang=en')">
+					
+						
+							tools_and_ut...	
+						
+						
+					
+					<span class="ibm-access">(113)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f72-12">
+					
+					<a title="troubleshooting 12" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=troubleshooting&amp;lang=en')">
+					
+						
+							troubleshootin...	
+						
+						
+					
+					<span class="ibm-access">(12)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f73-30">
+					
+					<a title="tuning 27" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=tuning&amp;lang=en')">
+					
+						
+						
+							tuning	
+						
+					
+					<span class="ibm-access">(27)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f74-6">
+					
+					<a title="unit 9" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=unit&amp;lang=en')">
+					
+						
+						
+							unit	
+						
+					
+					<span class="ibm-access">(9)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+							
+							
+								
+							
+							
+						
+				<li class="f75-80">
+					
+					<a title="unix 245" class="lotusF4 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=unix&amp;lang=en')">
+					
+						
+						
+							unix	
+						
+					
+					<span class="ibm-access">(245)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f76-3">
+					
+					<a title="vim 8" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=vim&amp;lang=en')">
+					
+						
+						
+							vim	
+						
+					
+					<span class="ibm-access">(8)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f77-18">
+					
+					<a title="vio 16" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=vio&amp;lang=en')">
+					
+						
+						
+							vio	
+						
+					
+					<span class="ibm-access">(16)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f78-12">
+					
+					<a title="vios 12" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=vios&amp;lang=en')">
+					
+						
+						
+							vios	
+						
+					
+					<span class="ibm-access">(12)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+							
+								
+							
+							
+							
+							
+						
+				<li class="f79-21">
+					
+					<a title="virtualization 18" class="lotusF2 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=virtualization&amp;lang=en')">
+					
+						
+							virtualizatio...	
+						
+						
+					
+					<span class="ibm-access">(18)</span>					
+					</a>&nbsp;
+				</li>
+					
+						
+							
+								
+							
+							
+							
+							
+							
+						
+				<li class="f80-19">
+					
+					<a title="wpar 17" class="lotusF1 my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=wpar&amp;lang=en')">
+					
+						
+						
+							wpar	
+						
+					
+					<span class="ibm-access">(17)</span>					
+					</a>&nbsp;
+				</li>
+					
+			</ul>
+		</div>
+		
+			
+						
+						
+						
+						
+						
+			
+			
+				<div class="ibm-rule"><hr></div><p>View as <strong>cloud</strong>&nbsp;| <a id="alist" class="lotusAction" href="javascript:;">list</a></p>
+			
+		
+		</div> 
+
+		
+			
+			<div class="lotusChunk dw-hidetag" id="dogearTagList">
+			<div id="list-container">
+				<ul class="lotusList lotusEditable lotusTags lotusMeta">
+				
+					
+						
+			
+
+			
+				<li>				
+					<a title="admin 7" class="lotusLeft my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=admin&amp;lang=en')">
+						
+							
+							
+								admin	
+							
+						
+					</a>
+					7
+				</li>
+				
+			
+					
+						
+			
+
+			
+				<li>				
+					<a title="administrator 8" class="lotusLeft my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=administrator&amp;lang=en')">
+						
+							
+							
+								administrator	
+							
+						
+					</a>
+					8
+				</li>
+				
+			
+					
+						
+			
+
+			
+				<li>				
+					<a title="administrators 9" class="lotusLeft my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=administrators&amp;lang=en')">
+						
+							
+							
+								administrators	
+							
+						
+					</a>
+					9
+				</li>
+				
+			
+					
+						
+			
+
+			
+				<li>				
+					<a title="aix 588" class="lotusLeft my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix&amp;lang=en')">
+						
+							
+							
+								aix	
+							
+						
+					</a>
+					588
+				</li>
+				
+			
+					
+						
+			
+
+			
+				<li>				
+					<a title="aix_5l 7" class="lotusLeft my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix_5l&amp;lang=en')">
+						
+							
+							
+								aix_5l	
+							
+						
+					</a>
+					7
+				</li>
+				
+			
+					
+						
+			
+
+			
+				<li>				
+					<a title="aix_7 12" class="lotusLeft my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix_7&amp;lang=en')">
+						
+							
+							
+								aix_7	
+							
+						
+					</a>
+					12
+				</li>
+				
+			
+					
+						
+			
+
+			
+				<li>				
+					<a title="aix_and_unix 224" class="lotusLeft my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=aix_and_unix&amp;lang=en')">
+						
+							
+							
+								aix_and_unix	
+							
+						
+					</a>
+					224
+				</li>
+				
+			
+					
+						
+			
+
+			
+				<li>				
+					<a title="application_development 46" class="lotusLeft my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=application_development&amp;lang=en')">
+						
+							
+								application_d...	
+							
+							
+						
+					</a>
+					46
+				</li>
+				
+			
+					
+						
+			
+
+			
+				<li>				
+					<a title="arpan_sen 9" class="lotusLeft my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=arpan_sen&amp;lang=en')">
+						
+							
+							
+								arpan_sen	
+							
+						
+					</a>
+					9
+				</li>
+				
+			
+					
+						
+			
+
+			
+				<li>				
+					<a title="articles 11" class="lotusLeft my" href="javascript:launchTagWindow('/developerworks/mydeveloperworks/bookmarks/html?tag=articles&amp;lang=en')">
+						
+							
+							
+								articles	
+							
+						
+					</a>
+					11
+				</li>
+				
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+					
+			
+				
+			</ul>
+			</div>
+			
+				
+							
+							
+							
+							
+							
+								
+				
+					<div class="ibm-rule"><hr></div><p>View as <a id="acloud" class="lotusAction" href="javascript:;">cloud</a>&nbsp;| <strong>list</strong></p>
+				
+			
+			</div></div>  
+</div>   
+</div>
+</div>
+<!-- Tagging_End -->
+<!-- Dig_Deeper -->
+<div class="ibm-container"><h2>Dig deeper into AIX and UNIX on developerWorks</h2><div class="ibm-container-body"><ul class="ibm-link-list"><li class="ibm-first"><a href="http://www.ibm.com/developerworks/aix/" class="ibm-forward-link">Overview</a></li><li><a href="http://www.ibm.com/developerworks/aix/newto/" class="ibm-forward-link">New to AIX and UNIX</a></li><li><a href="http://www.ibm.com/developerworks/views/aix/downloads.jsp" class="ibm-forward-link">Downloads and products</a></li><li><a href="http://www.ibm.com/developerworks/views/aix/projects.jsp" class="ibm-forward-link">Open source projects</a></li><li><a href="http://www.ibm.com/developerworks/views/aix/library.jsp" class="ibm-forward-link">Technical library (articles, tutorials, and more)</a></li><li><a href="http://www.ibm.com/developerworks/aix/training/" class="ibm-forward-link">Training</a></li><li><a href="http://www.ibm.com/developerworks/aix/community/" class="ibm-forward-link">Forums and community</a></li><li><a href="http://www.ibm.com/developerworks/views/aix/events.jsp" class="ibm-forward-link">Events</a></li><li><a href="http://www.ibm.com/developerworks/newsletter/" class="ibm-forward-link">Newsletter</a></li></ul></div></div>
+<!-- High_Visibility_Offer -->
+<!--XSLT stylesheet used to transform this content: s-highvisibilityoffer.xsl--><div class="ibm-container"><h2>Seeking nominations</h2><div class="ibm-container-body"><img alt="IBM Champion logo" src="tcsh_files/hivis-champion-community.jpg" height="70" width="188" border="0"><p class="ibm-ind-link"><a href="https://www.ibm.com/developerworks/champion/" class="ibm-forward-link">Nominate IBM Champions: experts who help you build a smarter planet with IBM</a></p></div></div>
+<!-- Special_Offers -->
+<div class="ibm-container"><h2>Special offers</h2><div class="ibm-container-body"><p class="dw-special-offers"><a href="http://www.ibm.com/developerworks/demos/"><img src="tcsh_files/tile_v16_ondemanddemos.gif" alt="On demand demos: An easy way to watch and learn" height="50" width="158" border="0"></a></p><p class="dw-special-offers"><a href="http://www.ibm.com/developerworks/aboutdw/dwa/?ca=dti-dwarp"><img src="tcsh_files/tile_v16_dwaarp.gif" alt="Get recognized! W Author Program" height="50" width="158" border="0"></a></p><p class="dw-special-offers"><a href="https://www.ibm.com/developerworks/cloud/index.html?ca=dti-cloudzone"><img src="tcsh_files/tile_v16_cloudzoneA.gif" alt="Cloud Computing resources for IT professionals" height="50" width="158" border="0"></a></p><div class="ibm-rule"><hr></div><p class="ibm-ind-link"><a class="ibm-forward-link" href="http://www.ibm.com/developerworks/downloads/?ca=dti-tilemoreoffers">Trial software offers</a></p></div></div>
+<!-- RIGHT_COLUMN_CONTENT_END -->
+
+</div>
+<!-- RIGHT_COLUMN_END -->
+
+<!-- CONTENT_BODY_END -->
+</div>
+
+</div>
+<!-- CONTENT_END -->
+
+ <!-- END_IBM-PCON -->
+</div>
+
+<!-- FOOTER_BEGIN -->
+<div id="ibm-footer">
+<!-- IBM footer container; disabled -->
+</div>
+
+<div id="ibm-page-tools-dw">
+	<div id="dw-footer-top-row">
+		<ul id="dw-foot-options">
+			<li id="dw-print"><a class="ibm-print-link" href="#">Print this page</a></li>
+		</ul>
+		<ul id="ibm-foot-options-dw">
+			<li id="dw-foot-0"><a href="#">Share this page</a></li>
+			<li id="dw-foot-1"><a href="#">Follow developerWorks</a></li>
+		</ul>
+	</div>
+
+	<!-- TOP ROW SLIDER -->
+    <div id="dw-page-tools-menu">    
+        <div class="ibm-ribbon-pane-dw">
+            <div class="ibm-ribbon-section-dw">
+				<!-- Share this page -->			
+                <div class="dw-footer-columns">
+                    <div class="dw-footer-col-3-1">
+                        <h2>Share this page:</h2>                       
+						<ul class="ibm-link-list">
+							<li><a id="dw-foot-0-0" class="ibm-facebook-link" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Faix%2Flibrary%2Fau-tcsh%2Findex.html&amp;t=Tcsh%20shell%20variables">Facebook</a></li>
+							<li><a class="ibm-linkedin-link" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Faix%2Flibrary%2Fau-tcsh%2Findex.html&amp;title=Tcsh%20shell%20variables">LinkedIn</a></li>
+							<li><a class="ibm-twitter-link" href="http://twitter.com/home?status=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Faix%2Flibrary%2Fau-tcsh%2Findex.html%20-%20Tcsh%20shell%20variables">Twitter</a></li>
+						</ul>
+                    </div>
+                    <div class="dw-footer-col-3-2">
+						<ul class="ibm-link-list">
+							<li><a class="ibm-delicious-link" href="http://delicious.com/post?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Faix%2Flibrary%2Fau-tcsh%2Findex.html&amp;title=Tcsh%20shell%20variables">Delicious</a></li>
+							<li><a class="ibm-digg-link" href="http://digg.com/submit?phase=2&amp;url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Faix%2Flibrary%2Fau-tcsh%2Findex.html&amp;title=Tcsh%20shell%20variables">Digg</a></li>
+							<li><a class="ibm-stumbleupon" href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fwww.ibm.com%2Fdeveloperworks%2Faix%2Flibrary%2Fau-tcsh%2Findex.html&amp;title=Tcsh%20shell%20variables">StumbleUpon</a></li>
+						</ul>
+                    </div>
+                    <div class="dw-footer-col-3-3">
+						<ul class="ibm-link-list">
+							<li><a class="ibm-email-link" href="#">Email this page</a></li>
+						</ul>
+                    </div>
+                    <div class="dw-footer-close">
+						<ul>
+							<li><a href="#">Close [x]</a></li>
+						</ul>
+                    </div>
+                </div>
+                <!-- Follow developerWorks -->
+                <div class="dw-footer-columns">
+                    <div class="dw-footer-col-1-1">
+                        <h2>Follow developerWorks:</h2>
+						<ul class="ibm-link-list">
+							<li><a id="dw-foot-1-0" class="ibm-facebook-link" href="http://www.facebook.com/developerworks">Facebook</a></li>
+							<li><a class="ibm-twitter-link" href="http://twitter.com/developerWorks">Twitter</a></li>
+						</ul>
+                    </div>
+                    <div class="dw-footer-close">
+						<ul>
+							<li><a href="#">Close [x]</a></li>
+						</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="ibm-footer-module-dw">
+	<div class="dw-footer-columns">
+		<div class="dw-footer-col-6-1"> 
+			<h2><a href="http://www.ibm.com/developerworks/topics/">Technical topics</a></h2>
+			<ul>
+				<li><a href="http://www.ibm.com/developerworks/aix/">AIX and UNIX</a></li>
+				<li><a href="http://www.ibm.com/developerworks/ibmi/">IBM i</a></li>
+				<li class="dw-footer-newline dw-footer-newline-en"><a href="http://www.ibm.com/developerworks/data/">Information<br> Management</a></li>
+				<li><a href="http://www.ibm.com/developerworks/lotus/">Lotus</a></li>
+				<li><a href="http://www.ibm.com/developerworks/rational/">Rational</a></li>
+				<li><a href="http://www.ibm.com/developerworks/tivoli/">Tivoli</a></li>
+				<li><a href="http://www.ibm.com/developerworks/websphere/">WebSphere</a></li>
+			</ul>
+			<ul>
+				<li class="dw-footer-newgroup"><a href="http://www.ibm.com/developerworks/cloud/">Cloud computing</a></li>
+				<li><a href="http://www.ibm.com/developerworks/industry/">Industries</a></li>
+				<li class="dw-footer-newline dw-footer-newline-en"><a href="http://www.ibm.com/developerworks/servicemanagement/">Integrated Service<br> Management</a></li>
+			</ul>
+		</div>
+		<div class="dw-footer-col-6-2">
+			<ul>
+				<li><a href="http://www.ibm.com/developerworks/java/">Java technology</a></li>
+				<li><a href="http://www.ibm.com/developerworks/linux/">Linux</a></li>
+				<li><a href="http://www.ibm.com/developerworks/opensource/">Open source</a></li>
+				<li><a href="http://www.ibm.com/developerworks/webservices/">SOA and web services</a></li>
+				<li><a href="http://www.ibm.com/developerworks/web/">Web development</a></li>
+				<li><a href="http://www.ibm.com/developerworks/xml/">XML</a></li>
+			</ul>
+			<h2 class="dw-footer-more"><a href="http://www.ibm.com/developerworks/topics/">More...</a></h2>
+		</div>
+		<div class="dw-footer-col-6-3">
+			<h2><a href="http://www.ibm.com/developerworks/downloads/">Evaluation software</a></h2>
+			<ul>
+				<li><a href="http://www.ibm.com/developerworks/downloads/product.html">By IBM product</a></li>
+				<li><a href="http://www.ibm.com/developerworks/downloads/evalmethod.html">By evaluation method</a></li>
+				<li><a href="http://www.ibm.com/developerworks/downloads/industry.html">By industry</a></li>
+			</ul>
+			<h2 class="dw-footer-newgroup"><a href="http://www.ibm.com/developerworks/events/">Events</a></h2>
+			<ul>
+				<li><a href="http://www.ibm.com/developerworks/briefings/">Briefings</a></li>
+				<li><a href="http://www.ibm.com/developerworks/find/webcasts/">Webcasts</a></li>
+				<li><a href="http://www.ibm.com/developerworks/find/events/">Find events</a></li>
+			</ul>
+		</div>
+		<div class="dw-footer-col-6-4">
+			<h2><a href="http://www.ibm.com/developerworks/community/">Community</a></h2>
+			<ul>
+				<li><a href="http://www.ibm.com/developerworks/forums/">Forums</a></li>
+				<li><a href="http://www.ibm.com/developerworks/community/groups/">Groups</a></li>
+				<li><a href="http://www.ibm.com/developerworks/community/blogs/">Blogs</a></li>
+				<li><a href="http://www.ibm.com/developerworks/mydeveloperworks/wikis/">Wikis</a></li>
+				<li><a href="https://www.ibm.com/developerworks/community/terms/">Terms of use</a></li>
+				<li><a href="https://www.ibm.com/developerworks/community/report/">Report abuse</a></li>
+			</ul>
+			<ul>
+				<li class="dw-footer-newgroup dw-footer-newline"><a href="http://www.ibm.com/developerworks/champion/">IBM Champion<br> program</a></li>
+			</ul>
+			<h2 class="dw-footer-more"><a href="http://www.ibm.com/developerworks/community/">More...</a></h2>
+		</div>
+		<div class="dw-footer-col-6-5">
+			<h2><a href="http://www.ibm.com/developerworks/aboutdw/">About developerWorks</a></h2>
+			<ul>
+				<li><a href="https://www.ibm.com/developerworks/feedback">Site help and feedback</a></li>
+				<li><a href="http://www.ibm.com/developerworks/aboutdw/contacts.html">Contacts</a></li>
+				<li><a href="https://www.ibm.com/developerworks/ideas">Article submissions</a></li>
+			</ul>
+			<h2 class="dw-footer-headonly dw-footer-newgroup">Related resources</h2>
+			<ul>
+				<li><a href="http://www.ibm.com/developerworks/university/">Students and faculty</a></li>
+				<li><a href="http://www.ibm.com/isv/">Business Partners</a></li>
+			</ul>
+		</div>
+		<div class="dw-footer-col-6-6">
+			<h2><a href="http://www.ibm.com/">IBM</a></h2>
+			<ul>
+				<li><a href="http://www.ibm.com/solutions/">Solutions</a></li>
+				<li><a href="http://www.ibm.com/software/">Software</a></li>
+				<li><a href="http://www.ibm.com/software/sw-services/">Software services</a></li>
+				<li><a href="http://www.ibm.com/support/">Support</a></li>
+				<li><a href="http://www.ibm.com/support/publications/us/library/index.shtml">Product information</a></li>
+				<li><a href="http://www.ibm.com/redbooks/">Redbooks</a></li>
+				<li><a href="http://www.ibm.com/privacy/">Privacy</a></li>
+				<li><a href="http://www.ibm.com/accessibility/">Accessibility</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- Language selector no-script -->
+	<noscript>
+	<div id="dw-footer-selectlang">
+		<h2><a name="SELECTLANG">Select a language:</a></h2>
+		<ul>
+			<li><a href="http://www.ibm.com/developerworks/">English</a></li>
+			<li><a href="http://www.ibm.com/developerworks/cn/">中文</a></li>
+			<li><a href="http://www.ibm.com/developerworks/jp/">日本語</a></li>
+			<li><a href="http://www.ibm.com/developerworks/kr/">한국어</a></li>
+			<li><a href="http://www.ibm.com/developerworks/ru/">Русский</a></li>
+			<li><a href="http://www.ibm.com/developerworks/br/">Português (Brasil)</a></li>
+			<li><a href="http://www.ibm.com/developerworks/ssa/">Español</a></li>
+			<li><a href="http://www.ibm.com/developerworks/vn/">Việt</a></li>
+		</ul>
+	</div>
+	</noscript>
+</div><!-- FOOTER_END -->
+
+ <!-- END_IBM-TOP -->
+<div id="ibm-overlay-top"></div></div>
+ 
+ <!-- SCRIPTS_INCLUDE_BEGIN -->
+<!-- JQuery start -->
+<script type="text/javascript" language="JavaScript" src="tcsh_files/jquery.js"></script>
+<script type="text/javascript" language="JavaScript" src="tcsh_files/jquery_002.js"></script>
+<script type="text/javascript" language="JavaScript" src="tcsh_files/ui.js"></script>
+<script type="text/javascript" language="JavaScript" src="tcsh_files/ui_002.js"></script>
+<!-- xM Masthead/Footer -->
+<script type="text/javascript" language="JavaScript" src="tcsh_files/jquery_004.js">//</script>
+<script type="text/javascript" language="JavaScript" src="tcsh_files/jquery_003.js">//</script>
+<script type="text/javascript" language="JavaScript" src="tcsh_files/dw_v16.js">//</script>
+<script type="text/javascript" language="JavaScript" src="tcsh_files/flash-detect_002.js">//</script>
+<script type="text/javascript" language="JavaScript" src="tcsh_files/dwsi.js">//</script>
+<script type="text/javascript" language="JavaScript" src="tcsh_files/dwjquerytags.js"></script>
+<script type="text/javascript" language="JavaScript" src="tcsh_files/showcomments.js">//</script>
+<script language="JavaScript" type="text/javascript">
+// <![CDATA[
+ jQuery('threadShow').showComments('95%',5,'nCmts','icomments');
+// ]]>
+</script>
+
+<script type="text/javascript" language="JavaScript">
+	jQuery.noConflict();     
+	// Put all your code in your document ready area
+	jQuery(document).ready(function(jQuery) {
+	// Do jQuery stuff using jQuery 
+	jQuery('a.dwauthor').cluetip({
+		local: true,
+		showTitle: false,
+		positionBy: 'bottomTop',
+		sticky: true,	
+		mouseOutClose: true,
+		closeText: '<img src="//dw1.s81c.com/developerworks/js/jquery/cluetip98/i/x.gif" alt="Close" />',
+		arrows: false,
+		dropShadow: true,
+		cluetipClass: 'dwbasic'
+		});
+
+		//tagging
+		login="false";
+		userid="";
+		whichTags = "init";
+		pCont = "";
+		mCont = "";
+		signInMCont = "";
+		accessCont = "";
+		pValue = 0;
+		mValue = 0;
+
+		rBHash = null;
+		rBHash = new Object();
+		rBHash['viperLang'] = 'en';
+		rBHash['urlLang'] = 'en';
+		rBHash['tagThisWinTitle'] = 'Tagit';
+		rBHash['pTags1'] = 'Popular tags';
+		rBHash['pTags2'] = 'End of Popular tags';
+		rBHash['mTags1'] = 'My tags';
+		rBHash['mTags2'] = 'End of My tags';
+		rBHash['alt1'] = 'Loading Content';
+		rBHash['noATags'] = 'No active tags';
+		rBHash['signIn1'] = 'Please ';
+		rBHash['signIn2'] = 'sign in';
+		rBHash['signIn3'] = ' to access';
+		rBHash['signIn4'] = 'My Tags';
+		rBHash['signIn5'] = 'To access My Tags, please ';
+		rBHash['signIn6'] = 'sign in';
+		rBHash['signIn7'] = 'Read Popular tags';
+
+		zoneHash = new Object();
+		zoneHash['aix'] = 'AIX and UNIX zone';
+		zoneHash['ibmi'] = 'IBM i zone';
+		zoneHash['data'] = 'Information Management zone';
+		zoneHash['lotus'] = 'Lotus zone';
+		zoneHash['rational'] = 'Rational zone';
+		zoneHash['tivoli'] = 'Tivoli zone';
+		zoneHash['websphere'] = 'WebSphere zone';
+		zoneHash['architecture'] = 'Technical library';
+		zoneHash['autonomic'] = 'Technical library';
+		zoneHash['java'] = 'Technical library';
+		zoneHash['cloud'] = 'Technical library';
+		zoneHash['industry'] = 'Technical library';
+		zoneHash['library'] = 'Technical library';
+		zoneHash['linux'] = 'Technical library';
+		zoneHash['opensource'] = 'Technical library';
+		zoneHash['power'] = 'Technical library';
+		zoneHash['webservices'] = 'Technical library';
+		zoneHash['web'] = 'Technical library';
+		zoneHash['xml'] = 'Technical library';
+		zoneHash['wireless'] = 'Technical library';
+		jQuery.checkRB();
+		jQuery.getPopularTags("/developerworks/dwtags/dwjquerytabtags?lang=" + rBHash['viperLang'] + "&base=" + jQuery.getNormalizedZoneUrl(location.href));
+		jQuery.getUserTags();
+		if(jQuery.isTutorial(location.href) == "true") {
+			jQuery.getTagsForContent("/developerworks/tagging/UseCaseServlet?lang=" + rBHash['viperLang'] + "&format=maverick&cType=tutorials&use_case=geturltags&action=gettags&url=" + jQuery.normalizeUrl(location.href));
+		}
+		else {
+			jQuery.getTagsForContent("/developerworks/tagging/UseCaseServlet?lang=" + rBHash['viperLang'] + "&format=maverick&cType=articles&use_case=geturltags&action=gettags&url=" + jQuery.normalizeUrl(location.href));
+
+		}
+		
+		// si
+		initSI();
+	});
+ </script>
+ <!-- JQuery end -->
+ <!-- Overlay js -->
+<script language="JavaScript" src="tcsh_files/overlay.js" type="text/javascript"></script>
+<!-- My dW Interest article -->
+<script language="JavaScript" src="tcsh_files/showinterest.js" type="text/javascript">//</script>
+<script language="JavaScript" type="text/javascript">
+        // <![CDATA[
+			var contentId = '';
+			var contentAreas = '';
+			var caArr = [];
+			contentId = '333145';
+			contentAreas = 'aix';
+			if(contentAreas != ''){caArr = contentAreas.split(',');}
+			var loginLink = 'https://www.ibm.com/developerworks/dwwi/DWAuthRouter?m=loginpage&d=' + encodeURIComponent(window.location);jQuery('interestShow').showInterest(contentId,'dw-article',{'int_tops':[263,361,352,228],'int_prods':[], 'int_prod_fam':[],'int_cont_area':caArr},
+'<div id="dw-interest-anon"><a id="intAnonBtn" class="ibm-external-link" href="">Update My dW interests</a> (<a class="dw-interest" href="' + loginLink + '">Log in</a> | <a class="dw-interest" href="#overlay" onclick="ibmCommon.Overlays.show(\'dwmyinterestadd\', this);return false;">What\'s this?</a>) <a class="ibm-access" href="#dwmyinterestaddhelp">Skip to help for Update My dW interests</a></div>',
+'<div id="dw-interest-add"><a id="intSelectBtn" class="ibm-external-link" href="">Add to My dW interests</a> (<a class="dw-interest" href="#overlay" onclick="ibmCommon.Overlays.show(\'dwmyinterestadd\', this);return false;">What\'s this?</a>) <a class="ibm-access" href="#dwmyinterestaddhelp">Skip to help for Add to My dW interests</a></div>',
+'<div id="dw-interest-remove">Added to My dW interests (<a class="dw-interest" href="https://www.ibm.com/developerworks/mydeveloperworks/profiles/html/myProfileView.do?lang=en">Edit</a>)</div>'
+);
+// ]]>
+</script><!-- BEGIN: Use this section to set page specific variables for the Unica Page Tag -->
+<script language="JavaScript">var NTPT_PGEXTRA="ibmSkillLevel=3&ibmAdoptPhase=651&ibmRole=12";</script>
+<!--END --><!-- SCRIPTS_INCLUDE_END -->
+
+<div id="ibm-metrics">
+<script src="tcsh_files/stats.js" type="text/javascript">//</script>
+</div>
+
+<div style="position: absolute; z-index: 95; display: none;" id="cluetip-waitimage"></div><div style="z-index: 96; display: none; position: absolute;" id="cluetip"><div style="z-index: 95; opacity: 0.1; top: 1px; left: 1px; position: absolute; background-color: rgb(0, 0, 0);"></div><div style="z-index: 94; opacity: 0.1; top: 2px; left: 2px; position: absolute; background-color: rgb(0, 0, 0);"></div><div style="z-index: 93; opacity: 0.1; top: 3px; left: 3px; position: absolute; background-color: rgb(0, 0, 0);"></div><div style="z-index: 92; opacity: 0.1; top: 4px; left: 4px; position: absolute; background-color: rgb(0, 0, 0);"></div><div style="z-index: 91; opacity: 0.1; top: 5px; left: 5px; position: absolute; background-color: rgb(0, 0, 0);"></div><div style="z-index: 90; opacity: 0.1; top: 6px; left: 6px; position: absolute; background-color: rgb(0, 0, 0);"></div><div style="position: relative; z-index: 97;" id="cluetip-outer"><h3 id="cluetip-title"></h3><div id="cluetip-inner"></div></div><div id="cluetip-extra"></div><div style="z-index: 97;" id="cluetip-arrows" class="cluetip-arrows"></div></div></body></html>

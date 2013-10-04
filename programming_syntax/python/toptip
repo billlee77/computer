@@ -1,0 +1,7 @@
+# Excute script in python prompt
+execfile("file.py")
+
+# Remain in python shell after excution
+python -i file.py
+
+

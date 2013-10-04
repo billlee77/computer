@@ -1,0 +1,5 @@
+# /etc/apt/source.list
+
+	deb http://mirror.noreply.org/pub/tor jaunty main
+	deb-src http://mirror.noreply.org/pub/tor jaunty main
+

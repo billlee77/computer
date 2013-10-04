@@ -1,0 +1,3224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head>
+<!-- base href="http://www.unix.com/" -->
+	<meta name="alexaVerifyID" content="62rdpUkEhJIA-A9UWZGy3zhmEwY">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="content-language" content="en">
+<meta name="verify-v1" content="d7KL/EoqLaqXsOmNGKAC9m73MuzJYton6RNp7Wecu14=">
+<meta name="verify-v1" content="l8CHnoxZ0N4dXZLnZIz9DCY8WaZdgh5O0EwSUZKPpsM=">
+<meta name="y_key" content="347c78bea09a90d1"> 
+<meta name="generator" content="vBulletin 3.8.4">
+
+
+<meta name="keywords" content="how,remove,first,line,flat,file,learn unix, learn linux, unix help, linux help, unix commands, linux commandssed delete line, shell script, shell scripting, unix commands, unix scripting, unix scripting basics, , Unix,Solaris,Linux,AIX,HPUX,operating systems,linux commands,Ubuntu, Red Hat,OSX,BSD,FreeBSD,learn unix,programming,bash,shell">
+<meta name="description" content="Hi, I want to remove the first line from a flat file using unix command as simple as possible. Can anybody give me a hand ? Thanks in advance. xli">
+
+
+
+
+
+
+   <script src="17622-how-remove-first-line-flat-file_files/beacon.js" async=""></script><script src="17622-how-remove-first-line-flat-file_files/all.js" id="facebook-jssdk"></script><script src="17622-how-remove-first-line-flat-file_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/spcjs.js"></script><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/spc.js"></script><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/fl.js"></script>
+
+
+
+
+
+
+
+  
+
+
+<link rel="stylesheet" type="text/css" href="17622-how-remove-first-line-flat-file_files/static_neo.css">
+
+<link rel="stylesheet" type="text/css" href="17622-how-remove-first-line-flat-file_files/vbulletin_important.css">
+
+
+
+
+<!-- / CSS Stylesheet -->
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/connection-min.js"></script>
+
+<script type="text/javascript">
+
+<!--
+var SESSIONURL = "s=6bb3e03d77a6858978b4555c619ae3a7&";
+var SECURITYTOKEN = "guest";
+var IMGDIR_MISC = "http://linux.unix.com/images/misc";
+var vb_disable_ajax = parseInt("0", 10);
+// -->
+</script>
+
+
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/vbulletin_global.js"></script>
+
+
+
+
+
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/vbulletin_menu.js"></script>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/credits_ajax_postadd.js"></script>
+
+
+
+    <link rel="alternate" type="application/rss+xml" title="The UNIX and Linux Forums RSS Feed" href="http://www.unix.com/external.php?type=RSS2">
+    
+        <link rel="alternate" type="application/rss+xml" title="The UNIX and Linux Forums - UNIX for Dummies Questions &amp; Answers - RSS Feed" href="http://www.unix.com/external.php?type=RSS2&amp;forumids=2">
+    
+
+
+
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1734842-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+
+
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border-spacing:0;border:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yA/x/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y6/x/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yA/x/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y6/x/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yA/x/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/y6/x/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yR/x/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yD/x/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;left:-10000px;overflow:visible;position:absolute;top:-10000px;width:100%
+}
+.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yc/x/3rhSv5V8j3o.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0 0, 0 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0 0, 0 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yJ/x/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{position:relative;display:-moz-inline-block;display:inline-block}
+.fb_iframe_widget iframe{position:absolute}
+.fb_iframe_widget_lift{z-index:1}
+.fb_iframe_widget span{position:relative;display:inline-block;vertical-align:text-bottom;text-align:justify}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yJ/x/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_button_simple,
+.fb_button_simple_rtl{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yH/x/eIpbnVKI9lR.png);background-repeat:no-repeat;cursor:pointer;outline:none;text-decoration:none}
+.fb_button_simple_rtl{background-position:right 0}
+.fb_button_simple .fb_button_text{margin:0 0 0 20px;padding-bottom:1px}
+.fb_button_simple_rtl .fb_button_text{margin:0 10px 0 0}
+a.fb_button_simple:hover .fb_button_text,
+a.fb_button_simple_rtl:hover .fb_button_text,
+.fb_button_simple:hover .fb_button_text,
+.fb_button_simple_rtl:hover .fb_button_text{text-decoration:underline}
+.fb_button,
+.fb_button_rtl{background:#29447e url(http://static.ak.fbcdn.net/rsrc.php/v2/yl/x/FGFbc80dUKj.png);background-repeat:no-repeat;cursor:pointer;display:inline-block;padding:0 0 0 1px;text-decoration:none;outline:none}
+.fb_button .fb_button_text,
+.fb_button_rtl .fb_button_text{background:#5f78ab url(http://static.ak.fbcdn.net/rsrc.php/v2/yl/x/FGFbc80dUKj.png);border-top:solid 1px #879ac0;border-bottom:solid 1px #1a356e;color:#fff;display:block;font-family:"lucida grande",tahoma,verdana,arial,sans-serif;font-weight:bold;padding:2px 6px 3px 6px;margin:1px 1px 0 21px;text-shadow:none}
+a.fb_button,
+a.fb_button_rtl,
+.fb_button,
+.fb_button_rtl{text-decoration:none}
+a.fb_button:active .fb_button_text,
+a.fb_button_rtl:active .fb_button_text,
+.fb_button:active .fb_button_text,
+.fb_button_rtl:active .fb_button_text{border-bottom:solid 1px #29447e;border-top:solid 1px #45619d;background:#4f6aa3;text-shadow:none}
+.fb_button_xlarge,
+.fb_button_xlarge_rtl{background-position:left -60px;font-size:24px;line-height:30px}
+.fb_button_xlarge .fb_button_text{padding:3px 8px 3px 12px;margin-left:38px}
+a.fb_button_xlarge:active{background-position:left -99px}
+.fb_button_xlarge_rtl{background-position:right -268px}
+.fb_button_xlarge_rtl .fb_button_text{padding:3px 8px 3px 12px;margin-right:39px}
+a.fb_button_xlarge_rtl:active{background-position:right -307px}
+.fb_button_large,
+.fb_button_large_rtl{background-position:left -138px;font-size:13px;line-height:16px}
+.fb_button_large .fb_button_text{margin-left:24px;padding:2px 6px 4px 6px}
+a.fb_button_large:active{background-position:left -163px}
+.fb_button_large_rtl{background-position:right -346px}
+.fb_button_large_rtl .fb_button_text{margin-right:25px}
+a.fb_button_large_rtl:active{background-position:right -371px}
+.fb_button_medium,
+.fb_button_medium_rtl{background-position:left -188px;font-size:11px;line-height:14px}
+a.fb_button_medium:active{background-position:left -210px}
+.fb_button_medium_rtl{background-position:right -396px}
+.fb_button_text_rtl,
+.fb_button_medium_rtl .fb_button_text{padding:2px 6px 3px 6px;margin-right:22px}
+a.fb_button_medium_rtl:active{background-position:right -418px}
+.fb_button_small,
+.fb_button_small_rtl{background-position:left -232px;font-size:10px;line-height:10px}
+.fb_button_small .fb_button_text{padding:2px 6px 3px;margin-left:17px}
+a.fb_button_small:active,
+.fb_button_small:active{background-position:left -250px}
+.fb_button_small_rtl{background-position:right -440px}
+.fb_button_small_rtl .fb_button_text{padding:2px 6px;margin-right:18px}
+a.fb_button_small_rtl:active{background-position:right -458px}
+.fb_share_count_wrapper{position:relative;float:left}
+.fb_share_count{background:#b0b9ec none repeat scroll 0 0;color:#333;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;text-align:center}
+.fb_share_count_inner{background:#e8ebf2;display:block}
+.fb_share_count_right{margin-left:-1px;display:inline-block}
+.fb_share_count_right .fb_share_count_inner{border-top:solid 1px #e8ebf2;border-bottom:solid 1px #b0b9ec;margin:1px 1px 0 1px;font-size:10px;line-height:10px;padding:2px 6px 3px;font-weight:bold}
+.fb_share_count_top{display:block;letter-spacing:-1px;line-height:34px;margin-bottom:7px;font-size:22px;border:solid 1px #b0b9ec}
+.fb_share_count_nub_top{border:none;display:block;position:absolute;left:7px;top:35px;margin:0;padding:0;width:6px;height:7px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yP/x/bSOHtKbCGYI.png)}
+.fb_share_count_nub_right{border:none;display:inline-block;padding:0;width:5px;height:10px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/x/i_oIVTKMYsL.png);vertical-align:top;background-position:right 5px;z-index:10;left:2px;margin:0 2px 0 0;position:relative}
+.fb_share_no_count{display:none}
+.fb_share_size_Small .fb_share_count_right .fb_share_count_inner{font-size:10px}
+.fb_share_size_Medium .fb_share_count_right .fb_share_count_inner{font-size:11px;padding:2px 6px 3px;letter-spacing:-1px;line-height:14px}
+.fb_share_size_Large .fb_share_count_right .fb_share_count_inner{font-size:13px;line-height:16px;padding:2px 6px 4px;font-weight:normal;letter-spacing:-1px}
+.fb_share_count_hidden .fb_share_count_nub_top,
+.fb_share_count_hidden .fb_share_count_top,
+.fb_share_count_hidden .fb_share_count_nub_right,
+.fb_share_count_hidden .fb_share_count_right{visibility:hidden}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fb_edge_widget_with_comment{position:relative;*z-index:1000}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget{position:absolute}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget{z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget .FB_Loader{left:0;top:1px;margin-top:6px;margin-left:0;background-position:50% 50%;background-color:#fff;height:150px;width:394px;border:1px #666 solid;border-bottom:2px solid #283e6c;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.dark .FB_Loader{background-color:#000;border-bottom:2px solid #ccc}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.siderender
+.FB_Loader{margin-top:0}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+/* @noflip */
+.fbpluginrecommendationsbarleft{left:10px}
+/* @noflip */
+.fbpluginrecommendationsbarright{right:10px}
+</style></head><body onload="if (is_ie || is_moz) { var cpost=document.location.hash;if(cpost){ if(cobj = fetch_object(cpost.substring(1,cpost.length)))cobj.scrollIntoView(true); }}"><div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0pt; width: 0pt;"><div><iframe src="17622-how-remove-first-line-flat-file_files/xd_arbiter.html" name="fb_xdm_frame_http" id="fb_xdm_frame_http"></iframe><iframe src="17622-how-remove-first-line-flat-file_files/xd_arbiter_002.html" name="fb_xdm_frame_https" id="fb_xdm_frame_https"></iframe></div><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+<link rel="canonical" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file.html">
+
+
+
+	<title> how to remove the first line from a flat file ? - The UNIX and Linux Forums</title>
+	<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/vbulletin_post_loader.js"></script>
+	<style type="text/css" id="vbulletin_showthread_css">
+	<!--
+	
+	#tag_edit_list { list-style:none; margin:0px; padding:0px; }
+	#tag_edit_list li { float:left; display:block; width:200px; }
+	#tag_edit_list li.mine { font-weight:bold; }
+	
+	#links div { white-space: nowrap; }
+	#links img { vertical-align: middle; }
+	-->
+	</style>
+	<style type="text/css">
+		span.sortarrow {position:absolute;}
+		span.sortarrow img {border:0;}
+		a.sortheader {text-decoration:none; display:block; width:100%;}
+	</style>
+	<script type="text/javascript">
+		var IMGDIR_BUTTON = "http://linux.unix.com/images/buttons";
+	</script>
+	<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/sorttable.js"></script>
+
+
+
+
+
+<!-- content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 25px 0px 25px" align="left">
+
+
+
+
+
+
+
+
+<br>
+
+ 	
+<!-- breadcrumb, login, pm info -->
+<table class="tborder" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+
+<tbody><tr>
+
+	<td class="alt1" width="100%">
+
+
+		
+			<table border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr valign="bottom">
+
+				<td><a href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file.html#" onclick="history.back(1); return false;"><img title="Go Back" src="17622-how-remove-first-line-flat-file_files/navbits_start.gif" alt="Go Back" border="0"></a></td>
+				<td>&nbsp;</td>
+				<td width="100%"><span class="navbar"><a href="http://www.unix.com/" accesskey="1">The UNIX and Linux Forums</a></span> 
+	<span class="navbar">&gt; <a href="http://www.unix.com/index.php#top-forums">Top Forums</a></span>
+
+
+	<span class="navbar">&gt; <a href="http://www.unix.com/unix-dummies-questions-answers/">UNIX for Dummies Questions &amp; Answers</a></span>
+
+</td>
+
+			</tr>
+			<tr>
+				<td class="navbar" style="font-size: 10pt; padding-top: 1px;" colspan="3">
+
+<a href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file.html">
+<img title="how to remove the first line from a flat file ?" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/how-remove-first-line-flat-file_ltr.gif" alt="how to remove the first line from a flat file ?" border="0"></a>
+
+
+ <strong>
+	 how to remove the first line from a flat file ?
+
+</strong></td>
+			</tr>
+			</tbody></table>
+		
+
+	</td>
+
+
+
+
+
+
+<td class="alt1">
+
+
+   <a href="http://www.unix.com/fb/">
+   <img src="17622-how-remove-first-line-flat-file_files/Facebook_Logo_170.jpg" width="70">
+   </a>
+
+
+   </td>
+
+
+
+
+
+
+
+	<td class="alt2" style="padding: 0px;" nowrap="nowrap">
+		<!-- login form -->
+		<form action="http://www.unix.com/login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+		<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/vbulletin_md5.js"></script>
+		<table border="0" cellpadding="0" cellspacing="3">
+		<tbody><tr>
+			<td class="smallfont" style="white-space: nowrap;"><label for="navbar_username">Member Name</label></td>
+			<td><input class="bginput" style="font-size: 11px;" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="Member Name" onfocus="if (this.value == 'Member Name') this.value = '';" type="text"></td>
+			<td class="smallfont" nowrap="nowrap"><label for="cb_cookieuser_navbar"><input name="cookieuser" value="1" tabindex="103" id="cb_cookieuser_navbar" accesskey="c" type="checkbox">Remember Me?</label></td>
+		</tr>
+		<tr>
+			<td class="smallfont"><label for="navbar_password">Password</label></td>
+			<td><input class="bginput" style="font-size: 11px;" name="vb_login_password" id="navbar_password" size="10" tabindex="102" type="password"></td>
+			<td><input class="button" value="Log in" tabindex="104" title="Enter your username and password in the boxes provided to login, or click the 'register' button to create a profile for yourself." accesskey="s" type="submit"></td>
+		</tr>
+		</tbody></table>
+		<input name="s" value="6bb3e03d77a6858978b4555c619ae3a7" type="hidden">
+		<input name="securitytoken" value="guest" type="hidden">
+		<input name="do" value="login" type="hidden">
+		<input name="vb_login_md5password" type="hidden">
+		<input name="vb_login_md5password_utf" type="hidden">
+		</form>
+		<!-- / login form -->
+	</td>
+
+
+
+
+<td class="alt1" nowrap="nowrap" valign="top">
+<font size="-1">Search Forums:</font>
+<br><br>
+<form action="http://www.unix.com/$vboptions[bburl]/cfmgoogle.php" id="cse-search-box">
+  <div>
+    <input name="cx" value="partner-pub-6323928554267084:bsye1r5tx7j" type="hidden">
+    <input name="cof" value="FORID:10" type="hidden">
+    <input style="background: url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" name="q" size="20" type="text">
+    <input name="sa" value="grep" type="submit">
+  </div>
+<input value="www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file.html" name="siteurl" type="hidden"><input value="www.google.ca/url?sa=t&amp;rct=j&amp;q=perl%20delete%20first%20line&amp;source=web&amp;cd=1&amp;ved=0CCMQFjAA&amp;url=http%3A%2F%2Fwww.unix.com%2Funix-dummies-questions-answers%2F17622-how-remove-first-line-flat-file.html&amp;ei=3J5HULzQDIGbiAKqsYCgBw&amp;usg=AFQjCNGgXlbEbKEAW1Ipqp8dGaSataSQAg" name="ref" type="hidden"><input name="ss" type="hidden"></form>
+<center>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/brand.js"></script>
+</center>
+
+</td>
+
+
+
+
+
+</tr>
+</tbody></table>
+<!-- / breadcrumb, login, pm info -->
+
+<!-- nav buttons bar -->
+<div class="tborder" style="padding:1px; border-top-width:0px">
+	<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr align="center">
+                <td class="vbmenu_control"><a href="http://www.unix.com/">Forums</a></td>         
+
+                
+		
+			<td class="vbmenu_control"><a href="http://www.unix.com/register.php" rel="nofollow">Register</a></td>
+		
+
+<!-- Neo's bitsclub link code 
+
+-->
+
+<!-- Neo's  blog code   - disabled
+<td class="vbmenu_control"><a href="http://www.unix.com/blog/">Blog</a></td>
+-->
+
+		<td class="vbmenu_control"><a rel="nofollow" href="http://www.unix.com/misc.php?do=cfrules" style="color: rgb(255, 255, 255);">Forum Rules</a></td><td class="vbmenu_control"><a href="http://www.unix.com/links/index.php">Linux and Unix Links</a></td><td class="vbmenu_control"><a href="http://www.unix.com/man-page/linux/1/man/">Man Pages</a></td><td class="vbmenu_control"><a href="http://www.unix.com/all_albums.php">Albums</a></td>
+		<td class="vbmenu_control"><a href="http://www.unix.com/faq.php" accesskey="5">FAQ</a></td>
+		
+			<td class="vbmenu_control"><a href="http://www.unix.com/members/list/">Members</a></td>
+		
+		<td class="vbmenu_control"><a href="http://www.unix.com/calendar.php">Calendar</a></td>
+
+		
+			
+				
+				<td class="vbmenu_control"><a href="http://www.unix.com/search.php?do=getdaily" accesskey="2">Today's Posts</a></td>
+				
+                            
+			
+			
+		
+		
+		
+
+		</tr>
+	</tbody></table>
+</div>
+<!-- / nav buttons bar --><div align="center">
+<br>
+<div id="navbar_adcode">
+<table width="100%">
+<tbody><tr>
+<td align="center" width="50%">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(1);
+// ]]> --></script><span><script type="text/javascript"><!--// <![CDATA[
+/* openads=http://nj.cyberstrategics.com/www/delivery bannerid=25 zoneid=1 source= */
+// ]]> --></script><script type="text/javascript"><!--
+google_ad_client = "pub-6323928554267084";
+/* 11. navbar left RON Inter */
+google_ad_slot = "3500455808";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/ag.js"></script></span><div id="beacon_ba38ee58de" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="17622-how-remove-first-line-flat-file_files/lg_011.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a rel='nofollow' target='_blank' href='http://nj.cyberstrategics.com/www/delivery/ck.php?n=15fbc83&cb=996653903-1346871013-1'><img border='0' alt='' src='http://nj.cyberstrategics.com/www/delivery/avw.php?zoneid=1&n=15fbc83&cb=996653903-1346871013-1' /></a></noscript>
+</td>
+<td align="center" width="50%">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(2);
+// ]]> --></script><span><script type="text/javascript"><!--// <![CDATA[
+/* openads=http://nj.cyberstrategics.com/www/delivery bannerid=528 zoneid=2 source= */
+// ]]> --></script><script type="text/javascript"><!--
+google_ad_client = "pub-6323928554267084";
+/* 2. ROS Right 300x250, created 11/30/10 */
+google_ad_slot = "5075716629";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/ag.js"></script></span><div id="beacon_6e91d663ff" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="17622-how-remove-first-line-flat-file_files/lg_007.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a rel='nofollow' target='_blank' href='http://nj.cyberstrategics.com/www/delivery/ck.php?n=91ce122&cb=996653903-1346871013-2'><img border='0' alt='' src='http://nj.cyberstrategics.com/www/delivery/avw.php?zoneid=2&n=91ce122&cb=996653903-1346871013-2' /></a></noscript>
+</td>
+</tr>
+</tbody></table>
+
+</div>
+<!--
+
+<div class="smallfont">
+<a href="http://www.unix.com/register.php">Remove advertisements</a>
+</div>
+
+-->
+</div>	
+
+
+<br>
+
+
+
+
+	<table class="tborder" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+	<tbody><tr>
+		<td class="alt1" width="100%"><strong>UNIX for Dummies Questions &amp; Answers</strong> <span class="smallfont">If you're not sure where to post a UNIX or Linux question, post it here.  All UNIX and Linux newbies welcome !!</span></td>
+
+	</tr>
+	</tbody></table>
+	<br>
+
+
+
+<!-- NAVBAR POPUP MENUS -->
+
+	
+	<!-- header quick search form -->
+	<div class="vbmenu_popup" id="navbar_search_menu" style="display:none" align="left">
+		<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr>
+			<td class="thead">Search Forums</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="nohilite">
+				<form action="http://www.unix.com/search.php?do=process" method="post">
+
+					<input name="do" value="process" type="hidden">
+					<input name="quicksearch" value="1" type="hidden">
+					<input name="childforums" value="1" type="hidden">
+					<input name="exactname" value="1" type="hidden">
+					<input name="s" value="6bb3e03d77a6858978b4555c619ae3a7" type="hidden">
+					<input name="securitytoken" value="guest" type="hidden">
+					<div><input class="bginput" name="query" size="25" tabindex="1001" type="text"><input class="button" value="Go" tabindex="1004" type="submit"></div>
+					<div style="margin-top:6px">
+						<label for="rb_nb_sp0"><input name="showposts" value="0" id="rb_nb_sp0" tabindex="1002" checked="checked" type="radio">Show Threads</label>
+						&nbsp;
+						<label for="rb_nb_sp1"><input name="showposts" value="1" id="rb_nb_sp1" tabindex="1003" type="radio">Show Posts</label>
+					</div>
+				</form>
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="vbmenu_option"><a href="http://www.unix.com/tags/" rel="nofollow">Tag Search</a></td>
+		</tr>
+		
+		<tr>
+			<td class="vbmenu_option"><a href="http://www.unix.com/search.php" accesskey="4" rel="nofollow">Advanced Search</a></td>
+		</tr>
+
+		<tr><td class="vbmenu_option"><a rel="nofollow" href="http://www.unix.com/search.php?do=process&amp;replyless=1&amp;replylimit=0&amp;exclude=31,41,54,67,69,90,68,74,75,66,58,76,79,89,94,64,72,80,91,97,98,88,106,107,108,109,110,111,112,113,116,123&amp;nocache=0">Unanswered Threads</a></td></tr><tr>
+	<td class="vbmenu_option"><a rel="nofollow" href="http://www.unix.com/post_thanks.php?do=findallthanks">Find All Thanked Posts</a></td>
+</tr>
+		</tbody></table>
+	</div>
+	<!-- / header quick search form -->
+	
+
+	
+<!-- / NAVBAR POPUP MENUS -->
+
+<!-- PAGENAV POPUP -->
+	<div class="vbmenu_popup" id="pagenav_menu" style="display: none; position: absolute; z-index: 50;">
+		<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr>
+			<td class="thead" nowrap="nowrap">Go to Page...</td>
+		</tr>
+		<tr>
+			<td class="vbmenu_option" title="">
+			<form action="http://www.unix.com/index.php" method="get" onsubmit="return this.gotopage()" id="pagenav_form">
+				<input class="bginput" id="pagenav_itxt" style="font-size: 11px;" size="4" type="text">
+				<input class="button" id="pagenav_ibtn" value="Go" type="button">
+			</form>
+			</td>
+		</tr>
+		</tbody></table>
+	</div>
+<!-- / PAGENAV POPUP -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="poststop" id="poststop"></a>
+
+<!-- controls above postbits -->
+<table style="margin-bottom: 3px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+
+<tbody><tr><td>
+</td></tr><tr valign="bottom">
+	
+		<td class="smallfont"><a href="http://www.unix.com/newreply.php?do=newreply&amp;noquote=1&amp;p=66799" rel="nofollow"><img title="Closed Thread" src="17622-how-remove-first-line-flat-file_files/threadclosed.gif" alt="Closed Thread" border="0"></a> &nbsp;&nbsp;&nbsp; 
+
+</td>
+	
+<td align="right"><div class="pagenav" align="right">
+<table class="tborder" border="0" cellpadding="3" cellspacing="1">
+<tbody><tr>
+	<td class="vbmenu_control" style="font-weight: normal;">Page 1 of 4</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Showing results 1 to 7 of 22"><strong>1</strong></span></td>
+ <td class="alt1"><a class="smallfont" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file-2.html" title="Show results 8 to 14 of 22">2</a></td><td class="alt1"><a class="smallfont" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file-3.html" title="Show results 15 to 21 of 22">3</a></td><td class="alt1"><a class="smallfont" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file-4.html" title="Show results 22 to 22 of 22">4</a></td>
+	<td class="alt1"><a rel="next" class="smallfont" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file-2.html" title="Next Page - Results 8 to 14 of 22">&gt;</a></td>
+	
+	<td style="cursor: pointer;" id="pagenav.44" class="vbmenu_control" title=""> <img alt="" title="" src="17622-how-remove-first-line-flat-file_files/menu_open.gif" border="0"></td>
+</tr>
+</tbody></table>
+</div></td>
+
+</tr>
+
+</tbody></table>
+<!-- / controls above postbits -->
+
+<!-- toolbar -->
+<table class="tborder" style="border-bottom-width: 0px;" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+	<td class="tcat" width="100%">
+		<div class="smallfont">
+		
+		&nbsp;
+		</div>
+	</td>
+        
+
+
+	<td style="cursor: pointer;" class="vbmenu_control" id="threadtools" nowrap="nowrap">
+		<a rel="nofollow" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file.html?nojs=1#goto_threadtools">Thread Tools</a>
+		<script type="text/javascript"> vbmenu_register("threadtools"); </script> <img alt="" title="" src="17622-how-remove-first-line-flat-file_files/menu_open.gif" border="0">
+	</td>
+
+	
+		<td style="cursor: pointer;" class="vbmenu_control" id="threadsearch" nowrap="nowrap">
+			<a rel="nofollow" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file.html?nojs=1#goto_threadsearch">Search this Thread</a>
+			<script type="text/javascript"> vbmenu_register("threadsearch"); </script> <img alt="" title="" src="17622-how-remove-first-line-flat-file_files/menu_open.gif" border="0">
+		</td>
+	
+	
+	
+	<td style="cursor: pointer;" class="vbmenu_control" id="displaymodes" nowrap="nowrap">
+		<a rel="nofollow" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file.html?nojs=1#goto_displaymodes">Display Modes</a>
+		<script type="text/javascript"> vbmenu_register("displaymodes"); </script> <img alt="" title="" src="17622-how-remove-first-line-flat-file_files/menu_open.gif" border="0">
+	</td>
+	
+
+	
+
+</tr>
+</tbody></table>
+<!-- / toolbar -->
+
+
+
+<!-- end content table -->
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- / end content table -->
+
+
+
+
+
+<div id="posts"><!-- post #66799 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 25px 0px 25px" align="left">
+
+	<div id="edit66799" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post66799" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+
+	<td class="thead">
+
+
+		<div class="normal" style="float:right">
+
+			&nbsp;&nbsp;&nbsp;
+			#<a href="http://www.unix.com/66799-post1.html" target="new" id="postcount66799" name="1"><strong>1</strong></a> &nbsp;
+			
+                       
+<!--
+ 
+-->
+
+
+
+
+
+
+			
+  
+
+
+
+
+
+
+
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post66799"><img title="Old" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/post_old.gif" alt="Old" border="0"></a>
+
+
+			
+				03-16-2005
+			
+			
+			<!-- / status icon and date -->
+ 
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_66799">
+					
+					<a rel="nofollow" class="bigusername" href="http://www.unix.com/members/37905.html"><!-- google_ad_section_start(weight=ignore) --><span style="color:#22229C;">xli</span><!-- google_ad_section_end --></a>
+
+					<img title="xli is offline" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/user_offline.gif" alt="xli is offline" border="0">
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+
+					
+					
+				</div>
+
+				<div class="smallfont">Registered User</div>
+				<div></div>
+				
+                              
+				
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+<!--
+
+<td>
+<div class="fb-like" data-href="http://www.facebook.com/unixlinuxhq" data-send="false" data-layout="box_count" data-width="100" data-show-faces="false"></div>
+</td>
+
+-->
+                     
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Feb 2005</div>
+					
+					
+					<div>
+						Posts: 7
+					</div>
+
+
+
+
+					 
+	<div>Thanks: 0</div>
+	<div>
+		
+			
+				Thanked 0 Times in 0 Posts
+			
+		
+	</div>
+
+
+
+					
+<!-- moved this to the top
+                        
+-->
+					
+					<div>    </div>
+				</div>
+<!--VBSEO_BOOKMARKS-->
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_66799">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+			<!-- icon and title -->
+			<div class="smallfont">
+				
+				<strong><!-- google_ad_section_start -->how to remove the first line from a flat file ?<!-- google_ad_section_end --></strong>
+			</div>
+			<hr style="color:#D1D1E1; background-color:#D1D1E1" size="1">
+			<!-- / icon and title -->
+		
+
+		<!-- message -->
+
+
+
+		<div id="post_message_66799"><!-- google_ad_section_start -->Hi, <br>
+<br>
+I want to remove the first line from a flat file using unix command as simple as possible. Can anybody give me a hand ?<br>
+<br>
+Thanks in advance.<br>
+<br>
+xli<!-- google_ad_section_end --></div>
+		<!-- / message -->
+               
+                
+		
+  
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+ 
+
+                
+			
+			
+			
+			
+			
+			
+<!-- hidden posts by scottn -->
+
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->           
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+
+
+
+
+
+</tbody></table>
+ <div id="post_thanks_box_66799"></div><table class="tborder" style="margin-top: 6px;" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+	<td class="thead" style="line-height: 1.5em;">
+		
+			<div>
+				<span style="float:right;font-weight:normal;"><a href="http://www.unix.com/register.php">Remove advertisements</a></span>
+			</div>
+		
+		Sponsored Links
+	</td>
+</tr>
+<tr>
+	<td class="alt1">
+		<div class="postbit_adcode">
+			<table width="100%">
+<tbody><tr>
+<td align="center" width="50%">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(3);
+// ]]> --></script><span><script type="text/javascript"><!--// <![CDATA[
+/* openads=http://nj.cyberstrategics.com/www/delivery bannerid=22 zoneid=3 source= */
+// ]]> --></script><script type="text/javascript"><!--
+google_ad_client = "pub-6323928554267084";
+/* 3. unix postbit left side 300x250, created 3/23/10 ALT */
+google_ad_slot = "9678404389";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_2" name="aswift_2" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/ag.js"></script></span><div id="beacon_2d71313ba0" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="17622-how-remove-first-line-flat-file_files/lg_010.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a rel='nofollow' target='_blank' href='http://nj.cyberstrategics.com/www/deliver/ck.php?n=a9a0428&cb=1775362074-1346871013-3'><img border='0' alt='' src='http://nj.cyberstrategics.com/www/delivery/avw.php?zoneid=3&n=a9a0428&cb=1775362074-1346871013-3' /></a></noscript>
+</td>
+<td align="center" width="50%">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(4);
+// ]]> --></script><script src="17622-how-remove-first-line-flat-file_files/getjs.js"></script><div id="cw_td_6284555" style="height: 0pt; width: 0pt; display: none;"></div><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/GetAd.js"></script><script type="text/javascript"><!--
+	e9 = new Object();
+    e9.size = "300x250";
+    e9.addBlockingCategories="Adult,Political,Flashing,Floating,Alcohol,Religious,Warning,Unicast,Dating,Suggestive,Audio,Full-page,Gambling,Tobacco,Pop-under,Expandable,Survey,Pop-up,Violence,Sweepstakes";
+    e9.noAd = 1;
+//--></script>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/tags.js"></script><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/displayAd.js"></script><center><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/j_003.js"></script><script language="javascript">
+//Required variables.
+	var tf_clickTag  = 'http://a.tribalfusion.com/h.click/a2mRgUmdayUtFdYFMbYrYh1a6sPrYDWUZbQVWF2orJsQUvoYTFq5Eje4ar2mEMA1bJhUtjXmA7KpVMomHvA2qv83Hyy5AvZdnrYEYsfS1svV0Vvynan45Fr5TFjZcVPUVQqfQQcBrQtjN0tJuV6vu4sU1XbZbJVmqp56FgPmBG3tvq1tALTpJU1UytuDTbntTAnoegp7XUpo6pWs7hcM9EEZd/http://www.sasktel.com/student';
+	var tf_flashfile = 'http://cdnx.tribalfusion.com/media/3417286/SaskTel-Student12-300x250_40KBanner-WIRELESSDeal-v1.0';
+	var tf_imagefile = 'http://cdnx.tribalfusion.com/media/3417286/SaskTel-Student12-300x250_40KBanner-WIRELESSDeal.gif';
+	var tf_width     = 300;
+	var tf_height    = 250;
+//Optional variables.
+	var tf_bgcolor = '#ffffff';
+	var tf_use_flash_wrapper = false;
+	var tf_wmode     = 'opaque';
+	var tf_salign     = 'lt';
+	var tf_allowScriptAccess     = 'sameDomain';
+	var tf_extraFlashVars     = '';
+//Autogenerated code. Please do not change.
+	var tf_id        = '324680893';
+	var tf_loaderFlash     = 'http://cdnx.tribalfusion.com/media/common/flash/frame3';
+	var tf_button    = 'http://cdnx.tribalfusion.com/media/common/flash/button4.swf';
+	var tf_click     = 'http://a.tribalfusion.com/h.click/a2mRgUmdayUtFdYFMbYrYh1a6sPrYDWUZbQVWF2orJsQUvoYTFq5Eje4ar2mEMA1bJhUtjXmA7KpVMomHvA2qv83Hyy5AvZdnrYEYsfS1svV0Vvynan45Fr5TFjZcVPUVQqfQQcBrQtjN0tJuV6vu4sU1XbZbJVmqp56FgPmBG3tvq1tALTpJU1UytuDTbntTAnoegp7XUpo6pWs7hcM9EEZd/';
+	var tf_state        = 'Saskatchewan';
+	var tf_city        = 'Regina';
+	var tf_zipcode        = 'S4P';
+	var tf_gender        = '';
+	var tf_location        = 'http://cdnx.tribalfusion.com/media/3417286/';
+</script>
+<script language="javascript" src="17622-how-remove-first-line-flat-file_files/flashv15.js"></script><embed src="17622-how-remove-first-line-flat-file_files/SaskTel-Student12-300x250_40KBanner-WIRELESSDeal-v1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" play="true" loop="true" scale="showall" wmode="opaque" devicefont="false" bgcolor="#ffffff" name="TFclick324680893" menu="false" allowfullscreen="false" allowscriptaccess="sameDomain" salign="lt" flashvars="clickTag=http%3A//a.tribalfusion.com/h.click/a2mRgUmdayUtFdYFMbYrYh1a6sPrYDWUZbQVWF2orJsQUvoYTFq5Eje4ar2mEMA1bJhUtjXmA7KpVMomHvA2qv83Hyy5AvZdnrYEYsfS1svV0Vvynan45Fr5TFjZcVPUVQqfQQcBrQtjN0tJuV6vu4sU1XbZbJVmqp56FgPmBG3tvq1tALTpJU1UytuDTbntTAnoegp7XUpo6pWs7hcM9EEZd/http%3A//www.sasktel.com/student&amp;clickTAG=http%3A//a.tribalfusion.com/h.click/a2mRgUmdayUtFdYFMbYrYh1a6sPrYDWUZbQVWF2orJsQUvoYTFq5Eje4ar2mEMA1bJhUtjXmA7KpVMomHvA2qv83Hyy5AvZdnrYEYsfS1svV0Vvynan45Fr5TFjZcVPUVQqfQQcBrQtjN0tJuV6vu4sU1XbZbJVmqp56FgPmBG3tvq1tALTpJU1UytuDTbntTAnoegp7XUpo6pWs7hcM9EEZd/http%3A//www.sasktel.com/student&amp;clicktag=http%3A//a.tribalfusion.com/h.click/a2mRgUmdayUtFdYFMbYrYh1a6sPrYDWUZbQVWF2orJsQUvoYTFq5Eje4ar2mEMA1bJhUtjXmA7KpVMomHvA2qv83Hyy5AvZdnrYEYsfS1svV0Vvynan45Fr5TFjZcVPUVQqfQQcBrQtjN0tJuV6vu4sU1XbZbJVmqp56FgPmBG3tvq1tALTpJU1UytuDTbntTAnoegp7XUpo6pWs7hcM9EEZd/http%3A//www.sasktel.com/student&amp;tf_flash=http://cdnx.tribalfusion.com/media/3417286/SaskTel-Student12-300x250_40KBanner-WIRELESSDeal-v1.0.swf&amp;tf_button=http://cdnx.tribalfusion.com/media/common/flash/button4.swf&amp;tf_state=Saskatchewan&amp;tf_city=Regina&amp;tf_zipcode=S4P&amp;tf_gender=&amp;tf_location=http://cdnx.tribalfusion.com/media/3417286/&amp;tf_id=324680893&amp;" type="application/x-shockwave-flash" align="middle" height="250" width="300"> 
+<noscript>
+	<A HREF='http://a.tribalfusion.com/h.click/a2mRgUmdayUtFdYFMbYrYh1a6sPrYDWUZbQVWF2orJsQUvoYTFq5Eje4ar2mEMA1bJhUtjXmA7KpVMomHvA2qv83Hyy5AvZdnrYEYsfS1svV0Vvynan45Fr5TFjZcVPUVQqfQQcBrQtjN0tJuV6vu4sU1XbZbJVmqp56FgPmBG3tvq1tALTpJU1UytuDTbntTAnoegp7XUpo6pWs7hcM9EEZd/http://www.sasktel.com/student' TARGET='_blank'>
+	<IMG SRC='http://cdnx.tribalfusion.com/media/3417286/SaskTel-Student12-300x250_40KBanner-WIRELESSDeal.gif' WIDTH=300 HEIGHT=250 ALT='Click Here!' BORDER=0></A>
+</noscript>
+<iframe src="17622-how-remove-first-line-flat-file_files/adTag.html" style="visibility: hidden;" marginheight="0" marginwidth="0" frameborder="0" height="0" scrolling="no" width="0"></iframe>
+</center>
+
+<div style="display:none;width:0;height:0"><script>var _comscore = _comscore || [];_comscore.push({ c1: "8", c2: "2102", c3: "0", c4: "", c5: "", c15: "", c16: "" });(function() {var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";el.parentNode.insertBefore(s, el);})();</script><noscript><img src="http://b.scorecardresearch.com/p?c1=8&c2=2102&c3=0&c4=&c5=&c6=&c15=&c16=&cv=2.0&cj=1" /></noscript></div><div style="display:none;width:0;height:0"><iframe src="17622-how-remove-first-line-flat-file_files/p-01-0VIaSjnOLg_002.gif" marginwidth="0" marginheight="0" allowtransparency="true" frameborder="0" height="0" scrolling="NO" width="0"></iframe></div><div style="display:none"><iframe src="17622-how-remove-first-line-flat-file_files/visitormatch.html"></iframe></div>
+<div id="beacon_a42f1178f6" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="17622-how-remove-first-line-flat-file_files/lg_002.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a rel='nofollow' target='_blank' href='http://nj.cyberstrategics.com/www/delivery/ck.php?n=366f805&cb=1775362074-1346871013-4'><img border='0' alt='' src='http://nj.cyberstrategics.com/www/delivery/avw.php?zoneid=4&n=366f805&cb=1775362074-1346871013-4' /></a></noscript>
+</td>
+</tr>
+</tbody></table>
+		</div>
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 66799 popup menu -->
+
+<!-- / post 66799 popup menu -->
+
+<div id="award66799" style="padding:6px 0px 0px 0px;">
+
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #66799 --><!-- post #66800 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 25px 0px 25px" align="left">
+
+	<div id="edit66800" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post66800" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+
+	<td class="thead">
+
+
+		<div class="normal" style="float:right">
+
+			&nbsp;&nbsp;&nbsp;
+			#<a href="http://www.unix.com/66800-post2.html" target="new" id="postcount66800" name="2"><strong>2</strong></a> &nbsp;
+			
+                       
+<!--
+ 
+-->
+
+
+
+
+
+
+			
+  
+
+
+
+
+
+
+
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post66800"><img title="Old" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/post_old.gif" alt="Old" border="0"></a>
+
+
+			
+				03-17-2005
+			
+			
+			<!-- / status icon and date -->
+ 
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			<td class="alt2">
+
+
+<a rel="nofollow" href="http://www.unix.com/members/39016.html"><img title="reborg's Avatar" src="17622-how-remove-first-line-flat-file_files/avatar39016_1.gif" alt="reborg's Avatar" border="0"></a>
+
+
+</td>
+			<td nowrap="nowrap">
+
+				<div id="postmenu_66800">
+					
+					<a rel="nofollow" class="bigusername" href="http://www.unix.com/members/39016.html"><!-- google_ad_section_start(weight=ignore) --><span style="color:#0000FF;">reborg</span><!-- google_ad_section_end --></a>
+
+					<img title="reborg is offline" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/user_offline.gif" alt="reborg is offline" border="0">
+
+
+
+
+
+
+ 
+
+ <img title="Forum Advisor" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/knot.png" alt="Forum Advisor" border="0"> &nbsp;
+
+ 
+
+
+
+					
+					
+				</div>
+
+				<div class="smallfont">Administrator Emeritus</div>
+				<div></div>
+				
+                              
+				
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+<!--
+
+-->
+                     
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Mar 2005</div>
+					<div>Location: Ireland</div>
+					
+					<div>
+						Posts: 4,464
+					</div>
+
+
+
+
+					 
+	<div>Thanks: 0</div>
+	<div>
+		
+			
+				Thanked 7 Times in 7 Posts
+			
+		
+	</div>
+
+
+
+					
+<!-- moved this to the top
+                        
+-->
+					
+					<div>    </div>
+				</div>
+<!--VBSEO_BOOKMARKS-->
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_66800">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+
+		<!-- message -->
+
+
+
+		<div id="post_message_66800"><!-- google_ad_section_start -->printf ":1d\n:wq\n" | ex <b>name_of_your_flatfile</b><!-- google_ad_section_end --></div>
+		<!-- / message -->
+               
+                
+		
+  
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+ 
+
+                
+			
+			
+			
+			
+			
+			
+<!-- hidden posts by scottn -->
+
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->           
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+
+
+
+
+
+</tbody></table>
+ <div id="post_thanks_box_66800"></div><table class="tborder" style="margin-top: 6px;" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+	<td class="thead" style="line-height: 1.5em;">
+		
+			<div>
+				<span style="float:right;font-weight:normal;"><a href="http://www.unix.com/register.php">Remove advertisements</a></span>
+			</div>
+		
+		Sponsored Links
+	</td>
+</tr>
+<tr>
+	<td class="alt1">
+		<div class="postbit_adcode">
+			<table width="100%">
+<tbody><tr>
+<td align="center" width="50%">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(5);
+// ]]> --></script><script type="text/javascript"><!--
+e9 = new Object();
+e9.size = "300x250";
+e9.addBlockingCategories="Adult,Political,Flashing,Floating,Unicast,Warning,Alcohol,Religious,Dating,Suggestive,Audio,Full-page,Expandable,Pop-under,Gambling,Tobacco,Sweepstakes,Violence,Pop-up,Survey";
+e9.noAd = 1;
+//--></script>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/tags_005.js"></script><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/displayAd.js"></script><center><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/j_005.js"></script><!-- START AtlasDMT (jscript) -->
+<script language="JavaScript" type="text/javascript" src="17622-how-remove-first-line-flat-file_files/01.js">
+</script><meta http-equiv="expires" content="0"><meta http-equiv="Pragma" content="no-cache"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="HTTP://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab" id="idSWFB061330474187943" height="250" width="300"><param name="movie" value="HTTP://ec.atdmt.com/ds/I2IWCBSTWB06/Regional_NewLRG_2012/Rgnl_t_None_LRG_GoAheadLRGLwRtHr12.300x250.swf?ver=1&amp;clickTag1=http://a.tribalfusion.com/h.click/aImR8TTTrlPqQZaRsBBPUunRH38VcYQ2FivmHuq0qmM4tUBQVrE46nLodZaoVHQ7Ybnb1bJ90qEtRUFFWUQ0WHMTnFbsPbryXqFp3TZbf4T7XoTJD1bUhTHnXmmfZdmcfrmtfB5q3f2dio4AvZcnFvEXcQQ1c3V0VjNpEnT2brQWbjDUEywm7JwqSq0q9e15CZa0sEqyXDitOmrDXDmBhWv3Cy/http://clk.atdmt.com/go/373821559/direct;ai.263059771;ct.1/01&amp;clickTag=http://a.tribalfusion.com/h.click/aImR8TTTrlPqQZaRsBBPUunRH38VcYQ2FivmHuq0qmM4tUBQVrE46nLodZaoVHQ7Ybnb1bJ90qEtRUFFWUQ0WHMTnFbsPbryXqFp3TZbf4T7XoTJD1bUhTHnXmmfZdmcfrmtfB5q3f2dio4AvZcnFvEXcQQ1c3V0VjNpEnT2brQWbjDUEywm7JwqSq0q9e15CZa0sEqyXDitOmrDXDmBhWv3Cy/http://clk.atdmt.com/go/373821559/direct;ai.263059771;ct.1/01"><param name="base" value="HTTP://ec.atdmt.com/ds/I2IWCBSTWB06/"><param name="FlashVars" value="ArmClickType=&amp;unique_id=_B061330474187943&amp;ArmApi=armapi_a1_a1&amp;ArmClickUrl=http://clk.atdmt.com/go/373821559/direct;ai.263059771;ct.$num$/01/&amp;ArmClickToken=$num$"><param name="quality" value="high"><param name="salign" value="lt"><param name="loop" value="true"><param name="wmode" value="opaque"><param name="allowScriptAccess" value="always"><embed allowscriptaccess="always" quality="high" salign="LT" loop="true" type="application/x-shockwave-flash" pluginspace="HTTP://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" base="HTTP://ec.atdmt.com/ds/I2IWCBSTWB06/" wmode="opaque" src="17622-how-remove-first-line-flat-file_files/Rgnl_t_None_LRG_GoAheadLRGLwRtHr12.swf" flashvars="unique_id=_B061330474187943&amp;ArmApi=armapi_a1_a1&amp;ArmClickUrl=http://clk.atdmt.com/go/373821559/direct;ai.263059771;ct.$num$/01/&amp;ArmClickToken=$num$" height="250" width="300"></object>
+<noscript>
+<A href='http://a.tribalfusion.com/h.click/aImR8TTTrlPqQZaRsBBPUunRH38VcYQ2FivmHuq0qmM4tUBQVrE46nLodZaoVHQ7Ybnb1bJ90qEtRUFFWUQ0WHMTnFbsPbryXqFp3TZbf4T7XoTJD1bUhTHnXmmfZdmcfrmtfB5q3f2dio4AvZcnFvEXcQQ1c3V0VjNpEnT2brQWbjDUEywm7JwqSq0q9e15CZa0sEqyXDitOmrDXDmBhWv3Cy/http://clk.atdmt.com/IWC/go/373821559/direct/01/324684660' TARGET='_blank' >
+<IMG SRC='http://view.atdmt.com/IWC/view/373821559/direct/01/324684660' BORDER='0' >
+</A>
+</noscript>
+<!-- END AtlasDMT (jscript) -->
+</center>
+
+<div id="beacon_ee4792fb57" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="17622-how-remove-first-line-flat-file_files/lg.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a rel='nofollow' target='_blank' href='http://nj.cyberstrategics.com/www/delivery/ck.php?n=f379bb5&cb=540982254-1346871013-5'><img border='0' alt='' src='http://nj.cyberstrategics.com/www/delivery/avw.php?zoneid=5&n=f379bb5&cb=540982254-1346871013-5' /></a></noscript>
+</td>
+<td align="center" width="50%">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(6);
+// ]]> --></script><script type="text/javascript"><!--
+e9 = new Object();
+e9.size = "300x250";
+e9.addBlockingCategories="Adult,Political,Flashing,Floating,Unicast,Warning,Alcohol,Religious,Dating,Suggestive,Audio,Full-page,Expandable,Pop-under,Gambling,Tobacco,Sweepstakes,Violence,Pop-up,Survey";
+e9.noAd = 1;
+//--></script>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/tags_002.js"></script><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/displayAd.js"></script><center><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/j_004.js"></script><script language="javascript">
+//Required variables.
+	var tf_clickTag  = 'http://a.tribalfusion.com/h.click/aCmRRR5b6uVa7tWE39QqBZbRGfAPb6tPHjkWsfT2FuroW6MXaeO3W3CQsfG2mQZapWEOTWQ7XUUb1bJ90a6oSFBHUUrXTtBXorjxQF7NYTFn5a3a2qQQoT7IXb7hTtnXmAbJnGYnpHYJ3EQg5tam5mvZaprMZbYs7XYsv01cZbwmquUuBPxRmZa6mrX1rUuytoXrmGIRM82VT9vIeJdBIA/https://signup.netflix.com/?mqso=80032501';
+	var tf_flashfile = 'http://cdnx.tribalfusion.com/media/3240546/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA';
+	var tf_imagefile = 'http://cdnx.tribalfusion.com/media/3240546/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA.jpg';
+	var tf_width     = 300;
+	var tf_height    = 250;
+//Optional variables.
+	var tf_bgcolor = '#ffffff';
+	var tf_use_flash_wrapper = false;
+	var tf_wmode     = 'opaque';
+	var tf_salign     = 'lt';
+	var tf_allowScriptAccess     = 'sameDomain';
+	var tf_extraFlashVars     = '';
+//Autogenerated code. Please do not change.
+	var tf_id        = '324691360';
+	var tf_loaderFlash     = 'http://cdnx.tribalfusion.com/media/common/flash/frame3';
+	var tf_button    = 'http://cdnx.tribalfusion.com/media/common/flash/button4.swf';
+	var tf_click     = 'http://a.tribalfusion.com/h.click/aCmRRR5b6uVa7tWE39QqBZbRGfAPb6tPHjkWsfT2FuroW6MXaeO3W3CQsfG2mQZapWEOTWQ7XUUb1bJ90a6oSFBHUUrXTtBXorjxQF7NYTFn5a3a2qQQoT7IXb7hTtnXmAbJnGYnpHYJ3EQg5tam5mvZaprMZbYs7XYsv01cZbwmquUuBPxRmZa6mrX1rUuytoXrmGIRM82VT9vIeJdBIA/';
+	var tf_state        = 'Saskatchewan';
+	var tf_city        = 'Regina';
+	var tf_zipcode        = 'S4P';
+	var tf_gender        = '';
+	var tf_location        = 'http://cdnx.tribalfusion.com/media/3240546/';
+</script>
+<script language="javascript" src="17622-how-remove-first-line-flat-file_files/flashv15.js"></script><embed src="17622-how-remove-first-line-flat-file_files/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" play="true" loop="true" scale="showall" wmode="opaque" devicefont="false" bgcolor="#ffffff" name="TFclick324691360" menu="false" allowfullscreen="false" allowscriptaccess="sameDomain" salign="lt" flashvars="clickTag=http%3A//a.tribalfusion.com/h.click/aCmRRR5b6uVa7tWE39QqBZbRGfAPb6tPHjkWsfT2FuroW6MXaeO3W3CQsfG2mQZapWEOTWQ7XUUb1bJ90a6oSFBHUUrXTtBXorjxQF7NYTFn5a3a2qQQoT7IXb7hTtnXmAbJnGYnpHYJ3EQg5tam5mvZaprMZbYs7XYsv01cZbwmquUuBPxRmZa6mrX1rUuytoXrmGIRM82VT9vIeJdBIA/https%3A//signup.netflix.com/%3Fmqso%3D80032501&amp;clickTAG=http%3A//a.tribalfusion.com/h.click/aCmRRR5b6uVa7tWE39QqBZbRGfAPb6tPHjkWsfT2FuroW6MXaeO3W3CQsfG2mQZapWEOTWQ7XUUb1bJ90a6oSFBHUUrXTtBXorjxQF7NYTFn5a3a2qQQoT7IXb7hTtnXmAbJnGYnpHYJ3EQg5tam5mvZaprMZbYs7XYsv01cZbwmquUuBPxRmZa6mrX1rUuytoXrmGIRM82VT9vIeJdBIA/https%3A//signup.netflix.com/%3Fmqso%3D80032501&amp;clicktag=http%3A//a.tribalfusion.com/h.click/aCmRRR5b6uVa7tWE39QqBZbRGfAPb6tPHjkWsfT2FuroW6MXaeO3W3CQsfG2mQZapWEOTWQ7XUUb1bJ90a6oSFBHUUrXTtBXorjxQF7NYTFn5a3a2qQQoT7IXb7hTtnXmAbJnGYnpHYJ3EQg5tam5mvZaprMZbYs7XYsv01cZbwmquUuBPxRmZa6mrX1rUuytoXrmGIRM82VT9vIeJdBIA/https%3A//signup.netflix.com/%3Fmqso%3D80032501&amp;tf_flash=http://cdnx.tribalfusion.com/media/3240546/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA.swf&amp;tf_button=http://cdnx.tribalfusion.com/media/common/flash/button4.swf&amp;tf_state=Saskatchewan&amp;tf_city=Regina&amp;tf_zipcode=S4P&amp;tf_gender=&amp;tf_location=http://cdnx.tribalfusion.com/media/3240546/&amp;tf_id=324691360&amp;" type="application/x-shockwave-flash" align="middle" height="250" width="300"> 
+<noscript>
+	<A HREF='http://a.tribalfusion.com/h.click/aCmRRR5b6uVa7tWE39QqBZbRGfAPb6tPHjkWsfT2FuroW6MXaeO3W3CQsfG2mQZapWEOTWQ7XUUb1bJ90a6oSFBHUUrXTtBXorjxQF7NYTFn5a3a2qQQoT7IXb7hTtnXmAbJnGYnpHYJ3EQg5tam5mvZaprMZbYs7XYsv01cZbwmquUuBPxRmZa6mrX1rUuytoXrmGIRM82VT9vIeJdBIA/https://signup.netflix.com/?mqso=80032501' TARGET='_blank'>
+	<IMG SRC='http://cdnx.tribalfusion.com/media/3240546/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA.jpg' WIDTH=300 HEIGHT=250 ALT='Click Here!' BORDER=0></A>
+</noscript>
+</center>
+
+<div id="beacon_4bdcdfb77b" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="17622-how-remove-first-line-flat-file_files/lg_005.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a rel='nofollow' target='_blank' href='http://nj.cyberstrategics.com/www/delivery/ck.php?n=e82d82c&cb=540982254-1346871013-6'><img border='0' alt='' src='http://nj.cyberstrategics.com/www/delivery/avw.php?zoneid=6&n=e82d82c&cb=540982254-1346871013-6' /></a></noscript>
+</td>
+</tr>
+</tbody></table>
+		</div>
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 66800 popup menu -->
+
+<!-- / post 66800 popup menu -->
+
+<div id="award66800" style="padding:6px 0px 0px 0px;">
+
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #66800 --><!-- post #66801 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 25px 0px 25px" align="left">
+
+	<div id="edit66801" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post66801" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+
+	<td class="thead">
+
+
+		<div class="normal" style="float:right">
+
+			&nbsp;&nbsp;&nbsp;
+			#<a href="http://www.unix.com/66801-post3.html" target="new" id="postcount66801" name="3"><strong>3</strong></a> &nbsp;
+			
+                       
+<!--
+ 
+-->
+
+
+
+
+
+
+			
+  
+
+
+
+
+
+
+
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post66801"><img title="Old" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/post_old.gif" alt="Old" border="0"></a>
+
+
+			
+				03-17-2005
+			
+			
+			<!-- / status icon and date -->
+ 
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_66801">
+					
+					<a rel="nofollow" class="bigusername" href="http://www.unix.com/members/39139.html"><!-- google_ad_section_start(weight=ignore) --><span style="color:#22229C;">tanku</span><!-- google_ad_section_end --></a>
+
+					<img title="tanku is offline" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/user_offline.gif" alt="tanku is offline" border="0">
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+
+					
+					
+				</div>
+
+				<div class="smallfont">Registered User</div>
+				<div></div>
+				
+                              
+				
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+<!--
+
+-->
+                     
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Mar 2005</div>
+					
+					
+					<div>
+						Posts: 53
+					</div>
+
+
+
+
+					 
+	<div>Thanks: 0</div>
+	<div>
+		
+			
+				Thanked 0 Times in 0 Posts
+			
+		
+	</div>
+
+
+
+					
+<!-- moved this to the top
+                        
+-->
+					
+					<div>    </div>
+				</div>
+<!--VBSEO_BOOKMARKS-->
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_66801">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+
+		<!-- message -->
+
+
+
+		<div id="post_message_66801"><!-- google_ad_section_start -->another way,<br>
+<br>
+<acronym title="Stream Editor">sed</acronym> -i '1d' filename<!-- google_ad_section_end --></div>
+		<!-- / message -->
+               
+                
+		
+  
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+ 
+
+                
+			
+			
+			
+			
+			
+			
+<!-- hidden posts by scottn -->
+
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->           
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+
+
+
+
+
+</tbody></table>
+ <div id="post_thanks_box_66801"></div>
+
+<!-- post 66801 popup menu -->
+
+<!-- / post 66801 popup menu -->
+
+<div id="award66801" style="padding:6px 0px 0px 0px;">
+
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #66801 --><!-- post #66802 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 25px 0px 25px" align="left">
+
+	<div id="edit66802" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post66802" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+
+	<td class="thead">
+
+
+		<div class="normal" style="float:right">
+
+			&nbsp;&nbsp;&nbsp;
+			#<a href="http://www.unix.com/66802-post4.html" target="new" id="postcount66802" name="4"><strong>4</strong></a> &nbsp;
+			
+                       
+<!--
+ 
+-->
+
+
+
+
+
+
+			
+  
+
+
+
+
+
+
+
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post66802"><img title="Old" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/post_old.gif" alt="Old" border="0"></a>
+
+
+			
+				03-17-2005
+			
+			
+			<!-- / status icon and date -->
+ 
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			<td class="alt2">
+
+
+<a rel="nofollow" href="http://www.unix.com/members/39016.html"><img title="reborg's Avatar" src="17622-how-remove-first-line-flat-file_files/avatar39016_1.gif" alt="reborg's Avatar" border="0"></a>
+
+
+</td>
+			<td nowrap="nowrap">
+
+				<div id="postmenu_66802">
+					
+					<a rel="nofollow" class="bigusername" href="http://www.unix.com/members/39016.html"><!-- google_ad_section_start(weight=ignore) --><span style="color:#0000FF;">reborg</span><!-- google_ad_section_end --></a>
+
+					<img title="reborg is offline" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/user_offline.gif" alt="reborg is offline" border="0">
+
+
+
+
+
+
+ 
+
+ <img title="Forum Advisor" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/knot.png" alt="Forum Advisor" border="0"> &nbsp;
+
+ 
+
+
+
+					
+					
+				</div>
+
+				<div class="smallfont">Administrator Emeritus</div>
+				<div></div>
+				
+                              
+				
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+<!--
+
+-->
+                     
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Mar 2005</div>
+					<div>Location: Ireland</div>
+					
+					<div>
+						Posts: 4,464
+					</div>
+
+
+
+
+					 
+	<div>Thanks: 0</div>
+	<div>
+		
+			
+				Thanked 7 Times in 7 Posts
+			
+		
+	</div>
+
+
+
+					
+<!-- moved this to the top
+                        
+-->
+					
+					<div>    </div>
+				</div>
+<!--VBSEO_BOOKMARKS-->
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_66802">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+
+		<!-- message -->
+
+
+
+		<div id="post_message_66802"><!-- google_ad_section_start -->That does
+ not remove the line from the file, is streams the file to stdout with 
+the first line removed. It would need to be redirected into a temporary 
+file and moved back to replace the original file.<br>
+<br>
+Also if I am correct, and I remember correctly the flatfile xli is 
+talking about is pretty huge (millions of lines), and do it that way 
+could be pretty slow.<!-- google_ad_section_end --></div>
+		<!-- / message -->
+               
+                
+		
+  
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+ 
+
+                
+			
+			
+			
+			
+			
+			
+<!-- hidden posts by scottn -->
+
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->           
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+
+
+
+
+
+</tbody></table>
+ <div id="post_thanks_box_66802"></div><table class="tborder" style="margin-top: 6px;" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+	<td class="thead" style="line-height: 1.5em;">
+		
+			<div>
+				<span style="float:right;font-weight:normal;"><a href="http://www.unix.com/register.php">Remove advertisements</a></span>
+			</div>
+		
+		Sponsored Links
+	</td>
+</tr>
+<tr>
+	<td class="alt1">
+		<div class="postbit_adcode">
+			<table width="100%">
+<tbody><tr><td>
+<center>
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(18);
+// ]]> --></script><script type="text/javascript"><!--
+e9 = new Object();
+e9.size = "728x90";
+e9.addBlockingCategories="Adult,Political,Flashing,Floating,Alcohol,Religious,Unicast,Warning,Audio,Suggestive,Dating,Full-page,Expandable,Pop-under,Tobacco,Gambling,Sweepstakes,Violence,Pop-up,Survey";
+//--></script>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/tags_004.js"></script><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/displayAd.js"></script><center><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/j_007.js"></script><center>
+<a href="http://a.tribalfusion.com/h.click/aHmRwQRUJNXTvn5qZbg4E70najGYrbdWHn0m6bKpGvtpHbE3TZbj2HIp5mbZaprYLYc3PYcFY1sZbynEf43UQSWbvBVm35REj4ScnMPdFr1dvrVPjp4cnV0UQDU6Xu56BeP6nC2Wrq1WnAmdIn36JR3srgTs38UsreS6rOTHYPWn6NMAmSoBT4pAqBU7qdpoAZbTAU1r8Yi1bvakUkVTX/http://www.videodownloadconverter.com/index.jhtml?partner=HJxdm025&amp;sub_id=89280" target="_blank">
+<img src="17622-how-remove-first-line-flat-file_files/vdc_728x90v3.jpg" border="0" height="90" width="728"></a>
+</center></center>
+
+<div id="beacon_90c40d95c6" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="17622-how-remove-first-line-flat-file_files/lg_006.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a rel='nofollow' target='_blank' href='http://nj.cyberstrategics.com/www/delivery/ck.php?n=85d0c0a&cb=426647724-1346871013-95'><img border='0' alt='' src='http://nj.cyberstrategics.com/www/delivery/avw.php?zoneid=18&n=85d0c0a&cb=426647724-1346871013-95' /></a></noscript>
+</center>
+</td>
+</tr>
+</tbody></table>
+		</div>
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 66802 popup menu -->
+
+<!-- / post 66802 popup menu -->
+
+<div id="award66802" style="padding:6px 0px 0px 0px;">
+
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #66802 --><!-- post #66803 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 25px 0px 25px" align="left">
+
+	<div id="edit66803" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post66803" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+
+	<td class="thead">
+
+
+		<div class="normal" style="float:right">
+
+			&nbsp;&nbsp;&nbsp;
+			#<a href="http://www.unix.com/66803-post5.html" target="new" id="postcount66803" name="5"><strong>5</strong></a> &nbsp;
+			
+                       
+<!--
+ 
+-->
+
+
+
+
+
+
+			
+  
+
+
+
+
+
+
+
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post66803"><img title="Old" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/post_old.gif" alt="Old" border="0"></a>
+
+
+			
+				03-17-2005
+			
+			
+			<!-- / status icon and date -->
+ 
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_66803">
+					
+					<a rel="nofollow" class="bigusername" href="http://www.unix.com/members/39139.html"><!-- google_ad_section_start(weight=ignore) --><span style="color:#22229C;">tanku</span><!-- google_ad_section_end --></a>
+
+					<img title="tanku is offline" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/user_offline.gif" alt="tanku is offline" border="0">
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+
+					
+					
+				</div>
+
+				<div class="smallfont">Registered User</div>
+				<div></div>
+				
+                              
+				
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+<!--
+
+-->
+                     
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Mar 2005</div>
+					
+					
+					<div>
+						Posts: 53
+					</div>
+
+
+
+
+					 
+	<div>Thanks: 0</div>
+	<div>
+		
+			
+				Thanked 0 Times in 0 Posts
+			
+		
+	</div>
+
+
+
+					
+<!-- moved this to the top
+                        
+-->
+					
+					<div>    </div>
+				</div>
+<!--VBSEO_BOOKMARKS-->
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_66803">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+
+		<!-- message -->
+
+
+
+		<div id="post_message_66803"><!-- google_ad_section_start -->thanks for the explanation. i give another reply<br>
+<br>
+<acronym title="Practical Extraction and Report Language">perl</acronym> -pi -e '$_ = "" if ($. == 1);' filename<br>
+<br>
+which one is fastest?<!-- google_ad_section_end --></div>
+		<!-- / message -->
+               
+                
+		
+  
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+ 
+
+                
+			
+			
+			
+			
+			
+			
+<!-- hidden posts by scottn -->
+
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->           
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+
+
+
+
+
+</tbody></table>
+ <div id="post_thanks_box_66803"></div><table class="tborder" style="margin-top: 6px;" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+	<td class="thead" style="line-height: 1.5em;">
+		
+			<div>
+				<span style="float:right;font-weight:normal;"><a href="http://www.unix.com/register.php">Remove advertisements</a></span>
+			</div>
+		
+		Sponsored Links
+	</td>
+</tr>
+<tr>
+	<td class="alt1">
+		<div class="postbit_adcode">
+			<table width="100%">
+<tbody><tr><td>
+<center>
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(22);
+// ]]> --></script><script type="text/javascript"><!--
+e9 = new Object();
+e9.size = "728x90";
+e9.addBlockingCategories="Adult,Political,Flashing,Floating,Alcohol,Religious,Unicast,Warning,Audio,Suggestive,Dating,Full-page,Expandable,Pop-under,Tobacco,Gambling,Sweepstakes,Violence,Pop-up,Survey";
+//--></script>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/tags_003.js"></script><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/displayAd.js"></script><center><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/j_008.js"></script><center>
+<a href="http://a.tribalfusion.com/h.click/apmRwQoTBIXbfaUdbVm6fJmsnqoHYH5EB93Wyr3A7LmrfKXVfVXVM10sbxpTFQ2rnVVFnBVmUYPTrQQcYoPW3v0HBxT6jy4sMUYF3DTPit46FeRmZbJ4WQO1HrCmWPo56ZbQ5sU7UcvjVcf7PPZbvWd33Ubf55rToVE3qWqU8SP2hppMfrAB4tS2CS9PMN7nqqRY3OQPpPTvqi3GoLO/http://www.videodownloadconverter.com/index.jhtml?partner=HJxdm025&amp;sub_id=89280" target="_blank">
+<img src="17622-how-remove-first-line-flat-file_files/vdc_728x90v3.jpg" border="0" height="90" width="728"></a>
+</center></center>
+
+<div id="beacon_506eb646fd" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="17622-how-remove-first-line-flat-file_files/lg_003.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a rel='nofollow' target='_blank' href='http://nj.cyberstrategics.com/www/delivery/ck.php?n=9aa5c3b&cb=88429029-1346871013-96'><img border='0' alt='' src='http://nj.cyberstrategics.com/www/delivery/avw.php?zoneid=22&amp;n=9aa5c3b&cb=88429029-1346871013-96' /></a></noscript>
+</center>
+</td>
+</tr>
+</tbody></table>
+		</div>
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 66803 popup menu -->
+
+<!-- / post 66803 popup menu -->
+
+<div id="award66803" style="padding:6px 0px 0px 0px;">
+
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #66803 --><!-- post #66808 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 25px 0px 25px" align="left">
+
+	<div id="edit66808" style="padding:0px 0px 6px 0px">
+	<!-- this is not the last post shown on the page -->
+
+
+
+<table class="tborder" id="post66808" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+
+	<td class="thead">
+
+
+		<div class="normal" style="float:right">
+
+			&nbsp;&nbsp;&nbsp;
+			#<a href="http://www.unix.com/66808-post6.html" target="new" id="postcount66808" name="6"><strong>6</strong></a> &nbsp;
+			
+                       
+<!--
+ 
+-->
+
+
+
+
+
+
+			
+  
+
+
+
+
+
+
+
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post66808"><img title="Old" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/post_old.gif" alt="Old" border="0"></a>
+
+
+			
+				03-17-2005
+			
+			
+			<!-- / status icon and date -->
+ 
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			<td class="alt2">
+
+
+<a rel="nofollow" href="http://www.unix.com/members/31501.html"><img title="zazzybob's Avatar" src="17622-how-remove-first-line-flat-file_files/avatar31501_1.gif" alt="zazzybob's Avatar" border="0"></a>
+
+
+</td>
+			<td nowrap="nowrap">
+
+				<div id="postmenu_66808">
+					
+					<a rel="nofollow" class="bigusername" href="http://www.unix.com/members/31501.html"><!-- google_ad_section_start(weight=ignore) --><span style="color:#0000FF;">zazzybob</span><!-- google_ad_section_end --></a>
+
+					<img title="zazzybob is offline" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/user_offline.gif" alt="zazzybob is offline" border="0">
+
+
+
+
+
+
+ 
+
+ <img title="Forum Advisor" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/knot.png" alt="Forum Advisor" border="0"> &nbsp;
+
+ 
+
+
+
+					
+					
+				</div>
+
+				<div class="smallfont">Registered Geek</div>
+				<div></div>
+				
+                              
+				
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+<!--
+
+-->
+                     
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Dec 2003</div>
+					<div>Location: Melbourne, Australia</div>
+					
+					<div>
+						Posts: 2,100
+					</div>
+
+
+
+
+					 
+	<div>Thanks: 0</div>
+	<div>
+		
+			
+				Thanked 9 Times in 9 Posts
+			
+		
+	</div>
+
+
+
+					
+<!-- moved this to the top
+                        
+-->
+					
+					<div>    </div>
+				</div>
+<!--VBSEO_BOOKMARKS-->
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_66808">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+
+		<!-- message -->
+
+
+
+		<div id="post_message_66808"><!-- google_ad_section_start --><div style="margin:20px; margin-top:5px; ">
+	<div class="smallfont" style="margin-bottom:2px">Quote:</div>
+	<table border="0" cellpadding="6" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td class="alt2" style="border: 1px inset;">
+			
+				<div>
+					Originally Posted by <strong>reborg</strong>
+					
+				</div>
+				<div style="font-style:italic"><!--ntstart-->That does not remove 
+the line from the file, is streams the file to stdout with the first 
+line removed. It would need to be redirected into a temporary file and 
+moved back to replace the original file.<!--ntend--></div>
+			
+		</td>
+	</tr>
+	</tbody></table>
+</div>Not always - it depends on which version of <acronym title="Stream Editor">sed</acronym> you're using.... <acronym title="GNU is Not UNIX">GNU</acronym> <acronym title="Stream Editor">sed</acronym> supports the -i option to edit files in place (a backup extension can also be supplied much like perls -i option).<br>
+<br>
+Observe...<br>
+<br>
+<div class="smallfont" style="margin-bottom:2px">Code:</div>
+
+<pre class="alt2" style="margin:0px; padding:6px;  border:1px inset;  overflow:auto"><!--ntstart-->$ cat &gt; flatfile
+1st line
+2nd line
+3rd line
+^D
+$ <acronym title="Stream Editor">sed</acronym> -i '1d' flatfile
+$ more flatfile
+2nd line
+3rd line<!--ntend--></pre></div><br>
+
+<!-- width:820px; height:162px;-->Cheers<br>
+ZB<!-- google_ad_section_end -->
+		<!-- / message -->
+               
+                
+		
+  
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+ 
+
+                
+			
+			
+			
+			
+			
+			
+<!-- hidden posts by scottn -->
+
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->           
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+
+
+
+
+
+</tbody></table>
+ <div id="post_thanks_box_66808"></div><table class="tborder" style="margin-top: 6px;" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+	<td class="thead" style="line-height: 1.5em;">
+		
+			<div>
+				<span style="float:right;font-weight:normal;"><a href="http://www.unix.com/register.php">Remove advertisements</a></span>
+			</div>
+		
+		Sponsored Links
+	</td>
+</tr>
+<tr>
+	<td class="alt1">
+		<div class="postbit_adcode">
+			<table width="100%">
+<tbody><tr><td>
+<center>
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(23);
+// ]]> --></script><script type="text/javascript"><!--
+e9 = new Object();
+e9.size = "728x90";
+e9.addBlockingCategories="Adult,Political,Flashing,Floating,Alcohol,Religious,Unicast,Warning,Audio,Suggestive,Dating,Full-page,Expandable,Pop-under,Tobacco,Gambling,Sweepstakes,Violence,Pop-up,Survey";
+//--></script>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/tags_003.js"></script><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/displayAd.js"></script><center><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/j.js"></script><center>
+<a href="http://a.tribalfusion.com/h.click/aVmRwQSGJZa56rKoHAoTtQ9YUv6YUfjXauORFFGWUY4WtFYmbQtQbZbpYqYs3Tfh5EUXmTMHXF7aUWjXmAMZcmcfuodMC5EFk5tZaN4PfGnrbJXs701srUXGbnmEZb22bJ2VFMGWAY5QEUQPcYNSt3NYt7uVmny4cJ5YbMZcUPmt2TPGmFQ7v8qXODykrRfPOEPV1DAIpDnj1U7Yk9GbPk/http://www.videodownloadconverter.com/index.jhtml?partner=HJxdm025&amp;sub_id=89280" target="_blank">
+<img src="17622-how-remove-first-line-flat-file_files/vdc_728x90v3.jpg" border="0" height="90" width="728"></a>
+</center></center>
+
+<div id="beacon_899405aebb" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="17622-how-remove-first-line-flat-file_files/lg_008.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a rel='nofollow' target='_blank' href='http://nj.cyberstrategics.com/www/delivery/ck.php?n=62375d0&cb=1459273019-1346871013-97'><img border='0' alt='' src='http://nj.cyberstrategics.com/www/delivery/avw.php?zoneid=23&amp;n=62375d0&cb=1459273019-1346871013-97' /></a></noscript>
+</center>
+</td>
+</tr>
+</tbody></table>
+		</div>
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 66808 popup menu -->
+
+<!-- / post 66808 popup menu -->
+
+<div id="award66808" style="padding:6px 0px 0px 0px;">
+
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #66808 --><!-- post #66809 -->
+
+	<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 25px 0px 25px" align="left">
+
+	<div id="edit66809" style="padding:0px 0px 6px 0px">
+	
+
+
+
+<table class="tborder" id="post66809" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+
+	<td class="thead">
+
+
+		<div class="normal" style="float:right">
+
+			&nbsp;&nbsp;&nbsp;
+			#<a href="http://www.unix.com/66809-post7.html" target="new" id="postcount66809" name="7"><strong>7</strong></a> &nbsp;
+			
+                       
+<!--
+ 
+-->
+
+
+
+
+
+
+			
+  
+
+
+
+
+
+
+
+			
+			
+			
+		</div>
+
+		<div class="normal">
+			<!-- status icon and date -->
+			<a name="post66809"><img title="Old" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/post_old.gif" alt="Old" border="0"></a>
+
+
+			
+				03-17-2005
+			
+			
+			<!-- / status icon and date -->
+ 
+		</div>
+	</td>
+</tr>
+<tr>
+	<td class="alt2" style="padding: 0px;">
+		<!-- user info -->
+		<table border="0" cellpadding="0" cellspacing="6" width="100%">
+		<tbody><tr>
+			
+			<td nowrap="nowrap">
+
+				<div id="postmenu_66809">
+					
+					<a rel="nofollow" class="bigusername" href="http://www.unix.com/members/37905.html"><!-- google_ad_section_start(weight=ignore) --><span style="color:#22229C;">xli</span><!-- google_ad_section_end --></a>
+
+					<img title="xli is offline" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/user_offline.gif" alt="xli is offline" border="0">
+
+
+
+
+
+
+ 
+
+ 
+
+ 
+
+
+
+					
+					
+				</div>
+
+				<div class="smallfont">Registered User</div>
+				<div></div>
+				
+                              
+				
+
+
+			</td>
+			<td width="100%">&nbsp;</td>
+<!--
+
+-->
+                     
+			<td nowrap="nowrap" valign="top">
+
+				<div class="smallfont">
+					<div>Join Date: Feb 2005</div>
+					
+					
+					<div>
+						Posts: 7
+					</div>
+
+
+
+
+					 
+	<div>Thanks: 0</div>
+	<div>
+		
+			
+				Thanked 0 Times in 0 Posts
+			
+		
+	</div>
+
+
+
+					
+<!-- moved this to the top
+                        
+-->
+					
+					<div>    </div>
+				</div>
+<!--VBSEO_BOOKMARKS-->
+
+			</td>
+		</tr>
+		</tbody></table>
+		<!-- / user info -->
+	</td>
+</tr>
+<tr>
+	
+	<td class="alt1" id="td_post_66809">
+		
+	<!-- message, attachments, sig -->
+
+		
+
+		
+
+		<!-- message -->
+
+
+
+		<div id="post_message_66809"><!-- google_ad_section_start --><acronym title="Practical Extraction and Report Language">perl</acronym> -pi -e '$_ = "" if ($. == 1);' filename  <br>
+<br>
+works very well.<br>
+<br>
+Thanks very much for your help, Tanku and Reborg.<br>
+<br>
+Regards, xli<!-- google_ad_section_end --></div>
+		<!-- / message -->
+               
+                
+		
+  
+		
+
+		
+
+		
+
+		
+
+		<div style="margin-top: 10px" align="right">
+			<!-- controls -->
+ 
+
+                
+			
+			
+			
+			
+			
+			
+<!-- hidden posts by scottn -->
+
+			
+			
+			
+				
+			
+			
+			<!-- / controls -->           
+		</div>
+
+	<!-- message, attachments, sig -->
+
+	</td>
+</tr>
+
+
+
+
+
+</tbody></table>
+ <div id="post_thanks_box_66809"></div><table class="tborder" style="margin-top: 6px;" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<tbody><tr>
+	<td class="thead" style="line-height: 1.5em;">
+		
+			<div>
+				<span style="float:right;font-weight:normal;"><a href="http://www.unix.com/register.php">Remove advertisements</a></span>
+			</div>
+		
+		Sponsored Links
+	</td>
+</tr>
+<tr>
+	<td class="alt1">
+		<div class="postbit_adcode">
+			<table width="100%">
+<tbody><tr>
+<td align="center" width="50%">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(7);
+// ]]> --></script><script type="text/javascript"><!--
+e9 = new Object();
+e9.size = "300x250";
+e9.addBlockingCategories="Adult,Political,Flashing,Floating,Unicast,Warning,Alcohol,Religious,Dating,Suggestive,Audio,Full-page,Expandable,Pop-under,Gambling,Tobacco,Sweepstakes,Violence,Pop-up,Survey";
+e9.noAd = 1;
+//--></script>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/tags_003.js"></script><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/displayAd.js"></script><center><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/j_002.js"></script><script language="javascript">
+//Required variables.
+	var tf_clickTag  = 'http://a.tribalfusion.com/h.click/akmRRRWUMSWdFYnbFtPrrsXTMN5EZbg2ajPmqnD1rZbaTHnVmPfZbmsYtotrD5EUg2HiM5AvZanFYZd0sv0YcQY1GbwmqBP5UZbSTFZbZcWA3TPab2QVFMSdbsYtbuWmQn3GZbUXUBLTmTn5PMeP67B4WYn0dBKpdEx4PJ15cQcUGMcVGyftEPUQRupoAE5uqBUn6untbTItBahQUZbvfhCSFJ/https://signup.netflix.com/?mqso=80032501';
+	var tf_flashfile = 'http://cdnx.tribalfusion.com/media/3240546/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA';
+	var tf_imagefile = 'http://cdnx.tribalfusion.com/media/3240546/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA.jpg';
+	var tf_width     = 300;
+	var tf_height    = 250;
+//Optional variables.
+	var tf_bgcolor = '#ffffff';
+	var tf_use_flash_wrapper = false;
+	var tf_wmode     = 'opaque';
+	var tf_salign     = 'lt';
+	var tf_allowScriptAccess     = 'sameDomain';
+	var tf_extraFlashVars     = '';
+//Autogenerated code. Please do not change.
+	var tf_id        = '324700655';
+	var tf_loaderFlash     = 'http://cdnx.tribalfusion.com/media/common/flash/frame3';
+	var tf_button    = 'http://cdnx.tribalfusion.com/media/common/flash/button4.swf';
+	var tf_click     = 'http://a.tribalfusion.com/h.click/akmRRRWUMSWdFYnbFtPrrsXTMN5EZbg2ajPmqnD1rZbaTHnVmPfZbmsYtotrD5EUg2HiM5AvZanFYZd0sv0YcQY1GbwmqBP5UZbSTFZbZcWA3TPab2QVFMSdbsYtbuWmQn3GZbUXUBLTmTn5PMeP67B4WYn0dBKpdEx4PJ15cQcUGMcVGyftEPUQRupoAE5uqBUn6untbTItBahQUZbvfhCSFJ/';
+	var tf_state        = 'Saskatchewan';
+	var tf_city        = 'Regina';
+	var tf_zipcode        = 'S4P';
+	var tf_gender        = '';
+	var tf_location        = 'http://cdnx.tribalfusion.com/media/3240546/';
+</script>
+<script language="javascript" src="17622-how-remove-first-line-flat-file_files/flashv15.js"></script><embed src="17622-how-remove-first-line-flat-file_files/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" play="true" loop="true" scale="showall" wmode="opaque" devicefont="false" bgcolor="#ffffff" name="TFclick324700655" menu="false" allowfullscreen="false" allowscriptaccess="sameDomain" salign="lt" flashvars="clickTag=http%3A//a.tribalfusion.com/h.click/akmRRRWUMSWdFYnbFtPrrsXTMN5EZbg2ajPmqnD1rZbaTHnVmPfZbmsYtotrD5EUg2HiM5AvZanFYZd0sv0YcQY1GbwmqBP5UZbSTFZbZcWA3TPab2QVFMSdbsYtbuWmQn3GZbUXUBLTmTn5PMeP67B4WYn0dBKpdEx4PJ15cQcUGMcVGyftEPUQRupoAE5uqBUn6untbTItBahQUZbvfhCSFJ/https%3A//signup.netflix.com/%3Fmqso%3D80032501&amp;clickTAG=http%3A//a.tribalfusion.com/h.click/akmRRRWUMSWdFYnbFtPrrsXTMN5EZbg2ajPmqnD1rZbaTHnVmPfZbmsYtotrD5EUg2HiM5AvZanFYZd0sv0YcQY1GbwmqBP5UZbSTFZbZcWA3TPab2QVFMSdbsYtbuWmQn3GZbUXUBLTmTn5PMeP67B4WYn0dBKpdEx4PJ15cQcUGMcVGyftEPUQRupoAE5uqBUn6untbTItBahQUZbvfhCSFJ/https%3A//signup.netflix.com/%3Fmqso%3D80032501&amp;clicktag=http%3A//a.tribalfusion.com/h.click/akmRRRWUMSWdFYnbFtPrrsXTMN5EZbg2ajPmqnD1rZbaTHnVmPfZbmsYtotrD5EUg2HiM5AvZanFYZd0sv0YcQY1GbwmqBP5UZbSTFZbZcWA3TPab2QVFMSdbsYtbuWmQn3GZbUXUBLTmTn5PMeP67B4WYn0dBKpdEx4PJ15cQcUGMcVGyftEPUQRupoAE5uqBUn6untbTItBahQUZbvfhCSFJ/https%3A//signup.netflix.com/%3Fmqso%3D80032501&amp;tf_flash=http://cdnx.tribalfusion.com/media/3240546/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA.swf&amp;tf_button=http://cdnx.tribalfusion.com/media/common/flash/button4.swf&amp;tf_state=Saskatchewan&amp;tf_city=Regina&amp;tf_zipcode=S4P&amp;tf_gender=&amp;tf_location=http://cdnx.tribalfusion.com/media/3240546/&amp;tf_id=324700655&amp;" type="application/x-shockwave-flash" align="middle" height="250" width="300"> 
+<noscript>
+	<A HREF='http://a.tribalfusion.com/h.click/akmRRRWUMSWdFYnbFtPrrsXTMN5EZbg2ajPmqnD1rZbaTHnVmPfZbmsYtotrD5EUg2HiM5AvZanFYZd0sv0YcQY1GbwmqBP5UZbSTFZbZcWA3TPab2QVFMSdbsYtbuWmQn3GZbUXUBLTmTn5PMeP67B4WYn0dBKpdEx4PJ15cQcUGMcVGyftEPUQRupoAE5uqBUn6untbTItBahQUZbvfhCSFJ/https://signup.netflix.com/?mqso=80032501' TARGET='_blank'>
+	<IMG SRC='http://cdnx.tribalfusion.com/media/3240546/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA.jpg' WIDTH=300 HEIGHT=250 ALT='Click Here!' BORDER=0></A>
+</noscript>
+</center>
+
+<div id="beacon_233f9ed98d" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="17622-how-remove-first-line-flat-file_files/lg_004.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a rel='nofollow' target='_blank' href='http://nj.cyberstrategics.com/www/delivery/ck.php?n=b0dc303&cb=1721154455-1346871013-7'><img border='0' alt='' src='http://nj.cyberstrategics.com/www/delivery/avw.php?zoneid=7&n=b0dc303&cb=1721154455-1346871013-7' /></a></noscript>
+</td>
+<td align="center" width="50%">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(8);
+// ]]> --></script><script type="text/javascript"><!--
+e9 = new Object();
+e9.size = "300x250";
+e9.addBlockingCategories="Adult,Political,Flashing,Floating,Unicast,Warning,Alcohol,Religious,Dating,Suggestive,Audio,Full-page,Expandable,Pop-under,Gambling,Tobacco,Sweepstakes,Violence,Pop-up,Survey";
+e9.noAd = 1;
+//--></script>
+<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/tags_003.js"></script><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/displayAd.js"></script><center><script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/j_006.js"></script><script language="javascript">
+//Required variables.
+	var tf_clickTag  = 'http://a.tribalfusion.com/h.click/aYmRRR2mrHptToUHFdXFfcXF770qipPbFZdUrZbXTtQ0nr3rPFroXqMn5aJk2avYna7LYrU9UtBSomvBnGrrpHrG3TUi5tun3AFGnbrEXGfWYVZbVXVJopTb42Fn4WrMZcWAj2PE30PcMMQtJNYtjsVPbv4sY2YbFBT6Ps5mv9QAyBvDXX48ykVRbMwn2qv8u8rWTKnpXZaPSYJfkCL4U/https://signup.netflix.com/?mqso=80032501';
+	var tf_flashfile = 'http://cdnx.tribalfusion.com/media/3240546/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA';
+	var tf_imagefile = 'http://cdnx.tribalfusion.com/media/3240546/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA.jpg';
+	var tf_width     = 300;
+	var tf_height    = 250;
+//Optional variables.
+	var tf_bgcolor = '#ffffff';
+	var tf_use_flash_wrapper = false;
+	var tf_wmode     = 'opaque';
+	var tf_salign     = 'lt';
+	var tf_allowScriptAccess     = 'sameDomain';
+	var tf_extraFlashVars     = '';
+//Autogenerated code. Please do not change.
+	var tf_id        = '324704116';
+	var tf_loaderFlash     = 'http://cdnx.tribalfusion.com/media/common/flash/frame3';
+	var tf_button    = 'http://cdnx.tribalfusion.com/media/common/flash/button4.swf';
+	var tf_click     = 'http://a.tribalfusion.com/h.click/aYmRRR2mrHptToUHFdXFfcXF770qipPbFZdUrZbXTtQ0nr3rPFroXqMn5aJk2avYna7LYrU9UtBSomvBnGrrpHrG3TUi5tun3AFGnbrEXGfWYVZbVXVJopTb42Fn4WrMZcWAj2PE30PcMMQtJNYtjsVPbv4sY2YbFBT6Ps5mv9QAyBvDXX48ykVRbMwn2qv8u8rWTKnpXZaPSYJfkCL4U/';
+	var tf_state        = 'Saskatchewan';
+	var tf_city        = 'Regina';
+	var tf_zipcode        = 'S4P';
+	var tf_gender        = '';
+	var tf_location        = 'http://cdnx.tribalfusion.com/media/3240546/';
+</script>
+<script language="javascript" src="17622-how-remove-first-line-flat-file_files/flashv15.js"></script><embed src="17622-how-remove-first-line-flat-file_files/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" play="true" loop="true" scale="showall" wmode="opaque" devicefont="false" bgcolor="#ffffff" name="TFclick324704116" menu="false" allowfullscreen="false" allowscriptaccess="sameDomain" salign="lt" flashvars="clickTag=http%3A//a.tribalfusion.com/h.click/aYmRRR2mrHptToUHFdXFfcXF770qipPbFZdUrZbXTtQ0nr3rPFroXqMn5aJk2avYna7LYrU9UtBSomvBnGrrpHrG3TUi5tun3AFGnbrEXGfWYVZbVXVJopTb42Fn4WrMZcWAj2PE30PcMMQtJNYtjsVPbv4sY2YbFBT6Ps5mv9QAyBvDXX48ykVRbMwn2qv8u8rWTKnpXZaPSYJfkCL4U/https%3A//signup.netflix.com/%3Fmqso%3D80032501&amp;clickTAG=http%3A//a.tribalfusion.com/h.click/aYmRRR2mrHptToUHFdXFfcXF770qipPbFZdUrZbXTtQ0nr3rPFroXqMn5aJk2avYna7LYrU9UtBSomvBnGrrpHrG3TUi5tun3AFGnbrEXGfWYVZbVXVJopTb42Fn4WrMZcWAj2PE30PcMMQtJNYtjsVPbv4sY2YbFBT6Ps5mv9QAyBvDXX48ykVRbMwn2qv8u8rWTKnpXZaPSYJfkCL4U/https%3A//signup.netflix.com/%3Fmqso%3D80032501&amp;clicktag=http%3A//a.tribalfusion.com/h.click/aYmRRR2mrHptToUHFdXFfcXF770qipPbFZdUrZbXTtQ0nr3rPFroXqMn5aJk2avYna7LYrU9UtBSomvBnGrrpHrG3TUi5tun3AFGnbrEXGfWYVZbVXVJopTb42Fn4WrMZcWAj2PE30PcMMQtJNYtjsVPbv4sY2YbFBT6Ps5mv9QAyBvDXX48ykVRbMwn2qv8u8rWTKnpXZaPSYJfkCL4U/https%3A//signup.netflix.com/%3Fmqso%3D80032501&amp;tf_flash=http://cdnx.tribalfusion.com/media/3240546/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA.swf&amp;tf_button=http://cdnx.tribalfusion.com/media/common/flash/button4.swf&amp;tf_state=Saskatchewan&amp;tf_city=Regina&amp;tf_zipcode=S4P&amp;tf_gender=&amp;tf_location=http://cdnx.tribalfusion.com/media/3240546/&amp;tf_id=324704116&amp;" type="application/x-shockwave-flash" align="middle" height="250" width="300"> 
+<noscript>
+	<A HREF='http://a.tribalfusion.com/h.click/aYmRRR2mrHptToUHFdXFfcXF770qipPbFZdUrZbXTtQ0nr3rPFroXqMn5aJk2avYna7LYrU9UtBSomvBnGrrpHrG3TUi5tun3AFGnbrEXGfWYVZbVXVJopTb42Fn4WrMZcWAj2PE30PcMMQtJNYtjsVPbv4sY2YbFBT6Ps5mv9QAyBvDXX48ykVRbMwn2qv8u8rWTKnpXZaPSYJfkCL4U/https://signup.netflix.com/?mqso=80032501' TARGET='_blank'>
+	<IMG SRC='http://cdnx.tribalfusion.com/media/3240546/2012_0511_001_Inglourious_Basterds_300x250_Eng_CA.jpg' WIDTH=300 HEIGHT=250 ALT='Click Here!' BORDER=0></A>
+</noscript>
+</center>
+
+<div id="beacon_a094a31659" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="17622-how-remove-first-line-flat-file_files/lg_009.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a rel='nofollow' target='_blank' href='http://nj.cyberstrategics.com/www/delivery/ck.php?n=8cb72ce&cb=1721154455-1346871013-8'><img border='0' alt='' src='http://nj.cyberstrategics.com/www/delivery/avw.php?zoneid=8&n=8cb72ce&cb=1721154455-1346871013-8' /></a></noscript>
+</td>
+</tr>
+</tbody></table>
+		</div>
+	</td>
+</tr>
+</tbody></table>
+
+
+<!-- post 66809 popup menu -->
+
+<!-- / post 66809 popup menu -->
+
+<div id="award66809" style="padding:6px 0px 0px 0px;">
+
+</div>
+
+
+
+
+	</div>
+	
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+
+<!-- / post #66809 --><div id="lastpost"></div></div>
+
+<!-- start content table -->
+<!-- open content container -->
+
+<div align="center">
+	<div class="page" style="width:100%; text-align:left">
+		<div style="padding:0px 25px 0px 25px" align="left">
+
+<!-- / start content table -->
+
+<!-- controls below postbits -->
+<table style="margin-top: -3px;" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="top">
+	
+		<td class="smallfont"><a href="http://www.unix.com/newreply.php?do=newreply&amp;noquote=1&amp;p=66809" rel="nofollow"><img title="Closed Thread" src="17622-how-remove-first-line-flat-file_files/threadclosed.gif" alt="Closed Thread" border="0"></a></td>
+	
+
+
+	
+		<td align="right"><div class="pagenav" align="right">
+<table class="tborder" border="0" cellpadding="3" cellspacing="1">
+<tbody><tr>
+	<td class="vbmenu_control" style="font-weight: normal;">Page 1 of 4</td>
+	
+	
+		<td class="alt2"><span class="smallfont" title="Showing results 1 to 7 of 22"><strong>1</strong></span></td>
+ <td class="alt1"><a class="smallfont" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file-2.html" title="Show results 8 to 14 of 22">2</a></td><td class="alt1"><a class="smallfont" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file-3.html" title="Show results 15 to 21 of 22">3</a></td><td class="alt1"><a class="smallfont" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file-4.html" title="Show results 22 to 22 of 22">4</a></td>
+	<td class="alt1"><a rel="next" class="smallfont" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file-2.html" title="Next Page - Results 8 to 14 of 22">&gt;</a></td>
+	
+	<td style="cursor: pointer;" id="pagenav.124" class="vbmenu_control" title=""> <img alt="" title="" src="17622-how-remove-first-line-flat-file_files/menu_open.gif" border="0"></td>
+</tr>
+</tbody></table>
+</div>
+		
+		</td>
+	
+</tr>
+</tbody></table>
+<!-- / controls below postbits -->
+
+
+
+
+
+
+<!-- thread tags -->
+	<br>
+	<table class="tborder" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+	<tbody><tr>
+		<td class="thead">
+			
+			<a name="taglist"></a>
+			<a href="http://www.unix.com/tags/">Tags</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="alt1 smallfont" id="tag_list_cell"><a href="http://www.unix.com/tags/sed+delete+line.html">sed delete line</a>, <a href="http://www.unix.com/tags/shell+script.html">shell script</a>, <a href="http://www.unix.com/tags/shell+scripting.html">shell scripting</a>, <a href="http://www.unix.com/tags/unix+commands.html">unix commands</a>, <a href="http://www.unix.com/tags/unix+scripting.html">unix scripting</a>, <a href="http://www.unix.com/tags/unix+scripting+basics.html">unix scripting basics</a> <img src="17622-how-remove-first-line-flat-file_files/11x11progress.gif" id="tag_form_progress" class="inlineimg" style="display: none;" alt=""></td>
+	</tr>
+	</tbody></table>
+
+	<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/vbulletin_ajax_taglist.js"></script>
+		<script type="text/javascript" src="17622-how-remove-first-line-flat-file_files/vbulletin_ajax_tagsugg.js"></script>
+<!-- / thread tags -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- next / previous links -->
+	<br>
+	<div class="smallfont" align="center">
+		<strong>«</strong>
+			<a href="http://www.unix.com/unix-dummies-questions-answers/93414-sort-biggest-most-recent-files.html">sort biggest most recent files</a>
+			|
+			<a href="http://www.unix.com/unix-dummies-questions-answers/93012-where-my-usb-key.html">Where is my USB key?</a>
+		<strong>»</strong>
+	</div>
+<!-- / next / previous links -->
+
+
+
+
+
+<!-- popup menu contents -->
+<br>
+        
+<!-- thread tools menu -->
+<div class="vbmenu_popup" id="threadtools_menu" style="display:none">
+<form action="http://www.unix.com/postings.php?t=17622&amp;pollid=" method="post" name="threadadminform">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Thread Tools<a name="goto_threadtools"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><img title="Show Printable Version" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/printer.gif" alt="Show Printable Version"> <a href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file-printfriendly.html" accesskey="3" rel="nofollow">Show Printable Version</a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><img title="Email this Page" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/sendtofriend.gif" alt="Email this Page"> <a href="http://www.unix.com/sendmessage.php?do=sendtofriend&amp;t=17622" rel="nofollow">Email this Page</a></td>
+	</tr>
+	
+	<tr>
+		<td class="vbmenu_option"><img title="Subscription" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/subscribe.gif" alt="Subscription">
+		
+			<a href="http://www.unix.com/subscription.php?do=addsubscription&amp;t=17622" rel="nofollow">Subscribe to this Thread</a>
+		
+		</td>
+	</tr>
+	
+	
+	
+	</tbody></table>
+</form>
+</div>
+<!-- / thread tools menu -->
+
+<!-- **************************************************** -->
+
+<!-- thread display mode menu -->
+<div class="vbmenu_popup" id="displaymodes_menu" style="display:none">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Display Modes<a name="goto_displaymodes"></a></td>
+	</tr>
+	<tr>
+	
+		<td class="vbmenu_option" title="nohilite"><img title="Linear Mode" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/mode_linear.gif" alt="Linear Mode"> <strong>Linear Mode</strong></td>
+	
+	</tr>
+	<tr>
+	
+		<td class="vbmenu_option"><img title="Hybrid Mode" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/mode_hybrid.gif" alt="Hybrid Mode"> <a rel="nofollow" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file.html?mode=hybrid">Switch to Hybrid Mode</a></td>
+	
+	</tr>
+	<tr>
+	
+		<td class="vbmenu_option"><img title="Threaded Mode" class="inlineimg" src="17622-how-remove-first-line-flat-file_files/mode_threaded.gif" alt="Threaded Mode"> <a rel="nofollow" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file.html?mode=threaded#post66799">Switch to Threaded Mode</a></td>
+	
+	</tr>
+	</tbody></table>
+</div>
+<!-- / thread display mode menu -->
+
+<!-- **************************************************** -->
+
+
+<!-- thread search menu -->
+<div class="vbmenu_popup" id="threadsearch_menu" style="display:none">
+<form action="http://www.unix.com/search.php?do=process&amp;searchthreadid=17622" method="post">
+	<table border="0" cellpadding="4" cellspacing="1">
+	<tbody><tr>
+		<td class="thead">Search this Thread<a name="goto_threadsearch"></a></td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option" title="nohilite">
+			<input name="s" value="6bb3e03d77a6858978b4555c619ae3a7" type="hidden">
+			<input name="securitytoken" value="guest" type="hidden">
+			<input name="do" value="process" type="hidden">
+			<input name="searchthreadid" value="17622" type="hidden">
+			<input class="bginput" name="query" size="25" type="text"><input class="button" value="Go" type="submit"><br>
+		</td>
+	</tr>
+	<tr>
+		<td class="vbmenu_option"><a rel="nofollow" href="http://www.unix.com/search.php?searchthreadid=17622">Advanced Search</a></td>
+	</tr>
+	</tbody></table>
+</form>
+</div>
+<!-- / thread search menu -->
+
+
+<!-- **************************************************** -->
+
+
+
+<!-- / popup menu contents -->
+
+
+
+<table class="tborder" align="center" border="0" cellpadding="6" cellspacing="1" width="100%">
+<thead>
+	<tr>
+		<td class="tcat" colspan="5" width="100%">
+			<a style="float: right;" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file.html#top" onclick="return toggle_collapse('similarthreads')"><img id="collapseimg_similarthreads" src="17622-how-remove-first-line-flat-file_files/collapse_tcat.gif" alt="" border="0"></a>
+			More UNIX and Linux Forum Topics You Might Find Helpful<a name="similarthreads"></a>
+		</td>
+	</tr>
+</thead>
+<tbody id="collapseobj_similarthreads" style="">
+<tr class="thead" align="center">
+	<td class="thead" width="40%">Thread</td>
+	<td class="thead" nowrap="nowrap" width="15%">Thread Starter</td>
+	<td class="thead" width="20%">Forum</td>
+	<td class="thead" width="5%">Replies</td>
+	<td class="thead" width="20%">Last Post</td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.unix.com/unix-dummies-questions-answers/178121-how-remove-numeric-characters-flat-file.html" title="HI, 
+ 
+can any one help me please .. 
+ 
+i have flat file like  
+ 
+qwer123rt   ass3242ccf jjk654 
+kjh838ppp   nhdg453ok  hdkk34">How to remove numeric characters in the flat file</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">rafimd1985</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">UNIX for Dummies Questions &amp; Answers</span></td>
+	<td class="alt2" align="center"><span class="smallfont">4</span></td>
+	<td class="alt1" align="right"><span class="smallfont">03-03-2012 <span class="time">11:02 PM</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.unix.com/shell-programming-scripting/168375-remove-footer-flat-file-searching-pattern.html" title="Hi, 
+I have more than 30,000 records in a flat file. I want to remove footer from the file by searching a string pattern for the footer. 
+Example.... let the flat file test.dat contains below records. 
+ 
+record1 
+record2 
+record3 
+.. 
+.. 
+..">Remove the footer from a flat file by searching a pattern</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">gani_85</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Shell Programming and Scripting</span></td>
+	<td class="alt2" align="center"><span class="smallfont">6</span></td>
+	<td class="alt1" align="right"><span class="smallfont">10-03-2011 <span class="time">02:05 AM</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.unix.com/shell-programming-scripting/168247-remove-somewhat-duplicate-records-flat-file.html" title="I have a flat file that contains records similar to the following two lines; 
+  
+  
+1984/11/08            7 700000 123456789 2 
+1984/11/08 1941/05/19 7 700000 123456789 2 
+  
+   The 123456789 2 represents an account number, this is how I identify the duplicate record. 
+  
+   The ### signs represent...">Remove somewhat Duplicate records from a flat file</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">jolney</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Shell Programming and Scripting</span></td>
+	<td class="alt2" align="center"><span class="smallfont">4</span></td>
+	<td class="alt1" align="right"><span class="smallfont">09-29-2011 <span class="time">04:01 PM</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.unix.com/shell-programming-scripting/53118-remove-specific-lines-flat-file-using-perl.html" title="Hi, 
+ 
+Here is wat im looking for.. i have a flat file which looks like this.. 
+ 
+00 
+* 
+* 
+* 
+* 
+..">remove specific lines from flat file using perl</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">meghana</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Shell Programming and Scripting</span></td>
+	<td class="alt2" align="center"><span class="smallfont">12</span></td>
+	<td class="alt1" align="right"><span class="smallfont">02-12-2008 <span class="time">08:50 PM</span></span></td>
+</tr>
+<tr>
+	<td class="alt1" align="left">
+		
+		<span class="smallfont"> <a href="http://www.unix.com/shell-programming-scripting/37134-how-remove-page-breaks-flat-file.html" title="Hi All, 
+ 
+I get a flat file with its last field data splitting onto a new line.I got this program from Vgersh which when run would cancatenate the split data back to the end of the previous records.But this program fails when it encounters a page break between the split data and the previous...">How to remove page breaks from a flat file???</a></span>
+	</td>
+	<td class="alt2" nowrap="nowrap"><span class="smallfont">kumarsaravana_s</span></td>
+	<td class="alt1" nowrap="nowrap"><span class="smallfont">Shell Programming and Scripting</span></td>
+	<td class="alt2" align="center"><span class="smallfont">5</span></td>
+	<td class="alt1" align="right"><span class="smallfont">04-17-2007 <span class="time">08:51 AM</span></span></td>
+</tr>
+
+</tbody>
+</table>
+
+<br>
+
+
+
+<!-- forum rules and admin links -->
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr valign="bottom">
+	<td valign="top" width="100%">
+
+<!-- 
+		<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="210">
+<thead>
+<tr>
+	<td class="thead">
+		<a style="float:right" href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file.html#top" onclick="return toggle_collapse('forumrules')"><img id="collapseimg_forumrules" src="http://linux.unix.com/images/buttons/collapse_thead.gif" alt="" border="0" /></a>
+		Posting Rules
+	</td>
+</tr>
+</thead>
+<tbody id="collapseobj_forumrules" style="">
+<tr>
+	<td class="alt1" nowrap="nowrap"><div class="smallfont">
+		
+		<div>You <strong>may not</strong> post new threads</div>
+		<div>You <strong>may not</strong> post replies</div>
+		<div>You <strong>may not</strong> post attachments</div>
+		<div>You <strong>may not</strong> edit your posts</div>
+		<hr />
+		
+		<div><a rel="nofollow" href="http://www.unix.com/misc.php?do=bbcode" target="_blank">BB code</a> is <strong>On</strong></div>
+		<div><a rel="nofollow" href="http://www.unix.com/misc.php?do=showsmilies" target="_blank">Smilies</a> are <strong>On</strong></div>
+		<div><a rel="nofollow" href="http://www.unix.com/misc.php?do=bbcode#imgcode" target="_blank">[IMG]</a> code is <strong>On</strong></div>
+		<div>HTML code is <strong>Off</strong></div><div><a rel="nofollow" href="http://www.unix.com/misc.php?do=linkbacks#trackbacks" target="_blank">Trackbacks</a> are <strong>On</strong></div>
+<div><a rel="nofollow" href="http://www.unix.com/misc.php?do=linkbacks#pingbacks" target="_blank">Pingbacks</a> are <strong>On</strong></div>
+<div><a rel="nofollow" href="http://www.unix.com/misc.php?do=linkbacks#refbacks" target="_blank">Refbacks</a> are <strong>Off</strong></div>
+		<hr />
+		<div><a rel="nofollow" href="http://www.unix.com/misc.php?do=showrules" target="_blank">Forum Rules</a></div>
+	</div></td>
+</tr>
+</tbody>
+</table>
+-->
+	</td>
+
+
+
+
+	<td class="smallfont" align="right">
+		<table border="0" cellpadding="0" cellspacing="0">
+		
+		<tbody><tr>
+			<td>
+			
+                        </td>
+
+
+		</tr>
+		</tbody></table>
+	</td>
+</tr>
+</tbody></table>
+<!-- /forum rules and admin links -->
+
+
+
+<br>
+
+
+<br>
+<div class="smallfont" align="center">All times are GMT -4. The time now is <span class="time">02:50 PM</span>.</div>
+<br>
+
+
+
+		</div>
+	</div>
+</div>
+
+<!-- / close content container -->
+<!-- /content area table -->
+
+<form action="http://www.unix.com/index.php" method="get">
+	
+<table class="page" align="center" border="0" cellpadding="6" cellspacing="0" width="100%">
+<tbody><tr>
+
+
+
+	
+	
+	<td class="tfoot" align="right" width="100%">
+
+		<div class="smallfont" <strong="">
+				<a href="http://www.unix.com/cv_rss_feeds.php" target="_self" title="The UNIX and Linux Forums - Learn UNIX and UNIX Commands RSS Feeds"><img title="The UNIX and Linux Forums - Learn UNIX and UNIX Commands RSS Feeds" src="17622-how-remove-first-line-flat-file_files/rss.gif" alt="The UNIX and Linux Forums - Learn UNIX and UNIX Commands RSS Feeds" style="vertical-align: middle;" border="0"></a> - <a href="http://www.unix.com/sendmessage.php" rel="nofollow" accesskey="9">Contact Us</a> -
+				<a href="http://www.unix.com/">The UNIX and Linux Forums - Learn UNIX and UNIX Commands</a> -
+				
+				
+				<a href="http://www.unix.com/unix/linux/">Archive</a> -
+<a href="http://www.unix.com/botnik/">Botnik</a> - 
+                                
+				
+				<a href="http://www.unix.com/unix-dummies-questions-answers/17622-how-remove-first-line-flat-file.html#top" onclick="self.scrollTo(0, 0); return false;">Top</a>
+			
+		</div>
+	</td>
+</tr>
+</tbody></table>
+</form>
+
+
+
+
+
+
+<script type="text/javascript">
+<!--
+	// Main vBulletin Javascript Initialization
+	vBulletin_init(); 
+-->
+</script>
+
+<div class="footer" style="padding:8px;font-size:9px ">
+	<div style="float:right"> 
+<!-- <div><a rel="nofollow" href="http://www.vbcredits.com/">vBCredits</a> v1.4 Copyright &copy;2007 - 2008, <a rel="nofollow" href="http://www.pixelfxstudios.ca/">PixelFX Studios</a></div>   -->
+SEO by <a rel="nofollow" href="http://www.crawlability.com/vbseo/">vBSEO</a>
+	</div>
+	
+	<div align="left">The UNIX and Linux Forums Content Copyright ©1993-2012.  All Rights Reserved. <br>  Forum Operations by <a href="http://www.unix.com/" rel="nofollow">The UNIX and Linux Forums</a></div>
+        <div align="left">Powered by: <a rel="nofollow" href="http://www.anrdoezrs.net/click-2566249-1163318" target="_top">vBulletin</a>, 
+Copyright ©2000 - 2006, Jelsoft Enterprises Limited.</div>
+        
+</div>
+
+
+<script src="17622-how-remove-first-line-flat-file_files/Loader_.html" type="text/javascript"></script>
+
+
+<!-- temp -->
+<div style="display:none">
+	<!-- thread rate -->
+	
+		
+	
+	<!-- / thread rate -->
+</div>
+
+
+</body></html>

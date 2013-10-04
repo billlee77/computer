@@ -1,0 +1,1417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>How to install Skype on to Fedora 13 x86_64 | yunustj&#039;s blog v2011-03-27</title>
+	<!--[if lte IE 8]>
+	<link rel="stylesheet" href="http://s2.wp.com/wp-content/themes/pub/chaoticsoul/ie.css?m=1192578791g" type="text/css" media="screen" />
+	<![endif]-->
+	<link rel="pingback" href="http://yunustj.wordpress.com/xmlrpc.php" />
+	<link rel="alternate" type="application/rss+xml" title="yunustj&#039;s blog v2011-03-27 &raquo; Feed" href="http://yunustj.wordpress.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="yunustj&#039;s blog v2011-03-27 &raquo; Comments Feed" href="http://yunustj.wordpress.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="yunustj&#039;s blog v2011-03-27 &raquo; How to install Skype on to Fedora 13&nbsp;x86_64 Comments Feed" href="http://yunustj.wordpress.com/2010/07/18/how-to-install-skype-on-to-fedora-13-x86_64/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel='stylesheet' id='all-css-0' href='http://s0.wp.com/_static/??-eJx9kNEKgzAMRX9oXdiUjT2MfUuttUZjU0yK+PcTN5jg8C2Bc3O4gSkZx1F9VBiySZQDRgHC3gt0XpN1vVm3sxM5wQaviMMvwCH4mrOahol4ggnr4HUX2jgwNhhRZ9DWD4st5Qpca1nRCWc6iiaWRUQWRxCdye/Y/yeP4baEQFzZQ/OnlsCCfGcTRqyNjfXyJlkLv4bnpbg/ivJ6K4ruDV8GhGk=' type='text/css' media='all' />
+<link rel='stylesheet' id='print-css-0' href='http://s0.wp.com/wp-content/mu-plugins/global-print/global-print.css?m=1335386953g' type='text/css' media='print' />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s2.wp.com/_static/??-eJyFjVsKAjEMRTdkp/jA4oe4lnlkSmqb1Ka16OqtoKAozFdCcu49ukY1MmWgrJ3owAN6UEUg9bbdFNLMnZOVbhzS6MsE8gTdpUC6vcYioALa1GfoAtIb/rBGlhxApCn/fL9VSFeEuog5yLEfzyqB4P2ndfBsVfTFIoluu4WJS1Yze89VV5ws5JY5heN6a8xmbw5m5x49qG/C'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpcom_optimizely = {"newdash_themes_selection":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='//cdn.optimizely.com/js/7144006.js?ver=20121011'></script>
+<script type='text/javascript' src='http://s2.wp.com/wp-content/mu-plugins/widgets/js/widget-bump-view.js?m=1342269540g'></script>
+<link rel='stylesheet' id='all-css-0' href='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/style.css?m=1377793621g' type='text/css' media='all' />
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://yunustj.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://yunustj.wordpress.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Virtualization' href='http://yunustj.wordpress.com/2009/07/11/virtualization/' />
+<link rel='next' title='Storage Technology: The Linux Logical Volume&nbsp;Manager' href='http://yunustj.wordpress.com/2010/09/07/storage-technology-the-linux-logical-volume-manager/' />
+<meta name="generator" content="WordPress.com" />
+<link rel='canonical' href='http://yunustj.wordpress.com/2010/07/18/how-to-install-skype-on-to-fedora-13-x86_64/' />
+<link rel='shortlink' href='http://wp.me/pm4qb-51' />
+<link rel="alternate" type="application/json+oembed" href="http://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=http%3A%2F%2Fyunustj.wordpress.com%2F2010%2F07%2F18%2Fhow-to-install-skype-on-to-fedora-13-x86_64%2F&amp;for=wpcom-auto-discovery" /><link rel="alternate" type="application/xml+oembed" href="http://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=http%3A%2F%2Fyunustj.wordpress.com%2F2010%2F07%2F18%2Fhow-to-install-skype-on-to-fedora-13-x86_64%2F&amp;for=wpcom-auto-discovery" />
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How to install Skype on to Fedora 13 x86_64" />
+<meta property="og:url" content="http://yunustj.wordpress.com/2010/07/18/how-to-install-skype-on-to-fedora-13-x86_64/" />
+<meta property="og:description" content="Installing skype on Fedora 13 x86_64 is quite messy. I have to install all i686 dependencies packages in order to make skype run. To put it simple, you can perform it in a single commandline to ins..." />
+<meta property="og:site_name" content="yunustj&#039;s blog v2011-03-27" />
+<meta name="twitter:site" content="@wordpressdotcom" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:creator" content="@wordpressdotcom" />
+<meta property="fb:app_id" content="249643311490" />
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom" />
+<link rel="shortcut icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1311976024g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1311976024g" sizes="16x16 24x24 32x32 48x48" />
+<link rel="apple-touch-icon-precomposed" href="http://s0.wp.com/i/webclip.png?m=1355642671g" />
+<link rel='openid.server' href='http://yunustj.wordpress.com/?openidserver=1' />
+<link rel='openid.delegate' href='http://yunustj.wordpress.com/' />
+<link rel="search" type="application/opensearchdescription+xml" href="http://yunustj.wordpress.com/osd.xml" title="yunustj&#039;s blog v2011-03-27" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com" />
+		<style>
+		/* <![CDATA[ */
+		/* Block: reblog */
+		
+		.reblog-from img                   { margin: 0 10px 0 0; vertical-align: middle; padding: 0; border: 0; }
+		.reblogger-note img.avatar         { float: left; padding: 0; border: 0; }
+		.reblogger-note-content            { margin: 0 0 20px; }
+		.reblog-post .wpcom-enhanced-excerpt-content { border-left: 3px solid #eee; padding-left: 15px; }
+		.reblog-post ul.thumb-list         { display: block; list-style: none; margin: 2px 0; padding: 0; clear: both; }
+		.reblog-post ul.thumb-list li      { display: inline; margin: 0; padding: 0 1px; border: 0; }
+		.reblog-post ul.thumb-list li a    { margin: 0; padding: 0; border: 0; }
+		.reblog-post ul.thumb-list li img  { margin: 0; padding: 0; border: 0; }
+		
+		.reblog-post .wpcom-enhanced-excerpt { clear: both; }
+		
+		.reblog-post .wpcom-enhanced-excerpt address,
+		.reblog-post .wpcom-enhanced-excerpt li,
+		.reblog-post .wpcom-enhanced-excerpt h1,
+		.reblog-post .wpcom-enhanced-excerpt h2,
+		.reblog-post .wpcom-enhanced-excerpt h3,
+		.reblog-post .wpcom-enhanced-excerpt h4,
+		.reblog-post .wpcom-enhanced-excerpt h5,
+		.reblog-post .wpcom-enhanced-excerpt h6,
+		.reblog-post .wpcom-enhanced-excerpt p { font-size: 100% !important; }
+		
+		.reblog-post .wpcom-enhanced-excerpt blockquote,
+		.reblog-post .wpcom-enhanced-excerpt pre,
+		.reblog-post .wpcom-enhanced-excerpt code,
+		.reblog-post .wpcom-enhanced-excerpt q { font-size: 98% !important; }
+		
+
+		/* ]]> */
+		</style>
+		<meta name="application-name" content="yunustj&#039;s blog v2011-03-27" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="My Personal Fedora Linux/GNU Notes" /><meta name="msapplication-task" content="name=Subscribe;action-uri=http://yunustj.wordpress.com/feed/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico" /><meta name="title" content="How to install Skype on to Fedora 13&nbsp;x86_64 | yunustj&#039;s blog v2011-03-27 on WordPress.com" />
+<meta name="description" content="Installing skype on Fedora 13 x86_64 is quite messy. I have to install all i686 dependencies packages in order to make skype run. To put it simple, you can perform it in a single commandline to install skype onto your Fedora Linux Machine after STEP-1 by issuing below command: [tj@localhost ~]$ su -c &#039;yum --nogpgchek&hellip;" />
+
+<script type='text/javascript' src='http://partner.googleadservices.com/gampad/google_service.js'>
+</script>
+<script type='text/javascript'>
+if ( typeof GS_googleAddAdSenseService == 'function' ) { GS_googleAddAdSenseService("ca-pub-3443918307802676"); }
+if ( typeof GS_googleEnableAllServices == 'function' ) { GS_googleEnableAllServices() };
+</script>
+<script type='text/javascript'>
+if ( typeof GA_googleAddSlot == 'function' ) { GA_googleAddSlot("ca-pub-3443918307802676", "wpcom_below_post"); }
+</script>
+<script type='text/javascript'>
+if ( typeof GA_googleFetchAds == 'function' ) { GA_googleFetchAds(); }
+</script>
+
+<script type="text/javascript">
+var wpcom_ads = { bid: 5260215, pt: 'permalink', wa: 0, as: 0, domain: 'yunustj.wordpress.com', url: 'http://yunustj.wordpress.com/2010/07/18/how-to-install-skype-on-to-fedora-13-x86_64/', gid: '', };
+</script>
+<style id="syntaxhighlighteranchor"></style>
+<script type="text/javascript"> 
+	window.google_analytics_uacct = "UA-52447-2"; 
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script>
+</head>
+<body class="single single-post postid-311 single-format-standard mp6 highlander-enabled highlander-dark">
+<div id="page">
+
+<div id="header">
+	<h1><a href="http://yunustj.wordpress.com/">yunustj&#039;s blog v2011-03-27</a></h1>
+	<div class="description">My Personal Fedora Linux/GNU Notes</div>
+</div>
+
+<div class="hr">&nbsp;</div> <!-- because IE sucks at styling HRs -->
+
+<div id="headerimg" class="clearfix">
+	<div id="header-overlay"> </div>
+	<div id="header-image"><img alt="" src="http://yunustj.files.wordpress.com/2010/08/cropped-yunustj2.jpg" /></div>
+</div>
+
+	<div class="hr">&nbsp;</div>
+
+<div id="wrapper" class="clearfix">
+	<div id="content" class="widecolumn">
+
+  
+		<div class="post-311 post type-post status-publish format-standard hentry category-video-call tag-fedora tag-fedora-12 tag-fedora-13 tag-linux tag-skype tag-x86_64" id="post-311">
+		<h2 class="title">How to install Skype on to Fedora 13&nbsp;x86_64</h2>
+
+			<div class="entrytext">
+				<p>Installing skype on Fedora 13 x86_64 is quite messy. I have to install all i686 dependencies packages in order to make skype run.</p>
+<p>To put it simple, you can perform it in a single commandline to install skype onto your Fedora Linux Machine after STEP-1 by issuing below command:</p>
+<p>[tj@localhost ~]$ su -c &#8216;yum &#8211;nogpgchek localinstall skype-2.1.0.81-fc10.i586.rpm glibc.i686 alsa-lib.i686 libXv.i686 libXScrnSaver.i686 qt.i686 qt-x11.i686&#8242;</p>
+<p>All you need to do is by performing STEP-3 to check if all dependencies is satisfied. Otherwise, perform STEP-3, STEP-4, and STEP-5 repeatedly until all dependencies is satisfied.</p>
+<p>1. Get the latest rpm version of skype here</p>
+<p><a href="http://www.skype.com/go/getskype-linux-beta-fc10" rel="nofollow">http://www.skype.com/go/getskype-linux-beta-fc10</a></p>
+<p>I got skype-2.1.0.81-fc10.i586.rpm</p>
+<p>2. [tj@localhost ~]$ su -c &#8216;yum &#8211;nogpgchek localinstall skype-2.1.0.81-fc10.i586.rpm&#8217;</p>
+<p>3. [tj@localhost ~]$ skype<br />
+bash: /usr/bin/skype: /lib/ld-linux.so.2: bad ELF interpreter: No such file or directory</p>
+<p>4. [tj@localhost ~]$ yum whatprovides ld-linux.so.2<br />
+Loaded plugins: presto, refresh-packagekit<br />
+glibc-2.12-1.i686 : The GNU libc libraries<br />
+Repo        : fedora<br />
+Matched from:<br />
+Other       : ld-linux.so.2</p>
+<p>5. [tj@localhost ~]$ su -c &#8216;yum install glibc.i686&#8242;</p>
+<p>6. [tj@localhost ~]$ skype<br />
+skype: error while loading shared libraries: libasound.so.2: cannot open shared object file: No such file or directory</p>
+<p>7. [tj@localhost ~]$ yum whatprovides libasound.so.2<br />
+Loaded plugins: presto, refresh-packagekit<br />
+alsa-lib-1.0.23-1.fc13.i686 : The Advanced Linux Sound Architecture (ALSA)<br />
+: library<br />
+Repo        : fedora<br />
+Matched from:<br />
+Other       : libasound.so.2</p>
+<p>8. [tj@localhost ~]$ su -c &#8216;yum install alsa-lib.i686&#8242;</p>
+<p>9. [tj@localhost ~]$ skype<br />
+skype: error while loading shared libraries: libXv.so.1: cannot open shared object file: No such file or directory</p>
+<p>10. [tj@localhost ~]$ yum whatprovides libXv.so.1<br />
+Loaded plugins: presto, refresh-packagekit<br />
+libXv-1.0.5-1.fc13.i686 : X.Org X11 libXv runtime library<br />
+Repo        : fedora<br />
+Matched from:<br />
+Other       : libXv.so.1</p>
+<p>11. [tj@localhost ~]$ su -c &#8216;yum install libXv.i686&#8242;</p>
+<p>12. [tj@localhost ~]$ skype<br />
+skype: error while loading shared libraries: libXss.so.1: cannot open shared object file: No such file or directory</p>
+<p>13. [tj@localhost ~]$ yum whatprovides libXss.so.1<br />
+Loaded plugins: presto, refresh-packagekit<br />
+libXScrnSaver-1.2.0-1.fc12.i686 : X.Org X11 libXss runtime library<br />
+Repo        : fedora<br />
+Matched from:<br />
+Other       : libXss.so.1</p>
+<p>14. [tj@localhost ~]$ su -c &#8216;yum install libXScrnSaver.i686&#8242;</p>
+<p>15. [tj@localhost ~]$ skype<br />
+skype: error while loading shared libraries: libQtDBus.so.4: cannot open shared object file: No such file or directory</p>
+<p>16. [tj@localhost ~]$ yum whatprovides libQtDBus.so.4<br />
+Loaded plugins: presto, refresh-packagekit<br />
+1:qt-4.6.2-16.fc13.i686 : Qt toolkit<br />
+Repo        : fedora<br />
+Matched from:<br />
+Other       : libQtDBus.so.4</p>
+<p>17. [tj@localhost ~]$ su -c &#8216;yum install qt.i686&#8242;</p>
+<p>18. [tj@localhost ~]$ skype<br />
+skype: error while loading shared libraries: libQtGui.so.4: cannot open shared object file: No such file or directory</p>
+<p>19. [tj@localhost ~]$ yum whatprovides libQtGui.so.4<br />
+Loaded plugins: presto, refresh-packagekit<br />
+1:qt-x11-4.6.2-16.fc13.i686 : Qt GUI-related libraries<br />
+Repo        : fedora<br />
+Matched from:<br />
+Other       : libQtGui.so.4</p>
+<p>20. [tj@localhost ~]$ su -c &#8216;yum install qt-x11.i686&#8242;</p>
+<p>Please consider to use Ekiga ( <a href="http://www.ekiga.net" rel="nofollow">http://www.ekiga.net</a> ) as Skype replacement.</p>
+
+<div class="wpa" style="position: relative; width:300px; text-align: center; padding: 0; margin: 10px auto; overflow: hidden; clear: both;">
+<a style="position: absolute; text-align: left; display: block; font: 9px/1 sans-serif; text-decoration: underline;" href="http://en.wordpress.com/about-these-ads/" rel="nofollow">About these ads</a>
+<script type="text/javascript">
+		var wpcom_adclk_hovering = false;
+		var wpcom_adclk_recorded = false;
+		var wpcom_adclk_theme = "ChaoticSoul";
+		var wpcom_adclk_slot = "wpcom_below_post";
+		var wpcom_adclk_network = ( typeof wpcom_adclk_network === "undefined" ) ? "" : wpcom_adclk_network ;
+
+		jQuery(document).ready( function() {
+			function wpcom_adclk_hover_yes() { wpcom_adclk_hovering = true; }
+			function wpcom_adclk_hover_no() { wpcom_adclk_hovering = false; }
+			jQuery(".wpa").click(wpcom_adclk_click);
+			jQuery(".wpa iframe").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+			jQuery(".wpa object").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+
+			jQuery(window).blur( function() {
+				if ( wpcom_adclk_hovering ) { wpcom_adclk_click(); }
+			});
+		});
+
+		function wpcom_adclk_impression() {
+			var stat_gif = document.location.protocol + "//stats.wordpress.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_imp_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_imp_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_imp_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_imp_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			return true;
+		}
+
+		function wpcom_adclk_click() {
+			if (wpcom_adclk_recorded) { return true; } // no double counting
+			var stat_gif = document.location.protocol + "//stats.wordpress.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_click_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_click_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_click_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_click_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			wpcom_adclk_recorded = true;
+			var now=new Date(); var end=now.getTime()+250;
+			while(true){now=new Date();if(now.getTime()>end){break;}}
+			return true;
+		}
+	
+if ( typeof GA_googleAddAttr == 'function' ) {
+GA_googleAddAttr("AdOpt", "1");
+GA_googleAddAttr("Origin", "other");
+GA_googleAddAttr("LangId", "1");
+GA_googleAddAttr("Domain", "yunustj.wordpress.com");
+GA_googleAddAttr("BlogId", "5260215");
+GA_googleAddAttr("Autotag", "technology");
+GA_googleAddAttr("Tag", "video-call");
+GA_googleAddAttr("Tag", "fedora");
+GA_googleAddAttr("Tag", "fedora-12");
+GA_googleAddAttr("Tag", "fedora-13");
+GA_googleAddAttr("Tag", "linux");
+GA_googleAddAttr("Tag", "skype");
+GA_googleAddAttr("Tag", "x86_64");
+GA_googleAddAttr("theme_bg", "161410");
+GA_googleAddAttr("theme_text", "999999");
+GA_googleAddAttr("theme_link", "d8d7d3");
+GA_googleAddAttr("theme_border", "35302A");
+GA_googleAddAttr("theme_url", "BD934F");
+GA_googleAddAdSensePageAttr("google_page_url", "http://yunustj.wordpress.com/2010/07/18/how-to-install-skype-on-to-fedora-13-x86_64/");
+GA_googleFillSlot("wpcom_below_post");
+}
+</script>
+</div>
+<style type="text/css">
+div.wpa>div { margin-top: 1em; }
+</style>
+<script type="text/javascript">
+jQuery( window ).load( function() {
+    if ( jQuery(".wpa script[src*='shareth.ru']").length > 0 || jQuery(".wpa iframe[src*='boomvideo.tv']").length > 0 || jQuery(".wpa iframe[src*='viewablemedia.net']").length > 0 || jQuery(".wpa .sharethrough-placement").length > 0 ) {
+        jQuery( '.wpa' ).css( 'width', '400px' );
+    }
+setTimeout(function(){if(typeof GS_googleAddAdSenseService !== 'function'){new Image().src=document.location.protocol+"//stats.wordpress.com/g.gif?v=wpcom-no-pv&x_noads=adblock&baba="+Math.random()}},100);
+} );
+</script>
+<div id="jp-post-flair" class="sharedaddy sharedaddy-dark sd-like-enabled"><div class='sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded' id='like-post-wrapper-5260215-311-523bb0fc5d80c' data-src='//widgets.wp.com/likes/#blog_id=5260215&amp;post_id=311&amp;origin=yunustj.wordpress.com&amp;obj_id=5260215-311-523bb0fc5d80c' data-name='like-post-frame-5260215-311-523bb0fc5d80c'><h3 class='sd-title'>Like this:</h3><div class='post-likes-widget-placeholder' style='height:55px'><span class='button'><span>Like</span></span> <span class="loading">Loading...</span></div><span class='sd-text-color'></span><a class='sd-link-color'></a></div></div>								<p class="authormeta">~ by yunustj on July 18, 2010.</p>
+				<p class="postmetadata">Posted in <a href="http://yunustj.wordpress.com/category/video-call/" title="View all posts in Video Call" rel="category tag">Video Call</a>					<br />Tags: <a href="http://yunustj.wordpress.com/tag/fedora/" rel="tag">Fedora</a>, <a href="http://yunustj.wordpress.com/tag/fedora-12/" rel="tag">Fedora 12</a>, <a href="http://yunustj.wordpress.com/tag/fedora-13/" rel="tag">Fedora 13</a>, <a href="http://yunustj.wordpress.com/tag/linux/" rel="tag">Linux</a>, <a href="http://yunustj.wordpress.com/tag/skype/" rel="tag">Skype</a>, <a href="http://yunustj.wordpress.com/tag/x86_64/" rel="tag">x86_64</a>				</p>
+			</div>
+		</div>
+
+	
+<!-- You can start editing here. -->
+
+<div class="comments" id="comments">
+	<h3>37 Responses to &#8220;How to install Skype on to Fedora 13&nbsp;x86_64&#8221;</h3>
+
+	<ol class="commentlist">
+		<li class="comment even thread-even depth-1 highlander-comment" id="comment-249">
+			<p>Thank you very much.<br />
+I took over 100mb for installation of 32bit packages and dependencies for a &#8220;simple&#8221; stupid Skype.</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=32' class='avatar avatar-32 avatar-default' height='32' width='32' />				<small>
+				<cite>Anonymous</cite> said this on								<a href="#comment-249" title="">August 6, 2010 at 2:35 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-fisniki odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-258">
+			<p>Awesome, thanks helped a lot. Seems there is no support for the x64 bit version. Thanks again</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/f213d33447dea71677931dd37a0f8fe2?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite><a href='http://fisniki.wordpress.com' rel='external nofollow' class='url'>fisniki</a></cite> said this on								<a href="#comment-258" title="">September 3, 2010 at 7:31 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-259">
+			<p>Hello. I&#8217;m a 2-week old newbie to Linux (Fedora 13 64-bit).<br />
+I followed the steps from <a href="https://www.blogger.com/comment.do" rel="nofollow">https://www.blogger.com/comment.do</a> &#8211; Didn&#8217;t find the package at step 2. So I did everything except steps 2 and 3. Skype installed correctly. It says &#8220;Skype 2.1 (Beta) for Linux&#8221;</p>
+<p>My mic works perfectly and I can do video chat also :-)</p>
+<p>I got this error though (first time):</p>
+<p><i>X Error, request 42, minor 0, error code 8 BadMatch (invalid parameter attributes) </p>
+<p>(:11650): Gtk-WARNING **: Unable to locate theme engine in module_path: &#8220;qtcurve&#8221;,</p>
+<p>(:11650): Gtk-WARNING **: Unable to locate theme engine in module_path: &#8220;qtcurve&#8221;,</i></p>
+<p>Didn&#8217;t get it after that.</p>
+<p>Thanks for your help :-)</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://1.gravatar.com/avatar/7dd7ab628082962d1962484942261a85?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>nadim</cite> said this on								<a href="#comment-259" title="">September 9, 2010 at 5:50 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-yunustj bypostauthor odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-262">
+			<p>nadim: I think the link you provided does not work.</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/9815fd84e90796edc35510843f50c257?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>yunustj</cite> said this on								<a href="#comment-262" title="">September 15, 2010 at 4:22 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-264">
+			<p>Hello. Sorry for the late reply. Here is the link:<br />
+<a href="http://shahrier.blogspot.com/2010/06/how-to-install-skype-in-fedora-13-x64.html" rel="nofollow">http://shahrier.blogspot.com/2010/06/how-to-install-skype-in-fedora-13-x64.html</a></p>
+			<p class="commentmetadata">
+				<img alt='' src='http://1.gravatar.com/avatar/7dd7ab628082962d1962484942261a85?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>nadim</cite> said this on								<a href="#comment-264" title="">September 19, 2010 at 12:41 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-276">
+			<p>[...] came across this howto and found it very [...]</p>
+			<p class="commentmetadata">
+								<small>
+				<cite><a href='http://vegdave.wordpress.com/2010/10/13/skype-on-fedora-13-x64/' rel='external nofollow' class='url'>Skype on Fedora 13 x64 &laquo; Dave&#8217;s Blogs</a></cite> said this on								<a href="#comment-276" title="">October 13, 2010 at 6:52 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-341">
+			<p>Thanks!! it&#8217;s been really useful. I don&#8217;t know why skype publish a linux fedora release without a manual like this&#8230;</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://2.gravatar.com/avatar/85842f8b023dd40205b0cfc23df1cd6c?s=32&amp;d=http%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>david</cite> said this on								<a href="#comment-341" title="">February 14, 2011 at 11:40 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-342">
+			<p>There is easyLife which really simplify the installation of everything. <a href="http://easylifeproject.org/" rel="nofollow">http://easylifeproject.org/</a></p>
+			<p class="commentmetadata">
+				<img alt='' src='http://1.gravatar.com/avatar/7dd7ab628082962d1962484942261a85?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>nadim</cite> said this on								<a href="#comment-342" title="">February 15, 2011 at 4:41 am</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-356">
+			<p>Thanks a lot !</p>
+<p>Today I had the first contact with Fedora (14, x86_64), since I was using Ubuntu &amp; Debian mostly, the last four years. </p>
+<p>As it seems yum is a neat package manager.</p>
+<p>Anyway, thanks a lot, skype starts, even with no sound. But no biggie :) I&#8217;ll find a way.</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=32' class='avatar avatar-32 avatar-default' height='32' width='32' />				<small>
+				<cite><a href='http://answers.yahoo.com/activity?show=WB7JTMg3aa' rel='external nofollow' class='url'>Irrational_Pie</a></cite> said this on								<a href="#comment-356" title="">March 2, 2011 at 3:41 am</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="pingback odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-357">
+			<p>[...] the last 4 years), so I came into some problems when tried to install skype.  Luckily, I came by this blog which solved most of my problems (no sound for the moment, but at least it runs).  As the [...]</p>
+			<p class="commentmetadata">
+								<small>
+				<cite><a href='http://www.linuxquestions.org/questions/fedora-35/does-skype-run-on-fedora-14-a-845605/page2.html#post4275876' rel='external nofollow' class='url'>Does Skype run on Fedora 14? - Page 2</a></cite> said this on								<a href="#comment-357" title="">March 2, 2011 at 4:11 am</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-yunustj bypostauthor even thread-even depth-1 highlander-comment" id="comment-358">
+			<p>For sound related problem, you may want to tweak in sound options of the skype.</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/9815fd84e90796edc35510843f50c257?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>yunustj</cite> said this on								<a href="#comment-358" title="">March 3, 2011 at 5:36 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-359">
+			<p>i found that installing skype for fedora 14 built the needed dependencies to get the sound up</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=32' class='avatar avatar-32 avatar-default' height='32' width='32' />				<small>
+				<cite>marc</cite> said this on								<a href="#comment-359" title="">March 6, 2011 at 12:45 am</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-422">
+			<p>First day using Fedora. In fact, first day using a Linux OS!! And boy, do I feel something equivalent to illiterate! Anyway, followed your steps and everything seemed to be running smoothly. The last word in the terminal was &#8216;complete&#8217;. But when I clicked on skype, the damn thing doesn;t open!! Why??</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/68a15a10e4178df7f0e9621758eafcf8?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>Animikha</cite> said this on								<a href="#comment-422" title="">March 24, 2011 at 3:41 am</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-yunustj bypostauthor odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-424">
+			<p>Animikha:<br />
+would you please show me the message after you complete this command on your terminal<br />
+[tj@localhost ~]$ uname -r</p>
+<p>and show me also message after you complete this command on your terminal<br />
+[tj@localhost ~]$ skype</p>
+<p>Those command may help us determine the cause of the problem</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/9815fd84e90796edc35510843f50c257?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>yunustj</cite> said this on								<a href="#comment-424" title="">March 24, 2011 at 12:33 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-425">
+			<p>Hi Yunustj!<br />
+For the first bit, I got  &#8211; 2.6.33.3-85.fc13.x86_64<br />
+And for the second command, I got &#8211; skype: error while loading shared libraries: libasound.so.2: cannot open shared object file: No such file or directory</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/68a15a10e4178df7f0e9621758eafcf8?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>Animikha</cite> said this on								<a href="#comment-425" title="">March 24, 2011 at 2:36 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-yunustj bypostauthor odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-426">
+			<p>Animkha:<br />
+It seems that you have not followed above guide completely.<br />
+The error message you showed indicates that you miss alsa-lib.i686 packge</p>
+<p>As root execute below command.<br />
+[tj@localhost ~]$ yum install glibc.i686 alsa-lib.i686 libXv.i686 libXScrnSaver.i686 qt.i686 qt-x11.i686</p>
+<p>and try to issue below command.<br />
+Please show me the message on your terminal<br />
+[tj@localhost ~]$ skype</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/9815fd84e90796edc35510843f50c257?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>yunustj</cite> said this on								<a href="#comment-426" title="">March 24, 2011 at 2:57 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-427">
+			<p>It works!! I have no clue how this happened but I blindly followed your steps. Thanks!! :)</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/68a15a10e4178df7f0e9621758eafcf8?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>Animikha</cite> said this on								<a href="#comment-427" title="">March 24, 2011 at 3:18 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-428">
+			<p>I have another request. The reason I changed to Linux was becasue I could use this application MicroView which pulls in larger files than in Windows. Somehow, it&#8217;s just not working. Could you help me out or can you suggest the right place to post this at? Thanks!</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/68a15a10e4178df7f0e9621758eafcf8?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>Animikha</cite> said this on								<a href="#comment-428" title="">March 24, 2011 at 3:24 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-yunustj bypostauthor even thread-even depth-1 highlander-comment" id="comment-429">
+			<p>Check this link for get help from fedora community<br />
+<a href="http://fedoraproject.org/en/get-help" rel="nofollow">http://fedoraproject.org/en/get-help</a></p>
+<p>You may want to join fedora user mailing list to get community support:<br />
+   <a href="https://admin.fedoraproject.org/mailman/listinfo/users" rel="nofollow">https://admin.fedoraproject.org/mailman/listinfo/users</a></p>
+<p>Please join IRC for interactive community support<br />
+<a href="http://fedoraproject.org/wiki/Communicate#IRC_for_interactive_community_support" rel="nofollow">http://fedoraproject.org/wiki/Communicate#IRC_for_interactive_community_support</a></p>
+<p>It is not recommended for source installation for MicroView.<br />
+You will need gcc compiler to compile the source.<br />
+You will also need to resolve dependancy manually</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/9815fd84e90796edc35510843f50c257?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>yunustj</cite> said this on								<a href="#comment-429" title="">March 24, 2011 at 4:05 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-yunustj bypostauthor odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-430">
+			<p>Animikha:<br />
+You want to have a look at blender.<br />
+<a href="http://www.blender.org/features-gallery/features/" rel="nofollow">http://www.blender.org/features-gallery/features/</a></p>
+<p>as root<br />
+[tj@localhost ~]$ yum install blender</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/9815fd84e90796edc35510843f50c257?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>yunustj</cite> said this on								<a href="#comment-430" title="">March 24, 2011 at 4:18 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-431">
+			<p>Thanks for the links! The thingummy is, these microCTscans work best in Microview. And i work with an expert in MicroView (but obviously not installing the program :P )</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/68a15a10e4178df7f0e9621758eafcf8?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>Animikha</cite> said this on								<a href="#comment-431" title="">March 24, 2011 at 4:46 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-556">
+			<p>Thanks for the tutorial! Now I know that I can use yum whatprovides to find out which libraries are needed when a package fails to work as expected. You rock!</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://2.gravatar.com/avatar/eed2b0323deaa8c1031db6260bebb19f?s=32&amp;d=http%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>Robert</cite> said this on								<a href="#comment-556" title="">June 22, 2011 at 1:29 am</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-569">
+			<p>Thanks a lot for this small tutorial, got skype working on my Fedora 15 64 bit now. If you have firefox 4 installed, you are likely to receive an error when trying to install qt.i686 complaining about a newer version of sqlite is already installed. If so, you need to uninstall ff4 and downgrade sqlite, follow instructions here <a href="http://forums.fedoraforum.org/showthread.php?p=1437769" rel="nofollow">http://forums.fedoraforum.org/showthread.php?p=1437769</a></p>
+			<p class="commentmetadata">
+				<img alt='' src='http://1.gravatar.com/avatar/a1e482ff272ec78f34d4b9bad7ea28b7?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite><a href='http://blog.vinhkhoa.com/' rel='external nofollow' class='url'>Khoa</a></cite> said this on								<a href="#comment-569" title="">June 30, 2011 at 10:47 am</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-yunustj bypostauthor odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-571">
+			<p>robert:<br />
+good to hear that.</p>
+<p>khoa:<br />
+thanks for the information.</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/9815fd84e90796edc35510843f50c257?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>yunustj</cite> said this on								<a href="#comment-571" title="">June 30, 2011 at 3:20 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-586">
+			<p>Thanks a lot. This is a great post. Saved me a lot of time. Thank you so much!!!</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://2.gravatar.com/avatar/b642b4217b34b1e8d3bd915fc65c4452?s=32&amp;d=http%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite><a href='http://gravatar.com/steve88' rel='external nofollow' class='url'>John</a></cite> said this on								<a href="#comment-586" title="">July 8, 2011 at 11:58 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-696">
+			<p>Great post. Why fedora (rpm) does not install dependencies? +1 for Ubuntu.</p>
+<p>Also, you should post your &#8220;Ekiga&#8221; recommendation at the top ;) I saw it after all the install process.</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://1.gravatar.com/avatar/4b37c0a86c65dc04a024a0a0848dca0e?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite><a href='http://www.santiagobasulto.com.ar/' rel='external nofollow' class='url'>Santiago Basulto</a></cite> said this on								<a href="#comment-696" title="">October 23, 2011 at 10:15 am</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-774">
+			<p>Thank you for this precious help.</p>
+<p>Thank You</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://2.gravatar.com/avatar/be3001ee8ea05a0f5121fa78460e7e54?s=32&amp;d=http%3A%2F%2F2.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>Podcasr</cite> said this on								<a href="#comment-774" title="">November 29, 2011 at 10:52 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-800">
+			<p>Thank a lot bro&#8217; :D</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/3250d2232486b807a10d660ea5b55a8d?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>Cisla15-18</cite> said this on								<a href="#comment-800" title="">December 7, 2011 at 12:50 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-832">
+			<p>I&#8217;ve complained, to no avail, to Fedora folks about 64-bit installs needing to include more 32-bit libs.  Having 64-bit versions include 32-bit packages would solve many of these and related problems.</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=32' class='avatar avatar-32 avatar-default' height='32' width='32' />				<small>
+				<cite>Anonymous</cite> said this on								<a href="#comment-832" title="">December 16, 2011 at 2:44 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-892">
+			<p>Thank you</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/06b07043fd24becf9191e474a55b6b8f?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>Frank Daley</cite> said this on								<a href="#comment-892" title="">January 5, 2012 at 6:18 am</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-916">
+			<p>thank you.. i run the commands on my Fedora 15 x86_64</p>
+<p>su -c ‘yum –nogpgchek localinstall skype-2.1.0.81-fc10.i586.rpm glibc.i686 alsa-lib.i686 libXv.i686 libXScrnSaver.i686 qt.i686 qt-x11.i686′</p>
+<p>only the skype rpm was installed ..but running</p>
+<p>su -c ‘yum install skype-2.1.0.81-fc10.i586.rpm glibc.i686 alsa-lib.i686 libXv.i686 libXScrnSaver.i686 qt.i686 qt-x11.i686′ </p>
+<p>installed the skype rpm plus the dependencies.. now its working fine :-)</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=32' class='avatar avatar-32 avatar-default' height='32' width='32' />				<small>
+				<cite>Anonymous</cite> said this on								<a href="#comment-916" title="">January 17, 2012 at 10:07 am</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-1030">
+			<p>You are the best! &#8230;trying installing skype for about 2 days, you gave me the best info. Thank you so much, I&#8217;m very grateful.</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=32' class='avatar avatar-32 avatar-default' height='32' width='32' />				<small>
+				<cite>Anonymous</cite> said this on								<a href="#comment-1030" title="">February 21, 2012 at 6:38 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-madhusanka even thread-even depth-1 highlander-comment" id="comment-1043">
+			<p>Thanks a lot!</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/3a5988c600b0a687494275cfa3816460?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>madhusanka</cite> said this on								<a href="#comment-1043" title="">February 27, 2012 at 2:58 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-1073">
+			<p>well done! what a nightmare</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=32' class='avatar avatar-32 avatar-default' height='32' width='32' />				<small>
+				<cite>Anonymous</cite> said this on								<a href="#comment-1073" title="">March 13, 2012 at 3:34 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-1125">
+			<p>Works great with RHEL 6, thanks</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/6d87f192add099ca32539de8b144fec9?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>JF</cite> said this on								<a href="#comment-1125" title="">April 4, 2012 at 5:10 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-1154">
+			<p>A number of people are saying this is a fedora problem. It&#8217;s not. It&#8217;s a skype problem. If they bothered to actually package their software properly fedora would pull in the deps automagically&#8230; but&#8230; they don&#8217;t so it doesn&#8217;t&#8230; but, rather than having 64bit users have to install a heap of packages, why not just build a 64bit release? Anyway, thanks to yunustj for at least publishing the list of packages that skype should have put in their package.</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/67d9c9b28fd95ee79dc487f2383b0cec?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32' height='32' width='32' />				<small>
+				<cite>d</cite> said this on								<a href="#comment-1154" title="">April 18, 2012 at 1:51 am</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="comment-2427">
+			<p>Hello, I had to add one more command on Fedora 19:</p>
+<p>yum install qtwebkit-2.3.2-1.fc19.i686</p>
+			<p class="commentmetadata">
+				<img alt='' src='http://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=32' class='avatar avatar-32 avatar-default' height='32' width='32' />				<small>
+				<cite>Anonymous</cite> said this on								<a href="#comment-2427" title="">August 3, 2013 at 7:12 pm</a> 				</small>
+			</p>
+</li><!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+</div>
+
+
+
+	<div class="comments clearfix">								<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2010/07/18/how-to-install-skype-on-to-fedora-13-x86_64/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://yunustj.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																										
+
+
+												<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="51e57ea28f" /><input type="hidden" name="_wp_http_referer" value="/2010/07/18/how-to-install-skype-on-to-fedora-13-x86_64/" />
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest" />
+
+<div class="comment-form-field comment-textarea">
+	<label for="comment">Enter your comment here...</label>
+	<div id="comment-form-comment"><textarea id="comment" name="comment" title="Enter your comment here..."></textarea></div>
+</div>
+
+<div id="comment-form-identity">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="https://public-api.wordpress.com/connect/?googleplus-sign-in=1" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25" alt="Gravatar" width="25" class="no-grav" />
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name</label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value="" /></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value="" /></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="http://s2.wp.com/wp-content/mu-plugins/highlander-comments/images/wplogo.png?m=1289230950g" alt="WordPress.com Logo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="" />
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="" />
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="" />
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25" alt="Twitter picture" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="" />
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="" />
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25" alt="Facebook photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="" />
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="" />
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="http://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25" alt="Google+ photo" width="25" class="no-grav" />
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="" />
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="" />
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+	
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"/> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of follow-up comments via email.</label></p><p class="post-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;" tabindex="7"/> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog"  style="display: inline;">Notify me of new posts via email.</label></p></div>
+
+												<p class="form-submit">
+							<input name="submit" type="submit" id="comment-submit" value="Post Comment" />
+							<input type='hidden' name='comment_post_ID' value='311' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</p>
+						
+<input type="hidden" name="genseq" value="1379643644" />
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c4a63e1adf" /></p><script type='text/javascript' src='http://s2.wp.com/wp-content/mu-plugins/akismet-2.5/form.js?m=1308783962g'></script>
+<p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="106"/></p>					</form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>			</div>
+
+
+	
+	</div>
+
+	<div id="sidebar">
+		<div id="categories-323723331" class="widget widget_categories"><h3>Categories</h3>		<ul>
+	<li class="cat-item cat-item-47051608"><a href="http://yunustj.wordpress.com/category/bootloader-2/" title="View all posts filed under Bootloader">Bootloader</a>
+</li>
+	<li class="cat-item cat-item-10894184"><a href="http://yunustj.wordpress.com/category/debian-experimental/" title="View all posts filed under Debian Experimental">Debian Experimental</a>
+</li>
+	<li class="cat-item cat-item-17846"><a href="http://yunustj.wordpress.com/category/dns/" title="View all posts filed under DNS">DNS</a>
+</li>
+	<li class="cat-item cat-item-16944128"><a href="http://yunustj.wordpress.com/category/fedora-qa/" title="View all posts filed under Fedora QA">Fedora QA</a>
+</li>
+	<li class="cat-item cat-item-53986357"><a href="http://yunustj.wordpress.com/category/fedora-upgrade/" title="View all posts filed under Fedora Upgrade">Fedora Upgrade</a>
+</li>
+	<li class="cat-item cat-item-196100"><a href="http://yunustj.wordpress.com/category/flash-player/" title="View all posts filed under Flash Player">Flash Player</a>
+</li>
+	<li class="cat-item cat-item-34940954"><a href="http://yunustj.wordpress.com/category/internet-service-provider-2/" title="View all posts filed under Internet Service Provider">Internet Service Provider</a>
+</li>
+	<li class="cat-item cat-item-5328856"><a href="http://yunustj.wordpress.com/category/network-2/" title="View all posts filed under Network">Network</a>
+</li>
+	<li class="cat-item cat-item-9628"><a href="http://yunustj.wordpress.com/category/proxy/" title="View all posts filed under Proxy">Proxy</a>
+</li>
+	<li class="cat-item cat-item-907"><a href="http://yunustj.wordpress.com/category/reading-list/" title="View all posts filed under Reading List">Reading List</a>
+</li>
+	<li class="cat-item cat-item-581"><a href="http://yunustj.wordpress.com/category/software/" title="View all posts filed under Software">Software</a>
+</li>
+	<li class="cat-item cat-item-228997"><a href="http://yunustj.wordpress.com/category/source-codes/" title="View all posts filed under Source Codes">Source Codes</a>
+</li>
+	<li class="cat-item cat-item-3386"><a href="http://yunustj.wordpress.com/category/storage/" title="View all posts filed under Storage">Storage</a>
+</li>
+	<li class="cat-item cat-item-1824407"><a href="http://yunustj.wordpress.com/category/usb-modem/" title="View all posts filed under USB Modem">USB Modem</a>
+</li>
+	<li class="cat-item cat-item-943665"><a href="http://yunustj.wordpress.com/category/video-call/" title="View all posts filed under Video Call">Video Call</a>
+</li>
+	<li class="cat-item cat-item-35175612"><a href="http://yunustj.wordpress.com/category/virtualization-2/" title="View all posts filed under Virtualization">Virtualization</a>
+</li>
+		</ul>
+</div><div id="top-posts-2" class="widget widget_top-posts"><h3>Top Posts</h3><ul><li><a href="http://yunustj.wordpress.com/2009/03/28/how-to-connect-to-internet-using-nokia-6120-classic-as-a-modem/" class="bump-view" data-bump-view="tp">How to connect to internet using Nokia 6120 classic as a modem</a></li>
+<li><a href="http://yunustj.wordpress.com/2010/07/18/how-to-install-skype-on-to-fedora-13-x86_64/" class="bump-view" data-bump-view="tp">How to install Skype on to Fedora 13 x86_64</a></li>
+<li><a href="http://yunustj.wordpress.com/2011/03/06/fedora-15-setup-proxy-server/" class="bump-view" data-bump-view="tp">Fedora 15: Setup Proxy Server </a></li>
+<li><a href="http://yunustj.wordpress.com/2008/12/08/how-to-connect-to-internet/" class="bump-view" data-bump-view="tp">How to connect to internet (v0.1.0.5)</a></li>
+<li><a href="http://yunustj.wordpress.com/2008/12/09/the-best-of-the-worst-internet-service-provider-in-indonesia/" class="bump-view" data-bump-view="tp">The Best Of The Worst Internet Service Provider in Indonesia (2011-03-27)</a></li>
+<li><a href="http://yunustj.wordpress.com/2011/06/30/fedora-15-xen-based-virtualization-solution/" class="bump-view" data-bump-view="tp">Fedora 15: How to setup Xen-based virtualization solution</a></li>
+</ul></div><div id="pages-2" class="widget widget_pages"><h3>Pages</h3>		<ul>
+			<li class="page_item page-item-2"><a href="http://yunustj.wordpress.com/about/">Fedora shows off the best new technology of&nbsp;tomorrow</a></li>
+		</ul>
+		</div><div id="calendar-2" class="widget widget_calendar"><div id="calendar_wrap"><table id="wp-calendar">
+	<caption>July 2010</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="https://yunustj.wordpress.com/2009/07/" title="View posts for July 2009">&laquo; Jul</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next"><a href="https://yunustj.wordpress.com/2010/09/" title="View posts for September 2010">Sep &raquo;</a></td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="3" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td>
+	</tr>
+	<tr>
+		<td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td>
+	</tr>
+	<tr>
+		<td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td><a href="https://yunustj.wordpress.com/2010/07/18/" title="How to install Skype on to Fedora 13&nbsp;x86_64">18</a></td>
+	</tr>
+	<tr>
+		<td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
+	</tr>
+	<tr>
+		<td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+		<td class="pad" colspan="1">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></div><div id="archives-2" class="widget widget_archive"><h3>Archives</h3>		<ul>
+			<li><a href='http://yunustj.wordpress.com/2011/06/' title='June 2011'>June 2011</a></li>
+	<li><a href='http://yunustj.wordpress.com/2011/03/' title='March 2011'>March 2011</a></li>
+	<li><a href='http://yunustj.wordpress.com/2010/09/' title='September 2010'>September 2010</a></li>
+	<li><a href='http://yunustj.wordpress.com/2010/07/' title='July 2010'>July 2010</a></li>
+	<li><a href='http://yunustj.wordpress.com/2009/07/' title='July 2009'>July 2009</a></li>
+	<li><a href='http://yunustj.wordpress.com/2009/06/' title='June 2009'>June 2009</a></li>
+	<li><a href='http://yunustj.wordpress.com/2009/05/' title='May 2009'>May 2009</a></li>
+	<li><a href='http://yunustj.wordpress.com/2009/04/' title='April 2009'>April 2009</a></li>
+	<li><a href='http://yunustj.wordpress.com/2009/03/' title='March 2009'>March 2009</a></li>
+	<li><a href='http://yunustj.wordpress.com/2009/02/' title='February 2009'>February 2009</a></li>
+	<li><a href='http://yunustj.wordpress.com/2008/12/' title='December 2008'>December 2008</a></li>
+		</ul>
+</div><h3>command-line</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://heipei.net/2010/06/30/command-line-warriors-part-one/">Command-line warriors, part one</a></li>
+<li><a href="http://gnuru.org/article/1508/11-most-useful-linux-commands-in-world-ever">The 11 Most Useful Linux Commands in the World Ever</a></li>
+
+	</ul>
+</li>
+<h3>Contact Me</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://yunustj@gmail.com">yunustj AT gmail DOT com</a></li>
+
+	</ul>
+</li>
+<h3>Download</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://alt.fedoraproject.org/pub/alt/nightly-composes/" title="a nightly build of rawhide for all official spins">Rawhide</a></li>
+
+	</ul>
+</li>
+<h3>Fedora</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://fedoraproject.org/wiki/BugsAndFeatureRequests" title="Fedora bugs and feature requests">Bugs And Feature Requests</a></li>
+<li><a href="http://fedoraproject.org/wiki/Category:Debugging" title="http://fedoraproject.org/wiki/Category:Debugging">Debugging</a></li>
+<li><a href="http://live.gnome.org/NetworkManager/Debugging" title="Debugging NetworkManager 0.8.x 3G connections">Debugging NetworkManager</a></li>
+<li><a href="http://fedoraproject.org/wiki/Features" title="Fedora&#8217;s Features">Features</a></li>
+<li><a href="http://fedoraproject.org/get-fedora">Get the latest Fedora here</a></li>
+<li><a href="https://fedoraproject.org/wiki/Documentation_Desktop_Beat">GNOME 3</a></li>
+<li><a href="http://fedoraproject.org/wiki/QA/Join" title="Join Fedora Quality Assurance">Join QA</a></li>
+<li><a href="http://fedoraproject.org/wiki/QA" title="Fedora Quality Assurance">QA</a></li>
+<li><a href="http://fedoraproject.org/wiki/QA/Goals" title="Fedora QA Goals">QA Goals</a></li>
+<li><a href="http://fedoraproject.org/wiki/Releases" title="Fedora Releases">Releases</a></li>
+<li><a href="https://fedoraproject.org/wiki/Systemd">systemd</a></li>
+
+	</ul>
+</li>
+<h3>How To</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.mjmwired.net/resources/mjm-fedora-f11.html">http://www.mjmwired.net/</a></li>
+<li><a href="http://fedoraproject.org/wiki/FedoraLiveCD/USBHowTo">Live USB</a></li>
+<li><a href="http://wiki.centos.org/HowTos/VNC-Server" title="HowTo-VNC-Server">VNC-Server</a></li>
+
+	</ul>
+</li>
+<h3>Interviews</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.linux-mag.com/cache/7313/1.html" title=" Linus Torvalds interviewed by Linux Magazine">Linus Torvalds</a></li>
+
+	</ul>
+</li>
+<h3>Linux Learning Resources</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://tldp.org/LDP/abs/html/">Advanced Bash-Scripting Guide</a></li>
+<li><a href="http://www.linuxlinks.com/article/20100402190204972/12MoreoftheBestFreeLinuxBooks-Part1.html">Free Linux Books</a></li>
+<li><a href="http://www.linuxhomenetworking.com/wiki/index.php" title="http://www.linuxhomenetworking.com/wiki/index.php">http://www.linuxhomenetworking.com/</a></li>
+<li><a href="http://www.linuxtopia.org/online_books/index.html">http://www.linuxtopia.org/online_books/</a></li>
+<li><a href="http://www.linuxtopia.org/online_books/index.html">http://www.linuxtopia.org/online_books/</a></li>
+<li><a href="http://www.linux.org/lessons/">Linux Online Lessons</a></li>
+<li><a href="http://www.linuxcommand.org/">LinuxCommand.org</a></li>
+<li><a href="http://tips4linux.com">tips4linux.com</a></li>
+<li><a href="http://www.linuxhomenetworking.com/">www.linuxhomenetworking.com/</a></li>
+
+	</ul>
+</li>
+<h3>News</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://linux.com/" title="linux dot com">linux.com</a></li>
+<li><a href="http://www.linuxplanet.com">LinuxPlanet.com</a></li>
+<li><a href="http://lwn.net/" title="Linux Weekly News dot net">LWN.net</a></li>
+<li><a href="http://www.desktoplinux.com">www.desktoplinux.com</a></li>
+<li><a href="http://www.linux-mag.com/">www.linux-mag.com</a></li>
+<li><a href="http://www.linuxjournal.com" title="http://www.linuxjournal.com">www.linuxjournal.com</a></li>
+<li><a href="http://www.linuxtech.net" title="http://www.linuxtech.net">www.linuxtech.net</a></li>
+<li><a href="http://www.linuxtoday.com" title="News">www.linuxtoday.com</a></li>
+<li><a href="http://www.neowin.net">www.neowin.net</a></li>
+
+	</ul>
+</li>
+<h3>Proxy</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.kathmannlabs.net/mediawiki/index.php/Install_and_Configure_SARG_for_Dansguardian_on_CentOS">SARG for Dansguardian</a></li>
+
+	</ul>
+</li>
+<h3>Repository (3rd party)</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://atrpms.net/">ATrpms</a></li>
+<li><a href="http://rpmfusion.org/">RPM Fusion</a></li>
+
+	</ul>
+</li>
+<h3>security</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://sectools.org/">http://sectools.org/</a></li>
+<li><a href="https://ssd.eff.org/" title="what can you legally do to protect yourself against such spying?">Surveillance Self-Defense</a></li>
+<li><a href="http://www.freebyte.com/security/#freeencryption">www.reebyte.com &#8211; security/#freeencryption</a></li>
+
+	</ul>
+</li>
+<h3>Small and Low Power Hardware for Linux Server</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.linuxtech.net/features/intel_atom_pineview_motherboards_overview.html" title="Small and Low Power Linux Server">intel_atom_pineview_motherboards</a></li>
+
+	</ul>
+</li>
+<h3>The Hackers</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="http://torvalds-family.blogspot.com/" title="The Linux Creator">Linus Torvalds</a></li>
+<li><a href="http://thunk.org/tytso/" title=" He is probably the first Linux Kernel developer in North America">Theodore Ts&#8217;o</a></li>
+
+	</ul>
+</li>
+<div id="authors-2" class="widget widget_authors"><h3></h3><ul><li><a href="http://yunustj.wordpress.com/author/yunustj/"> <img alt='' src='http://0.gravatar.com/avatar/9815fd84e90796edc35510843f50c257?s=48&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D48&amp;r=G' class='avatar avatar-48' height='48' width='48' /> <strong>yunustj</strong></a></li></ul></div>
+	</div>
+
+</div>
+
+<div class="hr last">&nbsp;</div>
+<div id="footer">
+	<p><a href="http://wordpress.com/?ref=footer" rel="generator">Blog at WordPress.com</a>. <a href="http://theme.wordpress.com/themes/chaoticsoul/" title="Learn more about this theme">The ChaoticSoul Theme</a>. </p>
+</div>
+</div>
+
+
+<script type="text/javascript">
+var _qevents = _qevents || [], wpcomQuantcastData = {"qacct":"p-18-mFEk4J448M","labels":",language.en,type.wpcom,posttag.fedora,posttag.fedora-12,posttag.fedora-13,posttag.linux,posttag.skype,posttag.x86_64,as"};
+function wpcomQuantcastPixel( labels, options ) {
+	var i, defaults = wpcomQuantcastData, data = { event: 'ajax' };
+
+	labels  = labels  || '';
+	options = options || {};
+
+	if ( typeof labels != 'string' )
+		options = labels;
+
+	for ( i in defaults ) {
+		data[i] = defaults[i];
+	}
+
+	for ( i in options ) {
+		data[i] = options[i];
+	}
+
+	if ( data.labels ) {
+		data.labels += ',' + labels;
+	} else {
+		data.labels = labels;
+	}
+
+	_qevents.push( data );
+};
+(function() {var elem = document.createElement('script');elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";elem.async = true;elem.type = "text/javascript";var scpt = document.getElementsByTagName('script')[0];scpt.parentNode.insertBefore(elem, scpt);  })();
+_qevents.push( wpcomQuantcastData );
+</script>
+<noscript><div style="display: none;"><img src="//pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=%2Clanguage.en%2Ctype.wpcom%2Cposttag.fedora%2Cposttag.fedora-12%2Cposttag.fedora-13%2Cposttag.linux%2Cposttag.skype%2Cposttag.x86_64%2Cas" height="1" width="1" alt="" /></div></noscript>
+
+<script type='text/javascript' src='//0.gravatar.com/js/gprofiles.js?ver=201338ae'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1351637563g'></script>
+<script>jQuery(document).ready(function($){ Gravatar.profile_cb = function( h, d ) { WPGroHo.syncProfileData( h, d );	}; Gravatar.my_hash = WPGroHo.my_hash; Gravatar.init( 'body', '#wp-admin-bar-my-account' ); });</script>	<div style="display:none">
+	<div class="grofile-hash-map-d41d8cd98f00b204e9800998ecf8427e">
+	</div>
+	<div class="grofile-hash-map-f213d33447dea71677931dd37a0f8fe2">
+	</div>
+	<div class="grofile-hash-map-7dd7ab628082962d1962484942261a85">
+	</div>
+	<div class="grofile-hash-map-9815fd84e90796edc35510843f50c257">
+	</div>
+	<div class="grofile-hash-map-85842f8b023dd40205b0cfc23df1cd6c">
+	</div>
+	<div class="grofile-hash-map-68a15a10e4178df7f0e9621758eafcf8">
+	</div>
+	<div class="grofile-hash-map-eed2b0323deaa8c1031db6260bebb19f">
+	</div>
+	<div class="grofile-hash-map-a1e482ff272ec78f34d4b9bad7ea28b7">
+	</div>
+	<div class="grofile-hash-map-b642b4217b34b1e8d3bd915fc65c4452">
+	</div>
+	<div class="grofile-hash-map-4b37c0a86c65dc04a024a0a0848dca0e">
+	</div>
+	<div class="grofile-hash-map-be3001ee8ea05a0f5121fa78460e7e54">
+	</div>
+	<div class="grofile-hash-map-3250d2232486b807a10d660ea5b55a8d">
+	</div>
+	<div class="grofile-hash-map-06b07043fd24becf9191e474a55b6b8f">
+	</div>
+	<div class="grofile-hash-map-3a5988c600b0a687494275cfa3816460">
+	</div>
+	<div class="grofile-hash-map-6d87f192add099ca32539de8b144fec9">
+	</div>
+	<div class="grofile-hash-map-67d9c9b28fd95ee79dc487f2383b0cec">
+	</div>
+	</div>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"http:\/\/yunustj.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"http:\/\/yunustj.wordpress.com\/wp-login.php?action=logout&_wpnonce=56b01d2815","homeURL":"http:\/\/yunustj.wordpress.com\/","postID":"311","gravDefault":"mystery","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"","userIsLoggedIn":"","isJetpack":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s1.wp.com/_static/??/wp-content/js/jquery/jquery.autoresize.js,/wp-content/mu-plugins/highlander-comments/script.js?m=1379020420j'></script>
+
+	<div id="bit" class="loggedout-follow-normal">
+		<a class="bsub" href="javascript:void(0)"><span id='bsub-text'>Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow &ldquo;yunustj&#039;s blog v2011-03-27&rdquo;</label></h3>
+
+			<form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+			
+			<p><input type="email" name="email" style="width: 95%; padding: 1px 2px" value="Enter your email address" onfocus='this.value=(this.value=="Enter your email address") ? "" : this.value;' onblur='this.value=(this.value=="") ? "Enter email address" : this.value;'  id="loggedout-follow-field"/></p>
+
+			<input type="hidden" name="action" value="subscribe"/>
+			<input type="hidden" name="blog_id" value="5260215"/>
+			<input type="hidden" name="source" value="http://yunustj.wordpress.com/2010/07/18/how-to-install-skype-on-to-fedora-13-x86_64/"/>
+			<input type="hidden" name="sub-type" value="loggedout-follow"/>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="301d281870" /><input type="hidden" name="_wp_http_referer" value="/2010/07/18/how-to-install-skype-on-to-fedora-13-x86_64/" />
+			<p id='bsub-subscribe-button'><input type="submit" value="Sign me up" /></p>
+			</form>
+					<div id='bsub-credit'><a href="http://wordpress.com/signup/?ref=lof">Powered by WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+		<iframe src='http://widgets.wp.com/likes/master.html?ver=20130620a#ver=20130620a&amp;mp6=1' scrolling='no' id='likes-master' name='likes-master' style='display:none;'></iframe>
+		<div id='likes-other-gravatars'><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						var requests = [];
+						jQuery( '.jetpack-likes-widget-wrapper' ).each( function( i ) {
+							var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+							var match = regex.exec( this.id );
+							if ( ! match || match.length != 5 )
+								return;
+
+							var info = {
+								blog_id: match[2],
+								width:   this.width
+							};
+
+							if ( 'post' == match[1] ) {
+								info.post_id = match[3];
+							} else if ( 'comment' == match[1] ) {
+								info.comment_id = match[3];
+							}
+
+							info.obj_id = match[4];
+
+							requests.push( info );
+						});
+
+						JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 10 );
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type='text/javascript' src='http://s1.wp.com/wp-content/js/devicepx.js?m=1373391538g'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var kissmetrics_api = {"api_key":"39e3e583aca28fab00c85ad9019b51d9f073fc6d"};
+var kissmetrics_queries = {"events":[],"properties":[]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://s0.wp.com/wp-content/mu-plugins/kissmetrics/kissmetrics.js?m=1368468923g&#038;ver=20130513'></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="http://s.stats.wordpress.com/w.js?21" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'5260215','v':'wpcom','tz':'0','user_id':'0','post':'311','subd':'yunustj'});
+ex_go({'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWFnNncxc1tjZG9XVXhReSxUWGtwT3lGZHZSS1VKYTl3JVZUNkk4anpCemhPdkp6aU1uS003OElTR1ZYdVdQTThaYmxhczFMaGVTTHMtVExvSH5wTGJ1WE92d3FoNnY3JXQ1Ll9WQXEzU21oa3IrbHpMQSZoLXMwNnw4P2VKMmMrQkxkdEwyNWwrST1NWCtORnFtdD1uTmdwek5IMi1saEFTY2claX4ydkxfR2Fub1pjRm5McltILHlXMy0rJXljLUl+dXEseW5XUjZ2JmxQVlE4Vi13dUl5QnBUMjUmdW0wTGhRLUxzUiUvVEhNdTNmaDhRdUs0ZVE='});
+addLoadEvent(function(){linktracker_init('5260215',311);});
+	</script>
+<noscript><img src="http://stats.wordpress.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//stats.wordpress.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script></body>
+</html>

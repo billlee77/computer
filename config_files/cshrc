@@ -1,0 +1,243 @@
+# file:  .cshrc
+
+# this file is executed each time that UNIX starts a new shell
+# at login, it is executed prior to .login 
+# it should contain aliases and shell variable definitions that have to be
+# repeated whenever you start a new shell
+
+# cshrc files should never contain anything that will generate output!
+
+# Garth Huber   94.12.07
+
+
+if ($?loopcount) then
+    set loopcount = `expr $loopcount + 1`
+else
+    set loopcount = 1
+endif
+
+if ($?path) then
+ else
+    set path=(. $HOME/bin)
+ endif
+
+# ****************************** #
+#  Machine SPECIFIC ASSIGNMENTS  #
+# ****************************** #
+
+setenv machine `hostname -s`
+setenv MYUNAME `uname`
+setenv MTYP `uname -m`
+setenv OSNAME `uname -s`
+setenv OSTYP `uname -s`
+
+set linux_ver = `uname -r | grep "el5"`
+
+
+if (( $machine == "gridiron" || $machine == "castiron" || $machine =~ node* )) then 
+
+# Gridiron, Castiron or CPU farm
+
+
+# #********************************************************
+
+
+
+
+
+# # UNCOMMENT THE FOLLOWING IF YOU NEED TO ANALYZE MAINZ DATA
+ 
+#    setenv a2_ana /nobackup/gridiron/hadron/$USER/a2_ana
+#    setenv ACQU_LVL 4v4
+
+# # ********************************************************
+
+
+#  CERNLIB
+   setenv CERN_ROOT /usr/local/lib64/cernlib/2006
+   setenv CERN_LIB $CERN_ROOT/lib 
+   setenv PATH $CERN_ROOT/bin:$PATH
+   setenv LD_LIBRARY_PATH /usr/lib64:/lib64:$CERN_LIB
+
+   #  ROOT, GEANT4 stuff
+   setenv WORK_BASE /backedup/gridiron/hadron/$USER
+   setenv APPS_BASE /backedup/gridiron/hadron/apps
+   setenv ROOTSYS $APPS_BASE/root
+   setenv ROOT $APPS_BASE/root
+   if ( $loopcount <2 ) setenv PATH $APPS_BASE/clhep/bin:$ROOTSYS/bin:$APPS_BASE/jas3:$PATH
+   if ( $loopcount <2 ) setenv LD_LIBRARY_PATH .:$APPS_BASE/geant4/lib/Linux-g++:$ROOTSYS/lib:$APPS_BASE/clhep/lib:/usr/local/lib:$LD_LIBRARY_PATH
+
+   setenv PYTHONPATH $ROOTSYS/lib 
+   setenv CLHEP_LIB_DIR $APPS_BASE/clhep/lib
+   setenv CLHEP_BASE_DIR  $APPS_BASE/clhep/
+   setenv CLHEP_INCLUDE_DIR $APPS_BASE/clhep/include
+
+else
+
+# Standard Linux Installations (i.e. NOT gridiron)
+#
+
+# #***************************************************
+# SET YOUR FAVORITE BROWSER BELOW
+#  setenv BROWSER seamonkey
+#  # setenv ISO-8601 YYYY-MM-DD date format in mozilla
+#  setenv LC_TIME en_DK
+# #***************************************************
+
+# IF YOU WANT TO USE THE SAME FILE FOR YOUR HOME COMPUTER AS WELL AS AT WORK,
+# THEN INSERT THE NAME OF YOUR HOME COMPUTER BELOW
+
+if ( $machine != "polaris" ) then 
+
+# # INSERT YOUR REGULAR WORKING DIRECTORY BELOW
+#    setenv WORK_BASE /home/huberg/r2d2
+
+# ****************************************************
+# # Mainz Stuff
+#    setenv a2_ana $WORK_BASE/a2_ana
+
+
+
+# #  AcquRoot
+#   setenv ACQU_LVL 4v4
+# ****************************************************
+
+   setenv APPS_BASE /home/apps
+
+#  CERNLIB
+  if ( $MACHTYPE == "x86_64" ) then    # x86_64
+    setenv CERN_ROOT /usr/lib64/cernlib/2006
+  else      # i386
+    setenv CERN_ROOT /usr/lib/cernlib/2006
+  endif
+
+
+  setenv CERN_LIB $CERN_ROOT/lib 
+  if ( $loopcount <2 ) setenv PATH $CERN_ROOT/bin:$PATH
+
+  if ( $MACHTYPE == "x86_64" ) then    # x86_64
+
+    # Check Scientific Linux version
+    if ($linux_ver == "") then
+    # SL6 Setup
+        setenv LD_LIBRARY_PATH /lib64:$CERN_LIB
+
+	# Java	
+		#setenv PATH /usr/java/jdk1.6.0_33/bin:$PATH
+		#setenv PATH /usr/java/jdk1.7.0_05/bin:$PATH
+		setenv PATH /usr/java/jre1.6.0_33/bin:$PATH
+    else
+    # SL5 Setup
+          setenv LD_LIBRARY_PATH /usr/lib64:/lib64:$CERN_LIB
+    endif
+
+  else      # i386
+  # setenv LD_LIBRARY_PATH /usr/lib:/lib:$CERN_LIB
+    setenv LD_LIBRARY_PATH /lib:$CERN_LIB
+  endif 
+
+
+
+  # ROOT, GEANT4 stuff
+  if ( $machine == "lynx") then
+
+	setenv ROOTSYS /usr/include/root
+   	setenv ROOT /usr/share/root
+    if ( $loopcount <2 ) setenv PATH $APPS_BASE/clhep/bin:$ROOTSYS/:.:$APPS_BASE/jas3:$APPS_BASE/dawn:$PATH
+    if ( $loopcount <2 ) setenv LD_LIBRARY_PATH /usr/local/lib:$ROOTSYS/:.:$APPS_BASE/geant4/lib/Linux-g++:$LD_LIBRARY_PATH
+
+  
+
+  	# Midas	
+	
+	setenv MIDASSYS $HOME/work/data_daq/midas
+	#setenv MIDAS_EXPTAB $HOME/online/exptab
+	setenv MIDAS_EXPTAB $HOME/experiment/exptab
+
+	switch (`hostname`)
+	case lynx*:
+	    unsetenv MIDAS_SERVER_HOST
+	    breaksw
+	default:
+	    #setenv MIDAS_SERVER_HOST ladd05.triumf.ca:7071
+    	setenv MIDAS_SERVER_HOST lynx.phys.uregina.ca:7071
+	endsw
+
+
+	# select 64-bit or 32-bit MIDAS and ROOT
+	
+	switch (`uname -i`)
+	case i386:
+	    #export ROOTSYS=/triumfcs/trshare/olchansk/root/root_v5.20.00_SL45_32
+	    #setenv ROOTSYS /triumfcs/trshare/olchansk/root/root_v5.28.00_SL55_32
+	    setenv PATH .:$MIDASSYS/linux-m32/bin:$PATH
+	    breaksw
+	default:
+	    #export ROOTSYS=/triumfcs/trshare/olchansk/root/root_v5.26.00b_SL54_64
+	    #setenv ROOTSYS /triumfcs/trshare/olchansk/root/root_v5.28.00_SL55_64
+	    #setenv ROOTSYS $HOME/packages/root
+	    setenv PATH .:$MIDASSYS/linux/bin:$PATH
+	endsw
+
+	#setenv PATH .:$HOME/online/bin:$HOME/work/data_daq/roody/bin:$PATH
+	setenv PATH .:$HOME/work/data_daq/roody/bin:$PATH
+
+  else
+
+  	setenv ROOTSYS $APPS_BASE/root
+  	setenv ROOT $APPS_BASE/root
+    if ( $loopcount <2 ) setenv PATH $APPS_BASE/clhep/bin:$ROOTSYS/bin:.:$APPS_BASE/jas3:$APPS_BASE/dawn:$PATH
+    if ( $loopcount <2 ) setenv LD_LIBRARY_PATH /usr/local/lib:$ROOTSYS/lib:.:$APPS_BASE/geant4/lib/Linux-g++:$LD_LIBRARY_PATH
+    setenv PYTHONPATH $ROOTSYS/lib
+  endif
+
+
+
+  setenv CLHEP_LIB_DIR /usr/local/lib
+  setenv CLHEP_BASE_DIR /usr/local
+  setenv CLHEP_INCLUDE_DIR /usr/local/include
+
+  setenv DAWN_PS_PREVIEWER gv
+  setenv G4DAWNFILE_VIEWER 'dawn -d'
+
+  endif
+endif
+
+if ($loopcount < 2 ) setenv PATH .:$HOME/bin:$PATH
+
+# INSERT ANY FURTHER USER CUSTOMIZATIONS BELOW
+
+set noclobber notify file
+set history = 100
+set old=$cwd
+
+alias cd 'set old=$cwd; chdir \!*; echo $cwd'
+alias cl clear
+alias cp "cp -p"
+# alias dir  ls -Fla
+#alias disp 'setenv DISPLAY 142.3.164.48:0.0'
+alias dds 'ls -Fl | grep ^d'
+alias help apropos
+alias hi  history -r
+alias h "history -r | more -c"
+alias j jobs -l
+alias lo exit
+alias log logout
+alias pu 'rm -i *~ .*~ #*'
+alias rm rm -i
+alias Rm /bin/rm
+alias xterm xterm -ls -sb -rightbar -sl 500
+
+alias ls ls --color=always
+alias la "ls -a"
+alias ll "ls -al"
+
+
+# setenv ABSOFT /home/apps/absoft/opt/absoft
+# alias  f77abs /home/apps/absoft/opt/absoft/bin/f77
+# alias  f90    /home/apps/absoft/opt/absoft/bin/f90
+
+unsetenv TERMCAP
+setenv TERM vt100
+
+

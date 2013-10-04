@@ -1,0 +1,23 @@
+4.3.1 Symbolic Permissions
+Contributed by Tom Rhodes.
+
+Symbolic permissions, sometimes referred to as symbolic expressions, use characters in place of octal values to assign permissions to files or directories. Symbolic expressions use the syntax of (who) (action) (permissions), where the following values are available:
+Option 	Letter 	Represents
+(who) 	u 	User
+(who) 	g 	Group owner
+(who) 	o 	Other
+(who) 	a 	All (“world”)
+(action) 	+ 	Adding permissions
+(action) 	- 	Removing permissions
+(action) 	= 	Explicitly set permissions
+(permissions) 	r 	Read
+(permissions) 	w 	Write
+(permissions) 	x 	Execute
+(permissions) 	t 	Sticky bit
+(permissions) 	s 	Set UID or GID
+
+
+# example
+$ chmod 4755 suidexample.sh
+-rwsr-xr-x   1 trhodes  trhodes    63 Aug 29 06:36 suidexample.sh
+

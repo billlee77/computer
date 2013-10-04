@@ -1,0 +1,7 @@
+# In order to recorgnize HP laserjet 5mp printer, following packages mustbe installed:
+cups hpjis hplip
+
+# Then add printer, printer will be configured automatically
+ 
+
+

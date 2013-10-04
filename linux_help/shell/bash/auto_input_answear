@@ -1,0 +1,7 @@
+Example:
+
+echo n | realsync 1 2
+
+Note: program realsync will prompt a question to ask to rsync back from 2 to 1, answear needs to be Yes (y) or No (n), above command to automatic return a No(n) ! 
+
+

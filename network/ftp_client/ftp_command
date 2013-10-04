@@ -1,0 +1,43 @@
+# ftp
+  
+  ! Open ftp shell
+		ftp				
+  *******************************************************
+	! Under ftp shell 
+ 	! Connect to a host 
+		open ftp.bill.co.cc	
+
+	! Login user
+		user username
+
+	! Get files to local host
+   		get (mget) files
+
+	! Put file to the remote host
+  		put (mput) files
+
+    ! Delete file
+  		delete files
+
+  	! Close server	
+	 	close
+
+	! Quit
+		quti
+
+	! Help
+		?
+  ********************************************************
+      
+
+		
+
+# sftp
+  ! The sftp will only work for anonymous server (like 192.168.1.68)
+  ! Perhaps something to do with ssh
+ 
+  ! Connet to a anonymous server  	
+	sftp 192.168.1.68
+
+  ! Command are very similiar to ftp
+

@@ -1,0 +1,26 @@
+585.234
+550
+3
+1100
+310.942165931 
+-270.0 
+1048.65760083
+20
+0
+2
+
+/*--------------------------------------------------
+# Configuration interpretation
+# Everything is in mm and degree
+1. Mirror Length X Direction
+2. Mirror Length Y Direction
+3. Mirror thickness
+4. Mirror Radius
+5. X Coodinate for the Mirror Center Position
+6. Y Coodinate for the Mirror Center Position
+7. Z Coodinate for the Mirror Center Position
+8. Mirror Tilt Angle on X-Z plane
+9. Mirror Tilt Angle on X-Z plane
+10. Which Mirror? (1:+x,+y  2: +x,-y  3:-x,y  4:-x,-y)
+/*--------------------------------------------------*/   
+

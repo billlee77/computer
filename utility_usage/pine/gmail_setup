@@ -1,0 +1,24 @@
+
+//**************************************************************************
+Configuration
+
+POP3
+
+smtp-server=smtp.gmail.com/user=user@gmail.com/ssl
+inbox-path={pop.gmail.com/pop3/ssl/user=user@gmail.com}inbox
+
+
+IMAP
+
+smtp-server=smtp.gmail.com:587/tls/user= user@gmail.com
+inbox-path={imap.gmail.com:993/ssl/novalidate-cert/user= user@gmail.com}inbox
+
+
+//**************************************************************************
+add collection list
+
+1. To Enable IMAP
+
+2. Collection List Setting
+
+Server: imap.gmail.com/ssl/user=wenliang.billlee@gmail.com 

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- JNLP File for SeeVogh -->
+<!-- research.seevogh.com -->
+<jnlp
+  spec="1.0+"
+  codebase="http://www.seevogh.com/seevoghRN/seevogh"
+  >
+  <information>
+    <title>SeeVogh</title>
+    <vendor>EVOgh, Inc.</vendor>
+    <homepage href="/"/>
+    <description>SeeVogh</description>
+    <icon href="images/SeeVogh_icon_128x128.png" width="128" height="128"/>
+    <icon href="images/SeeVogh_icon_64x64.png"   width="64"  height="64"/>
+    <icon href="images/SeeVogh_icon_32x32.png"   width="32"  height="32"/>
+    <icon href="images/SeeVogh_icon_16x16.png"   width="16"  height="16"/>
+    <icon kind="splash" href="http://www.seevogh.com/seevoghRN/seevogh/images/SeeVogh-Splash.jpg"/>
+    <offline-allowed/>
+  </information>
+  <security>
+      <all-permissions/>
+  </security>
+  <resources>
+    <j2se version="1.5+" initial-heap-size="80m" max-heap-size="256m" />
+    <property name="swing.aatext" value="true"/>
+    <jar href="KoalaLib.jar" download="eager"/>
+    <jar href="license/SeeVoghEULA.jar" main="false" download="eager"/>
+    <property name="seevo.advancedMode" value="true"/>
+    <property name="com.seevogh.vievoDelay" value="true"/>
+    <property name="seevo.allowExtCall" value="true"/>
+    <property name="com.seevogh.disableAutoLogin" value="true"/>
+    <property name="edu.caltech.hep.koala.log" value="SeeVoghRN.log"/>
+    <property name="edu.caltech.hep.koala.lockID" value="3296"/>
+    <property name="edu.caltech.hep.koala.jnlpVersion" value="7"/>
+    <property name="sun.net.maxDatagramSockets" value="1024"/>
+    <property name="sun.java2d.noddraw" value="true"/>
+    <property name="edu.caltech.hep.koala.dir" value=".SeeVoghRN"/>
+    <property name="edu.caltech.hep.koala.extraTitle" value="Dev Next"/>
+    <property name="edu.caltech.hep.koala.loginRegister" value="true"/>
+    <property name="edu.caltech.hep.koala.simpleGUI" value="false"/>
+    <property name="edu.caltech.hep.koala.TestMeeting" value="3"/>
+    <property name="edu.caltech.hep.koala.LoopMeeting" value="2"/>
+    <property name="edu.caltech.hep.koala.httpserv" value="http://www.seevogh.com/"/>
+    <property name="edu.caltech.hep.koala.httproot" value="seevoghRN/seevogh/"/>
+    <property name="edu.caltech.hep.koala.jsproot"  value="/"/>
+    <property name="edu.caltech.hep.koala.newsURL"  value="http://www.seevogh.com/seevoghRN/seevogh/Splash/news.php"/>
+    <property name="seevo.adsURL"                   value="http://www.seevogh.com/seevoghRN/seevogh/Splash/ads.html"/>
+    <property name="edu.caltech.hep.koala.startURL" value="http://www.seevogh.com//join"/>
+    <property name="edu.caltech.hep.koala.peers"    value=""/>
+    <property name="edu.caltech.hep.koala.useLastPanda" value="true"/>
+    <property name="edu.caltech.hep.koala.altLastPanda" value="false"/>
+    <property name="edu.caltech.hep.koala.FAK"      value="[131.215.116.1,25,srnsupport@seevogh.com]/srnsupport@seevogh.com/srnsupport@seevogh.com"/>
+    <property name="edu.caltech.hep.koala.FAQ"      value="http://research.seevogh.com/faq.html"/>
+    <property name="edu.caltech.hep.koala.helpURL"  value="http://www.seevogh.com///documentation.html"/>
+    <property name="fileExchange.lemur.server"      value="192.91.244.144;46012,192.91.244.144;80,131.215.116.152;46012,131.215.116.152;80"/>
+<!-- -->
+    <property name="edu.caltech.hep.koala.DefaultLang" value="en"/>
+<!-- -->
+    <property name="edu.caltech.hep.koala.debug"    value="false"/>
+    <property name="edu.caltech.hep.koala.video"    value="true"/>
+    <property name="com.seevogh.showMiniDocs"       value="true"/>
+    <property name="com.seevogh.AVControls"         value="AuVu"/>
+    <property name="edu.caltech.hep.koala.single"   value="true"/>
+    <property name="edu.caltech.hep.koala.onlyTCP"  value="false"/>
+    <property name="edu.caltech.hep.koala.pandaPort"  value="46015"/>
+    <property name="lisa.apmon.destinations"        value="127.0.0.1:8884"/>
+    <property name="lisa.locators"                  value="131.215.116.151:4042,192.91.244.138:4042"/>
+    <property name="lisa.groups"                    value="evoPanda"/>
+    <property name="lisa.ping.run"                  value="false"/>
+    <property name="lisa.core.logger.lisaRoot"      value=".SeeVoghRN/lisa/"/>
+    <property name="LOAD_COEF"                      value="1.0"/>
+    <property name="CLIENTS_COEF"                   value="0.3"/>
+    <property name="TRAFFIC_COEF"                   value="0.01"/>
+    <property name="RTT_COEF"                       value="1.0"/>
+    <property name="EU_panda"                       value="evo1.renater.fr/192.91.244.160/194.80.134.6/193.60.199.170"/>
+    <property name="NA_panda"                       value="137.164.37.102/137.164.37.101/evo11.uslhcnet.org"/>
+    <property name="AS_panda"                       value="evo-panda1.kek.jp/panda1.kisti.re.kr/panda2.kisti.re.kr"/>
+    <property name="OC_panda"                       value="evo.ivec.org/evo.bestgrid.org/evo-1.nsp.melbourne.nectar.org.au"/>
+    <property name="SA_panda"                       value="panda-01.cti.usp.br/panda-02.cti.usp.br/200.37.45.54"/>
+    <property name="edu.caltech.hep.koala.uiName"   value="seevo.SeevOGL"/>
+    <property name="com.seevogh.outerUI"            value="com.evogh.seevogh.rn.IMMeetingAgent"/>
+    <jar href="SeevOGL.jar"        main="false" download="eager"/>
+    <jar href="SeevoRNUI.jar"     main="false" download="eager"/>
+    <jar href="SeevoRNUIHelper.jar" main="false" download="eager"/>
+    <jar href="SeeVoghStringsProd.jar"   main="false" download="eager"/>
+    <jar href="SeeVoghMHelp.jar"   main="false" download="eager"/>
+    <jar href="SeeVoghMHelpRN.jar"   main="false" download="eager"/>
+    <jar href="KoalaEngineProd.jar"   main="false" download="eager"/>
+    <jar href="lib/lisa_core.jar"  main="false" download="eager"/>
+    <jar href="lib/lisa_apmon.jar" main="false" download="eager"/>
+    <jar href="lib/jini-core.jar"  main="false" download="eager"/>
+    <jar href="lib/jini-ext.jar"   main="false" download="eager"/>
+    <jar href="lib/SeeVogh_OGL.jar" main="false" download="eager"/>
+    <jar href="lib/BrowserLauncher2-1_3.jar"  main="false" download="eager"/>
+    <jar href="sp/EVO_SPCtrls.jar"      main="false" download="eager"/>
+    <jar href="sp/EVO_Mixer.jar"        main="false" download="eager"/>
+    <jar href="sp/EVO_DeskShare.jar"    main="false" download="eager"/>
+    <jar href="sp/EVO_RTP.jar"          main="false" download="eager"/>
+    <jar href="sp/SeeVoghRecorder.jar"      main="false" download="eager"/>
+    <jar href="sp/SeeVogh.DevsList.jar" main="false" download="eager"/>
+    <jar href="sp/ext/EVO_SIPlib.jar"       main="false" download="eager"/>
+    <jar href="sp/ext/EVO_Transcoder.jar"   main="false" download="eager"/>
+    <jar href="sp/ext/EVO_DTMF.jar"         main="false" download="eager"/>
+    <jar href="sp/ext/EVO_ExtCall.jar"      main="false" download="eager"/>
+    <jar href="sp/ext/SPStrings.jar"        main="false" download="eager"/>
+    <property name="java.class.path" value="lisa_core.jar:lisa_apmon.jar:jini-core.jar:jini-ext.jar"/>
+  </resources>
+  <resources os="Windows" arch="x86">
+        <property name="lisa.monitor.host"              value="true"/>
+        <property name="lisa.monitor.search"            value="true"/>
+        <property name="lisa.monitor.hardware"          value="true"/>
+        <property name="lisa.monitor.system"            value="true"/>
+        <property name="edu.caltech.hep.koala.apmon"    value="true"/>
+        <nativelib href="lib/Wnative.jar"/>
+        <nativelib href="lib/idleWin.jar"/>
+        <nativelib href="lib/SeeVogh_OGLLibWin32.jar"/>
+        <nativelib href="sp/bin/ViEVOLibWin32.jar"/>
+        <jar href="sp/bin/ViEVOLibWin32dep.jar"     main="false" download="eager"/>
+	<jar href="sp/bin/EVO_EAT_win.jar"          main="false" download="eager"/>
+	<jar href="sp/bin/EVO_DeskShare_win.jar"    main="false" download="eager"/>
+	<jar href="sp/ext/bin/EVO_Transcoder_win.jar" main="false" download="eager"/>
+	<jar href="sp/ext/bin/EVO_H323_Agent_win.jar" main="false" download="eager"/>
+  </resources>
+  <resources os="Windows" arch="amd64">
+        <property name="lisa.monitor.host"              value="true"/>
+        <property name="lisa.monitor.search"            value="true"/>
+        <property name="lisa.monitor.hardware"          value="true"/>
+        <property name="lisa.monitor.system"            value="true"/>
+        <property name="edu.caltech.hep.koala.apmon"    value="true"/>
+        <nativelib href="lib/Wnative64.jar"/>
+        <nativelib href="lib/idleWin64.jar"/>
+        <nativelib href="lib/SeeVogh_OGLLibWin64.jar"/>
+        <nativelib href="sp/bin/ViEVOLibWin64.jar"/>
+        <jar href="sp/bin/ViEVOLibWin64dep.jar"     main="false" download="eager"/>
+	<jar href="sp/bin/EVO_EAT_win.jar"          main="false" download="eager"/>
+	<jar href="sp/bin/EVO_DeskShare_win.jar"    main="false" download="eager"/>
+	<jar href="sp/ext/bin/EVO_Transcoder_win.jar" main="false" download="eager"/>
+	<jar href="sp/ext/bin/EVO_H323_Agent_win.jar" main="false" download="eager"/>
+  </resources>
+  <resources os="Windows" arch="x86_64">
+        <property name="lisa.monitor.host"              value="true"/>
+        <property name="lisa.monitor.search"            value="true"/>
+        <property name="lisa.monitor.hardware"          value="true"/>
+        <property name="lisa.monitor.system"            value="true"/>
+        <property name="edu.caltech.hep.koala.apmon"    value="true"/>
+        <nativelib href="lib/Wnative64.jar"/>
+        <nativelib href="lib/idleWin64.jar"/>
+        <nativelib href="lib/SeeVogh_OGLLibWin64.jar"/>
+        <nativelib href="sp/bin/ViEVOLibWin64.jar"/>
+        <jar href="sp/bin/ViEVOLibWin64dep.jar"     main="false" download="eager"/>
+	<jar href="sp/bin/EVO_EAT_win.jar"          main="false" download="eager"/>
+	<jar href="sp/bin/EVO_DeskShare_win.jar"    main="false" download="eager"/>
+	<jar href="sp/ext/bin/EVO_Transcoder_win.jar" main="false" download="eager"/>
+	<jar href="sp/ext/bin/EVO_H323_Agent_win.jar" main="false" download="eager"/>
+  </resources>
+  <resources os="Linux" arch="i386">
+        <property name="lisa.monitor.host"              value="true"/>
+        <property name="lisa.monitor.search"            value="true"/>
+        <property name="lisa.monitor.hardware"          value="true"/>
+        <property name="lisa.monitor.system"            value="true"/>
+        <property name="edu.caltech.hep.koala.apmon"    value="true"/>
+        <nativelib href="lib/idleLin.jar"/>
+        <nativelib href="lib/SeeVogh_OGLLibLin32.jar"/>
+	<nativelib href="sp/bin/ViEVOLibLin32.jar"/>
+	<jar href="sp/bin/ViEVOLibLin32dep.jar"     main="false" download="eager"/>
+	<jar href="sp/bin/EVO_EAT_lin.jar"          main="false" download="eager"/>
+	<jar href="sp/bin/EVO_DeskShare_lin.jar"    main="false" download="eager"/>
+	<jar href="sp/ext/bin/EVO_Transcoder_lin.jar" main="false" download="eager"/>
+	<jar href="sp/ext/bin/EVO_H323_Agent_lin.jar" main="false" download="eager"/>
+  </resources>
+  <resources os="Linux" arch="amd64">
+        <property name="lisa.monitor.host"              value="true"/>
+        <property name="lisa.monitor.search"            value="true"/>
+        <property name="lisa.monitor.hardware"          value="true"/>
+        <property name="lisa.monitor.system"            value="true"/>
+        <property name="edu.caltech.hep.koala.apmon"    value="true"/>
+        <nativelib href="lib/idleLin.jar"/>
+        <nativelib href="lib/SeeVogh_OGLLibLin64.jar"/>
+	<nativelib href="sp/bin/ViEVOLibLin64.jar"/>
+	<jar href="sp/bin/ViEVOLibLin64dep.jar"     main="false" download="eager"/>
+	<jar href="sp/bin/EVO_EAT_lin.jar"          main="false" download="eager"/>
+	<jar href="sp/bin/EVO_DeskShare_lin64.jar"    main="false" download="eager"/>
+	<jar href="sp/ext/bin/EVO_Transcoder_lin64.jar" main="false" download="eager"/>
+	<jar href="sp/ext/bin/EVO_H323_Agent_lin64.jar" main="false" download="eager"/>
+  </resources>
+   <resources os="Mac OS X" arch="ppc">
+        <property name="lisa.monitor.host"              value="true"/>
+        <property name="lisa.monitor.search"            value="true"/>
+        <property name="lisa.monitor.hardware"          value="true"/>
+        <property name="lisa.monitor.system"            value="true"/>
+        <property name="edu.caltech.hep.koala.apmon"    value="true"/>
+        <nativelib href="lib/Mnative.jar" download="eager"/>
+        <nativelib href="lib/idleMacPPC.jar"/>
+	<jar href="sp/bin/EVO_EAT_macp.jar"         main="false" download="eager"/>
+	<jar href="sp/bin/EVO_DeskShare_macp.jar"   main="false" download="eager"/>
+  </resources>
+  <resources os="Mac OS X" arch="i386">
+        <property name="lisa.monitor.host"              value="true"/>
+        <property name="lisa.monitor.search"            value="true"/>
+        <property name="lisa.monitor.hardware"          value="true"/>
+        <property name="lisa.monitor.system"            value="true"/>
+        <property name="edu.caltech.hep.koala.apmon"    value="true"/>
+        <nativelib href="lib/Mnative.jar" download="eager"/>
+        <nativelib href="lib/idleMacIntel.jar"/>
+        <nativelib href="sp/bin/ViEVOLibMac32.jar"/>
+        <jar href="sp/bin/ViEVOLibMac32dep.jar"     main="false" download="eager"/>
+	<jar href="sp/bin/EVO_EAT_maci.jar"         main="false" download="eager"/>
+	<jar href="sp/bin/EVO_DeskShare_maci.jar"   main="false" download="eager"/>
+	<jar href="sp/ext/bin/EVO_Transcoder_maci.jar" main="false" download="eager"/>
+	<jar href="sp/ext/bin/EVO_H323_Agent_maci.jar" main="false" download="eager"/>
+  </resources>
+  <resources os="Mac OS X" arch="x86_64">
+        <property name="lisa.monitor.search"       value="true"/>
+        <nativelib href="lib/Mnative.jar" download="eager"/>
+        <nativelib href="sp/bin/ViEVOLibMac64.jar"/>
+        <jar href="sp/bin/ViEVOLibMac64dep.jar"     main="false" download="eager"/>
+        <jar href="sp/bin/EVO_EAT_maci.jar"         main="false" download="eager"/>
+        <jar href="sp/bin/EVO_DeskShare_maci.jar"   main="false" download="eager"/>
+        <jar href="sp/ext/bin/EVO_Transcoder_maci.jar" main="false" download="eager"/>
+        <jar href="sp/ext/bin/EVO_H323_Agent_maci.jar" main="false" download="eager"/>
+  </resources>
+  <application-desc main-class="edu.caltech.hep.koala.Koala"/>
+</jnlp>

@@ -1,0 +1,5 @@
+#  . script1 == source script1  these two are the SAME THING
+
+source /dir/to/script
+
+

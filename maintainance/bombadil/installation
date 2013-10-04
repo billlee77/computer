@@ -1,0 +1,73 @@
+Computer name: bombadil.phys.uregina.ca
+
+# Ubuntu 10.10
+
+disk setup is identical to lynx
+
+Step 1: Customize partion outlay:
+
+Name		  Size			Partion
+sda1 		  250MB			/Boot
+sda2		10240MB			/
+sda3		 4000MB			SWEP
+sda4		61323MB			/home
+
+Package Install:
+libgail g++ alpine flashplugin vim-gnome openssh-server subversion heirloom-mailx mailutils bum
+
+Package Removed:
+ristretto  gnome-mahjongg gnomine 	aisleriot ekiga  pidgin-libnotify  thunderbird abiword  pidgin gconf-editor xchat yelp gnome-power-manager gnome-system-monitor gnome-system-tools xfce4-clipman-plugin onboard xfce4-notes-plugin dia eog  python-pygoocanvas libgoocanvas-common checkbox-gtk ubufox  mousepad   xfce4-clipman  libpolkit-gtk-1-0  catfish byobu  gcalctool simple-scan   quadrapassel gnomine gnome-mahjongg aisleriot  empathy  python-telepathy   empathy-common xchat
+gnome-sudoku exaile parole transmission-common xfce4-notes
+
+
+************************************************************************
+
+# Fedora 14
+
+Step 1: Partition Disk
+
+Name          Size          Partion
+sda1          250MB         /Boot
+sda2        10240MB         /
+sda3         4000MB         SWEP
+sda4        61323MB         /home
+
+
+Step 2: Create User
+
+Billlee:510:510
+
+Step 3: Restoring authority and selinux Configuration
+sudo chgrp -R billlee billlee
+sudo chown -R billlee billlee
+sudo restorecon /home
+
+
+Step 4: Set selinux to permissive mode in /etc/selinux/config file
+
+Step 5: Package Installation
+sudo yum groupinstall XFCE
+
+restart
+
+Step 6: Restoring Configuration Files:
+ssh_config hosts hosts.allow hosts.deny cups.config 
+
+
+Step 7: Packages Installation
+vim-x11 qcad subversion gv yumex texlive xdvik openoffice aspell alpine gimp tkdiff vncserver java unrar paw x11vnc logwatch tgif texlive-latex
+
+Step 8: Setting RPMs
+atrpm, adoberpm
+
+Step 9: Install adobe & adobe-flashplayer
+
+Step 10: Auto-start sshd
+hkconfig --level 2345 sshd on
+service sshd restart
+
+#***************************************************
+# Disintegrated at 15/May/2011 for the improvement of Super Lynx
+#***************************************************
+
+# End of Bombadil !

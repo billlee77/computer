@@ -1,0 +1,135 @@
+clear
+
+device\colour postscript
+read test_mirror.dat x,z12, z34, sphere, err, y, z23, z14, sphere2
+
+!list x,z12, z34, sphere, err
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!length
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+label\xaxis `Position along mirror (cm)'
+label\yaxis `Deviation from 40in sphere (mm)'
+scale 0 40 4 -1 1 4
+
+!set pchar 0
+!set lintyp 1
+!col 4
+! radius of circle at edge of mirror corresponding to 40" sphere
+rad=39.217*2.54
+param_a=38.312*2.54
+ix=25/500*(i-500)
+h_sphere=10*(sqrt(rad**2-ix**2)-param_a)
+xc=x-21.275
+h_sphere2=10*(sqrt(rad**2-xc**2)-param_a)
+check=h_sphere2-sphere
+
+! account for mirror thickness, 3.2+0.05mm
+z12=z12-3.2
+z34=z34-3.2
+err=sqrt(err**2+0.05**2)
+
+set pchar -8
+col 1
+graph x z12-h_sphere2 err
+col 2
+graph\noaxes x z34-h_sphere2 err
+
+scalar\vary a12,a34
+wt=1/(err**2)
+fit\weights wt abs(z12-h_sphere2)=a12*x/x
+fit\weights wt abs(z34-h_sphere2)=a34*x/x
+
+set %txthit 2.5
+set %xloc 50
+set %yloc 95
+set cursor -2
+
+col 1
+text `Sinclair Test Mirror'
+
+set %txthit 1.75
+set %xloc 40
+set %yloc 80
+col 1
+text `Side 1-2  Wtd Abs Mean='//rchar(a12,`f6.4')//`mm'
+set %yloc 75
+col 2
+text `Side 3-4  Wtd Abs Mean='//rchar(a34,`f6.4')//`mm'
+
+
+
+
+
+
+ha S diff1.eps
+
+
+clear
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!width
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+label\xaxis `Position along mirror (cm)'
+label\yaxis `Deviation from 40in sphere (mm)'
+scale 0 40 4 -1 1 4
+
+
+rad=39.1134*2.54
+param_a=38.312*2.54
+ix=25/500*(i-500)
+h_sphere=10*(sqrt(rad**2-ix**2)-param_a)
+xc=y-20
+h_sphere2=10*(sqrt(rad**2-xc**2)-param_a)
+
+! account for mirror thickness, 3.2+0.05mm
+z23=z23-3.2
+z14=z14-3.2
+
+list y, z23, z14, h_sphere2
+
+err=sqrt(err**2+0.05**2)
+
+set pchar -8
+col 1
+graph y z23-h_sphere2 err
+col 2
+graph\noaxes y z14-h_sphere2 err
+
+scalar\vary a23,a14
+wt=1/(err**2)
+fit\weights wt abs(z23-h_sphere2)=a23*y/y
+fit\weights wt abs(z14-h_sphere2)=a14*y/y
+
+
+!set %txthit 2.5
+!col 1
+!text `Sinclair Test Mirror'
+!set %txthit 1.75
+!col 1
+!text `Side 1-2  Wtd Abs Mean='//rchar(a12,`f6.4')//`mm'
+!col 2
+!text `Side 3-4  Wtd Abs Mean='//rchar(a34,`f6.4')//`mm'
+
+set %txthit 2.5
+set %xloc 50
+set %yloc 95
+set cursor -2
+
+col 1
+text `Sinclair Test Mirror'
+
+set %txthit 1.75
+
+set %xloc 40
+set %yloc 80
+col 1
+text `Side 2-3  Wtd Abs Mean='//rchar(a23,`f6.4')//`mm'
+set %yloc 75
+col 2
+text `Side 4-1  Wtd Abs Mean='//rchar(a14,`f6.4')//`mm'
+
+
+ha S diff2.eps
+
+clear

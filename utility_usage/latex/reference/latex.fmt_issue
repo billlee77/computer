@@ -1,0 +1,9 @@
+# To resolve latex.fmt missing issue
+# Solution is to regenerate the latex.fmt file
+
+locate latex.ltx
+cd /usr/share/texmf/tex/latex/base
+su
+latex -ini latex.ltx
+cp latex.fmt latex.log /usr/share/texmf/web2c
+

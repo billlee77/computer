@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>4.2.&nbsp;Creating a Partition</title><link rel="stylesheet" href="patition_files/default.css" type="text/css"><link rel="stylesheet" media="print" href="patition_files/print.css" type="text/css"><meta name="generator" content="publican 2.3"><meta name="package" content="Fedora-Storage_Administration_Guide-14-en-US-1.0-1"><script type="text/javascript" src="patition_files/toc.js"></script><script type="text/javascript">
+              addID('Fedora');
+              
+	      addID('Fedora.14');
+              
+              addID('Fedora.14.books');
+	      addID('Fedora.14.Storage_Administration_Guide');
+              </script><link rel="home" href="https://docs.fedoraproject.org/en-US/Fedora/14/html/Storage_Administration_Guide/index.html" title="Storage Administration Guide"><link rel="up" href="https://docs.fedoraproject.org/en-US/Fedora/14/html/Storage_Administration_Guide/s1-disk-storage-parted.html" title="Chapter&nbsp;4.&nbsp;Partitions"><link rel="prev" href="https://docs.fedoraproject.org/en-US/Fedora/14/html/Storage_Administration_Guide/s1-disk-storage-parted.html" title="Chapter&nbsp;4.&nbsp;Partitions"><link rel="next" href="https://docs.fedoraproject.org/en-US/Fedora/14/html/Storage_Administration_Guide/s3-disk-storage-parted-create-part-mkfs.html" title="4.2.2.&nbsp;Formatting and Labeling the Partition"></head><body class="toc_embeded "><div id="tocdiv" class="toc"><iframe id="tocframe" class="toc" src="patition_files/toc.html">This is an iframe, to view it upgrade your browser or enable iframe display.</iframe></div><p id="title"><a class="left" href="http://www.fedoraproject.org/"><img src="patition_files/image_left.png" alt="Product Site"></a><a class="right" href="http://docs.fedoraproject.org/"><img src="patition_files/image_right.png" alt="Documentation Site"></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="https://docs.fedoraproject.org/en-US/Fedora/14/html/Storage_Administration_Guide/s1-disk-storage-parted.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="https://docs.fedoraproject.org/en-US/Fedora/14/html/Storage_Administration_Guide/s3-disk-storage-parted-create-part-mkfs.html"><strong>Next</strong></a></li></ul><div class="section" title="4.2.&nbsp;Creating a Partition" id="s2-disk-storage-parted-create-part"><div class="titlepage"><div><div keep-together.within-column="always"><h2 class="title" id="s2-disk-storage-parted-create-part">4.2.&nbsp;Creating a Partition</h2></div></div></div><a id="id504335" class="indexterm"></a><a id="id600108" class="indexterm"></a><div class="warning" title="Warning"><div class="admonition_header"><h2>Warning</h2></div><div class="admonition"><div class="para">
+				Do not attempt to create a partition on a device that is in use.
+			</div></div></div><div class="para">
+			Before creating a partition, boot into rescue mode (or unmount any 
+partitions on the device and turn off any swap space on the device).
+		</div><div class="para">
+			Start <code class="command">parted</code>, where <code class="filename">/dev/<em class="replaceable"><code>sda</code></em></code> is the device on which to create the partition:
+		</div><div class="para">
+			<code class="command">parted /dev/<em class="replaceable"><code>sda</code></em></code>
+		</div><div class="para">
+			View the current partition table to determine if there is enough free space:
+		</div><div class="para">
+			<code class="command">print</code>
+		</div><div class="para">
+			If there is not enough free space, you can resize an existing partition. Refer to <a class="xref" href="https://docs.fedoraproject.org/en-US/Fedora/14/html/Storage_Administration_Guide/s2-disk-storage-parted-resize-part.html" title="4.4.&nbsp;Resizing a Partition">Section&nbsp;4.4, “Resizing a Partition”</a> for details.
+		</div><div class="section" title="4.2.1.&nbsp;Making the Partition" id="s3-disk-storage-parted-create-part-mkpart"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="s3-disk-storage-parted-create-part-mkpart">4.2.1.&nbsp;Making the Partition</h3></div></div></div><a id="id600196" class="indexterm"></a><a id="id600217" class="indexterm"></a><div class="para">
+				From the partition table, determine the start and end points of the 
+new partition and what partition type it should be. You can only have 
+four primary partitions (with no extended partition) on a device. If you
+ need more than four partitions, you can have three primary partitions, 
+one extended partition, and multiple logical partitions within the 
+extended. For an overview of disk partitions, refer to the appendix <em class="citetitle">An Introduction to Disk Partitions</em> in the Fedora 14 <em class="citetitle">Installation Guide</em>.
+			</div><div class="para">
+				For example, to create a primary partition with an ext3 file system 
+from 1024 megabytes until 2048 megabytes on a hard drive type the 
+following command:
+			</div><div class="para">
+				<code class="command">mkpart primary ext3 1024 2048</code>
+			</div><div class="note" title="Tip"><div class="admonition_header"><h2>Tip</h2></div><div class="admonition"><div class="para">
+					If you use the <code class="command">mkpartfs</code> command instead, the file system is created after the partition is created. However, <code class="command">parted</code> does not support creating an ext3 file system. Thus, if you wish to create an ext3 file system, use <code class="command">mkpart</code> and create the file system with the <code class="command">mkfs</code> command as described later.
+				</div></div></div><div class="para">
+				The changes start taking place as soon as you press <span class="keycap"><strong>Enter</strong></span>, so review the command before executing to it.
+			</div><div class="para">
+				After creating the partition, use the <code class="command">print</code>
+ command to confirm that it is in the partition table with the correct 
+partition type, file system type, and size. Also remember the minor 
+number of the new partition so that you can label any file systems on 
+it. You should also view the output of <code class="command">cat /proc/partitions</code> to make sure the kernel recognizes the new partition.
+			</div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="https://docs.fedoraproject.org/en-US/Fedora/14/html/Storage_Administration_Guide/s1-disk-storage-parted.html"><strong>Prev</strong>Chapter&nbsp;4.&nbsp;Partitions</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="https://docs.fedoraproject.org/en-US/Fedora/14/html/Storage_Administration_Guide/index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="https://docs.fedoraproject.org/en-US/Fedora/14/html/Storage_Administration_Guide/s3-disk-storage-parted-create-part-mkfs.html"><strong>Next</strong>4.2.2.&nbsp;Formatting and Labeling the Partition</a></li></ul></body></html>

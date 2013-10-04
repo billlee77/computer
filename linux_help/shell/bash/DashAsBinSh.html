@@ -1,0 +1,439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="index,nofollow">
+
+<title>DashAsBinSh - Ubuntu Wiki</title>
+<script type="text/javascript" src="DashAsBinSh_files/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="DashAsBinSh_files/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="DashAsBinSh_files/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="DashAsBinSh_files/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="DashAsBinSh_files/projection.css">
+
+<!-- css only for MSIE browsers -->
+<!--[if IE]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/htdocs/ubuntu/css/msie.css">
+<![endif]-->
+
+
+
+<link rel="Start" href="https://wiki.ubuntu.com/Home">
+<link rel="Alternate" title="Wiki Markup" href="https://wiki.ubuntu.com/DashAsBinSh?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="https://wiki.ubuntu.com/DashAsBinSh?action=print">
+<link rel="Search" href="https://wiki.ubuntu.com/FindPage">
+<link rel="Index" href="https://wiki.ubuntu.com/TitleIndex">
+<link rel="Glossary" href="https://wiki.ubuntu.com/WordIndex">
+<link rel="Help" href="https://wiki.ubuntu.com/HelpOnFormatting">
+</head><body dir="ltr" lang="en">
+
+<div id="header">
+<div id="mastwrap"><div id="masthead">
+<div id="logo"><a href="https://wiki.ubuntu.com/Home">Ubuntu Wiki</a></div>
+
+<form id="searchform" method="get" action="/DashAsBinSh">
+<div>
+<input name="action" value="fullsearch" type="hidden">
+<input name="context" value="180" type="hidden">
+<label style="display: none;" for="searchinput">Search:</label>
+<input class="disabled" id="searchinput" name="value" value="" size="20" onfocus="searchFocus(this)" onblur="searchBlur(this)" onkeyup="searchChange(this)" onchange="searchChange(this)" alt="Search" type="text">
+<input disabled="disabled" id="titlesearch" name="titlesearch" value="Titles" alt="Search Titles" type="submit">
+<input disabled="disabled" id="fullsearch" name="fullsearch" value="Text" alt="Search Full Text" type="submit">
+</div>
+</form>
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+searchChange(e);
+searchBlur(e);
+//-->
+</script>
+
+<ul id="username"><li><a href="https://wiki.ubuntu.com/DashAsBinSh?action=login" id="login" rel="nofollow">Log In / Register</a></li></ul>
+
+  <div id="sisternav">
+      <ul>
+        <li id="plain">
+            <a href="http://www.ubuntu.com/" accesskey="t">Ubuntu</a>
+        </li>
+        <li id="plain">
+            <a href="http://www.ubuntu.com/community" accesskey="t">Community</a>
+        </li>
+        <li id="plain">
+            <a href="http://www.ubuntu.com/support" accesskey="t">Support</a>
+        </li>
+        <li id="plain">
+            <a href="http://www.ubuntu.com/partners/program" accesskey="t">Partners</a>
+        </li>
+        <li id="current">
+            <a href="http://wiki.ubuntu.com/" accesskey="t">Wiki</a>
+        </li>
+        <li id="plain">
+            <a href="http://planet.ubuntulinux.org/" accesskey="t">Planet</a>
+        </li>
+      </ul>
+  </div>
+
+</div></div>
+
+
+<ul id="navibar">
+
+</ul>
+
+
+<ul id="pagetrail">
+<li><a href="https://wiki.ubuntu.com/DashAsBinSh">DashAsBinSh</a></li>
+</ul>
+<ul class="extranav">
+<li><a href="https://wiki.ubuntu.com/UserPreferences">User Preferences</a></li>
+<li><a href="https://wiki.ubuntu.com/FindPage">Find Page</a></li>
+</ul>
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li><a href="#" class="toggleCommentsButton" style="display: none;" onclick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="https://wiki.ubuntu.com/DashAsBinSh?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="https://wiki.ubuntu.com/DashAsBinSh?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="get" action="/DashAsBinSh">
+<div>
+    
+    <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="show">More Actions:</option><option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="refresh">Delete Cache</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="RenamePage" disabled="disabled" class="disabled">Rename Page</option>
+<option value="CopyPage">Copy Page</option>
+<option value="DeletePage" disabled="disabled" class="disabled">Delete Page</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="MyPages">My Pages</option>
+<option value="SubscribeUser">Subscribe User</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="Despam">Remove Spam</option>
+<option value="revert">Revert to this revision</option>
+<option value="PackagePages">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="Load">Load</option>
+<option value="Save">Save</option>
+    </select>
+    
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+
+<div id="page" dir="ltr" lang="en">
+
+
+<ul id="pagelocation">
+<li>DashAsBinSh</li>
+</ul>
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><p class="line867">
+</p><h1 id="Dash as /bin/sh">Dash as /bin/sh</h1>
+<span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><p class="line862">In Ubuntu 6.10, the default system shell, <tt class="backtick">/bin/sh</tt>, was changed to <tt class="backtick">dash</tt> (the Debian Almquist Shell); previously it had been <tt class="backtick">bash</tt>
+(the GNU Bourne-Again Shell). The same change will affect users of
+Ubuntu 6.06 LTS upgrading directly to Ubuntu 8.04 LTS. This document
+explains this change and what you should do if you encounter problems. <span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span></p><p class="line862">The default login shell remains <tt class="backtick">bash</tt>. <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span></p><p class="line867">
+</p><h2 id="Why was this change made?">Why was this change made?</h2>
+<span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><p class="line862">The major reason to switch the default shell was efficiency. <tt class="backtick">bash</tt>
+is an excellent full-featured shell appropriate for interactive use;
+indeed, it is still the default login shell. However, it is rather
+large and slow to start up and operate by comparison with <tt class="backtick">dash</tt>.
+A large number of shell instances are started as part of the Ubuntu
+boot process. Rather than change each of them individually to run
+explicitly under <tt class="backtick">/bin/dash</tt>, a change which
+would require significant ongoing maintenance and which would be liable
+to regress if not paid close attention, the Ubuntu core development
+team felt that it was best simply to change the default shell. The boot
+speed improvements in Ubuntu 6.10 were often incorrectly attributed to <a class="http" href="http://upstart.ubuntu.com/">Upstart</a>,
+which is a fine platform for future development of the init system but
+in Ubuntu 6.10 was primarily running in System V compatibility mode
+with only small behavioural changes. These improvements were in fact
+largely due to the changed <tt class="backtick">/bin/sh</tt>. <span class="anchor" id="line-10"></span><span class="anchor" id="line-11"></span></p><p class="line874">The
+Debian policy manual has long mandated that "shell scripts specifying
+'/bin/sh' as interpreter must only use POSIX features"; in fact, this
+requirement has been in place since well before the inception of the
+Ubuntu project. Furthermore, any shell scripts that expected to be
+portable to other Unix systems, such as the BSDs or Solaris, already
+honoured this requirement. Thus, we felt that the compatibility impact
+of this change would be minimal. <span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span></p><p class="line862">Of
+course, there have been a certain number of shell scripts written
+specifically for Linux systems, some of which incorrectly stated that
+they could run with <tt class="backtick">/bin/sh</tt> when in fact they required <tt class="backtick">/bin/bash</tt>,
+and these scripts will have broken due to this change. We regret this
+breakage, but feel that the proper way to address it is to make the
+small changes required to those scripts, discussed later in this
+document. In the longer term, this will promote a cleaner and more
+efficient system. <span class="anchor" id="line-14"></span><span class="anchor" id="line-15"></span></p><p class="line874">(This
+applies the same philosophy as in C and C++. Programs should be written
+to the standard, and if they use extensions they should declare them;
+that way it is clear what extensions are in use and they will at least
+fail with a much better error message if those extensions are not
+available.) <span class="anchor" id="line-16"></span><span class="anchor" id="line-17"></span></p><p class="line867">
+</p><h2 id="My production system has broken and I just want to get it back up!">My production system has broken and I just want to get it back up!</h2>
+<span class="anchor" id="line-18"></span><span class="anchor" id="line-19"></span><p class="line862">If
+you are unlucky enough to have been negatively affected by this change,
+and only one or two shell scripts are affected, then the quickest way
+to fix this is to edit these scripts and change the first line to use
+the correct interpreter. The first line should look something like this
+(perhaps with some additional options): <span class="anchor" id="line-20"></span><span class="anchor" id="line-21"></span></p><pre> #! /bin/sh</pre><p class="line862"> Change that to the following (you can preserve any options you see): <span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span></p><pre> #! /bin/bash</pre><span class="anchor" id="line-24"></span><span class="anchor" id="line-25"></span><p class="line862">In Makefiles, you can set the following variable at the top: <span class="anchor" id="line-26"></span><span class="anchor" id="line-27"></span></p><pre>SHELL = /bin/bash</pre><span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><p class="line862">If
+the problems are more widespread and you want to change the default
+system shell back, then you can instruct the package management system
+to stop installing <tt class="backtick">dash</tt> as <tt class="backtick">/bin/sh</tt>: <span class="anchor" id="line-30"></span><span class="anchor" id="line-31"></span></p><pre>sudo dpkg-reconfigure dash</pre><span class="anchor" id="line-32"></span><span class="anchor" id="line-33"></span><p class="line862">Beware
+that this is a more invasive change, will undo boot speed benefits, and
+there is even an outside chance that there are a few scripts that now
+depend on some feature of <tt class="backtick">dash</tt> that <tt class="backtick">bash</tt> does not provide! (We expect the last problem to be rare, as the feature set of <tt class="backtick">dash</tt> is largely a subset of that offered by <tt class="backtick">bash</tt>, but we mention it for completeness.) <span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span></p><p class="line867">
+</p><h2 id="I am a developer. How can I avoid this problem in future?">I am a developer. How can I avoid this problem in future?</h2>
+<span class="anchor" id="line-36"></span><span class="anchor" id="line-37"></span><p class="line862">We recommend that developers of shell scripts adhere to the <a class="http" href="http://www.opengroup.org/onlinepubs/009695399/nfindex.html">POSIX standard</a>,
+omitting those items flagged as XSI extensions. (This subset will be
+referred to as "POSIX shell" throughout the remainder of this
+document.) Doing so will improve portability to a variety of Unix
+systems, and will provide assurance that problems you encounter will be
+treated as bugs rather than as undocumented features! A special
+exception is that <tt class="backtick">echo&nbsp;-n</tt> is guaranteed to be supported, although not other <tt class="backtick">echo</tt> options (see below). <span class="anchor" id="line-38"></span><span class="anchor" id="line-39"></span></p><p class="line862">If
+you cannot use POSIX shell for some reason (perhaps you inherited
+maintenance of a large set of scripts and do not have time to rewrite
+them), then at least ensure that the first line of your script
+specifies <tt class="backtick">/bin/bash</tt> as the interpreter. <span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span></p><p class="line862">Developers targetting the <tt class="backtick">/bin/sh</tt>
+shipped by Solaris will have more stringent requirements, since that
+shell is a traditional Bourne shell predating the Korn shell and the
+POSIX standard: in particular, the <tt class="backtick">test&nbsp;-e</tt> option is absent with no replacement (though most uses can be replaced with <tt class="backtick">test&nbsp;-r</tt>), and <tt class="backtick">test&nbsp;-h</tt> must be used rather than the <tt class="backtick">test&nbsp;-L</tt> alias to test for symlinks. This document does not attempt to address Solaris in depth; consult your system's documentation. <span class="anchor" id="line-42"></span><span class="anchor" id="line-43"></span></p><p class="line862">There follows a list of some of the more common <tt class="backtick">bash</tt>
+extensions (often referred to as "bashisms"). This list is not
+complete, but we believe that it covers most of the common extensions
+found in the wild. You can use <tt class="backtick">dash&nbsp;-n</tt> to check that a script will run under <tt class="backtick">dash</tt> without actually running it; this is not a perfect test (particularly not if <tt class="backtick">eval</tt> is used), but is good enough for most purposes. The <tt class="backtick">checkbashisms</tt> command in the <tt class="backtick">devscripts</tt> package may also be helpful. <span class="anchor" id="line-44"></span><span class="anchor" id="line-45"></span></p><p class="line862">As further reading, install the <tt class="backtick">autoconf-doc</tt> package and read the "Portable Shell" pages in <tt class="backtick">info&nbsp;autoconf</tt>.
+This documentation is aimed at people targetting a wider variety of
+systems which may not support the POSIX standard, but it is
+nevertheless useful even to those assuming POSIX. <span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span></p><p class="line867">
+</p><h3 id="[">[</h3>
+<span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span><p class="line862">The <tt class="backtick">[</tt> command (a.k.a. <tt class="backtick">test</tt>) must be used carefully in portable scripts. A very common pitfall is to use the <tt class="backtick">==</tt> operator, which is a bashism; use <tt class="backtick">=</tt> instead. <span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span></p><p class="line862">While <tt class="backtick">dash</tt> supports most uses of the <tt class="backtick">-a</tt> and <tt class="backtick">-o</tt> options, they have very confusing semantics even in <tt class="backtick">bash</tt> and are best avoided. Commands like the following: <span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span></p><pre>[ \( "$foo" = "$bar" -a -f /bin/baz \) -o ! -x /bin/quux ]</pre><p class="line862"> should be replaced with: <span class="anchor" id="line-54"></span><span class="anchor" id="line-55"></span></p><pre>(([ "$foo" = "$bar" ] &amp;&amp; [ -f /bin/baz ]) || [ ! -x /bin/quux ])</pre><p class="line862"> In other words, use a separate <tt class="backtick">[</tt> invocation for each single test, combine them with <tt class="backtick">&amp;&amp;</tt> and <tt class="backtick">||</tt>, and use ordinary parentheses for grouping.<span class="anchor" id="line-56"></span><span class="anchor" id="line-57"></span></p><p class="line862">The <tt>-nt</tt> and <tt>-ot</tt>
+test operators, for comparing the timestamps of two files, are not
+defined in POSIX, and their behavior differs between bash and dash:
+dash will not return true if the second file is non-existent, where
+bash will. <span class="anchor" id="line-58"></span><span class="anchor" id="line-59"></span></p><p class="line862">NOTE: The <tt class="backtick">checkbashisms</tt> script may display warnings of type 'test -a/-o'. You could use the above example to fix this issue. <span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span></p><p class="line867">
+</p><h3 id="[[">[[</h3>
+<span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><p class="line862">The <tt class="backtick">[[</tt> builtin is a bashism, and has somewhat better-defined semantics than <tt class="backtick">[</tt> (a.k.a. <tt class="backtick">test</tt>). However, it is still quite reasonable to use <tt class="backtick">[</tt> instead, and portable scripts must do so. Note that argument handling is not quite the same; as above, use <tt class="backtick">=</tt> rather than <tt class="backtick">==</tt>. <span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span></p><p class="line862">Do not be confused by use of <tt class="backtick">[[</tt> in Autoconf macros, used to double-quote literal strings. This is for a different purpose and is not the same as <tt class="backtick">bash</tt>'s <tt class="backtick">[[</tt> builtin. (The convention in Autoconf macros is to spell <tt class="backtick">[</tt> as <tt class="backtick">test</tt> to avoid confusion.) <span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span></p><p class="line867">
+</p><h3 id="((">((</h3>
+<span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span><p class="line867"><tt class="backtick">((...))</tt> performs arithmetic expansion, but is a bashism. You should normally use something involving <tt class="backtick">$((...))</tt> instead, although note that this substitutes the value of the expression. <span class="anchor" id="line-70"></span><span class="anchor" id="line-71"></span></p><p class="line867">
+</p><h3 id="{">{</h3>
+<span class="anchor" id="line-72"></span><span class="anchor" id="line-73"></span><p class="line867"><tt class="backtick">bash</tt> supports brace expansions over strings, such as <tt class="backtick">/usr/lib/libfoo.{a,so}</tt>;
+this syntax can be useful for abbreviation, but it is not portable. Use
+other pathname expansions instead, or if that is not possible simply
+write out all the possibilities. <span class="anchor" id="line-74"></span><span class="anchor" id="line-75"></span></p><p class="line867">
+</p><h3 id="$'...'">$'...'</h3>
+<span class="anchor" id="line-76"></span><span class="anchor" id="line-77"></span><p class="line867"><tt class="backtick">$'...'</tt> is a bashism to expand escape sequences; for example, <tt class="backtick">$'\t'</tt> expands to a horizontal tab. Use <tt class="backtick">"$(printf&nbsp;'\t')"</tt> etc. instead. <span class="anchor" id="line-78"></span><span class="anchor" id="line-79"></span></p><p class="line867">
+</p><h3 id="$&quot;...&quot;">$"..."</h3>
+<span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><p class="line867"><tt class="backtick">$"..."</tt> is a bashism used for translation of strings. Even if you can assume <tt class="backtick">bash</tt>, do not use this feature, as it has intrinsic security problems! See the <a class="http" href="http://www.gnu.org/software/gettext/manual/html_node/bash.html">GNU gettext info documentation</a> for <span class="anchor" id="line-82"></span>details. <span class="anchor" id="line-83"></span><span class="anchor" id="line-84"></span></p><p class="line862">Instead, you should use the functions provided by <tt class="backtick">gettext.sh</tt>. Again, see the gettext info documentation. <span class="anchor" id="line-85"></span><span class="anchor" id="line-86"></span></p><p class="line867">
+</p><h3 id="${...}">${...}</h3>
+<span class="anchor" id="line-87"></span><span class="anchor" id="line-88"></span><p class="line862">The <tt class="backtick">${...}</tt> syntax performs variable expansion; many forms of this are portable (including the useful <tt class="backtick">${foo#bar}</tt>, <tt class="backtick">${foo##bar}</tt>, <tt class="backtick">${foo%bar}</tt>, and <tt class="backtick">${foo%%bar}</tt>, but a few are not. <span class="anchor" id="line-89"></span><span class="anchor" id="line-90"></span></p><p class="line867"><tt class="backtick">${!...}</tt> performs indirect variable expansion, which is a bashism; use <tt class="backtick">eval</tt> instead. <span class="anchor" id="line-91"></span><span class="anchor" id="line-92"></span></p><p class="line867"><tt class="backtick">${parameter/pattern/string}</tt> performs pattern replacement, which is a bashism. See the next section for suggestions on fixing this. <span class="anchor" id="line-93"></span><span class="anchor" id="line-94"></span></p><p class="line867"><tt class="backtick">${parameter:offset:length}</tt> performs substring expansion, which is a bashism. See below for suggestions on fixing this. <span class="anchor" id="line-95"></span><span class="anchor" id="line-96"></span></p><p class="line874">Array variables are not portable. <span class="anchor" id="line-97"></span><span class="anchor" id="line-98"></span></p><p class="line867">
+</p><h3 id="${parm/?/pat[/str]}">${parm/?/pat[/str]}</h3>
+<span class="anchor" id="line-99"></span><span class="anchor" id="line-100"></span><p class="line862">The '${parm/?/pat[/str]}' warning from the <tt class="backtick">checkbashisms</tt> script. <span class="anchor" id="line-101"></span><span class="anchor" id="line-102"></span></p><p class="line862">This is a parameter expansion <tt class="backtick">${parameter/pattern/string}</tt> supported in bash but not in dash. To replace these, you could make use of <tt class="backtick">echo</tt>, <tt class="backtick">sed</tt>, <tt class="backtick">grep</tt>, and/or <tt class="backtick">awk</tt> among other tools. For example. <span class="anchor" id="line-103"></span><span class="anchor" id="line-104"></span></p><p class="line867"><span class="anchor" id="line-105"></span><span class="anchor" id="line-106"></span><span class="anchor" id="line-107"></span><span class="anchor" id="line-108"></span><span class="anchor" id="line-109"></span><span class="anchor" id="line-110"></span><span class="anchor" id="line-111"></span><span class="anchor" id="line-112"></span><span class="anchor" id="line-113"></span></p><pre># A way to capture the version of OpenGL drivers being used from glxinfo.
+OPENGL_VERSION=$(glxinfo | grep "OpenGL version string:")
+OPENGL_VERSION=${OPENGL_VENDOR/*: /}
+
+# The same but compatible with dash
+OPENGL_VERSION=$(glxinfo | grep "OpenGL version string:" | awk 'BEGIN { FS = ":[[:space:]]+" }; { print $2 }')
+
+echo "$OPENGL_VERSION"</pre><span class="anchor" id="line-114"></span><span class="anchor" id="line-115"></span><p class="line874">Here's another example that may be needed when dealing with these bashisms on arrays. <span class="anchor" id="line-116"></span><span class="anchor" id="line-117"></span><span class="anchor" id="line-118"></span><span class="anchor" id="line-119"></span><span class="anchor" id="line-120"></span><span class="anchor" id="line-121"></span><span class="anchor" id="line-122"></span><span class="anchor" id="line-123"></span><span class="anchor" id="line-124"></span><span class="anchor" id="line-125"></span><span class="anchor" id="line-126"></span><span class="anchor" id="line-127"></span></p><pre># A Perl split like function that works in bash
+LIST=$(echo $PATH)
+LIST=${LIST//:/ }
+
+# The equivalent as above, but works in dash
+LIST=$(awk 'BEGIN { split( ENVIRON["PATH"], array, ":"); for (i=1;i&lt;=length(array);i++) { print array[i]; } }')
+
+for WORD in $LIST; do
+        printf "$WORD\n"
+done</pre><span class="anchor" id="line-128"></span><span class="anchor" id="line-129"></span><p class="line874">A simple and general way, but requires tr: <span class="anchor" id="line-130"></span><span class="anchor" id="line-131"></span><span class="anchor" id="line-132"></span></p><pre>echo $(echo "originalstring" | tr -s "substringsearched" "newsubstring")</pre><span class="anchor" id="line-133"></span><span class="anchor" id="line-134"></span><p class="line867">
+</p><h3 id="${foo:3[:1]}">${foo:3[:1]}</h3>
+<span class="anchor" id="line-135"></span><span class="anchor" id="line-136"></span><p class="line862">The '${foo:3[:1]}' warning from the <tt class="backtick">checkbashisms</tt> script. <span class="anchor" id="line-137"></span><span class="anchor" id="line-138"></span></p><p class="line862">This is a substring expansion <tt class="backtick">${parameter:offset:length}</tt> supported in bash but not in dash. Here's a way to replace such expansions. <span class="anchor" id="line-139"></span><span class="anchor" id="line-140"></span></p><p class="line867"><span class="anchor" id="line-141"></span><span class="anchor" id="line-142"></span><span class="anchor" id="line-143"></span><span class="anchor" id="line-144"></span><span class="anchor" id="line-145"></span><span class="anchor" id="line-146"></span><span class="anchor" id="line-147"></span><span class="anchor" id="line-148"></span><span class="anchor" id="line-149"></span><span class="anchor" id="line-150"></span><span class="anchor" id="line-151"></span></p><pre># Substring expansion in bash
+string_after="some string"
+string=${string_after:0:3}
+
+# Equivalent substring expansion in dash.
+# NOTE: The offset to use in awk is different than in bash.
+# It is equivalent to '&lt;bash_offset&gt; + 1'.
+string=$(echo $string_after | awk  '{ string=substr($1, 1, 3); print string; }' )
+
+echo $string</pre><span class="anchor" id="line-152"></span><span class="anchor" id="line-153"></span><p class="line874">Here's another example in which we use two variables in awk. <span class="anchor" id="line-154"></span><span class="anchor" id="line-155"></span></p><p class="line867"><span class="anchor" id="line-156"></span><span class="anchor" id="line-157"></span><span class="anchor" id="line-158"></span><span class="anchor" id="line-159"></span><span class="anchor" id="line-160"></span><span class="anchor" id="line-161"></span></p><pre>string="some string"
+stringlen=${#string}
+string=$(echo $string | awk -v var=$stringlen '{ string=substr($1, 1, var - 1); print string; }' )
+
+echo string</pre><span class="anchor" id="line-162"></span><span class="anchor" id="line-163"></span><p class="line867">
+</p><h3 id="$LINENO">$LINENO</h3>
+<span class="anchor" id="line-164"></span><span class="anchor" id="line-165"></span><p class="line862">POSIX requires that conforming shells expand the special parameter <tt class="backtick">$LINENO</tt> to the current line number in a script or function; <tt class="backtick">dash</tt> does not yet support this feature. <span class="anchor" id="line-166"></span><span class="anchor" id="line-167"></span></p><p class="line867">
+</p><h3 id="$PIPESTATUS">$PIPESTATUS</h3>
+<span class="anchor" id="line-168"></span><span class="anchor" id="line-169"></span><p class="line862">The <tt class="backtick">$PIPESTATUS</tt> array variable in <tt class="backtick">bash</tt>
+contains a list of exit status values from the processes in the
+most-recently-executed foreground pipeline, which can be useful to
+detect failing processes that are not the last in their pipeline. <tt class="backtick">dash</tt>
+does not support this. Replacing this is messy; the least bad
+replacement is probably to echo the exit status to an unused file
+descriptor. <span class="anchor" id="line-170"></span><span class="anchor" id="line-171"></span></p><p class="line867">
+</p><h3 id="$RANDOM">$RANDOM</h3>
+<span class="anchor" id="line-172"></span><span class="anchor" id="line-173"></span><p class="line862">Many shells, including <tt class="backtick">bash</tt>, have a magic variable <tt class="backtick">$RANDOM</tt>
+which expands to a random integer. You should not rely on this in
+portable scripts. Workarounds include reading random bytes from <tt class="backtick">/dev/urandom</tt> or <tt class="backtick">/dev/random</tt>. <span class="anchor" id="line-174"></span><span class="anchor" id="line-175"></span></p><p class="line874">For example. <span class="anchor" id="line-176"></span><span class="anchor" id="line-177"></span><span class="anchor" id="line-178"></span></p><pre>random="$(dd if=/dev/urandom count=1 2&gt; /dev/null | cksum | cut -f1 -d" " )"</pre><span class="anchor" id="line-179"></span><span class="anchor" id="line-180"></span><p class="line867">
+</p><h3 id="echo">echo</h3>
+<span class="anchor" id="line-181"></span><span class="anchor" id="line-182"></span><p class="line862">Options to <tt class="backtick">echo</tt> are not portable. In particular, the <tt class="backtick">echo&nbsp;-e</tt> option is implemented by some shells, including <tt class="backtick">bash</tt>, to expand escape sequences. However, <tt class="backtick">dash</tt>
+is one of the other family of shells that instead expands escape
+sequences by default. Do not rely on either behaviour. If you need to
+print a string including any backslash characters, use the <tt class="backtick">printf</tt> command instead, which is portable and much more reliable. <span class="anchor" id="line-183"></span><span class="anchor" id="line-184"></span></p><p class="line862">As a special exception, <tt class="backtick">echo&nbsp;-n</tt> is supported on Ubuntu systems, although you may replace it with <tt class="backtick">printf</tt> if you are concerned about wider portability. <span class="anchor" id="line-185"></span><span class="anchor" id="line-186"></span></p><p class="line867">
+</p><h3 id="function">function</h3>
+<span class="anchor" id="line-187"></span><span class="anchor" id="line-188"></span><p class="line862">The <tt class="backtick">function</tt>
+builtin is a bashism, and can almost always simply be removed. If you
+remove it, make sure that there are parentheses after the function
+name. A function definition in POSIX shell looks like this: <span class="anchor" id="line-189"></span><span class="anchor" id="line-190"></span><span class="anchor" id="line-191"></span><span class="anchor" id="line-192"></span></p><pre>function_name () {
+    function body
+}</pre><span class="anchor" id="line-193"></span><span class="anchor" id="line-194"></span><p class="line867">
+</p><h3 id="let">let</h3>
+<span class="anchor" id="line-195"></span><span class="anchor" id="line-196"></span><p class="line862">The <tt class="backtick">let</tt> builtin is a bashism. It can usually be replaced by arithmetic expansion, for example: <span class="anchor" id="line-197"></span><span class="anchor" id="line-198"></span></p><p class="line867"><span class="anchor" id="line-199"></span><span class="anchor" id="line-200"></span><span class="anchor" id="line-201"></span></p><pre>-    let times--
++    times=$((times-1))</pre><span class="anchor" id="line-202"></span><span class="anchor" id="line-203"></span><p class="line867">
+</p><h3 id="select">select</h3>
+<span class="anchor" id="line-204"></span><span class="anchor" id="line-205"></span><p class="line862">The <tt class="backtick">select</tt>
+builtin is a bashism. If you need it, sometimes you can write the same
+logic out by hand, perhaps in a shell function; otherwise it may be
+best to use <tt class="backtick">/bin/bash</tt>. <span class="anchor" id="line-206"></span><span class="anchor" id="line-207"></span></p><p class="line867">
+</p><h3 id="source">source</h3>
+<span class="anchor" id="line-208"></span><span class="anchor" id="line-209"></span><p class="line862">The <tt class="backtick">source</tt> builtin is a bashism. Write this simply as <tt class="backtick">.</tt> instead. <span class="anchor" id="line-210"></span><span class="anchor" id="line-211"></span></p><p class="line867">
+</p><h3 id="`dash` doesn't expand `~` on path search">`dash` doesn't expand `~` on path search</h3>
+<span class="anchor" id="line-212"></span><span class="anchor" id="line-213"></span><p class="line862">This means that if you have <tt class="backtick">~/bin</tt> in the <tt class="backtick">PATH</tt> environment variable, <tt class="backtick">bash</tt> finds commands located in <tt class="backtick">~/bin</tt>, while <tt class="backtick">dash</tt> doesn't. <span class="anchor" id="line-214"></span><span class="anchor" id="line-215"></span></p><p class="line862">This also causes python code like: <span class="anchor" id="line-216"></span><span class="anchor" id="line-217"></span><span class="anchor" id="line-218"></span></p><pre>p4 = subprocess.Popen('p4 files', shell=True)
+exitCode = p4.wait()</pre><p class="line874"> <span class="anchor" id="line-219"></span><span class="anchor" id="line-220"></span></p><p class="line862">... which would attempt to execute <tt class="backtick">p4</tt> from <tt class="backtick">~/bin</tt> through the default shell would fail to find <tt class="backtick">p4</tt> when <tt class="backtick">/bin/sh</tt> points to <tt class="backtick">dash</tt>, but not when it points to <tt class="backtick">bash</tt>. <span class="anchor" id="line-221"></span><span class="anchor" id="line-222"></span></p><p class="line862">To avoid this, make sure that you change the line that appends <tt class="backtick">~/bin</tt> to search path in your old .bash_profile or .profile. Instead of:<span class="anchor" id="line-223"></span></p><pre>PATH="~/bin:$PATH"</pre><span class="anchor" id="line-224"></span><p class="line862">use<span class="anchor" id="line-225"></span></p><pre>PATH="$HOME/bin:$PATH"</pre><span class="anchor" id="line-226"></span><span class="anchor" id="line-227"></span><p class="line867">
+</p><h3 id="declare or typeset">declare or typeset</h3>
+<span class="anchor" id="line-228"></span><span class="anchor" id="line-229"></span><p class="line862">The 'declare' or 'typeset' warning from the <tt class="backtick">checkbashisms</tt> script. <span class="anchor" id="line-230"></span><span class="anchor" id="line-231"></span></p><p class="line862">The
+declare or typeset builtins in bash (they are exact synonyms) permit
+restricting the properties of variables. For example, you can declare a
+variable to be an integer type variable by using <tt class="backtick">-i</tt>. <span class="anchor" id="line-232"></span><span class="anchor" id="line-233"></span></p><p class="line874">Both
+'declare' and 'typeset' are not supported in dash. When changing from
+using declare/typeset, you normally could switch declare/typeset with
+local and continue as before. <span class="anchor" id="line-234"></span><span class="anchor" id="line-235"></span></p><p class="line862">Some other examples to consider (here we'll use <tt class="backtick">declare</tt> in our examples). <span class="anchor" id="line-236"></span><span class="anchor" id="line-237"></span></p><p class="line867"><span class="anchor" id="line-238"></span><span class="anchor" id="line-239"></span><span class="anchor" id="line-240"></span><span class="anchor" id="line-241"></span><span class="anchor" id="line-242"></span><span class="anchor" id="line-243"></span><span class="anchor" id="line-244"></span><span class="anchor" id="line-245"></span><span class="anchor" id="line-246"></span><span class="anchor" id="line-247"></span><span class="anchor" id="line-248"></span><span class="anchor" id="line-249"></span><span class="anchor" id="line-250"></span><span class="anchor" id="line-251"></span><span class="anchor" id="line-252"></span><span class="anchor" id="line-253"></span><span class="anchor" id="line-254"></span><span class="anchor" id="line-255"></span><span class="anchor" id="line-256"></span><span class="anchor" id="line-257"></span><span class="anchor" id="line-258"></span><span class="anchor" id="line-259"></span><span class="anchor" id="line-260"></span><span class="anchor" id="line-261"></span><span class="anchor" id="line-262"></span><span class="anchor" id="line-263"></span><span class="anchor" id="line-264"></span><span class="anchor" id="line-265"></span><span class="anchor" id="line-266"></span><span class="anchor" id="line-267"></span><span class="anchor" id="line-268"></span><span class="anchor" id="line-269"></span><span class="anchor" id="line-270"></span><span class="anchor" id="line-271"></span><span class="anchor" id="line-272"></span><span class="anchor" id="line-273"></span><span class="anchor" id="line-274"></span><span class="anchor" id="line-275"></span><span class="anchor" id="line-276"></span><span class="anchor" id="line-277"></span><span class="anchor" id="line-278"></span><span class="anchor" id="line-279"></span></p><pre># A variable declared with no attributes
+-declare foo
++local foo
+
+# Variables declared as arrays. Changed the same way as variables
+# declared as integers
+-declare -a foo
++local foo
+
+# Variables declared as integers. Usually, nothing else needs to be done
+# besides declaring these variables as local variables.
+-declare -i foo
++local foo
+
+# Declaring variables readonly from bash to dash
+-declare -r foo
++readonly foo
+
+# Using declare -f [functions]
+-declare -f
++printf "&lt;contents of function1&gt;"
++printf "&lt;contents of function2&gt;"
++# repeat this until the last function
+-declare -f function1 function2 ... functionN
++printf "&lt;contents of function1&gt;"
++printf "&lt;contents of function2&gt;"
++# repeat this until functionN
+
+# Using declare -F [functions]
+-declare -F
++printf "declare -f &lt;name of function1&gt;"
++printf "declare -f &lt;name of function2&gt;"
++# repeat this until the last function
+-declare -F function1 function2 ... functionN
++printf "&lt;name of function1&gt;"
++printf "&lt;name of function2&gt;"
++# repeat this until functionN
+
+# Using declare -x var[=value]
+-declare -x var=value
++export var=value</pre><span class="anchor" id="line-280"></span><span class="anchor" id="line-281"></span><p class="line867">
+</p><h3 id="ulimit">ulimit</h3>
+<span class="anchor" id="line-282"></span><span class="anchor" id="line-283"></span><p class="line862">The 'ulimit' warning from the <tt class="backtick">checkbashisms</tt> script. <span class="anchor" id="line-284"></span><span class="anchor" id="line-285"></span></p><p class="line867"><tt class="backtick">ulimit</tt>
+is a builtin in dash as well as bash. Some changes may be needed
+however as they support different options between bash and dash. <span class="anchor" id="line-286"></span><span class="anchor" id="line-287"></span></p><p class="line867">
+</p><h3 id="type">type</h3>
+<span class="anchor" id="line-288"></span><span class="anchor" id="line-289"></span><p class="line862">The 'type' warning from the <tt class="backtick">checkbashisms</tt> script. <span class="anchor" id="line-290"></span><span class="anchor" id="line-291"></span></p><p class="line867"><tt class="backtick">type</tt>
+is a builtin in dash as well as bash. Some changes may be needed
+however as they support different options between bash and dash. <span class="anchor" id="line-292"></span><span class="anchor" id="line-293"></span></p><p class="line867">
+</p><h3 id="time">time</h3>
+<span class="anchor" id="line-294"></span><span class="anchor" id="line-295"></span><p class="line862">The 'time' warning from the <tt class="backtick">checkbashisms</tt> script. <span class="anchor" id="line-296"></span><span class="anchor" id="line-297"></span></p><p class="line867"><tt class="backtick">time</tt> is a special builtin for bash, but not for dash. The program <tt class="backtick">time</tt> will be used instead under dash. <span class="anchor" id="line-298"></span><span class="anchor" id="line-299"></span></p><p class="line862">The simplest way to resolve this is to ensure the package with the shell script depends on the <tt class="backtick">time</tt> package. <span class="anchor" id="line-300"></span><span class="anchor" id="line-301"></span></p><p class="line862">Also, the following can be used to check for the presence of the <tt class="backtick">time</tt> program. <span class="anchor" id="line-302"></span><span class="anchor" id="line-303"></span><span class="anchor" id="line-304"></span><span class="anchor" id="line-305"></span><span class="anchor" id="line-306"></span><span class="anchor" id="line-307"></span><span class="anchor" id="line-308"></span><span class="anchor" id="line-309"></span><span class="anchor" id="line-310"></span><span class="anchor" id="line-311"></span></p><pre># simple one liner
+which time &gt;/dev/null 2&gt;&amp;1 || { echo "time is not installed." &amp;&amp; exit 1; }
+
+# if statement
+if [ ! "$(command -v time)" ]; then
+    echo "time is not installed"
+    exit 1
+fi</pre><span class="anchor" id="line-312"></span><span class="anchor" id="line-313"></span><p class="line867">
+</p><h3 id="kill -[0-9] or -[A-Z]">kill -[0-9] or -[A-Z]</h3>
+<span class="anchor" id="line-314"></span><span class="anchor" id="line-315"></span><p class="line862">The 'kill -[0-9] or -[A-Z]' warning from the <tt class="backtick">checkbashisms</tt> script. <span class="anchor" id="line-316"></span><span class="anchor" id="line-317"></span></p><p class="line862">kill is a special builtin in dash, however it is currently undocumented (see <a class="http" href="http://bugs.debian.org/396821">bug #396821</a>). <span class="anchor" id="line-318"></span><span class="anchor" id="line-319"></span></p><p class="line867">
+</p><h3 id="read without variable">read without variable</h3>
+<span class="anchor" id="line-320"></span><p class="line867">
+</p><h3 id="read with option other than -r">read with option other than -r</h3>
+<span class="anchor" id="line-321"></span><span class="anchor" id="line-322"></span><p class="line874">The
+name of a variable should be passed to the 'read' built-in; in bash,
+when none is passed, the input is stored in the REPLY variable. I.e. a
+quick way to fix it is by replacing calls to 'read' without variable
+with 'read REPLY'. <span class="anchor" id="line-323"></span><span class="anchor" id="line-324"></span></p><p class="line874">If 'read' is called with the -p option, it can be replaced with a consecutive call to 'echo -n' or 'printf' and 'read'. <span class="anchor" id="line-325"></span><span class="anchor" id="line-326"></span></p><p class="line867"><span class="anchor" id="line-327"></span><span class="anchor" id="line-328"></span><span class="anchor" id="line-329"></span><span class="anchor" id="line-330"></span><span class="anchor" id="line-331"></span><span class="anchor" id="line-332"></span><span class="anchor" id="line-333"></span><span class="anchor" id="line-334"></span><span class="anchor" id="line-335"></span></p><pre># Bashism:
+read -p "Enter $user's real name: "
+# Replacement #1 (recommended):
+printf "Enter %s's real name: " "$user"
+read REPLY
+# Replacement #2:
+echo -n "Enter $user's real name: "
+read REPLY</pre><span class="anchor" id="line-336"></span><span class="anchor" id="line-337"></span><span class="anchor" id="line-338"></span><p class="line874">Note: some versions of checkbashisms used to combine both checks in one which was explained as "should be read [-r] variable". <span class="anchor" id="line-339"></span><span class="anchor" id="line-340"></span><span class="anchor" id="line-341"></span></p><p class="line867">
+</p><h3 id="Other warnings">Other warnings</h3>
+<span class="anchor" id="line-342"></span><span class="anchor" id="line-343"></span><p class="line862">Here's a list of other warnings that appear using <tt class="backtick">checkbashisms</tt>.
+If anyone willing to document their meaning and possible alternatives,
+please do so. A good package to find these errors is heartbeat (&lt;=
+2.1.4-2). <span class="anchor" id="line-344"></span><span class="anchor" id="line-345"></span></p><ul><li>trap with signal numbers <span class="anchor" id="line-346"></span><span class="anchor" id="line-347"></span></li></ul><p class="line867">
+</p><h2 id="Specification">Specification</h2>
+<span class="anchor" id="line-348"></span><span class="anchor" id="line-349"></span><p class="line862">The old developer specification is preserved as <a href="https://wiki.ubuntu.com/DashAsBinSh/Spec">DashAsBinSh/Spec</a>. <span class="anchor" id="line-350"></span><span class="anchor" id="bottom"></span></p></div><p id="pageinfo" class="info" dir="ltr" lang="en">DashAsBinSh  (last edited 2009-06-14 17:19:13 by <span title="https://login.launchpad.net/+id/fBetR3T @ customer-XAL-223-186.megared.net.mx[200.52.223.186]"><a class="interwiki" href="https://launchpad.net/%7Eatomo64" title="https://login.launchpad.net/+id/fBetR3T @ customer-XAL-223-186.megared.net.mx[200.52.223.186]">Raphael Geissert</a></span>)</p>
+
+<div id="pagebottom"></div>
+</div>
+
+
+<div id="footer">
+
+  <div id="ubuntulinks">
+     © 2008 <a href="http://www.canonical.com/">Canonical Ltd</a>. Ubuntu, Kubuntu, Edubuntu, Xubuntu and Canonical are registered trademarks of Canonical Ltd.<br>
+     <a href="http://www.ubuntu.com/feedback">Feedback</a> — 
+     <a href="http://www.ubuntu.com/legal">Legal</a> — 
+     <a href="https://wiki.ubuntu.com/wiki/credits">Credits</a> — 
+     <a href="http://www.ubuntu.com/sitemap">Site Map</a> —
+     <a href="http://moinmoin.wikiwikiweb.de/">Powered By the MoinMoin Wiki Engine</a>
+  </div>
+<script src="DashAsBinSh_files/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1018242-7";
+urchinTracker();
+__utmSetVar('UbuntuWiki');
+</script>
+
+
+</div>
+</body></html>

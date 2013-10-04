@@ -1,0 +1,207 @@
+! pik_n.pcm
+! gh   02.03.20
+
+enable echo
+clear
+
+m_e=0.000511
+m_pi=0.13957
+m_k=0.49368
+m_p=0.93827
+
+i=0
+do j=[0.5:12.0:0.1]
+i=i+1
+p[i]=j
+enddo
+
+beta_e=p/sqrt(p**2+m_e**2)
+beta_pi=p/sqrt(p**2+m_pi**2)
+beta_k=p/sqrt(p**2+m_k**2)
+beta_p=p/sqrt(p**2+m_p**2)
+
+nmin_e=1/beta_e-1
+nmin_pi=1/beta_pi-1
+nmin_k=1/beta_k-1
+nmin_p=1/beta_p-1
+
+!window 30 0 67 100 100
+window 5
+orientation portrait
+label\xaxis `Momentum (GeV/c)'
+label\yaxis `n<D>threshold<U> -1'
+set linthk 3
+set ylog 10
+set nsyinc 10
+set %xlaxis 25
+scale 2 12 5 -4.5 -0.5 4
+set nsxinc 2
+set font triumf.2
+
+set lintyp 1
+col 1
+graph p nmin_p
+set lintyp 8
+col 2
+graph\noaxes p nmin_k
+set lintyp 5
+col 3
+graph\noaxes p nmin_pi
+
+! min n for pi
+press_pi=(nmin_pi)/(1.00143-1)
+
+! computations for pi/K separation
+n_pikm=(nmin_k-nmin_pi)+nmin_pi+1
+press_pikm=(n_pikm-1)/(1.00143-1)
+
+! computations for K/p separation
+n_kpm=(nmin_p-nmin_k)+nmin_k+1
+press_kpm=(n_kpm-1)/(1.00143-1)
+
+!window 31 0 33 100 67
+window 7
+label\yaxis 
+scale 2 12 5 -2 2 4
+
+col 1
+set lintyp 1
+graph p press_kpm
+set lintyp 8
+col 2
+graph\noaxes p press_pikm
+col 3
+set lintyp 5
+graph\noaxes p press_pi
+
+! set limits consistent with good pi+/K+ separation
+! Keep in mind that for a given SHMS Central P, we can have pi+ with P-10% 
+! and K+ with P+10%
+! the goal is that for these disparate momenta, the pressure is still 0.1 atm
+! below the minimum pressure required for K+
+! the 55% factor, below, seems to accomplish this.
+
+n_pik=(nmin_k-nmin_pi)*0.55+nmin_pi+1
+press_pik=(n_pik-1)/(1.00143-1)
+
+!n_kp=(nmin_p-nmin_k)*0.55+nmin_k+1
+!press_kp=(n_kp-1)/(1.00143-1)
+
+! set limits consistent with the vapor pressure
+lenp=len(p)
+do  j=[1:lenp]
+  if (press_pik[j]>1) then
+     if (press_pi[j]>=0.666) then press_pik[j]=press_pi[j]*1.5
+     if (press_pi[j]<0.666) then press_pik[j]=1
+     if (press_pik[j]>2) then press_pik[j]=2
+  endif
+enddo
+
+n_pik2=press_pik*(1.00143-1)+1
+!n_kp2=press_kp*(1.00143-1)+1
+
+col 4
+set lintyp 7
+graph\noaxes p press_pik
+
+window 5
+scale 2 12 5 -4.5 -0.5 4
+graph\noaxes p n_pik2-1
+
+! calculate the number of P.E.'s for 0.65m of gas and taking into account
+! the instrumentation wavelength characteristics via
+!   q1 +q2*lambda +q3*(lambda**2) +q4*(lambda**3) +q5*(lambda**4) +p6*(lambda**5)
+! where lambda is in m from 180 to 630 nm, and
+q1= 0.56189
+q2=-1.05897e07
+q3= 6.64463e13
+q4=-1.66962e20
+q5= 1.80688e26
+q6=-7.03064e31
+! and assuming that 80% of the light is focussed onto the PMTs
+
+pef=2*3.1415/137*(1-1/(beta_pi*n_pik2)**2)*0.65*0.8
+l1=630.e-9
+l2=180.e-9
+
+pe_pik=pef*(-q1/l1+q2*ln(l1)+q3*l1+q4*(l1**2)/2+q5*(l1**3)/3+q6*(l1**4)/4 +q1/l2-q2*ln(l2)-q3*l2-q4*(l2**2)/2-q5*(l2**3)/3-q6*(l2**4)/4)
+
+!pe_kp=2*3.1415/137*(1-1/(beta_k*n_kp2)**2)*(1/275.e-9 - 1/500.e-9)*0.2*0.65*0.5
+
+! calculate the number of p.e.'s electrons will give for the same gas pressure
+
+pef2=2*3.1415/137*(1-1/(beta_e*n_pik2)**2)*0.65*0.8
+pe_e=pef2*(-q1/l1+q2*ln(l1)+q3*l1+q4*(l1**2)/2+q5*(l1**3)/3+q6*(l1**4)/4 +q1/l2-q2*ln(l2)-q3*l2-q4*(l2**2)/2-q5*(l2**3)/3-q6*(l2**4)/4)
+
+!window 32 0 0 100 33
+window 6
+label\yaxis `Photoelectrons'
+scale 2 12 5 5 25 4
+set ylog 0
+set nsyinc 5
+
+set lintyp 8
+col 4
+set lintyp 7
+graph p pe_pik
+!col 2
+!graph\noaxes p pe_e
+
+! calculate the detection efficiency, assuming that there is an experimental
+! cut at 1.5pe to eliminate knock-on events
+
+i=0
+do j=[0:30:0.1]
+  i=i+1
+  x[i]=j
+enddo
+
+scalar\dummy k
+
+do i=[1:lenp]
+  y=(pe_pik[i]**x)*(exp(-pe_pik[i]))/gamma(x+1)
+  sumylo[i]=sum(y[k],k,1:15)/10
+  sumy[i]=sum(y[k],k,1:len(y))/10
+enddo
+eff_pik=1-(sumy-sumylo)/sumy*(1-exp(-pe_pik))
+
+window 8
+label\yaxis `Inefficiency <1.5 p.e.'
+!label\yaxis 
+!set ylog 10
+!scale 2 12 5 -9 -2.4 5
+scale 2 12 5 0 3e-3 5
+set nydig 2
+!set nsyinc 10
+set nsyinc 2
+
+col 4
+set lintyp 7
+graph p eff_pik
+
+list p press_pik press_pikm
+
+col 1
+set %txthit 3
+text `C<D>4<U>F<D>10<U> Pressure (atm)'
+!col 4
+!text `Inefficiency <1.5 p.e.'
+window 0
+set %txthit 1.8
+col 1
+text `p'
+col 2
+text `K<U>+'
+col 3
+text `<pi><U>+'
+set %txthit 1.6
+col 1
+text `K/p max'
+col 2
+text `<pi>/K max'
+col 3
+text `<pi> min'
+set %txthit 2.4
+col 4
+text `<pi>'
+text `<pi>'

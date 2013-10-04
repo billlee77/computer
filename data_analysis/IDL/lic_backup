@@ -1,0 +1,15 @@
+############ license file comments, do not delete ###############
+# License Number(s): STAR404446-18 
+SERVER astro 000E0C4EE25D 1700
+USE_SERVER
+DAEMON idl_lmgrd
+INCREMENT idl_wavelet idl_lmgrd 7.100 1-jan-0000 10 \
+	DD0ABD70993CBB8C32FB VENDOR_STRING="STAR404446-18University of \
+	Kent" ck=114 
+INCREMENT idl_bridge_assist idl_lmgrd 7.100 1-jan-0000 10 \
+	DD0AADC078143D033442 VENDOR_STRING="STAR404446-18University of \
+	Kent" ck=14 
+INCREMENT idl idl_lmgrd 7.100 1-jan-0000 60 9DEA9D70FC3A3B47A4E3 \
+	VENDOR_STRING="STAR404446-18University of Kent" ck=103 
+FEATURESET idl_lmgrd F013311CA4CC399D
+##################### end of license file #######################

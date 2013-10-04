@@ -1,0 +1,190 @@
+Date: 19/09/2013
+
+Step 1: Disk Patitioning
+
+Name		 Size			Partion
+sda1 		 500MB			/boot
+sda2 		 500GB			/home
+sda3		 30GB	    /
+sda4		                Extended
+sda5		 4GB			/swap
+sda6		 419GB			/nobackup
+
+
+
+
+Step 2: Create Users and Groups
+
+Huberg
+Garth Huberg
+UserID:	 500
+GroupID: 500
+
+Billlee
+Bill Li
+UserID:  510
+GroupId: 510
+
+g4user
+G4 user
+UserID:  501
+GroupID: 501
+
+
+Step 3: Time sync
+Server address:
+	time.nrc.ca
+
+
+step 4: Add addition Repo if needed
+
+	add: elrepo, atrpms, epel
+	
+
+Step 5: Configuration
+		
+		Restoreing hosts, hosts_denny, hosts_allow, aliases into /etc/
+
+		Configuring /etc/ssh/ssh_config, by adding 
+			X11FORWARDING yes
+		
+		Tick in the configuration : run command as login shell
+		
+
+
+Step 6: Package Installed
+		skype vim-x11 gv gimp pine pdftool skype latex gvim emacs vnc openoffice vncserver tkdiff xfig java tgif svn unrar alacarte policycoreutils-gui xcircuit qcad paw x11vnc pdf-tool a2ps logwatch php apcupsd filezilla gparted vnc-server gcc gfortran gcc-c++ pyqt4 pyqt4-dev
+
+Step 7: Enable service 
+		Use the service configuration tool in: Main Manu-> System-> Administration-> Services
+		Enable the service: httpd 
+
+
+Step 8: Setting Firewall
+		
+ 		User Firewall configuration tool in: Main Manu-> System-> Administration-> Firewall
+		Allow SSH 							22/tcp  
+		Allow WWW (HTTP)					80/tcp
+		Allow Network Printing Client(IPP)	631/udp
+
+Step 9: selinux Setting Change
+		In order to allow httpd access /home/user/public_html file, selinux mode need to be changed from Enforcing mode to permissive.
+		To do this we need to configure in
+
+		/etc/selinux/config
+		change SELINUX=enforcing to SELINUX=permissive
+		
+		Then /home/user/public_html is accessable
+
+Step 10: Disk labelling & /etc/fstab configuration
+
+	use "$/sbin/e2label /dev/sda1 boot " command to label all partitions
+
+	edit /etc/fstab file:
+	#############  
+		LABEL=slash	/                       ext4    defaults        1 1
+		LABEL=boot	/boot                   ext4    defaults        1 2
+		LABEL=home	/home                   ext4    defaults        1 2
+		LABEL=nobackup	/nobackup               ext4    defaults        1 2
+		LABEL=f6d14f04-a8d7-4614-9301-eddcfb7b5987	swap                    swap    defaults        0 0
+    ########
+
+	change UUID address into new label
+
+step 11: Install skype:
+
+*******************************************************
+How to install Skype on to Fedora 13 x86_64
+
+Installing skype on Fedora 13 x86_64 is quite messy. I have to install all i686 dependencies packages in order to make skype run.
+
+To put it simple, you can perform it in a single commandline to install skype onto your Fedora Linux Machine after STEP-1 by issuing below command:
+
+[tj@localhost ~]$ su -c ‘yum –nogpgchek localinstall skype-2.1.0.81-fc10.i586.rpm glibc.i686 alsa-lib.i686 libXv.i686 libXScrnSaver.i686 qt.i686 qt-x11.i686′
+
+All you need to do is by performing STEP-3 to check if all dependencies is satisfied. Otherwise, perform STEP-3, STEP-4, and STEP-5 repeatedly until all dependencies is satisfied.
+
+1. Get the latest rpm version of skype here
+
+http://www.skype.com/go/getskype-linux-beta-fc10
+
+I got skype-2.1.0.81-fc10.i586.rpm
+
+2. [tj@localhost ~]$ su -c ‘yum –nogpgchek localinstall skype-2.1.0.81-fc10.i586.rpm’
+
+3. [tj@localhost ~]$ skype
+bash: /usr/bin/skype: /lib/ld-linux.so.2: bad ELF interpreter: No such file or directory
+
+4. [tj@localhost ~]$ yum whatprovides ld-linux.so.2
+Loaded plugins: presto, refresh-packagekit
+glibc-2.12-1.i686 : The GNU libc libraries
+Repo        : fedora
+Matched from:
+Other       : ld-linux.so.2
+
+5. [tj@localhost ~]$ su -c ‘yum install glibc.i686′
+
+6. [tj@localhost ~]$ skype
+skype: error while loading shared libraries: libasound.so.2: cannot open shared object file: No such file or directory
+
+7. [tj@localhost ~]$ yum whatprovides libasound.so.2
+Loaded plugins: presto, refresh-packagekit
+alsa-lib-1.0.23-1.fc13.i686 : The Advanced Linux Sound Architecture (ALSA)
+: library
+Repo        : fedora
+Matched from:
+Other       : libasound.so.2
+
+8. [tj@localhost ~]$ su -c ‘yum install alsa-lib.i686′
+
+9. [tj@localhost ~]$ skype
+skype: error while loading shared libraries: libXv.so.1: cannot open shared object file: No such file or directory
+
+10. [tj@localhost ~]$ yum whatprovides libXv.so.1
+Loaded plugins: presto, refresh-packagekit
+libXv-1.0.5-1.fc13.i686 : X.Org X11 libXv runtime library
+Repo        : fedora
+Matched from:
+Other       : libXv.so.1
+
+11. [tj@localhost ~]$ su -c ‘yum install libXv.i686′
+
+12. [tj@localhost ~]$ skype
+skype: error while loading shared libraries: libXss.so.1: cannot open shared object file: No such file or directory
+
+13. [tj@localhost ~]$ yum whatprovides libXss.so.1
+Loaded plugins: presto, refresh-packagekit
+libXScrnSaver-1.2.0-1.fc12.i686 : X.Org X11 libXss runtime library
+Repo        : fedora
+Matched from:
+Other       : libXss.so.1
+
+14. [tj@localhost ~]$ su -c ‘yum install libXScrnSaver.i686′
+
+15. [tj@localhost ~]$ skype
+skype: error while loading shared libraries: libQtDBus.so.4: cannot open shared object file: No such file or directory
+
+16. [tj@localhost ~]$ yum whatprovides libQtDBus.so.4
+Loaded plugins: presto, refresh-packagekit
+1:qt-4.6.2-16.fc13.i686 : Qt toolkit
+Repo        : fedora
+Matched from:
+Other       : libQtDBus.so.4
+
+17. [tj@localhost ~]$ su -c ‘yum install qt.i686′
+
+18. [tj@localhost ~]$ skype
+skype: error while loading shared libraries: libQtGui.so.4: cannot open shared object file: No such file or directory
+
+19. [tj@localhost ~]$ yum whatprovides libQtGui.so.4
+Loaded plugins: presto, refresh-packagekit
+1:qt-x11-4.6.2-16.fc13.i686 : Qt GUI-related libraries
+Repo        : fedora
+Matched from:
+Other       : libQtGui.so.4
+
+20. [tj@localhost ~]$ su -c ‘yum install qt-x11.i686′
+***********************************************************
+
+
+

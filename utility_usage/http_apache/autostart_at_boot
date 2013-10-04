@@ -1,0 +1,813 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><style title="hotlinks" media="screen" type="text/css"></style>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>   How to auto start Apache during boot time – Linux - Techie Corner </title>
+
+<link rel="stylesheet" href="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/style.css" type="text/css" media="screen">
+<link rel="pingback" href="http://www.techiecorner.com/xmlrpc.php">
+
+
+<link rel="alternate" type="application/rss+xml" title="Techie Corner » Feed" href="http://www.techiecorner.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Techie Corner » Comments Feed" href="http://www.techiecorner.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Techie Corner » How to auto start Apache during boot time – Linux Comments Feed" href="http://www.techiecorner.com/104/how-to-auto-start-apache-during-boot-time-linux/feed/">
+<link rel="stylesheet" id="wp-pagenavi-css" href="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/pagenavi-css.css" type="text/css" media="all">
+<script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/l10n.js"></script>
+<script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/comment-reply.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.techiecorner.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.techiecorner.com/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="Techie Corner" href="http://www.techiecorner.com/">
+<link rel="start" title="Speed Up Ms Windows XP from Display Settings" href="http://www.techiecorner.com/4/speed-up-ms-windows-xp-from-display-settings/">
+<link rel="prev" title="How to create symbolic link in Unix" href="http://www.techiecorner.com/105/how-to-create-symbolic-link-in-unix/">
+<link rel="next" title="How to split large file into several smaller files – Linux" href="http://www.techiecorner.com/107/how-to-split-large-file-into-several-smaller-files-linux/">
+<link rel="shortlink" href="http://www.techiecorner.com/?p=104">
+
+<!-- All in One SEO Pack 1.6.13.2 by Michael Torbert of Semper Fi Web Design[-1,-1] -->
+<meta name="keywords" content="apache auto start up during boot time,apache auto start,apache start up script,apache startup script,apache auto start script,apache start during boot,linux apache auto start,linux">
+<link rel="canonical" href="http://www.techiecorner.com/104/how-to-auto-start-apache-during-boot-time-linux/">
+<!-- /all in one seo pack -->
+<meta name="description" content="If you compile your own apache from source, your apache will not auto start during boot time. To enable auto start apache during boot time, you need to do some configuration on rc.d directory.  Follow the steps below and apache will auto start during boot time:-   	Go to init.d folder #cd /etc/rc.d/init.d 	 	Create httpd file #vi httpd 	 	Copy and paste the code below and save the file (content below is for user who install their apache at /usr/local/apache):-  #!/bin/sh # # Startup script for the Apache Web Server # # chkconfig: 345 85 15 # description: Apache is a World Wide Web server. It is used to serve \ #       HTML files and CGI. # processname: /usr/local/apache/bin/httpd # pidfile: /usr/local/apache/logs/httpd.pid # config: /usr/local/apache/conf/httpd.conf  # Source function library. . /etc/rc.d/init.d/functions # See how we were called. case $1 in     start)         echo -n Starting httpd:          daemon /usr/local/apache/bin/httpd -DSSL         echo         touch /var/lock/subsys/httpd         ;;     stop)         echo -n Shutting down http:          killproc httpd         echo         rm ...">
+	
+	<meta name="ROBOTS" content="index, follow">
+	<meta name="GOOGLEBOT" content="index, follow">
+	<meta name="msnbot" content="index, follow">
+	<meta name="Slurp" content="index, follow">
+	<meta name="baiduspider" content="index, follow">
+	<meta name="Teoma" content="index, follow">
+	<meta name="ia_archiver" content="index, follow">
+	<meta name="ObjectsSearch" content="index, follow">
+
+<!-- Google DFP Start -->
+<script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/google_service.js">
+</script>
+<script type="text/javascript">
+GS_googleAddAdSenseService("ca-pub-9874157950618711");
+GS_googleEnableAllServices();
+</script><script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/google_ads2.js"></script>
+<script type="text/javascript">
+GA_googleAddSlot("ca-pub-9874157950618711", "Tech-BelowTitle-336280");
+GA_googleAddSlot("ca-pub-9874157950618711", "Tech-Sidebar-skycrapper");
+GA_googleAddSlot("ca-pub-9874157950618711", "Tech-TopRight");
+GA_googleAddSlot("ca-pub-9874157950618711", "TechBelowPost");
+GA_googleAddSlot("ca-pub-9874157950618711", "Tech-Sidebar-125x125");
+</script>
+<script type="text/javascript">
+GA_googleFetchAds();
+</script>
+<!-- Google DFP End -->
+
+<script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/bsa.js" async="" type="text/javascript"></script><script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/minimall.js" type="text/javascript"></script><script async="async" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/s_e71627a0aac5b347a328e53fb859c23a.js" id="_bsap_js_e71627a0aac5b347a328e53fb859c23a" type="text/javascript"></script><script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/1304027726701.js" charset="UTF-8" type="text/javascript"></script><style id="bsa_css" type="text/css">div.bsap_1249035{width:100%;display:block}div.bsap_1249035 a{width:125px}div.bsap_1249035 a img{padding:0}div.bsap_1249035 a em{font-style:normal}div.bsap_1249035 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}div.bsap_1249035 img{border:0;clear:right;}div.bsap_1249035 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}div.bsap_1249035 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}div.bsap_1249035 a{line-height:100%}div.bsap_1249035 a.adhere{width:125px;height:125px;line-height:1000%}html>body div.bsap_1249035 a.adhere{width:123px;height:123px}div.bsap_1249035 img.s{height:0;width:0}div.bsap_1260271{width:100%;display:block}div.bsap_1260271 a{width:300px}div.bsap_1260271 a img{padding:0}div.bsap_1260271 a em{font-style:normal}div.bsap_1260271 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;float:left;}div.bsap_1260271 img{border:0;clear:right;}div.bsap_1260271 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}div.bsap_1260271 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}div.bsap_1260271 a{line-height:100%}div.bsap_1260271 a.adhere{width:300px;height:250px;line-height:2000%}html>body div.bsap_1260271 a.adhere{width:298px;height:248px}div.bsap_1260271 img.s{height:0;width:0}</style></head><body class="single single-post postid-104 single-format-standard">
+<!-- BuySellAds.com Ad Code -->
+<script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = '//s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script>
+<!-- END BuySellAds.com Ad Code -->
+
+<!-- google_ad_section_start -->
+
+<div id="page">
+
+
+<div id="header" role="banner">
+	<div id="headerimg">
+					<h1>  How to auto start Apache during boot time – Linux</h1>
+			<div class="description">by <a href="http://www.techiecorner.com/">Techie Corner</a></div>
+			</div>
+</div>
+<div class="link_unit_hmenu">
+		<script type="text/javascript"><!--
+		google_ad_client = "pub-9874157950618711";
+		google_ad_width = 728;
+		google_ad_height = 15;
+		google_ad_format = "728x15_0ads_al_s";
+		google_ad_channel = "6505040434";
+		google_color_border = "FFFFFF";
+		google_color_bg = "FFFFFF";
+		google_color_link = "0066CC";
+		google_color_text = "000000";
+		google_color_url = "0066CC";
+		//-->
+		</script>
+		<script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/show_ads.js">
+		</script><script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/show_ads_impl.js"></script><script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><iframe id="google_ads_frame1" name="google_ads_frame1" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="15" scrolling="no" width="728"></iframe>
+</div>
+
+	<div id="content" class="narrowcolumn" role="main">
+
+	
+		<div class="post-104 post type-post status-publish format-standard hentry category-linux tag-apache-auto-start tag-apache-auto-start-script tag-apache-auto-start-up-during-boot-time tag-apache-start-during-boot tag-apache-start-up-script tag-apache-startup-script tag-linux-apache-auto-start" id="post-104">
+
+			<h2><a href="http://www.techiecorner.com/104/how-to-auto-start-apache-during-boot-time-linux/">How to auto start Apache during boot time – Linux</a></h2>
+
+			<div style="padding: 5px 0pt 0pt;">
+				<img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/ads.gif" alt="advertisement"><br>
+
+				<!-- DFP - Tech-BelowTitle-336280 Start -->
+				<script type="text/javascript">
+				GA_googleFillSlot("Tech-BelowTitle-336280");
+				</script><script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/ads_004.js"></script><div id="google_ads_div_Tech-BelowTitle-336280_ad_container">
+<ins style="width: 336px; height: 280px; display: inline-table; position: relative; border: 0pt none;"><ins style="width: 336px; height: 280px; display: block; position: relative; border: 0pt none;"><iframe style="border: 0pt none; position: absolute; top: 0pt; left: 0pt;" marginheight="0" marginwidth="0" name="google_ads_iframe_Tech-BelowTitle-336280" id="google_ads_iframe_Tech-BelowTitle-336280" frameborder="0" height="280" scrolling="no" width="336"></iframe></ins></ins></div>
+<script>GA_googleCreateDomIframe("google_ads_div_Tech-BelowTitle-336280_ad_container" ,"Tech-BelowTitle-336280");</script>
+				<!-- DFP - Tech-BelowTitle-336280 End -->
+
+			</div>
+			<div style="padding-top: 20px;">
+				<iframe src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/like.html" style="border: medium none; overflow: hidden; width: 400px; height: 30px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+			</div>
+			<div class="entry">
+
+				<p><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/249378361_88782b0edb_m.jpg" alt="auto start apache, start apache during boot, apache startup script, apache start up script, linux, computer tips" hspace="10" align="left">If
+ you compile your own apache from source, your apache will not auto 
+start during boot time. To enable auto start apache during boot time, 
+you need to do some configuration on rc.d directory. </p>
+<p>Follow the steps below and apache will auto start during boot time:-<br>
+<span id="more-104"></span></p>
+<ul>
+<li>Go to init.d folder<br>
+<blockquote><p><strong>#cd /etc/rc.d/init.d</strong></p></blockquote>
+</li>
+<li>Create httpd file<br>
+<blockquote><p><strong>#vi httpd</strong></p></blockquote>
+</li>
+<li>Copy and paste the code below and save the file (content below is for user who install their apache at /usr/local/apache):-<br>
+<blockquote><p>
+#!/bin/sh<br>
+#<br>
+# Startup script for the Apache Web Server<br>
+#<br>
+# chkconfig: 345 85 15<br>
+# description: Apache is a World Wide Web server.  It is used to serve \<br>
+#              HTML files and CGI.<br>
+# processname: /usr/local/apache/bin/httpd<br>
+# pidfile: /usr/local/apache/logs/httpd.pid<br>
+# config: /usr/local/apache/conf/httpd.conf</p>
+<p># Source function library.<br>
+. /etc/rc.d/init.d/functions</p>
+<p># See how we were called.<br>
+case “$1″ in<br>
+        start)<br>
+                echo -n “Starting httpd: ”<br>
+                daemon /usr/local/apache/bin/httpd -DSSL<br>
+                echo<br>
+                touch /var/lock/subsys/httpd<br>
+                ;;<br>
+        stop)<br>
+                echo -n “Shutting down http: ”<br>
+                killproc httpd<br>
+                echo<br>
+                rm -f /var/lock/subsys/httpd<br>
+                rm -f /var/run/httpd.pid<br>
+                ;;<br>
+        status)<br>
+                status httpd<br>
+                ;;<br>
+                restart)<br>
+                $0 stop<br>
+                $0 start<br>
+                ;;<br>
+        reload)<br>
+                echo -n “Reloading httpd: ”<br>
+                killproc httpd -HUP<br>
+                echo<br>
+                ;;<br>
+        *)<br>
+        echo “Usage: $0 {start|stop|restart|reload|status}”<br>
+        exit 1<br>
+esac</p>
+<p>exit 0</p>
+</blockquote>
+</li>
+<li>allow apache start up script to be executable<br>
+<blockquote><p><strong>#chmod 744 httpd</strong></p></blockquote>
+</li>
+<li>Now you need to test if this apache start up script is good, type<br>
+<blockquote><strong>./httpd start</strong></blockquote>
+<p> in your shell to run the apache start up script
+</p></li><li>If you can execute this apache start up script with no error then you can continue with the next steps.</li>
+<li>Create a symbolic link at /etc/rc.d/rc3.d folder with name S80httpd that link to /etc/rc.d/init.d/httpd<br>
+<blockquote><p>
+<strong>#cd /etc/rc.d/rc3.d<br>
+#ln -s ../init.d/httpd S80httpd</strong>
+</p></blockquote>
+<p><small>Note: <a href="http://www.techiecorner.com/105/how-to-create-symbolic-link-in-unix/">Click here for more details on how to create symbolic link</a></small>
+
+</p></li><li>Your server now is ready to start apache during boot time. Please reboot your server to take immediate effect.</li>
+<li>To check if apache will start up during boot time, type<br>
+<blockquote><p><strong>#ps ax | grep httpd</strong></p></blockquote>
+<p>at your shell right after you login with a new reboot, if it shows 
+httpd process then you have configured your apache to start during boot 
+time correctly.
+
+</p></li></ul>
+<p class="simpletags">Technorati Tags: <a href="http://technorati.com/tag/apache+auto+start+up+during+boot+time" rel="tag">apache auto start up during boot time</a>, <a href="http://technorati.com/tag/apache+auto+start" rel="tag"> apache auto start</a>, <a href="http://technorati.com/tag/apache+start+up+script" rel="tag"> apache start up script</a>, <a href="http://technorati.com/tag/apache+startup+script" rel="tag"> apache startup script</a>, <a href="http://technorati.com/tag/apache+auto+start+script" rel="tag"> apache auto start script</a>, <a href="http://technorati.com/tag/apache+start+during+boot" rel="tag"> apache start during boot</a>, <a href="http://technorati.com/tag/linux+apache+auto+start" rel="tag"> linux apache auto start</a></p>
+<!-- link start -->
+						<script type="text/javascript"><!--
+						google_ad_client = "pub-9874157950618711";
+						/* Tech HLink After Post */
+						google_ad_slot = "4582592668";
+						google_ad_width = 468;
+						google_ad_height = 15;
+						//-->
+						</script>
+						<script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/show_ads.js">
+						</script><script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/show_ads_impl.js"></script><script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/expansion_embed.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display: inline-table; border: medium none; height: 15px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 468px;"><ins id="google_ads_frame3_anchor" style="display: block; border: medium none; height: 15px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 468px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame3" marginheight="0" marginwidth="0" name="google_ads_frame" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/ads_002.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="15" scrolling="no" width="468"></iframe></ins></ins>
+						<!-- link end -->
+				                                <br><br>
+		                <input id="IL_RELATED_TAGS1" name="IL_RELATED_TAGS" value="1" type="hidden">
+				<p class="postmetadata"><small>Tags: <a href="http://www.techiecorner.com/tag/apache-auto-start/" rel="tag">apache auto start</a>, <a href="http://www.techiecorner.com/tag/apache-auto-start-script/" rel="tag">apache auto start script</a>, <a href="http://www.techiecorner.com/tag/apache-auto-start-up-during-boot-time/" rel="tag">apache auto start up during boot time</a>, <a href="http://www.techiecorner.com/tag/apache-start-during-boot/" rel="tag">apache start during boot</a>, <a href="http://www.techiecorner.com/tag/apache-start-up-script/" rel="tag">apache start up script</a>, <a href="http://www.techiecorner.com/tag/apache-startup-script/" rel="tag">apache startup script</a>, <a href="http://www.techiecorner.com/tag/linux-apache-auto-start/" rel="tag">linux apache auto start</a></small></p>
+				<div class="navigation">
+					<div class="alignleft">« <a href="http://www.techiecorner.com/105/how-to-create-symbolic-link-in-unix/" rel="prev">How to create symbolic link in Unix</a></div>
+					<div class="alignright"><a href="http://www.techiecorner.com/107/how-to-split-large-file-into-several-smaller-files-linux/" rel="next">How to split large file into several smaller files – Linux</a> »</div>
+				</div>
+
+				<div>
+<!-- mgid start -->
+<div>
+<!-- MarketNews Start -->
+<div id="MarketGid151"><table class="MGC0151151" width="100%" border="0" cellpadding="0" cellspacing="5"> <tbody><tr>  <td valign="top" width="25%" align="center"> <a target="_blank" href="http://www.mgid.com/pnews/977491/i/151/pp/1/2/"><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/977491_b.jpg" height="120" width="120"></a> <div> <a target="_blank" class="mctitle1151" href="http://www.mgid.com/pnews/977491/i/151/pp/1/2/">Download &amp; Activate Windows 7 Legally </a> </div> </td>  <td valign="top" width="25%" align="center"> <a target="_blank" href="http://www.mgid.com/pnews/981049/i/151/pp/2/2/"><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/981049_b.jpg" height="120" width="120"></a> <div> <a target="_blank" class="mctitle1151" href="http://www.mgid.com/pnews/981049/i/151/pp/2/2/">Mythbuster's Hyneman Designs Next-Gen Military Armor </a> </div> </td>  <td valign="top" width="25%" align="center"> <a target="_blank" href="http://www.mgid.com/pnews/979833/i/151/pp/3/2/"><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/979833_b.jpg" height="120" width="120"></a> <div> <a target="_blank" class="mctitle1151" href="http://www.mgid.com/pnews/979833/i/151/pp/3/2/">True Story: You PC Can Run Much Faster For Free </a> </div> </td>  <td valign="top" width="25%" align="center"> <a target="_blank" href="http://www.mgid.com/pnews/842467/i/151/pp/4/2/"><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/842467_b.jpg" height="120" width="120"></a> <div> <a target="_blank" class="mctitle1151" href="http://www.mgid.com/pnews/842467/i/151/pp/4/2/">Windows 7 For Free? </a> </div> </td>  </tr> </tbody></table></div>
+<!-- MarketNews End -->
+<!-- pered </body> -->
+    <script type="text/javascript">
+    var MarketGidDate = new Date();
+    document.write('<scr'+'ipt type="text/javascript" '+'src="http://jsn.dt07.net/t/e/techiecorner.com.151.js?t='+MarketGidDate.getYear()+MarketGidDate.getMonth()+ '" charset="utf-8" ></scr'+'ipt>');
+    </script><script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/techiecorner.js" charset="utf-8"></script><style type="text/css">#MarketGid151 a.mctitle1151:link,#MarketGid151 a.mctitle1151:active,#MarketGid151 a.mctitle1151:visited{ font-size: 11px; font-weight:bold; font-family :tahoma; text-decoration: none; color:#0066CC; } #MarketGid151 a.mctitle1151:hover{text-decoration:underline;} #MarketGid151 a.mcdesc151:link,#MarketGid151 a.mcdesc151:active,#MarketGid151 a.mcdesc151:hover,#MarketGid151 a.mcdesc151:visited{ font-size:11px; font-weight: normal; color:#000; text-decoration: none; font-family:tahoma; } #MarketGid151 .MGC0151151 td{ padding:2px; } #MarketGid151 .MGC0151151 img{ border:1px solid #e5e5e5; margin: 0px 0px 0px 0px; }</style><script charset="utf-8" type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/2.js"></script>
+</div>
+<!-- mgid end -->
+<br>
+
+<!-- hotkeys start -->
+<div>
+<script type="text/javascript" charset="utf-8">
+HL_WIDGET_OPTIONS = {
+"linksResultsPageUrl" : "",
+"widgetID" : 709,
+"customerID" : 28636
+}
+</script>
+<script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/hotlinks.js" type="text/javascript" charset="utf-8" id="hotlinksScript"></script><script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/a.json"></script>
+
+<!-- Triple API failure -->
+
+
+</div>
+<!-- hotkeys end -->
+<br>
+
+<div><center>
+
+<!-- Google DFP - TechBelowPost Start -->
+<script type="text/javascript">
+GA_googleFillSlot("TechBelowPost");
+</script><script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/ads_002.js"></script><div id="google_ads_div_TechBelowPost_ad_container">
+<ins style="width: 336px; height: 280px; display: inline-table; position: relative; border: 0pt none;"><ins style="width: 336px; height: 280px; display: block; position: relative; border: 0pt none;"><iframe style="border: 0pt none; position: absolute; top: 0pt; left: 0pt;" marginheight="0" marginwidth="0" name="google_ads_iframe_TechBelowPost" id="google_ads_iframe_TechBelowPost" frameborder="0" height="280" scrolling="no" width="336"></iframe></ins></ins></div>
+<script>GA_googleCreateDomIframe("google_ads_div_TechBelowPost_ad_container" ,"TechBelowPost");</script>
+<!-- Google DFP - TechBelowPost End -->
+
+</center>
+</div>
+				<h4 class="related_post_title">Related Post</h4><ul class="related_post"><li>No Related Post</li></ul>				</div>
+
+<!-- google_ad_section_end -->
+
+				<div>
+					<form action="http://www.google.com/cse" id="cse-search-box">
+					<div> <h4>Can't find what you looking for? Try to search here:-</h4>
+					<input name="cx" value="partner-pub-9874157950618711:yqcjmp3qusg" type="hidden"> 
+					<input name="ie" value="UTF-8" type="hidden"> 
+					<input style="background: url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" name="q" size="31" type="text"> 
+					<input name="sa" value="Search" type="submit"></div>
+					<input value="www.techiecorner.com/104/how-to-auto-start-apache-during-boot-time-linux/" name="siteurl" type="hidden"></form> 
+					<script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/brand.js"></script>
+				</div>
+				<br>
+				
+				
+				<p class="postmetadata">
+					If you think this article helps you to solve your problem and clear your headache, <br>
+					feel free to <a href="http://www.techiecorner.com/wp-content/go/index.php?go=donate">buy me a drink</a> :)
+				</p>
+
+
+			</div>
+		</div>
+
+	
+<!-- You can start editing here. -->
+
+	<h3 id="comments">7 Responses to “How to auto start Apache during boot time – Linux”</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-185102">
+				<div id="div-comment-185102" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/88e006ffd074f4792b27c429bb077392.png" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">avinash</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.techiecorner.com/104/how-to-auto-start-apache-during-boot-time-linux/comment-page-1/#comment-185102">
+			September 9, 2010 at 11:26 pm</a>		</div>
+
+		<p>Hi,<br>
+i dont have such path in my suse /etc/rc.d/init.d?</p>
+<p>init.d is directly in /etc. </p>
+<p>any idea how to solve this??</p>
+<p>please help</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-175342">
+				<div id="div-comment-175342" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/22a771103e88728d9a8f738d20431497.jpeg" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">sheri</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.techiecorner.com/104/how-to-auto-start-apache-during-boot-time-linux/comment-page-1/#comment-175342">
+			July 26, 2010 at 10:49 pm</a>		</div>
+
+		<p>Your script has bug.below script works I correct it.You can use..</p>
+<p>#!/bin/sh<br>
+#<br>
+# Startup script for the Apache Web Server<br>
+#<br>
+# chkconfig: 345 85 15<br>
+# description: Apache is a World Wide Web server. It is used to serve \<br>
+# HTML files and CGI.<br>
+# processname: /usr/local/apache/bin/httpd<br>
+# pidfile: /usr/local/apache/logs/httpd.pid<br>
+# config: /usr/local/apache/conf/httpd.conf</p>
+<p># Source function library.<br>
+. /etc/rc.d/init.d/functions</p>
+<p># See how we were called.<br>
+case “$1″ in<br>
+start)<br>
+echo -n “Starting httpd: ”<br>
+daemon /usr/local/apache/bin/httpd -DSSL<br>
+echo<br>
+touch /var/lock/subsys/httpd<br>
+;;<br>
+stop)<br>
+echo -n “Shutting down http: ”<br>
+killproc httpd<br>
+echo<br>
+rm -f /var/lock/subsys/httpd<br>
+rm -f /var/run/httpd.pid<br>
+;;<br>
+status)<br>
+status httpd<br>
+;;<br>
+restart)<br>
+$0 stop<br>
+$0 start<br>
+;;<br>
+reload)<br>
+echo -n “Reloading httpd: ”<br>
+killproc httpd -HUP<br>
+echo<br>
+;;<br>
+*)<br>
+echo “Usage: $0 {start || stop || restart || reload || status}”<br>
+exit 1<br>
+esac</p>
+<p>exit 0</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-chua bypostauthor even thread-even depth-1" id="comment-138028">
+				<div id="div-comment-138028" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/e57ba57bc0fab9cf82fadc496bfaaa38.png" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://sogua.mamakcorner.com/" rel="external nofollow" class="url">chua</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.techiecorner.com/104/how-to-auto-start-apache-during-boot-time-linux/comment-page-1/#comment-138028">
+			November 24, 2009 at 8:43 am</a>		</div>
+
+		<p>sorry Sot, if my script disappoint you.<br>
+I’m just a newbie in linux.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-137794">
+				<div id="div-comment-137794" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/56e7d593b791bd3512aaf14715cc993f.png" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://www.demoland.la/" rel="external nofollow" class="url">Sot</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.techiecorner.com/104/how-to-auto-start-apache-during-boot-time-linux/comment-page-1/#comment-137794">
+			November 21, 2009 at 10:07 pm</a>		</div>
+
+		<p>Dude your script sucks in MANY ways.  I feel sorry for the newbies that copy paste this piece of crap into their systems.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-chua bypostauthor even thread-even depth-1" id="comment-124528">
+				<div id="div-comment-124528" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/e57ba57bc0fab9cf82fadc496bfaaa38.png" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn"><a href="http://sogua.mamakcorner.com/" rel="external nofollow" class="url">chua</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.techiecorner.com/104/how-to-auto-start-apache-during-boot-time-linux/comment-page-1/#comment-124528">
+			August 20, 2009 at 8:05 am</a>		</div>
+
+		<p>different Linux distribution have slightly different directory structure.<br>
+It’s normal. as long as your file are located at the system init.d directory, it should be ok.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-123675">
+				<div id="div-comment-123675" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/1d8a84ac7a71e23ec567247f8aefe504.png" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">shuji</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.techiecorner.com/104/how-to-auto-start-apache-during-boot-time-linux/comment-page-1/#comment-123675">
+			August 14, 2009 at 11:25 am</a>		</div>
+
+		<p>is it any of the init.d path should be ok?<br>
+my init.d path located at /etc/init.d only.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-123673">
+				<div id="div-comment-123673" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt="" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/1d8a84ac7a71e23ec567247f8aefe504.png" class="avatar avatar-32 photo" height="32" width="32">		<cite class="fn">shuji</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.techiecorner.com/104/how-to-auto-start-apache-during-boot-time-linux/comment-page-1/#comment-123673">
+			August 14, 2009 at 11:12 am</a>		</div>
+
+		<p>Hi,<br>
+i dont have such path in my ubuntu /etc/rc.d/init.d?<br>
+any idea how to  solve this??</p>
+<p>please help</p>
+<p>regards<br>
+Shuji</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+ 
+
+
+<div id="respond">
+
+<h3>Leave a Reply</h3>
+
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.techiecorner.com/104/how-to-auto-start-apache-during-boot-time-linux/#respond" style="display: none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="http://www.techiecorner.com/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input name="author" id="author" size="22" tabindex="1" aria-required="true" type="text">
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input name="email" id="email" size="22" tabindex="2" aria-required="true" type="text">
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input name="url" id="url" size="22" tabindex="3" type="text">
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></small></p>-->
+
+<p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" id="submit" tabindex="5" value="Submit Comment" type="submit">
+<input name="comment_post_ID" value="104" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p>
+<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="9e5e04d9c1" type="hidden"></p>
+</form>
+
+</div>
+
+
+	
+	</div>
+
+
+	<!-- google_ad_section_start(weight=ignore) -->
+	<div id="sidebar" role="complementary">
+		
+		
+				<div style="text-align: center;">
+			<div class="sidebar_300x250">
+<!-- DFP Tech-TopRight - Start -->
+<script type="text/javascript">
+GA_googleFillSlot("Tech-TopRight");
+</script><script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/ads.js"></script><div id="google_ads_div_Tech-TopRight_ad_container"><script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/st.asc"></script><script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/imp.js"></script><iframe allowtransparency="true" marginwidth="0" marginheight="0" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/iframe3.html" frameborder="0" height="250" scrolling="no" width="300"></iframe><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/q.gif" style="display: none;" alt="" height="1" width="1" border="0">
+</div>
+
+<!-- DFP Tech-TopRight - End -->
+
+<!-- BuySellAds.com Zone Code -->
+<div id="bsap_1260271" class="bsap_1260271 bsap"></div>
+<!-- End BuySellAds.com Zone Code -->
+			</div>
+
+			<div style="padding: 10px 0pt 0pt 40px;">
+<!-- buysellads.com -->
+			<div id="bsap_1249035" class="bsap_1249035 bsap"><a href="http://stats.buysellads.com/click.go?z=1249035&amp;b=1052909&amp;g=&amp;s=&amp;sw=1680&amp;sh=1050&amp;br=firefox,3.6,linux&amp;r=0.8045195381434133&amp;link=http://www.commission-crusher.com/affiliates/32250.gif" onmouseover="window.status = 'http://www.commission-crusher.com/affiliates/32250.gif '; return true;" onmouseout="window.status=''; return true;" class="ad1 odd" title="Commission Crusher brings big $ to YOU" id="bsa_1052909" target="_blank"><img src="http://s3.buysellads.com/1245707/54586-1300736609.gif" alt="Commission Crusher brings big $ to YOU" height="125" width="125"></a><a href="http://stats.buysellads.com/click.go?z=1249035&amp;b=508802&amp;g=&amp;s=&amp;sw=1680&amp;sh=1050&amp;br=firefox,3.6,linux&amp;r=0.46438060437406703&amp;link=http://site24x7.com/signup-plans.html?q=Z476VHM5" onmouseover="window.status = 'http://site24x7.com/signup-plans.html?q=Z476VHM5'; return true;" onmouseout="window.status=''; return true;" class="ad2 even" title="Monitor Cloud and Web Apps" id="bsa_508802" target="_blank"><img src="http://s3.buysellads.com/1249035/32097-1279897532.gif" alt="Monitor Cloud and Web Apps" height="125" width="125"></a><a href="http://buysellads.com/buy/detail/25251/zone/1249035?utm_source=site_25251_zone_1249035&amp;utm_medium=website&amp;utm_campaign=adhere" title="Advertise Here" class="adhere ad3 odd" target="_blank">Advertise Here</a><a href="http://buysellads.com/buy/detail/25251/zone/1249035?utm_source=site_25251_zone_1249035&amp;utm_medium=website&amp;utm_campaign=adhere" title="Advertise Here" class="adhere ad4 even" target="_blank">Advertise Here</a></div>
+<!-- buysellads.com -->
+			</div>
+
+			<div style="padding: 10px 0pt 0pt 0px;">
+<a target="_blank" rel="nofollow" href="http://www.techiecorner.com/wp-content/go/index.php?go=hostgator"><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/125x125.gif"></a>
+ 
+<a href="http://send.onenetworkdirect.net/z/11592/CD139804/"><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/11592.gif" alt="" border="0"></a>
+			</div>
+
+			<div style="padding: 10px 0pt 0pt 0px;">
+<script type="text/javascript">
+GA_googleFillSlot("Tech-Sidebar-125x125");
+</script><script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/ads_003.js"></script><div id="google_ads_div_Tech-Sidebar-125x125_ad_container"><a href="http://send.onenetworkdirect.net/z/16108/CD139804/"><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/16108.gif" alt="" border="0"></a>
+</div>
+
+			</div>
+			<div style="padding: 10px 0pt 0pt 0px;">
+<script type="text/javascript">
+ch_client = "techcorner";
+ch_width = 300;
+ch_height = 150;
+ch_type = "mpu";
+ch_sid = "TC-Sidebar-300x150";
+ch_color_site_link = "#0000CC";
+ch_color_title = "#0000CC";
+ch_color_border = "#F7F7F7";
+ch_color_text = "#000000";
+ch_color_bg = "#F7F7F7";
+</script>
+<script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/amm.js" type="text/javascript">
+</script><div id="chitikaAdBeacon-229"></div><div><iframe id="ch_ad_ctr229" name="ch_ad_ctr229" allowtransparency="allowTransparency" class="chitikaAdBlock" marginheight="0" marginwidth="0" style="border: 0pt none; padding: 0pt; margin: 0pt;" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/a_002.html" frameborder="0" height="150" scrolling="no" width="300"></iframe></div><iframe id="ch_ad229" name="ch_ad229" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/a_002.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="0" scrolling="no" width="0"></iframe>
+			</div>
+						
+		</div>
+		
+		<div class="leftnav">
+							<ul>
+	
+							</ul>
+			
+			<ul role="navigation">
+	
+								<li>
+					<script type="text/javascript"><!--
+					google_ad_client = "pub-9874157950618711";
+					google_ad_slot = "8580155498";
+					google_ad_width = 160;
+					google_ad_height = 600;
+					//-->
+					</script>
+					<script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/show_ads.js">
+					</script><script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/show_ads_impl.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="display: inline-table; border: medium none; height: 600px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 160px;"><ins id="google_ads_frame7_anchor" style="display: block; border: medium none; height: 600px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 160px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame7" marginheight="0" marginwidth="0" name="google_ads_frame" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/ads_003.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" frameborder="0" height="600" scrolling="no" width="160"></iframe></ins></ins>
+				</li>
+				
+				<li><h2>Recent entries</h2>
+					<ul>
+						<li><a href="http://www.techiecorner.com/2144/symfony-doctrine-schema-relationship-sample/" title="Symfony doctrine schema relationship sample">Symfony doctrine schema relationship sample</a></li>
+	<li><a href="http://www.techiecorner.com/2245/how-to-rip-a-copyright-dvd-in-mac-mactheripper/" title="How to extract copyright DVD in Mac – MacTheRipper">How to extract copyright DVD in Mac – MacTheRipper</a></li>
+	<li><a href="http://www.techiecorner.com/2235/how-to-whitelist-email-address-in-google-app-mail-free-edition/" title="How to whitelist email address in Google App Mail (Free Edition)">How to whitelist email address in Google App Mail (Free Edition)</a></li>
+	<li><a href="http://www.techiecorner.com/2223/download-free-anti-virus-program-avast-6/" title="Download Free Anti Virus Program – Avast 6">Download Free Anti Virus Program – Avast 6</a></li>
+	<li><a href="http://www.techiecorner.com/2206/how-to-migrate-mail-from-cpanel-to-google-app-mail/" title="How to migrate mail from CPanel to Google App Mail?">How to migrate mail from CPanel to Google App Mail?</a></li>
+  
+					</ul>
+				</li>
+
+
+
+			<li><h2>Recommended Links</h2>
+			
+<ul><li> <a href="http://www.all-driver.com/search/canon">Canon Drivers</a> Download</li>
+<li> <a href="http://peterpopoff.businesscard2.com/">Peter Popoff Miracle Water</a> </li>
+<li>Download <a href="http://www.dodownload.net/search/hp%20driver">HP Driver</a> </li>
+</ul>			</li>
+
+
+
+				<li><h2>Most Commented</h2>
+					<ul>
+						<li><a href="http://www.techiecorner.com/138/how-to-do-print-screen-in-mac-os-x/" title="How to do print screen in Mac OS X">How to do print screen in Mac OS X</a> (231)</li><li><a href="http://www.techiecorner.com/122/hacked-by-godzilla-wscriptexe-ms32dlldllvbs/" title="Hacked By Godzilla – MS32DLL.dll.vbs – wscript.exe">Hacked By Godzilla – MS32DLL.dll.vbs – wscript.exe</a> (126)</li><li><a href="http://www.techiecorner.com/39/how-to-restore-show-desktop-icon-in-quick-launch-bar/" title="How to restore Show Desktop icon in quick launch bar?">How to restore Show Desktop icon in quick launch bar?</a> (121)</li><li><a href="http://www.techiecorner.com/159/how-to-format-external-hard-disk-for-mac-and-windows/" title="How to format external hard disk for Mac and Windows">How to format external hard disk for Mac and Windows</a> (93)</li><li><a href="http://www.techiecorner.com/112/error-number-0x80070424-in-windows-update-solution/" title="Error number: 0×80070424 in Windows Update – Solution">Error number: 0×80070424 in Windows Update – Solution</a> (84)</li>					</ul>
+				</li>
+
+				<li><h2>Random Post</h2><ul><li><a href="http://www.techiecorner.com/605/how-to-archive-email-in-ms-outlook/" title="How to archive email in Ms Outlook">How to archive email in Ms Outlook</a></li><li><a href="http://www.techiecorner.com/1692/how-to-do-string-replace-str-replace-in-mysql/" title="How to do string replace (str_replace) in MySQL">How to do string replace (str_replace) in MySQL</a></li><li><a href="http://www.techiecorner.com/1266/how-to-disable-dashboard-in-mac-os-x/" title="How to disable dashboard in Mac OS X">How to disable dashboard in Mac OS X</a></li><li><a href="http://www.techiecorner.com/114/free-wordpress-2-columns-kubrick-plain-theme-red/" title="Free Wordpress 2 Columns Kubrick Plain Theme - Red">Free Wordpress 2 Columns Kubrick Plain Theme - Red</a></li><li><a href="http://www.techiecorner.com/30/the-common-internet-error-code/" title="The Common Internet Error Code">The Common Internet Error Code</a></li></ul></li>
+				
+			</ul>
+								</div>
+		
+		<div class="rightnav">
+						<ul>
+					
+				<li>
+				<a href="http://www.mozilla.com/?from=sfx&amp;uid=300600&amp;t=557"><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/110x32_get_orange.png" alt="Spread Firefox Affiliate Button" border="0"></a>
+				</li>
+
+				<li>
+					<a href="http://www.twitter.com/sogua"><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/follow_me-c.png" alt="Follow sogua on Twitter"></a>
+				</li>
+				
+
+				<li>
+				<a onclick='javascript:pageTracker._trackPageview("/goal/feed/sidebar")' href="http://feeds.feedburner.com/techiecorner/tech"><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/rss-sicon.jpg" alt="subscribe to techiecorner.com rss" border="0"><span style="font-size: 14px;">Subscribe to RSS</span></a>
+<br>
+<a onclick='javascript:pageTracker._trackPageview("/goal/feed/sidebar")' href="http://feeds.feedburner.com/techiecorner/tech"><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/tech.gif" style="border: 0pt none;" alt="" height="26" width="88"></a>
+				</li>
+
+	
+			</ul>
+			<ul role="navigation">
+				
+
+					
+	
+				<li><img src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/ads.gif" alt="advertisement"><br>
+
+					<iframe marginwidth="0" marginheight="0" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/st.html" frameborder="0" height="600" scrolling="NO" width="160"></iframe>
+					<br><br>
+					<iframe marginwidth="0" marginheight="0" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/st_002.html" frameborder="0" height="600" scrolling="NO" width="160"></iframe>
+				</li>
+
+				<li class="categories"><h2>Categories</h2><ul>	<li class="cat-item cat-item-22"><a href="http://www.techiecorner.com/category/cpanel-hosting-tutorial/" title="View all posts filed under CPanel Hosting Tutorial">CPanel Hosting Tutorial</a> (7)
+</li>
+	<li class="cat-item cat-item-17"><a href="http://www.techiecorner.com/category/javascripts/" title="View all posts filed under Javascripts">Javascripts</a> (3)
+</li>
+	<li class="cat-item cat-item-16"><a href="http://www.techiecorner.com/category/linux/" title="View all posts filed under Linux">Linux</a> (52)
+</li>
+	<li class="cat-item cat-item-15"><a href="http://www.techiecorner.com/category/mac/" title="View all posts filed under Mac">Mac</a> (69)
+</li>
+	<li class="cat-item cat-item-19"><a href="http://www.techiecorner.com/category/microsoft/" title="View all posts filed under Microsoft">Microsoft</a> (29)
+</li>
+	<li class="cat-item cat-item-2"><a href="http://www.techiecorner.com/category/ms-windows/" title="View all posts filed under Ms Windows">Ms Windows</a> (45)
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.techiecorner.com/category/mysql-database/" title="View all posts filed under MySQL Database">MySQL Database</a> (7)
+</li>
+	<li class="cat-item cat-item-10"><a href="http://www.techiecorner.com/category/open-source/" title="View all posts filed under Open Source">Open Source</a> (42)
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.techiecorner.com/category/open-source-software/" title="View all posts filed under Open Source Software">Open Source Software</a> (40)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.techiecorner.com/category/php/" title="View all posts filed under PHP">PHP</a> (14)
+</li>
+	<li class="cat-item cat-item-26"><a href="http://www.techiecorner.com/category/security/" title="View all posts filed under Security">Security</a> (11)
+</li>
+	<li class="cat-item cat-item-12"><a href="http://www.techiecorner.com/category/seo/" title="View all posts filed under SEO">SEO</a> (2)
+</li>
+	<li class="cat-item cat-item-20"><a href="http://www.techiecorner.com/category/services/" title="View all posts filed under Services">Services</a> (9)
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.techiecorner.com/category/software/" title="View all posts filed under Software">Software</a> (93)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.techiecorner.com/category/sql/" title="View all posts filed under SQL">SQL</a> (3)
+</li>
+	<li class="cat-item cat-item-11"><a href="http://www.techiecorner.com/category/web/" title="View all posts filed under Web">Web</a> (41)
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.techiecorner.com/category/web-hosting/" title="View all posts filed under Web Hosting">Web Hosting</a> (14)
+</li>
+	<li class="cat-item cat-item-21"><a href="http://www.techiecorner.com/category/windows-media-player/" title="View all posts filed under Windows Media Player">Windows Media Player</a> (3)
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.techiecorner.com/category/wordpress/" title="View all posts filed under Wordpress">Wordpress</a> (5)
+</li>
+</ul></li>		
+
+
+				<li><h2>Archives</h2>
+					<ul>
+						<li><a href="http://www.techiecorner.com/date/2011/04/" title="April 2011">April 2011</a></li>
+	<li><a href="http://www.techiecorner.com/date/2011/03/" title="March 2011">March 2011</a></li>
+	<li><a href="http://www.techiecorner.com/date/2011/02/" title="February 2011">February 2011</a></li>
+	<li><a href="http://www.techiecorner.com/date/2011/01/" title="January 2011">January 2011</a></li>
+	<li><a href="http://www.techiecorner.com/date/2010/12/" title="December 2010">December 2010</a></li>
+					</ul>
+				</li>
+
+			</ul>
+			
+			<ul>
+					<li id="linkcat-24" class="linkcat"><h2>Links</h2>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.mycontactlenscare.com/" target="_blank">Contact Lenses Tips</a></li>
+<li><a href="http://www.dbdummy.com/" target="_blank">DBDummy.com</a></li>
+<li><a href="http://www.free-anti-virus-softwares.com/" target="_blank">Free Anti Virus Softwares</a></li>
+<li><a href="http://www.freehelpdesksoftwares.com/" title="Free helpdesk softwares" target="_blank">Free helpdesk softwares</a></li>
+<li><a href="http://scratching.psybermonkey.net/search/label/FreeBSD" target="_blank">Freebsd tips</a></li>
+<li><a href="http://www.gaming-tips.com/" target="_blank">Gaming Tips</a></li>
+<li><a href="http://www.geekizo.com/" target="_blank">Geekizo.com</a></li>
+<li><a href="http://www.healthyjuicerrecipes.com/" target="_blank">Healthy Juicer Recipes</a></li>
+<li><a href="http://www.herbalscorner.com/" target="_blank">HerbalsCorner.com</a></li>
+<li><a href="http://www.pingpongbaby.com/" target="_blank">PingPongBaby.com</a></li>
+<li><a href="http://www.sillycorner.com/" target="_blank">SillyCorner.com</a></li>
+<li><a href="http://www.skincaredecoded.com/" target="_blank">Skin Care Decoded</a></li>
+<li><a href="http://sogua.mamakcorner.com/" target="_blank">SoGua</a></li>
+<li><a href="http://www.spookycorner.com/" target="_blank">SpookyCorner.com</a></li>
+<li><a href="http://systems.takizo.com/" target="_blank">Takizo</a></li>
+<li><a href="http://www.thesmoothiesrecipes.com/" target="_blank">The Smoothies Recipes</a></li>
+<li><a href="http://www.thetreasureworld.com/" target="_blank">The Treasure World</a></li>
+<li><a href="http://forum.thesagaclub.com/" target="_blank">TheSagaClub.com</a></li>
+<li><a href="http://www.eyecapstudio.com/photography-services/wedding-day-actual-day-photography-service" target="_blank">Wedding Day Photography Malaysia</a></li>
+<li><a href="http://www.yummycorner.com/" target="_blank">YummyCorner.com</a></li>
+
+	</ul>
+</li>
+	
+							</ul>
+		</div>
+		<div style="clear: both;"></div>
+	</div><!-- close sidebar div -->
+
+	<!-- google_ad_section_end -->
+
+
+<hr>
+<!-- google_ad_section_start(weight=ignore) -->
+<div id="footer" role="contentinfo">
+	<div id="navmenu">
+		<li class="pagenav"> <ul><li class="page_item page-item-2"><a href="http://www.techiecorner.com/about/" title="About Us">About Us</a></li>
+<li class="page_item page-item-5"><a href="http://www.techiecorner.com/contact-us/" title="Contact Us">Contact Us</a></li>
+<li class="page_item page-item-1371"><a href="http://www.techiecorner.com/privacy-policy/" title="Privacy Policy">Privacy Policy</a></li>
+</ul></li>	</div>
+	<p>
+		© Techie Corner <br>
+		<a href="http://www.techiecorner.com/feed/">Entries (RSS)</a>
+		and <a href="http://www.techiecorner.com/comments/feed/">Comments (RSS)</a>.
+		<!-- 14 queries. 0.711 seconds. -->
+	</p>
+</div>
+</div>
+
+
+		
+<!-- Start Infolinks -->
+<script type="text/javascript"> 
+var infolink_pid = 11920; 
+var infolink_link_color = '0000ff'; 
+</script> 
+<script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/infolinks_main.js"></script><script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/infolinks.js"></script>
+<!-- end InfoLinks -->
+
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=5727969; 
+var sc_invisible=1; 
+var sc_partition=60; 
+var sc_click_stat=1; 
+var sc_security="aa8a94c0"; 
+</script>
+
+<script type="text/javascript" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/counter.js"></script><noscript><div
+class="statcounter"><a title="wordpress stat"
+href="http://www.statcounter.com/wordpress.com/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/5727969/0/aa8a94c0/1/"
+alt="wordpress stat" ></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+
+<!-- google analytics start -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-573887-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- google analytics end -->
+
+
+
+<!-- google_ad_section_end -->
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using disk (enhanced)
+Database Caching 27/41 queries in 0.020 seconds using disk
+Object Caching 506/940 objects using disk
+
+Served from: www.techiecorner.com @ 2011-04-28 20:06:52 --><div style="display: block; position: absolute; top: 1px; left: 1px; width: 1px; height: 1px;"><embed pluginspage="http://www.macromedia.com/go/getflashplayer" src="How%20to%20auto%20start%20Apache%20during%20boot%20time%20%E2%80%93%20Linux%20-%20Techie%20Corner_files/ic.swf" wmode="transparent" name="ilfc" allowscriptaccess="always" type="application/x-shockwave-flash" height="1" width="1"></div></body></html>

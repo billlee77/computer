@@ -1,0 +1,552 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="client-firefox client-firefox-3 client-gecko client-linux" xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en"><head>
+
+
+<title>Expect - Wikipedia, the free encyclopedia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="generator" content="MediaWiki 1.17wmf1">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Expect&amp;action=edit">
+<link rel="edit" title="Edit this page" href="http://en.wikipedia.org/w/index.php?title=Expect&amp;action=edit">
+<link rel="apple-touch-icon" href="http://en.wikipedia.org/apple-touch-icon.png">
+<link rel="shortcut icon" href="http://en.wikipedia.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://en.wikipedia.org/w/api.php?action=rsd">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="http://en.wikipedia.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="Expect_files/load_002.css" type="text/css" media="all">
+<style type="text/css" media="all">.suggestions{overflow:hidden;position:absolute;top:0px;left:0px;width:0px;border:none;z-index:99;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:Window;font-size:0.8em;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;background-color:Window;font-size:0.8em;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;color:WindowText;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;background-color:Highlight;color:white;color:HighlightText}.suggestions-special .special-label{font-size:0.8em;color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white;color:HighlightText}.autoellipsis-matched,.highlight{font-weight:bold}
+
+/* cache key: enwiki:resourceloader:filter:minify-css:3:8d395f27880b6ffcab73b1c74b0217ea */</style><style type="text/css" media="all">#mw-panel.collapsible-nav div.portal{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAAABCAMAAAA7MLYKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEtQTFRF29vb2tra4ODg6urq5OTk4uLi6+vr7e3t7Ozs8PDw5+fn4+Pj4eHh3d3d39/f6Ojo5eXl6enp8fHx8/Pz8vLy7+/v3Nzc2dnZ2NjYnErj7QAAAD1JREFUeNq0wQUBACAMALDj7hf6JyUFGxzEnYhC9GaNPG1xVffGDErk/iCigLl1XV2xM49lfAxEaSM+AQYA9HMKuv4liFQAAAAASUVORK5CYII=);background-image:url(http://bits.wikimedia.org/w/extensions-1.17/Vector/modules/./images/portal-break.png?2011-02-12T21:25:00Z)!ie;background-position:left top;background-repeat:no-repeat;padding:0.25em 0 !important;margin:-11px 9px 10px 11px}#mw-panel.collapsible-nav div.portal h5{color:#4D4D4D;font-weight:normal;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9QTFRFeXl53d3dmpqasbGx////GU0iEgAAAAV0Uk5T/////wD7tg5TAAAAK0lEQVQI12NwgQIG0hhCDAwMTCJAhqMCA4MiWEoIJABiOCooQhULi5BqMgB2bh4svs8t+QAAAABJRU5ErkJggg==) left center no-repeat;background:url(http://bits.wikimedia.org/w/extensions-1.17/Vector/modules/./images/open.png?2011-02-12T21:25:00Z) left center no-repeat!ie;padding:4px 0 3px 1.5em;margin-bottom:0px}#mw-panel.collapsible-nav div.collapsed h5{color:#0645AD;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAxQTFRF3d3deXl5////nZ2dQA6SoAAAAAN0Uk5T//8A18oNQQAAADNJREFUeNpiYEIDDMQKMKALMDOgCTDCRWACcBG4AEwEIcDITEAFuhnotmC4g4EEzwEEGAADqgHmQSPJKgAAAABJRU5ErkJggg==) left center no-repeat;background:url(http://bits.wikimedia.org/w/extensions-1.17/Vector/modules/./images/closed-ltr.png?2011-02-12T21:25:00Z) left center no-repeat!ie;margin-bottom:0px}#mw-panel.collapsible-nav div h5:hover{cursor:pointer;text-decoration:none}#mw-panel.collapsible-nav div.collapsed h5:hover{text-decoration:underline}#mw-panel.collapsible-nav div.portal div.body{background:none !important;padding-top:0px;display:none}#mw-panel.collapsible-nav div.persistent div.body{display:block}#mw-panel.collapsible-nav div.first h5{display:none}#mw-panel.collapsible-nav div.persistent h5{background:none !important;padding-left:0.7em;cursor:default}#mw-panel.collapsible-nav div.portal div.body ul li{padding:0.25em 0}#mw-panel.collapsible-nav div.first{background-image:none;margin-top:0px}#mw-panel.collapsible-nav div.persistent div.body{margin-left:0.5em}
+
+/* cache key: enwiki:resourceloader:filter:minify-css:3:c5cca4c308b0b64d12b1147b6871e86e */</style><meta name="ResourceLoaderDynamicStyles" content=""><link rel="stylesheet" href="Expect_files/load.css" type="text/css" media="all">
+<style type="text/css" media="all">a.new,#quickbar a.new{color:#ba0000}
+
+/* cache key: enwiki:resourceloader:filter:minify-css:3:f2a9127573a22335c2a9102b208c73e7 */</style><link rel="stylesheet" href="Expect_files/load_003.css" type="text/css" media="all">
+
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/skins-1.17/vector/csshover.min.htc")}</style><![endif]--><link href="Expect_files/index.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="Expect_files/index_003.php"></script></head><body class="mediawiki ltr ns-0 ns-subject page-Expect skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content"><div style="visibility: hidden; display: none; width: 602px; height: 402px; margin: 0px; padding: 0px; background-color: white; position: absolute; right: 2em; top: 1em; border: 1px solid gray; z-index: 13;"><iframe style="z-index: 14; position: absolute; right: 1px; top: 1px; width: 600px; height: 400px; margin: 0px; padding: 0px;" frameborder="0" scrolling="no"></iframe><img style="z-index: 15; position: absolute; right: 11px; top: 9px; width: 18px; cursor: pointer;" src="Expect_files/Button_hide.png" title="close"></div>
+			<a id="top"></a>
+			<div id="mw-js-message" style="display: none;"></div>
+						<!-- sitenotice -->
+			<div id="siteNotice"><div id="centralNotice" class="expanded"><!-- Intentionally blank --></div><!-- centralNotice loads here --><script type="text/javascript">
+/* <![CDATA[ */
+document.writeln("\x3cdiv id=\"localNotice\"\x3e\x3cp\x3e\x3c/p\x3e\n\x3c/div\x3e");
+/* ]]> */
+</script><div id="localNotice"><p></p>
+</div>
+</div>
+			<!-- /sitenotice -->
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Expect</h1>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<table class="infobox vevent" style="" cellspacing="5">
+<caption class="summary" style="">Expect</caption>
+<tbody><tr class="">
+<th scope="row" style="text-align: left; white-space: nowrap;"><a href="http://en.wikipedia.org/wiki/Software_design" title="Software design">Original author(s)</a></th>
+<td class="" style=""><a href="http://en.wikipedia.org/wiki/Don_Libes">Don Libes</a></td>
+</tr>
+<tr class="">
+<th scope="row" style="text-align: left; white-space: nowrap;"><a href="http://en.wikipedia.org/wiki/Software_release_life_cycle" title="Software release life cycle">Stable release</a></th>
+<td class="" style="">5.44.1.15 / March 11, 2010<span class="noprint">; 11 months ago</span><span style="display: none;">&nbsp;(<span class="bday dtstart published updated">2010-03-11</span>)</span></td>
+</tr>
+<tr class="">
+<th scope="row" style="text-align: left; white-space: nowrap;"><a href="http://en.wikipedia.org/wiki/Programming_language" title="Programming language">Written in</a></th>
+<td class="" style=""><a href="http://en.wikipedia.org/wiki/Tcl">Tcl</a></td>
+</tr>
+<tr class="">
+<th scope="row" style="text-align: left; white-space: nowrap;"><a href="http://en.wikipedia.org/wiki/Operating_system">Operating system</a></th>
+<td class="" style=""><a href="http://en.wikipedia.org/wiki/POSIX">POSIX</a>, <a href="http://en.wikipedia.org/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a></td>
+</tr>
+<tr class="">
+<th scope="row" style="text-align: left; white-space: nowrap;"><a href="http://en.wikipedia.org/wiki/Software_license" title="Software license">License</a></th>
+<td class="" style=""><a href="http://en.wikipedia.org/wiki/Public_domain">Public domain</a><sup id="cite_ref-0" class="reference"><a href="#cite_note-0"><span>[</span>1<span>]</span></a></sup></td>
+</tr>
+<tr class="">
+<th scope="row" style="text-align: left; white-space: nowrap;"><a href="http://en.wikipedia.org/wiki/Website">Website</a></th>
+<td class="" style=""><a href="http://expect.nist.gov/" class="external free" rel="nofollow">http://expect.nist.gov/</a></td>
+</tr>
+</tbody></table>
+<div class="dablink">This article is about the Unix tool. For a definition of the word "expect", see the Wiktionary entry <a href="http://en.wiktionary.org/wiki/expect" class="extiw" title="wikt:expect">expect</a>.</div>
+<p><b>Expect</b> is a <a href="http://en.wikipedia.org/wiki/Unix">Unix</a> automation and testing tool, written by <a href="http://en.wikipedia.org/wiki/Don_Libes">Don Libes</a> as an extension to the <a href="http://en.wikipedia.org/wiki/Tcl">Tcl</a> scripting language, for interactive <a href="http://en.wikipedia.org/wiki/Application_software" title="Application software">applications</a> such as <a href="http://en.wikipedia.org/wiki/Telnet">telnet</a>, <a href="http://en.wikipedia.org/wiki/Ftp" class="mw-redirect" title="Ftp">ftp</a>, <a href="http://en.wikipedia.org/wiki/Passwd_%28command%29" title="Passwd (command)">passwd</a>, <a href="http://en.wikipedia.org/wiki/Fsck">fsck</a>, <a href="http://en.wikipedia.org/wiki/Rlogin">rlogin</a>, <a href="http://en.wikipedia.org/wiki/Tip_%28unix_utility%29" title="Tip (unix utility)" class="mw-redirect">tip</a>, <a href="http://en.wikipedia.org/wiki/Secure_Shell" title="Secure Shell">ssh</a>, and others. It uses Unix <a href="http://en.wikipedia.org/wiki/Pseudo_terminal" title="Pseudo terminal">pseudo terminals</a>
+ to wrap up subprocesses transparently, allowing the automation of 
+arbitrary applications that are accessed over a terminal. With <a href="http://en.wikipedia.org/wiki/Tk_%28framework%29" title="Tk (framework)">Tk</a>, interactive applications can be wrapped in <a href="http://en.wikipedia.org/wiki/X11" class="mw-redirect" title="X11">X11</a> <a href="http://en.wikipedia.org/wiki/GUI" title="GUI" class="mw-redirect">GUIs</a>.</p>
+<div class="noprint tright portal" style="border: 1px solid rgb(170, 170, 170); margin: 0.5em 0pt 0.5em 0.5em;">
+<table style="background: none repeat scroll 0% 0% rgb(249, 249, 249); font-size: 85%; line-height: 110%; max-width: 175px;">
+<tbody><tr>
+<td><a href="http://en.wikipedia.org/wiki/File:Portal-puzzle.svg" class="image"><img alt="Portal-puzzle.svg" src="Expect_files/32px-Portal-puzzle.png" height="28" width="32"></a></td>
+<td style="padding: 0pt 0.2em;"><i><b><a href="http://en.wikipedia.org/wiki/Portal:Software_Testing" title="Portal:Software Testing">Software Testing portal</a></b></i></td>
+</tr>
+</tbody></table>
+</div>
+<table id="toc" class="toc">
+<tbody><tr>
+<td>
+<div id="toctitle">
+<h2>Contents</h2>
+ <span class="toctoggle">[<a href="#" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Basics"><span class="tocnumber">1</span> <span class="toctext">Basics</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Examples"><span class="tocnumber">2</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Usage"><span class="tocnumber">3</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Opinion"><span class="tocnumber">4</span> <span class="toctext">Opinion</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Pros"><span class="tocnumber">4.1</span> <span class="toctext">Pros</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Cons"><span class="tocnumber">4.2</span> <span class="toctext">Cons</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">5</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Further_reading"><span class="tocnumber">6</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#External_links"><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Expect&amp;action=edit&amp;section=1" title="Edit section: Basics">edit</a>]</span> <span class="mw-headline" id="Basics">Basics</span></h2>
+<p>Expect has <a href="http://en.wikipedia.org/wiki/Regular_expression">regular expression</a>
+ pattern matching and general program capabilities, allowing simple 
+scripts to intelligently control programs such as telnet, ftp, and ssh, 
+all of which lack a programming language, macros, or any other program 
+mechanism. The result is that Expect scripts provide old tools with 
+significant new power and flexibility.</p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Expect&amp;action=edit&amp;section=2" title="Edit section: Examples">edit</a>]</span> <span class="mw-headline" id="Examples">Examples</span></h2>
+<p>A simple example is a script that automates a telnet session:</p>
+<pre>  # Assume $remote_server, $my_user_id, $my_password, and $my_command were read in earlier 
+  # in the script.<br>  # Open a telnet session to a remote server, and wait for a username prompt.
+  spawn telnet $remote_server
+  expect "username:"<br>  # Send the username, and then wait for a password prompt.
+  send "$my_user_id\r"
+  expect "password:"<br>  # Send the password, and then wait for a shell prompt.
+  send "$my_password\r"
+  expect "%"<br>  # Send the prebuilt command, and then wait for another shell prompt.
+  send "$my_command\r"
+  expect "%"<br>  # Capture the results of the command into a variable. This can be displayed, or written to disk.
+  set results $expect_out(buffer)<br>  # Exit the telnet session, and wait for a special end-of-file character.
+  send "exit\r"
+  expect eof
+</pre>
+<p>Another example is a script that automates ftp:</p>
+<pre>  # Open an ftp session to a remote server, and wait for a username prompt.
+  spawn ftp $remote_server
+  expect "username:"<br>  # Send the username, and then wait for a password prompt.
+  send "$my_user_id\r"
+  expect "password:"<br>  # Send the password, and then wait for an ftp prompt.
+  send "$my_password\r"
+  expect "ftp&gt;"<br>  # Switch to binary mode, and then wait for an ftp prompt.
+  send "bin\r"
+  expect "ftp&gt;"<br>  # Turn off prompting.
+  send "prompt\r"
+  expect "ftp&gt;"<br>  # Get all the files
+  send "mget *\r"
+  expect "ftp&gt;"<br>  # Exit the ftp session, and wait for a special end-of-file character.
+  send "bye\r"
+  expect eof
+</pre>
+<p>Below is an example that automates sftp, with password:</p>
+<pre> #!/usr/local/bin/expect -f #&lt;---insert here your expect program location
+ 
+ # procedure to attempt connecting; result 0 if OK, 1 otherwise
+ proc connect {passw} {
+  expect {
+    "Password:" { 
+        send "$passw\r"
+        expect {
+           "sftp*" {
+                return 0
+            }  
+        }
+     }
+  }
+  # timed out
+  return 1
+ }
+ 
+ #read the input parameters
+ set user [lindex $argv 0]
+ set passw [lindex $argv 1]
+ set host [lindex $argv 2]
+ set location [lindex $argv 3]
+ set file1 [lindex $argv 4]
+ set file2 [lindex $argv 5]
+ 
+ #puts "Argument data:\n";
+ #puts "user: $user";
+ #puts "passw: $passw";
+ #puts "host: $host";
+ #puts "location: $location";
+ #puts "file1: $file1";
+ #puts "file2: $file2";
+ 
+ #check if all were provided
+ if { $user == "" || $passw == "" || $host == "" || $location == "" || $file1 == "" || $file2 == "" }  {
+   puts "Usage: &lt;user&gt; &lt;passw&gt; &lt;host&gt; &lt;location&gt; &lt;file1 to send&gt; &lt;file2 to send&gt;\n"
+   exit 1
+ }
+ 
+ #sftp to specified host and send the files
+ spawn sftp $user@$host
+ 
+ set rez [connect $passw]
+ if { $rez == 0 } {
+   send "cd $location\r"
+   set timeout -1
+   send "put $file2\r"
+   send "put $file1\r"
+   send "ls -l\r"
+   send "quit\r"
+   expect eof
+   exit 0
+ }
+ puts "\nError connecting to server: $host, user: $user and password: $passw!\n"
+ exit 1
+</pre>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Expect&amp;action=edit&amp;section=3" title="Edit section: Usage">edit</a>]</span> <span class="mw-headline" id="Usage">Usage</span></h2>
+<p>Expect serves as a "glue" to link existing utilities together. The 
+general idea is to try to figure out how to make Expect utilize the 
+system's existing tools rather than figure out how to solve a problem 
+inside of Expect.</p>
+<p>A key usage of Expect involves commercial software products. Many of 
+these products provide some type of command-line interface, but these 
+usually lack the power needed to write <a href="http://en.wikipedia.org/wiki/Scripting_programming_language" title="Scripting programming language" class="mw-redirect">scripts</a>.
+ They were built to service the users administering the product, but the
+ company often doesn't spend the resources to fully implement a robust 
+scripting language. An Expect script can spawn a shell, look up 
+environmental variables, perform some Unix commands to retrieve more 
+information, and then enter into the product's command-line interface 
+armed with the necessary information to achieve the user's goal. After 
+looking up information inside the product's command-line interface, the 
+script can make an intelligent decision about what action to take, if 
+any.</p>
+<p>Every time an <b>Expect</b> operation is completed, the results are 
+stored in a local variable called $expect_out. This allows the script to
+ harvest information to feedback to the user, and it also allows 
+conditional behavior of what to <b>send</b> next based on the circumstances.</p>
+<p>A common use of Expect is to set up a testing suite, whether it be for programs, utilities or embedded systems. <a href="http://en.wikipedia.org/wiki/DejaGnu">DejaGnu</a> is a testing suite written using Expect for use in testing. It has been used extensively for testing <a href="http://en.wikipedia.org/wiki/GNU_Compiler_Collection" title="GNU Compiler Collection">gcc</a> and is very well suited to testing remote targets such as embedded development.</p>
+<p>You can automate the generation of an expect script using a tool 
+called 'autoexpect'. This tool observes your actions and generates an 
+expect script using heuristics. Though generated code may be large and 
+somewhat cryptic, you can always tweak the generated script to get the 
+exact code.</p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Expect&amp;action=edit&amp;section=4" title="Edit section: Opinion">edit</a>]</span> <span class="mw-headline" id="Opinion">Opinion</span></h2>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Expect&amp;action=edit&amp;section=5" title="Edit section: Pros">edit</a>]</span> <span class="mw-headline" id="Pros">Pros</span></h3>
+<p>Expect can be run at regular intervals through the use of <a href="http://en.wikipedia.org/wiki/Cron">cron</a>
+ to encapsulate system administration tasks. This works because Expect 
+merely uses system administration tools already located on the host 
+computer. No extra tools need to be learned. If the programmer has 
+already learned <a href="http://en.wikipedia.org/wiki/Tcl">Tcl</a>, then
+ migrating to Expect is a relatively easy transition. The same 
+programming structures and syntax exist, but with additional features 
+built in.</p>
+<p>There is large support in the industry for using Expect for many 
+in-house administration tasks. It is widely used by companies such as 
+Silicon Graphics, IBM, HP, Sun, Xerox, Amdahl, Tektronix, AT&amp;T, 
+ComputerVision and the World Bank to run in-house automated testing for 
+development projects, file transfers, account administration, and 
+network testing.</p>
+<p>Expect has been ported to Python, Perl and Java languages in various 
+add-on module projects. Subroutines generally are an interpretation of 
+the original version - with equivalent functionality. Once one 
+understands the concept, one can trivially move to other languages as 
+needed.</p>
+<h3><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Expect&amp;action=edit&amp;section=6" title="Edit section: Cons">edit</a>]</span> <span class="mw-headline" id="Cons">Cons</span></h3>
+<p>Expect inherits the same syntax convention as Tcl, which may seem 
+unfamiliar if accustomed to other script languages. Compared to 
+languages such as <a href="http://en.wikipedia.org/wiki/Bash_%28Unix_shell%29" title="Bash (Unix shell)">bash</a>, <a href="http://en.wikipedia.org/wiki/C_shell" title="C shell">csh</a>, and <a href="http://en.wikipedia.org/wiki/Perl">Perl</a>,
+ Expect has a different twist. It is sometimes challenging to remember 
+when a variable must be prefixed with a "$", and when it must not. There
+ are versions of Expect available for <a href="http://en.wikipedia.org/wiki/Perl">Perl</a> and <a href="http://en.wikipedia.org/wiki/Python_%28programming_language%29" title="Python (programming language)">Python</a> for those familiar with their syntax<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>2<span>]</span></a></sup><sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>3<span>]</span></a></sup>.</p>
+<p>Another limitation is the difficulty in porting Expect scripts 
+between platforms. For example, an Expect script that was written to use
+ several Unix-based tools, might not be suitable if migrated to a 
+Windows platform. If possible, the programmer must find counterpart 
+command-line applications that provide the same information, and this 
+will probably require changing the send/expect's, which can be a major 
+part of the script. This is not an issue if you load tcl, perl or python
+ on the machines in question, and use those languages' native <a href="http://en.wikipedia.org/wiki/POSIX">POSIX</a> interfaces for accessing files, and standard POSIX utilities (telnet, ftp etc.) for remote interaction.</p>
+<p>A less obvious argument against Expect is that it can enable 
+sub-optimal solutions. For example, a systems administrator needing to 
+log into multiple servers for automated changes might use Expect with 
+stored passwords, rather than the better solution of <a href="http://en.wikipedia.org/wiki/Ssh" class="mw-redirect" title="Ssh">ssh</a>
+ agent keys. The ability to automate interactive tools is attractive, 
+but there are frequently other options that can accomplish the same 
+tasks in a more robust manner.</p>
+<p>Expect cannot automate <a href="http://en.wikipedia.org/wiki/GUI" class="mw-redirect" title="GUI">GUI</a> based tools. This is generally only a problem on Windows where for many tasks a <a href="http://en.wikipedia.org/wiki/GUI" class="mw-redirect" title="GUI">GUI</a> based interface is the only option. In these situations tools like <a href="http://en.wikipedia.org/wiki/Autohotkey" class="mw-redirect" title="Autohotkey">Autohotkey</a>, <a href="http://en.wikipedia.org/wiki/AutoIt">AutoIt</a> or <a href="http://en.wikipedia.org/wiki/Winbatch">Winbatch</a> can be used instead.</p>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Expect&amp;action=edit&amp;section=7" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span></h2>
+<div class="reflist references-column-count references-column-count-1" style="-moz-column-count: 1;">
+<div class="references">
+<ol>
+<li id="cite_note-0"><b><a href="#cite_ref-0">^</a></b> <span class="citation web"><a href="http://expect.sourceforge.net/FAQ.html#q6" class="external text" rel="nofollow">"Expect FAQ: Our company policy requires a license to use Expect. Where can we get a license?"</a><span class="printonly">. <a href="http://expect.sourceforge.net/FAQ.html#q6" class="external free" rel="nofollow">http://expect.sourceforge.net/FAQ.html#q6</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.btitle=Expect+FAQ%3A+Our+company+policy+requires+a+license+to+use+Expect.+Where+can+we+get+a+license%3F&amp;rft.atitle=&amp;rft_id=http%3A%2F%2Fexpect.sourceforge.net%2FFAQ.html%23q6&amp;rfr_id=info:sid/en.wikipedia.org:Expect"><span style="display: none;">&nbsp;</span></span></li>
+<li id="cite_note-1"><b><a href="#cite_ref-1">^</a></b> <a href="http://www.noah.org/wiki/Pexpect" class="external free" rel="nofollow">http://www.noah.org/wiki/Pexpect</a> Expect for Python (Pexpect)</li>
+<li id="cite_note-2"><b><a href="#cite_ref-2">^</a></b> <a href="http://bitbucket.org/geertj/winpexpect/" class="external free" rel="nofollow">http://bitbucket.org/geertj/winpexpect/</a> Windows port of Pexpect</li>
+</ol>
+</div>
+</div>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Expect&amp;action=edit&amp;section=8" title="Edit section: Further reading">edit</a>]</span> <span class="mw-headline" id="Further_reading">Further reading</span></h2>
+<div class="refbegin references references-column-count references-column-count-1" style="-moz-column-count: 1;">
+<ul>
+<li><span class="citation book">Libes, Don (1995). <i>Exploring Expect: A Tcl-Based Tool for Automating Interactive Programs</i>. O'Reilly &amp; Associates, Inc. <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="http://en.wikipedia.org/wiki/Special:BookSources/1-56592-090-2" title="Special:BookSources/1-56592-090-2">1-56592-090-2</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Exploring+Expect%3A+A+Tcl-Based+Tool+for+Automating+Interactive+Programs&amp;rft.aulast=Libes&amp;rft.aufirst=Don&amp;rft.au=Libes%2C%26%2332%3BDon&amp;rft.date=1995&amp;rft.pub=O%27Reilly+%26+Associates%2C+Inc&amp;rft.isbn=1-56592-090-2&amp;rfr_id=info:sid/en.wikipedia.org:Expect"><span style="display: none;">&nbsp;</span></span></li>
+</ul>
+</div>
+<h2><span class="editsection">[<a href="http://en.wikipedia.org/w/index.php?title=Expect&amp;action=edit&amp;section=9" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span></h2>
+<ul>
+<li><a href="http://sourceforge.net/projects/expect/" class="external text" rel="nofollow">Expect on SourceForge (current)</a></li>
+<li><a href="http://expect.nist.gov/" class="external text" rel="nofollow">Official homepage (<i>very outdated!</i>)</a></li>
+<li><a href="http://wiki.tcl.tk/201" class="external text" rel="nofollow">The Tcler's Wiki -- Expect page</a></li>
+<li><a href="http://sourceforge.net/projects/expectperl" class="external text" rel="nofollow">Perl Expect.pm module</a></li>
+<li><a href="http://pexpect.sourceforge.net/pexpect.html" class="external text" rel="nofollow">Pexpect a Pure Python Expect-like module</a></li>
+<li><a href="http://empty.sourceforge.net/" class="external text" rel="nofollow">Empty - expectlike tool to run command-line interactive programs in UNIX shell-scripts</a></li>
+<li><a href="http://expect-lite.sourceforge.net/" class="external text" rel="nofollow">Expect-lite -- a wrapper for expect, making automation easy, quick, and fun</a></li>
+<li><a href="http://www.cotse.com/dlf/man/expect/bulletproof1.htm" class="external text" rel="nofollow">Article "Advanced Programming in Expect: A Bulletproof Interface"</a></li>
+<li><a href="http://expectj.sourceforge.net/" class="external text" rel="nofollow">ExpectJ - a Java implementation of the Unix expect utility</a></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 3234/1000000
+Post-expand include size: 16292/2048000 bytes
+Template argument size: 4637/2048000 bytes
+Expensive parser function count: 1/500
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:1161030-0!*!0!!en!4 and timestamp 20110228141742 -->
+<div class="printfooter">
+Retrieved from "<a href="http://en.wikipedia.org/wiki/Expect">http://en.wikipedia.org/wiki/Expect</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://en.wikipedia.org/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Scripting_languages" title="Category:Scripting languages">Scripting languages</a></span> | <span dir="ltr"><a href="http://en.wikipedia.org/wiki/Category:Free_software_programmed_in_Tcl" title="Category:Free software programmed in Tcl">Free software programmed in Tcl</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li id="pt-login"><a href="http://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Expect" title="You are encouraged to log in; however, it is not mandatory. [alt-shift-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><span><a href="http://en.wikipedia.org/wiki/Expect" title="View the content page [alt-shift-c]" accesskey="c">Article</a></span></li>
+					<li id="ca-talk"><span><a href="http://en.wikipedia.org/wiki/Talk:Expect" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+		<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><span><a href="http://en.wikipedia.org/wiki/Expect">Read</a></span></li>
+					<li id="ca-edit"><span><a href="http://en.wikipedia.org/w/index.php?title=Expect&amp;action=edit" title="You can edit this page. 
+Please use the preview button before saving. [alt-shift-e]" accesskey="e">Edit</a></span></li>
+					<li id="ca-history" class="collapsible "><span><a href="http://en.wikipedia.org/w/index.php?title=Expect&amp;action=history" title="Past versions of this page [alt-shift-h]" accesskey="h">View history</a></span></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="/w/index.php" id="searchform">
+		<input name="title" value="Special:Search" type="hidden">
+				<div id="simpleSearch">
+						<input autocomplete="off" class="placeholder" placeholder="Search" tabindex="1" id="searchInput" name="search" title="Search Wikipedia [alt-shift-f]" accesskey="f" type="text">
+						<button id="searchButton" type="submit" name="button" title="Search Wikipedia for this text"><img src="Expect_files/search-ltr.png" alt="Search"></button>
+					</div>
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint collapsible-nav">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(&quot;http://upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png&quot;);" href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal first persistent" id="p-navigation">
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-mainpage-description"><a href="http://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li>
+					<li id="n-contents"><a href="http://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li>
+					<li id="n-featuredcontent"><a href="http://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li>
+					<li id="n-currentevents"><a href="http://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li>
+					<li id="n-randompage"><a href="http://en.wikipedia.org/wiki/Special:Random" title="Load a random article [alt-shift-x]" accesskey="x">Random article</a></li>
+					<li id="n-sitesupport"><a href="http://wikimediafoundation.org/wiki/Special:Landingcheck?landing_page=WMFJA085&amp;language=en&amp;utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=20101204SB002" title="Support us">Donate to Wikipedia</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- interaction -->
+<div class="portal expanded" id="p-interaction">
+	<h5 tabindex="2">Interaction</h5>
+	<div style="display: block;" class="body">
+				<ul>
+					<li id="n-help"><a href="http://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li>
+					<li id="n-aboutsite"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li>
+					<li id="n-portal"><a href="http://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+					<li id="n-recentchanges"><a href="http://en.wikipedia.org/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+					<li id="n-contact"><a href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact Wikipedia</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /interaction -->
+
+<!-- TOOLBOX -->
+<div class="portal collapsed" id="p-tb">
+	<h5 tabindex="3">Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="http://en.wikipedia.org/wiki/Special:WhatLinksHere/Expect" title="List of all English Wikipedia pages containing links to this page [alt-shift-j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="http://en.wikipedia.org/wiki/Special:RecentChangesLinked/Expect" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+																																					<li id="t-upload"><a href="http://en.wikipedia.org/wiki/Wikipedia:Upload" title="Upload files [alt-shift-u]" accesskey="u">Upload file</a></li>
+											<li id="t-specialpages"><a href="http://en.wikipedia.org/wiki/Special:SpecialPages" title="List of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="http://en.wikipedia.org/w/index.php?title=Expect&amp;oldid=404281259" title="Permanent link to this revision of the page">Permanent link</a></li>
+				<li id="t-cite"><a href="http://en.wikipedia.org/w/index.php?title=Special:Cite&amp;page=Expect&amp;id=404281259" title="Information on how to cite this page">Cite this page</a></li>		</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- coll-print_export -->
+<div class="portal collapsed" id="p-coll-print_export">
+	<h5 tabindex="4">Print/export</h5>
+	<div class="body">
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Expect" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="http://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Expect&amp;oldid=404281259&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="http://en.wikipedia.org/w/index.php?title=Expect&amp;printable=yes" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li></ul>			</div>
+</div>
+
+<!-- /coll-print_export -->
+
+<!-- LANGUAGES -->
+<div class="portal expanded" id="p-lang">
+	<h5 tabindex="5">Languages</h5>
+	<div style="display: block;" class="body">
+		<ul>
+					<li class="interwiki-pl"><a href="http://pl.wikipedia.org/wiki/Expect" title="Expect">Polski</a></li>
+					<li class="interwiki-ru"><a href="http://ru.wikipedia.org/wiki/Expect" title="Expect">Русский</a></li>
+					<li class="interwiki-zh"><a href="http://zh.wikipedia.org/wiki/Expect" title="Expect">中文</a></li>
+				</ul>
+	</div>
+</div>
+
+<!-- /LANGUAGES -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 26 December 2010 at 11:19.<br></li>
+																							<li id="footer-info-copyright">Text is available under the <a rel="license" href="http://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/" style="display: none;"></a>;
+additional terms may apply.
+See <a href="http://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> for details.<br>
+Wikipedia® is a registered trademark of the <a href="http://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.<br></li><li class="noprint"><a class="internal" href="http://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact us</a></li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="http://wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="http://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+																							<li id="footer-places-disclaimer"><a href="http://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+															</ul>
+											<ul id="footer-icons" class="noprint">
+					<li id="footer-copyrightico">
+						<a href="http://wikimediafoundation.org/"><img src="Expect_files/wikimedia-button.png" alt="Wikimedia Foundation" height="31" width="88"></a>
+					</li>
+					<li id="footer-poweredbyico">
+						<a href="http://www.mediawiki.org/"><img src="Expect_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></a>
+					</li>
+				</ul>
+						<div style="clear: both;"></div>
+		</div>
+		<!-- /footer -->
+		
+<script src="Expect_files/load.php" type="text/javascript"></script><script src="Expect_files/load_004.php" type="text/javascript"></script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.config.set({"wgCanonicalNamespace": "", "wgCanonicalSpecialPageName": false, "wgNamespaceNumber": 0, "wgPageName": "Expect", "wgTitle": "Expect", "wgAction": "view", "wgArticleId": 1161030, "wgIsArticle": true, "wgUserName": null, "wgUserGroups": ["*"], "wgCurRevisionId": 404281259, "wgCategories": ["Scripting languages", "Free software programmed in Tcl"], "wgBreakFrames": false, "wgRestrictionEdit": [], "wgRestrictionMove": [], "wgSearchNamespaces": [0], "wgFlaggedRevsParams": {"tags": {"status": {"levels": 1, "quality": 2, "pristine": 3}}}, "wgStableRevisionId": null, "wgRevContents": {"error": "Unable to get content.", "waiting": "Waiting for content"}, "wgWikimediaMobileUrl": "http://en.m.wikipedia.org/wiki", "wgCollapsibleNavBucketTest": false, "wgCollapsibleNavForceNewVersion": false, "wgArticleAssessmentJUIPath": "http://bits.wikimedia.org/w/extensions-1.17/UsabilityInitiative/js/js2stopgap/jui.combined.min.js", "Geo": {"city": "", "country": ""}, "wgNoticeProject": "wikipedia"});
+}
+</script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.loader.load(["mediawiki.legacy.wikibits", "mediawiki.util", "mediawiki.legacy.ajax", "mediawiki.legacy.mwsuggest", "ext.vector.collapsibleNav", "ext.vector.collapsibleTabs", "ext.vector.editWarning", "ext.vector.simpleSearch"]);
+	mediaWiki.loader.go();
+}
+</script><script type="text/javascript" src="Expect_files/load_002.php"></script><script type="text/javascript" src="Expect_files/load_005.php"></script>
+
+<script src="Expect_files/MobileRedirect.js" type="text/javascript"></script>
+<script src="Expect_files/index.php" type="text/javascript"></script>
+<script src="Expect_files/load_003.php" type="text/javascript"></script><script type="text/javascript" src="Expect_files/index_002.php"></script>
+<script type="text/javascript">if ( window.mediaWiki ) {
+	mediaWiki.user.options.set({"ccmeonemails":0,"cols":80,"contextchars":50,"contextlines":5,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"highlightbroken":1,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"vector","stubthreshold":0,"thumbsize":4,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":0,"watchdeletion":0,"watchlistdays":"3","watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"flaggedrevssimpleui":1,"flaggedrevsstable":false,"flaggedrevseditdiffs":true,"flaggedrevsviewdiffs":false,"vector-simplesearch":1,"useeditwarning":1,"vector-collapsiblenav":1,"usebetatoolbar":1,"usebetatoolbar-cgd":1,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"searchNs100":false,"searchNs101":false,"searchNs108":false,"searchNs109":false});
+	mediaWiki.loader.state({"user.options":"ready"});
+	
+	
+	/* cache key: enwiki:resourceloader:filter:minify-js:3:ae2156c08a06314b12473d37e57711e2 */
+}
+</script><script type="text/javascript" src="Expect_files/a"></script>		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		<!-- Served by srv205 in 0.074 secs. -->			<div class="suggestions" style="top: 73px; width: 204px; display: none; left: auto; right: 29px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>

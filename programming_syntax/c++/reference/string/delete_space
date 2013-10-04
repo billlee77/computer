@@ -1,0 +1,8 @@
+# Delete all white space in a string
+  tmp_string.erase( remove( tmp_string.begin(), tmp_string.end(), ' ' ), tmp_string.end() );
+
+# String to char conversion
+  strcpy(particle, tmp_string.c_str());
+
+# Comparing char
+  if (strcmp(particle, "proton") == 0){ }

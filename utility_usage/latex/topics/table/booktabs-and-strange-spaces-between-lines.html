@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="booktabs-and-strange-spaces-between-lines_files/ga.js" async="" type="text/javascript"></script><script src="booktabs-and-strange-spaces-between-lines_files/quant.js" async="" type="text/javascript"></script><script>window.serq=[];StackExchange={ready:function(f){serq.push(f)}}</script>
+    
+    
+    <title>tables - Booktabs and longtable - strange spaces between lines - TeX - LaTeX</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/tex/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/tex/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="TeX - LaTeX - Stack Exchange" href="http://tex.stackexchange.com/opensearch.xml">
+
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="booktabs-and-strange-spaces-between-lines_files/all.css">
+    
+    <link rel="canonical" href="http://tex.stackexchange.com/questions/24441/booktabs-and-longtable-strange-spaces-between-lines">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'Booktabs and longtable - strange spaces between lines'" href="http://tex.stackexchange.com/feeds/question/24441">
+
+
+        <script type="text/javascript">
+             StackExchange.ready(function () {
+                 StackExchange.realtime.init('ws://sockets.ny.stackexchange.com');
+                StackExchange.realtime.subscribeToInboxNotifications();
+                StackExchange.realtime.subscribeToReputationNotifications('85');            
+        });
+        </script>
+
+    
+
+<script src="booktabs-and-strange-spaces-between-lines_files/full-anon.js" type="text/javascript" async=""></script><script src="booktabs-and-strange-spaces-between-lines_files/prettify-full.js" type="text/javascript" async=""></script></head>
+<body class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    <span id="hlinks-user">
+                  
+                  </span>
+                  <span id="hlinks-nav">
+                  <a href="http://tex.stackexchange.com/users/login?returnurl=%2fquestions%2f24441%2fbooktabs-and-longtable-strange-spaces-between-lines">log in</a>
+ <span class="lsep">|</span>
+
+                  </span>
+                  <span id="hlinks-custom">
+                  <a href="http://chat.stackexchange.com/">chat</a>
+ <span class="lsep">|</span>
+<a href="http://meta.tex.stackexchange.com/">meta</a>
+ <span class="lsep">|</span>
+<a href="http://tex.stackexchange.com/about">about</a>
+ <span class="lsep">|</span>
+<a href="http://tex.stackexchange.com/faq">faq</a>
+                  </span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get" autocomplete="off">
+                    <div>
+                        <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" maxlength="140" size="28" type="text">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://tex.stackexchange.com/">TeX - LaTeX</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://tex.stackexchange.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://tex.stackexchange.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://tex.stackexchange.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://tex.stackexchange.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://tex.stackexchange.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://tex.stackexchange.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+        <div id="content">
+            
+            
+
+
+<div itemscope="" itemtype="http://schema.org/Article">
+<link itemprop="image" href="http://cdn.sstatic.net/tex/img/apple-touch-icon.png">
+<div id="question-header">
+    <h1 itemprop="name"><a href="http://tex.stackexchange.com/questions/24441/booktabs-and-longtable-strange-spaces-between-lines" class="question-hyperlink">Booktabs and longtable - strange spaces between lines</a></h1>
+</div>
+<div id="mainbar">
+
+
+<div class="question" id="question" data-questionid="24441">
+
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+
+<div class="vote">
+    <input value="24441" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>   
+ 
+</div>
+
+    </td>
+<td class="postcell">
+<div>          
+    <div class="post-text" itemprop="description">
+        <p>I needed to make some horizontal table lines bold so I used booktabs package. However if I use <code>\toprule</code>
+ command to make line bold I get strange outcome - there are some spaces
+ between bold line and vertical table lines (please take a look at 
+screen )
+<img src="booktabs-and-strange-spaces-between-lines_files/y89tQ.png" alt=""></p>
+
+<p>code used to generate table looks this way </p>
+
+<pre class="lang-tex prettyprint"><code><span class="pln">&nbsp; &nbsp; </span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">longtable</span><span class="pun">}{</span><span class="pln">|c|c|c|c|c|c|c|c|c|</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\caption</span><span class="pun">{</span><span class="pln">Wyniki rozpoznawania obrazów dla obrazu zapytania 022</span><span class="kwd">\_</span><span class="pln">0007.jpg oraz kategorii </span><span class="typ">$</span><span class="pln">budda</span><span class="typ">$</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\label</span><span class="pun">{</span><span class="pln">tab:budda</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\\</span><span class="pln"><br></span><span class="kwd">\toprule</span><span class="pln"><br></span><span class="kwd">\multicolumn</span><span class="pun">{</span><span class="pln">2</span><span class="pun">}{</span><span class="pln">|c|</span><span class="pun">}{</span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Obraz zapytanie</span><span class="pun">}}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\multicolumn</span><span class="pun">{</span><span class="pln">3</span><span class="pun">}{</span><span class="pln">|c|</span><span class="pun">}{</span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Obraz przetwarzany</span><span class="pun">}}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\multicolumn</span><span class="pun">{</span><span class="pln">4</span><span class="pun">}{</span><span class="pln">|c|</span><span class="pun">}{</span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Wynik</span><span class="pun">}}</span><span class="pln"> </span><span class="kwd">\\</span><span class="pln"><br></span><span class="kwd">\toprule</span><span class="pln"><br></span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Nazwa</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">N</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Katalog</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Nazwa</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">N</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln"> </span><span class="typ">$</span><span class="pln">J_</span><span class="pun">{</span><span class="pln">b</span><span class="pun">}</span><span class="typ">$</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="typ">$</span><span class="pln">J_</span><span class="pun">{</span><span class="pln">a</span><span class="pun">}</span><span class="typ">$</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Czas</span><span class="pun">[</span><span class="pln">s</span><span class="pun">]}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Gęstość</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">\\</span><span class="pln"> </span><span class="kwd">\hline</span><span class="pln"><br>...<br>..<br>..<br></span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">longtable</span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p>PS
+Is it possible to make horizontal lines bold ??</p>
+
+<p>EDIT
+I decied to resign from booktabs and I used solution presented in here 
+<a href="http://tex.stackexchange.com/questions/3445/latex-tables-how-do-i-make-bold-horizontal-lines-typically-hline">LaTeX tables: How do I make bold horizontal lines (typically \hline)?</a>
+ (pluton answer)
+now I have a horizontal  bold lines and I also managed to make vertical 
+lines bold. The problem however is horizontal line length. My table's 
+length is a bit bigger than length of page (from one margin to another) 
+and I think it makes the horizontal lines look like that
+<img src="booktabs-and-strange-spaces-between-lines_files/cZC3b.png" alt="enter image description here"></p>
+
+<p>Is it possible to somehow adjust this command</p>
+
+<pre class="lang-tex prettyprint"><code><span class="pln">&nbsp; &nbsp; </span><span class="dec">\def</span><span class="kwd">\hlinewd</span><span class="pln">#1</span><span class="pun">{</span><span class="com">%</span><span class="pln"><br></span><span class="kwd">\noalign</span><span class="pun">{</span><span class="kwd">\ifnum</span><span class="pln">0</span><span class="pun">=</span><span class="pln">`</span><span class="pun">}</span><span class="kwd">\fi\hrule</span><span class="pln"> </span><span class="kwd">\@height</span><span class="pln"> #1 </span><span class="com">%</span><span class="pln"><br></span><span class="kwd">\futurelet\reserved@a\@xhline</span><span class="pun">}</span><span class="pln"> <br></span></code></pre>
+
+<p>so that it adjust length of the bolded line to the length of the table</p>
+
+<p>Here is compilable code snipet </p>
+
+<pre class="lang-tex prettyprint"><code><span class="kwd">\documentclass</span><span class="pun">[</span><span class="pln">a4paper,</span><span class="lit">12pt</span><span class="pun">]{</span><span class="pln">mwrep</span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">\usepackage</span><span class="pun">[</span><span class="pln">cp1250</span><span class="pun">]{</span><span class="pln">inputenc</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\usepackage</span><span class="pun">[</span><span class="pln">left</span><span class="pun">=</span><span class="lit">3.0cm</span><span class="pln">,right</span><span class="pun">=</span><span class="lit">3cm</span><span class="pln">,top</span><span class="pun">=</span><span class="lit">3.0cm</span><span class="pln">,bottom</span><span class="pun">=</span><span class="lit">3.0cm</span><span class="pun">]{</span><span class="pln">geometry</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">amsmath,amssymb</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">graphicx</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">setspace</span><span class="pun">}</span><span class="pln"><br>&nbsp;</span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">algorithmic</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">tabularx</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">longtable</span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">\usepackage</span><span class="pun">[</span><span class="pln">centerlast</span><span class="pun">]{</span><span class="pln">caption</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">multirow</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\usepackage</span><span class="pun">[</span><span class="pln">section</span><span class="pun">]</span><span class="pln"> </span><span class="pun">{</span><span class="pln">placeins</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">booktabs</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\linespread</span><span class="pun">{</span><span class="pln">1.3</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\makeatletter</span><span class="pln"><br></span><span class="dec">\def</span><span class="kwd">\hlinewd</span><span class="pln">#1</span><span class="pun">{</span><span class="com">%</span><span class="pln"><br></span><span class="kwd">\noalign</span><span class="pun">{</span><span class="kwd">\ifnum</span><span class="pln">0</span><span class="pun">=</span><span class="pln">`</span><span class="pun">}</span><span class="kwd">\fi\hrule</span><span class="pln"> </span><span class="kwd">\@height</span><span class="pln"> #1 </span><span class="com">%</span><span class="pln"><br></span><span class="kwd">\futurelet\reserved@a\@xhline</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\makeatother</span><span class="pln"><br></span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\chapter</span><span class="pun">{</span><span class="pln">somechapter</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\section</span><span class="pun">{</span><span class="pln">somesection</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\small</span><span class="pln"><br></span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">longtable</span><span class="pun">}{</span><span class="pln">!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"> c!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"> c!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"> c!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"> c!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"> c!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"> c!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"> c!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"> c!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"> c!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"> </span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">\caption</span><span class="pun">{</span><span class="pln">something something somethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomething</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\label</span><span class="pun">{</span><span class="pln">tab:budda</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\\</span><span class="pln"> </span><span class="kwd">\hlinewd</span><span class="pun">{</span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\multicolumn</span><span class="pun">{</span><span class="pln">2</span><span class="pun">}{</span><span class="pln">!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}</span><span class="pln">c!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}}{</span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Query image </span><span class="pun">}}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\multicolumn</span><span class="pun">{</span><span class="pln">3</span><span class="pun">}{</span><span class="pln">c!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}}{</span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Processed image</span><span class="pun">}}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\multicolumn</span><span class="pun">{</span><span class="pln">4</span><span class="pun">}{</span><span class="pln">c!</span><span class="pun">{</span><span class="kwd">\vrule</span><span class="pln"> width </span><span class="lit">2pt</span><span class="pun">}}{</span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Outcome</span><span class="pun">}}</span><span class="pln"> </span><span class="kwd">\\</span><span class="pln"> </span><span class="kwd">\hlinewd</span><span class="pun">{</span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Name</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">N</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Directory</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Name</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">N</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln"> </span><span class="typ">$</span><span class="pln">J_</span><span class="pun">{</span><span class="pln">b</span><span class="pun">}</span><span class="typ">$</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="typ">$</span><span class="pln">J_</span><span class="pun">{</span><span class="pln">a</span><span class="pun">}</span><span class="typ">$</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">time</span><span class="pun">[</span><span class="pln">s</span><span class="pun">]}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Density</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">\\</span><span class="pln"> </span><span class="kwd">\hlinewd</span><span class="pun">{</span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"><br>022</span><span class="kwd">\_</span><span class="pln">0007.jpg &nbsp; </span><span class="typ">&amp;</span><span class="pln"> &nbsp; 193 </span><span class="typ">&amp;</span><span class="pln"> &nbsp; budda &nbsp; </span><span class="typ">&amp;</span><span class="pln"> &nbsp; 22</span><span class="kwd">\_</span><span class="pln">0007.jpg &nbsp; &nbsp;</span><span class="typ">&amp;</span><span class="pln"> &nbsp; 193 </span><span class="typ">&amp;</span><span class="pln"> &nbsp; 25512.9 </span><span class="typ">&amp;</span><span class="pln"> &nbsp; 156.1 &nbsp; </span><span class="typ">&amp;</span><span class="pln"> &nbsp; 288.5 &nbsp; </span><span class="typ">&amp;</span><span class="pln"> &nbsp; 0.73 &nbsp; &nbsp;</span><span class="kwd">\\</span><span class="pln"> &nbsp;</span><span class="kwd">\hline</span><span class="pln"> &nbsp;<br></span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">longtable</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+    </div>            
+    <div class="post-taglist">
+        <a href="http://tex.stackexchange.com/questions/tagged/tables" class="post-tag" title="show questions tagged 'tables'" rel="tag">tables</a> <a href="http://tex.stackexchange.com/questions/tagged/longtable" class="post-tag" title="show questions tagged 'longtable'" rel="tag">longtable</a> <a href="http://tex.stackexchange.com/questions/tagged/booktabs" class="post-tag" title="" rel="tag">booktabs</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://tex.stackexchange.com/q/24441" title="short permalink to this question" class="short-link" id="link-post-24441">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/24441/edit">improve this question</a></div>
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info"><div class="user-action-time">edited <a href="http://tex.stackexchange.com/posts/24441/revisions" title="show all edits to this post"><span title="2011-07-30 00:14:01Z" class="relativetime">Jul 30 '11 at 0:14</span></a></div><div class="user-gravatar32"></div><div class="user-details"><br></div></div>    </td>
+    <td class="post-signature owner">
+    <div class="user-info"><div class="user-action-time">asked <span title="2011-07-29 19:29:46Z" class="relativetime">Jul 29 '11 at 19:29</span></div><div class="user-gravatar32"><a href="http://tex.stackexchange.com/users/6845/imageplacer"><div class=""><img src="booktabs-and-strange-spaces-between-lines_files/a04a3471c81481d9f108d66280d7effc.png" alt="" height="32" width="32"></div></a></div><div class="user-details"><a href="http://tex.stackexchange.com/users/6845/imageplacer">imagePlacer</a><br><span class="reputation-score" title="reputation score" dir="ltr">75</span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>    </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-24441" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-47768" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="warm">6</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">The booktabs package is explicitly designed for tables <i>without</i> vertical rules. So either you should redo your table without vertical rules, (generally preferred) or not use booktabs rules.</span> –&nbsp;<a href="http://tex.stackexchange.com/users/2693/alan-munn" title="43478 reputation" class="comment-user">Alan Munn</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(47768, 0)" href="#comment47768_24441"><span title="2011-07-29 19:32:33Z">Jul 29 '11 at 19:32</span></a></span><span class="edited-yes" title="this comment was edited"></span></div></td>
+    </tr>
+            
+    <tr id="comment-47771" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Further to @Alan's comment: This is taken from the <a href="http://mirror.its.dal.ca/ctan/macros/latex/contrib/booktabs/booktabs.pdf" rel="nofollow"><code>booktabs</code> documentation</a> (p 3):
+"You will not go far wrong if you remember two simple guidelines at all times:
+ 1. Never, ever use vertical rules.
+ 2. Never use double rules."</span> –&nbsp;<a href="http://tex.stackexchange.com/users/5764/werner" title="74912 reputation" class="comment-user">Werner</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(47771, 0)" href="#comment47771_24441"><span title="2011-07-29 19:51:12Z">Jul 29 '11 at 19:51</span></a></span><span class="edited-yes" title="this comment was edited 2 times"></span></div></td>
+    </tr>
+            
+    <tr id="comment-47796" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">@AlanMunn please see my edit</span> –&nbsp;<a href="http://tex.stackexchange.com/users/6845/imageplacer" title="75 reputation" class="comment-user owner">imagePlacer</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(47796, 0)" href="#comment47796_24441"><span title="2011-07-29 22:07:29Z">Jul 29 '11 at 22:07</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-47797" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@imagePlacer
+ for all intents and purposes, it's impossible.  Probably not literally 
+so, since very little in TeX is truly impossible it seems, but in 
+practical terms, yes, you can't use booktabs rules with vertical lines. 
+To give another quote from the docs: "More importantly the rules 
+generated by the [booktabs] commands are in no way guaranteed to connect
+ with verticals generated by {|} characters in the preamble. This is a 
+feature (see above). You should not use vertical rules in tables, end of
+ story." (p.5)</span> –&nbsp;<a href="http://tex.stackexchange.com/users/2693/alan-munn" title="43478 reputation" class="comment-user">Alan Munn</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(47797, 0)" href="#comment47797_24441"><span title="2011-07-29 22:08:21Z">Jul 29 '11 at 22:08</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-47798" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">@imagePlacer
+ It would help you make your new edit have a complete, compilable 
+minimal document which produces just the output you are having trouble 
+with. That way people can see what you are doing without having to 
+guess.</span> –&nbsp;<a href="http://tex.stackexchange.com/users/2693/alan-munn" title="43478 reputation" class="comment-user">Alan Munn</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(47798, 0)" href="#comment47798_24441"><span title="2011-07-29 22:11:57Z">Jul 29 '11 at 22:11</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    <a id="comments-link-24441" class="comments-link" data-comments-count="1" title="expand to show all comments on this post">show <b>1</b> more comment</a>
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>    
+</div>
+
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>3 Answers</h2>
+            <div id="tabs">
+                <a href="http://tex.stackexchange.com/questions/24441/booktabs-and-longtable-strange-spaces-between-lines?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://tex.stackexchange.com/questions/24441/booktabs-and-longtable-strange-spaces-between-lines?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://tex.stackexchange.com/questions/24441/booktabs-and-longtable-strange-spaces-between-lines?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>    
+    </div>    
+
+
+  
+    <a name="24474"></a>
+    <div id="answer-24474" class="answer accepted-answer" data-answerid="24474">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input value="24474" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">3</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+<span class="vote-accepted-on" title="The question owner accepted this as the best answer Jul 31 '11 at 20:10">accepted</span> 
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>I think I  finally found a solution for making booktabs and hrules work so that is why I make an answer to my own question
+I created my own command </p>
+
+<pre class="lang-tex prettyprint"><code><span class="dec">\newcommand</span><span class="pun">{</span><span class="kwd">\mytoprule</span><span class="pun">}{</span><span class="kwd">\specialrule</span><span class="pun">{</span><span class="lit">2pt</span><span class="pun">}{</span><span class="lit">0em</span><span class="pun">}{</span><span class="lit">0em</span><span class="pun">}}</span><span class="pln"><br></span><span class="dec">\newcommand</span><span class="pun">{</span><span class="kwd">\mybottomrule</span><span class="pun">}{</span><span class="kwd">\specialrule</span><span class="pun">{</span><span class="lit">2pt</span><span class="pun">}{</span><span class="lit">0em</span><span class="pun">}{</span><span class="lit">0em</span><span class="pun">}}</span><span class="pln"> <br></span></code></pre>
+
+<p>and now everyting looks fine. </p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/24474" title="short permalink to this answer" class="short-link" id="link-post-24474">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/24474/edit">improve this answer</a></div>    </td>
+            
+
+    <td class="post-signature owner" align="right">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2011-07-30 10:11:22Z" class="relativetime">Jul 30 '11 at 10:11</span></div><div class="user-gravatar32"><a href="http://tex.stackexchange.com/users/6845/imageplacer"><div class=""><img src="booktabs-and-strange-spaces-between-lines_files/a04a3471c81481d9f108d66280d7effc.png" alt="" height="32" width="32"></div></a></div><div class="user-details"><a href="http://tex.stackexchange.com/users/6845/imageplacer">imagePlacer</a><br><span class="reputation-score" title="reputation score" dir="ltr">75</span><span title="5 bronze badges"><span class="badge3"></span><span class="badgecount">5</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-24474" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-136375" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">This works even better with \bigstrut to help with the cramped row heights.</span> –&nbsp;<a href="http://tex.stackexchange.com/users/2528/srking" title="385 reputation" class="comment-user">srking</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(136375, 24474)" href="#comment136375_24474"><span title="2012-07-20 19:14:28Z">Jul 20 at 19:14</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="24446"></a>
+    <div id="answer-24446" class="answer" data-answerid="24446">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input value="24446" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+ 
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>To your second question:</p>
+
+<p>the <code>\midrule[width]</code> has an optional argument for the line width and should at least leave the same space above and below the line.</p>
+
+<p>With the command <code>\cmidrule[width]{columns}</code> you can add a horizontal line with defined width that spans not all columns.</p>
+
+<p>See <code>booktabs</code> <a href="http://mirror.ctan.org/macros/latex/contrib/booktabs/booktabs.pdf" rel="nofollow">documentation</a> for more information.</p>
+
+<p>AFAIK you can not suppress the vertical spaces easily, as they are part of the "philosophy" of <code>booktabs</code> (not to use vertical lines at all) and they make the difference between the <code>toprule</code> and the <code>bottomrule</code>.</p>
+
+<p>example for line width for a midrule with very thick lines:</p>
+
+<pre class="lang-tex prettyprint"><code><span class="kwd">\documentclass</span><span class="pun">{</span><span class="pln">article</span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">\usepackage</span><span class="pun">{</span><span class="pln">longtable, booktabs</span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">longtable</span><span class="pun">}{</span><span class="pln">|c|c|c|c|c|c|c|c|c|</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\caption</span><span class="pun">{</span><span class="pln">Wyniki rozpoznawania obrazów dla obrazu zapytania 022</span><span class="kwd">\_</span><span class="pln">0007.jpg oraz kategorii </span><span class="typ">$</span><span class="pln">budda</span><span class="typ">$</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\label</span><span class="pun">{</span><span class="pln">tab:budda</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\\</span><span class="pln"><br></span><span class="kwd">\toprule</span><span class="pln"><br></span><span class="kwd">\multicolumn</span><span class="pun">{</span><span class="pln">2</span><span class="pun">}{</span><span class="pln">|c|</span><span class="pun">}{</span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Obraz zapytanie</span><span class="pun">}}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\multicolumn</span><span class="pun">{</span><span class="pln">3</span><span class="pun">}{</span><span class="pln">|c|</span><span class="pun">}{</span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Obraz przetwarzany</span><span class="pun">}}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\multicolumn</span><span class="pun">{</span><span class="pln">4</span><span class="pun">}{</span><span class="pln">|c|</span><span class="pun">}{</span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Wynik</span><span class="pun">}}</span><span class="pln"> </span><span class="kwd">\\</span><span class="pln"><br></span><span class="kwd">\toprule</span><span class="pln"><br></span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Nazwa</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">N</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Katalog</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Nazwa</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">N</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln"> </span><span class="typ">$</span><span class="pln">J_</span><span class="pun">{</span><span class="pln">b</span><span class="pun">}</span><span class="typ">$</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="typ">$</span><span class="pln">J_</span><span class="pun">{</span><span class="pln">a</span><span class="pun">}</span><span class="typ">$</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Czas</span><span class="pun">[</span><span class="pln">s</span><span class="pun">]}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Gęstość</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">\\</span><span class="pln"> </span><span class="kwd">\hline</span><span class="pln"><br>…</span><span class="kwd">\\</span><span class="pln"><br>new line</span><span class="kwd">\\</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="kwd">\midrule</span><span class="pun">[</span><span class="pln">2 pt</span><span class="pun">]</span><span class="pln"><br>new line</span><span class="kwd">\\</span><span class="pln"><br></span><span class="kwd">\cmidrule</span><span class="pun">[</span><span class="lit">5pt</span><span class="pun">]{</span><span class="pln">1-5</span><span class="pun">}</span><span class="kwd">\\</span><span class="pln"><br>..<br>..<br></span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">longtable</span><span class="pun">}</span><span class="pln"><br><br></span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p><img src="booktabs-and-strange-spaces-between-lines_files/lYIQA.png" alt="enter image description here"></p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/24446" title="short permalink to this answer" class="short-link" id="link-post-24446">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/24446/edit">improve this answer</a></div>    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover"><div class="user-action-time">edited <a href="http://tex.stackexchange.com/posts/24446/revisions" title="show all edits to this post"><span title="2011-07-29 20:23:16Z" class="relativetime">Jul 29 '11 at 20:23</span></a></div><div class="user-gravatar32"><a href="http://tex.stackexchange.com/users/5764/werner"><div class=""><img src="booktabs-and-strange-spaces-between-lines_files/2755fad858b65fead337857525eab28e.png" alt="" height="32" width="32"></div></a></div><div class="user-details"><a href="http://tex.stackexchange.com/users/5764/werner">Werner</a><br><span class="reputation-score" title="reputation score 74912" dir="ltr">74.9k</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="120 silver badges"><span class="badge2"></span><span class="badgecount">120</span></span><span title="278 bronze badges"><span class="badge3"></span><span class="badgecount">278</span></span></div></div>    </td>
+            
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info"><div class="user-action-time">answered <span title="2011-07-29 19:45:25Z" class="relativetime">Jul 29 '11 at 19:45</span></div><div class="user-gravatar32"><a href="http://tex.stackexchange.com/users/4009/martin"><div class=""><img src="booktabs-and-strange-spaces-between-lines_files/180bbbe65d11777354a003e327ac6d5e.png" alt="" height="32" width="32"></div></a></div><div class="user-details"><a href="http://tex.stackexchange.com/users/4009/martin">Martin</a><br><span class="reputation-score" title="reputation score" dir="ltr">2,178</span><span title="2 silver badges"><span class="badge2"></span><span class="badgecount">2</span></span><span title="25 bronze badges"><span class="badge3"></span><span class="badgecount">25</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-24446" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-47772" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">please use CTAN addresses as <code>http://mirror.ctan.org/macros/latex/...</code></span> –&nbsp;<a href="http://tex.stackexchange.com/users/2478/herbert" title="71880 reputation" class="comment-user">Herbert</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(47772, 24446)" href="#comment47772_24446"><span title="2011-07-29 20:08:23Z">Jul 29 '11 at 20:08</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-47795" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">@Martin please see my edit :)</span> –&nbsp;<a href="http://tex.stackexchange.com/users/6845/imageplacer" title="75 reputation" class="comment-user owner">imagePlacer</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(47795, 24446)" href="#comment47795_24446"><span title="2011-07-29 22:05:25Z">Jul 29 '11 at 22:05</span></a></span><span class="edited-yes" title="this comment was edited"></span></div></td>
+    </tr>
+            
+    <tr id="comment-47799" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">The length of the line (whether via <code>\hline</code> or <code>\hlinewd</code>) defaults to <code>\hline</code> which stretches across the entire length of the table. If it protrudes into your margins, then the actual <i>table</i> is too wide, not the <i>line</i>. You need to either adjust the <code>\@extracolsep{...}</code>, or resize the entire table to fit within the margins: <code>\resizebox{\linewidth}{!}{\begin{tabular}...\end{tabular}}</code>.</span> –&nbsp;<a href="http://tex.stackexchange.com/users/5764/werner" title="74912 reputation" class="comment-user">Werner</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(47799, 24446)" href="#comment47799_24446"><span title="2011-07-29 22:19:32Z">Jul 29 '11 at 22:19</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-47809" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">@Werner
+ Are You sure that resizebox works with longtable ? I don't understand 
+Your answer. You wrote that \hline as well as \hlinewd should strech 
+across entire length of the table, however only \hline is streched but 
+\hlinewd is too short. I added compilable code snipet which presnets my 
+problem</span> –&nbsp;<a href="http://tex.stackexchange.com/users/6845/imageplacer" title="75 reputation" class="comment-user owner">imagePlacer</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(47809, 24446)" href="#comment47809_24446"><span title="2011-07-30 00:15:25Z">Jul 30 '11 at 0:15</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-47829" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">@imagePlacer: I missed your use of <code>\begin{longtable}</code>, sorry. No, resizing of a <code>longtable</code> is not possible, since it is meant to flow across pages. Also, I see now that your <code>\hlinewd</code> uses <code>\hrule</code>, not <code>\hline</code>. <code>\hrule</code> exists only within <code>\linewidth</code>. So, as soon as the end of the line is reached, <code>\hrule</code> stops, hence the gap from the right margin to the right edge of your <code>longtable</code>.</span> –&nbsp;<a href="http://tex.stackexchange.com/users/5764/werner" title="74912 reputation" class="comment-user">Werner</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(47829, 24446)" href="#comment47829_24446"><span title="2011-07-30 06:36:24Z">Jul 30 '11 at 6:36</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    <a id="comments-link-24446" class="comments-link" data-comments-count="1" title="expand to show all comments on this post">show <b>1</b> more comment</a>
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+
+  
+    <a name="24486"></a>
+    <div id="answer-24486" class="answer" data-answerid="24486">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input value="24486" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+ 
+</div>
+
+        </td>
+
+
+<td class="answercell">
+    <div class="post-text"><p>By using</p>
+
+<pre class="lang-tex prettyprint"><code><span class="dec">\renewcommand</span><span class="pun">{</span><span class="kwd">\arrayrulewidth</span><span class="pun">}{</span><span class="lit">2pt</span><span class="pun">}</span><span class="com">%</span><span class="pln"><br></span></code></pre>
+
+<p>you can drastically improve readability of your code and produce the 
+desired effect (assuming, of course, that all your rules - vertical and 
+horizontal - are the same width). The advantage is that is also works 
+with <code>longtable</code>.</p>
+
+<pre class="lang-tex prettyprint"><code><span class="kwd">\documentclass</span><span class="pun">[</span><span class="pln">a4paper,</span><span class="lit">12pt</span><span class="pun">]{</span><span class="pln">mwrep</span><span class="pun">}</span><span class="pln"><br>...<br></span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln"><br></span><span class="dec">\renewcommand</span><span class="pun">{</span><span class="kwd">\arrayrulewidth</span><span class="pun">}{</span><span class="lit">2pt</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\chapter</span><span class="pun">{</span><span class="pln">somechapter</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\section</span><span class="pun">{</span><span class="pln">somesection</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\small</span><span class="pln"><br></span><span class="kwd">\begin</span><span class="pun">{</span><span class="pln">longtable</span><span class="pun">}{</span><span class="pln">|c|c|c|c|c|c|c|c|c|</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\caption</span><span class="pun">{</span><span class="pln">something something somethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomethingsomething</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\label</span><span class="pun">{</span><span class="pln">tab:budda</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\\</span><span class="pln"> </span><span class="kwd">\hline</span><span class="pln"><br></span><span class="kwd">\multicolumn</span><span class="pun">{</span><span class="pln">2</span><span class="pun">}{</span><span class="pln">|c|</span><span class="pun">}{</span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Query image </span><span class="pun">}}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\multicolumn</span><span class="pun">{</span><span class="pln">3</span><span class="pun">}{</span><span class="pln">c|</span><span class="pun">}{</span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Processed image</span><span class="pun">}}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\multicolumn</span><span class="pun">{</span><span class="pln">4</span><span class="pun">}{</span><span class="pln">c|</span><span class="pun">}{</span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Outcome</span><span class="pun">}}</span><span class="pln"> </span><span class="kwd">\\</span><span class="pln"> </span><span class="kwd">\hline</span><span class="pln"><br></span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Name</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">N</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Directory</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Name</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">N</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln"> </span><span class="typ">$</span><span class="pln">J_</span><span class="pun">{</span><span class="pln">b</span><span class="pun">}</span><span class="typ">$</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="typ">$</span><span class="pln">J_</span><span class="pun">{</span><span class="pln">a</span><span class="pun">}</span><span class="typ">$</span><span class="pun">}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">time</span><span class="pun">[</span><span class="pln">s</span><span class="pun">]}</span><span class="pln"> </span><span class="typ">&amp;</span><span class="pln"> </span><span class="kwd">\textbf</span><span class="pun">{</span><span class="pln">Density</span><span class="pun">}</span><span class="pln"> </span><span class="kwd">\\</span><span class="pln"> </span><span class="kwd">\hline</span><span class="pln"><br>022</span><span class="kwd">\_</span><span class="pln">0007.jpg &nbsp; </span><span class="typ">&amp;</span><span class="pln"> &nbsp; 193 </span><span class="typ">&amp;</span><span class="pln"> &nbsp; budda &nbsp; </span><span class="typ">&amp;</span><span class="pln"> &nbsp; 22</span><span class="kwd">\_</span><span class="pln">0007.jpg &nbsp; &nbsp;</span><span class="typ">&amp;</span><span class="pln"> &nbsp; 193 </span><span class="typ">&amp;</span><span class="pln"> &nbsp; 25512.9 </span><span class="typ">&amp;</span><span class="pln"> &nbsp; 156.1 &nbsp; </span><span class="typ">&amp;</span><span class="pln"> &nbsp; 288.5 &nbsp; </span><span class="typ">&amp;</span><span class="pln"> &nbsp; 0.73 &nbsp; &nbsp;</span><span class="kwd">\\</span><span class="pln"> &nbsp;</span><span class="kwd">\hline</span><span class="pln"> &nbsp;<br></span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">longtable</span><span class="pun">}</span><span class="pln"><br></span><span class="kwd">\end</span><span class="pun">{</span><span class="pln">document</span><span class="pun">}</span><span class="pln"><br></span></code></pre>
+
+<p><img src="booktabs-and-strange-spaces-between-lines_files/6qg99.png" alt="Setting tabular rule thickness/width"></p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://tex.stackexchange.com/a/24486" title="short permalink to this answer" class="short-link" id="link-post-24486">share</a><span class="lsep">|</span><a href="http://tex.stackexchange.com/posts/24486/edit">improve this answer</a></div>    </td>
+            
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover"><div class="user-action-time">answered <span title="2011-07-30 15:49:29Z" class="relativetime">Jul 30 '11 at 15:49</span></div><div class="user-gravatar32"><a href="http://tex.stackexchange.com/users/5764/werner"><div class=""><img src="booktabs-and-strange-spaces-between-lines_files/2755fad858b65fead337857525eab28e.png" alt="" height="32" width="32"></div></a></div><div class="user-details"><a href="http://tex.stackexchange.com/users/5764/werner">Werner</a><br><span class="reputation-score" title="reputation score 74912" dir="ltr">74.9k</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="120 silver badges"><span class="badge2"></span><span class="badgecount">120</span></span><span title="278 bronze badges"><span class="badge3"></span><span class="badgecount">278</span></span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-24486" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>    </tbody></table>
+</div>
+    <a name="new-answer"></a>
+    <form id="post-form" action="/questions/24441/answer/submit" method="post" class="post-form">
+        <h2 class="space">Your Answer</h2>
+
+
+
+
+
+
+<div id="post-editor" class="post-editor">  
+
+    
+    <div class="wmd-container">
+        <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+        <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="6d07991ff926b2578401d94723b94d68" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>    <div class="form-item">
+        <table>
+        <tbody><tr>
+            <td class="vm open-id-login">
+                <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="http://tex.stackexchange.com/users/login?returnurl=%2fquestions%2f24441%2fbooktabs-and-longtable-strange-spaces-between-lines">log in</a>
+                <script type="text/javascript">
+                    StackExchange.ready(function () {
+                        StackExchange.helpers.onClickDraftSave('#login-link');
+                    });
+                </script>
+            </td>
+            <td class="orcell">
+                <div class="orword">or</div>
+                <div class="orline"></div>
+            </td>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="40" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but never shown</span>
+                </div>
+                <div>
+                    <label for="home-page">Home Page</label>
+                    <input id="home-page" name="home-page" size="40" maxlength="200" tabindex="107" type="text">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+           
+        <div class="form-submit cbt">
+            <input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+            <a href="#" class="discard-answer dno">discard</a>
+    <p class="privacy-policy-agreement">
+        By posting your answer, you agree to the 
+        <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and 
+        <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.
+    </p>
+        </div>
+    </form>
+
+
+
+        <h2 class="bottom-notice">
+                Not the answer you're looking for? 
+            Browse other questions tagged <a href="http://tex.stackexchange.com/questions/tagged/tables" class="post-tag" title="show questions tagged 'tables'" rel="tag">tables</a> <a href="http://tex.stackexchange.com/questions/tagged/longtable" class="post-tag" title="show questions tagged 'longtable'" rel="tag">longtable</a> <a href="http://tex.stackexchange.com/questions/tagged/booktabs" class="post-tag" title="show questions tagged 'booktabs'" rel="tag">booktabs</a> 
+                or <a href="http://tex.stackexchange.com/questions/ask">ask your own question</a>.
+        </h2>
+</div>
+</div>
+<div id="sidebar">
+
+
+
+     <script type="text/javascript">
+        window.showNewUser = true;
+            
+                (function(){
+                    var cs = window.sessionStorage && window.sessionStorage['tNewsletter'];
+                    var m = /:\/\/([^\/]*)/.exec(document.referrer);
+                    var h = {'www.reddit.com':1,'news.ycombinator.com':1};
+                    if(window.sessionStorage && (cs || (m && m.length == 2 && h[m[1]]))){
+                        showNewUser = false;
+                        StackExchange.ready(function(){
+                            StackExchange.newsletterAd.loader(m[1], cs);
+                        });
+                    }
+                    if (window.localStorage && showNewUser){
+                        var c = parseInt(localStorage['nuCounter'],10); 
+                        c = isNaN(c) ? 1 : c+1;
+                        window.localStorage['nuCounter'] = c; 
+                        showNewUser = c < 10;
+                    }
+                })()
+            
+     </script>
+    <div class="module newuser newuser-greeting" id="newuser-box" style="">
+        <h4>Welcome!</h4>
+        <div>
+            <p>This is a collaboratively edited question and answer site for <b>users of TeX, LaTeX, ConTeXt, and related typesetting systems</b>. It's 100% free, no registration required.</p><p>Got a question about the site itself? <a href="http://meta.tex.stackexchange.com/">meta</a> is the place to talk about things like what questions are appropriate, what tags we should use, etc.</p>
+            <p class="ar"><a href="http://tex.stackexchange.com/about?mnu=1">about »</a>&nbsp;&nbsp;&nbsp;<a href="http://tex.stackexchange.com/faq?mnu=1">faq »</a>
+&nbsp; <a href="http://meta.tex.stackexchange.com/">meta »</a>            </p>
+        </div>
+    </div>
+     <script type="text/javascript">
+        if (showNewUser) {
+            document.getElementById('newuser-box').style.display = '';
+        }
+     </script>
+    <div class="module question-stats">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://tex.stackexchange.com/questions/tagged/tables" class="post-tag" title="show questions tagged 'tables'" rel="tag">tables</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">1242</span></span><br>
+<a href="http://tex.stackexchange.com/questions/tagged/longtable" class="post-tag" title="show questions tagged 'longtable'" rel="tag">longtable</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">190</span></span><br>
+<a href="http://tex.stackexchange.com/questions/tagged/booktabs" class="post-tag" title="show questions tagged 'booktabs'" rel="tag">booktabs</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">29</span></span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left: 10px;"><p class="label-key" title="2011-07-29 19:29:46Z"><b>1 year ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left: 10px;"><p class="label-key"><b>865 times</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left: 10px;"><p class="label-key"><b><a href="http://tex.stackexchange.com/questions/24441/booktabs-and-longtable-strange-spaces-between-lines?lastactivity" class="lastactivity-link" title="2011-07-30 15:49:29Z">1 year ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+
+<div class="module community-bulletin" data-tracker="cb=1">
+    <h4>Community Bulletin</h4>
+    <div class="related">
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://meta.tex.stackexchange.com/?cb=1" class="event-date" target="_blank">meta</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://meta.tex.stackexchange.com/questions/2689/why-is-upvoting-comments-possible-when-i-ran-out-of-upvotes-for-questions-and-an?cb=1" class="question-hyperlink" target="_blank">Why is upvoting comments possible when I ran out of upvotes for questions and…</a>
+            </div>
+            <br class="cbt">
+        </div>
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://meta.tex.stackexchange.com/?cb=1" class="event-date" target="_blank">meta</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://meta.tex.stackexchange.com/questions/2683/how-can-one-comment-on-a-textalk-interview?cb=1" class="question-hyperlink" target="_blank">How can one comment on a TeXtalk interview?</a>
+            </div>
+            <br class="cbt">
+        </div>
+        <div class="spacer">
+            <div class="bulletin-item-type"><a href="http://meta.tex.stackexchange.com/?cb=1" class="event-date" target="_blank">meta</a></div>
+            <div class="bulletin-item-content">
+                <a href="http://meta.tex.stackexchange.com/questions/2678/reason-for-closure-of-a-question?cb=1" class="question-hyperlink" target="_blank">Reason for closure of a question</a>
+            </div>
+            <br class="cbt">
+        </div>
+    </div>
+</div>
+    
+<div class="module" id="chat-feature">
+
+
+
+<h4><a href="http://chat.stackexchange.com/" id="h-chat-link">Visit Chat</a></h4>
+
+
+<div class="related" id="ad502-rooms"></div>
+
+<script type="text/javascript">
+// <!--
+    StackExchange.ready(
+    function () {
+        var options = {
+            chatUrl: 'http://chat.stackexchange.com',
+            reloadUrl: '/api/recent-chat',
+            preloadData: {"error":"Could not access chat."}
+        };
+
+        StackExchange.chatAd.init(options);
+    });
+// -->
+</script>
+
+
+
+</div>
+      
+    
+    <div class="module sidebar-linked">
+        <h4 id="h-linked">Linked</h4>
+        <div class="linked" data-tracker="lq=1">
+            <div class="spacer">
+<a href="http://tex.stackexchange.com/questions/3445/latex-tables-how-do-i-make-bold-horizontal-lines-typically-hline?lq=1" class="question-hyperlink">LaTeX tables: How do I make bold horizontal lines (typically \hline)?</a>
+</div>
+
+        </div>
+    </div>
+    <div class="module sidebar-related">
+        <h4 id="h-related">Related</h4>
+        <div class="related" data-tracker="rq=1">
+            <div class="spacer">
+<a href="http://tex.stackexchange.com/questions/1298/how-to-use-abovetopsep-to-add-space-between-a-tables-caption-and-tabular-part?rq=1" class="question-hyperlink">How to use \abovetopsep (to add space between a table's caption and tabular part)?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/6009/autofit-table-column-with-booktabs?rq=1" class="question-hyperlink">Autofit table column with booktabs</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/7253/midrule-before-endhead-in-longtable-environment-with-booktabs-package?rq=1" class="question-hyperlink">\midrule before \endhead in longtable environment with booktabs package</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/10317/default-value-for-addlinespace-from-booktabs?rq=1" class="question-hyperlink">Default value for \addlinespace from booktabs</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/11198/coloring-columns-in-a-table-with-colortbl-and-booktabs?rq=1" class="question-hyperlink">Coloring columns in a table with colortbl and booktabs</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/11377/how-to-set-the-width-of-the-cell-and-allow-it-to-take-multiple-lines?rq=1" class="question-hyperlink">How to set the width of the cell and allow it to take multiple lines?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/14730/big-table-with-rotated-column-labels-using-booktabs?rq=1" class="question-hyperlink">Big table with rotated column labels using booktabs</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/18092/vertical-lines-are-being-broken-up-disrupted-by-the-horizontal-booktabs-lines?rq=1" class="question-hyperlink">Vertical lines are being broken up (disrupted) by the horizontal booktabs lines</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/21836/longtable-strange-lines-at-the-end-of-table?rq=1" class="question-hyperlink">longtable - strange lines at the end of table</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/22434/variable-column-names-using-longtable?rq=1" class="question-hyperlink">Variable Column Names using longtable?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/23298/help-on-converting-table-to-longtable?rq=1" class="question-hyperlink">Help on converting table to longtable</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/31578/booktabss-horizontal-rules-arent-displayed-with-cifa-document-class?rq=1" class="question-hyperlink">booktabs's horizontal rules aren't displayed with cifa document class</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/32362/how-do-i-eliminate-the-vertical-realignment-when-using-arrayrulecolor-with-cmidr?rq=1" class="question-hyperlink">How do I eliminate the vertical realignment when using arrayrulecolor with cmidrule?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/32525/how-to-eliminate-the-at-the-end-of-a-longtable?rq=1" class="question-hyperlink">How to eliminate the \\ at the end of a longtable</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/32844/booktabs-and-tiny-horizontal-space?rq=1" class="question-hyperlink">booktabs and tiny horizontal space</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/42412/longtable-does-not-break-correctly-when-used-with-specialrule-instead-of-hline?rq=1" class="question-hyperlink">Longtable does not break correctly when used with \specialrule instead of \hline</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/44949/format-nomencl-in-table-style?rq=1" class="question-hyperlink">Format nomencl in table style</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/49779/formatting-raggedright-in-booktabs-why-am-i-getting-a-noalign-error?rq=1" class="question-hyperlink">Formatting raggedright in booktabs. Why am I getting a \noalign error?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/52307/how-can-i-make-a-table-like-the-type-in-this-image-in-latex?rq=1" class="question-hyperlink">How can I make a table like the type in this image in LaTeX?</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/54370/pretty-tables-in-latex-booktabs-phantom?rq=1" class="question-hyperlink">Pretty tables in LaTeX: booktabs &amp; phantom</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/56095/error-using-toprule-midrule-from-booktabs-package?rq=1" class="question-hyperlink">Error using \toprule \midrule from Booktabs package</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/61184/table-wrapper-breaks-when-using-svn-multi-and-booktabs?rq=1" class="question-hyperlink">Table wrapper breaks when using svn-multi and booktabs</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/61564/longtable-spanning-textwidth?rq=1" class="question-hyperlink">longtable spanning textwidth</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/64502/longtable-width-exceeds-page?rq=1" class="question-hyperlink">Longtable width exceeds page</a>
+</div>
+<div class="spacer">
+<a href="http://tex.stackexchange.com/questions/64959/conflict-between-booktabs-and-arydshln-packages?rq=1" class="question-hyperlink">Conflict between `booktabs` and `arydshln` packages</a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://tex.stackexchange.com/feeds/question/24441" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+
+<noscript>
+    <div><img src="/posts/24441/ivc/9395" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-tex</div></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://tex.stackexchange.com/about">about</a> |
+                <a href="http://tex.stackexchange.com/faq">faq</a> |
+                <a href="http://tex.blogoverflow.com/?blb=1">blog</a> |
+                    <a href="http://chat.stackexchange.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a> |
+                <a href="http://stackexchange.com/about/contact">advertising info</a> |
+                <a onclick="StackExchange.switchMobile('on', '/questions/24441/booktabs-and-longtable-strange-spaces-between-lines')">mobile</a> |
+
+                <b><a href="http://tex.stackexchange.com/help">contact us</a></b>
+                  | <b><a href="http://meta.tex.stackexchange.com/">feedback</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color:#ebf5f5;font-size:140%">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">■</span>&nbsp;<a href="http://diy.stackexchange.com/">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">■</span>&nbsp;<a href="http://gis.stackexchange.com/">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">■</span>&nbsp;<a href="http://electronics.stackexchange.com/">electrical&nbsp;engineering</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">■</span>&nbsp;<a href="http://android.stackexchange.com/">android</a>&nbsp;
+                        <span style="color:#2e4e60;font-size:140%">■</span>&nbsp;<a href="http://security.stackexchange.com/">security</a>&nbsp;
+                        <span style="color:#45bcb5;font-size:140%">■</span>&nbsp;<a href="http://bicycles.stackexchange.com/">bicycles</a>&nbsp;
+                        <span style="color:#00adee;font-size:140%">■</span>&nbsp;<a href="http://dba.stackexchange.com/">dba</a>&nbsp;
+                        <span style="color:#2edaf0;font-size:140%">■</span>&nbsp;<a href="http://drupal.stackexchange.com/">drupal</a>&nbsp;
+                        <span style="color:#213951;font-size:140%">■</span>&nbsp;<a href="http://sharepoint.stackexchange.com/">sharepoint</a>&nbsp;
+                        <span style="color:#73abb3;font-size:140%">■</span>&nbsp;<a href="http://scifi.stackexchange.com/">scifi &amp; fantasy</a>&nbsp;
+                        <span style="color:#23629F;font-size:140%">■</span>&nbsp;<a href="http://ux.stackexchange.com/">user experience</a>&nbsp;
+                        <span style="color:#faff72;font-size:140%">■</span>&nbsp;<a href="http://skeptics.stackexchange.com/">skeptics</a>&nbsp;
+                        <span style="color:#623121;font-size:140%">■</span>&nbsp;<a href="http://rpg.stackexchange.com/">rpg</a>&nbsp;
+                        <span style="color:#e4be88;font-size:140%">■</span>&nbsp;<a href="http://judaism.stackexchange.com/">judaism</a>&nbsp;
+                        <span style="color:#ffecb1;font-size:140%">■</span>&nbsp;<a href="http://mathematica.stackexchange.com/">mathematica</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2012.8.22.3779</div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2012 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            
+
+        </div>
+    </div>
+    
+    <noscript>
+        <div id="noscript-warning">TeX - LaTeX - Stack Exchange works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-24']);
+        _gaq.push(['_setDomainName','.stackexchange.com']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|tables|longtable|booktabs|']); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    (function(){
+        var s=document.getElementsByTagName('script')[0];
+        var ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src='http://www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src='http://edge.quantserve.com/quant.js'; 
+        s.parentNode.insertBefore(sc,s);
+    })();
+    </script>
+    <script type="text/javascript">
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>    
+    
+    <script type="text/javascript" src="booktabs-and-strange-spaces-between-lines_files/jquery.js"></script><script type="text/javascript" src="booktabs-and-strange-spaces-between-lines_files/stub.js"></script>    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:6,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:24441});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('85', '24441');
+            
+                
+        });
+    </script>    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"https://stackauth.com","serverTime":1345676986,"styleCode":true,"enableUserHovercards":true,"site":{"name":"TeX - LaTeX","description":"Q\u0026A for users of TeX, LaTeX, ConTeXt, and related typesetting systems","isNoticesTabEnabled":true,"newTitleSearchBoxEnabled":false,"enableSocialMediaInSharePopup":true},"user":{"isAnonymous":true,"fkey":"6d07991ff926b2578401d94723b94d68","notificationsUnviewedCount":0,"inboxUnviewedCount":-1}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"d1cd9a23171c","js/moderator.js":"c055b6d653e8","js/full-anon.js":"945170d238e3","js/full.js":"c60de8021771","js/wmd.js":"93b92575f8bc","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"6eb68240242f","js/help.js":"fc9fb0517db2","js/tageditor.js":"c1ba807b32aa","js/tageditornew.js":"bd66fabe1c71","js/inline-tag-editing.js":"be882e188985","js/revisions.js":"8c6bcd93b7fe","js/probes.js":"beb933322ff0","js/review.js":"918218bd748d"});
+        
+    </script><script type="text/javascript">
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+    });  
+</script><script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/24441/ivc/9395');});
+</script>
+    
+
+</body></html>

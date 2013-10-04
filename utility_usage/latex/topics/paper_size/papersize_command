@@ -1,0 +1,23 @@
+% for dvipdf command, paper to letter size
+\documentclass[...,letterpaper,...]{...}
+\special{papersize=8.5in,11in}
+
+% for dvipdf command, paper to A4 size
+\documentclass[...,letterpaper,...]{...}
+\special{papersize=210mm,297mm}
+
+
+% pdflatex
+\usepackage[letterpaper]{geometry}
+\usepackage[a4paper]{geometry}
+
+
+% dvi -> ps -> pdf
+% letter paper
+dvips -tletter file.tex
+ps2pdf file.ps
+
+% A4 paper
+dvips -t a4 file.tex
+ps2pdf -sPAPERSIZE=a4 file.ps
+

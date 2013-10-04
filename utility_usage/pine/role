@@ -1,0 +1,1424 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+
+
+
+<meta name="ROBOTS" content="INDEX, FOLLOW, NOARCHIVE">
+<meta name="AUTHOR" content="Nancy McGough">
+<meta name="OWNER" content="Nancy McGough">
+<meta name="RESOURCE-TYPE" content="document">
+<meta name="DISTRIBUTION" content="global">
+<meta name="COPYRIGHT" content="This document and its local links copyright (c) 1992-present Nancy McGough and Infinite Ink.">
+
+<meta name="keywords" content="pine, IMAP, roles, personas, personalities, indentities, headers, internet messaging, Nancy McGough">
+
+<link rel="home" href="http://www.ii.com/" title="Infinite Ink">
+<link rel="index" href="http://www.ii.com/directory/" title="Infinite Ink Directory">
+<link rel="copyright" href="http://www.ii.com/legal/" title="Infinite Ink Legal Notices">
+<link rel="author" href="http://www.ii.com/communicate/" title="Infinite Ink Getting In Touch">
+<link rel="subsection" href="#top" title="(top of this page)">
+<link rel="up" href="http://www.ii.com/internet/messaging/pine/" title="All About Pine: IMAP, NNTP &amp; ESMTP Client">
+
+<link rel="stylesheet" href="role_files/ii.css" type="text/css">
+			
+<link rel="icon" href="http://www.ii.com/favicon.ico" type="image/x-icon">
+<link rel="icon" href="http://www.ii.com/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://www.ii.com/favicon.ico" type="image/x-icon">
+			
+<title>ii.com &#8226; Changing Your From Header in Pine by Nancy McGough</title>			
+</head><body text="#000000" vlink="#330099" alink="#ff3300" bgcolor="#ffffd8" link="#cc0000">
+<div class="header"> <a name="top"></a> 
+  <p align="right"><a title="deflexion &amp; reflexion from infinite ink" href="http://deflexion.com/"><b><i><font size="+1" face="Times New Roman,Georgia,Times">D</font></i><small>eflexion.com 
+    blog </small>&gt;&gt;</b></a>&nbsp;<br>
+  </p>
+	
+  <center>
+    <table border="0" cellpadding="10" cellspacing="0">
+      <tbody><tr> 
+        <td class="headfoot" align="center"> <a href="http://www.ii.com/"><img src="role_files/ii_logo.gif" alt="[Infinite Ink logo]" border="0"></a><br>
+          <b><i><a href="http://www.ii.com/internet/messaging/pine/"><font size="+1" color="#000000">pine</font></a></i></b><br>
+        </td>
+        <td valign="bottom" align="left"> 
+          <h1 class="headfoot">
+     <big>C</big>HANGING <big>Y</big>OUR <big>F</big>ROM<br>
+            <big>H</big>EADER IN <big>P</big>INE </h1>
+        </td>
+      </tr>
+    </tbody></table>
+    
+  <p>
+  <img src="role_files/rule_head.gif" alt="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"> 
+  <br>
+  <small><a href="http://www.ii.com/legal/">Copyright ©</a> Nancy 
+  McGough &amp; Infinite Ink<br>
+      Last modified 
+      <!-- #BeginDate format:En2 -->02-May-2005<!-- #EndDate -->
+  <br></small>
+  </p>
+  </center>
+</div>
+  <!-- End Div class=header -->
+<div class="metanote">  
+      
+  <p> <b><i>MetaNote</i></b>&nbsp; &nbsp;I created this page a long time ago 
+    -- before Pine 4 -- when it was very painful to change your From header 
+    in Pine. Nowadays it is not as painful but it is still not obvious how 
+    to do it. Rather than rewrite this entire page, which I would do if I 
+    had infinite time, I have split it into two sections called <i>Quick Start</i> 
+    and <i>Gory Details</i>. The <i>Quick Start</i> describes how to change 
+    your From header in recent versions of Pine. The <i>Gory Details</i> describes 
+    what a From header is, when you should and shouldn't change it, how to 
+    get a free or reasonably-priced alternate From address, and how to change 
+    your From address in older versions of Pine. 
+  </p><p>&nbsp; 
+      </p><p> 
+ 
+</p></div>
+<!-- end DIV="header" -->
+<div class="bod"> 
+ <p align="left">
+ &#8220;How do I change my From header?&#8221; is the most frequently 
+ asked question in <a href="http://www.ii.com/internet/messaging/pine/#groups">Pine discussion groups</a>. This 
+ page covers . . . 
+ </p>
+
+ <p align="left">
+ </p>
+
+ <center>
+  <p>
+  &nbsp;<br>
+
+  </p><table border="0" cellpadding="1" cellspacing="0">
+   <tbody><tr> 
+    <td bgcolor="#003366" nowrap="nowrap"> 
+     <center>
+      <font color="#ffffff"><b><font size="+1" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;On 
+      This Page&nbsp;</font></b></font> 
+     </center>
+    </td>
+   </tr>
+   <tr> 
+    <td bgcolor="#003366"> 
+     <table width="100%" border="0" cellpadding="1" cellspacing="0">
+      <tbody><tr> 
+       <td align="left" bgcolor="#ffffe8"> <br>
+        <ul class="toc1">
+         <li><a href="#quick">Quick Start</a> 
+          <ul class="toc2">
+           <li><a href="#pc-pine">The Solution for PC-Pine</a></li>
+           <li><a href="#role">The Best Solution for Unix Pine: Use 
+            a Role</a> 
+            <ul class="toc3">
+             <li><a href="#whySoHard">Why the PC-Pine Solution Doesn't 
+              Work: The Missing <nobr><font face="Courier New, Courier, mono">user-id</font>&nbsp;Variable</nobr></a></li>
+             <a href="#whyBest"></a> 
+             <li><a href="#whyBest">Why Using a Role is the Best Solution 
+              for Unix Pine</a></li>
+            </ul>
+            <!-- end toc3 -->
+           </li>
+           <!-- end toc2 list item -->
+           <li><a href="#rolesAbout">Roles</a> 
+            <ul class="toc3">
+             <li><a href="#createRole">Creating an &#8220;Always Use!&#8221; 
+              Role</a></li>
+             <li><a href="#roleTips">Tips for Role Playing</a><br>
+             </li>
+             <br>
+            </ul>
+            <!-- end toc3 -->
+           </li>
+          </ul>
+          <!-- end toc2 -->
+         </li><li><a href="#gory">Gory Details</a> 
+          <ul class="toc2">
+                      <li><a href="#what">What is a From Header and Where Do Replies Go</a></li>
+           <li><a href="#not">Do Not Use a Forged or Bogus From Header</a>
+					 <ul class="toc3">
+                          <li><a href="#invalid">If You Insist on Using a Bogus From Header</a></li>
+</ul></li>
+
+           <li><a href="#good">Good Reasons for Changing Your From 
+            Header</a>
+<ul class="toc3">
+                          <li><a href="#altAddress">Getting Alternate Email Addresses &amp; <nobr>IMAP-Accessible</nobr> 
+                            Mailboxes</a>&nbsp; </li>
+</ul></li>
+           <li><a href="#default">Specifying Your Default From Header</a> 
+            <ul class="toc3">
+             <li> <a href="#vars">Using the <font face="Courier New, Courier, mono">personal-name</font> 
+              and <font face="Courier New, Courier, mono">user-domain</font> 
+              Variables</a> </li>
+             <li><a href="#allow">Using the <font face="Courier New, Courier, mono">customized-hdrs</font> 
+              Variable and the <nobr><font face="Courier New, Courier, mono">allow-changing-from</font></nobr> 
+              Hidden&nbsp;Feature</a>&nbsp;</li>
+            </ul>
+            <!-- end toc3 -->
+           </li>
+           <li><a href="#fly">Changing Your From Header On the Fly</a> 
+            <ul class="toc3">
+             <li> <a href="#composerHdrs">Using the <font face="Courier New, Courier, mono">default-composer-hdrs</font> 
+              Variable</a></li>
+             <li><a href="#roles">Using Roles</a></li>
+            </ul>
+            <!-- end toc3 -->
+           </li><li><a href="#pre4">Changing Your From Header in Pine 3.96 
+            and Earlier Versions</a> 
+            <ul class="toc3">
+             <li><a href="#unix-pre4">Unix Pine 3.96 and Earlier</a></li>
+             <li><a href="#pc-pre4">PC-Pine 3.96 and Earlier</a><br>
+              <br>
+             </li>
+            </ul>
+            <!-- end toc3 -->
+           </li>
+          </ul>
+          <!-- end toc2 -->
+         </li>
+         <li><a href="#see">See Also</a></li>
+        </ul>
+        <!-- end toc1 -->
+       </td>
+      </tr>
+     </tbody></table>
+    </td>
+   </tr>
+  </tbody></table>
+ </center>
+ <p>&nbsp;
+ </p>
+
+</div>
+<!-- end DIV="bod" -->
+<a name="quick"></a> <a name="pc-pine">&nbsp;</a> 
+<h1>
+Quick Start 
+</h1>
+
+<div class="bod"> 
+  <table width="90%" bgcolor="#ffff80" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr valign="top"> 
+      <td><b><i><font size="+1">Note</font></i></b></td>
+      <td>&nbsp; &nbsp;</td>
+      <td>Some service providers, for example <a href="http://www.cyberspace.org/faq.html#fromhdr">Grex</a>, 
+          have set up their installation of Pine so that users cannot change 
+          their From&nbsp;header.</td>
+    </tr>
+  </tbody></table>
+  
+  <table align="right" border="0" cellpadding="0" cellspacing="50">
+    <tbody><tr> 
+      <td class="solidborder" align="center" bgcolor="#ffffff" nowrap="nowrap"><p class="headfoot">&nbsp;<a href="http://www.ii.com/#supportii">S<small>UPPORT</small> I<small>NFINITE</small> 
+          I<small>NK!</small></a>&nbsp;</p></td>
+    </tr>
+    <tr> 
+      <td align="center"> <script type="text/javascript"><!--
+google_ad_client = "pub-4956193823364489";
+google_ad_width = 120;
+google_ad_height = 600;
+google_ad_format = "120x600_as";
+google_color_border = "6699CC";
+google_color_bg = "003366";
+google_color_link = "FFFFFF";
+google_color_url = "AECCEB";
+google_color_text = "AECCEB";
+//--></script> <script type="text/javascript" src="role_files/show_ads.js">
+</script><script src="role_files/expansion_embed.js"></script><script src="role_files/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 600px; position: relative; visibility: visible; width: 120px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 600px; position: relative; visibility: visible; width: 120px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="role_files/ads.html" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" scrolling="no" width="120" frameborder="0" height="600"></iframe></ins></ins></td>
+    </tr>
+  </tbody></table>
+ 
+ <h2>
+ The Solution for PC-Pine 
+ </h2>
+
+  <p> If you are using any version of <a href="http://www.ii.com/internet/messaging/pine/pc/">PC-Pine</a>, 
+    specifying your From header is easy. Simply start PC-Pine, go to <b>M</b>ain 
+    &gt; <b>S</b>etup &gt; <b>C</b>onfig and set your <code>personal-name</code>, 
+    <code>user-id</code>, and <code>user-domain</code> variables. Your default 
+    From header will then be </p>
+
+ <pre>From: personal-name &lt;user-id@user-domain&gt;</pre>
+ <p>
+
+ </p><p>
+ <a name="role">&nbsp;</a> <a name="whySoHard">&nbsp;</a> 
+ </p>
+
+ <p>
+ </p>
+
+ <h2>
+ The Best Solution for Unix Pine: Use a Role 
+ </h2>
+
+ <p>
+ </p>
+
+ <p>&nbsp;
+ </p>
+
+ <p>
+ </p>
+
+ <h3>
+ Why the PC-Pine Solution Doesn't Work for Unix Pine: The Missing <nobr><font face="Courier New, Courier, mono">user-id</font>&nbsp;Variable</nobr> 
+ </h3>
+
+ <p>
+ In Unix Pine, your Pine user-id variable defaults to be your Unix 
+ login name and it is not possible to change it on Pine's <b>M</b>ain 
+ &gt; <b>S</b>etup &gt; <b>C</b>onfig screen. It is because of this 
+ missing user-id variable that the question &#8220;How do I change my 
+ From header&#8221; is so frequently asked and I, and many others, have 
+ created web pages answering this question. 
+ </p>
+
+ <p>
+ <a name="whyBest">&nbsp;</a> 
+ </p>
+
+ <p>
+ </p>
+
+ <h3>
+ Why Using a Role is the Best Solution for Unix Pine 
+ </h3>
+
+  <p>Using a role is the best solution for two reasons. </p>
+  <ol>
+  <li>It is easier than messing around with <nobr>expose-hidden-config</nobr>, 
+   <nobr>allow-changing-from</nobr>, <nobr>default-composer-hdrs</nobr>, 
+   and <nobr>customized-hdrs</nobr>. <br>
+   <br>
+  </li><li>If you ever want to use multiple roles, you will already have 
+   one of your roles set up. 
+ </li></ol>
+ <p>
+ <a name="rolesAbout">&nbsp;</a> 
+ </p>
+
+ <p>
+ </p>
+
+ <h2>
+ Roles 
+ </h2>
+
+  <p> Roles were introduced in Pine 4.10, which was released on 4&nbsp;February&nbsp;1999. 
+    If your system is using Pine 4.05 or earlier, please ask your system administrator 
+    to upgrade to the current Pine (4.63) so you can 1] use roles, 2] take 
+    advantage of all the other features that have been added since then, and 
+    3] avoid the <a href="http://www.ii.com/internet/messaging/pine/#vulnerable">vulnerabilities</a> 
+    that are in earlier versions of Pine and Pico. If you can't convince your 
+    system administrator to upgrade and you are using Unix Pine 3.96 or earlier, 
+    you need to follow the <a href="#pre4">instructions in the penultimate 
+    section of this page</a>. If you are using Unix Pine 4.0 through 4.05, 
+    you need to <a href="#allow">use the customized-hdrs variable and the 
+    allow-changing-from hidden feature</a> to change your From header. <a name="createRole">&nbsp;</a> 
+  </p>
+
+ <p>&nbsp;
+ </p>
+
+ <p>
+ </p>
+
+ <h3>
+ Creating an &#8220;Always Use!&#8221; Role 
+ </h3>
+
+ <p>
+ To set up a role, go to <b>M</b>ain &gt; <b>S</b>etup &gt; <b>R</b>ules 
+ &gt; <b>R</b>oles &gt; <b>A</b>dd by typing: 
+ </p>
+
+ <pre>&nbsp;&nbsp;&nbsp;<b>M S R R A</b></pre>
+ You will see a screen that looks like this:<br>
+ <pre class="reversemono">  PINE 4.63   ADD A ROLE RULE
+</pre>
+ <pre>Nickname        = &lt;NO Value Set: using "Alternate Role"&gt;
+To pattern      = &lt;NO Value Set&gt;
+From pattern    = &lt;NO Value Set&gt;
+Sender pattern  = &lt;NO Value Set&gt;
+Cc pattern      = &lt;NO Value Set&gt;
+News pattern    = &lt;NO Value Set&gt;
+Subject pattern = &lt;NO Value Set&gt;
+Recip pattern   = &lt;NO Value Set&gt;
+Partic pattern  = &lt;NO Value Set&gt;
+AllText pattern = &lt;NO Value Set&gt;
+Score interval  = &lt;NO Value Set&gt;
+
+Current Folder Type =
+            Set    Choose One
+            ---  --------------------
+            ( )  Any
+            ( )  News
+            (*)  Email
+            ( )  Specific
+                 Folder List = &lt;NO Value Set&gt;
+
+Message is Important? =
+            Set    Choose One
+            ---  --------------------
+            (*)  Don't care, always matches
+            ( )  Yes
+            ( )  No
+
+Message is New? =
+            Set    Choose One
+            ---  --------------------
+            (*)  Don't care, always matches
+            ( )  Yes
+            ( )  No
+
+Message is Deleted? =
+            Set    Choose One
+            ---  --------------------
+            (*)  Don't care, always matches
+            ( )  Yes
+            ( )  No
+
+Message is Answered? =
+            Set    Choose One
+            ---  --------------------
+            (*)  Don't care, always matches
+            ( )  Yes
+            ( )  No
+
+Initialize settings using role : &lt;NO Value Set&gt;
+Set From        = &lt;NO Value Set: using "default (Nancy McGough &lt;wrong@incorrect.com&gt;)"&gt;
+Set Reply-To    = &lt;NO Value Set&gt;
+Set Fcc         = &lt;NO Value Set: using "value from fcc-name-rule"&gt;
+Set LiteralSig  = &lt;NO Value Set&gt;
+Set Signature   = &lt;NO Value Set: using "default (.signature)"&gt;   
+Set Template    = &lt;NO Value Set&gt;
+Set Other Hdrs  = &lt;NO Value Set&gt;
+
+Reply Use       =
+            Set    Choose One
+            ---  --------------------
+            ( )  Never
+            (*)  With confirmation
+            ( )  Without confirmation
+
+Forward Use     =
+            Set    Choose One
+            ---  --------------------
+            ( )  Never
+            (*)  With confirmation
+            ( )  Without confirmation
+
+Compose Use     =
+            Set    Choose One
+            ---  --------------------
+            (*)  Never
+            ( )  With confirmation
+            ( )  Without confirmation
+
+</pre>
+ <pre class="reversemono">? Help       E Exit Setup   P Prev   - PrevPage A Add Value  % Print
+O OTHER CMDS C [Change Val] N Next Spc NextPage D Delete Val W WhereIs
+</pre>
+ <p>&nbsp;
+ </p>
+
+ <p>
+ To set up a role that Pine will (<a title="link to IMPORTANT role-playing tip below" href="#mailto">almost</a>) <strong>always 
+ use</strong> for both mail and news messages, including when you compose 
+ a new message, reply to a message, or forward a message, you need 
+ to edit the six lines that are displayed in bold red text below. 
+ </p>
+
+ <p>&nbsp;
+ </p>
+
+ <pre class="reversemono">  PINE 4.63   ADD A ROLE RULE
+</pre>
+  <pre><b><font color="#cc0000">Nickname       = Always Use!</font></b>
+To pattern      = &lt;NO Value Set&gt;
+From pattern    = &lt;NO Value Set&gt;
+Sender pattern  = &lt;NO Value Set&gt;
+Cc pattern      = &lt;NO Value Set&gt;
+News pattern    = &lt;NO Value Set&gt;
+Subject pattern = &lt;NO Value Set&gt;
+Recip pattern   = &lt;NO Value Set&gt;
+Partic pattern  = &lt;NO Value Set&gt;
+AllText pattern = &lt;NO Value Set&gt;
+Score interval  = &lt;NO Value Set&gt;
+
+Current Folder Type =
+            Set    Choose One
+            ---  --------------------
+            <b><font color="#cc0000">(*)  Any</font></b>
+            ( )  News
+            ( )  Email
+            ( )  Specific
+                 Folder List = &lt;NO Value Set&gt;
+
+Message is Important? =
+            Set    Choose One
+            ---  --------------------
+            (*)  Don't care, always matches
+            ( )  Yes
+            ( )  No
+
+Message is New? =
+            Set    Choose One
+            ---  --------------------
+            (*)  Don't care, always matches
+            ( )  Yes
+            ( )  No
+
+Message is Deleted? =
+            Set    Choose One
+            ---  --------------------
+            (*)  Don't care, always matches
+            ( )  Yes
+            ( )  No
+
+Message is Answered? =
+            Set    Choose One
+            ---  --------------------
+            (*)  Don't care, always matches
+            ( )  Yes
+            ( )  No
+
+Initialize settings using role : &lt;NO Value Set&gt;
+<font color="#cc0000"><b>Set From       = Nancy McGough &lt;nm-reverse-spam-filter@ii.<a href="http://deflexion.com/">deflexion.com</a>&gt;</b></font>
+Set Reply-To    = &lt;NO Value Set&gt;
+Set Fcc         = &lt;NO Value Set: using "value from fcc-name-rule"&gt;
+Set LiteralSig  = &lt;NO Value Set&gt;
+Set Signature   = &lt;NO Value Set: using "default (.signature)"&gt;   
+Set Template    = &lt;NO Value Set&gt;
+Set Other Hdrs  = &lt;NO Value Set&gt;
+
+Reply Use       =
+            Set    Choose One
+            ---  --------------------
+            ( )  Never
+            ( )  With confirmation
+            <b><font color="#cc0000">(*)  Without confirmation</font></b>
+
+Forward Use     =
+            Set    Choose One
+            ---  --------------------
+            ( )  Never
+            ( )  With confirmation
+            <b><font color="#cc0000">(*)  Without confirmation</font></b>
+
+Compose Use     =
+            Set    Choose One
+            ---  --------------------
+            ( )  Never
+            ( )  With confirmation
+            <b><font color="#cc0000">(*)  Without confirmation</font></b>
+
+</pre>
+ <pre class="reversemono">? Help       E Exit Setup   P Prev   - PrevPage A Add Value  % Print
+O OTHER CMDS C [Change Val] N Next Spc NextPage D Delete Val W WhereIs
+</pre>
+ <p>&nbsp;
+ </p>
+
+ <p>
+ You can set Nickname to be anything you like and of course you should 
+ Set From to be your From header not mine! 
+ </p>
+
+ <p>
+ To exit the roles configuration screens and save your changes, type 
+ </p>
+
+ <pre>&nbsp;&nbsp;&nbsp;<b>E Y E Y</b></pre>
+  <p> which means Exit this role (E), commit the changes (Y), Exit the roles 
+    configuration screen (E), and commit all your role changes (Y). Now, assuming 
+    this is your only role, (<a title="link to IMPORTANT role-playing tip below" href="#mailto">almost</a>) every message you 
+    send will have the From header that you specified in your "Always 
+    Use!" role. Before you put this into production, test it by replying 
+    to, forwarding, 
+    <!--  (unless you live in <A HREF="http://www.theregister.co.uk/content/6/17324.html">Australia 
+  where forwarding is illegal</A>!) -->
+    and composing a new message and make sure that you are in fact using this 
+    From header. </p>
+
+ <p>
+ <a name="roleTips">&nbsp;</a> <a name="rolesCustomization"></a> 
+ </p>
+
+ <p>
+ </p>
+
+ <h3>
+ Tips for Role Playing 
+ </h3>
+
+ <p>
+ To learn how to set up multiple roles and how to have Pine automatically 
+ determine which role to use depending on the context, read Pine's 
+ built-in Help files and see</p>
+  <ul>
+    <li> <a href="http://www.washington.edu/pine/tech-notes/config.html#role-config">the 
+      University of Washington's discussion of Role Configuration</a></li>
+    <li> <a href="http://www.zrox.net/Mail/Pine/roles.html">Gopi Sundaram's 
+      Pine FAQ about Roles, Rules, and Filters</a></li>
+    <li> <a href="http://www.math.washington.edu/%7Echappa/pine/pine-info/roles/">Eduardo 
+      Chappa's page about Roles</a></li>
+  </ul>
+
+ <p>
+  <a name="mailto"></a> 
+ Here are some tips for using roles: 
+ </p>
+
+  <ol>
+    <li><b><i>IMPORTANT:</i></b>&nbsp; Pine will not use one of your roles, 
+      but instead will use your <i><b>default From header</b></i> if you send 
+      a message using any of the following: 
+      <ul>
+        <li>a mailto URL</li>
+        <li>a command-line command such as this:&nbsp; <nobr><code>pine&nbsp;someone@example.com</code></nobr> 
+        </li>
+        <li> &#8220;<b>N</b>o, use default settings&#8221; (before Pine 4.55, 
+          this was called &#8220;<b>N</b>o Role&#8221;)</li>
+        <li>Pine's <b>B</b>ounce Forward command (for details, see <a href="#altRole">Tip 
+          6</a> below)<br>
+          <br>
+        </li>
+      </ul>
+      To change your default From header, see <a href="#default">Specifying 
+      Your Default From Header</a> below. <br>
+      <br>
+    </li><li>Add all your email addresses to the Pine alt-addresses variable so 
+      that reply-to-all won't prompt you to reply to yourself; so that a message 
+      that is either To or Cc any of your addresses is flagged with a <code>+</code> 
+      or <code><a href="http://www.ii.com/internet/messaging/pine/pc/#mark4cc">-</a></code>; 
+      and so that the <code>Index-to-me Symbol Color</code>, which is set 
+      using Main &gt; Setup &gt; Kolor, and the Pine <code>FROMORTO</code> 
+      and <code>FROMORTONOTNEWS</code> tokens, which are used to construct 
+      the index-format on the Message Index screen, work correctly.<br>
+      <br>
+    </li><li>If you are using Pine 4.30 or later, put an&nbsp; <code>X</code> &nbsp;next 
+      to <a href="http://www.washington.edu/pine/tech-notes/config.html#alternate-compose-menu">alternate-compose-menu</a> 
+      in your Pine feature-list. Then, when you use the&nbsp; <code>C</code>&nbsp; 
+      (Compose) command to initiate the composition of a new message, Pine 
+      will present a menu asking if you want to compose an interrupted message, 
+      a postponed message, a form letter, a new message using your default 
+      role, or a new message using a <nobr>non-default</nobr> role.<br>
+      <br>
+    </li><li>To be able to easily confirm or change your role when you initiate 
+      the composition of a message: 
+      <ol type="a">
+        <li> set <nobr><a href="http://www.washington.edu/pine/tech-notes/config.html#confirm-role-even-for-default">confirm-role-even-for-default</a></nobr> 
+          <br>
+          <br>
+        </li><li>set up your roles so that Reply Use, Forward Use, and Compose 
+          Use all use this option: 
+          <pre>(*)  With confirmation</pre>
+          <br>
+      </li></ol>
+    </li>
+    <li>If you want to quickly choose a role and avoid the prompts that Tip 
+      3 and 4 produce, use the&nbsp; <code>#</code> &nbsp;(Role) command instead 
+      of the&nbsp; <code>C</code> &nbsp;(Compose) command to initiate the 
+      composition of a message.<br>
+      <a name="altRole"></a><br>
+    </li><li>To be able to use the Role (<code>#</code>) command and be prompted 
+      about whether to compose a new message, reply to the current message, 
+      forward the current message, or bounce forward a message, set alternate-role-menu. 
+      For details, especially about how roles works when bouncing, see the 
+      <a href="http://www.washington.edu/pine/tech-notes/config.html#alternate-role-menu">Pine 
+      Help about the alternate-role-menu</a>. Note: You need to be using Pine 
+      4.61 or later to be able to use a role when bouncing a message. <br>
+      <br>
+    </li><li>Follow the <a href="#composerHdrs">instructions below</a> to add From 
+      to your default-composer-hdrs Variable so that you can easily see if 
+      you are using the From header you want to be using while you are in 
+      the midst of composing a message. <br>
+      <br>
+    </li><li>Read the message <a href="http://www.washington.edu/pine/pine-info/2001.06/msg00087.html">RE: 
+      'sender'-checks by mailservers</a> that I posted to the pine-info mailing 
+      list to find out about the Sender, X-Sender, and X-X-Sender headers 
+      that Pine inserts in messages that you send. These headers make it hard 
+      to hide your personal private email address in messages that you send. 
+      <br>
+      <br>
+  </li></ol>
+			
+  <p> <i><b>News:</b></i>&nbsp; In Pine 4.51 and later, you can set the features 
+    disable-sender and scramble-message-id to help hide your personal private 
+    email address. In Pine 4.60 and later, you can set hide-nntp-path to help 
+    hide the hostname of your machine. </p>
+ <p>
+ <a name="gory"></a> 
+ </p>
+
+ <p>
+
+ </p><p>
+
+</p></div>
+<!-- end DIV="bod" -->
+<hr size="1" noshade="noshade">
+<h1>
+Gory Details 
+</h1>
+
+<div class="bod"> <a name="what">&nbsp;</a> 
+  <h2> What is a From Header and Where Do Replies Go </h2>
+
+ <table width="90%" bgcolor="#ffff80" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr valign="top"> 
+      <td align="right"><b><i><font size="+1"> Terminology<br>
+        Note </font></i></b></td>
+   <td>&nbsp; &nbsp;</td>
+   <td> 
+    <p>
+    An email message has two From addresses: 
+    </p>
+
+    <ul>
+     <li>the From address in the envelope</li>
+     <li>the From address in the header</li>
+    </ul>
+        <p> The From address in the header is in a line that begins with&nbsp; 
+          <kbd>From:</kbd>. When a message is delivered to a mailbox, the 
+          envelope information is often &#8212; but <a href="http://www.ii.com/internet/robots/procmail/qs/#envelope">not 
+          always</a> &#8212; discarded. Depending on the message transfer 
+          agent (MTA), the message delivery agent (MDA), and the mailbox format, 
+          the From address in the envelope may be injected into the header 
+          of the message in a line that begins with <nobr>&#8220;<kbd>From&nbsp;</kbd>&#8221;</nobr> 
+          (note the lack of a colon). This line is referred to as the&nbsp; 
+          &#8220;mbox-format 'From&nbsp;' line&#8221; &nbsp;or the&nbsp; &#8220;From_ 
+          line.&#8221;</p>
+
+        <p> In this article, whenever I use the phrase &#8220;From header,&#8221; 
+          I mean the header that begins with&nbsp; <kbd>From:</kbd>&nbsp; 
+          (with the colon). 
+          <!-- Some writers put a colon 
+    after &#147;From&#148; and use the expression &#147;From: header&#148; 
+    to emphasize that they are referring to the header rather than 
+    the envelope but, to me, that style is painful to read so I don't 
+    use it. -->
+        </p>
+
+   </td>
+  </tr>
+ </tbody></table>
+ <!--
+The way you change your From header
+depends on what operating system you are using and
+whether you want to be able to change your From header 
+while in the midst of composing a message or whether you just
+want to set it up and then always use that From address.
+
+<P>
+-->
+ <br>
+  <p> Your From header tells the recipient of your message who the message 
+    is from, or who you are pretending it is from. It is a required header 
+    and it should look like one of the following. </p>
+
+ <center>
+    <table border="0" cellpadding="5" cellspacing="5">
+      <tbody><tr nowrap="" valign="bottom" align="left"> 
+        <td><b><u>From Header Format</u></b></td>
+        <td>&nbsp;</td>
+        <td><b><u>Comment</u></b></td>
+   </tr>
+   <tr align="left"> 
+        <td valign="top" nowrap="nowrap"><nobr><code>From: personal-name &lt;user-id@user-domain&gt;</code></nobr></td>
+    <td>&nbsp;</td>
+        <td valign="top">preferred </td></tr>
+   <tr align="left"> 
+        <td valign="top" nowrap="nowrap"><code>From: user-id@user-domain (personal-name)</code></td>
+    <td>&nbsp;</td>
+        <td valign="top">deprecated for over 25 years</td>
+   </tr>
+   <tr align="left"> 
+        <td valign="top"><code>From: user-id@user-domain</code> </td>
+    <td>&nbsp;</td>
+        <td valign="top">if there's no personal-name, spam-detection tools 
+          often increase the spam probability or spam score </td>
+   </tr>
+  </tbody></table>
+ </center>
+ <p>&nbsp;
+ </p>
+
+  <p> The first format is preferred and is the format that Pine uses when 
+    constructing a message. The email address in the From header is not necessarily 
+    where a reply to a message goes. This depends on what other headers are 
+    in the message, what messaging client the replier is using, and whether 
+    the replier chooses to reply to the author, reply to all, or reply to 
+    a subset of all. Here are the headers that are used &#8212; <b><i>in some 
+    clients</i></b> &#8212; to determine where a reply goes.<br>
+ </p>
+
+ <center>
+  <table border="0" cellpadding="5" cellspacing="5">
+   <tbody><tr align="left"> 
+    <td><b><u>Reply to...</u></b></td>
+    <td>&nbsp;</td>
+    <td><b><u>Headers Used to Determine Where Reply Goes</u></b></td>
+   </tr>
+   <tr align="left"> 
+    <td>reply to author</td>
+    <td>&nbsp;</td>
+    <td><code>Reply-To</code> &nbsp;or&nbsp; <code>From</code> 
+     <!--
+&nbsp;or&nbsp; <code>Sender</code> or Return-Path:</td>
+-->
+   </td></tr>
+   <tr align="left"> 
+        <td>reply to all (email discussion group)</td>
+    <td>&nbsp;</td>
+        <td><code>Mail-Followup-To</code> &nbsp;or&nbsp; [<code>To</code>, 
+          <code>Cc</code>, <nobr><b>&amp;</b>&nbsp;author</nobr> (see previous)]</td>
+   </tr>
+   <tr align="left"> 
+        <td>reply to all (news discussion group)</td>
+    <td>&nbsp;</td>
+    <td><code>Followup-To</code> &nbsp;or&nbsp; <code>Newsgroups</code></td>
+   </tr>
+  </tbody></table>
+ </center>
+ <p>&nbsp;
+ </p>
+
+  <p> When you use Pine to reply to a message, you can tell Pine to notify 
+    you about the existence of a <code>Reply-To</code> header and let you 
+    choose whether to use the <code>Reply-To</code> or the&nbsp; <code>From</code> 
+    address by <i><b>unsetting</b></i> the feature <a href="http://www.washington.edu/pine/tech-notes/config.html#reply-always-uses-reply-to"><code>reply-always-uses-reply-to</code></a>. 
+    This is especially useful when the <code>Reply-To</code> address is set 
+    to a mailing list and you want to send a personal (private) reply to the 
+    author. Unsetting this feature is one of <a href="http://www.ii.com/internet/messaging/pine/pc/#faveSettings">my 
+    26 favorite Pine feature settings</a>. </p>
+
+  <p> There is a raging debate about the proper use of the Reply-To header, 
+    especially its use/misuse in mailing-list messages. To find out about 
+    the debate, and join in if you like, see </p>
+
+ <ul>
+  <li>Keith Moore's <a href="http://www.cs.utk.edu/%7Emoore/reply-problem-list.txt">reply-problem-list.txt</a></li>
+  <li>Chip Rosenthal's <a href="http://www.unicom.com/pw/reply-to-harmful.html">``Reply-To'' 
+   Munging Considered Harmful: An Earnest Plea to Mailing List Administrators</a></li>
+  <li> Simon Hill's <a href="http://www.metasystema.org/essays/reply-to-useful.mhtml">Reply-To 
+   Munging Considered Useful: An Earnest Plea to Mailing List Administrators</a><a name="mailFollowupTo"></a></li>
+ </ul>
+  <p> <code>Mail-Followup-To</code> (AKA MFT) is a proposed header that is 
+    not an Internet standard and is not supported by most messaging clients, 
+    including the militantly standards-compliant Pine. Its purpose is to help 
+    to make email discussion groups more like news groups and encourage people 
+    to reply to the group, while still giving the option of replying to the 
+    author's personal <code>Reply-To</code> address. You can set the <code>Mail-Followup-To</code> 
+    header in outgoing Pine messages by adding it to your <a href="http://www.washington.edu/pine/tech-notes/config.html#cust-hdr"><code>customized-hdrs</code></a> 
+    and, optionally, your <a href="http://www.washington.edu/pine/tech-notes/config.html#def-comp"><code>default-composer-hdrs</code></a> 
+    variables (instructions for both of these headers are <a href="#allow">below</a>). 
+    Then, when you compose a message, fill in this header by hand. </p>
+
+ <p>
+ Another option is to create a role (see <a href="#rolesAbout">above</a>) 
+ for each mailing list that you subscribe to and set the From, To, 
+ and Mail-Followup-To headers in the role. Here's what I use in my 
+ pine-info mailing-list role: 
+ </p>
+
+ <pre>Set From        = Nancy McGough &lt;nm-this-address-is-valid@no.sp.am&gt;
+Set Other Hdrs  = To: Pine Technical Discussion Forum &lt;pine-info@u.washington.edu&gt;
+                  Mail-Followup-To: Pine Technical Discussion Forum &lt;pine-info@u.washington.edu&gt;
+</pre>
+  <p> Whenever I reply to or compose a new message to the pine-info mailing 
+    list, I use the this role. This way people who are using a client that 
+    supports the <code>Mail-Followup-To</code> header, such as mutt, nmh, 
+    or gnus, will know that I would like a reply-to-all message to be sent 
+    to the list address. </p>
+
+ <p>
+ The <code>Mail-Followup-To</code> header is quite controversial and 
+ is discussed in 
+ </p>
+
+ <ul>
+  <li>Evolution-hackers mailing list: <a href="http://lists.ximian.com/archives/public/evolution-hackers/2001-February/002104.html">Re: 
+   Reply to list</a> by <a href="http://www.jwz.org/">Jamie Zawinski</a></li>
+  <li>gnus mailing list: <a href="re:%20Mail-Followup-To">Re: Mail-Followup-To</a> 
+   and <a href="http://www.gnus.org/list-archives/ding/199802/msg00185.html">Re: 
+   Mail-{Reply,Followup}-To considered harmful</a></li>
+  <li> <a href="http://www.dsv.su.se/jpalme/">Jacob Palme</a>'s IETF 
+   Internet-Draft <a href="http://www.ietf.org/proceedings/98dec/I-D/draft-ietf-drums-mail-followup-to-00.txt">The 
+   ''Mail-Followup-To'' header</a></li>
+  <li> D.J. Bernstein's <a href="http://cr.yp.to/proto/replyto.html">Mail-Followup-To 
+   and Mail-Reply-To</a></li>
+  <li> comp.mail.pine: <a href="http://groups.google.com/groups?hl=en&amp;ie=ISO-8859-1&amp;oe=ISO-8859-1&amp;th=300d84522e787fe8&amp;rnum=1">Re: 
+   rfc 2369 commands</a></li>
+  <li><a href="http://groups.google.com/groups?hl=en&amp;group=comp.mail.headers">comp.mail.headers</a></li>
+ </ul>
+ <p>
+ <a name="not">&nbsp;</a> 
+ </p>
+
+ <h2>
+ Do Not Use a Forged or Bogus From Header 
+ </h2>
+
+  <p> These days many people use a bogus From header when posting to a public 
+    forum. The intended goal is to prevent harvesters of email addresses from 
+    getting valid email addresses to add to junk mailing lists. But doing 
+    this infuriates people -- for example, me -- who try to send a legitimate 
+    response to your post. My advice is to <strong>never</strong> send a message 
+    that has a bogus From header. Instead, I recommend that you <a href="#altAddress">get 
+    an alternate email address (discussed below)</a> that you use for public 
+    postings and then use this address, along with filters, to help you <a href="http://www.ii.com/internet/messaging/spam/">separate 
+    spam from non-spam</a>. </p>
+
+ <p>
+ Another way to make people mad at you is to use someone else's email 
+ address in your From header. If you do this (forgery), even as a joke, 
+ the fury of the Net may be unleashed on you. You could be mail bombed, 
+ subscribed to lots of mailing lists you don't want to be on, lose 
+ your account, and other unpleasant things. 
+ </p>
+
+  <p> Do not underestimate the power of the people who are trying to maintain 
+    email address integrity on the Net! </p>
+  <p><a name="invalid">&nbsp;</a> </p>
+  <h3> If You Insist on Using a Bogus From Header </h3>
+  <p> If you insist on using a bogus From header, use an address that does 
+    not now exist and will never exist in the future. For example, you could 
+    use... </p>
+  <ul>
+    <li>a domain name that ends in <code>.invalid</code>, which is a reserved 
+      top-level domain that is discussed on <a href="http://www.xs4all.nl/%7Ejs/gnksa/gnksa-todo.html">this 
+      GNKSA (The Good Net-Keeping Seal of Approval) page</a> and in <a href="http://www.faqs.org/rfcs/rfc2606.html">RFC 
+      2606, Reserved Top Level DNS Names</a>.</li>
+    <li> a null address (<code>&lt;&gt;</code>).</li>
+  </ul>
+  <p>Another option is to use a <a href="http://privacy.net/email/">me@privacy.net 
+    stealth address</a>, which auto-replies to any email sent to it with a 
+    message that says: &#8220;The user who provided this address did not want 
+    you to have his/her e-mail address in an effort to try to prevent receiving 
+    unwanted e-mail and/or keep their identity private.&#8221;</p>
+  <p> For more about this, see these comp.mail.pine threads: </p>
+  <ul>
+    <li>2004-03-30: <a href="http://groups.google.com/groups?hl=en&amp;lr=&amp;ie=UTF-8&amp;th=cc3eceadabb3c49b&amp;rnum=1">Bogus 
+      From: headers (Was: Re: ETA on next version of Pine?)</a></li>
+    <li>2004-03-28: <a href="http://groups.google.com/groups?selm=Pine.LNX.4.59.99.0403280051420.25469%40zebes.dreamhost.com">Re: 
+      ETA on next version of Pine?</a></li>
+  </ul>
+ <p> <br>
+  </p>
+
+ <p>
+ <a name="good">&nbsp;</a> 
+ </p>
+
+ <h2>
+ Good Reasons for Changing Your From Header 
+ </h2>
+
+ <p>
+ Good reasons for changing your From header include 
+ </p>
+
+ <p>
+
+ </p><ul>
+  <li>wanting to use a different form of your domain, for example, 
+   <i>mydomain.com</i> rather than <i>subdomain.mydomain.com </i></li>
+  <li>wanting your message to appear to be from one of your other email 
+   accounts</li>
+  <li>wanting to be able to play different roles. For example, you 
+   might have personal, work, school, and public personas that you 
+   switch between depending on the message you are sending <i> </i></li>
+  <li>having more than one person use the same instance of Pine to 
+   send messages</li>
+ </ul>
+ <h2>
+ <a name="altAddress"></a> <a name="publicAddress"></a> <a name="IMAPsetup"></a> 
+ <a name="IMAPspl"></a> <a name="IMAPlook4"></a> <a name="IMAPseeAlso"></a> 
+ </h2>
+
+ <h2>&nbsp;
+ </h2>
+
+  <h3> Getting Alternate Email Addresses &amp; <nobr>IMAP-Accessible</nobr> Mailboxes 
+  </h3>
+
+ <p>
+ As I discuss above in <a href="#not">Do Not Use a Forged or Bogus 
+ From Header</a>, I recommend that you use alternate email addresses 
+ in public places, such as on your web site and when you post to a 
+ public discussion group. And then use filters, along with these addresses, 
+ to help you <a href="http://www.ii.com/internet/messaging/spam/">separate 
+ spam from non-spam</a>. There are many reasonably-priced and free 
+ email accounts that you can use for this purpose. If you use a service 
+ that supports IMAP, you can use Pine to read and process messages 
+ sent to that account. 
+ </p>
+
+ <p>&nbsp;
+ </p>
+
+ <center>
+  <table bgcolor="#ffffff" border="1" cellpadding="8" cellspacing="0">
+   <tbody><tr> 
+    <td align="center"><b><font size="+3">IMAP 
+     service providers<br>
+          are now listed on a <a title="link to IMAP Service Providers page" href="http://www.ii.com/internet/messaging/imap/isps/">separate&nbsp;page</a></font></b></td>
+   </tr>
+  </tbody></table>
+ </center>
+ <p>
+ <a name="default">&nbsp;</a> <a name="changing"></a> 
+ </p>
+
+</div>
+<div class="bod"> 
+ <p>&nbsp;
+ </p>
+
+ <h2>
+ Specifying Your Default From Header 
+ </h2>
+
+ <p>
+ As I discuss <a href="#what">above</a>, Pine constructs a From header 
+ that looks like this: 
+ </p>
+
+ <pre>From: personal-name &lt;user-id@user-domain&gt;</pre>
+ <p>
+ Depending on your needs, you may be able to specify your default <code>From</code> 
+ header using the <code>personal-name</code> and the <code>user-domain</code> 
+ (and in PC-Pine, the <code>user-id</code>) variables or you might 
+ need to use the <code>allow-changing-from</code> feature and the <a href="http://www.washington.edu/pine/tech-notes/config.html#cust-hdr"><code>customized-hdrs</code></a> 
+ variable. These are described below. 
+ </p>
+
+ <p>
+ <a name="vars">&nbsp;</a> 
+ </p>
+
+ <h3>
+ Using the <font face="Courier New, Courier, mono">personal-name</font> 
+ and <font face="Courier New, Courier, mono">user-domain</font> Variables 
+ </h3>
+
+ <p>
+ In Unix Pine, your <code>personal-name</code> defaults to the full 
+ name that is specified in your <code>/etc/passwd</code> entry. On 
+ many Unix systems you can change your full name by using the <kbd>chfn</kbd> 
+ (change finger) command. 
+ </p>
+
+ <p>
+ Your <code>user-id</code> defaults to your login name and your <code>user-domain</code> 
+ defaults to either the name of the machine that you are logged on 
+ to or to the default <code>user-domain</code> that your system administer 
+ specified. 
+ </p>
+
+ <p>
+ In Unix Pine, you can change your <code>personal-name</code> or <code>user-domain</code> 
+ by setting these variables in the Pine Setup Configuration screen. 
+ You can not set the <code>user-id</code> variable in Unix Pine. 
+ </p>
+
+ <p>
+ In PC-Pine, you set all three of these variables &#8212; <code>personal-name</code>, 
+ <code>user-id</code>, and <code>user-domain</code> &#8212; in the Pine 
+ configuration screen. 
+ </p>
+
+ <p>
+ <a name="allow">&nbsp;</a> 
+ </p>
+
+ <h3>
+ Using the <font face="Courier New, Courier, mono">customized-hdrs</font> 
+ Variable and the <font face="Courier New, Courier, mono">allow-changing-from</font> 
+ Hidden Feature 
+ </h3>
+
+ <p>
+ If you are using Unix Pine version 4.0 to version 4.21 and you need 
+ to change your default <code>user-id</code>, you need to add <code>allow-changing-from</code> 
+ to your <a href="http://www.ii.com/internet/messaging/pine/feature-list/">feature-list</a>. 
+ This is a hidden feature and does not show up in the Pine configuration 
+ screen. To set it, you need to directly edit your pinerc file (which 
+ defaults to <code>.pinerc</code> in Unix pine and <code>pinerc</code> 
+ in PC-Pine). There must be a comma between features in your feature-list 
+ and there cannot be any blank lines. For example, here's the top and 
+ bottom of my feature-list: 
+ </p>
+
+ <pre> feature-list=expose-hidden-config,
+         enable-aggregate-command-set,
+         enable-flag-cmd,
+         :
+         :
+         enable-msg-view-urls,
+         enable-msg-view-web-hostnames,
+         <b><font color="#cc0000">allow-changing-from</font></b>
+
+</pre>
+ <table width="90%" bgcolor="#ffff80" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr valign="top"> 
+   <td><b><i><font size="+1">Important</font></i></b></td>
+   <td>&nbsp; &nbsp;</td>
+   <td> 
+    <ul>
+     <li>The <code>allow-changing-from</code> hidden feature is available 
+      in Pine 4.0 and later. If you are using Pine 3.96 or earlier, 
+      see the the <a href="#pre4">instructions given in the penultimate 
+      section of this page</a>.<br>
+      <br>
+     </li>
+     <li>If you are using 4.10 or later, it is simplest to just <a href="#role">use 
+      a role to specify your From header</a>.<br>
+      <br>
+     </li>
+          <li>Starting with Pine 4.30, <a href="http://www.washington.edu/pine/changes/4.21-to-4.30.html"><font face="Courier New, Courier, mono">allow-changing-from</font> 
+            defaults to on</a> so you do not need to set this in Pine 4.30 
+            and later (unless your system administrator configured it to default 
+            to off). <br>
+      <br>
+     </li>
+     <li>It is possible for a system administrator to configure Pine 
+      so that users can not set <code>allow-changing-from</code>. If 
+      your system administrator has done this, try to <a href="#role">use 
+      a role to set your From header</a>.</li>
+    </ul>
+   </td>
+  </tr>
+ </tbody></table>
+ <p>
+ In addition to adding <code>allow-changing-from</code> to your feature-list, 
+ you need to specify your default <code>From</code> address in the 
+ <a href="http://www.washington.edu/pine/tech-notes/config.html#cust-hdr"><code>customized-hdrs</code></a> 
+ variable. Edit this variable by using either Pine's Setup Configuration 
+ screen or by directly editing your pinerc. Here's an example of what 
+ this variable will look like in your pinerc: 
+
+ </p><pre>customized-hdrs=From: <i>AnyPersonalName</i> &lt;<i>AnyUserID</i>@<i>AnyDomain</i>&gt;,
+ Organization: Your Company Name and URL
+					</pre>
+  <p> Only non-blank headers that are in your customized-hdrs list will be 
+    included in your outgoing messages. If you want to view, and possibly 
+    edit, these headers when you are composing a message, you need to either 
+    type <kbd>^R</kbd> (view rich headers) or include these headers in your 
+    <code>default-composer-hdrs</code>. The <code>default-composer-hdrs</code> 
+    variable is discussed <a href="#hdrs">in the next section</a>. </p>
+
+ <p>
+ <a name="fly">&nbsp;</a> 
+ </p>
+
+ <h2>
+ Changing Your From Header On the Fly 
+ </h2>
+
+ <p>
+ If you use more than one <code>From</code> header, you will probably 
+ want to make the one you use the most frequently your default and 
+ then specify your alternate From header on the fly. The two ways to 
+ do this are 1) to directly edit your From header when you are composing 
+ a message or 2) to set up the alternate From header as part of one 
+ of your alternate roles. These are discussed below. 
+
+ </p><p>
+ <a name="composerHdrs">&nbsp;</a> <a name="hdrs"></a> 
+ </p>
+
+ <h3>
+ Using the <font face="Courier New, Courier, mono">default-composer-hdrs</font> 
+ Variable 
+ </h3>
+
+ <p>
+ To view your From header -- and possibly edit it -- while you are 
+ composing a message, <a href="#allow">add the hidden feature <code>allow-changing-from</code> 
+ to your feature list</a> and add From to your <a href="http://www.washington.edu/pine/tech-notes/config.html#def-comp"><code>default-composer-hdrs</code></a> 
+ variable. For example, here's what I use for my default-composer-hdrs: 
+
+ </p><pre>default-composer-hdrs=From,
+ Lcc,
+ Attchmnt,
+ Organization,
+ Fcc,
+ Newsgroups,
+ To,
+ Cc,
+ Bcc,
+ Subject
+</pre>
+  <p> These are the headers that will be displayed when you are composing 
+    a message. You can view these, along with other headers, by by typing 
+    <kbd>^R</kbd> to view rich headers. You can edit any of these headers 
+    while you are composing a message. </p>
+
+ <table width="90%" bgcolor="#ffff80" border="0" cellpadding="0" cellspacing="0">
+  <tbody><tr valign="top"> 
+   <td><b><i><font size="+1">Tip</font></i></b></td>
+   <td>&nbsp; &nbsp;</td>
+   <td> 
+    <p> Add each of your alternate <code>From</code> addresses to your address 
+          book and then type the address-book nickname for the alternate address 
+          that you want to use in your <code>From</code> header. When you 
+          press RETURN, TAB, or an arrow key the nickname will be expanded 
+          to the full address. </p>
+
+   </td>
+  </tr>
+ </tbody></table>
+ <p>
+ <code></code> 
+ </p>
+
+ <pre><a name="roles">&nbsp;</a></pre>
+ <h3>
+ Using Roles 
+ </h3>
+
+ <p>
+ Starting with Pine 4.10, you can use a role to compose a message that 
+ uses an alternate Fcc, Signature, Template, From, Reply-To, and other 
+ headers. To change your From header using a role, you do not need 
+ to set the allow-changing-from hidden feature. I describe how to set 
+ up a role <a href="#role">at the top of this page</a>. 
+
+ </p><p>
+ <a name="pre4">&nbsp;</a> 
+ </p>
+
+ <h2>
+ Changing Your From Header in Pine 3.96 and Earlier Versions 
+ </h2>
+
+  <p> Before Pine 4.0 it was much harder to change your From header. Details 
+    are below. </p>
+
+ <p>
+ <a name="unix-pre4">&nbsp;</a> 
+
+ </p><h3>
+ Unix Pine 3.96 and Earlier 
+ </h3>
+
+ There are many ways to change your From header in Unix Pine 3.96 (and 
+ earlier). Below are four possibilities. 
+ <ul>
+  <li>Unix pine uses your Unix login name as your user-id and lets 
+   you specify your personal-name and user-domain in 
+   <!-- or is it user id -->
+   your <kbd>pinerc</kbd> file. For some people, this is all the customization 
+   that is needed. 
+   <p>
+
+  </p></li><li>The most powerful and clean way to get full control of your From 
+   header is to use a version of pine that has been compiled to ALLOW_CHANGING_FROM. 
+   <p>
+
+   </p><ol>
+    <li>Some ISPs compile pine this way so before you compile your 
+     own version of pine, check to see if your ISP's version already 
+     allows this. To test this, edit your pinerc so that it includes 
+     the following: 
+     <pre><code>
+ customized-hdrs=From: <i>AnyPersonalName</i> &lt;<i>AnyUserID</i>@<i>AnyDomain</i>&gt;
+ default-composer-hdrs=From: 
+</code></pre>
+     Now use pine to compose and send a message to yourself and see 
+     if it uses the customized From header you specified. If it does, 
+     you're set. 
+     <p>
+
+    </p></li><li>If it doesn't use your customized From then you need to either 
+     <p>
+
+     </p><ul>
+      <li>Ask your system administrator to compile pine with ALLOW_CHANGING_FROM, 
+       <p>
+
+      </p></li><li>Ask in one of your ISP's local news groups if anyone has 
+       already compiled pine with ALLOW_CHANGING_FROM and is willing 
+       to give it world execute permission, or 
+       <p>
+
+      </p></li><li>Compile pine yourself. 
+       <!--
+Now whenever you compose a message the From header will be displayed
+with whatever you specified as your customized From header and
+you will be able to edit this header while in the midst of 
+composing your message.
+-->
+       The pine source files are at the <a href="ftp://ftp.cac.washington.edu/pine">pine 
+       FTP directory</a>. Before you compile pine you need to remove 
+       the pound sign from the beginning of this line: 
+       <pre>  #define ALLOW_CHANGING_FROM
+</pre>
+       which is in the file pine/osdep/os-XXX.h, where XXX is an abbreviation 
+       for the operating system (e.g., `sol' for Solaris). 
+     </li></ul>
+   </li></ol>
+   <p>
+
+    </p></li><li>If you are not able to compile pine on your system, an alternative 
+      is to <a href="http://www.washington.edu/pine/pine-info/1997.04/msg00597.html">set 
+      your <tt>sendmail-path</tt> to point at a script that munges your From 
+      header</a> (<a href="http://web.archive.org/web/20030628181942/http://www.washington.edu/pine/pine-info/1997.04/msg00597.html">this 
+      message is also available at archive.org</a>). 
+      <p>
+
+    </p></li><li>Another alternative, which is not very practical, is to <a href="http://www.washington.edu/pine/pine-info/1997.04/msg00513.html">postpone 
+      your message and then edit your postponed folder</a> (<a href="http://web.archive.org/web/20030426060111/http://www.washington.edu/pine/pine-info/1997.04/msg00513.html">this 
+      message is also available at archive.org</a>). 
+  </li></ul>
+ <p>
+ &nbsp;<a name="pc-pre4">&nbsp;</a> 
+
+ </p><h3>
+ PC-Pine 3.96 and Earlier 
+ </h3>
+
+ Below are two possibilities for how to change your From header in 
+ PC-Pine (Pine for DOS, Windows and NT). 
+ <ul>
+  <li>Edit your PINERC file to contain the personal-name, user-id, 
+   and user-domain you want. These will be used to construct this From 
+   line: 
+   <pre> From: personal-name &lt;user-id@user-domain&gt;
+</pre>
+   With this technique you are not able to edit your From header on 
+   the fly. 
+   <p>
+
+  </p></li><li>Edit your PINERC file so that some or all of the following are 
+   unspecified: 
+   <pre> personal-name=""
+ user-id=""
+ user-domain=""
+</pre>
+   Each time you start to compose a message, you will be prompted for 
+   these three variables. 
+ </li></ul>
+ <p>&nbsp;
+ </p>
+
+</div>
+<!-- end DIV="bod" -->
+<a name="see"></a> 
+<hr size="1" noshade="noshade">
+<h1>
+See Also 
+</h1>
+
+<div class="bod"> 
+ <ul>
+  <li>UW Official Pine FAQ: <a href="http://www.washington.edu/pine/faq/config.html#9.5">Question 
+   9.5: How do I change my 'From:' line?</a> 
+  </li><li>UW Info for Systems Administrators, Developers, and Advanced 
+   Users: <a href="http://www.washington.edu/pine/faq/sysadmins.html#11.12">11.12 
+   What do I need to do when compiling Pine to let users change their 
+   ``From:'' line?</a> 
+  </li><li>UW Pine Configuration and Preferences: <a href="http://www.washington.edu/pine/tech-notes/config.html#role-config">Role 
+   Configuration</a> 
+  </li><li>Gopi Sundaram's Pine FAQ: <a href="http://www.zrox.net/Mail/Pine/write.html#changefrom">How 
+   do I change my From: header?</a> and <a href="http://www.zrox.net/Mail/Pine/roles.html">Roles, 
+   Rules, and Filters</a> 
+    </li><li>Eduardo Chappa's pages about <a href="http://www.math.washington.edu/%7Echappa/pine/pine-info/roles/">Roles</a> 
+      and <a href="http://www.math.washington.edu/%7Echappa/pine/pine-info/misc/headers.html">Headers</a> 
+    </li><li>Dotfiles.com: <a href="http://www.dotfiles.com/files/28/146_foo"> 
+   pinerc fragment for &#8220;changing from line in header&#8221;</a> 
+  </li><li>Infinite Ink (ii.com) 
+   <ul>
+    <li><a href="http://www.ii.com/internet/faqs/launchers/signature_finger_faq/"><i> 
+     faq launcher</i>: Signature, Finger, and Customized Headers FAQ</a> 
+    </li><li><a href="http://www.ii.com/internet/messaging/pine/">All About 
+     Pine: IMAP, NNTP, &amp; ESMTP for Unix, MS Windows, and Mac OS 
+     X</a> especially the section called <a href="http://www.ii.com/internet/messaging/pine/#wishFrom">Pine 
+     Wish&nbsp;#1: Make Changing From Easier</a> 
+    </li><li><a href="http://www.ii.com/internet/messaging/pine/pc/">Power 
+     Pine</a> 
+    </li><li><a href="http://www.ii.com/internet/messaging/spam/">Reverse 
+     Spam Filtering: Winning Without Fighting</a> 
+   </li></ul>
+ </li></ul>
+</div>
+<!-- End Div class=bod -->
+<div class="nav"> 
+ <p>
+ <!-- begin ii footer -->
+ <a name="ii_nav"></a> 
+ </p>
+
+ <p>
+
+ </p><p>
+<br>&nbsp;
+</p><p>&nbsp;
+
+</p><center>
+<img src="role_files/rule_foot.gif" alt="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+
+<!-- begin ii navigator -->
+
+<table border="0">
+
+<tbody><tr valign="bottom"> 
+ 
+<td>
+<a href="http://www.ii.com/"><img src="role_files/ii_logo.gif" alt="[Infinite Ink logo]" border="0"></a></td><td>&nbsp;&nbsp;&nbsp;</td><td align="right" nowrap="nowrap">
+
+<small>
+<b>
+&nbsp;<br>
+                         <a href="#top">top of this page</a></b></small>
+<p> <small> <b> <a href="http://www.ii.com/about/">about&nbsp;ii</a></b>&nbsp;...&nbsp;<b><a href="http://www.ii.com/directory/">directory</a></b>&nbsp;...&nbsp;<b><a href="http://ii.deflexion.com/">communicate</a></b>&nbsp;...&nbsp;<b><a title="deflexion &amp; reflexion from infinite ink" href="http://deflexion.com/"><i>d</i>eflexion.com blog</a></b>&nbsp;...<br>
+            &nbsp;<b><a href="http://www.ii.com/bookstore/">bookstore</a></b>&nbsp;...&nbsp;<b><a href="http://www.ii.com/linking/">linking&nbsp;&amp;&nbsp;mirrors</a></b>&nbsp;...&nbsp;<b><a href="http://www.ii.com/legal/">legal&nbsp;notices</a></b>&nbsp;...&nbsp;<b><a href="http://www.ii.com/thanks/">thanks!</a></b></small><br>
+&nbsp;
+</p></td><td>&nbsp; </td></tr>
+</tbody></table></center>
+<!-- end ii navigator -->
+
+</div>
+<!-- End Div class=nav -->
+<div class="sig"> 
+ <p>&nbsp;
+ </p>
+
+ <center>
+  <table width="99%" border="0" cellpadding="0" cellspacing="0">
+   <tbody><tr valign="bottom"> 
+    <td colspan="2" valign="bottom"> 
+     <hr size="1" noshade="noshade">
+    </td>
+   </tr><tr valign="top"> 
+    <td align="left"> 
+     <p>
+     <small><small>Changing Your From Header in Pine<br>
+            &lt;<a href="http://www.ii.com/internet/messaging/pine/changing_from/">http://www.ii.com/internet/messaging/pine/changing_from/</a>&gt;<br>
+     <a href="http://www.ii.com/legal/">Copyright ©</a> <a href="http://www.ii.com/">Infinite Ink</a> 
+     &amp; <a href="http://www.ii.com/nancym/">Nancy McGough</a></small></small> 
+     </p>
+
+    </td>
+    <td align="right"> 
+     <p>
+     <small><small>&nbsp;<br>
+            updated 29-Mar-2004<br>
+     tweaked 
+     <!-- #BeginDate format:En2 -->02-May-2005<!-- #EndDate -->
+     </small></small> 
+     </p>
+
+    </td>
+   </tr>
+  </tbody></table>
+ </center>
+</div>
+<!-- End Div class=sig -->
+</body></html>

@@ -1,0 +1,19 @@
+#
+# hosts.allow	This file describes the names of the hosts which are
+#		allowed to use the local INET services, as decided
+#		by the '/usr/sbin/tcpd' server.
+#
+portmap: 142.3.164.51 142.3.164.52 142.3.164.60 142.3.165.25 65.87.245.116
+ALL: .phys.uregina.ca .xw.ca 65.87.245.116
+# Note: 129.57.* is the jlab_guest network
+# 70.169.140.85 is the SURA Resfac
+# 65.87.245.116 is polaris
+# 134.93.1* is kph.uni-mainz.de
+
+# 71.17.17.246 for Bill Li
+
+
+sshd sshd2: phys.uregina.ca  .jlab.org .xw.ca 142.3. 129.57.* 134.93.1* 70.169.140.85 .westgrid.ca 71.17.17.246 71.17.149.20 204.83.19.141
+sshdfwd-X11: phys.uregina.ca .jlab.org .xw.ca 142.3. 129.57.* 134.93.1* 70.169.140.85 .westgrid.ca 71.17.17.246 71.17.149.20 204.83.19.141
+
+sendmail: ALL

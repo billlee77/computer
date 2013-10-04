@@ -1,0 +1,813 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-GB"><head>
+
+
+
+
+<!-- base href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/lin_reg/" -->
+  <title>Using Python (and R) to calculate Linear Regressions</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <meta name="description" content="Using the Python scripting language for calculating linear regressions">
+  <meta name="keywords" content="python, linear, regression, rpy, r">
+  <meta name="DC.Title" content="Using Python (and R) to calculate Linear Regressions">
+  <meta name="DC.Creator" content="Peter Cock">
+  <meta name="DC.Subject" content="Using the Python scripting language for calculating linear regressions">
+  <meta name="DC.Description" content="Using the Python scripting language for calculating linear regressions">
+  <meta name="DC.Publisher" content="Peter Cock">
+  <meta name="DC.Contributor" content="Peter Cock">
+  <meta name="DC.Date" scheme="W3CDTF" content="2007-01-04T16:43:29">
+  <meta name="DC.Type" scheme="DCMIType" content="html">
+  <meta name="DC.Format" content="text/html">
+  <meta name="DC.Identifier" content="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/lin_reg/">
+  <meta name="DC.Rights" content="University of Warwick">
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Warwick Search" href="http://search.warwick.ac.uk/static/search/osd.xml">
+  
+  <!-- Google canonical URL - the main URL for this page -->
+  <link rel="canonical" href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/lin_reg/">
+ 
+ 
+
+  
+
+  
+  
+      
+  
+  
+    
+  
+  
+  
+  
+
+
+  
+  <link rel="stylesheet" href="linear_gressions_files/pack5.css" type="text/css">
+
+  <link rel="stylesheet" title="No Accessibility" href="linear_gressions_files/noaccessibility.css" type="text/css">
+  <link rel="alternate stylesheet" title="Show Accessibility" href="linear_gressions_files/showaccessibility.css" type="text/css">
+  <link rel="stylesheet" href="linear_gressions_files/site.css" type="text/css">
+  <!--[if lt IE 8]>
+	  <link rel="stylesheet" href="http://www2.warwick.ac.uk/static_war/render/css/packed/ielt8.css.101011134810" type="text/css">
+  <![endif]-->
+  <!--[if lt IE 7]>
+	  <link rel="stylesheet" href="http://www2.warwick.ac.uk/static_war/render/css/packed/ielt7.css.101011134810" type="text/css">
+  <![endif]-->
+  <!--[if IE 5]>
+	  <link rel="stylesheet" href="http://www2.warwick.ac.uk/static_war/render/css/packed/ie5.css.101011134810" type="text/css">
+  <![endif]-->
+    
+  
+
+
+
+  
+  
+
+
+
+
+  <script type="text/javascript" src="linear_gressions_files/id5scripts.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+SitebuilderInfo.url = '/fac/sci/moac/students/peter_cock/python/lin_reg';
+SitebuilderInfo.lastUpdated = 1285862383000;
+SitebuilderInfo.lastContentUpdated = 1167929009000;
+</script>
+  
+
+  
+
+  
+    
+  
+  
+
+  
+    
+  
+  <link rel="alternate" type="application/rss+xml" title="Changes in /fac/sci/moac/ (RSS 2.0)" href="http://www2.warwick.ac.uk/sitebuilder2/api/rss/siteChanges.rss?page=/fac/sci/moac">
+  <link rel="top" title="Home" href="http://www2.warwick.ac.uk/fac/sci/moac">
+
+  
+  
+    
+  
+<script async="" type="text/javascript" src="linear_gressions_files/ga.js"></script></head><body>
+
+
+<div id="leftShadow"></div>
+
+<div id="leftTopShadow"></div>
+
+<div id="topLeftShadow"></div>
+
+  <div id="warwickBar">
+  <div id="warwickBarLeft">
+  <div id="warwickBarRight">
+    <div class="access-info">
+      <a name="topAnchor" id="topAnchor"></a>
+      <a href="#contentAnchor" accesskey="2">Skip to content</a>
+      <a href="#navAnchor">Skip to navigation</a>
+    </div>
+    
+    
+    	<a href="http://www2.warwick.ac.uk/"><img id="warwickLogo" alt="Warwick home" src="linear_gressions_files/logo.png"></a>
+    
+
+    <div id="utilityStrip">
+        
+
+		
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span id="toggleTextOnly">
+  <a href="http://text.www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/lin_reg/?external=true" class="ut">
+    Text only</a> 
+  <span class="spacer">&#8226;</span>
+</span>
+      
+      
+      
+      
+      
+      
+      
+        
+        
+          
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span>
+  <a href="https://websignon.warwick.ac.uk/origin/slogin?shire=https%3A%2F%2Fwww2.warwick.ac.uk%2Fsitebuilder2%2Fshire-read&amp;providerId=urn%3Awww2.warwick.ac.uk%3Asitebuilder2%3Aread%3Aservice&amp;target=http%3A%2F%2Fwww2.warwick.ac.uk%2Ffac%2Fsci%2Fmoac%2Fstudents%2Fpeter_cock%2Fpython%2Flin_reg%2F" class="ut">
+    Sign in</a> 
+  
+</span>
+	
+
+
+
+        
+      
+      
+      
+<div id="search">
+  <form id="searchForm" action="http://search.warwick.ac.uk/website" method="get">
+    <input name="source" value="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/lin_reg/" type="hidden">
+    <label for="searchBox" class="accessibility">Search: </label>
+    <span id="searchBoxContainer">
+      <label for="searchBox" id="searchBoxLabel" style="">Search&#8230;</label>
+      <input autocomplete="off" id="searchBox" name="q" size="9" title="Type a word or phrase, then click Search" tabindex="1" type="text"><input id="searchButton" src="linear_gressions_files/searchsquare_rounded.gif" value="Search" alt="Search" tabindex="2" type="image">
+    </span>
+    <div id="searchSuggestions" class="suggestions" style="display: none;">
+    </div>
+  </form>
+</div>
+
+    </div>
+
+  </div>
+  </div>
+  </div>
+
+<div id="leftShading">
+<div id="rightShading">
+<div id="topShading">
+  
+  <div id="main"> <!-- optional: class="spanRHS" -->
+  <div id="layoutTable">
+    <div id="departmentBar" class="short">
+    <div id="siteBanner">
+      <div id="siteCornerTopRight">
+      </div>
+      <div id="siteCornerTopLeft">
+      </div>
+      <h1 class="accessibility">Molecular Organisation and Assembly in Cells</h1>
+      <a accesskey="1" href="http://www2.warwick.ac.uk/fac/sci/moac/"><img alt="MOAC" title="MOAC home page" src="linear_gressions_files/logo.gif"></a><img alt="" src="linear_gressions_files/logo-right.gif">
+    </div>
+    </div>
+    <div id="content">
+      
+      <div id="leftContent">
+      <div class="container">
+        
+        <div id="outerNavigation">
+          <div id="departmentBarCurve"></div>
+          <div id="navigationTopCorner" class="navigationBackground"></div>
+          <div style="visibility: visible;" title="Click to toggle, drag to resize" id="navigationHandle"></div>  
+          <div id="navigationMinHeight"></div>           
+          <a name="navAnchor" id="navAnchor" class="accessibility access-info" accesskey="n">[n]</a>
+		  
+          <ul id="navigation"><li class="siteRoot recentlyUpdated"> <span class="rtop"><span class="r1"></span><span class="r3"></span><span class="r4"></span></span><div> <a href="http://www2.warwick.ac.uk/fac/sci/moac/" title="Welcome to the MOAC Doctoral Training Centre">Home </a> </div>
+<span class="rbottom"><span class="r4"></span> <span class="r3"></span> <span class="r1"></span></span>
+</li>
+
+<li class="recentlyUpdated"> <span class="rtop"><span class="r1"></span><span class="r3"></span><span class="r4"></span></span><div> <a href="http://www2.warwick.ac.uk/fac/sci/moac/about/" title="What is MOAC?">About the DTC </a> </div>
+<span class="rbottom"><span class="r4"></span> <span class="r3"></span> <span class="r1"></span></span>
+</li>
+
+<li class="recentlyUpdated"> <span class="rtop"><span class="r1"></span><span class="r3"></span><span class="r4"></span></span><div> <a href="http://www2.warwick.ac.uk/fac/sci/moac/prospective_students/" title="Study at MOAC">Study at MOAC </a> </div>
+<span class="rbottom"><span class="r4"></span> <span class="r3"></span> <span class="r1"></span></span>
+</li>
+
+<li class="selectedSection recentlyUpdated"> <span class="rtop"><span class="r1"></span><span class="r3"></span><span class="r4"></span></span><div> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/" title="MOAC Students Past and Present">MOAC Students </a> </div><ul class="submenu"><li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/" title="Peter Cock">Peter Cock </a><ul class="submenu"><li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/" title="Peter's Python Programming Pages">Python Programming </a><ul class="submenu"><li class="selected"> <span class="rtop"><span class="r1"></span><span class="r3"></span><span class="r4"></span></span><div> Linear Regressions </div><span class="rbottom"><span class="r4"></span> <span class="r3"></span> <span class="r1"></span></span>
+
+</li>
+
+<li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/rank_correlations/" title="Using Python (and R) to calculate Rank Correlations">Rank Correlations </a>
+
+</li>
+
+<li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/heatmap/" title="Using Python (and R) to draw a Heatmap from Microarray Data">Microarray Heatmaps </a>
+
+</li>
+
+<li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/ramachandran/" title="Generating Ramachandran (phi/psi) plots for Proteins">Ramachandran Plots </a>
+
+</li>
+
+<li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/sequences/" title="Nucleotide and Amino Acid Sequences in BioPython">Nuc/AA Sequences </a>
+
+</li>
+
+<li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/rpsblast/" title="Using RPS-BLAST with Biopython">RPS-BLAST </a>
+
+</li>
+
+<li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/fasta_n/" title="Using FASTA nucleotide files in BioPython">FASTA nucleotide files </a>
+
+</li>
+
+<li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/ftp/" title="Downloading Genomes with an FTP script">Genomes by FTP </a>
+
+</li>
+
+<li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/genbank/" title="Dealing with GenBank files in Biopython">GenBank Files </a>
+
+</li>
+
+<li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/genbank2fasta/" title="Converting GenBank files to FASTA format with Biopython">GenBank to FASTA </a>
+
+</li>
+
+<li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/protein_superposition/" title="Protein Superposition using Biopython">Protein Superposition </a>
+
+</li>
+
+<li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/protein_contact_map/" title="Protein Contact Maps using Biopython">Protein Contact Maps </a>
+
+</li>
+
+<li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/mmtk_vrml_cameras/" title="Protein visualisation with MMTK">Protein visualisation </a>
+
+</li>
+
+<li> <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/sudoku/" title="Solving Sudoku puzzles with Python">Solving Sudoku </a>
+
+</li>
+
+</ul>
+
+</li>
+
+</ul>
+
+</li>
+
+</ul>
+<span class="rbottom"><span class="r4"></span> <span class="r3"></span> <span class="r1"></span></span>
+</li>
+
+<li class="recentlyUpdated"> <span class="rtop"><span class="r1"></span><span class="r3"></span><span class="r4"></span></span><div> <a href="http://www2.warwick.ac.uk/fac/sci/moac/people/" title="Staff">Staff </a> </div>
+<span class="rbottom"><span class="r4"></span> <span class="r3"></span> <span class="r1"></span></span>
+</li>
+
+<li class="recentlyUpdated"> <span class="rtop"><span class="r1"></span><span class="r3"></span><span class="r4"></span></span><div> <a href="http://www2.warwick.ac.uk/fac/sci/moac/degrees/" title="MOAC Degree Programmes">Degrees </a> </div>
+<span class="rbottom"><span class="r4"></span> <span class="r3"></span> <span class="r1"></span></span>
+</li>
+
+<li class="recentlyUpdated"> <span class="rtop"><span class="r1"></span><span class="r3"></span><span class="r4"></span></span><div> <a href="http://www2.warwick.ac.uk/fac/sci/moac/research/" title="MOAC Research - The scientific scope of MOAC">Research </a> </div>
+<span class="rbottom"><span class="r4"></span> <span class="r3"></span> <span class="r1"></span></span>
+</li>
+
+<li class="recentlyUpdated"> <span class="rtop"><span class="r1"></span><span class="r3"></span><span class="r4"></span></span><div> <a href="http://www2.warwick.ac.uk/fac/sci/moac/news_events/" title="News and Events">News &amp; Events </a> </div>
+<span class="rbottom"><span class="r4"></span> <span class="r3"></span> <span class="r1"></span></span>
+</li>
+
+<li class="protected recentlyUpdated"> <span class="rtop"><span class="r1"></span><span class="r3"></span><span class="r4"></span></span><div> <a href="http://www2.warwick.ac.uk/fac/sci/moac/intranet/" title="MOAC Intranet">Intranet <img src="linear_gressions_files/shim.gif" alt="" title="Protected content" class="padlock"> </a> </div>
+<span class="rbottom"><span class="r4"></span> <span class="r3"></span> <span class="r1"></span></span>
+</li>
+
+</ul>
+          <div id="navigationCorner"></div>
+        </div>
+        
+        <div id="leftUtility">
+          
+            
+              
+                Not signed in<br>
+                  
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span>
+  <a href="https://websignon.warwick.ac.uk/origin/slogin?shire=https%3A%2F%2Fwww2.warwick.ac.uk%2Fsitebuilder2%2Fshire-read&amp;providerId=urn%3Awww2.warwick.ac.uk%3Asitebuilder2%3Aread%3Aservice&amp;target=http%3A%2F%2Fwww2.warwick.ac.uk%2Ffac%2Fsci%2Fmoac%2Fstudents%2Fpeter_cock%2Fpython%2Flin_reg%2F" class="ut">
+    Sign in</a> 
+  
+</span>
+	
+
+
+
+              
+          
+          <br><br>
+          Powered by <a href="http://go.warwick.ac.uk/sitebuilder" title="More information about SiteBuilder">Sitebuilder</a>
+          <br>
+          
+          
+          	
+          	
+          		
+          		
+          		
+          	
+          
+          
+          <a href="http://go.warwick.ac.uk/terms" title="Copyright Statement">© MMX</a> &nbsp;|&nbsp;
+          <a href="http://go.warwick.ac.uk/terms#privacy" title="Privacy statement">Privacy</a>
+          <br>
+          <a href="http://go.warwick.ac.uk/accessibility" title="Accessibility information">Accessibility</a>
+        </div>
+      
+      </div>
+      </div>
+      
+      <div id="bodyContent">
+      
+            
+ <div id="pageTitle">
+     <!-- logo to display when printing -->
+     <span id="printLogo">
+       <img src="linear_gressions_files/warwick_uni_black.gif" alt="University of Warwick" align="right">
+     </span>
+     <h1>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    Using Python (and R) to calculate Linear Regressions
+  
+
+<span id="afterPageTitle"></span></h1>
+     
+     
+     
+     <div id="pageTitleBottom"></div>
+ </div>
+ 
+ <!-- 
+ Table for containing the centre and right columns. A table is a necessary evil so that user-created content
+ can expand the RHS to fit, instead of falling apart.
+  -->
+ <div id="contentScroll">
+ <table summary="" cellpadding="0" cellspacing="0" width="100%">
+ <tbody>
+ <tr>
+ 
+ <td id="mainContent" valign="top">
+ <div class="content">
+ <a name="contentAnchor" id="contentAnchor" class="accessibility access-info" accesskey="c">[c]</a>
+
+
+
+ 
+
+
+
+
+<p> <em>You might also be interested in my page on doing <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/rank_correlations/">Rank Correlations</a> with Python and/or R.</em> </p>
+
+<p> This page demonstrates three different ways to calculate a linear regression from python: </p>
+
+<ul>
+  <li><a href="#linregress">Pure Python - Gary Strangman's linregress function</a> </li>
+  <li><a href="#lsfit">R from Python - R's lsfit function (Least Squares Fit)</a> </li>
+  <li><a href="#lm">R from Python - R's lm function (Linear Model)</a> </li>
+</ul>
+
+<a name="linregress"></a><h1>Pure Python - Gary Strangman's linregress function</h1>
+
+<p> In Python, <a href="http://www.nmr.mgh.harvard.edu/Neural_Systems_Group/gary/python.html">Gary Strangman's library</a> (available in the <a href="http://www.scipy.org/">SciPy</a> library) can be used to do a simple linear regression as follows:- </p>
+
+<p class="boxstyle"><tt> &gt;&gt;&gt; from scipy import stats<br>
+   &gt;&gt;&gt; x = [5.05, 6.75, 3.21, 2.66]<br>
+   &gt;&gt;&gt; y = [1.65, 26.5, -5.93, 7.96]<br>
+   &gt;&gt;&gt; gradient, intercept, r_value, p_value, std_err = stats.linregress(x,y)<br>
+   &gt;&gt;&gt; print "Gradient and intercept", gradient, intercept<br>
+   Gradient and intercept (5.3935773611970186, -16.281127993087829)<br>
+   &gt;&gt;&gt; print "R-squared", r_value**2<br>
+   R-squared 0.524806275136<br>
+   &gt;&gt;&gt; print "p-value", p_value<br>
+   p-value 0.27556485788150242</tt></p>
+
+<p>Typing <tt>help(stats.linregress)</tt> will tell you about the return
+ values (gradient, y-axis intercept, r, two-tailed probability, and the 
+standard error of the estimate). </p>
+
+<a name="lsfit"></a><h1>R from Python - R's lsfit function (Least Squares Fit)</h1>
+
+<p> A simple way to do this in the <a href="http://www.r-project.org/">R language</a> is to use the lsfit function (Least Squares Fit): </p>
+
+<pre class="example"><tt>&gt; x &lt;- c(5.05, 6.75, 3.21, 2.66)
+&gt; y &lt;- c(1.65, 26.5, -5.93, 7.96)
+&gt; lsfit(x, y)$coefficients
+ Intercept          X 
+-16.281128   5.393577</tt></pre>
+<p> From Python using <a href="http://rpy.sourceforge.net/">RPy (R from Python)</a>, this is just:- </p>
+
+<p class="boxstyle"><tt> &gt;&gt;&gt; from rpy import r<br>
+   &gt;&gt;&gt; x = [5.05, 6.75, 3.21, 2.66]<br>
+   &gt;&gt;&gt; y = [1.65, 26.5, -5.93, 7.96]<br>
+   &gt;&gt;&gt; print r.lsfit(x,y)['coefficients']<br>
+   {'X': 5.3935773611970212, 'Intercept': -16.281127993087839} </tt></p>
+
+<h2>Plotting the Regression line from R's lsfit function (Least Squares Fit)</h2>
+
+<p> If you are using R, its very easy to do an x-y scatter plot with the linear model regression line: </p>
+
+<pre class="example"><tt>x &lt;- c(5.05, 6.75, 3.21, 2.66)
+y &lt;- c(1.65, 26.5, -5.93, 7.96)
+plot(x, y, main="Example Scatter with regression")
+abline(lsfit(x, y)$coefficients, col="red")</tt></pre>
+<p> </p>
+
+<p> Again, we can do this with Python - to try and reduce the confusion 
+between all the different meanings of x and y, I am calling the python 
+list variables <tt>my_x</tt> and <tt>my_y</tt> here: </p>
+
+<pre class="boxstyle"><tt>from rpy import r
+my_x = [5.05, 6.75, 3.21, 2.66]
+my_y = [1.65, 26.5, -5.93, 7.96]
+ls_fit = r.lsfit(my_x,my_y)
+gradient = ls_fit['coefficients']['X']
+yintercept= ls_fit['coefficients']['Intercept']
+
+r.png("scatter_regression.png", width=400, height=350)
+r.plot(x=my_x, y=my_y, xlab="x", ylab="y", xlim=(0,7), ylim=(-16,27),
+       main="Example Scatter with regression")
+r.abline(a=yintercept, b=gradient, col="red")
+r.dev_off()</tt></pre>
+<p> </p>
+
+<p> I have explicitly chosen the axes limits to show the y-axis intersect at -16.28 as previously determined:<br>
+   <img src="linear_gressions_files/scatter_regression.png" alt="[Figure]" height="350" width="400" border="0"> </p>
+
+<p> Note that we have explicitly pulled out the gradient and y-intercept
+ from the coefficients (which is a python dictionary) and given them to 
+the <tt>abline</tt> function as named arguments. If we simply pass the coefficients dictionary back to the <tt>abline</tt> function we have no guarantee that its elements will be in the "right" order. </p>
+
+<p> Alternatively, we could turn off rpy's conversion and keep everything as R objects. </p>
+
+<p> Also notice we have told R to write the graphics to a file, instead 
+of showing them on screen. This was firstly to make getting an image for
+ this webpage easier, and secondly this approach is usually more 
+reliable on Windows. </p>
+
+<a name="lm"></a><h1>R from Python - R's lm function (Linear Model)</h1>
+
+<p> This third method is much more complicated (especially from python) 
+but offers more information than just the linear regression coefficient:
+ R's linear model fitting: </p>
+
+<pre class="example"><tt>&gt; x &lt;- c(5.05, 6.75, 3.21, 2.66)
+&gt; y &lt;- c(1.65, 26.5, -5.93, 7.96)
+&gt; lm(y ~ x)$coefficients
+(Intercept)           x 
+ -16.281128    5.393577</tt></pre>
+<p> The syntax <em>y ~ x</em> tells the lm function to use <em>y</em> depends on <em>x</em> as its model. </p>
+
+<p> Its hard work, but we can still do this from within Python using 
+RPy. Part of the problem is python doesn't have a built in equivalent to
+ the ~ operator, so we have to use rpy's "evaluate a string" 
+functionality. </p>
+
+<p class="boxstyle"><tt> &gt;&gt;&gt; from rpy import r<br>
+   &gt;&gt;&gt; my_x = [5.05, 6.75, 3.21, 2.66]<br>
+   &gt;&gt;&gt; my_y = [1.65, 26.5, -5.93, 7.96]<br>
+   &gt;&gt;&gt; print r.lm(r("y ~ x"), data = r.data_frame(x=my_x, y=my_y))['coefficients']<br>
+   {'x': 5.3935773611970212, '(Intercept)': -16.281127993087839} </tt></p>
+
+<h2>Plotting the Regression line from R's Linear Model</h2>
+
+<p> If you are using R, its very easy to do an x-y scatter plot with the linear model regression line: </p>
+
+<pre class="example"><tt>&gt; x &lt;- c(5.05, 6.75, 3.21, 2.66)
+&gt; y &lt;- c(1.65, 26.5, -5.93, 7.96)
+&gt; plot(x, y, main="Example Scatter with regression")
+&gt; abline(coef(lm(y ~ x)), col="red")</tt></pre>
+<p> Again, we can do this with Python: </p>
+
+<pre class="boxstyle"><tt>from rpy import r
+my_x = [5.05, 6.75, 3.21, 2.66]
+my_y = [1.65, 26.5, -5.93, 7.96]
+linear_model = r.lm(r("y ~ x"), data = r.data_frame(x=my_x, y=my_y))
+gradient = linear_model['coefficients']['x']
+yintercept= linear_model['coefficients']['(Intercept)']
+
+r.png("scatter_regression.png", width=400, height=350)
+r.plot(x=my_x, y=my_y, xlab="x", ylab="y", xlim=(0,7), ylim=(-16,27),
+           main="Example Scatter with regression")
+r.abline(a=yintercept, b=gradient, col="red")
+r.dev_off()</tt></pre>
+<p> </p>
+
+<p> As above, this is the exciting result - I have explicitly chosen the
+ axes limits to show the y-axis intersect at -16.28 as previously 
+determined:<br>
+   <img src="linear_gressions_files/scatter_regression.png" alt="[Figure]" height="350" width="400" border="0"> </p>
+
+<h2>Standard errors etc from R's Linear Model</h2>
+
+<p> Finally, as a slight aside following a question from a Derek 
+Bandler, here is a handy bit of R code to get the standard errors, 
+p-values etc from a regression model using the R summary command: </p>
+
+<pre class="example"><tt>&gt; x &lt;- c(5.05, 6.75, 3.21, 2.66)
+&gt; y &lt;- c(1.65, 26.5, -5.93, 7.96)
+&gt; lm(y ~ x)$coefficients
+(Intercept)           x 
+ -16.281128    5.393577
+&gt; summary(lm(y~x))
+
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+     1      2      3      4 
+-9.306  6.374 -6.962  9.894 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)  -16.281     17.065  -0.954    0.441
+x              5.394      3.629   1.486    0.276
+
+Residual standard error: 11.7 on 2 degrees of freedom
+Multiple R-Squared: 0.5248,     Adjusted R-squared: 0.2872 
+F-statistic: 2.209 on 1 and 2 DF,  p-value: 0.2756</tt></pre>
+<p> The next question is how to do this in Python with rpy. Well, using 
+rpy's default object conversion mode would mean the lm results would be 
+converted from an R dataframe into a Python dictionary. The python 
+dictionary isn't quite good enough to hold all the information R stores 
+in a dataframe, so if rpy tries to convert it back again, the R summary 
+command can't understand it </p>
+
+<p> One solution is to keep the linear model as an R object (by turning 
+off rpy's conversion temporarily). We can then pass this to back the R 
+summary command without problem, and we can still treat the linear model
+ as a Python dictionary using the as_py method - to access its 
+coefficients for example: </p>
+
+<p class="boxstyle"><tt> &gt;&gt;&gt; import rpy<br>
+   &gt;&gt;&gt; x = [5.05, 6.75, 3.21, 2.66]<br>
+   &gt;&gt;&gt; y = [1.65, 26.5, -5.93, 7.96]<br>
+   &gt;&gt;&gt; rpy.set_default_mode(rpy.NO_CONVERSION)<br>
+   &gt;&gt;&gt; linear_model = rpy.r.lm(rpy.r("y ~ x"), data = rpy.r.data_frame(x=x, y=y))<br>
+   &gt;&gt;&gt; rpy.set_default_mode(rpy.BASIC_CONVERSION)<br>
+   &gt;&gt;&gt; print linear_model.as_py()['coefficients']<br>
+   {'x': 5.3935773611970212, '(Intercept)': -16.281127993087839}<br>
+   &gt;&gt;&gt; print rpy.r.summary(linear_model)<br>
+   {'terms': &lt;Robj object at 0x0089E240&gt;, 'fstatistic': {'dendf': 
+2.0, 'value': 2.2088097871524752, 'numdf': 1.0}, 'aliased': {'x': False,
+ '(Intercept)': False}, 'df': [2, 2, 2], 'call': &lt;Robj object at 
+0x0089E340&gt;, 'residuals': {'1': -9.3064376809571137, '3': 
+-6.9622553363545983, '2': 6.3744808050079511, '4': 9.8942122123037599}, 
+'adj.r.squared': 0.28720941270437206, 'cov.unscaled': array([[ 2.1286381
+ , -0.42527178], [-0.42527178, 0.09626979]]), 'r.squared': 
+0.524806275136248, 'sigma': 11.696414461570097, 'coefficients': 
+array([[-16.28112799, 17.06489672, -0.95407129, 0.44073772], [ 
+5.39357736, 3.62909012, 1.48620651, 0.27556486]])} </tt></p>
+
+<p>See also <a href="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/r/iris_lm/">Linear Models using the Iris data in R</a>, which takes this a little further.</p>
+
+
+
+
+
+  
+
+ </div>
+ </td>
+
+ 
+ <td id="rhsContent" valign="top">
+ <div class="content">
+ 
+   
+      
+        
+          
+<p align="center">
+<a href="http://www.python.org/"><img src="linear_gressions_files/python_small.png" alt="[Python logo]" height="48" width="174" border="0"></a>
+<br><a href="http://www.python.org/">Python</a>
+</p>
+<p>
+&nbsp;
+</p>
+<p align="center">
+<a href="http://www.r-project.org/"><img src="linear_gressions_files/rlogo.png" alt="[R logo]" height="76" width="100" border="0"></a>
+<br><a href="http://www.r-project.org/">The R Project</a>
+</p>
+<p>
+&nbsp;
+</p>
+<p align="center">
+<a href="http://www.scipy.org/"><img src="linear_gressions_files/scipy_logo.png" alt="[SciPy logo]" height="61" width="175" border="0"></a>
+<br><a href="http://www.scipy.org/">SciPy</a>
+<br>For Gary Strangman's <a href="http://www.nmr.mgh.harvard.edu/Neural_Systems_Group/gary/python.html">stats.py</a>
+</p>
+<p>
+&nbsp;
+</p>
+<p align="center">
+<a href="http://rpy.sourceforge.net/"><img src="linear_gressions_files/rpy_small.png" alt="[RPy logo]" height="69" width="175" border="0"></a>
+<br><a href="http://rpy.sourceforge.net/">RPy (R from Python)</a>
+</p>
+
+        
+        
+      
+    
+   
+ </div>
+ </td>
+   
+ 
+ </tr>
+ </tbody>
+ </table> <!-- end content table -->
+
+   
+ </div>
+    
+      <div style="clear: both;"> </div>
+<div class="noindex">
+<div class="nofollow">
+<div id="footerContent" class="footerContent">
+
+<div style="display: none; width: 400px; padding: 5px; position: absolute; z-index: 30; border: 1px solid rgb(136, 136, 136); background: url(&quot;http://www2.warwick.ac.uk/static_war/images/gripper.gif&quot;) no-repeat scroll right bottom rgb(255, 255, 238);" id="emailOwnerDiv">
+	<div id="emailOwnerDivInner">
+		<a href="javascript:EmailOwnerForm.hide();">
+	       <img id="popupClosebutton" src="linear_gressions_files/close.png" title="Close this email form" style="float: right;" alt="Close this email form" border="0">
+	    </a>
+		<div id="emailOwnerDivContent"></div>
+	</div>
+</div>
+<span class="footerLeft">
+
+
+
+ 
+  
+  
+  
+  
+  
+  
+	
+	Page contact: <a id="emailOwnerLink" href="http://www2.warwick.ac.uk/sitebuilder2/api/ajax/emailOwner.htm?page=%2ffac%2fsci%2fmoac%2fstudents%2fpeter_cock%2fpython%2flin_reg" title="Send an email to Peter Cock">Peter Cock</a>
+  
+
+</span> <span class="footerRight">Last revised: Thu 4 Jan 2007</span>
+
+</div>
+<a class="accessibility access-info" href="#topAnchor">Back to top of page</a>
+</div>
+</div>
+      
+      
+
+      </div> <!--  end bodyContent -->
+      
+      <div style="clear: both;">&nbsp;</div>
+      
+    </div> <!--#content-->
+  </div>
+  </div> <!--#main-->
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+	<div style="display: block;" id="flyoutTag"></div><div id="flyout"><div id="flyoutContents"><div title="Click to close" id="flyoutCloseButton"></div><div id="flyoutLeft"><div id="flyoutJump"> <div class="flyoutIcon"></div><h2>Jump to</h2><p><small>Type the first two or three letters of what you're looking for and we'll offer some suggestions.</small></p><input autocomplete="off" id="flyoutGoInput" tabindex="3" type="text"><div id="flyoutGoSuggestionsHolder"><div id="flyoutGoSuggestions" class="suggestions" style="display: none;"></div></div></div><div id="flyoutLinks"><h2>Useful links</h2><ul><li><a href="http://go.warwick.ac.uk/contact/">Contacting the University</a></li><li><a href="http://go.warwick.ac.uk/maps/">Maps of the University</a></li><li><a href="http://go.warwick.ac.uk/importantdates/">Term &amp; other dates</a></li><li><a href="https://mywebmail.warwick.ac.uk/">Email for staff,</a> <a href="https://smail.warwick.ac.uk/">for students</a></li><li><a href="http://www2.warwick.ac.uk/?external">External home page</a></li><li><a href="http://www2.warwick.ac.uk/insite">Insite, the Warwick intranet</a></li><li><a href="http://forums.warwick.ac.uk/">Warwick Forums</a></li><li><a href="http://blogs.warwick.ac.uk/">Warwick Blogs</a></li></ul><h2 class="directories">Directories &amp; lists</h2><ul><li><a href="http://go.warwick.ac.uk/atoz/">A-Z index</a></li><li><a href="http://go.warwick.ac.uk/depts/academic/">Academic departments</a></li><li><a href="http://go.warwick.ac.uk/depts/research/">Research centres</a></li><li><a href="http://go.warwick.ac.uk/depts/services/">Services &amp; administration</a></li></ul></div></div><div id="flyoutSearch"> <div class="flyoutIcon"></div><h2>Web site search</h2><form method="get" action="http://search.warwick.ac.uk/website" enctype="application/x-www-form-urlencoded"><input name="indexSection" value="sitebuilder" type="hidden"><input name="source" value="http://www2.warwick.ac.uk/fac/sci/moac/students/peter_cock/python/lin_reg/" type="hidden"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><th><label for="searchQueryFlyout">Search for</label></th><td><input class="text" name="q" id="searchQueryFlyout" tabindex="4" type="text"></td></tr><tr><th><label for="urlPrefixFlyout">within</label></th><td><select class="text" name="urlPrefix" id="urlPrefixFlyout" tabindex="5"><option selected="selected" value="http://www2.warwick.ac.uk/">All of Warwick</option> <optgroup label="Faculty of Arts"> <!-- http://www2.warwick.ac.uk/fac/arts/ --><option value="http://www2.warwick.ac.uk/fac/arts/">All of Faculty of Arts</option> <option value="http://www2.warwick.ac.uk/fac/arts/classics/">Classics</option><option value="http://www2.warwick.ac.uk/fac/arts/cas/">CAS</option><option value="http://www2.warwick.ac.uk/fac/arts/english/">English</option><option value="http://www2.warwick.ac.uk/fac/arts/film/">Film &amp; TV Studies</option><option value="http://www2.warwick.ac.uk/fac/arts/french/">French Studies</option><option value="http://www2.warwick.ac.uk/fac/arts/german/">German Studies</option><option value="http://www2.warwick.ac.uk/fac/arts/history/">History</option><option value="http://www2.warwick.ac.uk/fac/arts/arthistory/">History of Art</option><option value="http://www2.warwick.ac.uk/fac/arts/italian/">Italian</option><option value="http://www2.warwick.ac.uk/fac/arts/theatre_s/">Theatre Studies</option></optgroup><optgroup label="Faculty of Medicine"> <option value="http://www2.warwick.ac.uk/fac/med/">All of Faculty of Medicine</option> <option value="http://www2.warwick.ac.uk/fac/med/">Warwick Medical School</option></optgroup><optgroup label="Faculty of Science"> <option value="http://www2.warwick.ac.uk/fac/sci/">All of Faculty of Science</option> <option value="http://www2.warwick.ac.uk/fac/sci/bio/">Biological Sciences</option><option value="http://www2.warwick.ac.uk/fac/sci/chemistry/">Chemistry</option><option value="http://www2.warwick.ac.uk/fac/sci/eng/">Engineering</option><option value="http://www2.warwick.ac.uk/fac/sci/maths/">Mathematics</option><option value="http://www2.warwick.ac.uk/fac/sci/physics/">Physics</option><option value="http://www2.warwick.ac.uk/fac/sci/psych/">Psychology</option><option value="http://www2.warwick.ac.uk/fac/sci/statistics/">Statistics</option><option value="http://www2.warwick.ac.uk/fac/sci/whri/">Warwick HRI</option></optgroup><optgroup label="Faculty of Social Sciences"> <option value="http://www2.warwick.ac.uk/fac/soc/">All of Faculty of Social Sciences</option> <option value="http://www2.warwick.ac.uk/fac/soc/economics/">Economics</option><option value="http://www2.warwick.ac.uk/fac/soc/wie/">Education</option><option value="http://www2.warwick.ac.uk/fac/soc/celte/">CELTE</option><option value="http://www2.warwick.ac.uk/fac/soc/shss/">Health &amp; Social Studies</option><option value="http://www2.warwick.ac.uk/fac/soc/law/">Law</option><option value="http://www2.warwick.ac.uk/fac/soc/philosophy/">Philosophy</option><option value="http://www2.warwick.ac.uk/fac/soc/pais/">Politics</option><option value="http://www2.warwick.ac.uk/fac/soc/sociology/">Sociology</option></optgroup><optgroup label="Services &amp; Admin"> <option value="http://www2.warwick.ac.uk/services/">All of Services &amp; Admin</option> <option value="http://www2.warwick.ac.uk/services/academicoffice/">Academic Office</option><option value="http://www2.warwick.ac.uk/services/ancillary/">Ancillary Services</option><option value="http://www2.warwick.ac.uk/services/estates/">Estates</option><option value="http://www2.warwick.ac.uk/services/finance/">Finance</option><option value="http://www2.warwick.ac.uk/services/humanresources/">Human Resources</option><option value="http://www2.warwick.ac.uk/services/its/">IT Services</option><option value="http://www2.warwick.ac.uk/services/library/">Library</option></optgroup></select></td></tr><tr><td></td><td><input class="searchSubmitFlyout" value="Search" tabindex="6" type="submit"></td></tr></tbody></table></form></div><div id="flyoutPeopleSearch"> <div class="flyoutIcon"></div><h2>People search</h2><form method="post" action="http://search.warwick.ac.uk/people" onsubmit="this.q.value = this.firstname.value + ' ' + this.lastname.value;"><input name="q" value="" type="hidden"><table cellpadding="0" cellspacing="0" border="0"><tbody><tr><th><label for="firstnameFlyout">First name</label></th><td><input class="text" name="firstname" id="firstnameFlyout" tabindex="7" type="text"></td></tr><tr><th><label for="lastnameFlyout">Last name</label></th><td><input class="text" name="lastname" id="lastnameFlyout" tabindex="8" type="text"></td></tr><tr><td></td><td><input class="searchSubmitFlyout" value="Search" tabindex="9" type="submit"></td></tr></tbody></table><input name="Search" value="Search" type="hidden"></form></div><div id="flyoutNewsflash"><h2>News</h2><p>News.</p></div></div></div>
+
+
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+
+
+
+ _gaq.push(['_setAccount', 'UA-1022818-8'],
+           ['_trackPageview', '/fac/sci/moac/students/peter_cock/python/lin_reg']);
+
+
+ var analyticsLoad = function() {
+   var s    = document.createElement('script');
+   s.src    = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   s.type   = "text/javascript";
+   s.async  = true;
+   document.documentElement.firstChild.appendChild(s);
+ };
+ if (window.Event && Event.observe) {
+   Event.observe(window, 'load', analyticsLoad);
+ } else {
+   var oldLoad = window.onload;
+   window.onload = function() {
+     if (typeof oldLoad == 'function') oldLoad();
+     analyticsLoad();
+   }; 
+ }
+</script>
+
+
+<div style="display: none;" id="overlay"></div><div style="display: none;" id="lightbox"><div style="width: 250px; height: 250px;" id="outerImageContainer"><div id="imageContainer"><img id="lightboxImage"><div id="hoverNav"><a id="prevLink" href="#"></a><a id="nextLink" href="#"></a></div><div id="loading"><a id="loadingLink" href="#"><img src="linear_gressions_files/loading.gif"></a></div></div></div><div id="imageDataContainer"><div id="imageData"><div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span></div><div id="bottomNav"><a id="bottomNavClose" href="#"><img src="linear_gressions_files/closelabel.gif"></a></div></div></div></div></body></html>

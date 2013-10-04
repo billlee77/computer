@@ -1,0 +1,181 @@
+#Next is the selection of the good command line from Steffen
+
+  307  grep -rn 440
+  308  grep -rn 440 *
+  309  grep -rn 440 *.cc
+  310  grep -rn 440 *.h
+
+  626  ldd ./bgbrowser
+  627  echo $LD_LIBRARY_PATH
+  628  echo $LD_LIBRARY_PATH | perl -e 'print "$_\n" for map {split /:/, $_} <STDIN>'
+  629  echo $LD_LIBRARY_PATH | perl -e 'print "$_\n" for map {split /:/, $_} <STDIN>' | grep nova
+  630  gvim ~/.bashrc
+  631  history
+
+  920  root --help
+  921  root-cof
+  922  root-config
+  923  root-config --cflags
+  924  root-config --ldflags
+  925  root-config --ldf
+  926  root-config --ld
+  927  root-config --libs
+
+  965  perl -e 'print rand()*440, "\n" for 1..440'
+  966  perl -e 'print rand()*440, "\n" for 1..440' > Data
+  982  perl -e 'print rand()*300, "\n" for 1..440'
+  983  perl -e 'print $_/440*300, "\n" for 1..440'
+  984  perl -e 'print $_/440*300, "\n" for 1..440' > Data
+
+  991  echo $AUGEROFFLINEROOT
+  992  ls -l /data/auger/Auger/
+  993  less /data/auger/Auger//README
+  994  vim .bashrc
+  995  cd Off
+  996  cd src/OfflineKG/
+  997  ll
+  998  cd Modules/
+  999  svn checkout https://ik-svn.fzk.de/svn/auger/NonStandardModules/trunk/StarAccess
+ 1000  cd /augerdata/
+ 1001  cd Auger
+
+  630  svn checkout https://ik-svn.fzk.de/auger/OfflineKG/trunk OfflineKG
+  631  svn checkout https://ik-svn.fzk.de/svn/auger/OfflineKG/trunk OfflineKG
+
+  722  svn upo
+  723  svn up
+
+  734  ssh iklx107
+  789  env | grep m32
+  790  which root
+
+  806  echo $PATH | perl -pe 'split /:/'
+  807  echo $PATH | perl -pe '$_=join "\n",split /:/, $_'
+  808  echo $PATH | perl -pe '$_=join "\n",split /:/, $_' | grep Offline
+
+  815  which rootcint
+  816  ldd `which rootcint`
+
+  819  quota
+
+  837  svn up
+  838  svn log | less
+
+  890  cat xml/ModuleSequence.xml
+
+  893  cat bootstrap.xml.in
+  
+  907  grep -rn database *
+	
+  928  time ./offlineKG 2>&1 | tee out.log
+
+  991  touch StarAccess/StarAccess.cc
+
+  644  ln -s src /data/userdata6/li/src/
+  645  ll
+  646  rm /data/userdata6/li/src/src
+  647  ln -s /data/userdata6/li/src/ src
+  648  ll
+
+
+   :%s/\d\+\s\+\s*$//
+
+   :%s/Num/num/
+
+ 1009  ls */*
+ 1010  cd ..
+ 1011  find . -name "bg*.txt.gz"
+
+
+ 1012  less ./FD-Coihueco/eyepc/2007/01/12/aux/bg_run_coihueco_070112_d.txt.gz
+
+
+
+  640  killall -9 gdb
+  641  killall -9 offlineKG
+  648  killall root.exe
+  649  killall offlineKG
+  650  killall -9 offlineKG
+  655  svn st
+  
+  771  ./bgParser
+  772  ./bgParser -v 1 -e 4 -o testData.root ~/src/BGBrowser-0.4.1-trunk-Source/bg_20060704_co.txt
+  779  rootl myRootFile.root
+  780  root -l myRootFile.root
+  781  rm myRootFile.root
+  793  wc -l *.cc *.h
+  794  wc -l *.cc *.h *.pl
+ 
+  842  cp -r /data/userdata2/smueller/StarAccess/tools/output bgdata
+
+
+perl -e 'open FH, "<Estimation.output" or die; @theory = grep /\S/, split /\s+/, join "",<FH>; close FH; open FH, "<Background.output" or die; @bg = grep /\S/, split /\s+/, join "",<FH>; close FH; print $bg[$_]-$theory[$_], " " for 0..$#theory;print "\n"; warn scalar @theory; warn scalar @bg;' > diff.output
+
+
+  g++ -I/dir/to/root/root_vxxxxxx.i686/include/ -g -Wall -o ave average.cc
+
+  g++ -I/data/auger/Auger/root/root_v5.20.00.i686/include/ -g -Wall -o ave average.cc
+ 
+  perl -pe 's/\b(\d*(?:\.\d*)?)\b/$1+1/ge' a
+  perl -pe '$_=join(" ",map{$_+1}split /\s+/, $_);' a
+  perl -pe '$_=join(" ",map{$_+1}split /\s+/, $_);' a
+  perl -pe '$_=join(" ",map{$_+1}split /\s+/, $_);' a > b
+
+  g++ 'root-config --ldflags --cflags --libs' -g -Wall -o ave average.cc
+ 
+  ifconfig eth0
+  netstat -tan
+
+  svn --version
+  
+
+
+# Count the number of the object
+  ls | wc -l 
+
+
+#***************************************************
+  # Search for the object
+    find | grep 'plot'
+    find . -type d(f)
+
+  # Search and delete
+  find /directory/path -name core -delete 
+
+  find /directory/path -name core | xargs /bin/rm -f
+  find /directory/path -name core -exec /bin/rm -f '{}' \; 
+  
+  # Tip if the searching dir is not empty do 
+  find . -type d | xargs /bin/rm -rf
+
+  # Excute three command in a chain, and they all are depending on the previous command
+  find . | grep 8 | xargs /usr/bin/gvim
+#****************************************************
+
+  # Search under the current directory without go into the sub directory
+  ls | grep thing
+
+
+# svn delete ! file
+  svn status | grep ! | perl -e 'print "$_" for map {split /!/} <STDIN>' | xargs svn delete
+
+# delete things
+  svn rm *_r_[1-4][0-9].ps
+
+  svn status | perl -e 'print "$_" for map {split /\?   /, $_} <STDIN>' 
+
+  svn status | grep "^\?" | awk '{print $2}' | xargs svn add
+
+
+#*****************************************
+#output evironment variable
+printenv
+
+# Print out the directory!!
+ls -d */ | perl -e 'print "$_" for map {split /\//, $_} <STDIN>'
+
+
+
+
+svn status | grep ? | awk '{rint $2}'| xargs ls -a | grep .svn | xargs rm -rf;
+

@@ -1,0 +1,10 @@
+# Stop IPP service and remove the link
+
+	sudo /etc/init.d/cupsys stop
+	sudo update-rc.d -f cupsys remove
+
+
+# To restore the change
+  	sudo update-rc.d cupsys defaults 
+ 	sudo /etc/init.d/cupsys start
+

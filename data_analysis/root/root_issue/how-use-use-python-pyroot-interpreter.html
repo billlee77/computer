@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="js" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>How to use Use the Python PyROOT Interpreter ? | ROOT</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="http://root.cern.ch/drupal/sites/default/files/favicon.ico" type="image/x-icon">
+  <link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/aggregator.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/book.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/node.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/defaults.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/system.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/system-menus.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/user.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/fckeditor.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/geshifilter.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/mollom.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/shadowbox_002.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/shadowbox.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/views.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/printlinks.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/style.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/blue.css">
+<link type="text/css" rel="stylesheet" media="all" href="how-use-use-python-pyroot-interpreter_files/suckerfish_blue.css">
+  <script type="text/javascript" src="how-use-use-python-pyroot-interpreter_files/jquery_002.js"></script>
+<script type="text/javascript" src="how-use-use-python-pyroot-interpreter_files/drupal.js"></script>
+<script type="text/javascript" src="how-use-use-python-pyroot-interpreter_files/mollom.js"></script>
+<script type="text/javascript" src="how-use-use-python-pyroot-interpreter_files/shadowbox.js"></script>
+<script type="text/javascript" src="how-use-use-python-pyroot-interpreter_files/shadowbox_auto.js"></script>
+<script type="text/javascript" src="how-use-use-python-pyroot-interpreter_files/jquery.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/drupal/", "googleanalytics": { "trackOutgoing": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip|root" }, "shadowbox": { "animate": 1, "animateFade": 1, "animSequence": "wh", "auto_enable_all_images": 0, "auto_gallery": 0, "autoplayMovies": true, "continuous": 0, "counterLimit": "10", "counterType": "default", "displayCounter": 1, "displayNav": 1, "enableKeys": 1, "fadeDuration": "0.35", "handleOversize": "resize", "handleUnsupported": "link", "initialHeight": 160, "initialWidth": 320, "language": "en", "modal": false, "overlayColor": "#000", "overlayOpacity": "0.85", "players": null, "resizeDuration": "0.35", "showMovieControls": 1, "slideshowDelay": "0", "viewportPadding": 20, "useSizzle": 0 } });
+//--><!]]>
+</script>
+  <script type="text/javascript"> </script>
+      <style type="text/css">
+    #page {
+      width : 850px;
+    }
+    </style>
+        <style type="text/css">
+    body.sidebar-left #main {
+      margin-left: -180px;
+    }
+    body.sidebars #main {
+      margin-left: -180px;
+    }
+    body.sidebar-left #squeeze {
+      margin-left: 180px;
+    }
+    body.sidebars #squeeze {
+      margin-left: 180px;
+    }
+    #sidebar-left {
+      width: 180px;
+    }
+    </style>
+        <style type="text/css">
+    body.sidebar-right #main {
+      margin-right: -180px;
+    }
+    body.sidebars #main {
+      margin-right: -180px;
+    }
+    body.sidebar-right #squeeze {
+      margin-right: 180px;
+    }
+    body.sidebars #squeeze {
+      margin-right: 180px;
+    }
+    #sidebar-right {
+      width: 180px;
+    }
+    </style>
+        <style type="text/css">
+    body {
+      font-family : Arial, Verdana, sans-serif;
+    }
+    </style>
+      <!--[if lte IE 6]>
+<script type="text/javascript"> 
+    $(document).ready(function(){ 
+        $(document).pngFix(); 
+    }); 
+</script> 
+<![endif]-->
+    <!--[if IE]>
+<style type="text/css" media="all">@import "/drupal/sites/all/themes/newsflash/css/ie.css";</style>
+<![endif]-->
+      <!--[if lte IE 6]>
+<script type="text/javascript" src="http://root.cern.ch/drupal/sites/all/themes/newsflash/js/suckerfish.js"></script>
+<![endif]-->
+        <script type="text/javascript" src="how-use-use-python-pyroot-interpreter_files/pickstyle.js"></script>
+</head><body class="sidebar-left">
+  <div id="page">
+    <div id="header" class="clear-block">
+      <div id="logo-title">
+                              <a href="http://root.cern.ch/drupal/" title="Home"> <img src="how-use-use-python-pyroot-interpreter_files/rootdrawing-logo.png" alt="Home" id="logo"> </a>
+                        </div><!-- /logo-title -->
+      <div id="name-and-slogan">
+                      </div><!-- /name-and-slogan -->
+            <form action="/drupal/content/how-use-use-python-pyroot-interpreter" accept-charset="UTF-8" method="post" id="search-theme-form">
+<div><div id="search" class="container-inline">
+  <div class="form-item" id="edit-search-theme-form-1-wrapper">
+ <label for="edit-search-theme-form-1">Search this site: </label>
+ <input maxlength="128" name="search_theme_form" id="edit-search-theme-form-1" size="15" title="Enter the terms you wish to search for." class="form-text" type="text">
+</div>
+<input name="op" id="edit-submit" value="Search" class="form-submit" type="submit">
+<input name="form_build_id" id="form-8548310852eb732c3815eeea404eef36" value="form-8548310852eb732c3815eeea404eef36" type="hidden">
+<input name="form_id" id="edit-search-theme-form" value="search_theme_form" type="hidden">
+</div>
+
+</div></form>
+              <div id="primarymenu">
+                                            <ul class="links secondary-links"><li class="menu-306 first last"><a href="http://root.cern.ch/drupal/content/login" title="Login">Login</a></li>
+</ul> 
+                </div>
+                    <div style="clear: both;"></div>
+        <div id="suckerfishmenu" class="clear-block"> <div class="block block-menu" id="block-menu-menu-suckerfish">
+    <div class="content"><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/" title="">Home</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/news" title="">What's New</a></li>
+<li class="expanded"><a href="http://root.cern.ch/drupal/content/about" title="">About</a><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/root-development-team" title="ROOT Development Team">ROOT Development Team</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/former-root-developers" title="Former ROOT Developers">Former ROOT Developers</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/contributors" title="Contributors">Contributors</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/contact-us" title="Contact Us">Contact Us</a></li>
+<li class="leaf last"><a href="http://root.cern.ch/drupal/content/license" title="License">License</a></li>
+</ul></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/image" title="">Screenshots</a></li>
+<li class="expanded"><a href="http://root.cern.ch/drupal/content/downloading-root" title="">Download</a><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/installing-root-source" title="Installing ROOT from Source">Building ROOT</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-27-06-patch-release-notes" title="ROOT Version v5-27-06 Patch Release Notes">Patches v5-27-06</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-26-00-patch-release-notes" title="ROOT Version v5-26-00 Patch Release Notes">Patches v5-26-00</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-24-00-patch-release-notes" title="ROOT Version v5-24-00 Patch Release Notes">Patches v5-24-00</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-22-00-patch-release-notes" title="ROOT Version v5-22-00 Patch Release Notes">Patches v5-22-00</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-20-00-patch-release-notes" title="ROOT Version v5-20-00 Patch Release Notes">Patches v5-20-00</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-18-00-patch-release-notes" title="ROOT Version v5-18-00 Patch Release Notes">Patches v5-18-00</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-14-00-patch-release-notes" title="ROOT Version v5-14-00 Patch Release Notes">Patches v5-14-00</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/root-version-v5-10-00-patch-release-notes" title="ROOT Version v5-10-00 Patch Release Notes">Patches v5-10-00</a></li>
+<li class="leaf last"><a href="http://root.cern.ch/drupal/content/download-statistics" title="Download Statistics">Download Statistics</a></li>
+</ul></li>
+<li class="expanded"><a href="http://root.cern.ch/drupal/content/documentation" title="">Documentation</a><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/architectural-overview" title="Architectural Overview">Architectural Overview</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/discovering-root" title="">Discovering ROOT</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/users-guide" title="User's Guide">User's Guide</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/reference-guide" title="Reference Guide">Reference Guide</a></li>
+<li class="leaf"><a href="http://root.cern.ch/root/html/tutorials/" title="">Tutorials</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/howtos" title="HowTo's">HowTo's</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/faq" title="">FAQ</a></li>
+<li class="expanded last"><a href="http://root.cern.ch/drupal/content/other-resources" title="Other Resources">Other Resources</a><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/publication-list" title="Publication List">Publication List</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/example-applications" title="Example Applications">Example Applications</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/tutorials-and-courses" title="Tutorials and Courses">Tutorials and Courses</a></li>
+<li class="leaf last"><a href="http://root.cern.ch/drupal/content/workshops" title="Workshops">Workshops</a></li>
+</ul></li>
+</ul></li>
+<li class="expanded"><a href="http://root.cern.ch/drupal/content/support" title="">Support</a><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/register-user" title="Register as User">Register as User</a></li>
+<li class="leaf"><a href="http://root.cern.ch/bugs" title="">Report a Bug</a></li>
+<li class="leaf last"><a href="http://root.cern.ch/drupal/content/search" title="Search">Search</a></li>
+</ul></li>
+<li class="expanded"><a href="http://root.cern.ch/phpBB3/" title="">Forum</a><ul class="menu"><li class="leaf first last"><a href="http://root.cern.ch/drupal/content/roottalk-digest" title="RootTalk Digest">RootTalk Digest</a></li>
+</ul></li>
+<li class="expanded last"><a href="http://root.cern.ch/drupal/content/developers-corner" title="">Developers</a><ul class="menu"><li class="leaf first"><a href="http://root.cern.ch/drupal/content/c-coding-conventions" title="">Coding Conventions</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/subversion-howto" title="Subversion HOWTO">Subversion</a></li>
+<li class="leaf"><a href="http://root.cern.ch/viewvc/" title="">ViewVC</a></li>
+<li class="leaf"><a href="http://root.cern.ch/lxr/" title="">LXR</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/nightlies" title="Nightlies">Nightlies</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/buildbot-overview" title="">Buildbot</a></li>
+<li class="leaf"><a href="https://coverity.cern.ch/defects/index.htm?projectId=10001" title="">Coverity</a></li>
+<li class="leaf"><a href="http://root.cern.ch/drupal/content/benchmarking" title="Benchmarking">Benchmarking</a></li>
+<li class="leaf last"><a href="http://root.cern.ch/drupal/content/developer-meetings" title="Developer Meetings">Developer Meetings</a></li>
+</ul></li>
+</ul></div></div>
+ </div>
+          </div><!-- /header -->
+            <div id="middlecontainer">
+              <div id="sidebar-left"><div class="block block-views" id="block-views-recent_stories-block_1">
+  <h2 class="title">What's New</h2>  <div class="content"><div class="view view-recent-stories view-id-recent_stories view-display-id-block_1 view-dom-id-1">
+    
+  
+  
+      <div class="view-content">
+      <div class="item-list">
+    <ul>
+          <li class="views-row views-row-1 views-row-odd views-row-first">  
+  <div class="views-field-created">
+                <span class="field-content">October 13, 2010, 11:45</span>
+  </div>
+  
+  <div class="views-field-title">
+                <span class="field-content"><a href="http://root.cern.ch/drupal/content/patch-release-52600e">Patch release 5.26/00e</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-2 views-row-even">  
+  <div class="views-field-created">
+                <span class="field-content">September 29, 2010, 10:54</span>
+  </div>
+  
+  <div class="views-field-title">
+                <span class="field-content"><a href="http://root.cern.ch/drupal/content/development-release-52706">Development release 5.27/06</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-3 views-row-odd">  
+  <div class="views-field-created">
+                <span class="field-content">March 31, 2010, 15:34</span>
+  </div>
+  
+  <div class="views-field-title">
+                <span class="field-content"><a href="http://root.cern.ch/drupal/content/patch-release-52200i">Patch release 5.22/00i</a></span>
+  </div>
+</li>
+          <li class="views-row views-row-4 views-row-even views-row-last">  
+  <div class="views-field-created">
+                <span class="field-content">January 22, 2010, 17:44</span>
+  </div>
+  
+  <div class="views-field-title">
+                <span class="field-content"><a href="http://root.cern.ch/drupal/content/patch-release-52200g">Patch release 5.22/00g</a></span>
+  </div>
+</li>
+      </ul>
+</div>    </div>
+  
+  
+  
+  
+  
+  
+</div> </div></div>
+<div class="block block-blog" id="block-blog-0">
+  <h2 class="title">Recent blog posts</h2>  <div class="content"><div class="item-list"><ul><li class="first"><a href="http://root.cern.ch/drupal/content/new-server-and-code-poetry">New server and code poetry</a></li>
+<li><a href="http://root.cern.ch/drupal/content/c-0x-draft-published">C++ 0x draft published</a></li>
+<li><a href="http://root.cern.ch/drupal/content/incredible-india">Incredible India</a></li>
+<li><a href="http://root.cern.ch/drupal/content/spin-little-disk-spin">Spin little disk, spin!</a></li>
+<li><a href="http://root.cern.ch/drupal/content/root-had-bugs">ROOT had bugs!</a></li>
+<li><a href="http://root.cern.ch/drupal/content/c-discussion-bjarne-stroustrup-part-2">C++ Discussion with Bjarne Stroustrup, Part 2</a></li>
+<li><a href="http://root.cern.ch/drupal/content/c-discussion-bjarne-stroustrup">C++ Discussion with Bjarne Stroustrup</a></li>
+<li><a href="http://root.cern.ch/drupal/content/c-98-0a-and-1x">C++ 98, 0A, and 1x</a></li>
+<li><a href="http://root.cern.ch/drupal/content/sneak-preview">Sneak Preview</a></li>
+<li class="last"><a href="http://root.cern.ch/drupal/content/new-technology-not-root-time-around">New technology (not ROOT, this time around)</a></li>
+</ul></div><div class="more-link"><a href="http://root.cern.ch/drupal/blog" title="Read the latest blog entries.">more</a></div></div></div>
+ </div>
+            <div id="main">
+        <div id="squeeze">
+                                    <div id="breadcrumb"> <div class="breadcrumb"><a href="http://root.cern.ch/drupal/">Home</a></div> </div>
+                                          <div id="squeeze-content">
+            <div id="inner-content">
+                           <h1 class="title">How to use Use the Python PyROOT Interpreter ?</h1>
+              <div class="tabs"></div>
+                                          <div class="node">
+  
+  
+      <span class="submitted"></span> <span class="taxonomy"><ul class="links inline"><li class="taxonomy_term_170 first"><a href="http://root.cern.ch/drupal/category/package-context/pyroot" rel="tag" title="">pyroot</a></li>
+<li class="taxonomy_term_123 last"><a href="http://root.cern.ch/drupal/category/package-context/python" rel="tag" title="">python</a></li>
+</ul></span>
+  
+  <div class="content"><p>PyROOT is a <a href="http://www.python.org/">Python</a>
+ extension module that  allows the user to interact with any ROOT class 
+from the Python interpreter. This is done generically using the ROOT 
+dictionary, therefore there is no  need to generate any Python wrapper 
+code to include new ROOT classes. At the  same time PyROOT offers the 
+possibility to execute and evaluate any Python command or start a Python
+ shell from the ROOT/CINT prompt. Further details are available in the <a href="http://cern.ch/wlav/pyroot">PyROOT manual</a>.</p>
+<h2>Building and installing PyROOT</h2>
+<p>The user should follow the standard ROOT <a href="http://root.cern.ch/root/Install.html">installation instructions</a>
+  and, if necessary, enable the build of the PyROOT module. A Python 
+version &gt; 2.2 is required, the location of needs to be specified if 
+it is not installed in any of the standard places:   </p><div class="geshifilter"><pre class="bash geshifilter-bash" style="font-family: monospace;">.<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>configure <span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(194, 12, 185); font-weight: bold;">arch</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span> <span style="color: rgb(102, 0, 51);">--enable-python</span> <span style="color: rgb(122, 8, 116); font-weight: bold;">[</span>--with-python-incdir=<span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(194, 12, 185); font-weight: bold;">dir</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span><span style="color: rgb(122, 8, 116); font-weight: bold;">]</span> <span style="color: rgb(122, 8, 116); font-weight: bold;">[</span>--with-python-libdir=<span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span><span style="color: rgb(194, 12, 185); font-weight: bold;">dir</span><span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span><span style="color: rgb(122, 8, 116); font-weight: bold;">]</span>
+<span style="color: rgb(194, 12, 185); font-weight: bold;">gmake</span></pre></div>
+    where the Python include directory should point to the directory 
+containing the Python.h file, and the library directory should contain 
+libpython.x.y.[so][.dll], where 'x' and 'y' are the major and minor 
+version number of Python, respectively. Note that at the end of the 
+configuration, the list of enabled features is printed: make sure that 
+'python' is listed among them.
+<p>If you do not specify the inc and lib directories configure will try 
+to use  the environment variable $PYTHONDIR or alternatively will look 
+in the  standard locations.</p>
+<p>A library called libPyROOT.so [libPyROOT.dll] will be created in the 
+$ROOTSYS/lib  [$ROOTSYS/bin] and a top Python module ROOT.py will be 
+copied to the same place.</p>
+<h2>Setting up the environment</h2>
+<p>To work with PyROOT, the LD_LIBRARY_PATH [PATH] and PYTHONPATH need to be set  in addition to the standard ROOTSYS:</p>
+<h4>for Unix platforms</h4>
+<div class="geshifilter"><pre class="bash geshifilter-bash" style="font-family: monospace;"><span style="color: rgb(122, 8, 116); font-weight: bold;">export</span> <span style="color: rgb(0, 120, 0);">LD_LIBRARY_PATH</span>=<span style="color: rgb(0, 120, 0);">$ROOTSYS</span><span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>lib:<span style="color: rgb(0, 120, 0);">$PYTHONDIR</span><span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>lib:<span style="color: rgb(0, 120, 0);">$LD_LIBRARY_PATH</span>
+<span style="color: rgb(122, 8, 116); font-weight: bold;">export</span> <span style="color: rgb(0, 120, 0);">PYTHONPATH</span>=<span style="color: rgb(0, 120, 0);">$ROOTSYS</span><span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>lib:<span style="color: rgb(0, 120, 0);">$PYTHONPATH</span></pre></div>
+<h4>for Windows</h4>
+<div class="geshifilter"><pre class="bash geshifilter-bash" style="font-family: monospace;"><span style="color: rgb(0, 0, 0); font-weight: bold;">set</span> <span style="color: rgb(0, 120, 0);">PATH</span>=<span style="color: rgb(0, 0, 0); font-weight: bold;">%</span>ROOTSYS<span style="color: rgb(0, 0, 0); font-weight: bold;">%/</span>bin;<span style="color: rgb(0, 0, 0); font-weight: bold;">%</span>PATH<span style="color: rgb(0, 0, 0); font-weight: bold;">%</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">set</span> <span style="color: rgb(0, 120, 0);">PYTHONPATH</span>=<span style="color: rgb(0, 0, 0); font-weight: bold;">%</span>ROOTSYS<span style="color: rgb(0, 0, 0); font-weight: bold;">%/</span>bin;<span style="color: rgb(0, 0, 0); font-weight: bold;">%</span>PYTHONPATH<span style="color: rgb(0, 0, 0); font-weight: bold;">%</span></pre></div>
+<h2>Running PyROOT from Python interpreter</h2>
+<p>The user should make sure that the python command is the one of the  
+installation that has been used to build the PyROOT extension module. 
+The top  level Python module is ROOT.py. This module imports the 
+extension module  libPyROOT.so [.dll] and does a similar initialization 
+as the ROOT application (i.e.  loading common libraries, defining a 
+number of globals, starting a thread to  handle GUI events, etc.). This 
+is the main entry point for any Python script  using the ROOT classes. 
+An example is as follows:</p>
+<div class="geshifilter"><pre class="bash geshifilter-bash" style="font-family: monospace;">from ROOT import gROOT, TCanvas, TF1
+&nbsp;
+gROOT.Reset<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span><span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>
+c1 = TCanvas<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span> <span style="color: rgb(255, 0, 0);">'c1'</span>, <span style="color: rgb(255, 0, 0);">'Example with Formula'</span>, <span style="color: rgb(0, 0, 0);">200</span>, <span style="color: rgb(0, 0, 0);">10</span>, <span style="color: rgb(0, 0, 0);">700</span>, <span style="color: rgb(0, 0, 0);">500</span> <span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>
+&nbsp;
+<span style="color: rgb(102, 102, 102); font-style: italic;">#</span>
+<span style="color: rgb(102, 102, 102); font-style: italic;"># Create a one dimensional function and draw it</span>
+<span style="color: rgb(102, 102, 102); font-style: italic;">#</span>
+fun1 = TF1<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span> <span style="color: rgb(255, 0, 0);">'fun1'</span>, <span style="color: rgb(255, 0, 0);">'abs(sin(x)/x)'</span>, <span style="color: rgb(0, 0, 0);">0</span>, <span style="color: rgb(0, 0, 0);">10</span> <span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>
+c1.SetGridx<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span><span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>
+c1.SetGridy<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span><span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>
+fun1.Draw<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span><span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>
+c1.Update<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span><span style="color: rgb(122, 8, 116); font-weight: bold;">)</span></pre></div>
+<p>The user can find a number of examples in $ROOTSYS/tutorials/pyroot. To run them, simply execute the command</p>
+<div class="geshifilter"><pre class="bash geshifilter-bash" style="font-family: monospace;">python <span style="color: rgb(0, 120, 0);">$ROOTSYS</span><span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>tutorials<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>pyroot<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>demo.py</pre></div>
+<h2>Running Python from ROOT/CINT interpreter</h2>
+<p>A ROOT user can run any Python command and eventually switch to the 
+python  prompt from the ROOT/CINT prompt; the interpreter state will be 
+preserved in between calls. Example commands to execute are:</p>
+<div class="geshifilter"><pre class="bash geshifilter-bash" style="font-family: monospace;">root <span style="color: rgb(122, 8, 116); font-weight: bold;">[</span><span style="color: rgb(0, 0, 0);">0</span><span style="color: rgb(122, 8, 116); font-weight: bold;">]</span> gSystem-<span style="color: rgb(0, 0, 0); font-weight: bold;">&amp;</span>gt;Load<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span><span style="color: rgb(255, 0, 0);">"libPyROOT"</span><span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>
+root <span style="color: rgb(122, 8, 116); font-weight: bold;">[</span><span style="color: rgb(0, 0, 0);">1</span><span style="color: rgb(122, 8, 116); font-weight: bold;">]</span> TPython::Exec<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span> <span style="color: rgb(255, 0, 0);">"print 1 + 1"</span> <span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>
+<span style="color: rgb(0, 0, 0);">2</span>
+root <span style="color: rgb(122, 8, 116); font-weight: bold;">[</span><span style="color: rgb(0, 0, 0);">2</span><span style="color: rgb(122, 8, 116); font-weight: bold;">]</span> TBrowser <span style="color: rgb(0, 0, 0); font-weight: bold;">*</span>b = <span style="color: rgb(122, 8, 116); font-weight: bold;">(</span>void<span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>TPython::Eval<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span> <span style="color: rgb(255, 0, 0);">"ROOT.TBrowser()"</span> <span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>
+<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span>class TObject<span style="color: rgb(0, 0, 0); font-weight: bold;">*</span><span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>0x8d1daa0
+root <span style="color: rgb(122, 8, 116); font-weight: bold;">[</span><span style="color: rgb(0, 0, 0);">3</span><span style="color: rgb(122, 8, 116); font-weight: bold;">]</span> TPython::Prompt<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span><span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;&gt;&gt;</span> i = <span style="color: rgb(0, 0, 0);">2</span>; ^D
+root <span style="color: rgb(122, 8, 116); font-weight: bold;">[</span><span style="color: rgb(0, 0, 0);">4</span><span style="color: rgb(122, 8, 116); font-weight: bold;">]</span> TPython::Prompt<span style="color: rgb(122, 8, 116); font-weight: bold;">(</span><span style="color: rgb(122, 8, 116); font-weight: bold;">)</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;&gt;&gt;</span> print i
+<span style="color: rgb(0, 0, 0);">2</span></pre></div>
+<h2>More detailed examples</h2>
+<p>See <a href="http://wlav.home.cern.ch/wlav/athena/athask/tutorials.html">the ATLAS Python tutorials</a>.</p>
+</div>
+  <div class="clear-block clear"></div>
+
+      <div class="links"><ul class="links inline"><li class="print_html first"><a href="http://root.cern.ch/drupal/print/71" title="Display a printer-friendly version of this page." class="print-page" onclick="window.open(this.href); return false" rel="nofollow"><img src="how-use-use-python-pyroot-interpreter_files/print_icon.gif" alt="Printer-friendly version" title="Printer-friendly version" class="print-icon" height="16" width="16"></a></li>
+<li class="print_pdf last"><a href="http://root.cern.ch/drupal/printpdf/71" title="Display a PDF version of this page." class="print-pdf" rel="nofollow"><img src="how-use-use-python-pyroot-interpreter_files/pdf_icon.gif" alt="PDF version" title="PDF version" class="print-icon" height="16" width="16"></a></li>
+</ul></div>
+  
+</div>
+ 
+                                        </div><!-- /inner-content -->
+          </div><!-- /squeeze-content -->
+        </div><!-- /squeeze -->
+      </div><!-- /main -->
+          </div><!-- /middle-container -->
+    <div style="clear: both;"></div>
+            <div id="footer">
+                    <div id="footer-message"><p>© 1995-2010 The ROOT Team</p></div>
+          </div><!-- /footer -->
+  <div style="clear: both;"></div>
+  <script type="text/javascript" src="how-use-use-python-pyroot-interpreter_files/ga.js"></script>
+<script type="text/javascript" src="how-use-use-python-pyroot-interpreter_files/googleanalytics.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+      Shadowbox.path = "/drupal/sites/all/libraries/shadowbox-3.0.2/";
+      Shadowbox.init(Drupal.settings.shadowbox);
+    
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+try{var pageTracker = _gat._getTracker("UA-4564872-2");pageTracker._trackPageview();} catch(err) {}
+//--><!]]>
+</script>
+  </div> <!-- /page -->
+<div id="sb-container"><div id="sb-overlay"></div><div id="sb-wrapper"><div id="sb-title"><div id="sb-title-inner"></div></div><div id="sb-wrapper-inner"><div id="sb-body"><div id="sb-body-inner"></div><div id="sb-loading"><div id="sb-loading-inner"><span>loading</span></div></div></div></div><div id="sb-info"><div id="sb-info-inner"><div id="sb-counter"></div><div id="sb-nav"><a id="sb-nav-close" title="Close" onclick="Shadowbox.close()"></a><a id="sb-nav-next" title="Next" onclick="Shadowbox.next()"></a><a id="sb-nav-play" title="Play" onclick="Shadowbox.play()"></a><a id="sb-nav-pause" title="Pause" onclick="Shadowbox.pause()"></a><a id="sb-nav-previous" title="Previous" onclick="Shadowbox.previous()"></a></div></div></div></div></div></body></html>

@@ -1,0 +1,139 @@
+/* HTML body */
+body {
+	background: #000000; 
+	padding: 0; 
+	margin: 0;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #ebffdd;
+}
+
+/* -- Header -- */
+#header {
+	height:80px;
+	margin: 0;
+	padding: 0;
+}
+#header .logo {
+	margin: 15px 0 0 13px;
+	float: left;
+}
+#headerStrap {
+	background-color:#505050;
+	margin: 0;
+	text-align:left;
+	font-size: 80%;
+}
+#headerStrap ul {
+	margin: 0px;
+	padding: 2px 0 0 20px;	
+}
+#headerStrap li {
+	display: inline;
+	padding: 3px;
+	cursor: pointer;
+	color:#FF1100;
+}
+#headerStrap a {
+	color:#e8eeff;
+	text-decoration: underline;
+}
+#headerStrap a:hover {
+	color:#ffcf8a;
+}
+
+	  
+/* The main document */
+#centerDoc {	
+   	margin-left: 60px;
+   	margin-right:150px;
+	
+	/* background:#fff; border:1px solid #000; */
+	/*
+	IE5x PC mis-implements the box model.
+	*/
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	margin-left: 60px;
+	margin-right:151px;
+	text-align:justify;
+
+}
+html>body #centercontent {
+	margin-left: 61px;
+	margin-right:151px;
+	text-align:justify;
+}
+#centerDoc a         { color: #ebefff; }
+#centerDoc a:link    { color: #ebefff; }
+#centerDoc a:visited { color: #ebefff; }
+#centerDoc a:hover   { color: #ffcf8a; }
+
+#centerDoc h1 {
+	text-align:center;
+}
+
+/* Images in content */
+#imageBox {
+	padding: 0;
+	margin: 0 0px 20px 0px;
+	font-style: italic;
+	font-size: 80%;
+	text-align:center;
+}
+#imageBox img {
+	border-style:groove;
+	border-color:navy;
+	border-width:3px;
+	/* width: 500px; */
+	/* max-width: 500px; */
+}
+
+/* Font style for code snippets */
+.code {
+
+	font-size: 120%;
+	font-family:monospace;
+	color: #f3f3f3;
+}
+.stdout {
+
+	font-size: 120%;
+	font-family:monospace;
+	color: #9a9a9a;
+}
+
+#leftDoc {
+	position: absolute;
+	left:10px;
+	top:120px;
+	width:50px;
+	/* background:#fff; border:1px solid #000; */
+}
+
+/* Adverts */
+#rightDoc {
+	position: absolute;
+	right:10px;
+	top:120px;
+	width:120px;
+	/* background:#fff; border:1px solid #000; */
+}
+
+/* -- Footer -- */#footer {
+	clear: all;
+	margin: 0;
+	color: #666;
+	text-align:center;
+	font-size: 80%;
+}
+#footerBar {
+	background: #505050;
+	
+}
+#footerbarInternal {
+	padding: 2px;	
+}
+
+
+
+

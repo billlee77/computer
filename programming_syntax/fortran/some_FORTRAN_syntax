@@ -1,0 +1,49 @@
+
+Math operation
+  
+  C = I / A 
+  C = I + A
+  C = I * A
+  C = I - A
+  C = I**A   ( I^A ) 
+
+
+Operator syntax:
+	
+  ==	equal to
+  /= 	not equal to
+  < 	less than
+  > 	greater than
+  <= 	less than or equal to 
+  >= 	greater than or equal to	
+
+
+Logical operator:
+  .AND.	
+  .OR.
+  .EQV.
+  .NEQV.
+
+
+1D Array declaretion:
+  READ::Score(30) 
+
+2D Array declaretion:
+  REAL::Score(5,30)
+
+sufficient element (from 40 - 70)
+  READ::Count(40:70)
+! Element from 40 to 70
+
+
+instrinsic functions
+  A = SIN(X)	 	sine
+  B = COS(X)		cosine
+  C = TAN(X) 		tangent
+  
+  D = INT(4.63459) 	round the number to an integer, i.e 4
+  D = NINT(4.63459) 	round the number to the nearest integer, i.e 5
+  X = EXP(2) 
+  Y = SQRT(16)    	square root of 16 
+  Z = MOD(A,B)		Z equal to the remainder on integer division of A by B
+

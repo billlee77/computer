@@ -1,0 +1,530 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>   Linux last reboot time and date find out</title>
+
+<link rel="stylesheet" href="linux-last-reboot-time-and-date-find-out_files/ssbblog_cv2.css" type="text/css" media="screen, projection">
+<!--[if lte IE 8]><link rel="stylesheet" href="http://files.cyberciti.biz/assets/blog/ssbie.css" type="text/css" media="screen, projection" /><![endif]-->
+<link rel="alternate" type="application/rss+xml" title="nixCraft RSS Feed" href="http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks">
+<link rel="pingback" href="http://www.cyberciti.biz/tips/xmlrpc.php">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.cyberciti.biz/tips/xmlrpc.php?rsd">
+<script src="linux-last-reboot-time-and-date-find-out_files/ga.js" async="" type="text/javascript"></script><script src="linux-last-reboot-time-and-date-find-out_files/a_002.js" type="text/javascript"></script><script src="linux-last-reboot-time-and-date-find-out_files/a.js" type="text/javascript"></script>
+<link rel="shortcut icon" href="http://files.cyberciti.biz/assets/i/favicon.ico" type="image/x-icon">
+<meta name="ROBOTS" content="NOARCHIVE">
+<link rel="alternate" type="application/rss+xml" title="nixCraft » Linux last reboot time and date find out Comments Feed" href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html/feed">
+<script type="text/javascript" src="linux-last-reboot-time-and-date-find-out_files/l10n.js"></script>
+<script type="text/javascript" src="linux-last-reboot-time-and-date-find-out_files/comment-reply.js"></script>
+
+<meta name="description" content="Learn how to find out Linux / UNIX last reboot date and time from a shell prompt. ">
+</head><body class="custom">
+<div id="container">
+<div id="page">
+<ul class="menu">
+<li><a href="http://www.cyberciti.biz/tips/about-us" title="About us">About</a></li>
+<li><a href="http://nixcraft.com/" title="Linux / UNIX Tech Support Forum">Forum</a></li>
+<li><a href="http://www.cyberciti.biz/faq/" title="Linux / UNIX Mini Howtos and FAQs">Howtos &amp; FAQs</a></li>
+<li><a href="http://www.cyberciti.biz/low.html?utm_source=graphicsversion&amp;utm_campaign=blog&amp;utm_medium=link" title="See site in low graphics bandwidth friendly mode">Low graphics</a></li>
+<li><a href="http://bash.cyberciti.biz/" title="Linux/UNIX Shell scripts">Shell Scripts</a></li>
+<li class="rss"><a href="http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" title="nixCraft RSS Feed" rel="nofollow">RSS/Feed</a></li>
+</ul>
+	<div id="header">
+<div id="leaderboard"><div id="lbtop"><div id="adstopage"><div id="load-adstopage">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(4);
+// ]]> --></script><!-- begin ad tag (tile=1) -->
+<script language="JavaScript" type="text/javascript">
+if (typeof ord=='undefined') {ord=Math.random()*10000000000000000;}
+document.write('<script language="JavaScript" src="http://a.collective-media.net/adj/idgt.linuxopensource/article_above;sec=article;fold=above;tile=1;dcopt=ist;sz=728x90;ord=' + ord + '?" type="text/javascript"><\/script>');
+</script><script language="JavaScript" src="linux-last-reboot-time-and-date-find-out_files/article_above_003.js" type="text/javascript"></script><script language="javascript" src="linux-last-reboot-time-and-date-find-out_files/linux-last-reboot-time-and-date-find-out_003.js"></script><script type="text/javascript">document.write('<scr'+'ipt language="javascript" src="http://ad.doubleclick.net/adj/idgt.linuxopensource/article_above;net=idgt;u=,idgt-30107093432_1307983169,120ad9c1990d3c1,opensource,idgt.opensource_l-idgt.networking_l;;sec=article;fold=above;tile=1;dcopt=ist;sz=728x90;net=idgt;ord1=541959;contx=opensource;dc=s;btg=idgt.opensource_l;btg=idgt.networking_l;ord=2862177878155445?"></scr'+'ipt>');</script><script language="Javascript">CollectiveMedia.createAndAttachAd("idgt-30107093432_1307983169","http://ad.doubleclick.net/adj/idgt.linuxopensource/article_above;net=idgt;u=,idgt-30107093432_1307983169,120ad9c1990d3c1,opensource,idgt.opensource_l-idgt.networking_l;;sec=article;fold=above;tile=1;dcopt=ist;sz=728x90;net=idgt;ord1=541959;contx=opensource;dc=s;btg=idgt.opensource_l;btg=idgt.networking_l;ord=2862177878155445?","728","90",false);</script><script language="javascript" src="linux-last-reboot-time-and-date-find-out_files/article_above_004.js"></script><div id="dclkAdsDivID_6014"><iframe marginwidth="0" marginheight="0" style="border: 0pt none;" src="linux-last-reboot-time-and-date-find-out_files/a_003.html" name="dclkAdsFrameName_6014" id="dclkAdsFrameID_6014" height="90" scrolling="no" width="728"></iframe></div><script src="linux-last-reboot-time-and-date-find-out_files/beacon.js"></script><noscript><a href="http://simplyguide.com/k/www/delivery/ck.php?oaparams=2__bannerid=5__zoneid=4__cb=4ae513c497__oadest=http%3A%2F%2Fa.collective-media.net%2Fjump%2Fidgt.linuxopensource%2Farticle_above%3Bsec%3Darticle%3Bfold%3Dabove%3Btile%3D1%3Bsz%3D728x90%3Bord%3D123456789%3F" target="_blank"><img src="http://a.collective-media.net/ad/idgt.linuxopensource/article_above;sec=article;fold=above;tile=1;sz=728x90;ord=123456789?" width="728" height="90" border="0" alt=""></a></noscript>
+<!-- End ad tag --><div id="beacon_4ae513c497" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="linux-last-reboot-time-and-date-find-out_files/lg.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a target='_blank' href='http://simplyguide.com/k/www/delivery/ck.php?n=21e2006'><img border='0' alt='' src='http://simplyguide.com/k/www/delivery/avw.php?zoneid=4&amp;n=21e2006' /></a></noscript>
+</div></div></div></div><div id="crumbslogo"><a href="http://www.cyberciti.biz/" title="Home page">nixcraft - insight into linux admin work</a></div>	</div>
+	<div id="content_box">
+		<div id="content" class="hfeed">
+
+			<div class="post-919 post type-post status-publish format-standard hentry category-centos category-debian-linux category-howto category-linux category-linux-login-control category-suse-linux category-sys-admin category-tips category-ubuntu-linux category-unix tag-varlogwtmp tag-varrunutmp tag-aix-last-reboot tag-command-searches tag-display-server-reboot-time tag-display-server-shutdown-time tag-last-command tag-linux-last-command tag-linux-last-login tag-linux-sys-admin tag-reboot-system tag-server-last-reboot tag-shutdown-system tag-time-of-last-system-boot tag-unix-last-reboot tag-wtmp post_box top" id="post-919">
+				<div class="headline_area">
+					<h1 class="entry-title">Linux last reboot time and date find out</h1>
+					<p class="headline_meta">by <span class="author vcard fn">nixcraft</span> on <abbr class="published" title="2006-04-30">April 30, 2006</abbr> · <span><a href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html#comments" rel="nofollow">11 comments</a></span></p>
+				</div>
+				<div class="format_text entry-content">
+<div style="float: right; margin-top: 0px; margin-left: 5px;"><a href="http://www.cyberciti.biz/tips/category/linux" title="See all GNU/Linux related tips/articles"><img src="linux-last-reboot-time-and-date-find-out_files/linux-logo.png" border="0"></a></div>
+<p>So how do you find Linux / UNIX system last reboot or shutdown date 
+and time?  The last utility will either list the sessions of specified 
+users, ttys,  and hosts, in reverse time order, or list the users logged
+ in at a specified date and time.  Each line of output contains the user
+ name, the tty from which the session was conducted, any hostname, the 
+start and stop times for the session, and the duration of the session.</p>
+<h2>who command </h2>
+<p>You need to use who command, to print who is logged on. It also 
+displays the time of last system boot. Use last command to display 
+system reboot and shutdown date and time.<br>
+<code>$ who –b</code><br>
+Output:</p>
+<pre>system boot  Apr 30 15:08</pre>
+<p>Use last command to display listing of last logged in users and system last reboot time and date:<br>
+<code>$ last reboot | less</code><br>
+Or better try:<br>
+<code>$ last reboot | head -1</code><br>
+Output:</p>
+<pre>reboot   system boot  2.6.15.4         Sun Apr 30 15:08 - 16:22  (01:13)</pre>
+<p>last  command searches back through the file /var/log/wtmp and 
+displays a list of all users logged in (and out) since that file was 
+created. The pseudo user reboot logs in each time the system is 
+rebooted.  Thus last reboot command will show a log of all reboots since
+ the log file was created.</p>
+<p>To display last shutdown date and time use following command:<br>
+<code>$ last -x|grep shutdown | head -1</code><br>
+Output:</p>
+<pre>shutdown system down  2.6.15.4         Sun Apr 30 13:31 - 15:08  (01:37)</pre>
+<p>Where,</p>
+<ul>
+<li><strong>-x</strong>: Display the system shutdown entries and run level changes.</li>
+</ul>
+<p>For more information read last command man page.</p>
+<h4>Featured Articles:</h4>
+                <ul> 
+        <li><a href="http://www.cyberciti.biz/tips/top-linux-monitoring-tools.html">20 Linux System Monitoring Tools Every SysAdmin Should Know</a></li>
+        <li><a href="http://www.cyberciti.biz/tips/linux-security.html">20 Linux Server Hardening Security Tips</a></li>
+        <li><a href="http://www.cyberciti.biz/tips/my-10-unix-command-line-mistakes.html">My 10 UNIX Command Line Mistakes</a></li>
+        <li><a href="http://www.cyberciti.biz/tips/linux-laptop.html">The Novice Guide To Buying A Linux Laptop</a> <img style="vertical-align: text-top; padding-left: 1px;" src="linux-last-reboot-time-and-date-find-out_files/new_fa.png" alt="" border="0"></li>
+        <li><a href="http://www.cyberciti.biz/tips/10-greatest-open-source-software-of-2009.html">10 Greatest Open Source Software Of 2009</a></li>
+        <li><a href="http://www.cyberciti.biz/tips/download-email-client-for-linux-mac-osx-windows.html">Top 5 Email Client For Linux, Mac OS X, and Windows Users</a></li>
+        <li><a href="http://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html">Top 20 OpenSSH Server Best Security Practices </a></li>
+        <li><a href="http://www.cyberciti.biz/tips/open-source-project-management-software.html">Top 10 Open Source Web-Based Project Management Software</a></li>
+        <li><a href="http://www.cyberciti.biz/faq/top5-linux-video-editing-system-software/">Top 5 Linux Video Editor Software</a></li>
+                </ul>
+        				</div>
+			</div>
+
+			<div id="comments">
+				<div id="comments_intro" class="comments_intro">
+					<p><span class="bracket">{</span> <span>11</span> comments… read them below or <a href="#respond" rel="nofollow">add one</a> <span class="bracket">}</span></p>
+				</div>
+
+				<dl id="comment_list">
+					<dt class="comment even thread-even depth-1" id="comment-77799">
+<span class="comment_num"><a href="#comment-77799" title="Permalink to this comment" rel="nofollow">1</a></span>
+<span class="comment_author">jamshid</span>
+<span class="comment_time">February 22, 2007</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-77799">
+<p>On my FC5 system instead of<br>
+last reboot | head -1<br>
+I can type<br>
+last reboot  -1</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html?replytocom=77799#respond" onclick='return addComment.moveForm("comment-body-77799", "77799", "respond", "919")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-141402">
+<span class="comment_num"><a href="#comment-141402" title="Permalink to this comment" rel="nofollow">2</a></span>
+<span class="comment_author">diana</span>
+<span class="comment_time">October 15, 2007</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-141402">
+<p>i couldn’t find out the error. please help me.</p>
+<p>#Send list of users logged on to server via email<br>
+59 11 * * * last | grep date ‘+%a %b %d’ &gt; /tmp/users.out ; mail -s “Users Logged Today” <a href="mailto:ephrondiana@gmail.com">ephrondiana@gmail.com</a></p>
+<p>when i tried to execute,<br>
+$ last |grep date ‘+%a %b %d’<br>
+i got no such file or directory error.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html?replytocom=141402#respond" onclick='return addComment.moveForm("comment-body-141402", "141402", "respond", "919")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment byuser comment-author-administrator even thread-even depth-1" id="comment-141403">
+<span class="comment_num"><a href="#comment-141403" title="Permalink to this comment" rel="nofollow">3</a></span>
+<span class="comment_author">vivek</span>
+<span class="comment_time">October 15, 2007</span>
+
+					</dt>
+					<dd class="comment byuser comment-author-administrator even thread-even depth-1">
+<div class="format_text" id="comment-body-141403">
+<p>Should be..</p>
+<pre>59 11 * * * last | grep $(date '+%a %b %d') &gt; /tmp/users.out ; mail -s “Users Logged"</pre>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html?replytocom=141403#respond" onclick='return addComment.moveForm("comment-body-141403", "141403", "respond", "919")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-141405">
+<span class="comment_num"><a href="#comment-141405" title="Permalink to this comment" rel="nofollow">4</a></span>
+<span class="comment_author">diana</span>
+<span class="comment_time">October 15, 2007</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-141405">
+<p>thanks a lot vivek.i din’t expect this much fast reply.But unfortunately when i execute,<br>
+ $ last | grep $(date ‘+%a %b %d’)<br>
+i couldn’t get anything.Please help</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html?replytocom=141405#respond" onclick='return addComment.moveForm("comment-body-141405", "141405", "respond", "919")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment byuser comment-author-administrator even thread-even depth-1" id="comment-141406">
+<span class="comment_num"><a href="#comment-141406" title="Permalink to this comment" rel="nofollow">5</a></span>
+<span class="comment_author">vivek</span>
+<span class="comment_time">October 15, 2007</span>
+
+					</dt>
+					<dd class="comment byuser comment-author-administrator even thread-even depth-1">
+<div class="format_text" id="comment-body-141406">
+<p>My bad…I forgot to include double quote …</p>
+<pre>59 11 * * * last | grep "$(date '+%a %b %d')" &gt; /tmp/users.out ; mail -s “Users Logged"</pre>
+<p>Also you may wanna try out:</p>
+<pre>last -t yyyymmddhhmmss</pre>
+<p>HTH</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html?replytocom=141406#respond" onclick='return addComment.moveForm("comment-body-141406", "141406", "respond", "919")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-141410">
+<span class="comment_num"><a href="#comment-141410" title="Permalink to this comment" rel="nofollow">6</a></span>
+<span class="comment_author">diana</span>
+<span class="comment_time">October 16, 2007</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-141410">
+<p>Thanks vivek.its working great…..</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html?replytocom=141410#respond" onclick='return addComment.moveForm("comment-body-141410", "141410", "respond", "919")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-152156">
+<span class="comment_num"><a href="#comment-152156" title="Permalink to this comment" rel="nofollow">7</a></span>
+<span class="comment_author">xera</span>
+<span class="comment_time">December 6, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-152156">
+<p>the command “last reboot” worked for me, on my mac!</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html?replytocom=152156#respond" onclick='return addComment.moveForm("comment-body-152156", "152156", "respond", "919")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-158976">
+<span class="comment_num"><a href="#comment-158976" title="Permalink to this comment" rel="nofollow">8</a></span>
+<span class="comment_author">Ajeet</span>
+<span class="comment_time">August 17, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1 parent">
+<div class="format_text" id="comment-body-158976">
+<p>Can we find who rebooted the linux box?</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html?replytocom=158976#respond" onclick='return addComment.moveForm("comment-body-158976", "158976", "respond", "919")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment even depth-2" id="comment-169937">
+<span class="comment_num"><a href="#comment-169937" title="Permalink to this comment" rel="nofollow">9</a></span>
+<span class="comment_author">Nick</span>
+<span class="comment_time">March 16, 2011</span>
+
+					</dt>
+					<dd class="comment even depth-2">
+<div class="format_text" id="comment-body-169937">
+<p>In order to track who rebooted a linux machine, I would:<br>
+- disable root logins; many users sharing root is bad<br>
+- create a list of sudoers, so only people listed there could shutdown / reboot / halt<br>
+- /var/log/messages would contain traces of who ran sudo shutdown -r now or such</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html?replytocom=169937#respond" onclick='return addComment.moveForm("comment-body-169937", "169937", "respond", "919")'>Reply</a></p>
+</div>
+					</dd>
+					</dl>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-159810">
+<span class="comment_num"><a href="#comment-159810" title="Permalink to this comment" rel="nofollow">10</a></span>
+<span class="comment_author">L_kernel</span>
+<span class="comment_time">September 23, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-159810">
+<p>Thanks a lot!<br>
+I help me!</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html?replytocom=159810#respond" onclick='return addComment.moveForm("comment-body-159810", "159810", "respond", "919")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-170351">
+<span class="comment_num"><a href="#comment-170351" title="Permalink to this comment" rel="nofollow">11</a></span>
+<span class="comment_author">Sam Hocevar</span>
+<span class="comment_time">March 28, 2011</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-170351">
+<p><em>wtmp</em> is rotated by the system, so the <em>last</em> solution will stop working. I believe the most reliable solution is:</p>
+<pre>date -d "`cut -f1 -d. /proc/uptime` seconds ago"</pre>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html?replytocom=170351#respond" onclick='return addComment.moveForm("comment-body-170351", "170351", "respond", "919")'>Reply</a></p>
+</div>
+					</dd>
+				</dl>
+				<div id="respond">
+					<div id="respond_intro">
+<a rel="nofollow" id="cancel-comment-reply-link" href="http://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html#respond" style="display: none;">Cancel reply</a>						<p>Leave a Comment</p>
+					</div>
+					<form action="http://www.cyberciti.biz/tips/wp-comments-post.php" method="post" id="commentform">
+						<p><input class="text_input" name="author" id="author" tabindex="1" aria-required="true" type="text"><label for="author">Name <span class="required" title="Required">*</span></label></p>
+						<p><input class="text_input" name="email" id="email" tabindex="2" aria-required="true" type="text"><label for="email">E-mail <span class="required" title="Required">*</span></label></p>
+						<p><input class="text_input" name="url" id="url" tabindex="3" type="text"><label for="url">Website</label></p>
+						<p class="comment_box">
+							<textarea name="comment" id="comment" tabindex="4" cols="40" rows="8"></textarea>
+						</p>
+<span class="allowed"><span>
+<em>You can use these <acronym title="HyperText Markup Language">HTML</acronym> tags and attributes for your code and commands:</em> &lt;strong&gt; &lt;em&gt; &lt;ol&gt; &lt;li&gt; &lt;u&gt; &lt;ul&gt; &lt;blockquote&gt; &lt;pre&gt; &lt;a href="" title=""&gt; 
+</span></span>
+
+
+	<p style="clear: both;" class="subscribe-to-comments">
+	<input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" type="checkbox">
+	<label for="subscribe">Notify me of followup comments via e-mail.</label>
+	</p>
+
+
+						<p class="remove_bottom_margin">
+							<input name="submit" class="form_submit" id="submit" tabindex="5" value="Submit" type="submit">
+<input name="comment_post_ID" value="919" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+						</p>
+<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="6ea66ba123" type="hidden"></p><br><br><center><div id="adslargerectbottom"><div id="load-adslargerectbottom">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(16);
+// ]]> --></script><script type="text/javascript"><!--
+e9 = new Object();
+e9.size = "336x280,300x250";
+//--></script>
+<script type="text/javascript" src="linux-last-reboot-time-and-date-find-out_files/tags.js"></script><script type="text/javascript" src="linux-last-reboot-time-and-date-find-out_files/displayAd.js"></script><center><script type="text/javascript" src="linux-last-reboot-time-and-date-find-out_files/j.js"></script><script language="javascript">
+//Required variables.
+	var tf_clickTag  = 'http://a.tribalfusion.com/h.click/aVmRRRSGbZa5AYZcpWToTtQ80rUcYFUjXaanPUFGWUrYTdr3orBnQFFsYaMs3TFc4qQQmTMA1bZbbWtjXnmUZamsYppdQL5EFk5tZaN56ZbGnUbJXs701srUXGbnmEZb22bJ2VFMGWAY5QEUQSsBpPHby1tjxW6QpupZaxyPZbemrZb2Naqdrqf7yRAnx8yaP8uYuU6r1DAIpCmkUb7YwIwQCc/http://ad.doubleclick.net/clk;241050315;63857581;d';
+	var tf_flashfile = 'http://cdn5.tribalfusion.com/media/2606556/7103_bigBox_v3';
+	var tf_imagefile = 'http://cdn5.tribalfusion.com/media/2606556/300.jpg';
+	var tf_width     = 300;
+	var tf_height    = 250;
+//Optional variables.
+	var tf_bgcolor = '#ffffff';
+	var tf_use_flash_wrapper = false;
+	var tf_wmode     = 'opaque';
+	var tf_salign     = 'lt';
+	var tf_allowScriptAccess     = 'sameDomain';
+	var tf_extraFlashVars     = '';
+//Autogenerated code. Please do not change.
+	var tf_id        = '446452659';
+	var tf_loaderFlash     = 'http://cdn5.tribalfusion.com/media/common/flash/frame3';
+	var tf_button    = 'http://cdn5.tribalfusion.com/media/common/flash/button4.swf';
+	var tf_click     = 'http://a.tribalfusion.com/h.click/aVmRRRSGbZa5AYZcpWToTtQ80rUcYFUjXaanPUFGWUrYTdr3orBnQFFsYaMs3TFc4qQQmTMA1bZbbWtjXnmUZamsYppdQL5EFk5tZaN56ZbGnUbJXs701srUXGbnmEZb22bJ2VFMGWAY5QEUQSsBpPHby1tjxW6QpupZaxyPZbemrZb2Naqdrqf7yRAnx8yaP8uYuU6r1DAIpCmkUb7YwIwQCc/';
+	var tf_state        = 'Saskatchewan';
+	var tf_city        = 'Regina';
+	var tf_zipcode        = 'S4P';
+	var tf_gender        = '';
+	var tf_location        = 'http://cdn5.tribalfusion.com/media/2606556/';
+</script>
+<script language="javascript" src="linux-last-reboot-time-and-date-find-out_files/flashv15.js"></script><embed src="linux-last-reboot-time-and-date-find-out_files/7103_bigBox_v3.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" play="true" loop="true" scale="showall" wmode="opaque" devicefont="false" bgcolor="#ffffff" name="TFclick446452659" menu="false" allowfullscreen="false" allowscriptaccess="sameDomain" salign="lt" flashvars="clickTag=http%3A//a.tribalfusion.com/h.click/aVmRRRSGbZa5AYZcpWToTtQ80rUcYFUjXaanPUFGWUrYTdr3orBnQFFsYaMs3TFc4qQQmTMA1bZbbWtjXnmUZamsYppdQL5EFk5tZaN56ZbGnUbJXs701srUXGbnmEZb22bJ2VFMGWAY5QEUQSsBpPHby1tjxW6QpupZaxyPZbemrZb2Naqdrqf7yRAnx8yaP8uYuU6r1DAIpCmkUb7YwIwQCc/http%3A//ad.doubleclick.net/clk%3B241050315%3B63857581%3Bd&amp;clickTAG=http%3A//a.tribalfusion.com/h.click/aVmRRRSGbZa5AYZcpWToTtQ80rUcYFUjXaanPUFGWUrYTdr3orBnQFFsYaMs3TFc4qQQmTMA1bZbbWtjXnmUZamsYppdQL5EFk5tZaN56ZbGnUbJXs701srUXGbnmEZb22bJ2VFMGWAY5QEUQSsBpPHby1tjxW6QpupZaxyPZbemrZb2Naqdrqf7yRAnx8yaP8uYuU6r1DAIpCmkUb7YwIwQCc/http%3A//ad.doubleclick.net/clk%3B241050315%3B63857581%3Bd&amp;clicktag=http%3A//a.tribalfusion.com/h.click/aVmRRRSGbZa5AYZcpWToTtQ80rUcYFUjXaanPUFGWUrYTdr3orBnQFFsYaMs3TFc4qQQmTMA1bZbbWtjXnmUZamsYppdQL5EFk5tZaN56ZbGnUbJXs701srUXGbnmEZb22bJ2VFMGWAY5QEUQSsBpPHby1tjxW6QpupZaxyPZbemrZb2Naqdrqf7yRAnx8yaP8uYuU6r1DAIpCmkUb7YwIwQCc/http%3A//ad.doubleclick.net/clk%3B241050315%3B63857581%3Bd&amp;tf_flash=http://cdn5.tribalfusion.com/media/2606556/7103_bigBox_v3.swf&amp;tf_button=http://cdn5.tribalfusion.com/media/common/flash/button4.swf&amp;tf_state=Saskatchewan&amp;tf_city=Regina&amp;tf_zipcode=S4P&amp;tf_gender=&amp;tf_location=http://cdn5.tribalfusion.com/media/2606556/&amp;tf_id=446452659&amp;" type="application/x-shockwave-flash" height="250" width="300" align="middle"> 
+<noscript>
+	<A HREF='http://a.tribalfusion.com/h.click/aVmRRRSGbZa5AYZcpWToTtQ80rUcYFUjXaanPUFGWUrYTdr3orBnQFFsYaMs3TFc4qQQmTMA1bZbbWtjXnmUZamsYppdQL5EFk5tZaN56ZbGnUbJXs701srUXGbnmEZb22bJ2VFMGWAY5QEUQSsBpPHby1tjxW6QpupZaxyPZbemrZb2Naqdrqf7yRAnx8yaP8uYuU6r1DAIpCmkUb7YwIwQCc/http://ad.doubleclick.net/clk;241050315;63857581;d' TARGET='_blank'>
+	<IMG SRC='http://cdn5.tribalfusion.com/media/2606556/300.jpg' WIDTH=300 HEIGHT=250 ALT='Click Here!' BORDER=0></A>
+</noscript>
+</center>
+
+<div id="beacon_f7438f3bc8" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="linux-last-reboot-time-and-date-find-out_files/lg_004.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a target='_blank' href='http://simplyguide.com/k/www/delivery/ck.php?n=31a572a'><img border='0' alt='' src='http://simplyguide.com/k/www/delivery/avw.php?zoneid=16&amp;n=31a572a' /></a></noscript>
+</div></div></center><br><small><p class="post_tags">Tagged as: <a href="http://www.cyberciti.biz/tips/tag/varlogwtmp" rel="tag">/var/log/wtmp</a>, <a href="http://www.cyberciti.biz/tips/tag/varrunutmp" rel="tag">/var/run/utmp</a>, <a href="http://www.cyberciti.biz/tips/tag/aix-last-reboot" rel="tag">aix last reboot</a>, <a href="http://www.cyberciti.biz/tips/tag/command-searches" rel="tag">command searches</a>, <a href="http://www.cyberciti.biz/tips/tag/display-server-reboot-time" rel="tag">display server reboot time</a>, <a href="http://www.cyberciti.biz/tips/tag/display-server-shutdown-time" rel="tag">display server shutdown time</a>, <a href="http://www.cyberciti.biz/tips/tag/last-command" rel="tag">last command</a>, <a href="http://www.cyberciti.biz/tips/tag/linux-last-command" rel="tag">linux last command</a>, <a href="http://www.cyberciti.biz/tips/tag/linux-last-login" rel="tag">linux last login</a>, <a href="http://www.cyberciti.biz/tips/tag/linux-sys-admin" rel="tag">linux sys admin</a>, <a href="http://www.cyberciti.biz/tips/tag/reboot-system" rel="tag">reboot system</a>, <a href="http://www.cyberciti.biz/tips/tag/server-last-reboot" rel="tag">server last reboot</a>, <a href="http://www.cyberciti.biz/tips/tag/shutdown-system" rel="tag">shutdown system</a>, <a href="http://www.cyberciti.biz/tips/tag/time-of-last-system-boot" rel="tag">time of last system boot</a>, <a href="http://www.cyberciti.biz/tips/tag/unix-last-reboot" rel="tag">unix last reboot</a>, <a href="http://www.cyberciti.biz/tips/tag/wtmp" rel="tag">wtmp</a></p></small>					</form>
+				</div>
+			</div>
+					<div class="prev_next post_nav">
+						<p class="previous">Previous post: <a href="http://www.cyberciti.biz/tips/routing-all-mail-to-unknown-users-to-a-single-mail-account.html" rel="prev">Routing all mail to unknown users to a single mail account</a></p>
+						<p>Next post: <a href="http://www.cyberciti.biz/tips/linux-set-default-password-expiry-for-all-new-users.html" rel="next">Linux set default password expiry for all new users</a></p>
+					</div>
+		</div>
+
+		<div id="sidebars">
+			<div id="multimedia_box" class="custom_box">
+				<div id="custom_box">
+<img style="vertical-align: middle; border: 0pt none;" src="linux-last-reboot-time-and-date-find-out_files/emailsignup.png" alt="0" border="0"> Sign up for our daily email newsletter:<br><br>
+<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=Nixcraft-LinuxFreebsdSolarisTipsTricks', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">&nbsp;&nbsp;&nbsp;&nbsp;<input class="text_input" name="email" value="Enter your email address" id="name" onclick="if (this.value=='Enter your email address') {this.value=''};" onblur="if (this.value=='') {this.value='Enter your email address';}" type="text"><input value="Nixcraft-LinuxFreebsdSolarisTipsTricks" name="uri" type="hidden">
+<input name="loc" value="en_US" type="hidden"><input value="Sign Up" class="form_submit" onclick="javascript: pageTracker._trackPageview('/outgoing/email/signup/tips/top-right/');" type="submit"></form>
+
+				</div>
+			</div>
+			<div id="sidebar_1" class="sidebar">
+				<ul class="sidebar_list">
+<li class="widget widget_text" id="text-3">			<div class="textwidget"><div id="adstoprect"><div id="load-adstoprect">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(3);
+// ]]> --></script><!-- begin ad tag (tile=2) -->
+<script language="JavaScript" type="text/javascript">
+if (typeof ord=='undefined') {ord=Math.random()*10000000000000000;}
+document.write('<script language="JavaScript" src="http://a.collective-media.net/adj/idgt.linuxopensource/article_above;sec=article;fold=above;tile=2;sz=300x250;ord=' + ord + '?" type="text/javascript"><\/script>');
+</script><script language="JavaScript" src="linux-last-reboot-time-and-date-find-out_files/article_above_002.js" type="text/javascript"></script><script language="javascript" src="linux-last-reboot-time-and-date-find-out_files/linux-last-reboot-time-and-date-find-out.js"></script><script type="text/javascript">document.write('<scr'+'ipt language="javascript" src="http://ad.doubleclick.net/adj/idgt.linuxopensource/article_above;net=idgt;u=,idgt-30219646295_1307983169,120ad9c1990d3c1,opensource,idgt.opensource_m-idgt.networking_l;;sec=article;fold=above;tile=2;sz=300x250;net=idgt;ord1=410046;contx=opensource;dc=s;btg=idgt.opensource_m;btg=idgt.networking_l;ord=2862177878155445?"></scr'+'ipt>');</script><script language="Javascript">CollectiveMedia.createAndAttachAd("idgt-30219646295_1307983169","http://ad.doubleclick.net/adj/idgt.linuxopensource/article_above;net=idgt;u=,idgt-30219646295_1307983169,120ad9c1990d3c1,opensource,idgt.opensource_m-idgt.networking_l;;sec=article;fold=above;tile=2;sz=300x250;net=idgt;ord1=410046;contx=opensource;dc=s;btg=idgt.opensource_m;btg=idgt.networking_l;ord=2862177878155445?","300","250",false);</script><script language="javascript" src="linux-last-reboot-time-and-date-find-out_files/article_above.js"></script>
+<!-- Copyright DoubleClick Inc., All rights reserved. -->
+<!-- This code was autogenerated @ Wed Jun 08 19:26:29 EDT 2011 -->
+<script src="linux-last-reboot-time-and-date-find-out_files/flashwrite_1_2.js"></script>
+  
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="FLASH_AD" height="250" width="300"><param name="movie" value="http://s0.2mdn.net/3242481/Quiznos_FreeSubGreen_300x250.swf"><param name="FlashVars" value="clickTAG=http%3A%2F%2Fad.doubleclick.net%2Fclick%253Bh%253Dv8%2F3b25%2F3%2F0%2F%252a%2Fd%253B242358971%253B0-0%253B0%253B38934874%253B4307-300%2F250%253B42563041%2F42580828%2F1%253Bu%253D%252Cidgt-30219646295_1307983169%252C120ad9c1990d3c1%252Copensource%252Cidgt.opensource_m-idgt.networking_l%253B%257Eaopt%253D2%2F1%2Fac%2F0%253B%257Esscs%253D%253fhttp%3A%2F%2Faffiliate.immstracker.com%2Frd%2Fr.php%3Fsid%3D77%26pub%3D250204%26c1%3Dv1%3A300%26c2%3D%26c3%3D"><param name="quality" value="high"><param name="bgcolor" value="#"><param name="wmode" value="opaque"><param name="AllowScriptAccess" value="never"><embed src="linux-last-reboot-time-and-date-find-out_files/Quiznos_FreeSubGreen_300x250.swf" flashvars="clickTAG=http%3A%2F%2Fad.doubleclick.net%2Fclick%253Bh%253Dv8%2F3b25%2F3%2F0%2F%252a%2Fd%253B242358971%253B0-0%253B0%253B38934874%253B4307-300%2F250%253B42563041%2F42580828%2F1%253Bu%253D%252Cidgt-30219646295_1307983169%252C120ad9c1990d3c1%252Copensource%252Cidgt.opensource_m-idgt.networking_l%253B%257Eaopt%253D2%2F1%2Fac%2F0%253B%257Esscs%253D%253fhttp%3A%2F%2Faffiliate.immstracker.com%2Frd%2Fr.php%3Fsid%3D77%26pub%3D250204%26c1%3Dv1%3A300%26c2%3D%26c3%3D" quality="high" wmode="opaque" swliveconnect="TRUE" bgcolor="#" type="application/x-shockwave-flash" allowscriptaccess="never" height="250" width="300"></object>
+<noscript><a target="_blank" href="http://ad.doubleclick.net/click%3Bh%3Dv8/3b25/3/0/%2a/d%3B242358971%3B0-0%3B0%3B38934874%3B4307-300/250%3B42563041/42580828/1%3Bu%3D%2Cidgt-30219646295_1307983169%2C120ad9c1990d3c1%2Copensource%2Cidgt.opensource_m-idgt.networking_l%3B%7Eaopt%3D2/1/ac/0%3B%7Esscs%3D%3fhttp://affiliate.immstracker.com/rd/r.php?sid=77&pub=250204&c1=v1:300&c2=&c3="><img src="http://s0.2mdn.net/3242481/Quiznos_FreeSubGreen_300x250.gif"  border="0" alt="" ></a></noscript><script src="linux-last-reboot-time-and-date-find-out_files/beacon.js"></script><noscript><a href="http://simplyguide.com/k/www/delivery/ck.php?oaparams=2__bannerid=6__zoneid=3__cb=88c94ae9d8__oadest=http%3A%2F%2Fa.collective-media.net%2Fjump%2Fidgt.linuxopensource%2Farticle_above%3Bsec%3Darticle%3Bfold%3Dabove%3Btile%3D2%3Bsz%3D300x250%3Bord%3D123456789%3F" target="_blank"><img src="http://a.collective-media.net/ad/idgt.linuxopensource/article_above;sec=article;fold=above;tile=2;sz=300x250;ord=123456789?" width="300" height="250" border="0" alt=""></a></noscript>
+<!-- End ad tag --><div id="beacon_88c94ae9d8" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="linux-last-reboot-time-and-date-find-out_files/lg_005.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a target='_blank' href='http://simplyguide.com/k/www/delivery/ck.php?n=27ef20f'><img border='0' alt='' src='http://simplyguide.com/k/www/delivery/avw.php?zoneid=3&amp;n=27ef20f' /></a></noscript>
+</div></div></div>
+		</li><li class="widget widget_text" id="text-4">			<div class="textwidget"><form action="http://www.cyberciti.biz/linux-search.php" id="cse-search-box">
+  <div>
+    <input name="cx" value="002165917076592449621:d37x4vctltg" type="hidden">
+    <input name="cof" value="FORID:11" type="hidden">
+    <input name="ie" value="UTF-8" type="hidden">
+    <input style="background: url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" name="q" size="27" type="text">
+    <input name="sa" value="Search" type="submit">
+
+  </div>
+<input value="www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.html" name="siteurl" type="hidden"></form>
+<script type="text/javascript" src="linux-last-reboot-time-and-date-find-out_files/brand.js"></script></div>
+		</li><li class="widget widget_text" id="text-5">			<div class="textwidget"><div id="adswhitepapers"><div id="load-adswhitepapers">
+<center>
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(8);
+// ]]> --></script><!-- begin ad tag (tile=3) -->
+<script language="JavaScript" type="text/javascript">
+if (typeof ord=='undefined') {ord=Math.random()*10000000000000000;}
+document.write('<script language="JavaScript" src="http://a.collective-media.net/adj/idgt.linuxopensource/article_below;sec=article;fold=below;tile=3;sz=300x250;ord=' + ord + '?" type="text/javascript"><\/script>');
+</script><script language="JavaScript" src="linux-last-reboot-time-and-date-find-out_files/article_below_003.js" type="text/javascript"></script><script language="javascript" src="linux-last-reboot-time-and-date-find-out_files/linux-last-reboot-time-and-date-find-out_002.js"></script><script type="text/javascript">document.write('<scr'+'ipt language="javascript" src="http://ad.doubleclick.net/adj/idgt.linuxopensource/article_below;net=idgt;u=,idgt-30304021088_1307983170,120ad9c1990d3c1,opensource,idgt.opensource_m-idgt.networking_l;;sec=article;fold=below;tile=3;sz=300x250;net=idgt;ord1=257878;contx=opensource;dc=s;btg=idgt.opensource_m;btg=idgt.networking_l;ord=2862177878155445?"></scr'+'ipt>');</script><script language="Javascript">CollectiveMedia.createAndAttachAd("idgt-30304021088_1307983170","http://ad.doubleclick.net/adj/idgt.linuxopensource/article_below;net=idgt;u=,idgt-30304021088_1307983170,120ad9c1990d3c1,opensource,idgt.opensource_m-idgt.networking_l;;sec=article;fold=below;tile=3;sz=300x250;net=idgt;ord1=257878;contx=opensource;dc=s;btg=idgt.opensource_m;btg=idgt.networking_l;ord=2862177878155445?","300","250",false);</script><script language="javascript" src="linux-last-reboot-time-and-date-find-out_files/article_below_004.js"></script><div id="dclkAdsDivID_30834"><iframe marginwidth="0" marginheight="0" style="border: 0pt none;" src="linux-last-reboot-time-and-date-find-out_files/a_003.html" name="dclkAdsFrameName_30834" id="dclkAdsFrameID_30834" height="250" scrolling="no" width="300"></iframe></div><script src="linux-last-reboot-time-and-date-find-out_files/beacon.js"></script><noscript><a href="http://simplyguide.com/k/www/delivery/ck.php?oaparams=2__bannerid=10__zoneid=8__cb=fa06fc8783__oadest=http%3A%2F%2Fa.collective-media.net%2Fjump%2Fidgt.linuxopensource%2Farticle_below%3Bsec%3Darticle%3Bfold%3Dbelow%3Btile%3D3%3Bsz%3D300x250%3Bord%3D123456789%3F" target="_blank"><img src="http://a.collective-media.net/ad/idgt.linuxopensource/article_below;sec=article;fold=below;tile=3;sz=300x250;ord=123456789?" width="300" height="250" border="0" alt=""></a></noscript>
+<!-- End ad tag --><div id="beacon_fa06fc8783" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="linux-last-reboot-time-and-date-find-out_files/lg_002.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a target='_blank' href='http://simplyguide.com/k/www/delivery/ck.php?n=3d0a6f0'><img border='0' alt='' src='http://simplyguide.com/k/www/delivery/avw.php?zoneid=8&amp;n=3d0a6f0' /></a></noscript>
+</center>
+
+</div></div></div>
+		</li><li class="widget widget_text" id="text-6">			<div class="textwidget"><iframe src="linux-last-reboot-time-and-date-find-out_files/likebox.html" style="border: medium none; overflow: hidden; width: 300px; height: 289px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div>
+		</li><li class="widget widget_text" id="text-7">			<div class="textwidget"><div id="adsrightsky1"><div id="load-adsrightsky1">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(17);
+// ]]> --></script><!-- begin ad tag (tile=4) -->
+<script language="JavaScript" type="text/javascript">
+if (typeof ord=='undefined') {ord=Math.random()*10000000000000000;}
+document.write('<script language="JavaScript" src="http://a.collective-media.net/adj/idgt.linuxopensource/article_below;sec=article;fold=below;tile=4;sz=160x600;ord=' + ord + '?" type="text/javascript"><\/script>');
+</script><script language="JavaScript" src="linux-last-reboot-time-and-date-find-out_files/article_below_002.js" type="text/javascript"></script><script language="javascript" src="linux-last-reboot-time-and-date-find-out_files/linux-last-reboot-time-and-date-find-out_004.js"></script><script type="text/javascript">document.write('<scr'+'ipt language="javascript" src="http://ad.doubleclick.net/adj/idgt.linuxopensource/article_below;net=idgt;u=,idgt-30117907871_1307983170,120ad9c1990d3c1,opensource,idgt.opensource_m-idgt.networking_l;;sec=article;fold=below;tile=4;sz=160x600;net=idgt;ord1=742440;contx=opensource;dc=s;btg=idgt.opensource_m;btg=idgt.networking_l;ord=2862177878155445?"></scr'+'ipt>');</script><script language="Javascript">CollectiveMedia.createAndAttachAd("idgt-30117907871_1307983170","http://ad.doubleclick.net/adj/idgt.linuxopensource/article_below;net=idgt;u=,idgt-30117907871_1307983170,120ad9c1990d3c1,opensource,idgt.opensource_m-idgt.networking_l;;sec=article;fold=below;tile=4;sz=160x600;net=idgt;ord1=742440;contx=opensource;dc=s;btg=idgt.opensource_m;btg=idgt.networking_l;ord=2862177878155445?","160","600",false);</script><script language="javascript" src="linux-last-reboot-time-and-date-find-out_files/article_below.js"></script><div id="dclkAdsDivID_3751"><iframe marginwidth="0" marginheight="0" style="border: 0pt none;" src="linux-last-reboot-time-and-date-find-out_files/a_003.html" name="dclkAdsFrameName_3751" id="dclkAdsFrameID_3751" height="600" scrolling="no" width="160"></iframe></div><script src="linux-last-reboot-time-and-date-find-out_files/beacon.js"></script><noscript><a href="http://simplyguide.com/k/www/delivery/ck.php?oaparams=2__bannerid=19__zoneid=17__cb=16476651f8__oadest=http%3A%2F%2Fa.collective-media.net%2Fjump%2Fidgt.linuxopensource%2Farticle_below%3Bsec%3Darticle%3Bfold%3Dbelow%3Btile%3D4%3Bsz%3D160x600%3Bord%3D123456789%3F" target="_blank"><img src="http://a.collective-media.net/ad/idgt.linuxopensource/article_below;sec=article;fold=below;tile=4;sz=160x600;ord=123456789?" width="160" height="600" border="0" alt=""></a></noscript>
+<!-- End ad tag --><div id="beacon_16476651f8" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="linux-last-reboot-time-and-date-find-out_files/lg_003.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a target='_blank' href='http://simplyguide.com/k/www/delivery/ck.php?n=da585eb'><img border='0' alt='' src='http://simplyguide.com/k/www/delivery/avw.php?zoneid=17&amp;n=da585eb' /></a></noscript>
+</div></div></div>
+		</li><li class="widget widget_related_faq"><h3>Related Posts</h3><ul><li><a href="http://www.cyberciti.biz/tips/shell-script-to-open-files-based-on-date.html" rel="bookmark" title="Permanent Link: Shell script to open files based on date">Shell script to open files based on date</a></li><li><a href="http://www.cyberciti.biz/tips/shell-scripting-creating-reportlog-file-names-with-date-in-filename.html" rel="bookmark" title="Permanent Link: Shell Scripting: Creating report/log file names with date in filename">Shell Scripting: Creating report/log file names with date in filename</a></li><li><a href="http://www.cyberciti.biz/tips/linux-shutdown-command-and-logfile.html" rel="bookmark" title="Permanent Link: Linux Shutdown Command and Logfile">Linux Shutdown Command and Logfile</a></li></ul></li><div id="adsrightlargerect"><div id="load-adsrightlargerect">
+<script type="text/javascript"><!--// <![CDATA[
+    /* [id21] www.cyberciti.biz\/IDG\/Articles\/Large-300x600 (BF) */
+    OA_show(21);
+// ]]> --></script><noscript><a target='_blank' href='http://simplyguide.com/k/www/delivery/ck.php?n=616bac2'><img border='0' alt='' src='http://simplyguide.com/k/www/delivery/avw.php?zoneid=21&amp;n=616bac2' /></a></noscript>
+</div></div>				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+<div class="idglogo">
+            <img src="linux-last-reboot-time-and-date-find-out_files/idg-logo-new.gif" alt="" border="0">
+	 </div><div class="copynotice">
+©2004-2011 nixCraft. All rights reserved. Cannot be reproduced without written permission. <br> 
+<a href="http://www.cyberciti.biz/tips/privacy">Privacy Policy</a> | 
+<a href="http://www.cyberciti.biz/tips/disclaimer">Terms of Service</a> |
+<a href="http://www.cyberciti.biz/tips/contact-us" title="Email us / Contact us">Questions or Comments</a> | 
+<a href="http://www.cyberciti.biz/tips/copyright" title="nixCraft copyright information">Copyright Info</a> |
+<a href="http://www.cyberciti.biz/tips/sitemaps" title="nixCraft sitemap">Sitemap</a>
+</div>
+	</div>
+</div>
+</div>
+<!--[if lte IE 8]>
+<div id="ie_clear"></div>
+<![endif]-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-108650-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript" src="linux-last-reboot-time-and-date-find-out_files/jqads.js"></script>
+<script type="text/javascript" src="linux-last-reboot-time-and-date-find-out_files/spcjs.js"></script><script type="text/javascript" src="linux-last-reboot-time-and-date-find-out_files/spc.js"></script><script type="text/javascript" src="linux-last-reboot-time-and-date-find-out_files/fl.js"></script>
+
+<script type="text/javascript">
+<!--
+  function rotatenixCraftads(nixcraftAds){
+    $("#load-ads" + nixcraftAds).appendTo('#ads' + nixcraftAds)
+  }
+//-->
+</script>
+
+<div style="display: none;">
+
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('topage');
+//-->
+</script>
+
+
+
+<div style="display: none;">
+
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('toprect');
+//-->
+</script>
+
+
+<div style="display: none;">
+<div id="load-adstopvert">
+<!-- -->
+</div>
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('topvert');
+//-->
+</script>
+
+<div style="display: none;">
+
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('whitepapers');
+//-->
+</script>
+
+<div style="display: none;">
+<div id="load-adslargerect">
+<!-- -->
+</div>
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('largerect');
+//-->
+</script>
+
+<div style="display: none;">
+
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('largerectbottom');
+//-->
+</script>
+
+
+<div style="display: none;">
+
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('rightsky1');
+//-->
+</script>
+<div style="display: none;">
+
+</div> 
+<script type="text/javascript">
+<!--
+rotatenixCraftads('rightlargerect');
+//-->
+</script>
+</body></html>

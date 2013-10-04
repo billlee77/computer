@@ -1,0 +1,6 @@
+1. Run LaTeX to get a dvi file
+2. Run dvips as follows:
+      * dvips -t letter -Ppdf thesis.dvi -o 
+3. To get the final PDF, run: ps2pdf 
+
+

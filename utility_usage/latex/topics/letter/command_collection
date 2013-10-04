@@ -1,0 +1,5 @@
+% To move the closing and signature parts to the left, insert the following before \begin{document}:
+
+\longindentation=0pt
+
+

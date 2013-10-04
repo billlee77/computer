@@ -1,0 +1,18 @@
+Only TH1 and TTree objects are automatically registered to
+gDirectory->GetList(). TGraphs are not.
+
+You can register any TObject derived object (eg TGraph) to this list with a
+statement like
+  gDirectory->Append(mygraph);
+where TGraph *mygraph is an already existing TGraph.
+
+You can replace your saveAll function with
+   gDirectory->Write();
+This statement will write all objects registered in the directory.
+
+To see the list of objects in a directory, do
+  dir->ls(), eg gDirectory->ls();
+
+/*--------------------------------------------------
+
+Or use Write Object commandL:

@@ -1,0 +1,828 @@
+********************************************************************************
+***                                                                          ***
+*** PHYSICA                      VERSION # 2.77               November  2005 ***
+*** Copyright (C) 1992,...,2005                              Joseph L. Chuma ***
+***                           All rights reserved                            ***
+***                                                                          ***
+***  Enter NEWS to get the latest information on new commands and features   ***
+***  Latest news added on November 21, 2005                                  ***
+***  Journal file: physica.journal                                           ***
+***                                                                          ***
+***            UNAUTHORIZED COMMERCIAL USE IS STRICTLY PROHIBITED            ***
+***                                                                          ***
+*** Physica 3.0 for the Windows environment has been released under the name ***
+*** Extrema. See www.extremasoftware.com                                     ***
+***                                                                          ***
+********************************************************************************
+User: billlee   Date: 31-Jan-2012 00:05:13
+ Default graphics hardcopy device: PostScript: colour, paper size A
+ HYSICA: execute adapter_radius.pcm 
+ vector POS has been created with 10 values
+ vector DEPTH_0 has been created with 10 values
+ vector DEPTH_90 has been created with 10 values
+ vector DEPTH_180 has been created with 10 values
+ vector DEPTH_270 has been created with 10 values
+ =====================================================
+ Average fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.21       1.00
+      2     12.5       6.20      -10.9      7.481E-04   1.00
+      3     12.6       6.20      -11.0      1.394E-04   1.00
+      4     12.6       6.20      -11.0      1.394E-04   1.00
+      5     12.6       6.20      -11.0      1.394E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.39360627E-04
+  sqrt( CHISQ/point ) = 3.73310363E-03
+  CHISQ/(degrees of freedom) = 1.9908661E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.604               29.198        0.13028
+  A                    6.1979               8.3948        3.74567E-02
+  B                   -10.969               28.391        0.12668
+ =====================================================
+ 0 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.24       1.00
+      2     12.6       6.22      -11.0      6.615E-04   1.00
+      3     12.7       6.22      -11.0      8.652E-05   1.00
+      4     12.7       6.22      -11.0      8.651E-05   1.00
+      5     12.7       6.22      -11.0      8.651E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 8.65070701E-05
+  sqrt( CHISQ/point ) = 2.94120843E-03
+  CHISQ/(degrees of freedom) = 1.23581529E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.669               29.509        0.10374
+  A                    6.2183               8.4849        2.98278E-02
+  B                   -11.034               28.690        0.10086
+ =====================================================
+ 90 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.21       1.00
+      2     12.5       6.20      -10.9      7.624E-04   1.00
+      3     12.6       6.19      -11.0      1.517E-04   1.00
+      4     12.6       6.19      -11.0      1.517E-04   1.00
+      5     12.6       6.19      -11.0      1.517E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.51708825E-04
+  sqrt( CHISQ/point ) = 3.89498171E-03
+  CHISQ/(degrees of freedom) = 2.16726893E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.591               29.138        0.13565
+  A                    6.1930               8.3755        3.89911E-02
+  B                   -10.957               28.335        0.13191
+ =====================================================
+ 180 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.20       1.00
+      2     12.6       6.21      -10.9      7.541E-04   1.00
+      3     12.6       6.20      -11.0      1.360E-04   1.00
+      4     12.6       6.20      -11.0      1.359E-04   1.00
+      5     12.6       6.20      -11.0      1.359E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.35941535E-04
+  sqrt( CHISQ/point ) = 3.68702503E-03
+  CHISQ/(degrees of freedom) = 1.94202194E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.616               29.249        0.12890
+  A                    6.2043               8.4160        3.70882E-02
+  B                   -10.979               28.439        0.12533
+ =====================================================
+ 270 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.17       1.00
+      2     12.5       6.18      -10.8      8.640E-04   1.00
+      3     12.5       6.18      -10.9      2.291E-04   1.00
+      4     12.5       6.18      -10.9      2.291E-04   1.00
+      5     12.5       6.18      -10.9      2.291E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 2.29086387E-04
+  sqrt( CHISQ/point ) = 4.78629697E-03
+  CHISQ/(degrees of freedom) = 3.27266267E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.541               28.898        0.16532
+  A                    6.1763               8.3041        4.75055E-02
+  B                   -10.906               28.106        0.16079
+ HYSICA: execute adapter_radius.pcm 
+ vector POS has been created with 10 values
+ vector DEPTH_0 has been created with 10 values
+ vector DEPTH_90 has been created with 10 values
+ vector DEPTH_180 has been created with 10 values
+ vector DEPTH_270 has been created with 10 values
+ =====================================================
+ Average fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.85       1.00
+      2     12.9       6.14      -11.4      1.277E-04   1.00
+      3     12.9       6.13      -11.4      7.698E-05   1.00
+      4     12.9       6.13      -11.4      7.698E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 7.69840259E-05
+  sqrt( CHISQ/point ) = 2.77459954E-03
+  CHISQ/(degrees of freedom) = 1.0997718E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.927               31.123        0.10321
+  A                    6.1345               8.5416        2.83263E-02
+  B                   -11.375               30.354        0.10066
+ =====================================================
+ 0 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.84       1.00
+      2     12.9       6.13      -11.3      1.360E-04   1.00
+      3     12.9       6.13      -11.4      8.306E-05   1.00
+      4     12.9       6.13      -11.4      8.306E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 8.30599583E-05
+  sqrt( CHISQ/point ) = 2.88201246E-03
+  CHISQ/(degrees of freedom) = 1.18657083E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.912               31.045        0.10694
+  A                    6.1313               8.5232        2.93597E-02
+  B                   -11.359               30.278        0.10430
+ =====================================================
+ 90 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.79       1.00
+      2     12.7       6.08      -11.1      2.211E-04   1.00
+      3     12.7       6.08      -11.2      1.499E-04   1.00
+      4     12.7       6.08      -11.2      1.499E-04   1.00
+      5     12.7       6.08      -11.2      1.499E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.49874246E-04
+  sqrt( CHISQ/point ) = 3.87135953E-03
+  CHISQ/(degrees of freedom) = 2.14106066E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.724               30.121        0.13938
+  A                    6.0766               8.2715        3.82735E-02
+  B                   -11.174               29.390        0.13599
+ =====================================================
+ 180 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.85       1.00
+      2     12.9       6.14      -11.4      1.217E-04   1.00
+      3     12.9       6.14      -11.4      7.206E-05   1.00
+      4     12.9       6.14      -11.4      7.206E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 7.20633583E-05
+  sqrt( CHISQ/point ) = 2.68446193E-03
+  CHISQ/(degrees of freedom) = 1.02947655E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.940               31.188        0.10007
+  A                    6.1380               8.5586        2.74606E-02
+  B                   -11.387               30.417        9.75950E-02
+ =====================================================
+ 270 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.90       1.00
+      2     13.1       6.19      -11.6      7.309E-05   1.00
+      3     13.1       6.19      -11.6      3.283E-05   1.00
+      4     13.1       6.19      -11.6      3.283E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 3.28262801E-05
+  sqrt( CHISQ/point ) = 1.81180242E-03
+  CHISQ/(degrees of freedom) = 4.68946858E-06
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    13.138               32.187        6.97025E-02
+  A                    6.1941               8.8265        1.91141E-02
+  B                   -11.584               31.380        6.79545E-02
+ HYSICA: hardcopy
+ Device= postscript
+ P - Print on a queue
+ S - Save into a file
+ A - Auxiliary port output
+  Hardcopy file: diff_pmt4.pdf 
+ HYSICA: execute adapter_radius.pcm 
+ vector POS has been created with 10 values
+ vector DEPTH_0 has been created with 10 values
+ vector DEPTH_90 has been created with 10 values
+ vector DEPTH_180 has been created with 10 values
+ vector DEPTH_270 has been created with 10 values
+ =====================================================
+ Average fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.85       1.00
+      2     12.9       6.14      -11.4      1.277E-04   1.00
+      3     12.9       6.13      -11.4      7.698E-05   1.00
+      4     12.9       6.13      -11.4      7.698E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 7.69840259E-05
+  sqrt( CHISQ/point ) = 2.77459954E-03
+  CHISQ/(degrees of freedom) = 1.0997718E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.927               31.123        0.10321
+  A                    6.1345               8.5416        2.83263E-02
+  B                   -11.375               30.354        0.10066
+ =====================================================
+ 0 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.84       1.00
+      2     12.9       6.13      -11.3      1.360E-04   1.00
+      3     12.9       6.13      -11.4      8.306E-05   1.00
+      4     12.9       6.13      -11.4      8.306E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 8.30599583E-05
+  sqrt( CHISQ/point ) = 2.88201246E-03
+  CHISQ/(degrees of freedom) = 1.18657083E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.912               31.045        0.10694
+  A                    6.1313               8.5232        2.93597E-02
+  B                   -11.359               30.278        0.10430
+ =====================================================
+ 90 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.79       1.00
+      2     12.7       6.08      -11.1      2.211E-04   1.00
+      3     12.7       6.08      -11.2      1.499E-04   1.00
+      4     12.7       6.08      -11.2      1.499E-04   1.00
+      5     12.7       6.08      -11.2      1.499E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.49874246E-04
+  sqrt( CHISQ/point ) = 3.87135953E-03
+  CHISQ/(degrees of freedom) = 2.14106066E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.724               30.121        0.13938
+  A                    6.0766               8.2715        3.82735E-02
+  B                   -11.174               29.390        0.13599
+ =====================================================
+ 180 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.85       1.00
+      2     12.9       6.14      -11.4      1.217E-04   1.00
+      3     12.9       6.14      -11.4      7.206E-05   1.00
+      4     12.9       6.14      -11.4      7.206E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 7.20633583E-05
+  sqrt( CHISQ/point ) = 2.68446193E-03
+  CHISQ/(degrees of freedom) = 1.02947655E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.940               31.188        0.10007
+  A                    6.1380               8.5586        2.74606E-02
+  B                   -11.387               30.417        9.75950E-02
+ =====================================================
+ 270 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.90       1.00
+      2     13.1       6.19      -11.6      7.309E-05   1.00
+      3     13.1       6.19      -11.6      3.283E-05   1.00
+      4     13.1       6.19      -11.6      3.283E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 3.28262801E-05
+  sqrt( CHISQ/point ) = 1.81180242E-03
+  CHISQ/(degrees of freedom) = 4.68946858E-06
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    13.138               32.187        6.97025E-02
+  A                    6.1941               8.8265        1.91141E-02
+  B                   -11.584               31.380        6.79545E-02
+ HYSICA: hardcopy
+ Device= postscript
+ P - Print on a queue
+ S - Save into a file
+ A - Auxiliary port output
+  Hardcopy file: diff_pmt4.ps 
+ HYSICA: exi
+     invalid command
+ HYSICA: execute adapter_radius.pcm 
+ vector POS has been created with 10 values
+ vector DEPTH_0 has been created with 10 values
+ vector DEPTH_90 has been created with 10 values
+ vector DEPTH_180 has been created with 10 values
+ vector DEPTH_270 has been created with 10 values
+ =====================================================
+ Average fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.21       1.00
+      2     12.5       6.20      -10.9      7.481E-04   1.00
+      3     12.6       6.20      -11.0      1.394E-04   1.00
+      4     12.6       6.20      -11.0      1.394E-04   1.00
+      5     12.6       6.20      -11.0      1.394E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.39360627E-04
+  sqrt( CHISQ/point ) = 3.73310363E-03
+  CHISQ/(degrees of freedom) = 1.9908661E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.604               29.198        0.13028
+  A                    6.1979               8.3948        3.74567E-02
+  B                   -10.969               28.391        0.12668
+ =====================================================
+ 0 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.24       1.00
+      2     12.6       6.22      -11.0      6.615E-04   1.00
+      3     12.7       6.22      -11.0      8.652E-05   1.00
+      4     12.7       6.22      -11.0      8.651E-05   1.00
+      5     12.7       6.22      -11.0      8.651E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 8.65070701E-05
+  sqrt( CHISQ/point ) = 2.94120843E-03
+  CHISQ/(degrees of freedom) = 1.23581529E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.669               29.509        0.10374
+  A                    6.2183               8.4849        2.98278E-02
+  B                   -11.034               28.690        0.10086
+ =====================================================
+ 90 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.21       1.00
+      2     12.5       6.20      -10.9      7.624E-04   1.00
+      3     12.6       6.19      -11.0      1.517E-04   1.00
+      4     12.6       6.19      -11.0      1.517E-04   1.00
+      5     12.6       6.19      -11.0      1.517E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.51708825E-04
+  sqrt( CHISQ/point ) = 3.89498171E-03
+  CHISQ/(degrees of freedom) = 2.16726893E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.591               29.138        0.13565
+  A                    6.1930               8.3755        3.89911E-02
+  B                   -10.957               28.335        0.13191
+ =====================================================
+ 180 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.20       1.00
+      2     12.6       6.21      -10.9      7.541E-04   1.00
+      3     12.6       6.20      -11.0      1.360E-04   1.00
+      4     12.6       6.20      -11.0      1.359E-04   1.00
+      5     12.6       6.20      -11.0      1.359E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.35941535E-04
+  sqrt( CHISQ/point ) = 3.68702503E-03
+  CHISQ/(degrees of freedom) = 1.94202194E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.616               29.249        0.12890
+  A                    6.2043               8.4160        3.70882E-02
+  B                   -10.979               28.439        0.12533
+ =====================================================
+ 270 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.17       1.00
+      2     12.5       6.18      -10.8      8.640E-04   1.00
+      3     12.5       6.18      -10.9      2.291E-04   1.00
+      4     12.5       6.18      -10.9      2.291E-04   1.00
+      5     12.5       6.18      -10.9      2.291E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 2.29086387E-04
+  sqrt( CHISQ/point ) = 4.78629697E-03
+  CHISQ/(degrees of freedom) = 3.27266267E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.541               28.898        0.16532
+  A                    6.1763               8.3041        4.75055E-02
+  B                   -10.906               28.106        0.16079
+ HYSICA: execute adapter_radius.pcm 
+ vector POS has been created with 10 values
+ vector DEPTH_0 has been created with 10 values
+ vector DEPTH_90 has been created with 10 values
+ vector DEPTH_180 has been created with 10 values
+ vector DEPTH_270 has been created with 10 values
+ =====================================================
+ Average fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.21       1.00
+      2     12.5       6.20      -10.9      7.481E-04   1.00
+      3     12.6       6.20      -11.0      1.394E-04   1.00
+      4     12.6       6.20      -11.0      1.394E-04   1.00
+      5     12.6       6.20      -11.0      1.394E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.39360627E-04
+  sqrt( CHISQ/point ) = 3.73310363E-03
+  CHISQ/(degrees of freedom) = 1.9908661E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.604               29.198        0.13028
+  A                    6.1979               8.3948        3.74567E-02
+  B                   -10.969               28.391        0.12668
+ =====================================================
+ 0 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.24       1.00
+      2     12.6       6.22      -11.0      6.615E-04   1.00
+      3     12.7       6.22      -11.0      8.652E-05   1.00
+      4     12.7       6.22      -11.0      8.651E-05   1.00
+      5     12.7       6.22      -11.0      8.651E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 8.65070701E-05
+  sqrt( CHISQ/point ) = 2.94120843E-03
+  CHISQ/(degrees of freedom) = 1.23581529E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.669               29.509        0.10374
+  A                    6.2183               8.4849        2.98278E-02
+  B                   -11.034               28.690        0.10086
+ =====================================================
+ 90 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.21       1.00
+      2     12.5       6.20      -10.9      7.624E-04   1.00
+      3     12.6       6.19      -11.0      1.517E-04   1.00
+      4     12.6       6.19      -11.0      1.517E-04   1.00
+      5     12.6       6.19      -11.0      1.517E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.51708825E-04
+  sqrt( CHISQ/point ) = 3.89498171E-03
+  CHISQ/(degrees of freedom) = 2.16726893E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.591               29.138        0.13565
+  A                    6.1930               8.3755        3.89911E-02
+  B                   -10.957               28.335        0.13191
+ =====================================================
+ 180 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.20       1.00
+      2     12.6       6.21      -10.9      7.541E-04   1.00
+      3     12.6       6.20      -11.0      1.360E-04   1.00
+      4     12.6       6.20      -11.0      1.359E-04   1.00
+      5     12.6       6.20      -11.0      1.359E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.35941535E-04
+  sqrt( CHISQ/point ) = 3.68702503E-03
+  CHISQ/(degrees of freedom) = 1.94202194E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.616               29.249        0.12890
+  A                    6.2043               8.4160        3.70882E-02
+  B                   -10.979               28.439        0.12533
+ =====================================================
+ 270 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.17       1.00
+      2     12.5       6.18      -10.8      8.640E-04   1.00
+      3     12.5       6.18      -10.9      2.291E-04   1.00
+      4     12.5       6.18      -10.9      2.291E-04   1.00
+      5     12.5       6.18      -10.9      2.291E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 2.29086387E-04
+  sqrt( CHISQ/point ) = 4.78629697E-03
+  CHISQ/(degrees of freedom) = 3.27266267E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.541               28.898        0.16532
+  A                    6.1763               8.3041        4.75055E-02
+  B                   -10.906               28.106        0.16079
+ HYSICA: execute adapter_radius.pcm 
+ vector POS has been created with 10 values
+ vector DEPTH_0 has been created with 10 values
+ vector DEPTH_90 has been created with 10 values
+ vector DEPTH_180 has been created with 10 values
+ vector DEPTH_270 has been created with 10 values
+ =====================================================
+ Average fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.21       1.00
+      2     12.5       6.20      -10.9      7.481E-04   1.00
+      3     12.6       6.20      -11.0      1.394E-04   1.00
+      4     12.6       6.20      -11.0      1.394E-04   1.00
+      5     12.6       6.20      -11.0      1.394E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.39360627E-04
+  sqrt( CHISQ/point ) = 3.73310363E-03
+  CHISQ/(degrees of freedom) = 1.9908661E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.604               29.198        0.13028
+  A                    6.1979               8.3948        3.74567E-02
+  B                   -10.969               28.391        0.12668
+ =====================================================
+ 0 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.24       1.00
+      2     12.6       6.22      -11.0      6.615E-04   1.00
+      3     12.7       6.22      -11.0      8.652E-05   1.00
+      4     12.7       6.22      -11.0      8.651E-05   1.00
+      5     12.7       6.22      -11.0      8.651E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 8.65070701E-05
+  sqrt( CHISQ/point ) = 2.94120843E-03
+  CHISQ/(degrees of freedom) = 1.23581529E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.669               29.509        0.10374
+  A                    6.2183               8.4849        2.98278E-02
+  B                   -11.034               28.690        0.10086
+ =====================================================
+ 90 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.21       1.00
+      2     12.5       6.20      -10.9      7.624E-04   1.00
+      3     12.6       6.19      -11.0      1.517E-04   1.00
+      4     12.6       6.19      -11.0      1.517E-04   1.00
+      5     12.6       6.19      -11.0      1.517E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.51708825E-04
+  sqrt( CHISQ/point ) = 3.89498171E-03
+  CHISQ/(degrees of freedom) = 2.16726893E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.591               29.138        0.13565
+  A                    6.1930               8.3755        3.89911E-02
+  B                   -10.957               28.335        0.13191
+ =====================================================
+ 180 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.20       1.00
+      2     12.6       6.21      -10.9      7.541E-04   1.00
+      3     12.6       6.20      -11.0      1.360E-04   1.00
+      4     12.6       6.20      -11.0      1.359E-04   1.00
+      5     12.6       6.20      -11.0      1.359E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.35941535E-04
+  sqrt( CHISQ/point ) = 3.68702503E-03
+  CHISQ/(degrees of freedom) = 1.94202194E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.616               29.249        0.12890
+  A                    6.2043               8.4160        3.70882E-02
+  B                   -10.979               28.439        0.12533
+ =====================================================
+ 270 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.17       1.00
+      2     12.5       6.18      -10.8      8.640E-04   1.00
+      3     12.5       6.18      -10.9      2.291E-04   1.00
+      4     12.5       6.18      -10.9      2.291E-04   1.00
+      5     12.5       6.18      -10.9      2.291E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 2.29086387E-04
+  sqrt( CHISQ/point ) = 4.78629697E-03
+  CHISQ/(degrees of freedom) = 3.27266267E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.541               28.898        0.16532
+  A                    6.1763               8.3041        4.75055E-02
+  B                   -10.906               28.106        0.16079
+ HYSICA: execute adapter_radius.pcm 
+ vector POS has been created with 10 values
+ vector DEPTH_0 has been created with 10 values
+ vector DEPTH_90 has been created with 10 values
+ vector DEPTH_180 has been created with 10 values
+ vector DEPTH_270 has been created with 10 values
+ =====================================================
+ Average fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.21       1.00
+      2     12.5       6.20      -10.9      7.481E-04   1.00
+      3     12.6       6.20      -11.0      1.394E-04   1.00
+      4     12.6       6.20      -11.0      1.394E-04   1.00
+      5     12.6       6.20      -11.0      1.394E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.39360627E-04
+  sqrt( CHISQ/point ) = 3.73310363E-03
+  CHISQ/(degrees of freedom) = 1.9908661E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.604               29.198        0.13028
+  A                    6.1979               8.3948        3.74567E-02
+  B                   -10.969               28.391        0.12668
+ =====================================================
+ 0 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.24       1.00
+      2     12.6       6.22      -11.0      6.615E-04   1.00
+      3     12.7       6.22      -11.0      8.652E-05   1.00
+      4     12.7       6.22      -11.0      8.651E-05   1.00
+      5     12.7       6.22      -11.0      8.651E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 8.65070701E-05
+  sqrt( CHISQ/point ) = 2.94120843E-03
+  CHISQ/(degrees of freedom) = 1.23581529E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.669               29.509        0.10374
+  A                    6.2183               8.4849        2.98278E-02
+  B                   -11.034               28.690        0.10086
+ =====================================================
+ 90 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.21       1.00
+      2     12.5       6.20      -10.9      7.624E-04   1.00
+      3     12.6       6.19      -11.0      1.517E-04   1.00
+      4     12.6       6.19      -11.0      1.517E-04   1.00
+      5     12.6       6.19      -11.0      1.517E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.51708825E-04
+  sqrt( CHISQ/point ) = 3.89498171E-03
+  CHISQ/(degrees of freedom) = 2.16726893E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.591               29.138        0.13565
+  A                    6.1930               8.3755        3.89911E-02
+  B                   -10.957               28.335        0.13191
+ =====================================================
+ 180 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.20       1.00
+      2     12.6       6.21      -10.9      7.541E-04   1.00
+      3     12.6       6.20      -11.0      1.360E-04   1.00
+      4     12.6       6.20      -11.0      1.359E-04   1.00
+      5     12.6       6.20      -11.0      1.359E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.35941535E-04
+  sqrt( CHISQ/point ) = 3.68702503E-03
+  CHISQ/(degrees of freedom) = 1.94202194E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.616               29.249        0.12890
+  A                    6.2043               8.4160        3.70882E-02
+  B                   -10.979               28.439        0.12533
+ =====================================================
+ 270 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.17       1.00
+      2     12.5       6.18      -10.8      8.640E-04   1.00
+      3     12.5       6.18      -10.9      2.291E-04   1.00
+      4     12.5       6.18      -10.9      2.291E-04   1.00
+      5     12.5       6.18      -10.9      2.291E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 2.29086387E-04
+  sqrt( CHISQ/point ) = 4.78629697E-03
+  CHISQ/(degrees of freedom) = 3.27266267E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.541               28.898        0.16532
+  A                    6.1763               8.3041        4.75055E-02
+  B                   -10.906               28.106        0.16079
+ HYSICA: execute adapter_radius.pcm 
+ vector POS has been created with 10 values
+ vector DEPTH_0 has been created with 10 values
+ vector DEPTH_90 has been created with 10 values
+ vector DEPTH_180 has been created with 10 values
+ vector DEPTH_270 has been created with 10 values
+ =====================================================
+ Average fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.85       1.00
+      2     12.9       6.14      -11.4      1.277E-04   1.00
+      3     12.9       6.13      -11.4      7.698E-05   1.00
+      4     12.9       6.13      -11.4      7.698E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 7.69840259E-05
+  sqrt( CHISQ/point ) = 2.77459954E-03
+  CHISQ/(degrees of freedom) = 1.0997718E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.927               31.123        0.10321
+  A                    6.1345               8.5416        2.83263E-02
+  B                   -11.375               30.354        0.10066
+ =====================================================
+ 0 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.84       1.00
+      2     12.9       6.13      -11.3      1.360E-04   1.00
+      3     12.9       6.13      -11.4      8.306E-05   1.00
+      4     12.9       6.13      -11.4      8.306E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 8.30599583E-05
+  sqrt( CHISQ/point ) = 2.88201246E-03
+  CHISQ/(degrees of freedom) = 1.18657083E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.912               31.045        0.10694
+  A                    6.1313               8.5232        2.93597E-02
+  B                   -11.359               30.278        0.10430
+ =====================================================
+ 90 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.79       1.00
+      2     12.7       6.08      -11.1      2.211E-04   1.00
+      3     12.7       6.08      -11.2      1.499E-04   1.00
+      4     12.7       6.08      -11.2      1.499E-04   1.00
+      5     12.7       6.08      -11.2      1.499E-04   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 1.49874246E-04
+  sqrt( CHISQ/point ) = 3.87135953E-03
+  CHISQ/(degrees of freedom) = 2.14106066E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.724               30.121        0.13938
+  A                    6.0766               8.2715        3.82735E-02
+  B                   -11.174               29.390        0.13599
+ =====================================================
+ 180 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.85       1.00
+      2     12.9       6.14      -11.4      1.217E-04   1.00
+      3     12.9       6.14      -11.4      7.206E-05   1.00
+      4     12.9       6.14      -11.4      7.206E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 7.20633583E-05
+  sqrt( CHISQ/point ) = 2.68446193E-03
+  CHISQ/(degrees of freedom) = 1.02947655E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.940               31.188        0.10007
+  A                    6.1380               8.5586        2.74606E-02
+  B                   -11.387               30.417        9.75950E-02
+ =====================================================
+ 270 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.90       1.00
+      2     13.1       6.19      -11.6      7.309E-05   1.00
+      3     13.1       6.19      -11.6      3.283E-05   1.00
+      4     13.1       6.19      -11.6      3.283E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 3.28262801E-05
+  sqrt( CHISQ/point ) = 1.81180242E-03
+  CHISQ/(degrees of freedom) = 4.68946858E-06
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    13.138               32.187        6.97025E-02
+  A                    6.1941               8.8265        1.91141E-02
+  B                   -11.584               31.380        6.79545E-02
+ HYSICA: execute adapter_radius.pcm 
+ vector POS has been created with 10 values
+ vector DEPTH_0 has been created with 10 values
+ vector DEPTH_90 has been created with 10 values
+ vector DEPTH_180 has been created with 10 values
+ vector DEPTH_270 has been created with 10 values
+ =====================================================
+ Average fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.85       1.00
+      2     12.9       6.14      -11.4      1.277E-04   1.00
+      3     12.9       6.13      -11.4      7.698E-05   1.00
+      4     12.9       6.13      -11.4      7.698E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 7.69840259E-05
+  sqrt( CHISQ/point ) = 2.77459954E-03
+  CHISQ/(degrees of freedom) = 1.0997718E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.927               31.123        0.10321
+  A                    6.1345               8.5416        2.83263E-02
+  B                   -11.375               30.354        0.10066
+ =====================================================
+ 0 Degree fitting results
+  Iter&      R          A          B         Residual    Step Size
+      1     13.2       6.00      -11.0       4.84       1.00
+      2     12.9       6.13      -11.3      1.360E-04   1.00
+      3     12.9       6.13      -11.4      8.306E-05   1.00
+      4     12.9       6.13      -11.4      8.306E-05   1.00
+  number of degrees of freedom = 7
+  total CHISQ = 8.30599583E-05
+  sqrt( CHISQ/point ) = 2.88201246E-03
+  CHISQ/(degrees of freedom) = 1.18657083E-05
+  confidence level = 100%
+  
+ PARAMETER            VALUE               E1             E2
+  R                    12.912               31.045        0.10694
+  A                    6.1313               8.5232        2.93597E-02
+  B     

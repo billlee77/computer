@@ -1,0 +1,8 @@
+# How to startup a vnc server
+vncserver -localhost -geometry 1280x800 -depth 24 :2
+
+
+*Note that without specifying the depth screen will be black always
+
+# accessing in the local shell for a remote desktop
+svnview localhost:port

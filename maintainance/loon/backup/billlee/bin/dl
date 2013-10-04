@@ -1,0 +1,10 @@
+#! /bin/tcsh -f
+
+# little script to list just the directories underneath
+# gh 00.06.01
+
+if ($OSNAME == "OSF1" ) then
+   ls -al | awk '/^d/{print $9}' | xargs ls -dF # alpha
+else
+   ls -al | awk '/^d/{print $9}' | xargs ls -dF --color  # linux
+endif

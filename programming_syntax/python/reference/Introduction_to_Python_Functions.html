@@ -1,0 +1,272 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <title>Introduction to Python: Functions</title>
+  <title>/home/steder/Projects/Tutorials/python/BobChat-v0.3/BobClient.py</title><title>/home/steder/Projects/Tutorials/python/BobChat-v0.3/BobClient.py</title><title>/home/steder/Projects/Tutorials/python/BobChat-v0.3/BobClient.py</title><title>/home/steder/Projects/Tutorials/python/BobChat-v0.3/BobClient.py</title><title>/home/steder/Projects/Tutorials/python/BobChat-v0.3/BobClient.py</title></head><body bgcolor="#ffffff">
+    <h2>An Introduction to Python: Functions</h2>
+    <a href="http://www.penzilla.net/tutorials/python/index.html">Table of Contents</a>
+    <hr>
+    <h3><font color="green">Python and Functions:</font></h3>
+    <p>Python is a little different from other languages like C/C++ and 
+Java, in that functions are not magic constructs, but values.  Yes, 
+functions in Python, are like integers in C.  They are simply values and
+ can be passed to other functions/object constructors, and so forth.  
+We've already seen a pretty simple example of a Python function in the 
+form of the venerable "Hello World!" program.  Let's take another look 
+at it:
+    </p><ul>
+                  <!--header-->
+                  <!--script--><pre><font color="#1111cc"># hello.py</font>
+<font color="#3333cc"><b>def</b></font><a name="hello"><font color="#cc0000"><b> hello</b></font></a>():
+    <font color="#3333cc"><b>print</b></font> <font color="#115511">"Hello World!"</font>
+    <font color="#3333cc"><b>return</b></font>
+</pre>
+                  <!--footer-->
+                  </ul>
+    <p>In the above code there is really only one new keyword: <font color="green">def</font>.  <font color="green">def</font> is the keyword used when defining functions.  Arguments are passed in paranthesis just like C, and the <font color="green">return</font> statement can't return <b>multiple</b> values.  However, since <font color="blue">lists, tuples,</font> and <font color="blue">dictionaries</font>
+ are basic types they can be returned instead.  I'll illustrate this 
+later.  A quick thing to note about Python functions:  They always 
+return a value.  However, if no return value is specified, or you don't 
+use the return keyword, Python automatically returns the value <font color="green">None</font>.  
+    </p><p>Now let's play around around a bit with the idea of functions as objects, and then will show some some more advanced functions.
+    </p><p>Let's write a simple function called "map", which maps a 
+function across a list, applying that function to each list element.  
+I'm also going to illustrate recursion by writing a recursive and 
+non-recursive version of "map".  
+    </p><ul>
+                  <!--header-->
+                  <!--script--><pre><font color="#1111cc"># map.py</font>
+<font color="#1111cc"># We can use append here</font>
+<font color="#3333cc"><b>def</b></font><a name="map"><font color="#cc0000"><b> map</b></font></a>( fun, list ):
+    nlist = []
+    <font color="#3333cc"><b>for</b></font> item <font color="#3333cc"><b>in</b></font> list:
+        nlist.append( fun( item ) )
+    <font color="#3333cc"><b>return</b></font> nlist
+<font color="#1111cc"># But here we have to use concatenation, or the + operator for lists.</font>
+<font color="#3333cc"><b>def</b></font><a name="rmap"><font color="#cc0000"><b> rmap</b></font></a> ( fun, list ):
+    <font color="#3333cc"><b>if</b></font> list == []:
+        <font color="#3333cc"><b>return</b></font> []
+    <font color="#3333cc"><b>else</b></font>:
+        <font color="#3333cc"><b>return</b></font> [fun( list[0] )] + rmap( fun, list[1:] )
+
+<font color="#1111cc"># Make a sample test function</font>
+<font color="#3333cc"><b>def</b></font><a name="increment"><font color="#cc0000"><b> increment</b></font></a>(x):
+    <font color="#3333cc"><b>return</b></font> x+1
+
+<font color="#1111cc"># Test them out!</font>
+map( increment, [1,2,3,4,5] )
+<font color="#1111cc"># should return [2,3,4,5,6]</font>
+map( increment, [1,2,3,4,5] ) == rmap( increment, [1,2,3,4,5] )
+<font color="#1111cc"># There outputs should be the same!</font>
+
+</pre>
+                  <!--footer-->
+                  </ul>
+    <p>Now notice how a function, in this case <font color="purple"><i>increment</i></font> is passed to map and rmap, just as if it were a number or some other data.  Why is that?  Because functions <b>are</b>
+ data in Python, not just special labels for code blocks(or whatever 
+they are in C/C++).  There is also a nice example of the difference 
+between recursive and non-recursive code in Python.  I find the first 
+form more intuitive, but the second form is more interesting.
+    </p><p>Pretty tame so far.  Aside from the fact that functions are 
+first-class values in Python, they don't seem to exciting.  So let's try
+ showing off a few more features of Python functions.
+
+    <font color="green"><h3>Arguments in Python Functions</h3></font>
+    <font color="blue"><h4>Multiple Return Values</h4></font>
+    </p><p>Let's assume that I have a C++ code in which I want to return 3 values.
+    There are a number of ways I could return
+    
+    </p><ul>-1,0,1</ul> 
+
+    from C++.
+    <p>Possible Method I:
+    </p><ul>
+      void return3values( int &amp;a, int &amp;b, int &amp;c ) { a = -1; b = 0; c = 1; }
+    </ul>
+    <p>Possible Method II:
+    </p><ul>
+      void returnArray( int *array ) { array[0] = -1; array[1] = 0; array[2] = 1; } 
+    </ul>
+    
+    <p>Now I am not saying that these are the only ways to return multiple values 
+    in C++, but they are a few possibilities.  However, in Python, "Possible Method I" would not work.
+    Python passes all arguments using "pass by reference".  However, numerical values and Strings are all immutable.
+    You cannot change the value of a passed in immutable and see that value change in the caller.
+    Dictionaries and Lists on the other hand are mutable, and changes made to them
+    by a called function will be preserved when the function returns.  This 
+    behavior is confusing and can lead to common mistakes where lists are 
+    accidentally modified when they shouldn't be.  However, there are many 
+    reasons for this behavior, such as saving memory when dealing with large sets.
+    
+    </p><p>Most often when you have to return multiple arguments you will probably just
+    use something simple like this example.  Here we just take advantage of the 
+    fact that Python includes built in Tuples, Lists, and Dictionaries, and return
+    one of these objects to encapsulate the multiple values.
+    </p><ul>
+                  <!--header-->
+                  <!--script--><pre><font color="#1111cc"># multiple-returns.py</font>
+a, b, c = 0, 0, 0
+<font color="#3333cc"><b>def</b></font><a name="getabc"><font color="#cc0000"><b> getabc</b></font></a>():
+    a = <font color="#115511">"Hello"</font>
+    b = <font color="#115511">"World"</font>
+    c = <font color="#115511">"!"</font>
+    <font color="#3333cc"><b>return</b></font> a,b,c <font color="#1111cc">#defines a tuple on the fly</font>
+
+<font color="#3333cc"><b>def</b></font><a name="gettuple"><font color="#cc0000"><b> gettuple</b></font></a>():
+    a,b,c = 1,2,3 <font color="#1111cc"># Notice the similarities between this and getabc?</font>
+    <font color="#3333cc"><b>return</b></font> (a,b,c)
+
+<font color="#3333cc"><b>def</b></font><a name="getlist"><font color="#cc0000"><b> getlist</b></font></a>():
+    a,b,c = (3,4),(4,5),(5,6)
+    <font color="#3333cc"><b>return</b></font> [a,b,c]
+
+<font color="#1111cc"># These all work, as amazing as it seems.</font>
+<font color="#1111cc"># So multiple assignment is actually quite easy.</font>
+a,b,c = getabc()
+d,e,f = gettuple()
+g,h,i = getlist()
+
+<font color="#1111cc"># It's fun too...  Depending on how you design your code,</font>
+<font color="#1111cc"># chances are you'll never ever use it.</font>
+<font color="#1111cc"># But it's neat.</font>
+
+
+
+</pre>
+                  <!--footer-->
+                  </ul>
+    
+    <p>Sometimes, when dealing with lists and dictionaries it is actually more
+    efficient or effective to take advantage of the fact that these more complex 
+    objects are passed-by-reference.  Take a look at the following example:
+    </p><ul>[an error occurred while processing this directive]</ul>
+    
+    <p>Finally it is important to be aware of possible bugs that can occur 
+    with references to Lists and Dictionaries.  Consider the following code 
+    intended to...( I need to dig up an example of one of these pass-by-reference gotchas.)
+    </p><ul>[an error occurred while processing this directive]</ul>
+    
+    <font color="blue"><h4>Default Arguments and Argument Names</h4></font>
+    <p>Python allows you to mess around with arguments a little more 
+then C/C++.  Let's see a few examples of how functions can be defined 
+and  how they can be used.
+    </p><ul>
+                  <!--header-->
+                  <!--script--><pre><font color="#1111cc"># Simplest Arguments</font>
+<font color="#3333cc"><b>def</b></font><a name="multiprint"><font color="#cc0000"><b> multiprint</b></font></a>( n, txt ):
+    i = 0
+    <font color="#3333cc"><b>while</b></font> i &lt; n:
+        <font color="#3333cc"><b>print</b></font> txt
+
+<font color="#1111cc"># This throws an error</font>
+multiprint()
+
+<font color="#1111cc"># Default Values</font>
+<font color="#3333cc"><b>def</b></font><a name="multiprint"><font color="#cc0000"><b> multiprint</b></font></a>( n=5, txt=<font color="#115511">""</font> ):
+    i = 0
+    <font color="#3333cc"><b>while</b></font> i &lt; n:
+        <font color="#3333cc"><b>print</b></font> txt
+        
+<font color="#1111cc"># This works just fine</font>
+multiprint()
+
+<font color="#1111cc"># Labels</font>
+<font color="#3333cc"><b>def</b></font><a name="multiprint"><font color="#cc0000"><b> multiprint</b></font></a>( n=5, txt=<font color="#115511">""</font> ):
+    i = 0
+    <font color="#3333cc"><b>while</b></font> i &lt; n:
+        <font color="#3333cc"><b>print</b></font> txt
+
+<font color="#1111cc"># I want to call multiprint, but I'm happy with</font>
+<font color="#1111cc"># n = 5, so I don't want to reassign it.</font>
+<font color="#1111cc"># I can use the labels to set "txt" without having to set n.</font>
+multiprint( txt=<font color="#115511">"Hello World!"</font> )
+
+<font color="#1111cc"># You can mix default and required variables</font>
+<font color="#1111cc"># Notice there is a default on list, but since it is</font>
+<font color="#1111cc"># defined in the middle of the list, you can't do this:</font>
+<font color="#1111cc"># fold_right( lambda x y: x + y, 0 )</font>
+
+<font color="#1111cc"># No, you need to specify lst as well, even though you</font>
+<font color="#1111cc"># may be happy with the default value.</font>
+<font color="#1111cc"># fold_right( lambda x y: x + y, [], 0 )</font>
+<font color="#3333cc"><b>def</b></font><a name="fold_right"><font color="#cc0000"><b> fold_right</b></font></a>( fun, list=[], base ):
+    <font color="#3333cc"><b>if</b></font> list == []:
+        <font color="#3333cc"><b>return</b></font> base
+    <font color="#3333cc"><b>else</b></font>:
+        <font color="#3333cc"><b>return</b></font> fun( list[0], fold_right( fun, list[1:], base ) )
+
+<font color="#1111cc"># Now, let's say I want to just define fun and base, and not list.</font>
+<font color="#1111cc"># I could do this:</font>
+fold_right( fun = <font color="#3333cc"><b>lambda</b></font> x y: x + y, base = 0) <font color="#1111cc">#Look 'ma, no list!</font>
+
+<font color="#1111cc"># This makes sense if you have a large argument list (5, 10, + variables),</font>
+<font color="#1111cc"># some default and some required.  You can easily specify just the</font>
+<font color="#1111cc"># variables necessary to run the function and leave the defaults alone.  </font>
+</pre>
+                  <!--footer-->
+                  </ul>
+    <p>Default arguments are nice, allowing you to simply define values 
+to be used if none are specified.  This makes long argument lists a lot 
+nicer to work with.  On the other hand, having default arguments, 
+especially with complicated functions, you'll often end up with a mix of
+ default and required variables.  However as soon as your function 
+requires a variable it requires you to either re-order your argument 
+list, or specify a bunch of arguments with default values(whether you 
+want to set those defaults or not).  Python supplies you with an easy 
+way to set just the arguments necessary and none that aren't.  Simply 
+specify the name of the variable in the call to the function.  These 
+"labels" can be used in any python function and they can help in dealing
+ with complicated functions and arglists.  
+    
+    </p><h3><font color="green">Lambda Expressions (Anonymous Functions)</font></h3>
+    <p>As if the last section wasn't cool enough, let's try "lambda 
+expressions", a concept borrowed from Lisp and other functional 
+languages.  Lambda expressions return functions as results.  They build 
+functions without assigning names to them.  A normal function 
+declaration assigns the functions value to the name of the function, but
+ lambda expressions do not.  
+    </p><p>Why would you want this dubious functionality?  Because 
+lambda expressions are nice to use in places that a function declaration
+ wouldn't normally be allowed, and to write quick and dirty functions on
+ the fly.  Sometimes you want to build functions(callback handlers in 
+gui's, object member data accessors, and so on), and using lambda 
+expressions makes that a lot easier.
+    </p><p>So lambda lets you define and use a function inside an if 
+statement body, or inside a list.  However, lambda expressions are just 
+that, expressions.  It is difficult to write a complicated function 
+because statements
+      are not allowed.</p>
+    <p>Let's do a few examples of where lambda expressions could be useful:
+    </p><ul>
+                  <!--header-->
+                  <!--script--><pre><font color="#1111cc"># lamba-map.py</font>
+<font color="#1111cc"># Remember our "map" function from a little earlier?</font>
+<font color="#3333cc"><b>import</b></font> map
+list = xrange(0,2,100)
+
+<font color="#1111cc"># Let's redefine increment as a lambda function.</font>
+increment = <font color="#3333cc"><b>lambda</b></font> x: x + 1
+
+<font color="#1111cc"># This looks like how you would normally do it.</font>
+map.map( increment, list )
+
+<font color="#1111cc"># Or, we're do lazy for that "=" statement above :~)</font>
+<font color="#1111cc"># That and increment is so simple...</font>
+map.map( <font color="#3333cc"><b>lambda</b></font> x: x + 1, list )
+
+<font color="#1111cc"># Where lambda won't work:</font>
+<font color="#1111cc"># Lambda's cannot contain statements.  So although the following</font>
+<font color="#1111cc"># code is almost valid Ocaml, it is _not_ valid Python.  :~)</font>
+lmap = ( <font color="#3333cc"><b>lambda</b></font> f, lst:
+    <font color="#3333cc"><b>if</b></font> lst == []:
+        <font color="#3333cc"><b>return</b></font> []
+    <font color="#3333cc"><b>else</b></font>:
+        <font color="#3333cc"><b>return</b></font> [ f( lst[0] ) ] + lmap( f lst[1:] ) )
+</pre>
+                  <!--footer-->
+                  </ul>
+    <p>And that's all I have to say about functions for now.
+    </p><hr>
+      Links to code...<br>
+      <a href="http://www.penzilla.net/tutorials/python/index.html">Table of Contents</a>
+      
+</body></html>

@@ -1,0 +1,18 @@
+#!/bin/sh
+filename=$1
+option=$2
+if [ $# -eq 1 ] 
+then
+/usr/bin/a2ps $filename 
+fi
+if [ $# -eq 2 ]
+then
+        case "${option}" in
+	  -geezer)        a2ps -1 -f18.0 --medium=Letter $filename ;;
+          -wide)          a2ps -1 -l 132 -R --medium=Letter $filename ;;
+          -vwide)         a2ps -1 -l 160 -r --medium=Letter $filename ;;
+          -code)          a2ps --medium=Letter $filename ;;
+          -coded)          a2ps --medium=Letter --sides=2 $filename ;;
+          -letter)        a2ps --columns=1 --rows=1 --portrait -f10 --margin=24 -B --medium=Letter $filename ;;
+        esac
+fi

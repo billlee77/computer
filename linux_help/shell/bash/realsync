@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# realsync   A script to make two directories identical
+# Ed Brash, Nov 6/02.
+
+# Source function library.
+#. /etc/rc.d/init.d/functions
+
+# Source networking configuration.
+#. /etc/sysconfig/network
+
+# Check that networking is up.
+#[ ${NETWORKING} = "no" ] && exit 0
+
+RETVAL=0
+
+if [ $# ==  2 ] 
+  then
+    dir1=$1
+    dir2=$2
+ 
+    case "$dir1" in
+      */) ;;
+      *) dir1=$dir1"/";;
+    esac
+   
+    case "$dir2" in
+      */) ;;
+      *) dir2=$dir2"/";;
+    esac
+
+    echo
+    echo " rsync " $dir1 " --> " $dir2
+    echo
+
+	
+
+    /usr/bin/rsync -e ssh -auv $dir1 $dir2
+
+# Choose to rsync back	
+
+    echo
+    echo " rsync back from " $dir2 " --> " $dir1 ?
+#	echo " Please enter Yes (y) or No (n)"
+	read -p " Please enter Yes (y) or No (n) : " choice
+	 
+#    echo "asddddddddd" $choice
+
+	if [ "$choice" != "y" ]
+		then
+		echo " Realsync terminated nothing is transfered back !"
+		exit
+	else	
+
+#    /usr/bin/rsync -e ssh -auv $dir2 $dir1
+# replace -a with -rlptoD to eliminate group preservation
+    /usr/bin/rsync -e ssh -rlptoDuv $dir2 $dir1
+	fi
+	
+  else 
+    echo "   Usage:  realsync dir1 dir2"
+    echo "   * Directory names have syntax Machine:/dir/"
+    echo "   * In the case of duplicate name files, the oldest one will be overwritten"
+fi
+
+exit

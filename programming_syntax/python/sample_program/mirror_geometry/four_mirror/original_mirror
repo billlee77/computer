@@ -1,0 +1,55 @@
+Miror Demension (Length, Width): 585.234, 550
+Thickness: 3
+Mirror Radius: 1100
+Mirror 1 Start Position (X, Y, Z): 50, 270, 875
+Mirror 1 Tilt Angle: 19.9831, 0
+Mirror 2 Start Position (X, Y, Z): 50, -270, 910
+Mirror 2 Tilt Angle: 19.9831, 0
+Mirror 3 Start Position (X, Y, Z): 60, 270, 905
+Mirror 3 Tilt Angle: -16.2202, 0
+Mirror 4 Start Position (X, Y, Z): 60, -270, 940
+Mirror 4 Tilt Angle: -16.2202, 0
+
+/*--------------------------------------------------
+Mirror 1 : 
+The Center Start Point:  50.0   270.0   875.0
+The Center Start Point:  599.999087168   270.0   1074.99959718
+Mirror Tilt Angle X, Y:  19.9831   0.0
+The Corner 1 of the mirror is at (x, y, z) (mm):  62.3986192428   -5.0   840.903784998
+The Corner 2 of the mirror is at (x, y, z) (mm):  612.39770641   -5.0   1040.90338217
+The Corner 3 of the mirror is at (x, y, z) (mm):  62.3986192428   545.0   840.903784998
+The Corner 4 of the mirror is at (x, y, z) (mm):  612.39770641   545.0   1040.90338217
+Mirror Center Position (x, y, z) (mm):  310.942165931 270.0 1013.65760083
+
+/*--------------------------------------------------
+Mirror 2 : 
+The Center Start Point:  50.0   -270.0   910.0
+The Center Start Point:  599.999087168   -270.0   1109.99959718
+Mirror Tilt Angle X, Y:  19.9831   0.0
+The Corner 1 of the mirror is at (x, y, z) (mm):  62.3986192428   5.0   875.903784998
+The Corner 2 of the mirror is at (x, y, z) (mm):  612.39770641   5.0   1075.90338217
+The Corner 3 of the mirror is at (x, y, z) (mm):  62.3986192428   -545.0   875.903784998
+The Corner 4 of the mirror is at (x, y, z) (mm):  612.39770641   -545.0   1075.90338217
+Mirror Center Position (x, y, z) (mm):  310.942165931 -270.0 1048.65760083
+
+/*--------------------------------------------------
+Mirror 3 : 
+The Center Start Point:  60.0   270.0   905.0
+The Center Start Point:  -489.999848289   270.0   1065.00002151
+Mirror Tilt Angle X, Y:  -16.2202   0.0
+The Corner 1 of the mirror is at (x, y, z) (mm):  49.8825250857   -5.0   870.22119425
+The Corner 2 of the mirror is at (x, y, z) (mm):  -500.117323204   -5.0   1030.22121576
+The Corner 3 of the mirror is at (x, y, z) (mm):  49.8825250857   545.0   870.22119425
+The Corner 4 of the mirror is at (x, y, z) (mm):  -500.117323204   545.0   1030.22121576
+Mirror Center Position (x, y, z) (mm):  -203.983635827 270.0 1022.86848631
+
+/*--------------------------------------------------
+Mirror 4 : 
+The Center Start Point:  60.0   -270.0   940.0
+The Center Start Point:  -489.999848289   -270.0   1100.00002151
+Mirror Tilt Angle X, Y:  -16.2202   0.0
+The Corner 1 of the mirror is at (x, y, z) (mm):  49.8825250857   5.0   905.22119425
+The Corner 2 of the mirror is at (x, y, z) (mm):  -500.117323204   5.0   1065.22121576
+The Corner 3 of the mirror is at (x, y, z) (mm):  49.8825250857   -545.0   905.22119425
+The Corner 4 of the mirror is at (x, y, z) (mm):  -500.117323204   -545.0   1065.22121576
+Mirror Center Position (x, y, z) (mm):  -203.983635827 -270.0 1057.86848631

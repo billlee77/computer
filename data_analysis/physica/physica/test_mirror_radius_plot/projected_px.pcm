@@ -1,0 +1,94 @@
+ix=i-500
+clear
+scales -300 300 6 0.8 1.2 4
+set nsyinc 2
+set linthk 4
+set %txthit 2.25
+col 1
+label\xaxis `Missing Momentum (MeV/c)'
+label\yaxis `P<X>7D<X><D>X<U>/P<X>7D<X><D>X,RDWIA,cc1'
+graph\axes
+enable echo
+
+read  model_pxpz/eep_1.0_fcqs.dat q2c xc Ebc Epc Ppc Thec Thpc Pmc dsc Py1c Px1c Pz1c Py2c Px2c Pz2c virtc PxHc PzHc 
+read  model_pxpz/eep_1.0_fqmc.dat q2q xq Ebq Epq Ppq Theq Thpq Pmq dsq Py1q Px1q Pz1q Py2q Px2q Pz2q virtq PxHq PzHq
+read  model_pxpz/eep_1.0_full.dat q2f xf Ebf Epf Ppf Thef Thpf Pmf dsf Py1f Px1f Pz1f Py2f Px2f Pz2f virtf PxHf PzHf
+read  model_pxpz/eep_1.0_pwia.dat q2p xp Ebp Epp Ppp Thep Thpp Pmp dsp Py1p Px1p Pz1p Py2p Px2p Pz2p virtp PxHp PzHp
+
+! Steffen's convention is backwards and he tells me that I need to reverse the
+! sign of Pm.
+Pmc=-Pmc
+Pmq=-Pmq
+Pmf=-Pmf
+Pmp=-Pmp
+
+set pchar 0
+col 3
+set lintyp 1
+graph\noaxes Pmf Px1p/Px1f
+set lintyp 4
+graph\noaxes Pmf Px2p/Px1f
+text `RPWIA'
+col 4
+set lintyp 1
+graph\noaxes Pmf Px1f/Px1f 
+set lintyp 4
+graph\noaxes Pmf Px2f/Px1f
+text `RDWIA'
+col 2
+set lintyp 1
+graph\noaxes Pmf Px1q/Px1f 
+set lintyp 4
+graph\noaxes Pmf Px2q/Px1f
+text `RDWIA+QMC'
+col 7
+set lintyp 1
+graph\noaxes Pmf Px1c/Px1f 
+set lintyp 4
+graph\noaxes Pmf Px2c/Px1f
+text `RDWIA+CQS'
+
+read pmiss_sum_1p00_final.dat pmc c pmm q2m thm ppm dpx dpy dpz dr
+!destroy pmc pmm dpx dpy dpz dr iff pmc<(-250)
+!destroy pmc pmm dpx dpy dpz dr iff pmc<(-150)
+
+read pmiss_2h_sum_1p00_final.dat hpmc hc hpmm hq2m hthm hppm hdpx hdpy hdpz hdr
+!destroy hpmc hpmm hdpx hdpy hdpz hdr iff hpmc<(-250)
+!destroy hpmc hpmm hdpx hdpy hdpz hdr iff hpmc<(-150)
+
+scalar\vary xa xb xc xd xe
+fit Px1f=xa+xb*Pmf+xc*(Pmf**2)+xd*(Pmf**3)+xe*(Pmf**4)
+Px1=xa+xb*pmm+xc*(pmm**2)+xd*(pmm**3)+xe*(pmm**4)
+hPx1=xa+xb*hpmm+xc*(hpmm**2)+xd*(hpmm**3)+xe*(hpmm**4)
+
+set pchar -8
+col 1
+graph\noaxes pmm Px1/Px1 dpx/abs(Px1)
+col 5
+graph\noaxes pmm[11] Px1[11]/Px1[11] dpx[11]/Px1[11]
+!graph\noaxes pmm[10] Px1[10]/Px1[10] dpx[10]/Px1[10]
+!graph\noaxes pmm[6] Px1[6]/Px1[6] dpx[6]/Px1[6]
+col 1
+set pchar -1
+graph\noaxes pmm[11] Px1[11]/Px1[11] dpx[11]/Px1[11]
+!graph\noaxes pmm[10] Px1[10]/Px1[10] dpx[10]/Px1[10]
+!graph\noaxes pmm[6] Px1[6]/Px1[6] dpx[6]/Px1[6]
+
+set pchar -8
+col 3
+graph\noaxes hpmm hPx1/hPx1 hdpx/abs(hPx1)
+col 5
+graph\noaxes hpmm[11] hPx1[11]/hPx1[11] hdpx[11]/hPx1[11]
+!graph\noaxes hpmm[10] hPx1[10]/hPx1[10] hdpx[10]/hPx1[10]
+!graph\noaxes hpmm[6] hPx1[6]/hPx1[6] hdpx[6]/hPx1[6]
+col 3
+set pchar -1
+graph\noaxes hpmm[11] hPx1[11]/hPx1[11] hdpx[11]/hPx1[11]
+!graph\noaxes hpmm[10] hPx1[10]/hPx1[10] hdpx[10]/hPx1[10]
+!graph\noaxes hpmm[6] hPx1[6]/hPx1[6] hdpx[6]/hPx1[6]
+
+col 1
+text `Q<U>2<D>=1.00GeV<U>2<D>  E=2.25GeV'
+text `<U>4<D>He(e,e<X>7D<X>p)t  346hr'
+col 3
+text `<U>2<D>H(e,e<X>7D<X>p)n  170hr'

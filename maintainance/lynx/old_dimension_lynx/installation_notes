@@ -1,0 +1,185 @@
+System Name: Scientific linux
+Host Name: lynx.phys.uregina.ca
+Pass: New$09ton
+
+Step 1: Customize partion outlay:
+
+Name		  Size			Partion
+sda1 		  250MB			/Boot
+sda2		10240MB			/
+sda3		 4000MB			SWEP
+sda4		61323MB			/home
+
+Time sychronizing: time.nrc.ca (Canadian Time Checking Server)
+
+Step 2: Create Users and Groups
+
+Huberg
+Garth Huberg
+UserID:	 500
+GroupID: 500
+
+Billlee
+Bill Li
+UserID:  510
+GroupId: 510
+
+g4user
+G4 user
+UserID:  501
+GroupID: 501
+
+sichelll
+Lee Sichello
+UserID:  511
+Group:	 511
+
+misha
+Mikhail
+User:	 505
+GroupID: 505
+
+
+Step 3: Restoring Data Using rsync
+
+
+
+Step 4: Change Disk label:
+In /etc/fstab file, we can change the label into whatever we want.
+
+********************************************************************************
+*Below is sample /etc/fstab file for lynx
+********************************************************************************
+LABEL=lyx_slash 	/                       ext4    defaults        1 1
+LABEL=lyx_boot		/boot                   ext4    defaults        1 2
+LABEL=lyx_home		/home                   ext4    defaults        1 2
+UUID=06669c50-5a72-4381-9e48-7378c196bdea swap                    swap    defaults        0 0
+tmpfs                   /dev/shm                tmpfs   defaults        0 0
+devpts                  /dev/pts                devpts  gid=5,mode=620  0 0
+sysfs                   /sys                    sysfs   defaults        0 0
+proc                    /proc                   proc    defaults        0 0
+********************************************************************************
+
+
+Step 5: Repository Setup
+		/home/cumstom there will be rpm source avialible
+		
+		Note: Their may be a issue with public key when installing cern-lib
+		
+		#install yumex
+		sudo rpm -i yumex
+		
+		#Uninstall old rmp
+		rpm -e epel-release-5-3
+		#install new rmp
+		rpm -ivh epel-release-6-5.noarch.rpm
+
+Step 6: List of Package Needed
+		gv, gimp, pine, pdftool, skype, latex, gvim, emacs, vnc, openoffice, vncserver, tkdiff, xfig, java, tgif, svn, flash, icewm, unrar, alacarte, policycoreutils-gui xcircuit qcad paw x11vnc pdf-tool logwatch gparted filezilla konqueror gnash-klash konq-plugins apcups php
+
+Step 7: Set Terminal
+		Tick in the configuration : run command as login shell
+
+Step 8: Set Printer 
+		localhost:631/printers
+		copy over cups.config fromn comstums.
+		/etc/cups/cupsd.conf
+
+
+Step 9: Setting Firewall
+ 		User Firewall configuration tool in: Main Manu-> System-> Administration-> Firewall
+		Allow SSH 							22/tcp  
+		Allow Network Printing Client(IPP)	631/udp
+
+
+Step 10: Restoring logwatch into /etc/cron.daily/:	
+
+		cp logwacth form larch:/usr/share/logwatch
+		linking 0logwatch with /usr/share/logwatch/scripts/logwatch.pl
+		create dir: /var/cache/logwatch
+
+
+#****************************************
+# Super LYNX upgrade
+# Date: 15/May/2011
+
+# Change the /etc/hosts
+142.3.165.40	lynx.phys.uregina.ca	lynx	
+# and comment out 
+#142.3.165.40	bombadil.phys.uregina.ca  bombadil	
+#142.3.165.170   lynx.phys.uregina.ca    lynx
+
+
+# Mount new device to /dsk2
+mount /dev/sdb1 /dsk2
+
+Adding the following to the /etc/fstab file
+# Additional Hard Drive
+/dev/sdb1		/dsk2			ext4	defaults	1 2
+
+
+# Move the file to /dsk2 and linking back the file from /dsk2 to /home/billlee/
+mv /home/billlee/ /home/billlee/repo /home/billlee/computer /home/billlee/scratch /home/billlee/work
+
+$ ln -s /dsk2/billlee/repo/ /home/billlee/repo
+$ ln -s /dsk2/billlee/computer/ /home/billlee/computer
+$ ln -s /dsk2/billlee/scratch/ /home/billlee/scratch
+$ ln -s /dsk2/billlee/work/ /home/billlee/work
+
+
+
+
+#****************************************
+# In order to resolve CPU hang issue EVGA NVIDIA GEFORCE 6200 PCI is re-installed
+# Date:18/May/2011
+
+# Improve the EVGA NVIDIA GEFORCE 6200 PCI Video Card, the following processdure applies
+$ sudo yum erase xorg-x11-drivers xorg-x11-drv-nouveau
+
+# Note: for same reason the performance of the card is significantly improved.
+
+
+
+#****************************************
+# Fixing the eth0 doesnot start at the bootup
+# Date: 19/May/2011
+
+# /etc/sysconfig/network-scripts/ifcfg-eth0
+Change HWADDR into the setup below
+HWADDR=00:0B:DB:B9:19:09
+
+
+
+
+#****************************************
+# Installing XFCE
+# 07/07/2011
+# yum groupinstall xfce
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# List of Package Needs to be REMOVED
+eclipse
+
+#****************************************
+#****************************************
+# Important: absolute NO xorg.conf in /etc/X11/
+
+
+
+#****************************************
+#****************************************

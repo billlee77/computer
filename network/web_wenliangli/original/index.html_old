@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en_US"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Content-Language" content="en"><meta http-equiv="Cache-control" content="no-cache"><meta http-equiv="imagetoolbar" content="no"><meta name="Copyright" content="(c) Wenliang Li's Web"><meta name="description" content="This is Wenliang's web"><meta name="keywords" content="wenliang li, billlee "><title> Wenliang Li's Web </title></head><body>
+
+<center>
+<link rel="stylesheet" type="text/css" href="stdtheme.css">
+
+<!--First layer The main -->
+<table style="width: 900px; margin-top: 0px; margin-bottom: 0px; background-color: rgb(184, 184, 184);" border="0" cellpadding="0" cellspacing="0">
+
+<!--Page title-->
+<tbody><tr><td align="center">
+<h1 class="mainheader"><i><b>You Are Welcome! To Wenliang Li's Web </b></i></h1>
+<h1 class="mainheader"><i><b>亲亲 我最喜欢你了</b></i></h1>
+</td></tr></tbody></table>
+
+<!--Main manu-->
+<table style="margin: 0px; padding: 0px; background-color: rgb(98, 100, 100);" width="900" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr style="height: 20px;">
+<td class="blacknav" style="border-left: medium none;" width="150"><a class="m_item" href="index.html" target="_top">WENLIANG's HOME</a></td>
+<!--<td class="blacknav">&nbsp;</td>-->
+<td class="blacknav" style="border-right: medium none;" width="150"><a class="m_item" href="photo.html">Photographs</a></td>
+<td class="blacknav" width="150"><a class="m_item" href="http://wenliangli.co.cc/link" target="_top">Useful Stuff</a></td>
+<td class="blacknav" style="border-right: medium none;" width="150"><a class="m_item" href="http://wenliangli.co.cc/link">中文网页</a></td>
+<td class="blacknav" width="150"><a class="m_item" href="http://wenliangli.co.cc/link" target="_top">Message to me</a></td>
+<td class="blacknav" style="border-right: medium none;" width="150"><a class="m_item" href="http://wenliangli.co.cc/link">About</a></td>
+</tr>
+</tbody></table>
+
+<!--Spacing-->
+<div style="width: 900px; height: 20px; position: relative; margin: 0px; padding: 0px; overflow: hidden; background: none repeat scroll 0% 0% rgb(192, 192, 192);">
+</div>
+
+<!--Create the left manu bar-->
+<table style="padding: 0pt; background-color: rgb(255, 255, 255);" width="900" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td id="leftcolumn" valign="top" width="160" align="left">
+
+<table align="left" cellspacing="0">
+
+<tbody><tr><th>Wenliang's List</th></tr>
+<tr><td>
+<a href="person.html">Wenliang The Person</a>
+</td></tr>
+<tr><td>
+<a href="http://wenliangli.co.cc/link">Wenliang's Work</a>
+</td></tr>
+</tbody></table>
+
+
+</td>
+
+<!--Page content-->
+<td valign="top" align="left">
+<table style="background-color: rgb(224, 224, 224); color: rgb(0, 0, 0); padding-bottom: 8px;" width="582&quot;" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td style="padding-top: 15px;">
+
+<center><h1 class="pageheader">Wenliang's Home</h1></center>
+<br>
+
+<h2 class="secheader">You Are More Than Welcome </h2>
+<p class="lettercontent">Dear visiter, my name is Wenliang Li, also know
+ as Bill. This is the first website I have ever created. The main 
+purpose is to explore the knowledge and syntax of HTML and others. As a 
+part of personal experience, I think the best way to learn programing 
+skills is to practically use it, remember things while achieving goals. 
+There are infinite amount of things to learn, learning programing is 
+perhaps not a matter of remembering but a mattering of doing. I am very 
+happy to share my little experience, including studying abroad, being a 
+physics student, basic programing knowledge and some funning stuff over 
+the years.</p>
+<br>
+
+<h2 class="secheader">What You May Find In Here</h2>
+<p class="lettercontent">First of all, I have been been studying physics
+ student for four years, and I know very little about the subject, I 
+will share my version of physics in this website. The self 
+interpretation on the matter may contradict the view others, therefore I
+ apologise in advance for the lack of knowledge and naive understanding.
+ The statement shows on this website are totally self sprited, my 
+apology for any possible similar statement.</p>
+
+<p class="lettercontent">I only had a short career with computer 
+programing and linux usage, however I am more than willing to share the 
+limited knowledge and experience. I am familiar with the following 
+subjects:</p>
+<ul>
+<li> Basic C++ with ROOT
+</li><li> Basic BASH
+</li><li> Basic FORTRAN 90
+</li><li> Basic IDL
+</li><li> Basic HTML
+</li><li> Basic Latex
+</li><li> Some Hacking Trick : )
+</li></ul>
+
+
+<p class="lettercontent">As I claimed I have only had very short 
+programing age (less than a year), if you are a beginner on some of 
+these subject, may be you will find something that is useful here. </p>
+
+<p class="lettercontent">The last thing you may find is some funny stuff
+ I collected over the year from different counties. Some are quite 
+funning, however some can be offensive depend on your oriatation. I do 
+fully apologize for any possible frustration. I have not host any 
+authority or responsibility on any media product that I introduce.   
+
+<br><br>
+
+</p></td></tr>
+</tbody></table>
+
+<center>
+</center></td><td id="rightcolumn" valign="top" width="160" align="center">
+
+
+<!--
+<div style="margin-left:0px;margin-top:5px"><h2>Useful Link Can Save Your Time</h2>
+</div>
+-->
+
+
+<!--Rgith handside fast link-->
+<table cellspacing="0">
+<tbody><tr><th>Useful Links</th></tr>
+<tr><td>
+<a href="http://www.ubuntu.com/">Ubuntu Help</a>
+</td></tr>
+<tr><td>
+<a href="http://wenliangli.co.cc/link">Latex Help</a>
+</td></tr>
+</tbody></table>
+
+
+
+<div style="height: 70px; overflow: hidden;">
+</div>
+
+<table cellspacing="0">
+<tbody><tr><th><a href="funny.html" style="color: rgb(64, 64, 64);">Funny Things</a></th></tr>
+
+<tr><td>
+<a href="http://www.xepisodes.com/">South Park</a>
+</td></tr>
+<tr><td>
+<a href="http://gamevideos.1up.com/video/id/4149">Broken Pixel</a>
+</td></tr>
+<tr><td>
+<a href="http://www.youtube.com/watch?v=qRuNxHqwazs">Power Thirst</a>
+</td></tr>
+<tr><td>
+<a href="http://www.watch-familyguy-online.com/">Family Guy</a>
+</td></tr>
+<tr><td>
+<a href="http://www.apple.com/getamac/ads/">Mac and PC</a>
+</td></tr>
+</tbody>
+</table>
+
+<div style="height: 70px; overflow: hidden;">
+</div>
+
+<table cellspacing="0">
+<tbody><tr><th><a href="funny.html" style="color: rgb(64, 64, 64);">Old Classics</a></th></tr>
+
+<tr><td>
+<a href="http://www.tv-links.eu/tv-shows/Allo--Allo-_41/">Allo Allo</a>
+</td></tr>
+<tr><td>
+<a href="http://www.youtube.com/watch?v=uquSW3NEuio">Keep Up Appearances</a>
+</td></tr>
+</tbody>
+</table>
+
+
+</td></tr>
+
+
+
+<!--Footer content-->
+</tbody></table><table id="footer" width="900" align="center" border="0">
+<tbody>
+<tr>
+<!--<td align="left" width="200">
+</td>-->
+<td style="word-spacing: 6px; font-size: 90%; padding-right: 10px;" align="left">
+<a href="index.html">HOME</a> |
+<a href="#top">TOP</a> 
+</td>
+</tr>
+<tr>
+<td colspan="2" style="padding-top: 10px;" valign="top" align="center">
+This is Wenliang's Web. Many thanks for exploring, and this is my contact detail: <a href="mailto:wl34@kent.ac.uk">wl34@kent.ac.uk</a>
+<br>
+<br>
+
+</td>
+</tr>
+</tbody></table>
+
+
+</center>
+
+<!-- www.000webhost.com Analytics Code -->
+<script type="text/javascript" src="Wenliang%20Li%27s%20Web_files/count.html"></script>
+<noscript><a href="http://www.hosting24.com/"><img src="http://analytics.hosting24.com/count.php" alt="web hosting" /></a></noscript>
+<!-- End Of Analytics Code -->
+</body></html>

@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <title>c++ - Convert an int to ascii character - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+
+    
+    <script src="convert-an-int-to-ascii-character_files/adzerk1_2_4_43adzerk2_2_17_45adzerk3_2_4_44.js" async="" type="text/javascript"></script><script src="convert-an-int-to-ascii-character_files/ga.js" async="" type="text/javascript"></script><script src="convert-an-int-to-ascii-character_files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" src="convert-an-int-to-ascii-character_files/jquery.js"></script>
+    <script type="text/javascript" src="convert-an-int-to-ascii-character_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="convert-an-int-to-ascii-character_files/all.css">
+    
+    <meta name="relativepagescore" content="257865">
+    <link rel="canonical" href="http://stackoverflow.com/questions/4629050/convert-an-int-to-ascii-character">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'Convert an int to ascii character'" href="http://stackoverflow.com/feeds/question/4629050">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:1,shownCommentCount:1,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:4629050});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '4629050');
+            
+                
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"https://stackauth.com","serverTime":1350782833,"styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","enableSocialMediaInSharePopup":true},"user":{"fkey":"6d07991ff926b2578401d94723b94d68","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"d1cd9a23171c","js/moderator.js":"37bba549a03e","js/full-anon.js":"029ae8e812e3","js/full.js":"f28a7d21ddaf","js/wmd.js":"049fcc6377ef","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"6eb68240242f","js/help.js":"fc9fb0517db2","js/tageditor.js":"450c9e8426fc","js/tageditornew.js":"9ac6c13a3a7f","js/inline-tag-editing.js":"30f72b99548b","js/revisions.js":"8c6bcd93b7fe","js/probes.js":"beb933322ff0","js/review.js":"029fa297f9b7"});
+        
+    </script>
+<script src="convert-an-int-to-ascii-character_files/full-anon.js" type="text/javascript" async=""></script><script src="convert-an-int-to-ascii-character_files/prettify-full.js" type="text/javascript" async=""></script><link rel="stylesheet" type="text/css" href="convert-an-int-to-ascii-character_files/sidebar.css"></head>
+<body class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    
+
+
+
+
+
+
+
+
+
+<span id="hlinks-user">
+
+</span>
+<span id="hlinks-nav">
+                   <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f4629050%2fconvert-an-int-to-ascii-character">log in</a>
+
+ <span class="lsep">|</span>
+                    <a href="http://careers.stackoverflow.com/">careers</a>
+
+ <span class="lsep">|</span>
+
+</span>
+<span id="hlinks-custom">
+        <a href="http://chat.stackoverflow.com/">chat</a>
+
+ <span class="lsep">|</span>
+            <a href="http://meta.stackoverflow.com/">meta</a>
+
+ <span class="lsep">|</span>
+        <a href="http://stackoverflow.com/about">about</a>
+
+ <span class="lsep">|</span>
+    <a href="http://stackoverflow.com/faq">faq</a>
+
+</span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get" autocomplete="off">
+                    <div>
+                        <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" maxlength="140" size="28" type="text">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Article">
+<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+<div id="question-header">
+    <h1 itemprop="name"><a href="http://stackoverflow.com/questions/4629050/convert-an-int-to-ascii-character" class="question-hyperlink">Convert an int to ascii character</a></h1>
+</div>
+<div id="mainbar">
+
+
+
+<div class="question" id="question" data-questionid="4629050">
+            <div class="everyonelovesstackoverflow" id="adzerk1"><a href="http://engine.adzerk.net/redirect/0/5923/7472/8277/272bbe571e814dcaa1fddd445e0077bb/43/1178/10188/634863796343008130/?keywords=c%2b%2b%2cc%2cascii" rel="nofollow" target="_blank" title=""><img src="convert-an-int-to-ascii-character_files/46a9844d6e504212a85bc72ddd7dd829.png" title="" alt="" border="0" height="90" width="728"></a><img src="convert-an-int-to-ascii-character_files/v_003.gif" height="0" width="0"></div>
+
+
+
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+
+<div class="vote">
+    <input value="4629050" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">4</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>1</b></div>   
+
+ 
+</div>
+
+    </td>
+    
+<td class="postcell">
+<div>          
+    <div class="post-text" itemprop="description">
+        <p>I have int <code>i = 6</code>; and I want <code>char c = '6'</code></p>
+
+<p>by conversion. Any simple way to suggest?</p>
+
+    </div>            
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged 'c++'" rel="tag">c++</a> <a href="http://stackoverflow.com/questions/tagged/c" class="post-tag" title="show questions tagged 'c'" rel="tag">c</a> <a href="http://stackoverflow.com/questions/tagged/ascii" class="post-tag" title="show questions tagged 'ascii'" rel="tag">ascii</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/q/4629050" title="short permalink to this question" class="short-link" id="link-post-4629050">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4629050/edit" class="suggest-edit-post" title="">improve this question</a></div>
+    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                            edited
+                             <a href="http://stackoverflow.com/posts/4629050/revisions" title="show all edits to this post"><span title="2011-01-07 18:58:23Z" class="relativetime">Jan 7 '11 at 18:58</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/35881/a-levy"><div class=""><img src="convert-an-int-to-ascii-character_files/95ee2befbddbd112fbbd1c8b500fcfc9.jpeg" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/35881/a-levy">A. Levy</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">5,699</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="17 silver badges"><span class="badge2"></span><span class="badgecount">17</span></span><span title="31 bronze badges"><span class="badge3"></span><span class="badgecount">31</span></span>
+        </div>
+    </div>
+    </td>
+    <td class="post-signature owner">
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    asked
+ <span title="2011-01-07 18:41:55Z" class="relativetime">Jan 7 '11 at 18:41</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/255412/user963241"><div class=""><img src="convert-an-int-to-ascii-character_files/d62b5a67f2184b7f89b0f329bf7416ad.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/255412/user963241">user963241</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">729</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="6 silver badges"><span class="badge2"></span><span class="badgecount">6</span></span><span title="20 bronze badges"><span class="badge3"></span><span class="badgecount">20</span></span>
+        </div>
+    </div>
+
+        <br class="cbt">
+        <div class="accept-rate cool" title="this user has accepted an answer for 48 of 65 eligible questions">74% accept rate</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>    </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4629050" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-5094224" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">char *c = itoa(i, 10);</span> –&nbsp;<a href="http://stackoverflow.com/users/449007/yozhik" title="537 reputation" class="comment-user">yozhik</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5094224, 0)" href="#comment5094224_4629050"><span title="2011-01-07 21:48:25Z" class="relativetime-clean">Jan 7 '11 at 21:48</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>    
+</div>
+
+
+    
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>6 Answers</h2>
+            <div id="tabs">
+                <a href="http://stackoverflow.com/questions/4629050/convert-an-int-to-ascii-character?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://stackoverflow.com/questions/4629050/convert-an-int-to-ascii-character?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://stackoverflow.com/questions/4629050/convert-an-int-to-ascii-character?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>    
+    </div>    
+
+
+
+
+
+  
+    <a name="4629196"></a>
+    <div id="answer-4629196" class="answer accepted-answer" data-answerid="4629196">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input value="4629196" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">27</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+            <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p><em>Straightforward way:</em></p>
+
+<pre class="lang-c prettyprint"><code><span class="com">// syntactical mistakes are possible</span><span class="pln"><br></span><span class="kwd">char</span><span class="pun">[]</span><span class="pln"> digits </span><span class="pun">=</span><span class="pln"> </span><span class="pun">{</span><span class="str">'0'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'1'</span><span class="pun">,</span><span class="pln"> </span><span class="str">'2'</span><span class="pun">,</span><span class="pln"> </span><span class="lit">3</span><span class="str">', '</span><span class="lit">4</span><span class="str">', '</span><span class="lit">5</span><span class="str">', '</span><span class="lit">6</span><span class="str">', '</span><span class="lit">7</span><span class="str">', '</span><span class="lit">8</span><span class="str">', '</span><span class="lit">9</span><span class="str">'</span><span class="pln"> </span><span class="pun">};</span><span class="pln"><br></span><span class="kwd">char</span><span class="pln"> aChar </span><span class="pun">=</span><span class="pln"> digits</span><span class="pun">[</span><span class="pln">i</span><span class="pun">];</span><span class="pln"><br></span></code></pre>
+
+<p><em>Safer way:</em></p>
+
+<pre class="lang-c prettyprint"><code><span class="kwd">char</span><span class="pln"> aChar </span><span class="pun">=</span><span class="pln"> </span><span class="str">'0'</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> i</span><span class="pun">;</span><span class="pln"><br></span></code></pre>
+
+<p><em>Generic way:</em></p>
+
+<pre class="lang-c prettyprint"><code><span class="pln">itoa</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> </span><span class="pun">...)</span><span class="pln"><br></span></code></pre>
+
+<p><em>Handy way:</em> </p>
+
+<pre class="lang-c prettyprint"><code><span class="pln">sprintf</span><span class="pun">(</span><span class="pln">myString</span><span class="pun">,</span><span class="pln"> </span><span class="str">"%d"</span><span class="pun">,</span><span class="pln"> i</span><span class="pun">)</span><span class="pln"><br></span></code></pre>
+
+<p><em>C++ way:</em> (taken from Dave18 answer)</p>
+
+<pre class="lang-c prettyprint"><code><span class="pln">std</span><span class="pun">::</span><span class="pln">ostringstream oss</span><span class="pun">;</span><span class="pln"><br>oss </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="lit">6</span><span class="pun">;</span><span class="pln"><br></span></code></pre>
+
+<p><em>Boss way:</em></p>
+
+<blockquote>
+  <p>Joe, write me an int to char converter</p>
+</blockquote>
+
+<p><em>SO way:</em></p>
+
+<blockquote>
+  <p>Guys, how do I avoid reading
+  beginner's guide to C++?</p>
+</blockquote>
+
+<p>Comment: I've added Handy way and C++ way (to have a complete collection) and I'm saving this as a wiki. </p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/4629196" title="short permalink to this answer" class="short-link" id="link-post-4629196">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4629196/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            edited
+                             <a href="http://stackoverflow.com/posts/4629196/revisions" title="show all edits to this post"><span title="2011-01-14 05:46:49Z" class="relativetime">Jan 14 '11 at 5:46</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info">
+        <div class="user-details">
+            <span class="community-wiki" title="This post is community owned as of Jan 8 '11 at 8:00. Votes do not generate reputation, and it can be edited by users with 100 rep">
+                community wiki
+            </span>
+        </div><br>
+        <div class="user-details">
+            <a id="history-4629196" href="http://stackoverflow.com/posts/4629196/revisions" title="show revision history for this post">
+4 revs, 2 users 93%<br>Eugene Mayevski 'EldoS Corp            </a>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4629196" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-5095600" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="warm">5</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">The answer that mocks the poster gets accepted.  LOL!</span> –&nbsp;<a href="http://stackoverflow.com/users/34824/abelenky" title="15234 reputation" class="comment-user">abelenky</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5095600, 4629196)" href="#comment5095600_4629196"><span title="2011-01-08 00:40:59Z" class="relativetime-clean">Jan 8 '11 at 0:40</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5097300" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@abelenky From the FAQ: "Bring your sense of humor."</span> –&nbsp;<a href="http://stackoverflow.com/users/47961/eugene-mayevski-eldos-corp" title="19199 reputation" class="comment-user">Eugene Mayevski 'EldoS Corp</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5097300, 4629196)" href="#comment5097300_4629196"><span title="2011-01-08 07:56:27Z" class="relativetime-clean">Jan 8 '11 at 7:56</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-15356575" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">+1 Very gud answer</span> –&nbsp;<a href="http://stackoverflow.com/users/1306394/shashwat-tripathi" title="615 reputation" class="comment-user">Shashwat Tripathi</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(15356575, 4629196)" href="#comment15356575_4629196"><span title="2012-07-22 15:31:13Z" class="relativetime-clean">Jul 22 at 15:31</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+        <div class="everyonelovesstackoverflow" id="adzerk3"><a href="http://engine.adzerk.net/redirect/0/10769/7472/8277/c2015a703a154289bb65f6bc99d31471/44/1178/16875/634863796343215040/?keywords=c%2b%2b%2cc%2cascii" rel="nofollow" target="_blank" title=""><img src="convert-an-int-to-ascii-character_files/d893babe671c41118c1fece177e0a21a.jpg" title="" alt="" border="0" height="90" width="728"></a><img src="convert-an-int-to-ascii-character_files/v.gif" height="0" width="0"></div>
+
+
+
+
+  
+    <a name="4629062"></a>
+    <div id="answer-4629062" class="answer" data-answerid="4629062">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input value="4629062" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">8</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>This will only work for int-digits 0-9, but your question seems to suggest that might be enough.</p>
+
+<p>It works by adding the ASCII value of char <code>'0'</code> to the integer digit.</p>
+
+<pre class="lang-c prettyprint"><code><span class="kwd">int</span><span class="pln"> i</span><span class="pun">=</span><span class="lit">6</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">char</span><span class="pln"> c </span><span class="pun">=</span><span class="pln"> </span><span class="str">'0'</span><span class="pun">+</span><span class="pln">i</span><span class="pun">;</span><span class="pln"> &nbsp;</span><span class="com">// now c is '6'</span><span class="pln"><br></span></code></pre>
+
+<p>For example:</p>
+
+<pre class="lang-c prettyprint"><code><span class="str">'0'</span><span class="pun">+</span><span class="lit">0</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'0'</span><span class="pln"><br></span><span class="str">'0'</span><span class="pun">+</span><span class="lit">1</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'1'</span><span class="pln"><br></span><span class="str">'0'</span><span class="pun">+</span><span class="lit">2</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'2'</span><span class="pln"><br></span><span class="str">'0'</span><span class="pun">+</span><span class="lit">3</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'3'</span><span class="pln"><br></span></code></pre>
+
+<p><strong>Edit</strong> </p>
+
+<p>It is unclear what you mean, "work for alphabets"?
+If you want the 5th letter of the alphabet:</p>
+
+<pre class="lang-c prettyprint"><code><span class="kwd">int</span><span class="pln"> i</span><span class="pun">=</span><span class="lit">5</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">char</span><span class="pln"> c </span><span class="pun">=</span><span class="pln"> </span><span class="str">'A'</span><span class="pun">-</span><span class="lit">1</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> i</span><span class="pun">;</span><span class="pln"> </span><span class="com">// c is now 'E', the 5th letter.</span><span class="pln"><br></span></code></pre>
+
+<p>Note that because in C/Ascii, A is considered the <strong>0th letter</strong> of the alphabet, I do a minus-1 to compensate for the normally understood meaning of 5th letter.</p>
+
+<p>Adjust as appropriate for your specific situation.<br>(and <em>test-test-test!</em> any code you write)</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/4629062" title="short permalink to this answer" class="short-link" id="link-post-4629062">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4629062/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            edited
+                             <a href="http://stackoverflow.com/posts/4629062/revisions" title="show all edits to this post"><span title="2011-01-07 18:48:58Z" class="relativetime">Jan 7 '11 at 18:48</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                    answered
+ <span title="2011-01-07 18:43:15Z" class="relativetime">Jan 7 '11 at 18:43</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/34824/abelenky"><div class=""><img src="convert-an-int-to-ascii-character_files/1bd1952b8e5d4550fe76cb1b44c35fdd.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/34824/abelenky">abelenky</a><br>
+            <span class="reputation-score" title="reputation score 15234" dir="ltr">15.2k</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="22 silver badges"><span class="badge2"></span><span class="badgecount">22</span></span><span title="53 bronze badges"><span class="badge3"></span><span class="badgecount">53</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4629062" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-5092027" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Awesome, would it work for alphabets?</span> –&nbsp;<a href="http://stackoverflow.com/users/255412/user963241" title="729 reputation" class="comment-user owner">user963241</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5092027, 4629062)" href="#comment5092027_4629062"><span title="2011-01-07 18:44:31Z" class="relativetime-clean">Jan 7 '11 at 18:44</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5092046" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy"><code>char c = 'A'+i</code>.</span> –&nbsp;<a href="http://stackoverflow.com/users/345717/ebomike" title="26947 reputation" class="comment-user">EboMike</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5092046, 4629062)" href="#comment5092046_4629062"><span title="2011-01-07 18:45:22Z" class="relativetime-clean">Jan 7 '11 at 18:45</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5092210" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Confusing when choosing between small and capital letters.</span> –&nbsp;<a href="http://stackoverflow.com/users/255412/user963241" title="729 reputation" class="comment-user owner">user963241</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5092210, 4629062)" href="#comment5092210_4629062"><span title="2011-01-07 19:00:37Z" class="relativetime-clean">Jan 7 '11 at 19:00</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5092267" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">2</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Well, you need to tell us what you want. "Work for alphabets" really isn't very descriptive.</span> –&nbsp;<a href="http://stackoverflow.com/users/345717/ebomike" title="26947 reputation" class="comment-user">EboMike</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5092267, 4629062)" href="#comment5092267_4629062"><span title="2011-01-07 19:06:08Z" class="relativetime-clean">Jan 7 '11 at 19:06</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(136, 136, 136);" class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+
+
+  
+    <a name="4629161"></a>
+    <div id="answer-4629161" class="answer" data-answerid="4629161">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input value="4629161" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">7</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>Just FYI, if you want more than single digit numbers you can use sprintf:</p>
+
+<pre class="lang-c prettyprint"><code><span class="kwd">char</span><span class="pln"> txt</span><span class="pun">[</span><span class="lit">16</span><span class="pun">];</span><span class="pln"><br></span><span class="kwd">int</span><span class="pln"> myNum </span><span class="pun">=</span><span class="pln"> </span><span class="lit">20</span><span class="pun">;</span><span class="pln"><br>sprintf</span><span class="pun">(</span><span class="pln">txt</span><span class="pun">,</span><span class="pln"> </span><span class="str">"%d"</span><span class="pun">,</span><span class="pln"> myNum</span><span class="pun">);</span><span class="pln"><br></span></code></pre>
+
+<p>Then the first digit is in a char at txt[0], and so on.</p>
+
+<p>(This is the C approach, not the C++ approach. The C++ way would be to use stringstreams.)</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/4629161" title="short permalink to this answer" class="short-link" id="link-post-4629161">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4629161/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2011-01-07 18:55:51Z" class="relativetime">Jan 7 '11 at 18:55</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/213489/nathan-s"><div class=""><img src="convert-an-int-to-ascii-character_files/955bfac62f80a1811d078ba4c16bac00.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/213489/nathan-s">Nathan S.</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">2,122</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="19 bronze badges"><span class="badge3"></span><span class="badgecount">19</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4629161" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-5092505" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">3</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Always prefer <code>snprintf</code> over <code>sprintf</code>
+ (consider a hypothetical system with 128 bit ints or whatever). +1 
+anyway for an approach that won't break in character sets where the 
+numbers aren't consecutive.</span> –&nbsp;<a href="http://stackoverflow.com/users/251738/mark-b" title="37434 reputation" class="comment-user">Mark B</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5092505, 4629161)" href="#comment5092505_4629161"><span title="2011-01-07 19:24:35Z" class="relativetime-clean">Jan 7 '11 at 19:24</span></a></span><span class="edited-yes" title="this comment was edited"></span></div></td>
+    </tr>
+            
+    <tr id="comment-5093243" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@Mark B: Standard C requires that the numbers be consecutive.</span> –&nbsp;<a href="http://stackoverflow.com/users/82320/billy-oneal" title="36166 reputation" class="comment-user">Billy ONeal</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5093243, 4629161)" href="#comment5093243_4629161"><span title="2011-01-07 20:24:55Z" class="relativetime-clean">Jan 7 '11 at 20:24</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5093721" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">@Mark Right, that's definitely safer from a buffer-overflow perspective.</span> –&nbsp;<a href="http://stackoverflow.com/users/213489/nathan-s" title="2122 reputation" class="comment-user">Nathan S.</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5093721, 4629161)" href="#comment5093721_4629161"><span title="2011-01-07 21:04:07Z" class="relativetime-clean">Jan 7 '11 at 21:04</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+
+
+  
+    <a name="4629106"></a>
+    <div id="answer-4629106" class="answer" data-answerid="4629106">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input value="4629106" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>itoa()</p>
+
+<p><a href="http://www.cplusplus.com/reference/clibrary/cstdlib/itoa/" rel="nofollow">http://www.cplusplus.com/reference/clibrary/cstdlib/itoa/</a></p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/4629106" title="short permalink to this answer" class="short-link" id="link-post-4629106">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4629106/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2011-01-07 18:48:15Z" class="relativetime">Jan 7 '11 at 18:48</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/491397/newbie"><div class=""><img src="convert-an-int-to-ascii-character_files/44e3997f1dff8fd752f54194ce5891da.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/491397/newbie">Newbie</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">170</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="15 bronze badges"><span class="badge3"></span><span class="badgecount">15</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4629106" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-5092167" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">I like 
+this approach better than the character arithmetic suggested by abelenky
+ because it doesn't depend on working with the ASCII character set (even
+ though that is a fairly safe assumption for many applications). 
+However, itoa stores its result in a string, so you need to provide a 
+character array and extract the character from it. Your answer would be 
+more helpful to neophytes if you edited it to show those extra steps.</span> –&nbsp;<a href="http://stackoverflow.com/users/35881/a-levy" title="5699 reputation" class="comment-user">A. Levy</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5092167, 4629106)" href="#comment5092167_4629106"><span title="2011-01-07 18:56:20Z" class="relativetime-clean">Jan 7 '11 at 18:56</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5092203" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">2</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">-1 both for <code>itoa</code> (nonstandard MS function) and for linking to perhaps the <b>worst</b> site for C and C++ [mis]information.</span> –&nbsp;<a href="http://stackoverflow.com/users/379897/r" title="59676 reputation" class="comment-user">R..</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5092203, 4629106)" href="#comment5092203_4629106"><span title="2011-01-07 19:00:03Z" class="relativetime-clean">Jan 7 '11 at 19:00</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5092230" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Perhaps might you know a standard way R..? thanks.</span> –&nbsp;<a href="http://stackoverflow.com/users/255412/user963241" title="729 reputation" class="comment-user owner">user963241</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5092230, 4629106)" href="#comment5092230_4629106"><span title="2011-01-07 19:02:26Z" class="relativetime-clean">Jan 7 '11 at 19:02</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5092765" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">"standard" way in C++ would be using streams, all the other methods mentioned so far have some problems.</span> –&nbsp;<a href="http://stackoverflow.com/users/491591/gene-bushuyev" title="3185 reputation" class="comment-user">Gene Bushuyev</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5092765, 4629106)" href="#comment5092765_4629106"><span title="2011-01-07 19:46:32Z" class="relativetime-clean">Jan 7 '11 at 19:46</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5100297" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">well, then its inferior compared to cplusplus.com</span> –&nbsp;<a href="http://stackoverflow.com/users/491397/newbie" title="170 reputation" class="comment-user">Newbie</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5100297, 4629106)" href="#comment5100297_4629106"><span title="2011-01-08 17:37:06Z" class="relativetime-clean">Jan 8 '11 at 17:37</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    <a id="comments-link-4629106" class="comments-link" data-comments-count="5" title="expand to show all comments on this post">show <b>5</b> more comments</a>
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+
+
+  
+    <a name="4629133"></a>
+    <div id="answer-4629133" class="answer" data-answerid="4629133">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input value="4629133" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>Alternative way, But non-standard.</p>
+
+<pre class="lang-c prettyprint"><code><span class="kwd">int</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">6</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">char</span><span class="pln"> c</span><span class="pun">[</span><span class="lit">2</span><span class="pun">];</span><span class="pln"><br></span><span class="kwd">char</span><span class="pln"> </span><span class="pun">*</span><span class="pln">str </span><span class="pun">=</span><span class="pln"> NULL</span><span class="pun">;</span><span class="pln"><br></span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">_itoa_s</span><span class="pun">(</span><span class="pln">i</span><span class="pun">,</span><span class="pln"> c</span><span class="pun">,</span><span class="pln"> </span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="lit">10</span><span class="pun">)</span><span class="pln"> </span><span class="pun">==</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)</span><span class="pln"><br>&nbsp; &nbsp;str </span><span class="pun">=</span><span class="pln"> c</span><span class="pun">;</span><span class="pln"><br></span></code></pre>
+
+<p>Or Using standard c++ stringstream</p>
+
+<pre class="lang-c prettyprint"><code><span class="pln">&nbsp;std</span><span class="pun">::</span><span class="pln">ostringstream oss</span><span class="pun">;</span><span class="pln"><br>&nbsp;oss </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="lit">6</span><span class="pun">;</span><span class="pln"><br></span></code></pre>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/4629133" title="short permalink to this answer" class="short-link" id="link-post-4629133">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4629133/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            edited
+                             <a href="http://stackoverflow.com/posts/4629133/revisions" title="show all edits to this post"><span title="2011-01-07 21:41:34Z" class="relativetime">Jan 7 '11 at 21:41</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2011-01-07 18:52:46Z" class="relativetime">Jan 7 '11 at 18:52</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/187543/cpx"><div class=""><img src="convert-an-int-to-ascii-character_files/537d7cf4f9d6b0dabb757a058b3b5f97.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/187543/cpx">cpx</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">4,495</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="15 silver badges"><span class="badge2"></span><span class="badgecount">15</span></span><span title="51 bronze badges"><span class="badge3"></span><span class="badgecount">51</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4629133" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-5092284" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">itoa is non-standard and unsafe (could cause buffer overrun).</span> –&nbsp;<a href="http://stackoverflow.com/users/345717/ebomike" title="26947 reputation" class="comment-user">EboMike</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5092284, 4629133)" href="#comment5092284_4629133"><span title="2011-01-07 19:07:41Z" class="relativetime-clean">Jan 7 '11 at 19:07</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5092366" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Thanks, fixed the overrun.</span> –&nbsp;<a href="http://stackoverflow.com/users/187543/cpx" title="4495 reputation" class="comment-user">cpx</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5092366, 4629133)" href="#comment5092366_4629133"><span title="2011-01-07 19:14:15Z" class="relativetime-clean">Jan 7 '11 at 19:14</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5092389" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Okay, you're edited it to the _s version now. Still non-standard, but I removed my downvote!</span> –&nbsp;<a href="http://stackoverflow.com/users/345717/ebomike" title="26947 reputation" class="comment-user">EboMike</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5092389, 4629133)" href="#comment5092389_4629133"><span title="2011-01-07 19:15:57Z" class="relativetime-clean">Jan 7 '11 at 19:15</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5093825" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">i think theres an error in the stream example you provided.</span> –&nbsp;<a href="http://stackoverflow.com/users/491397/newbie" title="170 reputation" class="comment-user">Newbie</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5093825, 4629133)" href="#comment5093825_4629133"><span title="2011-01-07 21:13:17Z" class="relativetime-clean">Jan 7 '11 at 21:13</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-5094130" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Right! I'm mistyped the object name which should be <code>'oss'</code> :)</span> –&nbsp;<a href="http://stackoverflow.com/users/187543/cpx" title="4495 reputation" class="comment-user">cpx</a> <span class="comment-date" dir="ltr"><a class="comment-link" onclick="StackExchange.question.highlightComment(5094130, 4629133)" href="#comment5094130_4629133"><span title="2011-01-07 21:41:13Z" class="relativetime-clean">Jan 7 '11 at 21:41</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+
+
+  
+    <a name="4630526"></a>
+    <div id="answer-4630526" class="answer" data-answerid="4630526">
+        <table>
+        <tbody><tr>
+        <td class="votecell">
+            
+
+<div class="vote">
+    <input value="4630526" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post">-1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+ 
+</div>
+
+        </td>
+        
+
+
+<td class="answercell">
+    <div class="post-text"><p>"I have int i = 6; and I want char c = '6' by conversion. Any simple way to suggest?"</p>
+
+<p>There are only 10 numbers.  So write a function that takes an int 
+from 0-9 and returns the ascii code.  Just look it up in an ascii table 
+and write a function with ifs or a select case.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/4630526" title="short permalink to this answer" class="short-link" id="link-post-4630526">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4630526/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    answered
+ <span title="2011-01-07 21:34:29Z" class="relativetime">Jan 7 '11 at 21:34</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/567480/jun"><div class=""><img src="convert-an-int-to-ascii-character_files/e83e0cf11557411fc7bfee5c72bfaef8.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/567480/jun">jun</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">77</span><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4630526" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div class="was-this-helpful">
+        feedback
+    </div>
+    
+</td>
+</tr>            </tbody></table>
+</div>
+    <a name="new-answer"></a>
+    <form id="post-form" action="/questions/4629050/answer/submit" method="post" class="post-form">
+        <h2 class="space">Your Answer</h2>
+
+
+
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">  
+
+    
+    <div class="wmd-container">
+        <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+        <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="6d07991ff926b2578401d94723b94d68" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>            <div class="form-item">
+        <table>
+        <tbody><tr>
+            <td class="vm open-id-login">
+                <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f4629050%2fconvert-an-int-to-ascii-character">log in</a>
+                <script type="text/javascript">
+                    StackExchange.ready(function () {
+                        StackExchange.helpers.onClickDraftSave('#login-link');
+                    });
+                </script>
+            </td>
+            <td class="orcell">
+                <div class="orword">or</div>
+                <div class="orline"></div>
+            </td>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="40" maxlength="100" tabindex="106" type="text">
+                    <span class="edit-field-overlay">required, but never shown</span>
+                </div>
+                <div>
+                    <label for="home-page">Home Page</label>
+                    <input id="home-page" name="home-page" size="40" maxlength="200" tabindex="107" type="text">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+           
+            <div class="form-submit cbt">
+            <input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+            <a href="#" class="discard-answer dno">discard</a>
+    <p class="privacy-policy-agreement">
+        By posting your answer, you agree to the 
+        <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and 
+        <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.
+    </p>
+        </div>
+    </form>
+
+
+
+        <h2 class="bottom-notice">
+                Not the answer you're looking for? 
+            Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged 'c++'" rel="tag">c++</a> <a href="http://stackoverflow.com/questions/tagged/c" class="post-tag" title="show questions tagged 'c'" rel="tag">c</a> <a href="http://stackoverflow.com/questions/tagged/ascii" class="post-tag" title="show questions tagged 'ascii'" rel="tag">ascii</a> 
+                or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.
+        </h2>
+</div>
+</div>
+<div id="sidebar">
+
+
+
+     <script type="text/javascript">
+        window.showNewUser = true;
+
+            
+                (function(){
+                    var cs = window.sessionStorage && window.sessionStorage['tNewsletter'];
+                    var m = /:\/\/([^\/]*)/.exec(document.referrer);
+                    var h = {'www.reddit.com':1,'news.ycombinator.com':1};
+                    if(window.sessionStorage && (cs || (m && m.length == 2 && h[m[1]]))){
+                        showNewUser = false;
+                        StackExchange.ready(function(){
+                            StackExchange.newsletterAd.loader(m[1], cs);
+                        });
+                    }
+                    if (window.localStorage && showNewUser){
+                        var c = parseInt(localStorage['nuCounter'],10); 
+                        c = isNaN(c) ? 1 : c+1;
+                        window.localStorage['nuCounter'] = c; 
+                        showNewUser = c < 10;
+                    }
+                })()
+            
+     </script>
+    <div class="module newuser newuser-greeting" id="newuser-box" style="">
+        <h4>Hello World!</h4>
+        <div>
+            <p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p>
+            <p class="ar"><a href="http://stackoverflow.com/about?mnu=1">about »</a>&nbsp;&nbsp;&nbsp;<a href="http://stackoverflow.com/faq?mnu=1">faq »</a>
+            </p>
+        </div>
+    </div>
+     <script type="text/javascript">
+        if (showNewUser) {
+            document.getElementById('newuser-box').style.display = '';
+        }
+     </script>
+        <div class="module question-stats">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://stackoverflow.com/questions/tagged/c%2b%2b" class="post-tag" title="show questions tagged 'c++'" rel="tag">c++</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">154117</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/c" class="post-tag" title="show questions tagged 'c'" rel="tag">c</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">73021</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/ascii" class="post-tag" title="show questions tagged 'ascii'" rel="tag">ascii</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">1273</span></span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left: 10px;"><p class="label-key" title="2011-01-07 18:41:55Z"><b>1 year ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left: 10px;">
+                    <p class="label-key">
+                        <b>15717 times</b>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left: 10px;"><p class="label-key"><b><a href="http://stackoverflow.com/questions/4629050/convert-an-int-to-ascii-character?lastactivity" class="lastactivity-link" title="2011-01-14 05:46:49Z">1 year ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+        
+                <script type="text/javascript">
+                var scriptSrc = "http://engine.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44?keywords=c%2b%2b,c,ascii";
+                if (document.referrer) {
+                    if (/\?/.test(scriptSrc))
+                        scriptSrc += "&";
+                    else
+                        scriptSrc += "?";
+                    scriptSrc += "xReferrer=" + document.referrer;
+                }
+                StackExchange.ready(function () {
+                    var z = document.createElement("script");
+                    z.type = "text/javascript";
+                    z.async = "true";
+                    z.src = scriptSrc;
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(z, s);
+                });
+            </script>
+        <div class="everyonelovesstackoverflow" id="adzerk2"><a href="http://engine.adzerk.net/redirect/0/8211/2444/8277/6ad46b45b867462caa53fc1186856578/45/1178/13039/634863796343063180/?keywords=c%2b%2b%2cc%2cascii" rel="nofollow" target="_blank" title=""><img src="convert-an-int-to-ascii-character_files/bd294ce7ff4c43b6aad4aa4169fb819b.jpg" title="" alt="" border="0" height="250" width="220"></a><img src="convert-an-int-to-ascii-character_files/v_002.gif" height="0" width="0"></div>
+    <div id="hireme"> <a href="http://careers.stackoverflow.com/jobs?a=12" class="top" target="_blank"></a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/24598/python-django-problem-solver-feature-builder-tapstream?a=t3UM65i" target="_blank" title="Python/Django problem solver &amp; feature builder at Tapstream. Click to learn more."> Python/Django problem solver &amp; feature builder<br> <span class="company">Tapstream</span> <span class="location">Victoria, BC, Canada</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/19913/wpf-developer-infusion?a=nwGTQME" target="_blank" title="WPF Developer at Infusion. Click to learn more."> WPF Developer<br> <span class="company">Infusion</span> <span class="location">Toronto, ON, Canada</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/24268/enterprise-systems-administrator-humber-college?a=sFHLgg8" target="_blank" title="Enterprise Systems Administrator at Humber College. Click to learn more."> Enterprise Systems Administrator<br> <span class="company">Humber College</span> <span class="location">Toronto, ON, Canada</span> </a> </li> </ul> <img alt="" class="impression" src="convert-an-int-to-ascii-character_files/nwGTQME-sFHLgg8-t3UM65i-12.gif" style="display: none;"></div>
+
+
+
+    
+  
+    
+    <div class="module sidebar-related">
+        <h4 id="h-related">Related</h4>
+        <div class="related" data-tracker="rq=1">
+            <div class="spacer">
+<a href="http://stackoverflow.com/questions/768182/c-c-how-to-convert-6bit-ascii-to-7bit-ascii?rq=1" class="question-hyperlink">C/C++: How to convert 6bit ASCII to 7bit ASCII</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1542220/ascii-graphics-library?rq=1" class="question-hyperlink">ASCII “graphics” library?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/1818025/reading-characters-outside-ascii?rq=1" class="question-hyperlink">Reading characters outside ASCII</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2201918/conversion-of-multiple-ascii-characters-in-a-char-array-to-single-int-using-thei?rq=1" class="question-hyperlink">conversion of multiple ascii characters in a char array to single int using their ascii values — c/c++</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2386716/c-getting-ascii-value-of-a-wide-char?rq=1" class="question-hyperlink">c++: getting ascii value of a wide char</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2499000/how-to-convert-an-ascii-hex-character-to-its-value-0-15?rq=1" class="question-hyperlink">How to convert an ASCII HEX character to it's value (0-15)?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/2832729/how-to-convert-ascii-value-to-a-character-in-objective-c?rq=1" class="question-hyperlink">How to convert ASCII value to a character in Objective-C?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3204560/how-do-i-get-the-int-ascii-value-of-a-character-in-cocoa?rq=1" class="question-hyperlink">How do I get the int ASCII value of a character in Cocoa?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3357774/how-to-convert-an-integer-value-to-a-specific-ascii-character-in-c?rq=1" class="question-hyperlink">how to convert an integer value to a specific ascii character in c++</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/3460571/displaying-ascii-value-of-a-character-in-c?rq=1" class="question-hyperlink">Displaying ASCII value of a character in c</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5322056/how-to-convert-an-ascii-character-into-an-int-in-c?rq=1" class="question-hyperlink">How to convert an ascii character into an int in C</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5855420/character-chart-needed?rq=1" class="question-hyperlink">character chart needed</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5990825/convert-an-ascii-stdstring-to-hex?rq=1" class="question-hyperlink">Convert an ASCII std::string to hex</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6660145/convert-ascii-number-to-ascii-character-in-c?rq=1" class="question-hyperlink">Convert ASCII number to ASCII Character in C</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7499846/convert-getch-response-to-ascii-character?rq=1" class="question-hyperlink">convert getch() response to ascii character</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7693994/how-to-convert-ascii-code-0-255-to-the-associated-character?rq=1" class="question-hyperlink">How to convert ASCII code (0-255) to the associated character?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8182031/how-to-convert-an-hex-value-to-the-acronym-of-the-ascii-control-character?rq=1" class="question-hyperlink">How to convert an hex value to the acronym of the ASCII control character?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8925351/get-ascii-character-from-number-in-c-c?rq=1" class="question-hyperlink">Get ASCII character from number in C/C++</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8993385/decimal-string-to-character-ascii-conversion-c?rq=1" class="question-hyperlink">Decimal string to character ASCII conversion - C</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/9362728/ascii-art-comments-in-c-c-headers-and-code-files?rq=1" class="question-hyperlink">ASCII Art comments in C/C++ headers and code files</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/9577182/convert-each-character-in-string-to-ascii?rq=1" class="question-hyperlink">Convert each character in string to ASCII</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/9757757/change-the-ascii-of-a-typed-character?rq=1" class="question-hyperlink">Change the ASCII of a typed character</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/11729460/weird-ascii-unicode-character?rq=1" class="question-hyperlink">Weird ASCII/Unicode Character</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/11737821/c-convert-occurrences-of-hexadecimal-ascii-values-in-a-string-to-normal-chars?rq=1" class="question-hyperlink">C++: Convert occurrences of hexadecimal ascii values in a string to normal chars</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/12343987/convert-ascii-character-to-x11-keycode?rq=1" class="question-hyperlink">Convert ASCII character to x11 keycode</a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/4629050" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/4629050/ivc/2045');});
+</script>
+<noscript>
+    <div><img src="/posts/4629050/ivc/2045" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-c</div></div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://stackoverflow.com/about">about</a> |
+                <a href="http://stackoverflow.com/faq">faq</a> |
+                <a href="http://blog.stackexchange.com/?blb=1">blog</a> |
+                    <a href="http://chat.stackoverflow.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a> |
+                <a href="http://stackexchange.com/about/hiring">jobs</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+
+                <a onclick="StackExchange.switchMobile('on', '/questions/4629050/convert-an-int-to-ascii-character')">mobile</a> |
+
+                <b><a href="http://stackoverflow.com/help">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color:#ebf5f5;font-size:140%">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">■</span>&nbsp;<a href="http://diy.stackexchange.com/">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">■</span>&nbsp;<a href="http://gis.stackexchange.com/">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">■</span>&nbsp;<a href="http://electronics.stackexchange.com/">electrical&nbsp;engineering</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">■</span>&nbsp;<a href="http://android.stackexchange.com/">android</a>&nbsp;
+                        <span style="color:#2e4e60;font-size:140%">■</span>&nbsp;<a href="http://security.stackexchange.com/">security</a>&nbsp;
+                        <span style="color:#45bcb5;font-size:140%">■</span>&nbsp;<a href="http://bicycles.stackexchange.com/">bicycles</a>&nbsp;
+                        <span style="color:#00adee;font-size:140%">■</span>&nbsp;<a href="http://dba.stackexchange.com/">dba</a>&nbsp;
+                        <span style="color:#2edaf0;font-size:140%">■</span>&nbsp;<a href="http://drupal.stackexchange.com/">drupal</a>&nbsp;
+                        <span style="color:#213951;font-size:140%">■</span>&nbsp;<a href="http://sharepoint.stackexchange.com/">sharepoint</a>&nbsp;
+                        <span style="color:#73abb3;font-size:140%">■</span>&nbsp;<a href="http://scifi.stackexchange.com/">scifi &amp; fantasy</a>&nbsp;
+                        <span style="color:#23629F;font-size:140%">■</span>&nbsp;<a href="http://ux.stackexchange.com/">user experience</a>&nbsp;
+                        <span style="color:#faff72;font-size:140%">■</span>&nbsp;<a href="http://skeptics.stackexchange.com/">skeptics</a>&nbsp;
+                        <span style="color:#623121;font-size:140%">■</span>&nbsp;<a href="http://rpg.stackexchange.com/">rpg</a>&nbsp;
+                        <span style="color:#e4be88;font-size:140%">■</span>&nbsp;<a href="http://judaism.stackexchange.com/">judaism</a>&nbsp;
+                        <span style="color:#ffecb1;font-size:140%">■</span>&nbsp;<a href="http://mathematica.stackexchange.com/">mathematica</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2012.10.20.4492</div>
+                        </div>
+            <div id="copyright">
+                site design / logo © 2012 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            
+
+        </div>
+    </div>
+    
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|c++|c|ascii|']); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    (function(){
+        var s=document.getElementsByTagName('script')[0];
+        var ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src='http://www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src='http://edge.quantserve.com/quant.js'; 
+        s.parentNode.insertBefore(sc,s);
+    })();
+    </script>
+    <script type="text/javascript">
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>    
+    
+
+</body></html>

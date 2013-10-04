@@ -1,0 +1,22 @@
+% feyn_test.tex
+\documentclass{article}
+ \usepackage{feynmp}
+ \usepackage[pdftex]{graphicx}
+ \DeclareGraphicsRule{*}{mps}{*}{} 
+
+\begin{document}
+\begin{fmffile}{fgraphs}
+
+\begin{fmfgraph*}(40,40)
+\fmfleft{i1}
+\fmfright{o1,o2}
+\fmf{fermion, label=$e$}{i1,v1,o1}
+\fmf{photon,label=$\gamma$}{v1,o2}
+\end{fmfgraph*}
+\end{fmffile}
+
+
+
+
+
+\end{document}

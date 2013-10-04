@@ -1,0 +1,515 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" lang="en"><head>
+
+
+<title>Getting User Input Via Keyboard - Linux Shell Scripting Tutorial - A Beginner's handbook</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="MediaWiki 1.16.4">
+<link rel="shortcut icon" href="http://bash.cyberciti.biz/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://bash.cyberciti.biz/wiki/opensearch_desc.php" title="Linux Shell Scripting Tutorial - A Beginner's handbook (en)">
+<link title="Creative Commons" type="application/rdf+xml" href="http://bash.cyberciti.biz/wiki/index.php?title=Getting_User_Input_Via_Keyboard&amp;action=creativecommons" rel="meta">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="Linux Shell Scripting Tutorial - A Beginner's handbook Atom feed" href="http://bash.cyberciti.biz/wiki/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="read_command_files/main-ltr.css" media="screen">
+<link rel="stylesheet" href="read_command_files/shared.css" media="screen">
+<link rel="stylesheet" href="read_command_files/commonPrint.css" media="print">
+<link rel="stylesheet" href="read_command_files/index_004.css">
+<link rel="stylesheet" href="read_command_files/index.css" media="print">
+<link rel="stylesheet" href="read_command_files/index_003.css">
+<link rel="stylesheet" href="read_command_files/index_002.css">
+<script>
+var skin="vector",
+stylepath="/wiki/skins",
+wgUrlProtocols="http\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/guide/$1",
+wgScriptPath="/wiki",
+wgScriptExtension=".php",
+wgScript="/wiki/index.php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgServer="http://bash.cyberciti.biz",
+wgCanonicalNamespace="",
+wgCanonicalSpecialPageName=false,
+wgNamespaceNumber=0,
+wgPageName="Getting_User_Input_Via_Keyboard",
+wgTitle="Getting User Input Via Keyboard",
+wgAction="view",
+wgArticleId=72,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=false,
+wgCurRevisionId=2432,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "Linux Shell Scripting Tutorial - A Beginner\'s handbook", "5": "Linux Shell Scripting Tutorial - A Beginner\'s handbook talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "linux_shell_scripting_tutorial_-_a_beginner\'s_handbook": 4, "linux_shell_scripting_tutorial_-_a_beginner\'s_handbook_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "image": 6, "image_talk": 7},
+wgSiteName="Linux Shell Scripting Tutorial - A Beginner\'s handbook",
+wgCategories=["Commands", "Variables and Quoting"],
+wgRestrictionEdit=["autoconfirmed"],
+wgRestrictionMove=["autoconfirmed"];
+</script><script src="read_command_files/wikibits.js"></script>
+<script src="read_command_files/ajax.js"></script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/wiki/skins/vector/csshover.htc")}</style><![endif]-->
+<script src="read_command_files/index.js"></script>
+
+<style type="text/css">/*<![CDATA[*/
+.source-bash {line-height: normal;}
+.source-bash li, .source-bash pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for bash
+ * CSS class: source-bash, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.source-bash .de1, .source-bash .de2 {font-family: monospace; font-weight: normal; font-style: normal; margin:0; padding:0; background:inherit;}
+.source-bash  {font-family: monospace;}
+.source-bash .imp {font-weight: bold; color: red;}
+.source-bash li, .source-bash li.li1 {font-weight: normal;}
+.source-bash li.li2 {font-weight: bold;}
+.source-bash .kw1 {color: #000000; font-weight: bold;}
+.source-bash .kw2 {color: #c20cb9; font-weight: bold;}
+.source-bash .kw3 {color: #7a0874; font-weight: bold;}
+.source-bash .co0 {color: #666666; font-style: italic;}
+.source-bash .co1 {color: #800000;}
+.source-bash .co2 {color: #cc0000; font-style: italic;}
+.source-bash .es0 {color: #000099; font-weight: bold;}
+.source-bash .br0 {color: #7a0874; font-weight: bold;}
+.source-bash .sy0 {color: #000000; font-weight: bold;}
+.source-bash .st0 {color: #ff0000;}
+.source-bash .nu0 {color: #000000;}
+.source-bash .re0 {color: #007800;}
+.source-bash .re1 {color: #007800;}
+.source-bash .re2 {color: #007800;}
+.source-bash .re4 {color: #007800;}
+.source-bash .re5 {color: #660033;}
+.source-bash .ln-xtra, .source-bash li.ln-xtra, .source-bash div.ln-xtra {background-color: #ffc;}
+.source-bash span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/wiki/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style></head><body class="mediawiki ltr ns-0 ns-subject page-Getting_User_Input_Via_Keyboard skin-vector">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<!-- content -->
+		<div id="content">
+			<a id="top"></a>
+			<div id="mw-js-message" style="display: none;"></div>
+						<!-- firstHeading -->
+			<h1 id="firstHeading" class="firstHeading">Getting User Input Via Keyboard</h1>
+			&nbsp; &nbsp; <script type="text/javascript"><!--
+google_ad_client = "ca-pub-7825705102693166";
+/* cyberciti.biz-top 728x90 */
+google_ad_slot = "3400670370";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="read_command_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><ins id="aswift_0_anchor" style="display: block; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins>
+			<!-- /firstHeading -->
+			<!-- bodyContent -->
+			<div id="bodyContent">
+				<!-- tagline -->
+				<h3 id="siteSub">From Linux Shell Scripting Tutorial - A Beginner's handbook</h3>
+				<!-- /tagline -->
+				<!-- subtitle -->
+				<div id="contentSub"></div>
+				<!-- /subtitle -->
+																<!-- jumpto -->
+				<div id="jump-to-nav">
+					Jump to: <a href="#mw-head">navigation</a>,
+					<a href="#p-search">search</a>
+				</div>
+				<!-- /jumpto -->
+								<!-- bodytext -->
+				<span class="noprint"><table id="toc" style="width: 100%; background: none repeat scroll 0% 0% rgb(250, 245, 255); border: 0.077em solid rgb(221, 206, 242); padding: 0.692em; line-height: 1.5em;"><tbody><tr><td style="text-align: left; width: 33%;"><a href="http://bash.cyberciti.biz/guide/Unset" title="Unset">← Unset</a></td><td style="text-align: center; width: 33%;"><b><a href="http://bash.cyberciti.biz/guide/Main_Page" title="Main Page">Home</a></b></td><td style="text-align: right; width: 33%;"><a href="http://bash.cyberciti.biz/guide/Perform_arithmetic_operations" title="Perform arithmetic operations">Perform arithmetic operations →</a></td></tr></tbody></table></span>
+<p>You can accept input from the keyboard and assign an input value to a user defined shell variable using <a href="http://bash.cyberciti.biz/guide/Read_command" title="Read command">read command</a>.
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#read_Command_Syntax"><span class="tocnumber">1</span> <span class="toctext">read Command Syntax</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Handling_Input"><span class="tocnumber">1.1</span> <span class="toctext">Handling Input</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Examples"><span class="tocnumber">1.2</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="#Multiple_Input_.28number.sh.29"><span class="tocnumber">1.2.1</span> <span class="toctext">Multiple Input (number.sh)</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="#Display_Domain_Owner_Information"><span class="tocnumber">1.2.2</span> <span class="toctext">Display Domain Owner Information</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#Timeout_Input"><span class="tocnumber">1.2.3</span> <span class="toctext">Timeout Input</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Handling_Passwords"><span class="tocnumber">1.2.4</span> <span class="toctext">Handling Passwords</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Handling_multiple_values"><span class="tocnumber">2</span> <span class="toctext">Handling multiple values</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#.24IFS"><span class="tocnumber">2.1</span> <span class="toctext">$IFS</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="#But_how_do_I_use_.24IFS_and_read_command_together.3F"><span class="tocnumber">2.1.1</span> <span class="toctext">But how do I use $IFS and read command together?</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#How_do_I_change_the_IFS_separator_value.3F"><span class="tocnumber">2.1.2</span> <span class="toctext">How do I change the IFS separator value?</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#See_also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table><script>if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<h2> <span class="mw-headline" id="read_Command_Syntax">read Command Syntax</span></h2>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="kw2">read</span> <span class="re5">-p</span> <span class="st0">"Prompt"</span> variable1 variable2 variableN</pre></div></div>
+<p>Where,
+</p>
+<ul><li> <b>-p "Prompt"</b>&nbsp;: Display prompt to user without a newline.
+</li><li> <b>variable1</b>&nbsp;: The first input (word) is assigned to the variable1. 
+</li><li> <b>variable2</b>&nbsp;: The second input (word) is assigned to the variable2. 
+</li></ul>
+<h3> <span class="mw-headline" id="Handling_Input">Handling Input</span></h3>
+<p>Create a script called greet.sh as follows:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="co0">#!/bin/bash</span>
+<span class="kw2">read</span> <span class="re5">-p</span> <span class="st0">"Enter your name&nbsp;: "</span> name
+<span class="kw3">echo</span> <span class="st0">"Hi, $name. Let us be friends!"</span></pre></div></div>
+<p>Save and close the file. Run it as follows:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="kw2">chmod</span> +x greet.sh
+.<span class="sy0">/</span>greet.sh</pre></div></div>
+<p>Sample Outputs:
+</p>
+<pre>Enter your name&nbsp;: Vivek Gite
+Hi, Vivek Gite. Let us be friends!</pre>
+<h3> <span class="mw-headline" id="Examples">Examples</span></h3>
+<p>Try the following examples. 
+</p>
+<h4> <span class="mw-headline" id="Multiple_Input_.28number.sh.29">Multiple Input (number.sh)</span></h4>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="co0">#!/bin/bash</span>
+<span class="co0"># read three numbers and assigned them to 3 vars</span>
+<span class="kw2">read</span> <span class="re5">-p</span> <span class="st0">"Enter number one&nbsp;: "</span> n1
+<span class="kw2">read</span> <span class="re5">-p</span> <span class="st0">"Enter number two&nbsp;: "</span> n2
+<span class="kw2">read</span> <span class="re5">-p</span> <span class="st0">"Enter number three&nbsp;: "</span> n3
+&nbsp;
+<span class="co0"># display back 3 numbers - punched by user. </span>
+<span class="kw3">echo</span> <span class="st0">"Number1 - $n1"</span>
+<span class="kw3">echo</span> <span class="st0">"Number2 - $n2"</span>
+<span class="kw3">echo</span> <span class="st0">"Number3 - $n3"</span></pre></div></div>
+<h4> <span class="mw-headline" id="Display_Domain_Owner_Information">Display Domain Owner Information</span></h4>
+<p>A shell script to display the Internet domain name owner information (domain.sh):
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="co0">#!/bin/bash</span>
+<span class="kw2">read</span> <span class="re5">-p</span> <span class="st0">"Enter the Internet domain name (e.g. nixcraft.com)&nbsp;: "</span> domain_name
+whois <span class="re1">$domain_name</span></pre></div></div> 
+<h4> <span class="mw-headline" id="Timeout_Input">Timeout Input</span></h4>
+<p>You can time out read command using the -t option. It causes read to 
+time out and return failure if a complete line of input is not read 
+within TIMEOUT seconds. For example, if no input provided within 10 
+second, program will be aborted (domain2.sh):
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="co0">#!/bin/bash</span>
+<span class="kw2">read</span> <span class="re5">-t</span> <span class="nu0">10</span> <span class="re5">-p</span> <span class="st0">"Enter the Internet domain name (e.g. nixcraft.com)&nbsp;: "</span> domain_name
+whois <span class="re1">$domain_name</span></pre></div></div>
+<h4> <span class="mw-headline" id="Handling_Passwords">Handling Passwords</span></h4>
+<p>The -s option causes input coming from a terminal do not be displayed
+ on the screen. This is useful for password handling (readpass.sh):
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="co0">#!/bin/bash</span>
+<span class="kw2">read</span> <span class="re5">-s</span> <span class="re5">-p</span> <span class="st0">"Enter Password &nbsp;: "</span> my_password
+<span class="kw3">echo</span> 
+<span class="kw3">echo</span> <span class="st0">"Your password - $my_password"</span></pre></div></div>
+<h2> <span class="mw-headline" id="Handling_multiple_values">Handling multiple values</span></h2>
+<p>Consider the following example:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="kw2">read</span> <span class="re5">-p</span> <span class="st0">"Enter directory to delete&nbsp;: "</span> <span class="kw2">dirname</span>
+<span class="kw3">echo</span> <span class="st0">"$dirname"</span></pre></div></div>
+<p>Sample outputs:
+</p>
+<pre>Enter directory to delete&nbsp;: foo bar /tmp/data
+foo bar /tmp/data</pre>
+<p>The user supplied three values instead of one. The string is now made
+ of three different fields. All three words are assigned to dirname 
+using <a href="http://bash.cyberciti.biz/guide/$IFS" title="$IFS">$IFS</a> internal field separator. The <a href="http://bash.cyberciti.biz/guide/$IFS" title="$IFS">$IFS</a> determines how shell recognizes fields.
+</p>
+<h3> <span class="mw-headline" id=".24IFS">$IFS</span></h3>
+<p>To display default value of <a href="http://bash.cyberciti.biz/guide/$IFS" title="$IFS">$IFS</a>, enter:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="kw3">echo</span> <span class="st0">"$IFS"</span></pre></div></div>
+<p>You will see a whitespace which is nothing but a space, a tab, and a 
+newline (default). You can print actual values of IFS using the 
+following command (see <a href="http://bash.cyberciti.biz/guide/Here_strings" title="Here strings">Here strings</a>):
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="kw2">cat</span> <span class="re5">-etv</span> <span class="sy0">&lt;&lt;&lt;</span><span class="st0">"$IFS"</span></pre></div></div>
+<p>Sample outputs:
+</p>
+<pre> ^I$
+$
+</pre>
+<p>Where,
+</p>
+<ul><li> <b>$</b> - end of line i.e. newline
+</li><li> <b>^I$</b> - tab and newline
+</li></ul>
+<h4> <span class="mw-headline" id="But_how_do_I_use_.24IFS_and_read_command_together.3F"> But how do I use $IFS and read command together? </span></h4>
+<p>Create a variable called nameservers and give it total 3 values as follows (note all values are separated by a whitespace):
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="re2">nameservers=</span><span class="st0">"ns1.nixcraft.net ns2.nixcraft.net ns3.nixcraft.net"</span></pre></div></div>
+<p>Display the value of a variable nameservers with <a href="http://bash.cyberciti.biz/guide/Echo_command" title="Echo command" class="mw-redirect">echo command</a> or <a href="http://bash.cyberciti.biz/guide/Printf_command" title="Printf command">printf command</a>: 
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="kw3">echo</span> <span class="st0">"$nameservers"</span></pre></div></div>
+<p>OR
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="kw3">printf</span> <span class="st0">"%s"</span> <span class="re1">$nameservers</span></pre></div></div>
+<p>Now, you can simply split $nameservers using the <a href="http://bash.cyberciti.biz/guide/Read_command" title="Read command">read command</a> as follows (see <a href="http://bash.cyberciti.biz/guide/Here_strings" title="Here strings">Here strings</a>):
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="kw2">read</span> <span class="re5">-r</span> ns1 ns2 ns3 <span class="sy0">&lt;&lt;&lt;</span> <span class="st0">"$nameservers"</span></pre></div></div>
+<p>Where,
+</p>
+<ul><li> The <a href="http://bash.cyberciti.biz/guide/Read_command" title="Read command">read command</a> reads input from $nameservers variable.
+</li><li> The default value of <a href="http://bash.cyberciti.biz/guide/$IFS" title="$IFS">$IFS</a> is used to assign values to three separate variables. Your input is broken into tokens using <a href="http://bash.cyberciti.biz/guide/$IFS" title="$IFS">$IFS</a> and assigned to three variables.
+</li><li> In other words, the <a href="http://bash.cyberciti.biz/wiki/index.php?title=IFS_variable&amp;action=edit&amp;redlink=1" class="new" title="IFS variable (page does not exist)">IFS variable</a> worked as token delimiter or separator.
+</li><li> The first token (ns1.nixcraft.net) is saved as the value of the first variable ($ns1)
+</li><li> The second token (ns2.nixcraft.net) is saved as the value of the second variable ($ns2).
+</li><li> The third token (ns3.nixcraft.net) is saved as the value of the third variable ($ns3).
+</li><li> To display the value of each variable use <a href="http://bash.cyberciti.biz/guide/Echo_command" title="Echo command" class="mw-redirect">echo command</a> or <a href="http://bash.cyberciti.biz/guide/Printf_command" title="Printf command">printf command</a> as follows: 
+</li></ul>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="kw3">echo</span> <span class="st0">"DNS Server #1 $ns1"</span>
+<span class="kw3">echo</span> <span class="st0">" #2 $ns2"</span>
+<span class="kw3">echo</span> <span class="st0">" #3 $ns2"</span></pre></div></div>
+<p>OR use the <a href="http://bash.cyberciti.biz/guide/Printf_command" title="Printf command">printf command</a>
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="kw3">printf</span> <span class="st0">"DNS Server #1&nbsp;%s<span class="es0">\n</span> #2&nbsp;%s<span class="es0">\n</span> #3&nbsp;%s<span class="es0">\n</span>"</span> <span class="re1">$ns1</span> <span class="re1">$ns2</span> <span class="re1">$ns3</span></pre></div></div>
+<p>Sample outputs:
+</p>
+<pre>DNS Server #1 ns1.nixcraft.net
+ #2 ns2.nixcraft.net
+ #3 ns3.nixcraft.net
+</pre>
+<h4> <span class="mw-headline" id="How_do_I_change_the_IFS_separator_value.3F">How do I change the IFS separator value?</span></h4>
+<p>Consider the following <a href="http://bash.cyberciti.biz/guide//etc/passwd" title="/etc/passwd">/etc/passwd</a> line:
+</p>
+<pre>gitevivek:x:1002:1002::/home/gitevivek:/bin/sh</pre>
+<p>Assign the above line to a variable called pwd:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="re2"><span class="kw3">pwd</span>=</span><span class="st0">"gitevivek:x:1002:1002::/home/gitevivek:/bin/sh"</span></pre></div></div>
+<p>Save the Internal Field Separator to a variable called old:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="re2">old=</span><span class="st0">"$IFS"</span></pre></div></div>
+<p>Set the Internal Field Separator to a colon (i.e. change the Internal Field Separator):
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="re2">IFS=</span>:</pre></div></div>
+<p>Read $pwd and generate tokens using $IFS and store them into respective fields:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="kw2">read</span> <span class="re5">-r</span> <span class="kw2">login</span> password uid gid info home shell <span class="sy0">&lt;&lt;&lt;</span> <span class="st0">"$pwd"</span>
+<span class="kw3">printf</span> <span class="st0">"Your login name is&nbsp;%s, uid&nbsp;%d, gid&nbsp;%d, home dir set to&nbsp;%s with&nbsp;%s as login shell<span class="es0">\n</span>"</span> <span class="re1">$login</span> <span class="re1">$uid</span> <span class="re1">$gid</span> <span class="re1">$home</span> <span class="re1">$shell</span></pre></div></div>
+<p>Sample outputs:
+</p>
+<pre>Your login name is gitevivek, uid 1002, gid 1002, home dir set to /home/gitevivek with /bin/sh as login shell</pre>
+<p>Finally, restore the Internal Field Separator value using $old:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="source-bash" style="font-family: monospace;"><pre><span class="re2">IFS=</span><span class="st0">"$old"</span></pre></div></div>
+<p>Where,
+</p>
+<ul><li> <b>:</b> - act as token separator on $pwd  i.e. the contents of the IFS variable are used as token delimiters.
+</li></ul>
+<ul><li> <b>login</b> - Field # 1 is generated using the first token and is saved as the value of the first variable ($login)
+</li><li> <b>password</b> - Field # 2 is generated using the second token and is saved as the value of the second variable ($password)
+</li><li> <b>uid</b> - Field # 3 and so on...
+</li><li> <b>gid</b> - Field # 4
+</li><li> <b>info</b> - Field # 5
+</li><li> <b>home</b> - Field # 6
+</li><li> <b>shell</b> - Field # 7
+</li></ul>
+<h2> <span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a href="http://bash.cyberciti.biz/guide/$IFS" title="$IFS">$IFS</a>
+</li><li> <a href="http://bash.cyberciti.biz/guide/$*" title="$*">$*</a>
+</li><li> <a href="http://bash.cyberciti.biz/guide/$@" title="$@">$@</a>
+</li><li> <a href="http://bash.cyberciti.biz/guide/Read_command" title="Read command">read command</a>
+</li></ul>
+<span class="noprint"><table id="toc" style="width: 100%; background: none repeat scroll 0% 0% rgb(250, 245, 255); border: 0.077em solid rgb(221, 206, 242); padding: 0.692em; line-height: 1.5em;"><tbody><tr><td style="text-align: left; width: 33%;"><a href="http://bash.cyberciti.biz/guide/Unset" title="Unset">← Unset</a></td><td style="text-align: center; width: 33%;"><b><a href="http://bash.cyberciti.biz/guide/Main_Page" title="Main Page">Home</a></b></td><td style="text-align: right; width: 33%;"><a href="http://bash.cyberciti.biz/guide/Perform_arithmetic_operations" title="Perform arithmetic operations">Perform arithmetic operations →</a></td></tr></tbody></table></span>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 327/1000000
+Post-expand include size: 1130/2097152 bytes
+Template argument size: 136/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key cbzwikibashportal:pcache:idhash:72-0!1!0!!en!2!edit=0 and timestamp 20110428222126 -->
+<div class="printfooter">
+Retrieved from "<a href="http://bash.cyberciti.biz/guide/Getting_User_Input_Via_Keyboard">http://bash.cyberciti.biz/guide/Getting_User_Input_Via_Keyboard</a>"</div>
+				<!-- /bodytext -->
+								<!-- catlinks -->
+				<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://bash.cyberciti.biz/guide/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="http://bash.cyberciti.biz/guide/Category:Commands" title="Category:Commands">Commands</a></span> | <span dir="ltr"><a href="http://bash.cyberciti.biz/guide/Category:Variables_and_Quoting" title="Category:Variables and Quoting">Variables and Quoting</a></span></div></div>				<!-- /catlinks -->
+												<div class="visualClear"></div>
+			</div>
+			<!-- /bodyContent -->
+		</div>
+		<!-- /content -->
+		<!-- header -->
+		<div id="mw-head" class="noprint">
+			
+<!-- 0 -->
+<div id="p-personal" class="">
+	<h5>Personal tools</h5>
+	<ul>
+					<li id="pt-login"><a href="http://bash.cyberciti.biz/wiki/index.php?title=Special:UserLogin&amp;returnto=Getting_User_Input_Via_Keyboard" title="You are encouraged to log in; however, it is not mandatory [alt-shift-o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+			<div id="left-navigation">
+				
+<!-- 0 -->
+<div id="p-namespaces" class="vectorTabs">
+	<h5>Namespaces</h5>
+	<ul>
+					<li id="ca-nstab-main" class="selected"><a href="http://bash.cyberciti.biz/guide/Getting_User_Input_Via_Keyboard" title="View the content page [alt-shift-c]" accesskey="c"><span>Page</span></a></li>
+					<li id="ca-talk" class="new"><a href="http://bash.cyberciti.biz/wiki/index.php?title=Talk:Getting_User_Input_Via_Keyboard&amp;action=edit&amp;redlink=1" title="Discussion about the content page [alt-shift-t]" accesskey="t"><span>Discussion</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-variants" class="vectorMenu emptyPortlet">
+	<h5><span>Variants</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+			</div>
+			<div id="right-navigation">
+				
+<!-- 0 -->
+<div id="p-views" class="vectorTabs">
+	<h5>Views</h5>
+	<ul>
+					<li id="ca-view" class="selected"><a href="http://bash.cyberciti.biz/guide/Getting_User_Input_Via_Keyboard"><span>Read</span></a></li>
+					<li id="ca-viewsource"><a href="http://bash.cyberciti.biz/wiki/index.php?title=Getting_User_Input_Via_Keyboard&amp;action=edit" title="This page is protected.
+You can view its source [alt-shift-e]" accesskey="e"><span>View source</span></a></li>
+					<li id="ca-history" class="collapsible "><a href="http://bash.cyberciti.biz/wiki/index.php?title=Getting_User_Input_Via_Keyboard&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h"><span>View history</span></a></li>
+			</ul>
+</div>
+
+<!-- /0 -->
+
+<!-- 1 -->
+<div id="p-cactions" class="vectorMenu emptyPortlet">
+	<h5><span>Actions</span><a href="#"></a></h5>
+	<div class="menu">
+		<ul>
+					</ul>
+	</div>
+</div>
+
+<!-- /1 -->
+
+<!-- 2 -->
+<div id="p-search">
+	<h5><label for="searchInput">Search</label></h5>
+	<form action="/wiki/index.php" id="searchform">
+		<input name="title" value="Special:Search" type="hidden">
+				<input id="searchInput" name="search" title="Search Linux Shell Scripting Tutorial - A Beginner's handbook [alt-shift-f]" accesskey="f" type="text">
+		<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">
+		<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" type="submit">
+			</form>
+</div>
+
+<!-- /2 -->
+			</div>
+		</div>
+		<!-- /header -->
+		<!-- panel -->
+			<div id="mw-panel" class="noprint">
+				<!-- logo -->
+					<div id="p-logo"><a style="background-image: url(&quot;http://files.cyberciti.biz/assets/i/nixcraft-logo.gif&quot;);" href="http://bash.cyberciti.biz/guide/Main_Page" title="Visit the main page"></a></div>
+				<!-- /logo -->
+				
+<!-- navigation -->
+<div class="portal" id="p-navigation">
+	<h5>Navigation</h5>
+	<div class="body">
+				<ul>
+					<li id="n-mainpage-description"><a href="http://bash.cyberciti.biz/guide/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li>
+					<li id="n-portal"><a href="http://bash.cyberciti.biz/guide/Linux_Shell_Scripting_Tutorial_-_A_Beginner%27s_handbook:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+					<li id="n-currentevents"><a href="http://bash.cyberciti.biz/guide/Linux_Shell_Scripting_Tutorial_-_A_Beginner%27s_handbook:Current_events" title="Find background information on current events">Current events</a></li>
+					<li id="n-recentchanges"><a href="http://bash.cyberciti.biz/guide/Special:RecentChanges" title="The list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+					<li id="n-randompage"><a href="http://bash.cyberciti.biz/guide/Special:Random" title="Load a random page [alt-shift-x]" accesskey="x">Random page</a></li>
+					<li id="n-help"><a href="http://bash.cyberciti.biz/guide/Help:Contents" title="The place to find out">Help</a></li>
+				</ul>
+			</div>
+</div>
+
+<!-- /navigation -->
+
+<!-- SEARCH -->
+
+<!-- /SEARCH -->
+
+<!-- TOOLBOX -->
+<div class="portal" id="p-tb">
+	<h5>Toolbox</h5>
+	<div class="body">
+		<ul>
+					<li id="t-whatlinkshere"><a href="http://bash.cyberciti.biz/guide/Special:WhatLinksHere/Getting_User_Input_Via_Keyboard" title="List of all wiki pages that link here [alt-shift-j]" accesskey="j">What links here</a></li>
+						<li id="t-recentchangeslinked"><a href="http://bash.cyberciti.biz/guide/Special:RecentChangesLinked/Getting_User_Input_Via_Keyboard" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+																																										<li id="t-specialpages"><a href="http://bash.cyberciti.biz/guide/Special:SpecialPages" title="List of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+											<li id="t-permalink"><a href="http://bash.cyberciti.biz/wiki/index.php?title=Getting_User_Input_Via_Keyboard&amp;oldid=2432" title="Permanent link to this revision of the page">Permanent link</a></li>
+						</ul>
+	</div>
+</div>
+
+<!-- /TOOLBOX -->
+
+<!-- LANGUAGES -->
+
+<!-- /LANGUAGES -->
+
+<!-- coll-print_export -->
+<div class="portal" id="p-coll-print_export">
+	<h5>Print/export</h5>
+	<div class="body">
+				<ul id="collectionPortletList"><li id="coll-create_a_book"><a href="http://bash.cyberciti.biz/wiki/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Getting+User+Input+Via+Keyboard" title="Create a book or page collection" rel="nofollow">Create a book</a></li><li id="coll-download-as-rl"><a href="http://bash.cyberciti.biz/wiki/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Getting+User+Input+Via+Keyboard&amp;oldid=2432&amp;writer=rl" title="Download a PDF version of this wiki page" rel="nofollow">Download as PDF</a></li><li id="t-print"><a href="http://bash.cyberciti.biz/wiki/index.php?title=Getting_User_Input_Via_Keyboard&amp;printable=yes" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li></ul>			</div>
+</div>
+
+<!-- /coll-print_export -->
+			</div>
+		<!-- /panel -->
+		<!-- footer -->
+		<div id="footer">
+											<ul id="footer-info">
+																	<li id="footer-info-lastmod"> This page was last modified on 11 May 2010, at 20:04.</li>
+																							<li id="footer-info-copyright">Content is available under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" class="external ">Attribution-Noncommercial-Share Alike 3.0 Unported</a>.</li>
+															</ul>
+															<ul id="footer-places">
+																	<li id="footer-places-privacy"><a href="http://bash.cyberciti.biz/guide/Linux_Shell_Scripting_Tutorial_-_A_Beginner%27s_handbook:Privacy_policy" title="Linux Shell Scripting Tutorial - A Beginner's handbook:Privacy policy">Privacy policy</a></li>
+																							<li id="footer-places-about"><a href="http://bash.cyberciti.biz/guide/Linux_Shell_Scripting_Tutorial_-_A_Beginner%27s_handbook:About" title="Linux Shell Scripting Tutorial - A Beginner's handbook:About">About Linux Shell Scripting Tutorial - A Beginner's handbook</a></li>
+																							<li id="footer-places-disclaimer"><a href="http://bash.cyberciti.biz/guide/Linux_Shell_Scripting_Tutorial_-_A_Beginner%27s_handbook:General_disclaimer" title="Linux Shell Scripting Tutorial - A Beginner's handbook:General disclaimer">Disclaimers</a></li>
+															</ul>
+										<ul id="footer-icons" class="noprint">
+								<li id="footer-icon-poweredby"><a href="http://www.mediawiki.org/"><img src="read_command_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></a></li>
+												<li id="footer-icon-copyright"><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img src="read_command_files/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0 Unported" height="31" width="88"></a></li>
+							</ul>
+			<div style="clear: both;"></div>
+		</div>
+		<!-- /footer -->
+		<!-- fixalpha -->
+		<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		<!-- /fixalpha -->
+		
+<script>if (window.runOnloadHook) runOnloadHook();</script>
+		<!-- Served in 0.147 secs. -->			</body></html>

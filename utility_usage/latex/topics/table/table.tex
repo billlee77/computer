@@ -1,0 +1,23 @@
+\documentclass[a4paper,12pt,onecolumn]{article}
+
+\begin{document}
+
+\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{|l|c|r|}
+  \hline
+    \multicolumn{3}{|c|}{Sample Tabular}      \\
+      \hline
+        col head   & col head & col head      \\
+      \hline 
+        Left       & centered & right         \\
+        \cline{1-2}
+
+        aligned    & items    & aligned       \\
+        \cline{2-3}
+        items      & items    & items         \\
+        \cline{1-2}
+        Left items & centered & right aligned \\ 
+      \hline
+\end{tabular}
+
+\end{document}

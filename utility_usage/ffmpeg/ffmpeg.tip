@@ -1,0 +1,21 @@
+# There is some tip for ffmpeg
+
+# First of all ffmpeg is very senistive about where you put the option 
+For example: -r option will not work between input and output files
+             -s option will not work in front of the input files
+
+# common option used
+-r      fps parameter
+-s  	image size parameter
+-i      declare input file
+-qscale quality parameter
+-t  	frame limit parameter
+
+
+# Convert MTS file to mpeg
+ffmpeg -i 00000.mts -sameq -target ntsc-dvd 00000.mpeg
+
+
+# Convert MOV to MP4
+ffmpeg -i pressure_test.mov -q:v 0 -s 800x600 -acodec libmp3lame pressure_test.mp4
+

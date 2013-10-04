@@ -1,0 +1,7 @@
+Regarding to the QT inteface issue
+
+There is a significant difference between GUI session for QT from Geant4.2 and Grant4.4
+
+For 
+	Geant4.2: The GUI Control and Viewer are seperate
+	Geant4.4: The GUI Control and Viewer are together

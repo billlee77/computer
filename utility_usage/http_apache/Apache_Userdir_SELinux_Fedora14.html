@@ -1,0 +1,1172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:fb="http://developers.facebook.com/schema/" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Apache Userdir with SELinux on Fedora 15/14, CentOS 5.6, Red Hat (RHEL) 5.6/6</title>
+<meta name="description" content="A blog about programming, operating systems and applications">
+<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/IfNotTrueThenFalse" title="If Not True Then False latest posts">
+
+<link rel="alternate" type="application/rss+xml" href="http://www.if-not-true-then-false.com/comments/feed/" title="If Not True Then False latest comments">
+
+<link rel="pingback" href="http://www.if-not-true-then-false.com/xmlrpc.php">
+
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAEAAQCwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACYWTsAAAAAAP/zAAD/7QAA/+0AAP/tAAD/8wAA/b8AAP+/AAD9vwAA/T8AAP2/AACv/wAAr/8AAKf/AACv/wAAo/8AAP//AAD/8wAA/+0AAP/tAAD/7QAA//MAAP2/AAD/vwAA/b8AAP0/AAD9vwAAr/8AAK//AACn/wAAr/8AAKP/AAD//wAA" rel="icon" type="image/x-icon">
+
+<link rel="alternate" type="application/rss+xml" title="If Not True Then False » Apache Userdir with SELinux on Fedora 15/14, CentOS 5.6, Red Hat (RHEL) 5.6/6 Comments Feed" href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/feed/">
+
+<link rel="stylesheet" href="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fancybox.css" type="text/css" media="screen">
+
+	<style type="text/css">
+		div#fancy_inner {border-color:#BBBBBB}
+		div#fancy_close {right:-15px;top:-12px}
+		div#fancy_bg {background-color:#FFFFFF}
+			</style>
+
+	<link rel="stylesheet" id="toc_css-css" href="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/pagenavi-css.css" type="text/css" media="all">
+
+<!-- PixoPoint Menu Plugin v0.6.20 by PixoPoint Web Development ... http://pixopoint.com/pixopoint-menu/ -->
+
+<!--[if lte IE 7]><script type="text/javascript" src="http://www.if-not-true-then-false.com/wp-content/plugins/pixopoint-menu/scripts/suckerfish_ie.js"></script><![endif]-->
+<script src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/ga.js" async="" type="text/javascript"></script><script src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/l10n.js"></script>
+<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/jquery_002.js"></script>
+<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/comment-reply.js"></script>
+<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/jquery_003.js"></script>
+<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/jquery_005.js"></script>
+<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/jquery_004.js"></script>
+<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/external-tracking.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.if-not-true-then-false.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.if-not-true-then-false.com/wp-includes/wlwmanifest.xml"> 
+<link rel="index" title="If Not True Then False" href="http://www.if-not-true-then-false.com/">
+<link rel="start" title="Microsoft Word doc documents handling on Linux command line with Antiword" href="http://www.if-not-true-then-false.com/2009/microsoft-word-doc-documents-handling-on-linux-command-line-with-antiword/">
+<link rel="prev" title="Twitter Updates for 2010-09-09" href="http://www.if-not-true-then-false.com/2010/twitter-updates-for-2010-09-09/">
+<link rel="next" title="Twitter Updates for 2010-09-10" href="http://www.if-not-true-then-false.com/2010/twitter-updates-for-2010-09-10/">
+<meta name="generator" content="WordPress 3.1.1">
+<link rel="shortlink" href="http://wp.me/pIL6i-Ht">
+
+<!-- All in One SEO Pack 1.6.13.2 by Michael Torbert of Semper Fi Web Design[298,384] -->
+<meta name="description" content="This is quick guide howto enable Apache userdirs with SELinux on Fedora 15/14/13/12/11, CentOS 5.6/5.5/5.4 and Red Hat (RHEL) 6/5.6/5.5/5.4. This guide assumes">
+<meta name="keywords" content="apache,centos,centos 5.5,centos 5.6,fedora,fedora 12,fedora 13,fedora 14,fedora 15,httpd,linux,lovelock,red hat,red hat 5.5,red hat 6,red hat enterprise linux,rhel,selinux,userdir,web server">
+<link rel="canonical" href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/">
+<!-- /all in one seo pack -->
+
+
+<!-- Fancybox for WordPress v2.7.5 -->
+
+<script type="text/javascript">
+
+	jQuery.noConflict();
+
+	jQuery(function(){
+
+				jQuery.fn.getTitle = function() {
+			var arr = jQuery("a.fancybox");
+			jQuery.each(arr, function() {
+				var title = jQuery(this).children("img").attr("title");
+				jQuery(this).attr('title',title);
+			})
+		}
+
+		// Supported file extensions
+		var thumbnails = 'a:has(img)[href$=".bmp"],a:has(img)[href$=".gif"],a:has(img)[href$=".jpg"],a:has(img)[href$=".jpeg"],a:has(img)[href$=".png"],a:has(img)[href$=".BMP"],a:has(img)[href$=".GIF"],a:has(img)[href$=".JPG"],a:has(img)[href$=".JPEG"],a:has(img)[href$=".PNG"]';
+
+	
+		jQuery(thumbnails).addClass("fancybox").attr("rel","fancybox").getTitle();
+
+			jQuery("a.fancybox").fancybox({
+			'imageScale': true,
+			'padding': 10,
+			'zoomOpacity': true,
+			'zoomSpeedIn': 500,
+			'zoomSpeedOut': 500,
+			'zoomSpeedChange': 300,
+			'overlayShow': true,
+			'overlayColor': "#666666",
+			'overlayOpacity': 0.3,
+			'enableEscapeButton': true,
+			'showCloseButton': true,
+			'hideOnOverlayClick': true,
+			'hideOnContentClick': false,
+			'frameWidth':  600,
+			'frameHeight':  340,
+												'centerOnScroll': true
+		});
+
+})
+
+</script>
+<!-- END Fancybox for WordPress -->
+
+<link rel="stylesheet" href="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/wp-syntax.css" type="text/css" media="screen">
+
+	<link rel="stylesheet" href="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/screen.css" type="text/css" media="screen,projection">
+	<!--[if IE 6]>
+	<link rel="stylesheet" href="http://www.if-not-true-then-false.com/wp-content/themes/if-not-true-then-false-theme/css/blueprint/ie.css" type="text/css" media="screen,projection" />
+	<![endif]-->
+	<link rel="stylesheet" href="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/default.css" type="text/css" media="screen,projection">	<!--[if IE 6]>
+	<link rel="stylesheet" href="http://www.if-not-true-then-false.com/wp-content/themes/if-not-true-then-false-theme/css/ie6.css" type="text/css" />
+	<![endif]-->
+	<link rel="stylesheet" href="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/2c-r-fixed.css" type="text/css">
+
+<!-- Generated by Arras Theme -->
+<style type="text/css">
+#wrapper { background: center top scroll no-repeat #F1EFE6; }
+#index-featured .posts-default .post { width: 205px; }
+#index-featured .posts-default img, #index-featured .posts-default .entry-thumbnails-link { width: 195px; height: 110px; }
+#index-featured .posts-default .entry-thumbnails { width: 205px; height: 120px; }
+#index-featured .posts-quick .entry-thumbnails { width: 195px; height: 110px; }
+#index-featured .posts-default .entry-meta, #index-featured .posts-quick .entry-meta { width: 195px; }
+#index-news .posts-default .post { width: 120px; }
+#index-news .posts-default img, #index-news .posts-default .entry-thumbnails-link { width: 110px; height: 110px; }
+#index-news .posts-default .entry-thumbnails { width: 120px; height: 120px; }
+#index-news .posts-quick .entry-thumbnails img { width: 110px; height: 110px; }
+#index-news .posts-default .entry-meta, #index-news .posts-quick .entry-meta { width: 110px; }
+
+#archive-posts .posts-default .post { width: 120px; }
+#archive-posts .posts-default img, #archive-posts .posts-default .entry-thumbnails-link { width: 110px; height: 110px; }
+#archive-posts .posts-default .entry-thumbnails { width: 120px; height: 120px; }
+#archive-posts .posts-quick .entry-thumbnails img { width: 110px; height: 110px; }
+#archive-posts .posts-default .entry-meta, #archive-posts .posts-quick .entry-meta { width: 110px; }
+
+</style>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<!-- Meta Manager Start -->
+		<meta name="google-site-verification" content="QeXYQ3g6eEmwb5GkT3D3EWAx-hdje4WY6ZSSUwrqTXs">
+<meta name="y_key" content="fa6576a088c2b5a9">
+<meta name="msvalidate.01" content="BC7865B9B0A24718F7420B0CDD073376">
+		<!-- Meta Manager End -->
+		<link rel="stylesheet" href="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/user.css" type="text/css" media="screen,projection"><!-- Google Analytics Tracking by Google Analyticator 6.1.3: http://ronaldheft.com/code/analyticator/ -->
+<script type="text/javascript">window.google_analytics_uacct = "pub-4788086840132948";</script>
+<script type="text/javascript">
+	var analyticsFileTypes = [''];
+	var analyticsEventTracking = 'enabled';
+</script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-747684-6']);
+	_gaq.push(['_setDomainName', 'none']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+
+$('.multi-sidebar').tabs();
+
+
+$('#commentform').validate();
+
+$('.posts-default').equalHeights();
+$('#footer-sidebar').equalHeights();
+
+
+});
+</script>
+<link rel="stylesheet" media="screen" id="shareaholic-publisher-css" href="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/sprite.css"><style type="text/css">.shareaholic-arrow-down{ position: absolute !important; left:45% !important; width: 0 !important; height: 0 !important; border-left: 6px solid transparent !important; border-right: 6px solid transparent !important; border-top: 6px solid #000000 !important; }.shareaholic-tip-text{font-size:12px !important; line-height:120% !important; background: #000000 !important; color: #ffffff !important; padding: 5px !important; border-radius: 5px !important; -webkit-border-radius:5px; !important; -moz-border-radius:5px; !important}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_reset{background:none;border-spacing:0;border:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size: 11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_link img{border:none}
+.fb_dialog{position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{background:rgba(82, 82, 82, .7);padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px}
+.fb_dialog_advanced.fb_mobile{background:rgba(82, 82, 82, .7);padding:4px;-moz-border-radius:2px;-webkit-border-radius:2px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/zq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/zL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_mobile .fb_dialog_close_icon{top:11px
+}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/zq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/zL/r/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/zq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/zL/r/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size: 24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/ze/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/ze/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/ze/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/ze/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size: 14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/zd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/z9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:right}
+.fb_iframe_widget{position:relative;display:-moz-inline-block;display:inline-block}
+.fb_iframe_widget iframe{position:relative;vertical-align:text-bottom}
+.fb_iframe_widget span{position:relative}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v1/z9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_button_simple,
+.fb_button_simple_rtl{background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/zH/r/eIpbnVKI9lR.png);background-repeat:no-repeat;cursor:pointer;outline:none;text-decoration:none}
+.fb_button_simple_rtl{background-position:right 0}
+.fb_button_simple .fb_button_text{margin:0 0 0 20px;padding-bottom:1px}
+.fb_button_simple_rtl .fb_button_text{margin:0 10px 0 0}
+a.fb_button_simple:hover .fb_button_text,
+a.fb_button_simple_rtl:hover .fb_button_text,
+.fb_button_simple:hover .fb_button_text,
+.fb_button_simple_rtl:hover .fb_button_text{text-decoration:underline}
+.fb_button,
+.fb_button_rtl{background:#29447e url(http://static.ak.fbcdn.net/rsrc.php/v1/zL/r/FGFbc80dUKj.png);background-repeat:no-repeat;cursor:pointer;display:inline-block;padding:0 0 0 1px;text-decoration:none;outline:none}
+.fb_button .fb_button_text,
+.fb_button_rtl .fb_button_text{background:#5f78ab url(http://static.ak.fbcdn.net/rsrc.php/v1/zL/r/FGFbc80dUKj.png);border-top:solid 1px #879ac0;border-bottom:solid 1px #1a356e;color:#fff;display:block;font-family:"lucida grande",tahoma,verdana,arial,sans-serif;font-weight:bold;padding:2px 6px 3px 6px;margin:1px 1px 0 21px;text-shadow:none}
+a.fb_button,
+a.fb_button_rtl,
+.fb_button,
+.fb_button_rtl{text-decoration:none}
+a.fb_button:active .fb_button_text,
+a.fb_button_rtl:active .fb_button_text,
+.fb_button:active .fb_button_text,
+.fb_button_rtl:active .fb_button_text{border-bottom:solid 1px #29447e;border-top:solid 1px #45619d;background:#4f6aa3;text-shadow:none}
+.fb_button_xlarge,
+.fb_button_xlarge_rtl{background-position:left -60px;font-size: 24px;line-height:30px}
+.fb_button_xlarge .fb_button_text{padding:3px 8px 3px 12px;margin-left:38px}
+a.fb_button_xlarge:active{background-position:left -99px}
+.fb_button_xlarge_rtl{background-position:right -268px}
+.fb_button_xlarge_rtl .fb_button_text{padding:3px 8px 3px 12px;margin-right:39px}
+a.fb_button_xlarge_rtl:active{background-position:right -307px}
+.fb_button_large,
+.fb_button_large_rtl{background-position:left -138px;font-size: 13px;line-height:16px}
+.fb_button_large .fb_button_text{margin-left:24px;padding:2px 6px 4px 6px}
+a.fb_button_large:active{background-position:left -163px}
+.fb_button_large_rtl{background-position:right -346px}
+.fb_button_large_rtl .fb_button_text{margin-right:25px}
+a.fb_button_large_rtl:active{background-position:right -371px}
+.fb_button_medium,
+.fb_button_medium_rtl{background-position:left -188px;font-size: 11px;line-height:14px}
+a.fb_button_medium:active{background-position:left -210px}
+.fb_button_medium_rtl{background-position:right -396px}
+.fb_button_text_rtl,
+.fb_button_medium_rtl .fb_button_text{padding:2px 6px 3px 6px;margin-right:22px}
+a.fb_button_medium_rtl:active{background-position:right -418px}
+.fb_button_small,
+.fb_button_small_rtl{background-position:left -232px;font-size: 10px;line-height:10px}
+.fb_button_small .fb_button_text{padding:2px 6px 3px;margin-left:17px}
+a.fb_button_small:active,
+.fb_button_small:active{background-position:left -250px}
+.fb_button_small_rtl{background-position:right -440px}
+.fb_button_small_rtl .fb_button_text{padding:2px 6px;margin-right:18px}
+a.fb_button_small_rtl:active{background-position:right -458px}
+.fb_share_count_wrapper{position:relative;float:left}
+.fb_share_count{background:#b0b9ec none repeat scroll 0 0;color:#333;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;text-align:center}
+.fb_share_count_inner{background:#e8ebf2;display:block}
+.fb_share_count_right{margin-left:-1px;display:inline-block}
+.fb_share_count_right .fb_share_count_inner{border-top:solid 1px #e8ebf2;border-bottom:solid 1px #b0b9ec;margin:1px 1px 0 1px;font-size: 10px;line-height:10px;padding:2px 6px 3px;font-weight:bold}
+.fb_share_count_top{display:block;letter-spacing:-1px;line-height:34px;margin-bottom:7px;font-size: 22px;border:solid 1px #b0b9ec}
+.fb_share_count_nub_top{border:none;display:block;position:absolute;left:7px;top:35px;margin:0;padding:0;width:6px;height:7px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/zU/r/bSOHtKbCGYI.png)}
+.fb_share_count_nub_right{border:none;display:inline-block;padding:0;width:5px;height:10px;background-repeat:no-repeat;background-image:url(http://static.ak.fbcdn.net/rsrc.php/v1/zX/r/i_oIVTKMYsL.png);vertical-align:top;background-position:right 5px;z-index:10;left:2px;margin:0 2px 0 0;position:relative}
+.fb_share_no_count{display:none}
+.fb_share_size_Small .fb_share_count_right .fb_share_count_inner{font-size: 10px}
+.fb_share_size_Medium .fb_share_count_right .fb_share_count_inner{font-size: 11px;padding:2px 6px 3px;letter-spacing:-1px;line-height:14px}
+.fb_share_size_Large .fb_share_count_right .fb_share_count_inner{font-size: 13px;line-height:16px;padding:2px 6px 4px;font-weight:normal;letter-spacing:-1px}
+.fb_share_count_hidden .fb_share_count_nub_top,
+.fb_share_count_hidden .fb_share_count_top,
+.fb_share_count_hidden .fb_share_count_nub_right,
+.fb_share_count_hidden .fb_share_count_right{visibility:hidden}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size: 13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size: 11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fb_edge_widget_with_comment{position:relative;*z-index:1000}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget{position:absolute}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr{left:-4px}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_rtl{left:2px}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget{left:0;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget .FB_Loader{left:0;top:1px;margin-top:6px;margin-left:0;background-position:50% 50%;background-color:#fff;height:150px;width:394px;border:1px #666 solid;border-bottom:2px solid #283e6c;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.dark .FB_Loader{background-color:#000;border-bottom:2px solid #ccc}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.siderender
+.FB_Loader{margin-top:0}
+#fb_social_bar_container{position:fixed;left:0;right:0;height:34px;padding:0 25px;z-index:999999999}
+.fb_social_bar_iframe{position:relative;float:right;opacity:0;-moz-opacity:0;filter:alpha(opacity=0)}
+.fb_social_bar_iframe_bottom_ie6{bottom:auto;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)))}
+.fb_social_bar_iframe_top_ie6{bottom:auto;top:expression(eval(document.documentElement.scrollTop-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)))}
+</style></head><body class="single single-post postid-2695 single-format-standard layout-2c-r-fixed style-default js">
+<!-- BuySellAds.com Ad Code -->
+<!--<script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = '//s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script>-->
+<!-- End BuySellAds.com Ad Code -->
+<script type="text/javascript">
+//<![CDATA[
+(function(){
+var c = document.body.className;
+c = c.replace(/no-js/, 'js');
+document.body.className = c;
+})();
+//]]>
+</script>
+
+
+<div id="header">
+	<div id="branding" class="clearfix">
+	<div class="logo clearfix">
+				<span class="blog-name"><a href="http://www.if-not-true-then-false.com/">If Not True Then False</a></span>
+		<span class="blog-description">A blog about programming, operating systems and applications</span>
+			</div>
+	<div id="searchbar">
+		<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/jsapi.js"></script>
+<script type="text/javascript">
+  google.load('search', '1');
+  google.setOnLoadCallback(function() {
+    google.search.CustomSearchControl.attachAutoCompletion(
+      '001101576710557136795:ji7hlgqgrwa',
+      document.getElementById('q'),
+      'cse-search-box');
+  });
+</script><script src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/a.js" type="text/javascript"></script><link href="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/defaulten.css" type="text/css" rel="stylesheet"><script src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/defaulten.js" type="text/javascript"></script>
+<form class="searchform clearfix" action="http://www.if-not-true-then-false.com/search" id="cse-search-box">
+  <div>
+    <input name="cx" value="001101576710557136795:ji7hlgqgrwa" type="hidden">
+    <input name="cof" value="FORID:11" type="hidden">
+    <input name="ie" value="UTF-8" type="hidden">
+    <input style="background: url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" name="q" id="q" autocomplete="on" size="31" class="s" type="text">
+    <input name="sa" class="searchsubmit" value="Search" title="Search" type="submit">
+  </div>
+<input value="www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/" name="siteurl" type="hidden"></form>
+<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/brand.js"></script>  
+	</div>
+	</div><!-- #branding -->
+</div><!-- #header -->
+
+<div id="nav">
+	<div id="nav-content" class="clearfix">
+	
+<!-- PixoPoint Menu Plugin by PixoPoint Web Development ... http://pixopoint.com/pixopoint-menu/ -->
+
+<div id="pixopoint_menu1_wrapper">
+	<div id="pixopoint_menu1">
+
+		<ul class="sf-menu" id="suckerfishnav">
+<li><a href="http://www.if-not-true-then-false.com/">Home</a></li><li class="cat-item cat-item-217"><a href="http://www.if-not-true-then-false.com/category/featured/" title="View all posts filed under Featured">Featured</a>
+</li>
+<li class="cat-item cat-item-8"><a href="http://www.if-not-true-then-false.com/category/linux/" title="Linux Guides">Linux</a>
+<ul class="children">
+<li class="cat-item cat-item-215"><a href="http://www.if-not-true-then-false.com/category/linux/centos-linux/" title="View all posts filed under CentOS">CentOS</a>
+</li>
+<li class="cat-item cat-item-214"><a href="http://www.if-not-true-then-false.com/category/linux/fedora-linux/" title="View all posts filed under Fedora">Fedora</a>
+</li>
+<li class="cat-item cat-item-216"><a href="http://www.if-not-true-then-false.com/category/linux/red-hat-rhel/" title="View all posts filed under Red Hat (RHEL)">Red Hat (RHEL)</a>
+</li>
+</ul>
+</li>
+<li class="cat-item cat-item-26"><a href="http://www.if-not-true-then-false.com/category/programming/" title="Programming Guides">Programming</a>
+</li>
+<li class="cat-item cat-item-117"><a href="http://www.if-not-true-then-false.com/category/servers/" title="View all posts filed under Servers">Servers</a>
+</li>
+<li class="cat-item cat-item-80"><a href="http://www.if-not-true-then-false.com/category/tweets/" title="Tweets from twitter.">Tweets</a>
+</li>
+</ul>
+	</div>
+</div>
+			</div><!-- #nav-content -->
+</div><!-- #nav -->
+
+
+<div id="wrapper" style="background-color: rgb(255, 255, 255);">
+	<div id="osubmenu" class="clearfix">
+		<div id="gooa" class="clearfix">
+			<script type="text/javascript"><!--
+			google_ad_client = "ca-pub-4788086840132948";
+			/* leaderboard */
+			google_ad_slot = "9749752276";
+			google_ad_width = 728;
+			google_ad_height = 90;
+			//-->
+			</script>
+			<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/show_ads.js">
+			</script><ins style="display: inline-table; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><ins id="aswift_0_anchor" style="display: block; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins>
+		</div>
+	</div>
+	
+	  
+	<div id="main" class="clearfix">
+    <div id="container" class="clearfix">
+<div id="content" class="section">
+
+
+
+		<div id="post-2695" class="post-2695 post type-post status-publish format-standard hentry category-centos-linux category-fedora-linux category-linux category-red-hat-rhel category-server-guides-howtos category-servers tag-apache tag-centos tag-centos-5-5 tag-centos-5-6 tag-fedora tag-fedora-12 tag-fedora-13 tag-fedora-14 tag-fedora-15 tag-httpd tag-linux tag-lovelock tag-red-hat tag-red-hat-5-5 tag-red-hat-6 tag-red-hat-enterprise-linux tag-rhel tag-selinux tag-userdir tag-web-server clearfix single-post">
+
+        <h1 class="entry-title"><a href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/" rel="bookmark">Apache Userdir with SELinux on Fedora 15/14, CentOS 5.6, Red Hat (RHEL) 5.6/6</a></h1><div class="entry-info"><span class="entry-author">By <address class="author vcard">JR</address></span> – <span class="entry-author">Published: </span><abbr class="published" title="2010-09-10T15:02:43+00:00">September 10, 2010</abbr> – <span class="entry-author">Last Updated: </span><abbr class="published" title="2011-05-30T18:07:19+00:00">May 30, 2011</abbr><span class="entry-cat"><strong>Posted in: </strong><a href="http://www.if-not-true-then-false.com/category/linux/centos-linux/">CentOS</a>, <a href="http://www.if-not-true-then-false.com/category/linux/fedora-linux/">Fedora</a>, <a href="http://www.if-not-true-then-false.com/category/linux/">Linux</a>, <a href="http://www.if-not-true-then-false.com/category/linux/red-hat-rhel/">Red Hat (RHEL)</a>, <a href="http://www.if-not-true-then-false.com/category/linux/server-guides-howtos/">Server Guides/Howtos</a>, <a href="http://www.if-not-true-then-false.com/category/servers/">Servers</a></span></div>        
+        <div class="entry-content">
+		<p><img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/apache-logo.jpg" alt="" title="apache-logo" class="alignright size-full wp-image-719" height="89" width="178">This
+ is quick guide howto enable Apache userdirs with SELinux on Fedora 
+15/14/13/12/11, CentOS 5.6/5.5/5.4 and Red Hat (RHEL) 6/5.6/5.5/5.4. 
+This guide assumes that you have <a href="http://www.if-not-true-then-false.com/2010/install-apache-php-on-fedora-centos-red-hat-rhel/">Apache (httpd) server</a> installed on your system. This guide uses separeted <em>userdir.conf</em> without touching <em>httpd.conf</em> so later default <em>httpd.conf</em> can be overrided or whole configuration moved simply. This guide uses user called <em>testuser</em> and should be replaced by real user name(s). </p>
+<div style="padding-top: 25px;"></div>
+<h2>Enable Apache Userdirs</h2>
+<h3>1. Change root user</h3>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: monospace;"><span style="color: rgb(194, 12, 185); font-weight: bold;">su</span> -
+<span style="color: rgb(102, 102, 102); font-style: italic;">## OR ##</span>
+<span style="color: rgb(194, 12, 185); font-weight: bold;">sudo</span> <span style="color: rgb(102, 0, 51);">-i</span></pre></div></div>
+
+<div style="padding-top: 15px;"></div>
+<h3>2. Create /etc/httpd/conf.d/userdir.conf file</h3>
+<p>Open file, with our favorite editor, like:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: monospace;"><span style="color: rgb(194, 12, 185); font-weight: bold;">nano</span> <span style="color: rgb(102, 0, 51);">-w</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>etc<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>httpd<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>conf.d<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>userdir.conf</pre></div></div>
+
+<p>Add something like following content to file:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: monospace;"><span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span>IfModule mod_userdir.c<span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span>
+    <span style="color: rgb(102, 102, 102); font-style: italic;">#</span>
+    <span style="color: rgb(102, 102, 102); font-style: italic;"># UserDir is disabled by default since it can confirm the presence</span>
+    <span style="color: rgb(102, 102, 102); font-style: italic;"># of a username on the system (depending on home directory</span>
+    <span style="color: rgb(102, 102, 102); font-style: italic;"># permissions).</span>
+    <span style="color: rgb(102, 102, 102); font-style: italic;">#</span>
+    UserDir enabled testuser
+&nbsp;
+    <span style="color: rgb(102, 102, 102); font-style: italic;">#</span>
+    <span style="color: rgb(102, 102, 102); font-style: italic;"># To enable requests to /~user/ to serve the user's public_html</span>
+    <span style="color: rgb(102, 102, 102); font-style: italic;"># directory, remove the "UserDir disabled" line above, and uncomment</span>
+    <span style="color: rgb(102, 102, 102); font-style: italic;"># the following line instead:</span>
+    <span style="color: rgb(102, 102, 102); font-style: italic;">#</span>
+    UserDir public_html
+&nbsp;
+<span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;/</span>IfModule<span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span>
+&nbsp;
+<span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;</span>Directory <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>home<span style="color: rgb(0, 0, 0); font-weight: bold;">/*/</span>public_html<span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span>
+        Options Indexes Includes FollowSymLinks
+&nbsp;
+        AllowOverride All
+        Allow from all
+&nbsp;
+        Order deny,allow
+<span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;/</span>Directory<span style="color: rgb(0, 0, 0); font-weight: bold;">&gt;</span></pre></div></div>
+
+<p>And save file.</p>
+<p><strong>Note:</strong><br>
+To allow a few users to have UserDir directories, but not anyone else, use the following:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: monospace;">UserDir disabled
+UserDir enabled testuser1 testuser2 testuser3</pre></div></div>
+
+<p>To allow most users to have UserDir directories, but deny this to a few, use the following:</p>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: monospace;">UserDir enabled
+UserDir disabled testuser4 testuser5 testuser6</pre></div></div>
+
+<div style="padding-top: 15px;"></div>
+<h3>3. Start/Restart Apache (httpd)</h3>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: monospace;"><span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>etc<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>init.d<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>httpd start
+<span style="color: rgb(102, 102, 102); font-style: italic;">## OR ##</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>etc<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>init.d<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>httpd restart</pre></div></div>
+
+<div style="padding-top: 15px;"></div>
+<h3>4. Create public_html directory/directories</h3>
+<p>Make public_html directory/directories on user/users home dirs.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: monospace;"><span style="color: rgb(194, 12, 185); font-weight: bold;">mkdir</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>home<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>testuser<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>public_html</pre></div></div>
+
+<div style="padding-top: 15px;"></div>
+<h3>5. Change the correct permissions to home and public_html directories</h3>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: monospace;"><span style="color: rgb(102, 102, 102); font-style: italic;">## home directory ##</span>
+<span style="color: rgb(194, 12, 185); font-weight: bold;">chmod</span> <span style="color: rgb(0, 0, 0);">711</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>home<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>testuser
+&nbsp;
+<span style="color: rgb(102, 102, 102); font-style: italic;">## public_html directory ##</span>
+<span style="color: rgb(194, 12, 185); font-weight: bold;">chown</span> testuser:testuser <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>home<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>testuser<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>public_html
+<span style="color: rgb(194, 12, 185); font-weight: bold;">chmod</span> <span style="color: rgb(0, 0, 0);">755</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>home<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>testuser<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>public_html</pre></div></div>
+
+<div style="padding-top: 15px;"></div>
+<h3>6. Set proper SELinux settings for Apache homedirs (httpd_enable_homedirs)</h3>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: monospace;">setsebool <span style="color: rgb(102, 0, 51);">-P</span> httpd_enable_homedirs <span style="color: rgb(194, 12, 185); font-weight: bold;">true</span></pre></div></div>
+
+<p>Looks like older SELinux versions needs also following (example CentOS and Red Hat):</p>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: monospace;">chcon <span style="color: rgb(102, 0, 51);">-R</span> <span style="color: rgb(102, 0, 51);">-t</span> httpd_sys_content_t <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>home<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>testuser<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>public_html</pre></div></div>
+
+<div style="padding-top: 35px;"></div>
+<h2>Test Enabled Apache Userdir</h2>
+<p>Go to url <a rel="nofollow" href="http://localhost/%7Etestuser/">http://localhost/~testuser/</a></p>
+<p>Should look something like following:<br>
+<a title="Testuser Apache Homedir" rel="fancybox" class="fancybox" href="http://media.if-not-true-then-false.com/2010/09/testuser-apache-homedir.png"><img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/testuser-apache-homedir.png" alt="Testuser Apache Homedir" title="Testuser Apache Homedir" class="aligncenter size-full wp-image-2716" height="361" width="525"></a></p>
+<div style="padding-top: 15px;"></div>
+<h3>Test HTML and PHP under Apache Userdir</h3>
+<p>Create following files <em>~/public_html/test.html</em> and <em>~/public_html/test.php</em><br>
+<strong>~/public_html/test.html content</strong></p>
+
+<div class="wp_syntax"><div class="code"><pre class="php" style="font-family: monospace;"><span style="color: rgb(51, 153, 51);">&lt;</span>html<span style="color: rgb(51, 153, 51);">&gt;</span>
+  <span style="color: rgb(51, 153, 51);">&lt;</span>head<span style="color: rgb(51, 153, 51);">&gt;</span>
+    <span style="color: rgb(51, 153, 51);">&lt;</span>title<span style="color: rgb(51, 153, 51);">&gt;</span>Testing Apache Userdir<span style="color: rgb(51, 153, 51);">&lt;/</span>title<span style="color: rgb(51, 153, 51);">&gt;</span>
+  <span style="color: rgb(51, 153, 51);">&lt;/</span>head<span style="color: rgb(51, 153, 51);">&gt;</span>
+  <span style="color: rgb(51, 153, 51);">&lt;</span>body<span style="color: rgb(51, 153, 51);">&gt;</span>
+    <span style="color: rgb(51, 153, 51);">&lt;</span>h1<span style="color: rgb(51, 153, 51);">&gt;</span>Testing Apache Userdir<span style="color: rgb(51, 153, 51);">!&lt;/</span>h1<span style="color: rgb(51, 153, 51);">&gt;</span>
+  <span style="color: rgb(51, 153, 51);">&lt;/</span>body<span style="color: rgb(51, 153, 51);">&gt;</span>
+<span style="color: rgb(51, 153, 51);">&lt;/</span>html<span style="color: rgb(51, 153, 51);">&gt;</span></pre></div></div>
+
+<p><strong>~/public_html/test.php content</strong></p>
+
+<div class="wp_syntax"><div class="code"><pre class="php" style="font-family: monospace;"><span style="color: rgb(0, 0, 0); font-weight: bold;">&lt;?php</span>
+  <span style="color: rgb(153, 0, 0);">phpinfo</span><span style="color: rgb(0, 153, 0);">(</span><span style="color: rgb(0, 153, 0);">)</span><span style="color: rgb(51, 153, 51);">;</span>
+<span style="color: rgb(0, 0, 0); font-weight: bold;">?&gt;</span></pre></div></div>
+
+<p>Reload browser:<br>
+<a title="Testuser Apache Userdir Test Files Added" rel="fancybox" class="fancybox" href="http://media.if-not-true-then-false.com/2010/09/testuser-apache-userdir-test-files.png"><img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/testuser-apache-userdir-test-files.png" alt="Testuser Apache Userdir Test Files Added" title="Testuser Apache Userdir Test Files Added" class="aligncenter size-full wp-image-2717" height="392" width="529"></a></p>
+<p>Check test files:<br>
+<a title="Testing apache Userdir" rel="fancybox" class="fancybox" href="http://media.if-not-true-then-false.com/2010/09/testing-apache-user-dir.png"><img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/testing-apache-user-dir-560x238.png" alt="Testing apache Userdir" title="Testing apache Userdir" class="aligncenter size-large wp-image-2714" height="238" width="560"></a><br>
+<a title="Testing Apache Userdir PHP" rel="fancybox" class="fancybox" href="http://media.if-not-true-then-false.com/2010/09/testing-apache-userdir-php.png"><img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/testing-apache-userdir-php-560x274.png" alt="Testing Apache Userdir PHP" title="Testing Apache Userdir PHP" class="aligncenter size-large wp-image-2715" height="274" width="560"></a></p>
+<div class="shareaholic-like-buttons"><div style="color: rgb(51, 51, 51); font-size: 28px; margin-bottom: 10px;">Do you like this?</div><a class="shareaholic-fb-like" style="margin-top: 5px; margin-bottom: 5px;"><fb:like class=" fb_edge_widget_with_comment fb_iframe_widget" href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/" layout="button_count" show_faces="true" width="100" font=""><span><iframe src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/like.html" class="fb_ltr" title="Like this content on Facebook." style="border: medium none; overflow: hidden; height: 21px; width: 100px;" name="f183fb621ad28f4" id="f2dcc2de298129e" scrolling="no"></iframe></span></fb:like></a><br></div><div style="margin-left: 4px; overflow: hidden; height: 52px;" class="shr-publisher-2695 shareaholic-show-on-load"><div class="shr-bookmarks"><ul class="shr-socials"><li style="margin-left: 0px ! important;" class="shr-5 shareaholic"><a orig_title="Post to Facebook" class="external" target="_blank" rel="nofollow" href="http://www.shareaholic.com/api/share/?title=Apache+Userdir+with+SELinux+on+Fedora+15%2F14%2C+CentOS+5.6%2C+Red+Hat+%28RHEL%29+5.6%2F6&amp;link=http%3A%2F%2Fwww.if-not-true-then-false.com%2F2010%2Fenable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel%2F&amp;notes=This%2520is%2520quick%2520guide%2520howto%2520enable%2520Apache%2520userdirs%2520with%2520SELinux%2520on%2520Fedora%252015%252F14%252F13%252F12%252F11%252C%2520CentOS%25205.6%252F5.5%252F5.4%2520and%2520Red%2520Hat%2520%2528RHEL%2529%25206%252F5.6%252F5.5%252F5.4.%2520This%2520guide%2520assumes%2520that%2520you%2520have%2520Apache%2520%2528httpd%2529%2520server%2520installed%2520on%2520your%2520system.%2520This%2520guide%2520uses%2520separeted%2520userdir.conf%2520without%2520touching%2520httpd.conf%2520so%2520later%2520de&amp;short_link=&amp;shortener=bitly&amp;shortener_key=&amp;v=1&amp;apitype=1&amp;apikey=8afa39428933be41f8afdb8ea21a495c&amp;source=Shareaholic-Publishers&amp;template=&amp;service=5&amp;ctype=&amp;tags=apache%7C5%7Cdelicious,fedora%7C4%7Cdelicious,selinux%7C3%7Cdelicious,centos%7C3%7Cdelicious,linux%7C3%7Cdelicious,userdir%7C2%7Cdelicious,sysadmin%7C2%7Cdelicious,rhel%7C2%7Cdelicious,opensource%7C2%7Cdelicious"></a><div class="shr-count"><div style="left: 9px; top: -10px;" class="shr-count-outline">6</div><div style="left: 10px; top: -10px;" class="shr-count-outline">6</div><div style="left: 11px; top: -10px;" class="shr-count-outline">6</div><div style="left: 9px; top: -11px;" class="shr-count-outline">6</div><div style="left: 11px; top: -11px;" class="shr-count-outline">6</div><div style="left: 9px; top: -12px;" class="shr-count-outline">6</div><div style="left: 10px; top: -12px;" class="shr-count-outline">6</div><div style="left: 11px; top: -12px;" class="shr-count-outline">6</div><div style="left: 10px; top: -11px;" class="shr-count-center">6</div></div></li><li style="margin-left: 0px ! important;" class="shr-7 shareaholic"><a href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/&amp;tags=apache%7C5%7Cdelicious,fedora%7C4%7Cdelicious,selinux%7C3%7Cdelicious,centos%7C3%7Cdelicious,linux%7C3%7Cdelicious,userdir%7C2%7Cdelicious,sysadmin%7C2%7Cdelicious,rhel%7C2%7Cdelicious,opensource%7C2%7Cdelicious" orig_title="Post to Twitter" class="external" target="_blank" rel="nofollow"></a><div class="shr-count"><div style="left: 9px; top: -10px;" class="shr-count-outline">20</div><div style="left: 10px; top: -10px;" class="shr-count-outline">20</div><div style="left: 11px; top: -10px;" class="shr-count-outline">20</div><div style="left: 9px; top: -11px;" class="shr-count-outline">20</div><div style="left: 11px; top: -11px;" class="shr-count-outline">20</div><div style="left: 9px; top: -12px;" class="shr-count-outline">20</div><div style="left: 10px; top: -12px;" class="shr-count-outline">20</div><div style="left: 11px; top: -12px;" class="shr-count-outline">20</div><div style="left: 10px; top: -11px;" class="shr-count-center">20</div></div></li><li style="margin-left: 0px ! important;" class="shr-2 shareaholic"><a orig_title="Post to Delicious" class="external" target="_blank" rel="nofollow" href="http://www.shareaholic.com/api/share/?title=Apache+Userdir+with+SELinux+on+Fedora+15%2F14%2C+CentOS+5.6%2C+Red+Hat+%28RHEL%29+5.6%2F6&amp;link=http%3A%2F%2Fwww.if-not-true-then-false.com%2F2010%2Fenable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel%2F&amp;notes=This%2520is%2520quick%2520guide%2520howto%2520enable%2520Apache%2520userdirs%2520with%2520SELinux%2520on%2520Fedora%252015%252F14%252F13%252F12%252F11%252C%2520CentOS%25205.6%252F5.5%252F5.4%2520and%2520Red%2520Hat%2520%2528RHEL%2529%25206%252F5.6%252F5.5%252F5.4.%2520This%2520guide%2520assumes%2520that%2520you%2520have%2520Apache%2520%2528httpd%2529%2520server%2520installed%2520on%2520your%2520system.%2520This%2520guide%2520uses%2520separeted%2520userdir.conf%2520without%2520touching%2520httpd.conf%2520so%2520later%2520de&amp;short_link=&amp;shortener=bitly&amp;shortener_key=&amp;v=1&amp;apitype=1&amp;apikey=8afa39428933be41f8afdb8ea21a495c&amp;source=Shareaholic-Publishers&amp;template=&amp;service=2&amp;ctype=&amp;tags=apache%7C5%7Cdelicious,fedora%7C4%7Cdelicious,selinux%7C3%7Cdelicious,centos%7C3%7Cdelicious,linux%7C3%7Cdelicious,userdir%7C2%7Cdelicious,sysadmin%7C2%7Cdelicious,rhel%7C2%7Cdelicious,opensource%7C2%7Cdelicious"></a><div class="shr-count"><div style="left: 9px; top: -10px;" class="shr-count-outline">6</div><div style="left: 10px; top: -10px;" class="shr-count-outline">6</div><div style="left: 11px; top: -10px;" class="shr-count-outline">6</div><div style="left: 9px; top: -11px;" class="shr-count-outline">6</div><div style="left: 11px; top: -11px;" class="shr-count-outline">6</div><div style="left: 9px; top: -12px;" class="shr-count-outline">6</div><div style="left: 10px; top: -12px;" class="shr-count-outline">6</div><div style="left: 11px; top: -12px;" class="shr-count-outline">6</div><div style="left: 10px; top: -11px;" class="shr-count-center">6</div></div></li><li style="margin-left: 0px ! important;" class="shr-257 shareaholic"><a orig_title="Post on Google Buzz" class="external" target="_blank" rel="nofollow" href="http://www.shareaholic.com/api/share/?title=Apache+Userdir+with+SELinux+on+Fedora+15%2F14%2C+CentOS+5.6%2C+Red+Hat+%28RHEL%29+5.6%2F6&amp;link=http%3A%2F%2Fwww.if-not-true-then-false.com%2F2010%2Fenable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel%2F&amp;notes=This%2520is%2520quick%2520guide%2520howto%2520enable%2520Apache%2520userdirs%2520with%2520SELinux%2520on%2520Fedora%252015%252F14%252F13%252F12%252F11%252C%2520CentOS%25205.6%252F5.5%252F5.4%2520and%2520Red%2520Hat%2520%2528RHEL%2529%25206%252F5.6%252F5.5%252F5.4.%2520This%2520guide%2520assumes%2520that%2520you%2520have%2520Apache%2520%2528httpd%2529%2520server%2520installed%2520on%2520your%2520system.%2520This%2520guide%2520uses%2520separeted%2520userdir.conf%2520without%2520touching%2520httpd.conf%2520so%2520later%2520de&amp;short_link=&amp;shortener=bitly&amp;shortener_key=&amp;v=1&amp;apitype=1&amp;apikey=8afa39428933be41f8afdb8ea21a495c&amp;source=Shareaholic-Publishers&amp;template=&amp;service=257&amp;ctype=&amp;tags=apache%7C5%7Cdelicious,fedora%7C4%7Cdelicious,selinux%7C3%7Cdelicious,centos%7C3%7Cdelicious,linux%7C3%7Cdelicious,userdir%7C2%7Cdelicious,sysadmin%7C2%7Cdelicious,rhel%7C2%7Cdelicious,opensource%7C2%7Cdelicious"></a></li><li style="margin-left: 0px ! important;" class="shr-88 shareaholic"><a orig_title="Add to LinkedIn" class="external" target="_blank" rel="nofollow" href="http://www.shareaholic.com/api/share/?title=Apache+Userdir+with+SELinux+on+Fedora+15%2F14%2C+CentOS+5.6%2C+Red+Hat+%28RHEL%29+5.6%2F6&amp;link=http%3A%2F%2Fwww.if-not-true-then-false.com%2F2010%2Fenable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel%2F&amp;notes=This%2520is%2520quick%2520guide%2520howto%2520enable%2520Apache%2520userdirs%2520with%2520SELinux%2520on%2520Fedora%252015%252F14%252F13%252F12%252F11%252C%2520CentOS%25205.6%252F5.5%252F5.4%2520and%2520Red%2520Hat%2520%2528RHEL%2529%25206%252F5.6%252F5.5%252F5.4.%2520This%2520guide%2520assumes%2520that%2520you%2520have%2520Apache%2520%2528httpd%2529%2520server%2520installed%2520on%2520your%2520system.%2520This%2520guide%2520uses%2520separeted%2520userdir.conf%2520without%2520touching%2520httpd.conf%2520so%2520later%2520de&amp;short_link=&amp;shortener=bitly&amp;shortener_key=&amp;v=1&amp;apitype=1&amp;apikey=8afa39428933be41f8afdb8ea21a495c&amp;source=Shareaholic-Publishers&amp;template=&amp;service=88&amp;ctype=&amp;tags=apache%7C5%7Cdelicious,fedora%7C4%7Cdelicious,selinux%7C3%7Cdelicious,centos%7C3%7Cdelicious,linux%7C3%7Cdelicious,userdir%7C2%7Cdelicious,sysadmin%7C2%7Cdelicious,rhel%7C2%7Cdelicious,opensource%7C2%7Cdelicious"></a></li><li style="margin-left: 0px ! important;" class="shr-38 shareaholic"><a orig_title="Post to StumbleUpon" class="external" target="_blank" rel="nofollow" href="http://www.shareaholic.com/api/share/?title=Apache+Userdir+with+SELinux+on+Fedora+15%2F14%2C+CentOS+5.6%2C+Red+Hat+%28RHEL%29+5.6%2F6&amp;link=http%3A%2F%2Fwww.if-not-true-then-false.com%2F2010%2Fenable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel%2F&amp;notes=This%2520is%2520quick%2520guide%2520howto%2520enable%2520Apache%2520userdirs%2520with%2520SELinux%2520on%2520Fedora%252015%252F14%252F13%252F12%252F11%252C%2520CentOS%25205.6%252F5.5%252F5.4%2520and%2520Red%2520Hat%2520%2528RHEL%2529%25206%252F5.6%252F5.5%252F5.4.%2520This%2520guide%2520assumes%2520that%2520you%2520have%2520Apache%2520%2528httpd%2529%2520server%2520installed%2520on%2520your%2520system.%2520This%2520guide%2520uses%2520separeted%2520userdir.conf%2520without%2520touching%2520httpd.conf%2520so%2520later%2520de&amp;short_link=&amp;shortener=bitly&amp;shortener_key=&amp;v=1&amp;apitype=1&amp;apikey=8afa39428933be41f8afdb8ea21a495c&amp;source=Shareaholic-Publishers&amp;template=&amp;service=38&amp;ctype=&amp;tags=apache%7C5%7Cdelicious,fedora%7C4%7Cdelicious,selinux%7C3%7Cdelicious,centos%7C3%7Cdelicious,linux%7C3%7Cdelicious,userdir%7C2%7Cdelicious,sysadmin%7C2%7Cdelicious,rhel%7C2%7Cdelicious,opensource%7C2%7Cdelicious"></a></li><li style="margin-left: 0px ! important;" class="shr-40 shareaholic"><a orig_title="Add to Reddit" class="external" target="_blank" rel="nofollow" href="http://www.shareaholic.com/api/share/?title=Apache+Userdir+with+SELinux+on+Fedora+15%2F14%2C+CentOS+5.6%2C+Red+Hat+%28RHEL%29+5.6%2F6&amp;link=http%3A%2F%2Fwww.if-not-true-then-false.com%2F2010%2Fenable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel%2F&amp;notes=This%2520is%2520quick%2520guide%2520howto%2520enable%2520Apache%2520userdirs%2520with%2520SELinux%2520on%2520Fedora%252015%252F14%252F13%252F12%252F11%252C%2520CentOS%25205.6%252F5.5%252F5.4%2520and%2520Red%2520Hat%2520%2528RHEL%2529%25206%252F5.6%252F5.5%252F5.4.%2520This%2520guide%2520assumes%2520that%2520you%2520have%2520Apache%2520%2528httpd%2529%2520server%2520installed%2520on%2520your%2520system.%2520This%2520guide%2520uses%2520separeted%2520userdir.conf%2520without%2520touching%2520httpd.conf%2520so%2520later%2520de&amp;short_link=&amp;shortener=bitly&amp;shortener_key=&amp;v=1&amp;apitype=1&amp;apikey=8afa39428933be41f8afdb8ea21a495c&amp;source=Shareaholic-Publishers&amp;template=&amp;service=40&amp;ctype=&amp;tags=apache%7C5%7Cdelicious,fedora%7C4%7Cdelicious,selinux%7C3%7Cdelicious,centos%7C3%7Cdelicious,linux%7C3%7Cdelicious,userdir%7C2%7Cdelicious,sysadmin%7C2%7Cdelicious,rhel%7C2%7Cdelicious,opensource%7C2%7Cdelicious"></a></li><li style="margin-left: 0px ! important;" class="shr-100 shareaholic"><a orig_title="Add to Sphinn" class="external" target="_blank" rel="nofollow" href="http://www.shareaholic.com/api/share/?title=Apache+Userdir+with+SELinux+on+Fedora+15%2F14%2C+CentOS+5.6%2C+Red+Hat+%28RHEL%29+5.6%2F6&amp;link=http%3A%2F%2Fwww.if-not-true-then-false.com%2F2010%2Fenable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel%2F&amp;notes=This%2520is%2520quick%2520guide%2520howto%2520enable%2520Apache%2520userdirs%2520with%2520SELinux%2520on%2520Fedora%252015%252F14%252F13%252F12%252F11%252C%2520CentOS%25205.6%252F5.5%252F5.4%2520and%2520Red%2520Hat%2520%2528RHEL%2529%25206%252F5.6%252F5.5%252F5.4.%2520This%2520guide%2520assumes%2520that%2520you%2520have%2520Apache%2520%2528httpd%2529%2520server%2520installed%2520on%2520your%2520system.%2520This%2520guide%2520uses%2520separeted%2520userdir.conf%2520without%2520touching%2520httpd.conf%2520so%2520later%2520de&amp;short_link=&amp;shortener=bitly&amp;shortener_key=&amp;v=1&amp;apitype=1&amp;apikey=8afa39428933be41f8afdb8ea21a495c&amp;source=Shareaholic-Publishers&amp;template=&amp;service=100&amp;ctype=&amp;tags=apache%7C5%7Cdelicious,fedora%7C4%7Cdelicious,selinux%7C3%7Cdelicious,centos%7C3%7Cdelicious,linux%7C3%7Cdelicious,userdir%7C2%7Cdelicious,sysadmin%7C2%7Cdelicious,rhel%7C2%7Cdelicious,opensource%7C2%7Cdelicious"></a></li><li style="margin-left: 0px ! important;" class="shr-52 shareaholic"><a orig_title="Send via Gmail" class="external" target="_blank" rel="nofollow" href="http://www.shareaholic.com/api/share/?title=Apache+Userdir+with+SELinux+on+Fedora+15%2F14%2C+CentOS+5.6%2C+Red+Hat+%28RHEL%29+5.6%2F6&amp;link=http%3A%2F%2Fwww.if-not-true-then-false.com%2F2010%2Fenable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel%2F&amp;notes=This%2520is%2520quick%2520guide%2520howto%2520enable%2520Apache%2520userdirs%2520with%2520SELinux%2520on%2520Fedora%252015%252F14%252F13%252F12%252F11%252C%2520CentOS%25205.6%252F5.5%252F5.4%2520and%2520Red%2520Hat%2520%2528RHEL%2529%25206%252F5.6%252F5.5%252F5.4.%2520This%2520guide%2520assumes%2520that%2520you%2520have%2520Apache%2520%2528httpd%2529%2520server%2520installed%2520on%2520your%2520system.%2520This%2520guide%2520uses%2520separeted%2520userdir.conf%2520without%2520touching%2520httpd.conf%2520so%2520later%2520de&amp;short_link=&amp;shortener=bitly&amp;shortener_key=&amp;v=1&amp;apitype=1&amp;apikey=8afa39428933be41f8afdb8ea21a495c&amp;source=Shareaholic-Publishers&amp;template=&amp;service=52&amp;ctype=&amp;tags=apache%7C5%7Cdelicious,fedora%7C4%7Cdelicious,selinux%7C3%7Cdelicious,centos%7C3%7Cdelicious,linux%7C3%7Cdelicious,userdir%7C2%7Cdelicious,sysadmin%7C2%7Cdelicious,rhel%7C2%7Cdelicious,opensource%7C2%7Cdelicious"></a></li><li style="margin-left: 0px ! important;" class="shr-201 shareaholic"><a orig_title="Send via E-mail program" class="external" target="_blank" rel="nofollow" href="http://www.shareaholic.com/api/share/?title=Apache+Userdir+with+SELinux+on+Fedora+15%2F14%2C+CentOS+5.6%2C+Red+Hat+%28RHEL%29+5.6%2F6&amp;link=http%3A%2F%2Fwww.if-not-true-then-false.com%2F2010%2Fenable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel%2F&amp;notes=This%2520is%2520quick%2520guide%2520howto%2520enable%2520Apache%2520userdirs%2520with%2520SELinux%2520on%2520Fedora%252015%252F14%252F13%252F12%252F11%252C%2520CentOS%25205.6%252F5.5%252F5.4%2520and%2520Red%2520Hat%2520%2528RHEL%2529%25206%252F5.6%252F5.5%252F5.4.%2520This%2520guide%2520assumes%2520that%2520you%2520have%2520Apache%2520%2528httpd%2529%2520server%2520installed%2520on%2520your%2520system.%2520This%2520guide%2520uses%2520separeted%2520userdir.conf%2520without%2520touching%2520httpd.conf%2520so%2520later%2520de&amp;short_link=&amp;shortener=bitly&amp;shortener_key=&amp;v=1&amp;apitype=1&amp;apikey=8afa39428933be41f8afdb8ea21a495c&amp;source=Shareaholic-Publishers&amp;template=&amp;service=201&amp;ctype=&amp;tags=apache%7C5%7Cdelicious,fedora%7C4%7Cdelicious,selinux%7C3%7Cdelicious,centos%7C3%7Cdelicious,linux%7C3%7Cdelicious,userdir%7C2%7Cdelicious,sysadmin%7C2%7Cdelicious,rhel%7C2%7Cdelicious,opensource%7C2%7Cdelicious"></a></li></ul><style type="text/css">ul.shr-socials li.shareaholic{background-image:url(http://www.if-not-true-then-false.com/wp-content/plugins/sexybookmarks/spritegen/sprite.png) !important;}</style></div></div>
+
+<h2 style="padding-top: 25px;">Related posts:</h2><ol><li><a href="http://www.if-not-true-then-false.com/2010/lamp-linux-apache-mysql-php-on-fedora-centos-red-hat-rhel/" rel="bookmark" title="Permanent Link: LAMP on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6 – (Linux, Apache, MySQL, PHP)">LAMP on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6 – (Linux, Apache, MySQL, PHP)</a><br><small>LAMP (Linux, Apache, MySQL, PHP) server is very powerful server setup behind any website or web based service. This guide...</small></li>
+<li><a href="http://www.if-not-true-then-false.com/2010/install-apache-php-on-fedora-centos-red-hat-rhel/" rel="bookmark" title="Permanent Link: Install Apache (httpd) and PHP 5.3.6 on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6">Install Apache (httpd) and PHP 5.3.6 on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6</a><br><small>This
+ guide shows howto install Apache HTTP Server (httpd) with PHP 5.3.6 and
+ following modules: PEAR PDO MySQL PostgreSQL Memcache...</small></li>
+<li><a href="http://www.if-not-true-then-false.com/2010/install-svn-subversion-server-on-fedora-centos-red-hat-rhel/" rel="bookmark" title="Permanent Link: Install SVN (Subversion) Server on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6">Install SVN (Subversion) Server on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6</a><br><small>This is guide, howto install SVN (Subversion) server on Fedora 15/14/13, CentOS 5.6, Red Hat (RHEL) 5.6/6. What is SVN...</small></li>
+<li><a href="http://www.if-not-true-then-false.com/2010/install-wordpress-on-fedora-centos-red-hat-rhel/" rel="bookmark" title="Permanent Link: Install WordPress 3.0.1 on Fedora 14/13, CentOS/Red Hat (RHEL) 5.5/6">Install WordPress 3.0.1 on Fedora 14/13, CentOS/Red Hat (RHEL) 5.5/6</a><br><small>This is quick guide, howto install WordPress 3.0 (currently 3.0.1) Blog Tool and Publishing Platform on Fedora 13, Fedora 14,...</small></li>
+<li><a href="http://www.if-not-true-then-false.com/2010/install-zend-framework-on-fedora-centos-red-hat-rhel/" rel="bookmark" title="Permanent Link: Install Zend Framework on Fedora 14/13, CentOS/Red Hat (RHEL) 5.5">Install Zend Framework on Fedora 14/13, CentOS/Red Hat (RHEL) 5.5</a><br><small>This is quick guide, howto install Zend Framework (ZF) 1.11.3 on Fedora 14/13, CentOS/Red Hat (RHEL) 5.5. This guide also...</small></li>
+</ol>  
+        	</div>
+        
+        <!-- <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/"
+    dc:identifier="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/"
+    dc:title="Apache Userdir with SELinux on Fedora 15/14, CentOS 5.6, Red Hat (RHEL) 5.6/6"
+    trackback:ping="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/trackback/" />
+</rdf:RDF> -->
+		<div class="tags"><strong>Tags:</strong> <a href="http://www.if-not-true-then-false.com/tag/apache/" rel="tag">Apache</a>, <a href="http://www.if-not-true-then-false.com/tag/centos/" rel="tag">CentOS</a>, <a href="http://www.if-not-true-then-false.com/tag/centos-5-5/" rel="tag">CentOS 5.5</a>, <a href="http://www.if-not-true-then-false.com/tag/centos-5-6/" rel="tag">CentOS 5.6</a>, <a href="http://www.if-not-true-then-false.com/tag/fedora/" rel="tag">Fedora</a>, <a href="http://www.if-not-true-then-false.com/tag/fedora-12/" rel="tag">Fedora 12</a>, <a href="http://www.if-not-true-then-false.com/tag/fedora-13/" rel="tag">Fedora 13</a>, <a href="http://www.if-not-true-then-false.com/tag/fedora-14/" rel="tag">Fedora 14</a>, <a href="http://www.if-not-true-then-false.com/tag/fedora-15/" rel="tag">Fedora 15</a>, <a href="http://www.if-not-true-then-false.com/tag/httpd/" rel="tag">HTTPD</a>, <a href="http://www.if-not-true-then-false.com/tag/linux/" rel="tag">Linux</a>, <a href="http://www.if-not-true-then-false.com/tag/lovelock/" rel="tag">Lovelock</a>, <a href="http://www.if-not-true-then-false.com/tag/red-hat/" rel="tag">Red Hat</a>, <a href="http://www.if-not-true-then-false.com/tag/red-hat-5-5/" rel="tag">Red Hat 5.5</a>, <a href="http://www.if-not-true-then-false.com/tag/red-hat-6/" rel="tag">Red Hat 6</a>, <a href="http://www.if-not-true-then-false.com/tag/red-hat-enterprise-linux/" rel="tag">Red Hat Enterprise Linux</a>, <a href="http://www.if-not-true-then-false.com/tag/rhel/" rel="tag">RHEL</a>, <a href="http://www.if-not-true-then-false.com/tag/selinux/" rel="tag">SELinux</a>, <a href="http://www.if-not-true-then-false.com/tag/userdir/" rel="tag">Userdir</a>, <a href="http://www.if-not-true-then-false.com/tag/web-server/" rel="tag">Web server</a> </div>
+                <div class="about-author clearfix">
+        	<h4>About the Author</h4>
+                        Hi, I'm <strong>JR</strong> and the Founder of <strong>if not true then false</strong>.
+ I am a software developer, and I have over ten years experience in 
+programming. I'm big fan of Linux and Open Source. And normally I use 
+just Linux environments.
+<p style="padding-left: 60px; padding-top: 20px;">
+<strong>Like If (!1) 0  on Facebook:</strong> <iframe src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/like_002.html" style="border: medium none; overflow: hidden; width: 450px; height: 35px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+</p>
+
+<p style="padding-left: 60px;">
+<a href="http://feeds.feedburner.com/IfNotTrueThenFalse">
+<img style="border: 0pt none; margin: 0pt; padding: 0pt 4px 0pt 0pt; float: left;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQA2LzI0LzA59sFr4wAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAATzSURBVFiFvZd7bBRVFMZ/d2Z21+6DPtnadktjhNoUSEyICVE0hBgS5CHhYULER8QYIDFRgwZMQBINEOA/o/ggYtRECokPRImKRKLBiClRobXyEArdbktb6Ha3+5jdnesfs4+Z1rYUCyc52Tt7zr3z3e87595dgcVCu9gmJU9ISYBbYELQIQQfV73Mq/nvcoPgDs4ImO6rasBVUgeae2Lfno6R7G8nEmpDQkvNRmbkAQS3sx3Y6G+YhxbvhOhlSMcmFoDmBu8U0kXVXG07BrCjZhObFIBMmtU+fwNaTzNcawM9BgYT63oMrrWh9TTj8zeQSbMaQAMwMgScpCARBuDShQJwpws0DdweuKPIHP8vS4RxeiowMmadaQBSgisRAmnmTHnpx3y+3nOB9EAX8fM/cf3KH6iJEJOKweu7eQyuRAiZfZcJIINJUc6Emh86/fU4/fW4pz6UBXSeSPMB+tuOUFIKXu9NINBj5jsBBUAO1UvRRnRnZQPlj2yhcs3nxP0L6eqEtM64a0IaFgCGgUl/1oWqFFxRQFFBKDZXS6opX7SF4mXv0B2tIjZoX2MsNwyrBDlkOQW+X28OHD4oq0dMmQul05CSvHY5c9XNovKZT+k79BpG3/EbliTHgAD4ewOyvmKMGd5qmLYYGh9HOrzDgAD0HtqKu+MQXs/YAM72wj27EaYEGcbWbaATmt+FpoWI399HZOLD6qNi6RvEAo+acoyxnmErwiH6XLxsensHdPdAJJqdIIFkBJr3IA6vQVw/h1BUs0ayXrFsG1H/PNIpRq2BHIMCoOV5ZKO/QI+xrg0AmYgQv3iSeOtREm1HmeSMUGzV2OWDBW8hq+5DFq4VZCJC33tL8TuCI0rQehWmv5mVYFgbChWEiigqwd04n/IVO6necJxU49MEuzB3ZwDxCHz2JIROIYRim+ddspNIdGQJRm9DRRnmiruY8iWbqVj/Nd16AF235B9eh+w7a8svuns2+tTlY7bhfzIghIrI7sb0Qv87axq584Uj9DoaLUwMoHz7ClKP2XJ9D784IgtyNAAcWAUHViFOfYiIdoHiAKHlXSkqoXLdQXqN2sKc7lbEqX22PEdZHemGx24AwFCK2n8x/YetsGc24thWSA3adqcUlVD61AeEoxYpftuL1O157geeJZ0eLkGuC27sHPh1L+KTFSYIS8s5AzPJzHoOI12QgpN77Tm1M0kW1Q5b0xjtMoon4FI3/NNlfsYTQOgM4qPlkIzZaC5esJEYxfm5yp9NtjhCIx2YM74aCPvnULu7nbvevk7t7nbC/uwCnacRx3fZdqh4SsnULyzMv3YFo+uvQo5Qcc5YPL42nLx2P6qnFKGoqJ5SJq/dX4if2IPRH0Qoat4dMxbbW6z1m3wMRUWtqBtfG6qeMhuFqqfMjr7liC3uaphrj3eesXdD4N7xSSD1qOUMUM1nawGd/soWV912gMTChVMxx8RYbTiQtLTTvpWgR00N9aj5bKHPqQlbHaCoo8Szt6UlPpAcchmdWElnYJKjqtad4nbYlZiDjoFU6P6DVCsAGjQFwykGkwyjaqJ9MAnBcAoNmsBkQADaz0tpEYJpNR4ocUGxc2J3HdahPwnBQTAk5x78gulAWgAOwAc4vlvE6y6VR6XEP/pyN2dCcDWZ4cv5h9kMpICIDQCWP6u32KQVgMD8dZwb3y4AEkj/C23kxalEjldyAAAAAElFTkSuQmCC"></a>
+<a style="margin-left: 10px;" href="http://www.facebook.com/IfNotTrueThenFalse">
+<img style="border: 0pt none; margin: 0pt; padding: 0pt 4px 0pt 2px; float: left;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAAVdEVYdENyZWF0aW9uIFRpbWUANi8yNC8wOfbBa+MAAAK6SURBVFiFvZbNaxNRFMV/701Sa/xIuykiESpYiy5dWdeCO0VBUOpO3bjwYyHqRoIbcaW48A9QRKiCCiL6H7hxpaJSxSiFom1j0jaZpJm510VI7GRixjoT7+pd7nDOmXvuuzNGVTHGcOLyk/MiklfVLH0MY0zZWpu/d/3QLQCjqkxeenze9/2bqZTDpmyGgcE0xrGJEqsvrNQaLJWreJ6P4zgX7t84fCsF4Pte3rGWka3DrNQaVBZriC+JCrCOZXB9mpGtw3yfWcD3vTzQEiDZTUMbKRddfM9PlLgVIsJyo45T9chszlBaWMwCpABUBYyl0VjpC3lASMNjXXqgydkSINL0R1VjgbsVl2rVpThXDNXGdu9on1dqDURWCVAVvJitL84V2b5lA3smxjl1bCJUn7zytH0Wzw93QGK8vVt1ObJ/nNPH9v3xmU78YAdEUfl3ATtz2Z7kLY5uebMDKsTgZ2zbUOQznfiSpAUnOzz3fGHqxTs+fivx7vNcd0GdQxjnBlhjAnnKsXz4+vOP5C3OtgARQeJ40CXeTP/oWe8YwrVbMPOp0LP+bfpLIM/tGA3kulqA/IMFr59dXFP94LmpQB4cQo03hH8ToT2gHXtAkv34hQV04Af3gMS7BSEy1cDNuP/8bQg/dA3XasGBMw/a55d3jgdq1phAvVsk+i3oFlF4gQ4kbQEQiRe2IOFFFIXXxYJE+SPxghaoUqtUExUQhdeakRRAZtBhdFcuUQHjEXiF9wu/BagodTfZH9IovNYistAciLpbSVRAr6i7lfYQWgBjHVkqzf83AUulebCOAFhjjDHpzF23UmZ+tkDdXe4bcd1dZn62gFspY9KZu8YYY4ABYHjv0Wu3LeaoimcicGKFsSkV1YevHl09C/w0QAbIARv6SdwlKsBMCvCAMlBfLbRPpKvXUw3wfgHbjK5YKpwWrgAAAABJRU5ErkJggg=="></a>
+<a style="border: 0pt none; margin: 0pt; padding: 0pt 4px 0pt 2px; float: left;" href="http://twitter.com/zuissi">
+<img style="border: 0pt none; margin: 0pt; padding: 0pt; float: left;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQA2LzI0LzA59sFr4wAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNAay06AAAAOaSURBVFiFvZfPa1xVFMc/b+b9mHSSSV9izCRpbEmNilbjqgsL0oW6EBSKQl1ZFJEuCtadK/8BFyq4EBeFuhB/bEqEImajiAiCoJZiMBKrSYw4MdNkMpm+effe42Jmwkxn3p10nPbAg+HOeed87jnnfu+MIyI4jgPAhStX386E4Qsp389zG8xUq3/fKBY/funYg6831pwGwMVrK796BwZm7wkCRtw0XirV1+SxMWwqzZ9RRLxbWXrx8KH79gA++OnKO9mJidcezR6gbAzbShOL9BXAcxxybppsKsWP5V3K6+vvvjr38PkUgBuOnJ4OAtZjRSFWRCIY6OsTiVCIFeuxYjoIcMOR0wAuAH6QF6CiTV933ckq2uC5afCD/B6AEkNJawz9LXuSlbRGSW2zLoARUCY5+dLSKh99uEA1quIHPqeef5xH5o72DKBEaKRzATTGuvtPPvsWJ3c3geOACPOXf+DY3EzPAI2cewDKgKUAmIEQ6loBYFyPldV/mZoa7RlA1cetXgGwjp/vty0NDWbs73QxTTOAEcR27j2vbengcPZ/aYWul7xeAbHuxukA8OZblxL9/cDluWePM3N4LBmAJgAl9hnAbQcIJo4k+4tw6curnH/lZKKLaj4FRgSxaUCHCnQz491ljWmkuQJdWtALwICXtsZUrS2QPaKO1qEF3ZKfPTGJssRUzRXQ0uUYdqjA+6eSlVCL8EcUUbXcLbpFCUWwnqgOAD/v7Fpe6G5a2o7hrbXgl5Xr3D893DtAywx0kWK8diX8avEfxHHIeLUbfTwMCLz0vgFapDiWbqfAbVuSkTwLiwXE1ERV4iqYWpRsJs2Jh8aZnRhMDBk3t8CIXYpHBwM2o/bv/fHpjv5KxXyzvMm9+WxizFvSgScm03y66lg8Ws3xPCSTwVBN9GnVAWPXgamc4vjYAN8X9w8R+mAkSgYwNwuRJVghVjyVr3J0KOCLDZdibAcJPeHMVMSGSvZRrTMAW7Em5yZP8e+ViLFA88aMj+/YAaoi/Fa5kagt20rf9JOsXCruZPxwEPufkUIcU4hjq89+bMdodLlUBGoZ02tr88uViJIymPrVfLuekjIsVyLSa2vzAE79cZ/5+rtrhKOThwKPYdfloKUdvdh1pdlSitUohs2Nvz4/+dgRQDmABwwB3tMXLr5nZh94UnK53jXWYs729lZqaXHh8stnzgExUGoBoFaNO2HSDOBQG8bG5zsFIID6D4Ek7cRpQpS6AAAAAElFTkSuQmCC"></a>
+</p>        </div>
+                <div style="padding-bottom: 10px;">
+        	<div style="margin: 0pt auto; width: 336px;">
+        		<script type="text/javascript"><!--
+				google_ad_client = "ca-pub-4788086840132948";
+				/* Inttf Bottom */
+				google_ad_slot = "3849274865";
+				google_ad_width = 336;
+				google_ad_height = 280;
+				//-->
+				</script>
+				<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/show_ads.js">
+			</script><ins style="display: inline-table; border: medium none; height: 280px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 336px;"><ins id="aswift_1_anchor" style="display: block; border: medium none; height: 280px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 336px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="280" scrolling="no" width="336"></iframe></ins></ins>
+		</div>
+        </div>
+    </div>
+    
+		<a name="comments"></a>
+    	  
+	<h4 class="module-title">9 Comments</h4>
+		<ol id="commentlist" class="clearfix">
+				<li class="comment even thread-even depth-1" id="li-comment-15874">
+		<div class="comment-node" id="comment-15874">
+			<div class="comment-controls">
+			<a class="comment-reply-link" href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/?replytocom=15874#respond" onclick='return addComment.moveForm("comment-15874", "15874", "respond", "2695")'>Reply</a>			</div>
+			<div class="comment-author vcard">
+						<cite class="fn">krcg</cite>
+			</div>
+						<div class="comment-meta commentmetadata">
+				Posted <abbr class="comment-datetime" title="2010-10-29T05:02:23+00:00">October 29, 2010 at 5:02 AM</abbr>			</div>
+			<div class="comment-content"><p>Nice one, there are actually some 
+good facts on this post many of my subscribers just might find this 
+useful, I will send them a link, thank you</p>
+</div>
+		</div>
+</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-17134">
+		<div class="comment-node" id="comment-17134">
+			<div class="comment-controls">
+			<a class="comment-reply-link" href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/?replytocom=17134#respond" onclick='return addComment.moveForm("comment-17134", "17134", "respond", "2695")'>Reply</a>			</div>
+			<div class="comment-author vcard">
+						<cite class="fn">Jozsef</cite>
+			</div>
+						<div class="comment-meta commentmetadata">
+				Posted <abbr class="comment-datetime" title="2010-11-05T20:18:53+00:00">November 5, 2010 at 8:18 PM</abbr>			</div>
+			<div class="comment-content"><p>Works! Nice :)</p>
+<p>I found out that if I set <strong>UseCanonicalName On</strong> in <strong>/etc/httpd/conf/httpd.conf</strong>
+ – apache is changing localhost in the browser to the ServerName 
+specified in httpd.conf and the pages in ~/public_html are not loading 
+at all. So I set <strong>UseCanonicalName Off</strong> again :)</p>
+<p>Best,<br>
+Jozsef</p>
+</div>
+		</div>
+</li>
+	<li class="comment even thread-even depth-1" id="li-comment-17138">
+		<div class="comment-node" id="comment-17138">
+			<div class="comment-controls">
+			<a class="comment-reply-link" href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/?replytocom=17138#respond" onclick='return addComment.moveForm("comment-17138", "17138", "respond", "2695")'>Reply</a>			</div>
+			<div class="comment-author vcard">
+						<cite class="fn">Jozsef</cite>
+			</div>
+						<div class="comment-meta commentmetadata">
+				Posted <abbr class="comment-datetime" title="2010-11-05T20:45:56+00:00">November 5, 2010 at 8:45 PM</abbr>			</div>
+			<div class="comment-content"><p>Or else,<br>
+It could be fixed in /etc/hosts by adding:<br>
+127.0.0.1    nameOFtheSERVER</p>
+<p>:)</p>
+<p>Best,<br>
+Jozsef</p>
+</div>
+		</div>
+</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-17290">
+		<div class="comment-node" id="comment-17290">
+			<div class="comment-controls">
+			<a class="comment-reply-link" href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/?replytocom=17290#respond" onclick='return addComment.moveForm("comment-17290", "17290", "respond", "2695")'>Reply</a>			</div>
+			<div class="comment-author vcard">
+						<cite class="fn"><a href="http://www.webpos88.com/" rel="external nofollow" class="url">Fhon</a></cite>
+			</div>
+						<div class="comment-meta commentmetadata">
+				Posted <abbr class="comment-datetime" title="2010-11-27T18:38:22+00:00">November 27, 2010 at 6:38 PM</abbr>			</div>
+			<div class="comment-content"><p>I follow your step html is working but php just show me blank screen.</p>
+<p>Is there any light on how and why?</p>
+<p>Best!<br>
+Fhon</p>
+</div>
+		</div>
+<ul class="children">
+	<li class="comment byuser comment-author-admin bypostauthor even depth-2" id="li-comment-17304">
+		<div class="comment-node" id="comment-17304">
+			<div class="comment-controls">
+			<a class="comment-reply-link" href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/?replytocom=17304#respond" onclick='return addComment.moveForm("comment-17304", "17304", "respond", "2695")'>Reply</a>			</div>
+			<div class="comment-author vcard">
+						<cite class="fn"><a href="http://www.if-not-true-then-false.com/" rel="external nofollow" class="url">JR</a></cite>
+			</div>
+						<div class="comment-meta commentmetadata">
+				Posted <abbr class="comment-datetime" title="2010-11-30T10:28:59+00:00">November 30, 2010 at 10:28 AM</abbr>			</div>
+			<div class="comment-content"><p>Hi Fhon,</p>
+<p>Is your PHP working on any other dir?<br>
+Is it working example on <em>/var/www/html</em> dir?</p>
+</div>
+		</div>
+</li>
+</ul>
+</li>
+	<li class="comment odd alt thread-even depth-1" id="li-comment-17308">
+		<div class="comment-node" id="comment-17308">
+			<div class="comment-controls">
+			<a class="comment-reply-link" href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/?replytocom=17308#respond" onclick='return addComment.moveForm("comment-17308", "17308", "respond", "2695")'>Reply</a>			</div>
+			<div class="comment-author vcard">
+						<cite class="fn"><a href="http://www.webpos88.com/" rel="external nofollow" class="url">Fhon</a></cite>
+			</div>
+						<div class="comment-meta commentmetadata">
+				Posted <abbr class="comment-datetime" title="2010-11-30T17:09:07+00:00">November 30, 2010 at 5:09 PM</abbr>			</div>
+			<div class="comment-content"><p>Hi JR,</p>
+<p>Php is working on /var/www/html</p>
+<p>but not /home/user/public_html</p>
+<p>When try to access test.php file it just show download the file.<br>
+Run test.html work show the page without problem.</p>
+<p>Best!<br>
+Fhon</p>
+</div>
+		</div>
+<ul class="children">
+	<li class="comment byuser comment-author-admin bypostauthor even depth-2" id="li-comment-17310">
+		<div class="comment-node" id="comment-17310">
+			<div class="comment-controls">
+			<a class="comment-reply-link" href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/?replytocom=17310#respond" onclick='return addComment.moveForm("comment-17310", "17310", "respond", "2695")'>Reply</a>			</div>
+			<div class="comment-author vcard">
+						<cite class="fn"><a href="http://www.if-not-true-then-false.com/" rel="external nofollow" class="url">JR</a></cite>
+			</div>
+						<div class="comment-meta commentmetadata">
+				Posted <abbr class="comment-datetime" title="2010-12-01T10:54:22+00:00">December 1, 2010 at 10:54 AM</abbr>			</div>
+			<div class="comment-content"><p>Hi again Fhon,</p>
+<p>A few additional questions. </p>
+<p><strong>What operating system (and version) are you using?</strong></p>
+<p><strong>Did you execute following command?</strong></p>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: monospace;">chcon <span style="color: rgb(102, 0, 51);">-R</span> <span style="color: rgb(102, 0, 51);">-t</span> httpd_sys_content_t <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>home<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>testuser<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>public_html</pre></div></div>
+
+<p><strong>Post following commands output:</strong></p>
+
+<div class="wp_syntax"><div class="code"><pre class="bash" style="font-family: monospace;"><span style="color: rgb(194, 12, 185); font-weight: bold;">sed</span> <span style="color: rgb(255, 0, 0);">'/^ *#/d;s/#.*//'</span> <span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>etc<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>httpd<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>conf.d<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span><span style="color: rgb(122, 8, 116); font-weight: bold;">{</span>php,userdir<span style="color: rgb(122, 8, 116); font-weight: bold;">}</span>.conf
+&nbsp;
+<span style="color: rgb(102, 102, 102); font-style: italic;">## AND ##</span>
+&nbsp;
+<span style="color: rgb(194, 12, 185); font-weight: bold;">ls</span> <span style="color: rgb(102, 0, 51);">-laZ</span> ~<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span>public_html<span style="color: rgb(0, 0, 0); font-weight: bold;">/</span></pre></div></div>
+
+</div>
+		</div>
+</li>
+</ul>
+</li>
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-17340">
+		<div class="comment-node" id="comment-17340">
+			<div class="comment-controls">
+			<a class="comment-reply-link" href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/?replytocom=17340#respond" onclick='return addComment.moveForm("comment-17340", "17340", "respond", "2695")'>Reply</a>			</div>
+			<div class="comment-author vcard">
+						<cite class="fn">Fred</cite>
+			</div>
+						<div class="comment-meta commentmetadata">
+				Posted <abbr class="comment-datetime" title="2010-12-04T01:24:08+00:00">December 4, 2010 at 1:24 AM</abbr>			</div>
+			<div class="comment-content"><p>Great Tutorials, thanks you.</p>
+<p>On Fedora 14 I had to :</p>
+<p>setsebool -P httpd_read_user_content 1</p>
+</div>
+		</div>
+</li>
+		</ol>
+		<div class="comments-navigation clearfix">
+			<div class="floatleft"></div>
+		    <div class="floatright"></div>
+		</div>
+		
+		<h4 class="module-title">Trackbacks / Pings</h4>
+	<ol class="pingbacks">	<li class="pingback even thread-even depth-1" id="li-trackback-9645">
+		<div id="trackback-9645">
+		<a href="http://apache.darmowe-blogi.pisz.pl/bez-kategorii/apache-userdir-with-selinux-on-fedora-13-centos-5-5-red-hat.html" rel="external nofollow" class="url">Apache Userdir with SELinux on Fedora 13, CentOS 5.5, Red Hat … « apache</a>		</div>
+</li>
+</ol>
+		
+
+<div id="respond">
+<h4 class="module-title">Leave a Reply</h4>
+ <div id="commentsform">
+  <form action="http://www.if-not-true-then-false.com/wp-comments-post.php" method="post" id="commentform">
+  <input name="comment_post_ID" value="2695" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+       <p><label for="author">Name (required)</label><br>
+     <input name="author" id="s1" size="40" tabindex="1" minlength="2" class="required" type="text">
+    </p>
+    <p><label for="email">Mail (will not be published) (required)</label><br>
+     <input name="email" id="s2" size="40" tabindex="2" class="required email" type="text">
+    </p>
+    <p><label for="url">Website</label><br>
+     <input name="url" id="s3" size="40" tabindex="3" class="url" type="text">
+    </p>
+   	<p><strong>XHTML:</strong> You can use these tags: <code>&lt;a 
+href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; 
+&lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del 
+datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; 
+&lt;strong&gt; &lt;pre lang="" line="" escaped=""&gt; </code></p>
+    <p>
+     <textarea name="comment" id="s4" cols="50" rows="10" tabindex="4" class="required"></textarea>
+    </p>
+	    <p>
+     <input name="submit" id="sbutt" tabindex="5" value="Submit Comment" type="submit">
+     <a rel="nofollow" id="cancel-comment-reply-link" href="http://www.if-not-true-then-false.com/2010/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel/#respond" style="display: none;">Cancel Reply</a>    </p>
+   <p style="display: none;"><input name="c0aa39b7dda15ceb21471" value="72dad713028b81338f7" type="text"><input name="3125b891a" type="text"></p>  </form>
+  </div><!-- end #commentsform --></div>
+ 	    
+
+</div><!-- #content -->
+
+</div><!-- #container -->
+
+
+<div id="primary" class="aside main-aside sidebar">
+  
+	<ul class="xoxo">
+		<li class="widgetcontainer clearfix"><h5 class="widgettitle">Subscribe</h5><div class="widgetcontent">			
+			<div class="execphpwidget"><!--<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FIf-Not-True-Then-False%2F136544819716336&amp;width=210&amp;colorscheme=light&amp;connections=0&amp;stream=false&amp;header=true&amp;height=75" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:210px; height:75px;" allowTransparency="true"></iframe>-->
+<div style="padding-left: 15px;">
+<iframe src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/likebox.html" style="border: medium none; overflow: hidden; width: 240px; height: 270px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+<ul class="subscribe clearfix">
+<li><a style="border-bottom: 0pt none;" id="rss" title="If Not True Then False RSS Feed" href="http://feeds.feedburner.com/IfNotTrueThenFalse">If Not True Then False RSS Feed</a></li>
+<li><a style="border-bottom: 0pt none;" id="twitter" title="If Not True Then False Twitter" href="http://www.twitter.com/inttf/">If Not True Then False Twitter</a></li>
+<li><a style="border-bottom: 0pt none;" id="facebook" title="If Not True Then False Facebook" href="http://www.facebook.com/IfNotTrueThenFalse">If Not True Then False Facebook</a></li>
+</ul>
+</div></div>
+		</div></li><li class="widgetcontainer clearfix"><h5 class="widgettitle">Sponsors</h5><div class="widgetcontent">			<div class="textwidget"><div style="padding-left: 5px; padding-bottom: 5px;">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-4788086840132948";
+/* Inttf right sidebar */
+google_ad_slot = "6067115763";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 250px;"><ins id="aswift_2_anchor" style="display: block; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 250px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_2" name="aswift_2" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="250" scrolling="no" width="250"></iframe></ins></ins>
+</div>
+
+<!--<div style="padding-left:5px;padding-bottom:130px;">
+<!-- BuySellAds.com Zone Code -->
+<!--></div>
+<!-- End BuySellAds.com Zone Code -->
+<!--</div>--></div>
+		</li></ul></div>		<li class="multi-sidebar-container">
+		<div class="multi-sidebar clearfix ui-tabs ui-widget ui-widget-content ui-corner-all">
+		<ul class="tabs clearfix ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+		<li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#s-updated"><span>Updated</span></a></li><li class="ui-state-default ui-corner-top"><a href="#s-latest"><span>Latest</span></a></li><li class="ui-state-default ui-corner-top"><a href="#s-popular"><span>Popular</span></a></li><li class="ui-state-default ui-corner-top"><a href="#s-commented"><span>Commented</span></a></li>		</ul>
+		<div id="s-updated" class="widgetcontainer clearfix ui-tabs-panel ui-widget-content ui-corner-bottom"><ul>						<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/install-openoffice-org-on-fedora-centos-red-hat-rhel/">Install OpenOffice.org 3.3.0/3.4.0 on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6</a><br>
+						<span class="sub">05 June 2011 10:20 AM | 
+						73 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/eclipse-android-logo-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="eclipse-android-logo" title="eclipse-android-logo" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/android-sdk-and-eclipse-adt-on-fedora-centos-red-hat-rhel/">Android SDK r11 and Eclipse ADT on Fedora 15/14, Red Hat (RHEL) 6</a><br>
+						<span class="sub">05 June 2011 10:16 AM | 
+						53 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-logo-new-36x36.jpg" class="attachment-sidebar-thumb wp-post-image" alt="fedora-logo-new" title="fedora-logo-new" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2011/fedora-15-lovelock-install-guide/">Fedora 15 Lovelock Install Guide with Screenshots</a><br>
+						<span class="sub">04 June 2011 12:10 PM | 
+						3 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-logo-new-36x36.jpg" class="attachment-sidebar-thumb wp-post-image" alt="fedora-logo-new" title="fedora-logo-new" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/install-chromium-on-fedora-using-yum/">Install Chromium (dev) Browser on Fedora 15/14/13/12 Using YUM</a><br>
+						<span class="sub">02 June 2011 11:22 PM | 
+						12 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-logo-new-36x36.jpg" class="attachment-sidebar-thumb wp-post-image" alt="fedora-logo-new" title="fedora-logo-new" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2011/howto-play-wmv-files-on-fedora/">Howto Play .wmv Files on Fedora 15 / 14 / 13</a><br>
+						<span class="sub">02 June 2011 10:46 PM | 
+						4 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/nvidia-logo-thumbnail-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="Nvidia Logo Thumbnail" title="Nvidia Logo Thumbnail" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2011/fedora-15-nvidia-drivers-install-guide/">Fedora 15 nVidia Drivers Install Guide (disable nouveau driver)</a><br>
+						<span class="sub">02 June 2011 10:39 AM | 
+						28 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/linux-install-eclipse-on-fedora-centos-red-hat-rhel/">Install Eclipse SDK 3.6.2 (Helios) on Fedora 15/14, CentOS/RHEL 5.6/6</a><br>
+						<span class="sub">01 June 2011 2:49 PM | 
+						33 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/install-sun-oracle-java-jdk-jre-6-on-fedora-centos-red-hat-rhel/">Install Sun/Oracle Java JDK/JRE 6u25 on Fedora 15, CentOS/RHEL 5.6/6</a><br>
+						<span class="sub">01 June 2011 1:41 PM | 
+						80 Comments</span>
+						</li>
+						</ul></div><!-- #s-updated --><div id="s-latest" class="widgetcontainer clearfix ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"><ul>						<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/nvidia-logo-thumbnail-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="Nvidia Logo Thumbnail" title="Nvidia Logo Thumbnail" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2011/fedora-15-nvidia-drivers-install-guide/">Fedora 15 nVidia Drivers Install Guide (disable nouveau driver)</a><br>
+						<span class="sub">27 May 2011 11:24 AM | 
+						28 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-logo-new-36x36.jpg" class="attachment-sidebar-thumb wp-post-image" alt="fedora-logo-new" title="fedora-logo-new" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2011/fedora-15-lovelock-install-guide/">Fedora 15 Lovelock Install Guide with Screenshots</a><br>
+						<span class="sub">17 May 2011 11:12 AM | 
+						3 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/console-thumbnail-new-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="console-thumbnail-new" title="console-thumbnail-new" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2011/yum-autocomplete-on-fedora-centos-red-hat-rhel/">YUM Autocomplete on Fedora, CentOS, Red Hat (RHEL)</a><br>
+						<span class="sub">05 April 2011 11:21 AM | 
+						2 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2011/nautilus-open-in-terminal-on-fedora-centos-red-hat-rhel/">Nautilus “Open in Terminal” on Fedora/CentOS/Red Hat (RHEL)</a><br>
+						<span class="sub">08 March 2011 10:49 AM | 
+						No Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-logo-new-36x36.jpg" class="attachment-sidebar-thumb wp-post-image" alt="fedora-logo-new" title="fedora-logo-new" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2011/howto-play-wmv-files-on-fedora/">Howto Play .wmv Files on Fedora 15 / 14 / 13</a><br>
+						<span class="sub">29 January 2011 2:56 PM | 
+						4 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/console-thumbnail-new-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="console-thumbnail-new" title="console-thumbnail-new" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2011/linux-display-show-file-contents-tabs-line-breaks-non-printing-characters/">Linux: Display / Show File Contents (tabs, line breaks, non-printing characters)</a><br>
+						<span class="sub">04 January 2011 10:47 AM | 
+						No Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/console-thumbnail-new-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="console-thumbnail-new" title="console-thumbnail-new" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/linux-get-ip-address/">Linux: Get IP Address on Command Line/Shell (internal/external)</a><br>
+						<span class="sub">30 December 2010 12:54 PM | 
+						4 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/console-thumbnail-new-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="console-thumbnail-new" title="console-thumbnail-new" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/quit-bash-shell-without-saving-bash-history/">Quit Bash Shell Without Saving Bash History (5 Methods)</a><br>
+						<span class="sub">22 December 2010 9:04 AM | 
+						No Comments</span>
+						</li>
+						</ul></div><!-- #s-latest --><div id="s-popular" class="widgetcontainer clearfix ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"><ul>						<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/nvidia-logo-thumbnail-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="Nvidia Logo Thumbnail" title="Nvidia Logo Thumbnail" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2011/fedora-15-nvidia-drivers-install-guide/">Fedora 15 nVidia Drivers Install Guide (disable nouveau driver)</a><br>
+						<span class="sub">27 May 2011 11:24 AM | 
+						28 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-logo-new-36x36.jpg" class="attachment-sidebar-thumb wp-post-image" alt="fedora-logo-new" title="fedora-logo-new" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2011/fedora-15-lovelock-install-guide/">Fedora 15 Lovelock Install Guide with Screenshots</a><br>
+						<span class="sub">17 May 2011 11:12 AM | 
+						3 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/lamp-linux-apache-mysql-php-on-fedora-centos-red-hat-rhel/">LAMP on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6 – (Linux, Apache, MySQL, PHP)</a><br>
+						<span class="sub">20 August 2010 3:21 PM | 
+						4 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/apache-web-server-feather-logo-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="apache-web-server-feather-logo" title="apache-web-server-feather-logo" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/install-apache-php-on-fedora-centos-red-hat-rhel/">Install Apache (httpd) and PHP 5.3.6 on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6</a><br>
+						<span class="sub">17 August 2010 3:54 PM | 
+						27 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/eclipse-android-logo-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="eclipse-android-logo" title="eclipse-android-logo" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/android-sdk-and-eclipse-adt-on-fedora-centos-red-hat-rhel/">Android SDK r11 and Eclipse ADT on Fedora 15/14, Red Hat (RHEL) 6</a><br>
+						<span class="sub">06 August 2010 10:37 AM | 
+						53 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/install-mysql-on-fedora-centos-red-hat-rhel/">Install MySQL 5.5.13 on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6</a><br>
+						<span class="sub">30 July 2010 9:54 AM | 
+						47 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/install-sun-oracle-java-jdk-jre-6-on-fedora-centos-red-hat-rhel/">Install Sun/Oracle Java JDK/JRE 6u25 on Fedora 15, CentOS/RHEL 5.6/6</a><br>
+						<span class="sub">29 July 2010 7:58 AM | 
+						80 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/linux-install-eclipse-on-fedora-centos-red-hat-rhel/">Install Eclipse SDK 3.6.2 (Helios) on Fedora 15/14, CentOS/RHEL 5.6/6</a><br>
+						<span class="sub">28 July 2010 10:48 AM | 
+						33 Comments</span>
+						</li>
+						</ul></div><!-- #s-popular --><div id="s-commented" class="widgetcontainer clearfix ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"><ul>						<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/nvidia-logo-thumbnail-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="Nvidia Logo Thumbnail" title="Nvidia Logo Thumbnail" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/fedora-14-nvidia-drivers-install-guide-disable-nouveau-driver/">Fedora 14 nVidia Drivers Install Guide (disable nouveau driver)</a><br>
+						<span class="sub">23 November 2010 10:46 AM | 
+						112 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/programming-php-thumbnail-with-php-logo-new-36x36.jpg" class="attachment-sidebar-thumb wp-post-image" alt="programming-php-thumbnail-with-php-logo-new" title="programming-php-thumbnail-with-php-logo-new" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/php-calculate-real-differences-between-two-dates-or-timestamps/">PHP: Calculate Real Differences Between Two Dates or Timestamps</a><br>
+						<span class="sub">26 January 2010 4:04 PM | 
+						85 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/install-sun-oracle-java-jdk-jre-6-on-fedora-centos-red-hat-rhel/">Install Sun/Oracle Java JDK/JRE 6u25 on Fedora 15, CentOS/RHEL 5.6/6</a><br>
+						<span class="sub">29 July 2010 7:58 AM | 
+						80 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/flash-10-logo-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="flash-10-logo" title="flash-10-logo" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/install-adobe-flash-player-10-on-fedora-centos-red-hat-rhel/">Install Adobe Flash Player 10.3 on Fedora 15/14, CentOS/RHEL 5.6/6</a><br>
+						<span class="sub">11 March 2010 11:51 AM | 
+						74 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/install-openoffice-org-on-fedora-centos-red-hat-rhel/">Install OpenOffice.org 3.3.0/3.4.0 on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6</a><br>
+						<span class="sub">18 February 2010 2:37 PM | 
+						73 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/oracle-virtualbox-logo-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="oracle-virtualbox-logo" title="oracle-virtualbox-logo" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/install-virtualbox-with-yum-on-fedora-centos-red-hat-rhel/">Install VirtualBox 4.0.8 on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6</a><br>
+						<span class="sub">18 February 2010 11:46 AM | 
+						72 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fedora-red-hat-rhel/">Install Google Chrome with YUM on Fedora 15/14, Red Hat (RHEL) 6</a><br>
+						<span class="sub">20 February 2010 9:03 PM | 
+						54 Comments</span>
+						</li>
+												<li class="clearfix">
+						<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/eclipse-android-logo-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="eclipse-android-logo" title="eclipse-android-logo" height="36" width="36">												<a href="http://www.if-not-true-then-false.com/2010/android-sdk-and-eclipse-adt-on-fedora-centos-red-hat-rhel/">Android SDK r11 and Eclipse ADT on Fedora 15/14, Red Hat (RHEL) 6</a><br>
+						<span class="sub">06 August 2010 10:37 AM | 
+						53 Comments</span>
+						</li>
+						</ul></div><!-- #s-popular -->		</div>
+		</li>
+		<li class="widgetcontainer clearfix"><h5 class="widgettitle">Recent Comments</h5><div class="widgetcontent"><ul id="recentcomments"><li class="recentcomments">André Brazil on <a href="http://www.if-not-true-then-false.com/2010/linux-install-eclipse-on-fedora-centos-red-hat-rhel/#comment-18160">Install Eclipse SDK 3.6.2 (Helios) on Fedora 15/14, CentOS/RHEL 5.6/6</a></li><li class="recentcomments"><a href="http://www.gondit.com/" rel="external nofollow" class="url">satria</a> on <a href="http://www.if-not-true-then-false.com/2010/fedora-13-ati-drivers-mesa-3d-dri-radeon/#comment-18159">Fedora 13 ATI Drivers (Mesa 3D DRI Radeon)</a></li><li class="recentcomments"><a href="http://lilpirate.net/" rel="external nofollow" class="url">The Little Pirate</a> on <a href="http://www.if-not-true-then-false.com/2010/install-sun-oracle-java-jdk-jre-6-on-fedora-centos-red-hat-rhel/#comment-18157">Install Sun/Oracle Java JDK/JRE 6u25 on Fedora 15, CentOS/RHEL 5.6/6</a></li><li class="recentcomments"><a href="http://www.if-not-true-then-false.com/" rel="external nofollow" class="url">JR</a> on <a href="http://www.if-not-true-then-false.com/2010/install-openoffice-org-on-fedora-centos-red-hat-rhel/#comment-18156">Install OpenOffice.org 3.3.0/3.4.0 on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6</a></li><li class="recentcomments"><a href="http://lilpirate.net/" rel="external nofollow" class="url">The Little Pirate</a> on <a href="http://www.if-not-true-then-false.com/2011/fedora-15-lovelock-install-guide/#comment-18155">Fedora 15 Lovelock Install Guide with Screenshots</a></li><li class="recentcomments"><a href="http://www.if-not-true-then-false.com/" rel="external nofollow" class="url">JR</a> on <a href="http://www.if-not-true-then-false.com/2011/fedora-15-lovelock-install-guide/#comment-18154">Fedora 15 Lovelock Install Guide with Screenshots</a></li><li class="recentcomments"><a href="http://lilpirate.net/" rel="external nofollow" class="url">The Little Pirate</a> on <a href="http://www.if-not-true-then-false.com/2011/fedora-15-lovelock-install-guide/#comment-18153">Fedora 15 Lovelock Install Guide with Screenshots</a></li><li class="recentcomments">Jason on <a href="http://www.if-not-true-then-false.com/2011/fedora-15-nvidia-drivers-install-guide/#comment-18152">Fedora 15 nVidia Drivers Install Guide (disable nouveau driver)</a></li><li class="recentcomments">Tiffany on <a href="http://www.if-not-true-then-false.com/2010/install-adobe-flash-player-10-on-fedora-centos-red-hat-rhel/#comment-18150">Install Adobe Flash Player 10.3 on Fedora 15/14, CentOS/RHEL 5.6/6</a></li><li class="recentcomments">My Style on <a href="http://www.if-not-true-then-false.com/2010/install-openoffice-org-on-fedora-centos-red-hat-rhel/#comment-18149">Install OpenOffice.org 3.3.0/3.4.0 on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6</a></li></ul></div></li>			
+</div><!-- #primary -->
+<div id="secondary" class="aside main-aside sidebar">
+    <ul class="xoxo">
+        <!-- Widgetized sidebar, if you have the plugin installed.  -->
+        		<li></li>		
+        		
+				<li></li>
+		    </ul>
+	  
+</div><!-- #secondary -->
+	</div><!-- #main -->
+	
+	    
+    <div id="footer" class="clearfix">
+    	<ul id="footer-sidebar" class="clearfix xoxo">
+			<li style="height: 49em;" class="widgetcontainer clearfix"><h5 class="widgettitle">Linux</h5><div class="widgetcontent"><ul class="featured-stories">		<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/oracle-virtualbox-logo-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="oracle-virtualbox-logo" title="oracle-virtualbox-logo" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/install-virtualbox-with-yum-on-fedora-centos-red-hat-rhel/">Install VirtualBox 4.0.8 on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6</a><br>
+			<span class="sub">18 February 2010 11:46 AM | 
+			72 Comments</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-logo-new-36x36.jpg" class="attachment-sidebar-thumb wp-post-image" alt="fedora-logo-new" title="fedora-logo-new" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2011/howto-play-wmv-files-on-fedora/">Howto Play .wmv Files on Fedora 15 / 14 / 13</a><br>
+			<span class="sub">29 January 2011 2:56 PM | 
+			4 Comments</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/wordpress-thumbnail-logo-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="wordpress-thumbnail-logo" title="wordpress-thumbnail-logo" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/install-wordpress-on-fedora-centos-red-hat-rhel/">Install WordPress 3.0.1 on Fedora 14/13, CentOS/Red Hat (RHEL) 5.5/6</a><br>
+			<span class="sub">02 September 2010 1:06 PM | 
+			10 Comments</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/curl-logo-new-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="curl-logo-new" title="curl-logo-new" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/curl-tip-check-that-the-apache-compression-gzip-deflate-is-working/">cURL Tip: Check that the Apache Compression (gzip, deflate) is Working</a><br>
+			<span class="sub">23 January 2010 1:21 PM | 
+			No Comments</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/install-opera-on-fedora-centos-red-hat-rhel/">Install/Update Opera 11.00 on Fedora 14, CentOS/Red Hat (RHEL) 5.5/6</a><br>
+			<span class="sub">05 July 2010 10:38 AM | 
+			3 Comments</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-logo-new-36x36.jpg" class="attachment-sidebar-thumb wp-post-image" alt="fedora-logo-new" title="fedora-logo-new" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/install-mozilla-firefox-3-6-on-fedora-linux/">Install Mozilla Firefox 3.6 (3.6.13) on Fedora Linux</a><br>
+			<span class="sub">21 February 2010 3:00 PM | 
+			12 Comments</span>
+			
+						
+		</li>
+		</ul></div></li><li style="height: 49em;" class="widgetcontainer clearfix"><h5 class="widgettitle">Programming</h5><div class="widgetcontent"><ul class="featured-stories">		<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/programming-php-thumbnail-with-php-logo-new-36x36.jpg" class="attachment-sidebar-thumb wp-post-image" alt="programming-php-thumbnail-with-php-logo-new" title="programming-php-thumbnail-with-php-logo-new" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/php-class-for-coloring-php-command-line-cli-scripts-output-php-output-colorizing-using-bash-shell-colors/">PHP CLI Colors – PHP Class Command Line Colors (bash)</a><br>
+			<span class="sub">12 January 2010 3:26 PM | 
+			4 Comments</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/curl-logo-new-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="curl-logo-new" title="curl-logo-new" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/curl-tip-check-that-the-apache-compression-gzip-deflate-is-working/">cURL Tip: Check that the Apache Compression (gzip, deflate) is Working</a><br>
+			<span class="sub">23 January 2010 1:21 PM | 
+			No Comments</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/linux-install-eclipse-on-fedora-centos-red-hat-rhel/">Install Eclipse SDK 3.6.2 (Helios) on Fedora 15/14, CentOS/RHEL 5.6/6</a><br>
+			<span class="sub">28 July 2010 10:48 AM | 
+			33 Comments</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/programming-php-thumbnail-with-php-logo-new-36x36.jpg" class="attachment-sidebar-thumb wp-post-image" alt="programming-php-thumbnail-with-php-logo-new" title="programming-php-thumbnail-with-php-logo-new" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/howto-use-php-magic-constants-file-dir-function-class-method-line-namespace/">PHP __DIR__, __FILE__, __FUNCTION__, __CLASS__, __METHOD__, __LINE__, __NAMESPACE__</a><br>
+			<span class="sub">19 February 2010 4:01 PM | 
+			1 Comment</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/eclipse-android-logo-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="eclipse-android-logo" title="eclipse-android-logo" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/android-sdk-and-eclipse-adt-on-fedora-centos-red-hat-rhel/">Android SDK r11 and Eclipse ADT on Fedora 15/14, Red Hat (RHEL) 6</a><br>
+			<span class="sub">06 August 2010 10:37 AM | 
+			53 Comments</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/install-sun-oracle-java-jdk-jre-6-on-fedora-centos-red-hat-rhel/">Install Sun/Oracle Java JDK/JRE 6u25 on Fedora 15, CentOS/RHEL 5.6/6</a><br>
+			<span class="sub">29 July 2010 7:58 AM | 
+			80 Comments</span>
+			
+						
+		</li>
+		</ul></div></li><li style="height: 49em;" class="widgetcontainer clearfix"><h5 class="widgettitle">Databases</h5><div class="widgetcontent"><ul class="featured-stories">		<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/lamp-linux-apache-mysql-php-on-fedora-centos-red-hat-rhel/">LAMP on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6 – (Linux, Apache, MySQL, PHP)</a><br>
+			<span class="sub">20 August 2010 3:21 PM | 
+			4 Comments</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/postgresql-logo1-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="postgresql-logo" title="postgresql-logo" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/howto-install-postgresql-8-4-database-server-on-centos-fedora-red-hat/">Install PostgreSQL 8.4 Database Server on CentOS, Fedora, Red Hat</a><br>
+			<span class="sub">21 January 2010 3:29 PM | 
+			24 Comments</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2009/install-nginx-php-5-3-and-fastcgi-on-centos-fedora-red-hat-rhel/">nginx, PHP 5.3 and FastCGI on CentOS 5.5, Fedora 13, Red Hat RHEL 5.5/6</a><br>
+			<span class="sub">29 December 2009 3:03 PM | 
+			9 Comments</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/fedora-centos-red-hat-logos-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="fedora-centos-red-hat-logos" title="fedora-centos-red-hat-logos" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2010/install-mysql-on-fedora-centos-red-hat-rhel/">Install MySQL 5.5.13 on Fedora 15/14, CentOS/Red Hat (RHEL) 5.6/6</a><br>
+			<span class="sub">30 July 2010 9:54 AM | 
+			47 Comments</span>
+			
+						
+		</li>
+				<li class="clearfix">
+			<img src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/postgresql-logo1-36x36.png" class="attachment-sidebar-thumb wp-post-image" alt="postgresql-logo" title="postgresql-logo" 0="" height="36" width="36">						<a href="http://www.if-not-true-then-false.com/2009/postgresql-psql-psqlrc-tips-and-tricks/">Postgresql (psql) .psqlrc tips and tricks</a><br>
+			<span class="sub">02 November 2009 3:54 PM | 
+			No Comments</span>
+			
+						
+		</li>
+		</ul></div></li>        </ul>
+		
+		<div class="footer-message">
+		<p class="floatright"><a href="http://www.if-not-true-then-false.com/sitemap/"><strong>Sitemap</strong></a> |&nbsp;<a href="http://www.if-not-true-then-false.com/about/"><strong>About</strong></a> | <a rel="nofollow" href="http://www.arrastheme.com/">About Arras Theme</a></p>
+		<p>Copyright if not true then false. All Rights Reserved.</p>		
+		</div><!-- .footer-message -->
+    </div>
+    
+    <script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/ui_002.js"></script>
+<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/ui_003.js"></script>
+<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/ui.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var SHRSB_Globals = {
+	src: "http://www.if-not-true-then-false.com/wp-content/plugins/sexybookmarks/spritegen",
+	perfoption: "1"
+};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/jquery.js"></script>
+<script type="text/javascript">SHRSB_Settings = {"shr-publisher-2695":{"link":"http:\/\/www.if-not-true-then-false.com\/2010\/enable-apache-userdir-with-selinux-on-fedora-centos-red-hat-rhel\/","shortener":"bitly","title":"Apache Userdir with SELinux on Fedora 15\/14, CentOS 5.6, Red Hat (RHEL) 5.6\/6","notes":"This%20is%20quick%20guide%20howto%20enable%20Apache%20userdirs%20with%20SELinux%20on%20Fedora%2015%2F14%2F13%2F12%2F11%2C%20CentOS%205.6%2F5.5%2F5.4%20and%20Red%20Hat%20%28RHEL%29%206%2F5.6%2F5.5%2F5.4.%20This%20guide%20assumes%20that%20you%20have%20Apache%20%28httpd%29%20server%20installed%20on%20your%20system.%20This%20guide%20uses%20separeted%20userdir.conf%20without%20touching%20httpd.conf%20so%20later%20de","service":"5,7,2,257,88,38,40,100,52,201","apikey":"8afa39428933be41f8afdb8ea21a495c","expand":true,"src":"http:\/\/www.if-not-true-then-false.com\/wp-content\/plugins\/sexybookmarks\/spritegen","localize":true,"share_src":"http:\/\/www.shareaholic.com","rel":"nofollow","target":"_blank","center":true,"twitter_template":"${title} - ${short_link}","mode":"inject","fbLikeButton":"1","designer_toolTips":"1","tip_bg_color":"#000000","tip_text_color":"#ffffff","fbButtonPos":"top-left"}}</script><!--stats_footer_test--><script src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/e-201122.js" type="text/javascript"></script><script src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/quant.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({blog:'10667490',v:'ext',post:'2695'});
+var load_cmc = function(){linktracker_init(10667490,2695,2);};
+if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+else load_cmc();
+</script><img id="wpstats" src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/g.gif" alt="">
+	
+<!-- #wrapper -->
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$('.shareaholic-like-buttons').prepend('<div style="color:#333;font-size:28px;margin-bottom:10px;">Do you like this?</div>');
+});
+</script>
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using disk (enhanced)
+Database Caching 14/38 queries in 1.318 seconds using disk
+Object Caching 3942/3994 objects using disk
+
+Served from: www.if-not-true-then-false.com @ 2011-06-05 11:44:38 --><div id="fancy_overlay"></div><div id="fancy_loading"><div></div></div><div id="fancy_outer"><div id="fancy_inner"><div id="fancy_close"></div><div id="fancy_bg"><div class="fancy_bg" id="fancy_bg_n"></div><div class="fancy_bg" id="fancy_bg_ne"></div><div class="fancy_bg" id="fancy_bg_e"></div><div class="fancy_bg" id="fancy_bg_se"></div><div class="fancy_bg" id="fancy_bg_s"></div><div class="fancy_bg" id="fancy_bg_sw"></div><div class="fancy_bg" id="fancy_bg_w"></div><div class="fancy_bg" id="fancy_bg_nw"></div></div><a href="javascript:;" id="fancy_left"><span class="fancy_ico" id="fancy_left_ico"></span></a><a href="javascript:;" id="fancy_right"><span class="fancy_ico" id="fancy_right_ico"></span></a><div id="fancy_content"></div></div></div><div id="fancy_title"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="fancy_title" id="fancy_title_left"></td><td class="fancy_title" id="fancy_title_main"><div></div></td><td class="fancy_title" id="fancy_title_right"></td></tr></tbody></table></div><div class=" fb_reset" id="fb-root"><script src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/all.js" async=""></script><div style="position: absolute; top: -10000px; height: 0pt; width: 0pt;"><div><iframe src="Apache%20Userdir%20with%20SELinux%20on%20Fedora%2015_14,%20CentOS%205.6,%20Red%20Hat%20%28RHEL%29%205.6_6_files/login_status.html" class="FB_UI_Hidden" style="border: medium none; overflow: hidden; height: 240px; width: 575px;" name="f965c5510f6bf6" id="f14897a470f4068" scrolling="no"></iframe></div></div></div></body></html>

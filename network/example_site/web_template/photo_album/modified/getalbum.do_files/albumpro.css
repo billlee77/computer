@@ -1,0 +1,8 @@
+/* Photo List */
+.album .photo-list{padding:20px 0 20px 0;position:relative}
+.album .photo-list ul{font-size:0}
+.album .photo-list li{display:inline-block;margin-right:30px;margin-bottom:10px;font-size:12px}
+.album .photo-list li{vertical-align:bottom}
+.album .photo-list li span.img img{padding:5px;border:1px solid #000000}
+
+

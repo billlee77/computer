@@ -1,0 +1,41 @@
+#! /usr/bin/perl
+ 
+print ("Please enter a number:");
+
+$number = <STDIN>; 
+$add = $number + 1;
+
+print "Result is ", $add, "\n";
+
+# String input + output
+$foo = q!I said, "You said, 'She said it.'"!;
+$bar = q('This is it.');
+$today = qx{ date };
+print $foo,"\n" , $bar, "\n",$today, "\n";
+
+# Variable to string
+$string_name = "file_$add";
+print $string_name, "\n";
+
+# Excute the External command
+system ("touch",  $string_name);
+
+$name = "checkbook"; 
+$filename = join "", "/tmp/", $name, ".tmp"; 
+
+# OK
+$classname = "CGI Programming 101";
+print "Hello there.  What is your name?\n";
+$you = <STDIN>;
+chomp($you);
+print "Hello, $you.  Welcome to $classname.\n";
+
+
+system ("ls");
+ 
+# use POSIX qw(strftime);
+# $time_now = strftime "%a %b %e %H:%M:%S %Y", localtime;
+# print "The time for now is: ", $time_now, "\n";
+# 
+
+

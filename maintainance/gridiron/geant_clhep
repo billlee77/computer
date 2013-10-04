@@ -1,0 +1,25 @@
+
+14/Sep/2011 
+Recompiling geant4
+
+	CLHEP-2.0.4.7: 
+		Installation:
+			creat soft link for clhep
+
+			$./configure --prefix=/backedup/gridiron/hadron/apps/clhep
+			$make
+			$make check
+			$make install
+	
+		Set Enveroment Variable:
+			setenv CLHEP_LIB_DIR /usr/local/lib
+  	 		setenv CLHEP_BASE_DIR /usr/local
+   			setenv CLHEP_INCLUDE_DIR /usr/local/include
+
+			set PATH=APPS_BASE/clhep/bin:$PATH
+
+	Geant4.9.2.p04:
+			configure -build
+
+
+

@@ -1,0 +1,36 @@
+Xfce GTK+ engine and themes
+Running configure... done
+Running make all... done
+Running make install... done
+Cleaning up... done
+Xfce Icon Theme
+Running configure... done
+Running make all... done
+Running make install... done
+Cleaning up... done
+Xfce Utility Library
+Running configure... done
+Running make all... done
+Running make install... done
+Cleaning up... done
+Xfce MCS Library
+Running configure... done
+Running make all... done
+Running make install... done
+Cleaning up... done
+Xfce GUI Library
+Running configure... done
+Running make all... done
+Running make install... done
+Cleaning up... done
+Xfce MCS Manager
+Running configure... done
+Running make all... done
+Running make install... done
+Cleaning up... done
+Extension Library
+Running configure... done
+Running make all...
+
+
+

@@ -1,0 +1,104 @@
+# Xorg configuration created by livna-config-display
+
+Section "ServerLayout"
+	Identifier     "X.org Configured"
+	Screen      0  "Screen0" 0 0
+	InputDevice    "Mouse0" "CorePointer"
+	InputDevice    "Keyboard0" "CoreKeyboard"
+EndSection
+
+Section "Files"
+	ModulePath   "/usr/lib/xorg/modules/extensions/nvidia"
+	ModulePath   "/usr/lib/xorg/modules"
+	FontPath     "catalogue:/etc/X11/fontpath.d"
+	FontPath     "built-ins"
+EndSection
+
+Section "Module"
+	Load  "glx"
+	Load  "dbe"
+	Load  "extmod"
+EndSection
+
+Section "ServerFlags"
+	Option	    "AIGLX" "on"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Keyboard0"
+	Driver      "kbd"
+EndSection
+
+Section "InputDevice"
+	Identifier  "Mouse0"
+	Driver      "mouse"
+	Option	    "Protocol" "auto"
+	Option	    "Device" "/dev/input/mice"
+	Option	    "ZAxisMapping" "4 5 6 7"
+EndSection
+
+Section "Monitor"
+	Identifier   "Monitor0"
+	VendorName   "Monitor Vendor"
+	ModelName    "Monitor Name"
+EndSection
+
+Section "Device"
+
+        ### Available Driver options are:-
+        ### Values: <i>: integer, <f>: float, <bool>: "True"/"False",
+        ### <string>: "String", <freq>: "<f> Hz/kHz/MHz"
+        ### [arg]: arg optional
+        #Option     "NoAccel"            	# [<bool>]
+        #Option     "SWcursor"           	# [<bool>]
+        #Option     "ColorKey"           	# <i>
+        #Option     "CacheLines"         	# <i>
+        #Option     "Dac6Bit"            	# [<bool>]
+        #Option     "DRI"                	# [<bool>]
+        #Option     "NoDDC"              	# [<bool>]
+        #Option     "ShowCache"          	# [<bool>]
+        #Option     "XvMCSurfaces"       	# <i>
+        #Option     "PageFlip"           	# [<bool>]
+#	Driver      "nvidia"
+#	VendorName  "nVidia Corporation"
+#	BoardName   "Unknown"
+#	BusID       "PCI:0:2:0"
+	Identifier  "Card0"
+	Driver      "nvidia"
+EndSection
+
+Section "Screen"
+
+# gh - 09.09.01 - Fedora 10 problem with new EXA acceleration method.
+# force XAA acceleration to revert to Fedora 9 method.
+	Identifier "Screen0"
+	Device     "Videocard0"
+	Monitor    "Monitor0"
+	DefaultDepth     24
+	Option	    "NoAccel"
+#        Option  "AccelMethod" "XAA"
+#        Option  "AccelMethod" "UXA"
+# added by gh, 03.02.07
+# to keep paw++ and physica window from being overwritten by other jobs
+	Option	    "backingstore"
+	SubSection "Display"
+		Viewport   0 0
+		Depth     8
+		Modes    "1680x1050" "1280x1024" "1024x768" "800x600" "640x480"
+	EndSubSection
+	SubSection "Display"
+		Viewport   0 0
+		Depth     16
+		Modes    "1680x1050" "1280x1024" "1024x768" "800x600" "640x480"
+	EndSubSection
+	SubSection "Display"
+		Viewport   0 0
+		Depth     24
+		Modes    "1680x1050" "1280x1024" "1024x768" "800x600" "640x480"
+	EndSubSection
+EndSection
+
+Section "Extensions"
+	Option	    "Composite" "Enable"
+EndSection
+

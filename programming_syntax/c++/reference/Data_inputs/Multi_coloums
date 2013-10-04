@@ -1,0 +1,59 @@
+    vector<double> sNumberS;
+    vector<double> sMeanyS;
+    vector<double> sMeanyErrS;
+    vector<double> sMeanxS;
+   
+    Int_t spoints=0;
+    double N,My,Ey,Mx;
+    ifstream Data1original;
+   
+    Data1original.open("/data/userdata/mora/UncertaintyRT/MeanOriginalUNCJun09.txt");
+
+    while(1){
+   
+    Data1original>>N>>My>>Ey>>Mx;   
+    if (!Data1original.good()) break;
+    sNumberS.push_back(N);
+    sMeanyS.push_back(My);
+    sMeanyErrS.push_back(Ey);
+    sMeanxS.push_back(Mx);
+   
+    spoints++;
+    }
+    Data1original.close();
+
+
+
+===========================================
+
+File looks like that:
+
+1 0 0 12.5
+2 0 0 37.5
+3 0 0 62.5
+4 0 0 87.5
+5 0 0 112.5
+6 5.71175 0.319135 137.5
+7 7.3283 0 162.5
+8 0 0 187.5
+9 0 0 12.5
+10 2.83065 0.843949 37.5
+11 20.4174 4.29638 62.5
+12 16.8891 2.41981 87.5
+13 17.86 4.08748 112.5
+14 8.43381 1.9869 137.5
+15 16.9795 7.47639 162.5
+16 13.481 0 187.5
+17 83.1867 14.283 12.5
+18 37.7319 4.0263 37.5
+19 15.5866 3.4192 62.5
+20 38.9573 15.1808 87.5
+21 17.3649 3.18665 112.5
+22 30.9344 5.89753 137.5
+23 16.9934 3.84722 162.5
+24 16.5534 6.22443 187.5
+25 64.909 7.44534 12.5
+26 48.5314 7.66177 37.5
+27 40.8097 4.93919 62.5
+
+

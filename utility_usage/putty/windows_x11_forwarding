@@ -1,0 +1,34 @@
+Stage 1: 
+Download putty client 
+
+
+Choose download x11 server. Chioces of X server are Xing and X-win32.
+
+
+
+Stage 2:
+Installing and configure X-win32
+
+Configure X-win31:
+	Set Hostname
+	Set Login
+	Set Command: terminal
+	Set Password
+
+
+Install Xing:
+	Install Xing-Server 
+	Install Xing-Font
+
+
+
+
+
+Stage 3:
+X11 Forwarding with Putty:
+
+	Start Xming or X-Win32
+	Enable X11-Forwarding in Putty ssh configuration
+	ssh host with Putting
+
+
