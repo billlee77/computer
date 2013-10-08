@@ -41,36 +41,52 @@ Remote Command
 	$git remote set-url origin git@github.com:"yourname"/"projectname".git
 
 
-
-
-git commit -m "Commit descriptions"
-
-git push origin master
-
-
-git remote add upstream https://github.com/JeffersonLab/simc_gfortran
-
-git fetch upstream
-
-git merge upstream/master
+/*--------------------------------------------------
+# Commit changes into local repo
+	git commit -m "Commit descriptions"
 
 
 
+/*--------------------------------------------------
+# Procedure to commit changes into a Upstream repo
+
+	$ git remote add upstream https://github.com/JeffersonLab/simc_gfortran	
+	$ git fetch upstream
+	$ git merge upstream/master
+
+
+
+/*--------------------------------------------------
+# Push the changes into the remote repo
+
+	$ git push origin master
+
+
+
+/*--------------------------------------------------
+	# Replace local changes
+	$ git fetch origin
+	$ git reset --hard origin/master
 
 
 
 
 
+/*--------------------------------------------------
 
-git add .
-git add -u
+	# Stages modified and deleted, without new
+	$ git add -u
 
+	# Stages new and modified, without deleted
+	$ git add . 
 
-git add .; git add -u
-git add -A
+	# Implement all changes in the local repo
+	$ git add .; git add -u 
+	# is equivalent as:
+	$ git add -A
 
-
-
+	# Use interactive adding
+	$ git add -i
 
 
 /*--------------------------------------------------
@@ -84,4 +100,74 @@ Update and Reset:
 		$ git fetch origin
 		$ git reset --hard origin/master
 	
+	# Revert to a any commit
+		# Reset to [commit_sha] version 	
+		$ git reset --hard commit_sha
+		# Reset back 5 commits
+		$ git reset --hard HEAD~5
 
+/*--------------------------------------------------
+	# Recover branch after deletion
+		$ git reflog
+		# To obtain the SHA code
+		$ git checkout [sha]
+		$ git checkout -b [branchname]
+
+
+
+/*--------------------------------------------------
+	# Git merge errors (git needs merge error: you need to resolve your current index first)
+		$ git reset --merge
+
+
+
+/*--------------------------------------------------
+	# Delete remote branch
+		$ gu push origin :remote_branch_name
+
+
+/*--------------------------------------------------
+	# Link the local branches ot the remote branches
+
+		$ git branch -f --track my_local_branch origin/my_remote_branch
+		Or
+		$ git branch --set-upstream my_local_branch origin/my_remote_branch
+
+
+
+/*--------------------------------------------------
+	# Remove all history of a repository
+		$ rm -rf .git
+
+		# Reconstruct the local git repo
+		$ git init
+		$ git add .
+		$ git commit -m "Initial commit"
+
+		# Push
+		$ git remote add origin <github-uri>
+		$ git push -u --force origin master
+
+
+
+
+/*--------------------------------------------------
+	# Check out difference between test and master
+		$ git checkout master
+		$ git diff test
+
+
+
+
+/*--------------------------------------------------
+Sperical helps
+
+	# Git Gui
+		$ gitk	
+		$ gitk --all
+
+	# Use colorful git output
+		$ git config color.ui true
+
+ 	# Graphic git log
+ 		$ git log --graph --all

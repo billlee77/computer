@@ -1,0 +1,41 @@
+/*--------------------------------------------------
+# Start a new feature
+	$ git checkout -b new-feature master
+
+# Edit some files
+	$ git add
+	$ git commit -m "Start a feature"
+
+# Edit some files
+	$ git add
+	$ git commit -m "Finish a feature"
+
+# Merge in the new-feature branch
+	$ git checkout master
+	$ git merge new-feature
+	$ git branch -d new-feature
+
+
+
+/*--------------------------------------------------
+# Start a new feature
+	$ git checkout -b new-feature master
+
+# Edit some files
+	$ git add
+	$ git commit -m "Start a feature"
+
+# Edit some files
+	$ git add
+ 	$ git commit -m "Finish a feature"
+
+# Develop the master branch
+	$ git checkout master
+
+# Edit some files
+	$ git add
+	$ git commit -m "Make some super-stable changes to master"
+
+# Merge in the new-feature branch
+	$ git merge new-feature
+	$ git branch -d new-feature
