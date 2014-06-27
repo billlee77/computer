@@ -1,0 +1,5 @@
+
+    \usepackage{epstopdf} in the preemble
+    Include graphics without extension e.g \includegraphics{picture}
+    pdflatex -shell-escape or enabling write18 on windows
+

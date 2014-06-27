@@ -31,3 +31,11 @@ perl -e 'open in, "<test.dat"; $line = <in>; print $line; do { print $line;} whi
 
 
 
+
+
+
+# Substract all columns of numbers from file1 from file2. 
+perl -e 'open(file1,"offset_limited.txt"); open(file2,"no_offset_limited.txt"); while($number1 = <file1>) {@column1 = split(/\s+/,$number1);chomp (@column1); while($number2 = <file2>){@column2 = split(/\s+/,$number2);chomp (@column2); if($column1[0] = $column2[0]){ print $column1[0], "      ", $column1[1]-$column2[1],"       ", ($column1[1]-$column2[1])*100/$column1[1], "\n";last;}}}'
+
+
+

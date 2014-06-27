@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2012.2.17)  1 MAY 2013 17:22
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=latex 2012.2.17)  14 JAN 2014 17:10
 entering extended mode
  %&-line parsing enabled.
 **cv.tex
@@ -126,28 +126,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 115--116
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 129.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 127.
+
+Overfull \hbox (0.35031pt too wide) in paragraph at lines 132--133
+[]\OT1/ptm/m/n/12 W. Li, G. M. Hu-ber, K. Wol-baum, \OT1/ptm/m/it/12 Hama-matsu
+ R1584 PMT Mod-i-fi-ca-tions\OT1/ptm/m/n/12 , arXiv:1311.6761. 
+ []
+
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 179--180
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 247--248
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 253--254
-
- []
-
-[3] (./cv.aux) ) 
+[4] (./cv.aux) ) 
 Here is how much of TeX's memory you used:
  284 strings out of 256217
  3543 string characters out of 1917095
@@ -157,4 +163,4 @@ Here is how much of TeX's memory you used:
  645 hyphenation exceptions out of 8191
  22i,4n,19p,474b,157s stack positions out of 5000i,500n,6000p,200000b,15000s
 
-Output written on cv.dvi (3 pages, 8468 bytes).
+Output written on cv.dvi (4 pages, 9664 bytes).

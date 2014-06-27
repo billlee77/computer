@@ -21,6 +21,13 @@ set printoptions=paper:letter,duplex:on
 "window size
 set lines=30 columns=120
 
+"Testwidth (default is 80)
+"set tw=1000
+
+
+setlocal textwidth=1000 
+" set wrapmargin=1000
+
 
 " Comment - jg at samdorr.net "
 function ToggleComment(onoff)

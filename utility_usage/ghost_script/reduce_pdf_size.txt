@@ -1,0 +1,12 @@
+# Command to reduce size of the PDF file
+
+	$ gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=setting -sOutputFile=output.pdf input.pdf
+
+
+
+Quality level settings which is specified by -dPDFSETTINGS="" :
+"/screen" the lowest resolution and lowest file size, but fine for viewing on a screen; 
+"/ebook" a mid-point in resolution and file size; 
+"/printer" and "/prepress" high-quality settings used for printing PDFs.
+
+"/ebook" is the optimal in most cases.

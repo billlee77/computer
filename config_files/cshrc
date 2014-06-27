@@ -143,7 +143,7 @@ if ( $machine != "polaris" ) then
 
 	setenv ROOTSYS /usr/include/root
    	setenv ROOT /usr/share/root
-    if ( $loopcount <2 ) setenv PATH $APPS_BASE/clhep/bin:$ROOTSYS/:.:$APPS_BASE/jas3:$APPS_BASE/dawn:$PATH
+    if ( $loopcount <2 ) setenv PATH $HOME/work/omega_analysis/bin:$APPS_BASE/clhep/bin:$ROOTSYS/:.:$APPS_BASE/jas3:$APPS_BASE/dawn:$PATH
     if ( $loopcount <2 ) setenv LD_LIBRARY_PATH /usr/local/lib:$ROOTSYS/:.:$APPS_BASE/geant4/lib/Linux-g++:$LD_LIBRARY_PATH
 
   
