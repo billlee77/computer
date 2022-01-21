@@ -1,0 +1,15 @@
+
+# Check Bluetooth status
+	service bluetooth status
+
+
+# Stop the Service
+	systemctl stop bluetooth.service
+
+
+
+# Disable the Service
+	systemctl disable bluetooth.service
+
+
+

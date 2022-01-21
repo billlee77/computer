@@ -1,0 +1,52 @@
+echo $LD_LIBRARY_PATH | perl -ne 'chomp;for $p (split(/:/)){print "$p\n"}'
+
+
+ls hms*.txt | perl -ne 'chomp; foreach (grep /\d/, split /[s.]/) {print "$_\n"}'
+ls hms*.txt | perl -ne 'chop; print "$_\n" for(grep /\d/, split /[s.]/)'
+ls hms*.txt | perl -e 'print "$_\n" for map{grep /\d/, split /[s.]/} <STDIN>'
+
+
+ls hms*.txt | perl -n -l012  -F[s'\.'] -a -e 'print "$F[1]"'
+ls gen*.txt | perl -F[n\.] -ane 'print @F[1], "\n"'
+
+
+ls gen*.txt | perl -pe '@line = split/[n.]/; $_ = "$line[1]\n"'
+
+
+
+
+ls gen*.txt | perl -pe 's/[a-z.]//g'
+ls gen*.txt | perl -pe 'tr/[a-z]/[A-Z]/'
+
+
+perl -ne 'print $_' file_list.txt 
+perl -pne '' file_list.txt
+
+
+
+perl -n -e 'if($_ =~ /Q_tot|hS1X|time|ps1\(calc\)|hello|hcomp|helec.D.T/i) {print $_}' gen47764.txt
+
+
+
+
+# Subtract 4 columns of numbers from file1 from file2
+
+perl -e 'open(file1,"offset_limited.txt"); open(file2,"no_offset_limited.txt"); while($number1 = <file1>) {@column1 = split(/\s+/,$number1);chomp (@column1); while($number2 = <file2>){@column2 = split(/\s+/,$number2);chomp (@column2); if($column1[0] = $column2[0]){ print $column1[0], "      ", $column1[1]-$column2[1],"       ", ($column1[1]-$column2[1])*100/$column1[1], "\n";last;}}}'
+
+
+
+# Subtract only the thrid column between the two files
+	perl -e 'open(file1,"sos_comp_live.txt"); open(file2,"hms_comp_live.txt"); while($number1 = <file1>) {@column1 = split(/\s+/,$number1);chomp (@column1); while($number2 = <file2>){@column2 = split(/\s+/,$number2);chomp (@column2); print $column1[0],"   ", $column1[1] , "   ", $column1[2] - $column2[2], "\n"; last;}}' 
+
+	perl -e 'open(file1,"sos_comp_live.txt"); open(file2,"hms_comp_live.txt"); while($number1 = <file1> and $number2 = <file2>) {@column1 = split(/\s+/,$number1);chomp (@column1); @column2 = split(/\s+/,$number2);chomp (@column2); print $column1[0],"   ", $column1[1] , "   ", $column1[2] - $column2[2], "\n";}'
+
+	perl -e 'open(file1,"hms_comp_live.txt"); open(file2,"sos_comp_live.txt"); while($number1 = <file1> and $number2 = <file2>) {@column1 = split(/\s+/,$number1);chomp (@column1); @column2 = split(/\s+/,$number2);chomp (@column2); print $column1[0],"     ", $column1[1],"     ", $column1[2], "     ", $column2[2], "     ", $column1[2] - $column2[2], "\n";}' > hms_sos_comp_diff.txt
+
+# Check '!' match the lines
+perl -ne 'if($_ =~ m/!/) {print $_}' file_list.txt
+
+
+# Check '!' does not match the lines
+perl -ne 'if($_ !~ m/!/) {print $_}' file_list.txt
+
+

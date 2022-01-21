@@ -1,0 +1,6 @@
+
+# Add numbers in the file
+	awk '{x+=$0}END{print x}' a
+
+
+

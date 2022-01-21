@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><script>
+  {
+    const open = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function (method, url) {
+      open.apply(this, arguments);
+      this.addEventListener('readystatechange', function _() {
+        if(this.readyState == this.HEADERS_RECEIVED) {
+          const contentType = this.getResponseHeader('Content-Type') || '';
+          if (contentType.startsWith('video/') || contentType.startsWith('audio/')) {
+            window.postMessage({
+              source: 'xmlhttprequest-open',
+              url,
+              method,
+              contentType
+            }, '*');
+          }
+          this.removeEventListener('readystatechange', _);
+        }
+      })
+    }
+  }
+  </script><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title></title></head><body style="background-color: transparent"></body></html>

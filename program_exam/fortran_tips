@@ -1,0 +1,6 @@
+# Popular Compilation flags
+
+	gfortran -ffixed-line-length-132  calc_xsect.f -o calcx
+
+
+

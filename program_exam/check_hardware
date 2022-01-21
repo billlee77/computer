@@ -1,0 +1,14 @@
+# check CPU
+lscpu
+
+# check wireless card
+lspci -nn
+
+# check video card
+lspci -v
+
+# check memory
+lshw
+
+# check video information
+lshw -c video

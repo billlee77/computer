@@ -1,0 +1,11 @@
+How to navigate inside a TFile:
+
+# What is the current directory?
+	! gDirectory->pwd()
+	or 
+	! .ls
+
+# Navigate and enter directory
+	! _file0->cd("DIRC_PID")
+
+

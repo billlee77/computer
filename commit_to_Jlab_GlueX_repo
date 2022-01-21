@@ -1,0 +1,28 @@
+Procedure to commit changes to the Jefferson Lab software such as gluex_root_analysis
+
+Assuming the branched worked which contain changes is named: DIRC_extrpo_track.
+
+Step 1:	Go to master and pull all changes.
+
+Step 2: merge the lasted master branch to DIRC_extrpo_track. Resolve conflict if any.
+
+Step 3: go to the origin, this case https://github.com/JeffersonLab/gluex_root_analysis, to create a new branch DIRC_extrpo_track
+
+Step 4: Pushing the changes to the origin DIRC_extrpo_track.
+
+In case an error such as Forbidden 403, then
+
+a. Under .config file
+
+b. change URL from  
+	url = https://github.com/JeffersonLab/gluex_root_analysis
+
+To 
+	url git@github.com:JeffersonLab/gluex_root_analysis.git
+
+c. Them execute:	
+	$ git push origin DIRC_extrpo_track
+
+Step 5: Submit a pull request on the github website.
+
+	

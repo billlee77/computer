@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en"><script type="text/javascript" async="" src="Tips%20for%20Creating%20Slideshows%20in%20Jupyter%20|%20Mark%20Roepke_files/analytics.js"></script><script>
+  {
+    const open = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function (method, url) {
+      open.apply(this, arguments);
+      this.addEventListener('readystatechange', function _() {
+        if(this.readyState == this.HEADERS_RECEIVED) {
+          const contentType = this.getResponseHeader('Content-Type') || '';
+          if (contentType.startsWith('video/') || contentType.startsWith('audio/')) {
+            window.postMessage({
+              source: 'xmlhttprequest-open',
+              url,
+              method,
+              contentType
+            }, '*');
+          }
+          this.removeEventListener('readystatechange', _);
+        }
+      })
+    }
+  }
+  </script><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="https://www.markroepke.me/assets/icon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Tips for Creating Slideshows in Jupyter | Mark Roepke</title>
+<meta name="generator" content="Jekyll v3.8.5">
+<meta property="og:title" content="Tips for Creating Slideshows in Jupyter">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="In a previous post I wrote about how to create interactive slideshows in Jupyter Notebooks. It covered the benefits, basic technology, basic slide creation, and how to view and operate the slideshow. This post dives a little deeper by providing key tips on creating better-looking slides, customizing formatting, exporting to HTML, hosting slides live online, etc. Tip 1: Split slides into two columns A built-in option in slideshow platforms like PowerPoint is to split content into two columns. While this isn’t a default capability in Jupyter slideshows, it can be easily added using with the Jupyter extension splitcell. Installing and enabling splitcell splitcell can be installed by running the following on the command line: conda install -c conda-forge jupyter_contrib_nbextensions or: pip install jupyter_contrib_nbextensions And then it can be enabled by running: jupyter nbextension enable splitcell/splitcell More information on installing/enabling Jupyter extensions is available on GitHub. Using splitcell Once installed and enabled, splitcell is easy to use. With an open notebook and a cell selected, press the SHIFT + S keys to “split” the cell and align it to a certain column. By default, the first cell will align to the left side, and then the right side will be filled by pressing SHIFT + S on subsequent cells. When the notebook is then put into presentation mode, the cells with stay in their columns giving two-column content on slides. The left column will be processed before the right column (but they can appear at the same time by selecint “-“ in the right cell slideshow toolbar). Below is an example of splitcell in action in a slideshow: A major advantage of creating columns using splitcell is that it works for both code and HTML/markdown content. Tip 2: Hide code from slideshow I often find that I want to hide the Python code used to generate output from a slideshow. A common example of this is hiding the code used to print a pandas DataFrame when only interested in talking about data. If you want to hide all of the code within a cell but still run the cell and print its output to a slideshow, you can use the following Python function: def hide_code_in_slideshow(): from IPython import display import binascii import os uid = binascii.hexlify(os.urandom(8)).decode() html = &quot;&quot;&quot;&lt;div id=&quot;%s&quot;&gt;&lt;/div&gt; &lt;script type=&quot;text/javascript&quot;&gt; $(function(){ var p = $(&quot;#%s&quot;); if (p.length==0) return; while (!p.hasClass(&quot;cell&quot;)) { p=p.parent(); if (p.prop(&quot;tagName&quot;) ==&quot;body&quot;) return; } var cell = p; cell.find(&quot;.input&quot;).addClass(&quot;hide-in-slideshow&quot;) }); &lt;/script&gt;&quot;&quot;&quot; % (uid, uid) display.display_html(html, raw=True) All you have to do is import the function or define it within the slideshow notebook, and then call hide_code_in_slideshow() from within any cell whose code you wish to hide. The code will still appear in the Notebook, but will not be present in the slideshow. Below is an example of hide_code_in_slideshow() in action: I find hide_code_in_slideshow() particularly useful when delivering a training session or delivering results to non-technical audiences. Tip 3: Add speaker notes In my opinion, one of the most desirable slideshow features is the ability to include speaker notes. This functionality is built into RISE and is really easy to use. In order to add speaker notes to a slide, you should create a new markdown cell directly beneath the final cell that is part of said slide and select ‘Notes’ from the cell toolbar. Next, you can type any of notes you’d like in the cell. In order to activate the notes in a RISE slideshow, you can press the T key to toggle the speaker notes window. A new window will pop up that contains the live slideshow, a view of the next slide, and the speaker notes associated with the current slide. Below is an example of RISE’s speaker notes functionality: The best part about this separate speaker window is that it’s linked to the original slideshow window - this means you can extend your screen when presenting and have the speaker window on your laptop and the original slideshow window projecting to a larger screen. Tip 4: Turn your slides into a writable chalkboard The next tip is another feature built directly into RISE: the ability to write over top of a slide and launch a blank chalkboard. This is particularly useful during training and teaching sessions. RISE’s chalkboard feature can be enabled by adding the below data to the Jupyter Notebook’s metadata. You can edit the Jupyter Notebook metadata by clicking on “Edit” in the Jupyter Notebooks toolbar, and then clicking on “Edit Notebook Metadata”. { ..., &quot;rise&quot;: { &quot;enable_chalkboard&quot;: true } } Once added to the notebook metadata, the Jupyter Notebook must be shutdown and restarted to launch with the chalkboard feature enabled. When the notebook is relaunched and presentation mode is enabled, you’ll see two new buttons in the bottom-left corner of the slide: As mentioned, the chalkboard feature provides two core funcationalities: writing on top of a current slide and launching a blank chalkboard. The button on the right enables writing on top of the current slide and the button in the middle launches a blank chalkboard. Here’s a demonstration of writing on top of the current slide: The chalkboard simply launches a blank black chalkboard with the ability to write using virtual chalk. Tip 5: Customize slide appearance with custom CSS By default, slides appear as white with a basic black text. However, there is often a desire to customize the background, fonts, images, or headers and footers of slides. This can be achieved with CSS. Adding default CSS A default CSS can be added to all notebooks within a directory by creating a CSS file titled rise.css within the same directory of the notebooks. All of the notebooks in this directory will then use rise.css by default. An example of a basic rise.css file can be found in the GitHub repository for one of my existing trainings. This little amount of CSS can make a large difference in the visual aesthetic of your slides: Adding notebook-specific CSS If you are wanting to add specific CSS files for a specific notebook (let’s call it notebook-name.ipynb), you can simply create a CSS file in the directory of the notebook titled notebook-name.css. Tip 6: Host live slides online with Binder One of the drawbacks of RISE is that it requires a running Jupyter Notebooks instance. While this isn’t too problematic for live presentations hosted on a local computer, it can be make the result hard to share. The next two tips provide ways to do that. Live RISE slides can be shared using a Jupyter-created product called Binder. Binder allows you to host a live Jupyter Notebooks session for free within a browser – therefore, no Python and/or Jupyter setup is required for users. Binder works by accepting a link to your project’s GitHub repository. Tip 7: Export slides directly to HTML for non-live viewing Slideshows developed in Jupyter Notebooks can also be exported to a single HTML file. While this method does not include many of the live features RISE offerse through a running Pythons session, it does enable the sharing of slideshows through a single HTML file. This can be done using the jupyter nbconvert command on the command line. This is the command I use: jupyter nbconvert notebook-name.ipynb --to-slides --reveal-prefix reveal.js If you do not have reveal.js installed locally, you can use an online version: jupyter nbconvert notebook-name.ipynb --to-slides --reveal-prefix &quot;http://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0&quot; A single HTML file will be created in the same directory as the notebook, and opening this HTML will will open the slideshow. Tip 8: Open slides automatically Sometimes it’s useful to share live slideshows rather than static ones. Binder makes this possible by providing an easy notebook-sharing mechanism, but viewers still need to active presentation mode within the notebook. RISE’s autolaunch feature solves this problem. RISE’s autolaunch feature can be enabled by adding the below data to the Jupyter Notebook’s metadata. You can edit the Jupyter Notebook metadata by clicking on “Edit” in the Jupyter Notebooks toolbar, and then clicking on “Edit Notebook Metadata”. { ..., &quot;rise&quot;: { &quot;autolaunch&quot;: true } } With this feature enabled, the slideshow will automatically launch when the notebook itself is launched">
+<meta property="og:description" content="In a previous post I wrote about how to create interactive slideshows in Jupyter Notebooks. It covered the benefits, basic technology, basic slide creation, and how to view and operate the slideshow. This post dives a little deeper by providing key tips on creating better-looking slides, customizing formatting, exporting to HTML, hosting slides live online, etc. Tip 1: Split slides into two columns A built-in option in slideshow platforms like PowerPoint is to split content into two columns. While this isn’t a default capability in Jupyter slideshows, it can be easily added using with the Jupyter extension splitcell. Installing and enabling splitcell splitcell can be installed by running the following on the command line: conda install -c conda-forge jupyter_contrib_nbextensions or: pip install jupyter_contrib_nbextensions And then it can be enabled by running: jupyter nbextension enable splitcell/splitcell More information on installing/enabling Jupyter extensions is available on GitHub. Using splitcell Once installed and enabled, splitcell is easy to use. With an open notebook and a cell selected, press the SHIFT + S keys to “split” the cell and align it to a certain column. By default, the first cell will align to the left side, and then the right side will be filled by pressing SHIFT + S on subsequent cells. When the notebook is then put into presentation mode, the cells with stay in their columns giving two-column content on slides. The left column will be processed before the right column (but they can appear at the same time by selecint “-“ in the right cell slideshow toolbar). Below is an example of splitcell in action in a slideshow: A major advantage of creating columns using splitcell is that it works for both code and HTML/markdown content. Tip 2: Hide code from slideshow I often find that I want to hide the Python code used to generate output from a slideshow. A common example of this is hiding the code used to print a pandas DataFrame when only interested in talking about data. If you want to hide all of the code within a cell but still run the cell and print its output to a slideshow, you can use the following Python function: def hide_code_in_slideshow(): from IPython import display import binascii import os uid = binascii.hexlify(os.urandom(8)).decode() html = &quot;&quot;&quot;&lt;div id=&quot;%s&quot;&gt;&lt;/div&gt; &lt;script type=&quot;text/javascript&quot;&gt; $(function(){ var p = $(&quot;#%s&quot;); if (p.length==0) return; while (!p.hasClass(&quot;cell&quot;)) { p=p.parent(); if (p.prop(&quot;tagName&quot;) ==&quot;body&quot;) return; } var cell = p; cell.find(&quot;.input&quot;).addClass(&quot;hide-in-slideshow&quot;) }); &lt;/script&gt;&quot;&quot;&quot; % (uid, uid) display.display_html(html, raw=True) All you have to do is import the function or define it within the slideshow notebook, and then call hide_code_in_slideshow() from within any cell whose code you wish to hide. The code will still appear in the Notebook, but will not be present in the slideshow. Below is an example of hide_code_in_slideshow() in action: I find hide_code_in_slideshow() particularly useful when delivering a training session or delivering results to non-technical audiences. Tip 3: Add speaker notes In my opinion, one of the most desirable slideshow features is the ability to include speaker notes. This functionality is built into RISE and is really easy to use. In order to add speaker notes to a slide, you should create a new markdown cell directly beneath the final cell that is part of said slide and select ‘Notes’ from the cell toolbar. Next, you can type any of notes you’d like in the cell. In order to activate the notes in a RISE slideshow, you can press the T key to toggle the speaker notes window. A new window will pop up that contains the live slideshow, a view of the next slide, and the speaker notes associated with the current slide. Below is an example of RISE’s speaker notes functionality: The best part about this separate speaker window is that it’s linked to the original slideshow window - this means you can extend your screen when presenting and have the speaker window on your laptop and the original slideshow window projecting to a larger screen. Tip 4: Turn your slides into a writable chalkboard The next tip is another feature built directly into RISE: the ability to write over top of a slide and launch a blank chalkboard. This is particularly useful during training and teaching sessions. RISE’s chalkboard feature can be enabled by adding the below data to the Jupyter Notebook’s metadata. You can edit the Jupyter Notebook metadata by clicking on “Edit” in the Jupyter Notebooks toolbar, and then clicking on “Edit Notebook Metadata”. { ..., &quot;rise&quot;: { &quot;enable_chalkboard&quot;: true } } Once added to the notebook metadata, the Jupyter Notebook must be shutdown and restarted to launch with the chalkboard feature enabled. When the notebook is relaunched and presentation mode is enabled, you’ll see two new buttons in the bottom-left corner of the slide: As mentioned, the chalkboard feature provides two core funcationalities: writing on top of a current slide and launching a blank chalkboard. The button on the right enables writing on top of the current slide and the button in the middle launches a blank chalkboard. Here’s a demonstration of writing on top of the current slide: The chalkboard simply launches a blank black chalkboard with the ability to write using virtual chalk. Tip 5: Customize slide appearance with custom CSS By default, slides appear as white with a basic black text. However, there is often a desire to customize the background, fonts, images, or headers and footers of slides. This can be achieved with CSS. Adding default CSS A default CSS can be added to all notebooks within a directory by creating a CSS file titled rise.css within the same directory of the notebooks. All of the notebooks in this directory will then use rise.css by default. An example of a basic rise.css file can be found in the GitHub repository for one of my existing trainings. This little amount of CSS can make a large difference in the visual aesthetic of your slides: Adding notebook-specific CSS If you are wanting to add specific CSS files for a specific notebook (let’s call it notebook-name.ipynb), you can simply create a CSS file in the directory of the notebook titled notebook-name.css. Tip 6: Host live slides online with Binder One of the drawbacks of RISE is that it requires a running Jupyter Notebooks instance. While this isn’t too problematic for live presentations hosted on a local computer, it can be make the result hard to share. The next two tips provide ways to do that. Live RISE slides can be shared using a Jupyter-created product called Binder. Binder allows you to host a live Jupyter Notebooks session for free within a browser – therefore, no Python and/or Jupyter setup is required for users. Binder works by accepting a link to your project’s GitHub repository. Tip 7: Export slides directly to HTML for non-live viewing Slideshows developed in Jupyter Notebooks can also be exported to a single HTML file. While this method does not include many of the live features RISE offerse through a running Pythons session, it does enable the sharing of slideshows through a single HTML file. This can be done using the jupyter nbconvert command on the command line. This is the command I use: jupyter nbconvert notebook-name.ipynb --to-slides --reveal-prefix reveal.js If you do not have reveal.js installed locally, you can use an online version: jupyter nbconvert notebook-name.ipynb --to-slides --reveal-prefix &quot;http://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0&quot; A single HTML file will be created in the same directory as the notebook, and opening this HTML will will open the slideshow. Tip 8: Open slides automatically Sometimes it’s useful to share live slideshows rather than static ones. Binder makes this possible by providing an easy notebook-sharing mechanism, but viewers still need to active presentation mode within the notebook. RISE’s autolaunch feature solves this problem. RISE’s autolaunch feature can be enabled by adding the below data to the Jupyter Notebook’s metadata. You can edit the Jupyter Notebook metadata by clicking on “Edit” in the Jupyter Notebooks toolbar, and then clicking on “Edit Notebook Metadata”. { ..., &quot;rise&quot;: { &quot;autolaunch&quot;: true } } With this feature enabled, the slideshow will automatically launch when the notebook itself is launched">
+<link rel="canonical" href="https://www.markroepke.me/posts/2019/06/05/www.markroepke.me/posts/2019/06/05/tips-for-slideshows-in-jupyter.html">
+<meta property="og:url" content="www.markroepke.me/posts/2019/06/05/tips-for-slideshows-in-jupyter.html">
+<meta property="og:site_name" content="Mark Roepke">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2019-06-05T00:00:00+00:00">
+<script type="application/ld+json">
+{"description":"In a previous post I wrote about how to create interactive slideshows in Jupyter Notebooks. It covered the benefits, basic technology, basic slide creation, and how to view and operate the slideshow. This post dives a little deeper by providing key tips on creating better-looking slides, customizing formatting, exporting to HTML, hosting slides live online, etc. Tip 1: Split slides into two columns A built-in option in slideshow platforms like PowerPoint is to split content into two columns. While this isn’t a default capability in Jupyter slideshows, it can be easily added using with the Jupyter extension splitcell. Installing and enabling splitcell splitcell can be installed by running the following on the command line: conda install -c conda-forge jupyter_contrib_nbextensions or: pip install jupyter_contrib_nbextensions And then it can be enabled by running: jupyter nbextension enable splitcell/splitcell More information on installing/enabling Jupyter extensions is available on GitHub. Using splitcell Once installed and enabled, splitcell is easy to use. With an open notebook and a cell selected, press the SHIFT + S keys to “split” the cell and align it to a certain column. By default, the first cell will align to the left side, and then the right side will be filled by pressing SHIFT + S on subsequent cells. When the notebook is then put into presentation mode, the cells with stay in their columns giving two-column content on slides. The left column will be processed before the right column (but they can appear at the same time by selecint “-“ in the right cell slideshow toolbar). Below is an example of splitcell in action in a slideshow: A major advantage of creating columns using splitcell is that it works for both code and HTML/markdown content. Tip 2: Hide code from slideshow I often find that I want to hide the Python code used to generate output from a slideshow. A common example of this is hiding the code used to print a pandas DataFrame when only interested in talking about data. If you want to hide all of the code within a cell but still run the cell and print its output to a slideshow, you can use the following Python function: def hide_code_in_slideshow(): from IPython import display import binascii import os uid = binascii.hexlify(os.urandom(8)).decode() html = &quot;&quot;&quot;&lt;div id=&quot;%s&quot;&gt;&lt;/div&gt; &lt;script type=&quot;text/javascript&quot;&gt; $(function(){ var p = $(&quot;#%s&quot;); if (p.length==0) return; while (!p.hasClass(&quot;cell&quot;)) { p=p.parent(); if (p.prop(&quot;tagName&quot;) ==&quot;body&quot;) return; } var cell = p; cell.find(&quot;.input&quot;).addClass(&quot;hide-in-slideshow&quot;) }); &lt;/script&gt;&quot;&quot;&quot; % (uid, uid) display.display_html(html, raw=True) All you have to do is import the function or define it within the slideshow notebook, and then call hide_code_in_slideshow() from within any cell whose code you wish to hide. The code will still appear in the Notebook, but will not be present in the slideshow. Below is an example of hide_code_in_slideshow() in action: I find hide_code_in_slideshow() particularly useful when delivering a training session or delivering results to non-technical audiences. Tip 3: Add speaker notes In my opinion, one of the most desirable slideshow features is the ability to include speaker notes. This functionality is built into RISE and is really easy to use. In order to add speaker notes to a slide, you should create a new markdown cell directly beneath the final cell that is part of said slide and select ‘Notes’ from the cell toolbar. Next, you can type any of notes you’d like in the cell. In order to activate the notes in a RISE slideshow, you can press the T key to toggle the speaker notes window. A new window will pop up that contains the live slideshow, a view of the next slide, and the speaker notes associated with the current slide. Below is an example of RISE’s speaker notes functionality: The best part about this separate speaker window is that it’s linked to the original slideshow window - this means you can extend your screen when presenting and have the speaker window on your laptop and the original slideshow window projecting to a larger screen. Tip 4: Turn your slides into a writable chalkboard The next tip is another feature built directly into RISE: the ability to write over top of a slide and launch a blank chalkboard. This is particularly useful during training and teaching sessions. RISE’s chalkboard feature can be enabled by adding the below data to the Jupyter Notebook’s metadata. You can edit the Jupyter Notebook metadata by clicking on “Edit” in the Jupyter Notebooks toolbar, and then clicking on “Edit Notebook Metadata”. { ..., &quot;rise&quot;: { &quot;enable_chalkboard&quot;: true } } Once added to the notebook metadata, the Jupyter Notebook must be shutdown and restarted to launch with the chalkboard feature enabled. When the notebook is relaunched and presentation mode is enabled, you’ll see two new buttons in the bottom-left corner of the slide: As mentioned, the chalkboard feature provides two core funcationalities: writing on top of a current slide and launching a blank chalkboard. The button on the right enables writing on top of the current slide and the button in the middle launches a blank chalkboard. Here’s a demonstration of writing on top of the current slide: The chalkboard simply launches a blank black chalkboard with the ability to write using virtual chalk. Tip 5: Customize slide appearance with custom CSS By default, slides appear as white with a basic black text. However, there is often a desire to customize the background, fonts, images, or headers and footers of slides. This can be achieved with CSS. Adding default CSS A default CSS can be added to all notebooks within a directory by creating a CSS file titled rise.css within the same directory of the notebooks. All of the notebooks in this directory will then use rise.css by default. An example of a basic rise.css file can be found in the GitHub repository for one of my existing trainings. This little amount of CSS can make a large difference in the visual aesthetic of your slides: Adding notebook-specific CSS If you are wanting to add specific CSS files for a specific notebook (let’s call it notebook-name.ipynb), you can simply create a CSS file in the directory of the notebook titled notebook-name.css. Tip 6: Host live slides online with Binder One of the drawbacks of RISE is that it requires a running Jupyter Notebooks instance. While this isn’t too problematic for live presentations hosted on a local computer, it can be make the result hard to share. The next two tips provide ways to do that. Live RISE slides can be shared using a Jupyter-created product called Binder. Binder allows you to host a live Jupyter Notebooks session for free within a browser – therefore, no Python and/or Jupyter setup is required for users. Binder works by accepting a link to your project’s GitHub repository. Tip 7: Export slides directly to HTML for non-live viewing Slideshows developed in Jupyter Notebooks can also be exported to a single HTML file. While this method does not include many of the live features RISE offerse through a running Pythons session, it does enable the sharing of slideshows through a single HTML file. This can be done using the jupyter nbconvert command on the command line. This is the command I use: jupyter nbconvert notebook-name.ipynb --to-slides --reveal-prefix reveal.js If you do not have reveal.js installed locally, you can use an online version: jupyter nbconvert notebook-name.ipynb --to-slides --reveal-prefix &quot;http://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0&quot; A single HTML file will be created in the same directory as the notebook, and opening this HTML will will open the slideshow. Tip 8: Open slides automatically Sometimes it’s useful to share live slideshows rather than static ones. Binder makes this possible by providing an easy notebook-sharing mechanism, but viewers still need to active presentation mode within the notebook. RISE’s autolaunch feature solves this problem. RISE’s autolaunch feature can be enabled by adding the below data to the Jupyter Notebook’s metadata. You can edit the Jupyter Notebook metadata by clicking on “Edit” in the Jupyter Notebooks toolbar, and then clicking on “Edit Notebook Metadata”. { ..., &quot;rise&quot;: { &quot;autolaunch&quot;: true } } With this feature enabled, the slideshow will automatically launch when the notebook itself is launched","@type":"BlogPosting","url":"www.markroepke.me/posts/2019/06/05/tips-for-slideshows-in-jupyter.html","headline":"Tips for Creating Slideshows in Jupyter","dateModified":"2019-06-05T00:00:00+00:00","datePublished":"2019-06-05T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"www.markroepke.me/posts/2019/06/05/tips-for-slideshows-in-jupyter.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="Tips%20for%20Creating%20Slideshows%20in%20Jupyter%20|%20Mark%20Roepke_files/main.css"><link type="application/atom+xml" rel="alternate" href="https://www.markroepke.me/posts/2019/06/05/www.markroepke.me/feed.xml" title="Mark Roepke"><script async="" src="Tips%20for%20Creating%20Slideshows%20in%20Jupyter%20|%20Mark%20Roepke_files/js.js"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114728564-1');
+</script></head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+  
+
+  <body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="https://www.markroepke.me/">Mark Roepke</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="https://www.markroepke.me/about-me">About Me</a><a class="page-link" href="https://www.markroepke.me/blog/">Blog</a><a class="page-link" href="https://www.markroepke.me/projects/">Projects</a><a class="page-link" href="https://www.markroepke.me/assets/markroepke-resume.pdf">Resume/CV</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope="" itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Tips for Creating Slideshows in Jupyter</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-06-05T00:00:00+00:00" itemprop="datePublished">Jun 5, 2019
+      </time></p><img class="preview-image" src="Tips%20for%20Creating%20Slideshows%20in%20Jupyter%20|%20Mark%20Roepke_files/jupyter-notebooks-logo.png"></header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>In a <a href="https://www.markroepke.me/posts/2019/05/23/creating-interactive-slideshows-in-jupyter.html" target="_blank" class="class2">previous post</a>
+ I wrote about how to create interactive slideshows in Jupyter 
+Notebooks. It covered the benefits, basic technology, basic slide 
+creation, and how to view and operate the slideshow. This post dives a 
+little deeper by providing key tips on creating better-looking slides, 
+customizing formatting, exporting to HTML, hosting slides live online, 
+etc.</p>
+
+<p><br></p>
+
+<h3 id="tip-1-split-slides-into-two-columns">Tip 1: Split slides into two columns</h3>
+
+<p>A built-in option in slideshow platforms like PowerPoint is to split 
+content into two columns. While this isn’t a default capability in 
+Jupyter slideshows, it can be easily added using with the Jupyter 
+extension <code class="highlighter-rouge">splitcell</code>.</p>
+
+<h4 id="installing-and-enabling-splitcell">Installing and enabling <code class="highlighter-rouge">splitcell</code></h4>
+
+<p><code class="highlighter-rouge">splitcell</code> can be installed by running the following on the command line:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda <span class="nb">install</span> <span class="nt">-c</span> conda-forge jupyter_contrib_nbextensions
+</code></pre></div></div>
+
+<p>or:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>jupyter_contrib_nbextensions
+</code></pre></div></div>
+
+<p>And then it can be enabled by running:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter nbextension <span class="nb">enable </span>splitcell/splitcell
+</code></pre></div></div>
+
+<p>More information on installing/enabling Jupyter extensions is available on <a href="https://github.com/ipython-contrib/jupyter_contrib_nbextensions" target="_blank" class="class2">GitHub</a>.</p>
+
+<h4 id="using-splitcell">Using <code class="highlighter-rouge">splitcell</code></h4>
+
+<p>Once installed and enabled, <code class="highlighter-rouge">splitcell</code> is easy to use. With an open notebook and a cell selected, press the <kbd>SHIFT</kbd> + <kbd>S</kbd>
+ keys to “split” the cell and align it to a certain column. By default, 
+the first cell will align to the left side, and then the right side will
+ be filled by pressing <kbd>SHIFT</kbd> + <kbd>S</kbd> on subsequent cells.</p>
+
+<p>When the notebook is then put into presentation mode, the cells with 
+stay in their columns giving two-column content on slides. The left 
+column will be processed before the right column (but they can appear at
+ the same time by selecint “-“ in the right cell slideshow toolbar).</p>
+
+<p>Below is an example of <code class="highlighter-rouge">splitcell</code> in action in a slideshow:</p>
+
+<p><br></p>
+<center>
+<img src="Tips%20for%20Creating%20Slideshows%20in%20Jupyter%20|%20Mark%20Roepke_files/jupyter-splitcell.gif" height="400">
+</center>
+<p><br></p>
+
+<p>A major advantage of creating columns using <code class="highlighter-rouge">splitcell</code> is that it works for both code and HTML/markdown content.</p>
+
+<p><br></p>
+
+<h3 id="tip-2-hide-code-from-slideshow">Tip 2: Hide code from slideshow</h3>
+
+<p>I often find that I want to hide the Python code used to generate 
+output from a slideshow. A common example of this is hiding the code 
+used to print a <code class="highlighter-rouge">pandas</code> DataFrame when only interested in talking about data.</p>
+
+<p>If you want to hide all of the code within a cell but still run the 
+cell and print its output to a slideshow, you can use the following 
+Python function:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">hide_code_in_slideshow</span><span class="p">():</span>   
+    <span class="kn">from</span> <span class="nn">IPython</span> <span class="kn">import</span> <span class="n">display</span>
+    <span class="kn">import</span> <span class="nn">binascii</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="n">uid</span> <span class="o">=</span> <span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>    
+    <span class="n">html</span> <span class="o">=</span> <span class="s">"""&lt;div id="</span><span class="si">%</span><span class="s">s"&gt;&lt;/div&gt;
+    &lt;script type="text/javascript"&gt;
+        $(function(){
+            var p = $("#</span><span class="si">%</span><span class="s">s");
+            if (p.length==0) return;
+            while (!p.hasClass("cell")) {
+                p=p.parent();
+                if (p.prop("tagName") =="body") return;
+            }
+            var cell = p;
+            cell.find(".input").addClass("hide-in-slideshow")
+        });
+    &lt;/script&gt;"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">uid</span><span class="p">)</span>
+    <span class="n">display</span><span class="o">.</span><span class="n">display_html</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>All you have to do is import the function or define it within the slideshow notebook, and then call <code class="highlighter-rouge">hide_code_in_slideshow()</code>
+ from within any cell whose code you wish to hide. The code will still 
+appear in the Notebook, but will not be present in the slideshow.</p>
+
+<p>Below is an example of <code class="highlighter-rouge">hide_code_in_slideshow()</code> in action:</p>
+
+<p><br></p>
+<center>
+<img src="Tips%20for%20Creating%20Slideshows%20in%20Jupyter%20|%20Mark%20Roepke_files/jupyter-hide-code-gif.gif" height="400">
+</center>
+<p><br></p>
+
+<p>I find <code class="highlighter-rouge">hide_code_in_slideshow()</code> particularly useful when delivering a training session or delivering results to non-technical audiences.</p>
+
+<p><br></p>
+
+<h3 id="tip-3-add-speaker-notes">Tip 3: Add speaker notes</h3>
+
+<p>In my opinion, one of the most desirable slideshow features is the 
+ability to include speaker notes. This functionality is built into RISE 
+and is really easy to use.</p>
+
+<p>In order to add speaker notes to a slide, you should create a new 
+markdown cell directly beneath the final cell that is part of said slide
+ and select ‘Notes’ from the cell toolbar. Next, you can type any of 
+notes you’d like in the cell.</p>
+
+<p>In order to activate the notes in a RISE slideshow, you can press the <kbd>T</kbd>
+ key to toggle the speaker notes window. A new window will pop up that 
+contains the live slideshow, a view of the next slide, and the speaker 
+notes associated with the current slide.</p>
+
+<p>Below is an example of RISE’s speaker notes functionality:</p>
+
+<p><br></p>
+<center>
+<img src="Tips%20for%20Creating%20Slideshows%20in%20Jupyter%20|%20Mark%20Roepke_files/jupyter-speaker-notes.gif" height="400">
+</center>
+<p><br></p>
+
+<p>The best part about this separate speaker window is that it’s linked 
+to the original slideshow window - this means you can extend your screen
+ when presenting and have the speaker window on your laptop and the 
+original slideshow window projecting to a larger screen.</p>
+
+<p><br></p>
+
+<h3 id="tip-4-turn-your-slides-into-a-writable-chalkboard">Tip 4: Turn your slides into a writable chalkboard</h3>
+
+<p>The next tip is another feature built directly into RISE: the ability
+ to write over top of a slide and launch a blank chalkboard. This is 
+particularly useful during training and teaching sessions.</p>
+
+<p>RISE’s chalkboard feature can be enabled by adding the below data to 
+the Jupyter Notebook’s metadata. You can edit the Jupyter Notebook 
+metadata by clicking on “Edit” in the Jupyter Notebooks toolbar, and 
+then clicking on “Edit Notebook Metadata”.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  ...,
+  "rise": {
+      "enable_chalkboard": true
+  }
+}
+</code></pre></div></div>
+
+<p>Once added to the notebook metadata, the Jupyter Notebook must be 
+shutdown and restarted to launch with the chalkboard feature enabled.</p>
+
+<p>When the notebook is relaunched and presentation mode is enabled, 
+you’ll see two new buttons in the bottom-left corner of the slide:</p>
+
+<p><br></p>
+<center>
+<img src="Tips%20for%20Creating%20Slideshows%20in%20Jupyter%20|%20Mark%20Roepke_files/jupyter-slide-chalkboard-enabled.png" height="100">
+</center>
+<p><br></p>
+
+<p>As mentioned, the chalkboard feature provides two core funcationalities: <em>writing on top of a current slide</em> and <em>launching a blank chalkboard</em>. The button on the right enables writing on top of the current slide and the button in the middle launches a blank chalkboard.</p>
+
+<p>Here’s a demonstration of writing on top of the current slide:</p>
+
+<p><br></p>
+<center>
+<img src="Tips%20for%20Creating%20Slideshows%20in%20Jupyter%20|%20Mark%20Roepke_files/jupyter-write-current-slide.gif" height="400">
+</center>
+<p><br></p>
+
+<p>The chalkboard simply launches a blank black chalkboard with the ability to write using virtual chalk.</p>
+
+<p><br></p>
+
+<h3 id="tip-5-customize-slide-appearance-with-custom-css">Tip 5: Customize slide appearance with custom CSS</h3>
+
+<p>By default, slides appear as white with a basic black text. However, 
+there is often a desire to customize the background, fonts, images, or 
+headers and footers of slides. This can be achieved with CSS.</p>
+
+<h4 id="adding-default-css">Adding default CSS</h4>
+
+<p>A default CSS can be added to all notebooks within a directory by creating a CSS file titled <code class="highlighter-rouge">rise.css</code> within the same directory of the notebooks. All of the notebooks in this directory will then use <code class="highlighter-rouge">rise.css</code> by default.</p>
+
+<p>An example of a basic <code class="highlighter-rouge">rise.css</code> file can be found in the <a href="https://github.com/uc-python/intro-python-datasci/blob/master/notebooks/rise.css" target="_blank" class="class2">GitHub repository</a> for one of my existing trainings.</p>
+
+<p>This little amount of CSS can make a large difference in the visual aesthetic of your slides:</p>
+
+<p><br></p>
+<center>
+<img src="Tips%20for%20Creating%20Slideshows%20in%20Jupyter%20|%20Mark%20Roepke_files/jupyter-css-slide.png" height="400">
+</center>
+<p><br></p>
+
+<h4 id="adding-notebook-specific-css">Adding notebook-specific CSS</h4>
+
+<p>If you are wanting to add specific CSS files for a specific notebook (let’s call it <code class="highlighter-rouge">notebook-name.ipynb</code>), you can simply create a CSS file in the directory of the notebook titled <code class="highlighter-rouge">notebook-name.css</code>.</p>
+
+<p><br></p>
+
+<h3 id="tip-6-host-live-slides-online-with-binder">Tip 6: Host live slides online with Binder</h3>
+
+<p>One of the drawbacks of RISE is that it requires a running Jupyter 
+Notebooks instance. While this isn’t too problematic for live 
+presentations hosted on a local computer, it can be make the result hard
+ to share. The next two tips provide ways to do that.</p>
+
+<p>Live RISE slides can be shared using a Jupyter-created product called <a href="https://mybinder.org/" target="_blank" class="class2">Binder</a>.
+ Binder allows you to host a live Jupyter Notebooks session for free 
+within a browser – therefore, no Python and/or Jupyter setup is required
+ for users.</p>
+
+<p>Binder works by accepting a link to your project’s GitHub repository.</p>
+
+<p><br></p>
+
+<h3 id="tip-7-export-slides-directly-to-html-for-non-live-viewing">Tip 7: Export slides directly to HTML for non-live viewing</h3>
+
+<p>Slideshows developed in Jupyter Notebooks can also be exported to a 
+single HTML file. While this method does not include many of the live 
+features RISE offerse through a running Pythons session, it does enable 
+the sharing of slideshows through a single HTML file.</p>
+
+<p>This can be done using the  <code class="highlighter-rouge">jupyter nbconvert</code> command on the command line. This is the command I use:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter nbconvert notebook-name.ipynb <span class="nt">--to-slides</span> <span class="nt">--reveal-prefix</span> reveal.js
+</code></pre></div></div>
+
+<p>If you do not have reveal.js installed locally, you can use an online version:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter nbconvert notebook-name.ipynb <span class="nt">--to-slides</span> <span class="nt">--reveal-prefix</span> <span class="s2">"http://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.3.0"</span>
+</code></pre></div></div>
+
+<p>A single HTML file will be created in the same directory as the notebook, and opening this HTML will will open the slideshow.</p>
+
+<p><br></p>
+
+<h3 id="tip-8-open-slides-automatically">Tip 8: Open slides automatically</h3>
+
+<p>Sometimes it’s useful to share live slideshows rather than static 
+ones. Binder makes this possible by providing an easy notebook-sharing 
+mechanism, but viewers still need to active presentation mode within the
+ notebook. RISE’s autolaunch feature solves this problem.</p>
+
+<p>RISE’s autolaunch feature can be enabled by adding the below data to 
+the Jupyter Notebook’s metadata. You can edit the Jupyter Notebook 
+metadata by clicking on “Edit” in the Jupyter Notebooks toolbar, and 
+then clicking on “Edit Notebook Metadata”.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+  ...,
+  "rise": {
+      "autolaunch": true
+  }
+}
+</code></pre></div></div>
+
+<p>With this feature enabled, the slideshow will automatically launch when the notebook itself is launched</p>
+
+<p><br></p>
+<center>
+<img src="Tips%20for%20Creating%20Slideshows%20in%20Jupyter%20|%20Mark%20Roepke_files/jupyter-autolaunch-slides.gif" height="400">
+</center>
+<p><br>
+<br></p>
+
+  </div><a class="u-url" href="https://www.markroepke.me/posts/2019/06/05/tips-for-slideshows-in-jupyter.html" hidden=""></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Mark Roepke</li><li><a class="u-email" href="mailto:mroepke5@gmail.com">mroepke5@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a target="_blank" href="https://github.com/markroepke"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">GitHub</span></a></li><li><a target="_blank" href="https://www.linkedin.com/in/mark-roepke-17517995"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">LinkedIn</span></a></li><li><a target="_blank" href="https://www.twitter.com/markroepke"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">Twitter</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Experienced data scientist interested in data science education</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+</body></html>

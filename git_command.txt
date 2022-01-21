@@ -1,0 +1,34 @@
+
+# Merging origin into 
+	git merge origin 
+
+# Abort 
+	git merge --abort
+
+# commit
+	git commit
+
+# show origin
+	git show remote origin
+
+
+/*--------------------------------------------------*/
+# Resolve git conflict 
+	git merge --abort
+	
+
+# detailed diagnostic, 
+	* First show status
+		git status 
+
+	* Try to add the files
+		git add libraries/DIRC/DDIRCLEDRef_factory.cc && git commit -m "first resolved 1"
+
+	* resolve with git tools
+		git mergetool
+		   or 
+		git gui
+
+
+# Git gvimdiff cheat sheets!	
+	https://gist.github.com/mattratleph/4026987

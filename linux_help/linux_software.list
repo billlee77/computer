@@ -76,3 +76,8 @@ jaxodraw
 
 # Flash Animation
 synfig
+
+# debuger
+valgrind
+dbg
+

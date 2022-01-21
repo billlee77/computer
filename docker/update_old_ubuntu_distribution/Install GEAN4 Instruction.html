@@ -1,0 +1,310 @@
+<!-- my note: layout fixed center, with two columns. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><script>
+  {
+    const open = XMLHttpRequest.prototype.open;
+    XMLHttpRequest.prototype.open = function (method, url) {
+      open.apply(this, arguments);
+      this.addEventListener('readystatechange', function _() {
+        if(this.readyState == this.HEADERS_RECEIVED) {
+          const contentType = this.getResponseHeader('Content-Type') || '';
+          if (contentType.startsWith('video/') || contentType.startsWith('audio/')) {
+            window.postMessage({
+              source: 'xmlhttprequest-open',
+              url,
+              method,
+              contentType
+            }, '*');
+          }
+          this.removeEventListener('readystatechange', _);
+        }
+      })
+    }
+  }
+  </script><head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	
+	<title> Install GEAN4 Instruction </title>
+	<link rel="stylesheet" href="Install%20GEAN4%20Instruction_files/general.css">
+	<link rel="stylesheet" href="Install%20GEAN4%20Instruction_files/nav.css">	
+	<link rel="stylesheet" href="Install%20GEAN4%20Instruction_files/local.css">	
+	<style type="text/css">
+	
+	
+
+
+	</style>
+</head>
+
+<body>
+<div id="wrapper_whole"> 
+
+		<div id="header">
+			<img src="Install%20GEAN4%20Instruction_files/header.png">
+
+			<!-- Beginning of  navigation bar -->
+			<div id="nav"> 
+
+				<ul>
+					<li>
+						<a href="http://peiluan-tai.com/home.html">Profile</a>
+						
+					</li>
+					<li>
+						<a href="http://peiluan-tai.com/Phyiscs.html">Physics</a>
+					</li>
+
+					<li id="">
+						<a href="http://peiluan-tai.com/Programming.html">Programming</a>
+					</li>
+
+					<li>
+						<a href="http://peiluan-tai.com/Tutorial.html">Tutorial</a>
+					</li>
+					<li>
+						<a href="http://peiluan-tai.com/More.html">More</a>
+						<ul>
+							<li> <a href=""> link 1</a> </li>
+							<li> <a href=""> link 2</a> </li>
+							<li> <a href=""> link 3</a> </li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- End of navigation bar -->
+
+		</div>
+		
+<div id="content3">
+	
+	<h1>GEANT 4 Introduction </h1>	
+	
+	<p>
+		 
+		 The GEANT4, standing for geometry and tracking, is a toolkit for
+		 doing Monte Carlo simulations, particularly for the particles passing
+		 through matter.  It has been applied in high energy physics, nuclear
+		 physics, medical, and more.
+		
+		 For example, GEANT4 can be used to study energy resolution of a new-
+		 built Si detector array.
+		 
+		 The GEANT4 official site is at <a target="_blank" href="https:
+		 //geant4.web.cern.ch/geant4/">https://geant4.web.cern.ch/geant4/</a>.
+		 <br><br>
+
+		 This post here is my note for GEANT4 installation with Qt as it visualization driver. The main reference is from <a target="_blank" href="http://geant4-userdoc.web.cern.ch/geant4-userdoc/UsersGuides/InstallationGuide/html/installguide.html">The Geant4 installation guide</a>. This note here is an alternative installation guide with a
+		 focus of Qt setup. 
+		
+		<br>
+		(latest update: Jun 25, 2019) <br>
+		(update: Sep 14, 2018) <br>
+
+	</p>
+	<br>
+
+	<h1> Before Installation </h1>	
+	<p>
+		 
+		 I have tested GEANT4 installation in Ubuntu 14.04, 16.04, and 18.04. I
+ found that the main difference is the GNU g++ compiler version.  
+GEANT4.10 (released 25 May 2018) requires Qt version 4.8, not 5.X 
+versions. There are errors when one uses g++7 to compile Qt4.8. So, one 
+needs to manually change the default g++ compiler. Both Ubuntu 14.04 and
+ 16.04 have no such issues to compile Qt4.8. <a href="https://askubuntu.com/questions/26498/how-to-choose-the-default-gcc-and-g-version" target="_blank">(check here)</a>
+		 <br> <br>
+
+		 some tools you need:
+		 </p><ol>
+		 	<li> cmake 3.3 or later  </li>	
+		 	<li> ccmake   </li>
+		 	<li> OpenGL  </li>
+		 	<li> Qt4.8   </li>
+		 	<li> others </li>
+		 </ol>
+		 <br>
+
+		 #cmake and ccmake <br>
+		 (<a target="_blank" href="https://cmake.org/download/">download page</a> and <a target="_blank" href="https://cmake.org/install/">installation guide</a>) To install cmake is easy. After unzip the file, within the cmake source directory, type in <code>./bootstrap; make; sudo make install</code>. <br>
+		 
+		 The ccmake is a handy utility to configuration the build options. 
+when we use cmake to configure the building script, we will type in 
+cmake -DGEANT4_VAR="xxx", ie. use "-D" to define the options. It is not 
+convenient if we have many options to enter. So here comes ccmake, it 
+helps us to control these build options. Use the following commend to 
+install ccmake: <code>sudo apt-get install cmake-curses-gui</code> <br>
+		 <br> 
+		 <br>
+
+		 # OpenGL <br>
+		 For OpenGL installation you can use the apt-get command for the 
+following libraries: freeglut3, freeglut3-dev , mesa-utils. ex. <code> sudo apt-get install freeglut3 freeglut3-dev  mesa-utils	</code> <br>
+		 <br>
+		 #Qt4.8 <br>
+		 The Qt is not necessary for the Geant4 installation, but it is a very
+ good visualization driver.  To download the Qt4.8, please go to  <a href="https://download.qt.io/archive/qt/">qt archive</a>. 
+
+		 Here is the <a href="http://doc.qt.io/qt-4.8/install-x11.html"> Qt4.8 installation guide</a>. It is very easy to follow.  You will  need to install some libraries for Qt4.8, and so please see the <a href="http://doc.qt.io/qt-4.8/requirements-x11.html">Qt4.8 requirement</a>.
+		 You can use the following code: <br>
+		<code>sudo apt-get install libfontconfig1-dev libfreetype6-dev 
+libx11-dev libxcursor-dev libxext-dev libxfixes-dev libxft-dev libxi-dev
+ libxrandr-dev libxrender-dev </code>. 
+		  
+   		<br>
+		<br>
+		#others <br>	
+		<code>sudo apt-get install libxmu-dev expat</code>   <br>
+		Expat is a XML parsing C library. Geant4 default installation will 
+search for Expat, but Ubuntu doesn't provide it. Or we can just turn off
+ the build option for Expat by cmake -DGEANT4_USE_SYSTEM_EXPAT=OFF ... 
+		<br>
+		
+
+ 
+	<p></p>
+		<hr>
+		<br>
+
+	<h1> GEANT4 Installation </h1>	
+	<p>
+		Download the GREANT4 source file <a target="_blank" href="http://geant4.web.cern.ch/support/download">(link)</a>.<br>
+		
+		You will need some basic ideas of using cmake. If you are already familiar with cmake, please just skip this paragraph. 
+
+		You should understand the basic cmake installation concepts of source, build, and install directories.		 <br>
+		(1) "source" directory is a folder to store source file (.h .cpp 
+etc...). You download the Geant4 source files from the Internet. You 
+unzip the files and get a folder "geant4.10.xx". That is your source 
+folder. <br>
+
+		(2) "build" directory is a folder to store cmake scripts and the build
+ scripts generated from cmake programs. In the Unix system, like Ubuntu,
+ cmake program will check your compilers and create the correct Unix 
+Makefile for you. <br>
+
+		(3) "install" directory stores the final products -- like share 
+libraries which are created according to the build scripts from cmake 
+that configured by you. If you think you will not reconfigure the Geant4
+ anymore, you can remove "source" and "build" folder. Note: the source 
+folder contains useful examples, and so I do not recommend to remove it.
+ <br>	
+
+ 
+		<br>
+
+	 
+		
+
+		<img src="Install%20GEAN4%20Instruction_files/folders.png"> <br>
+		( figure: 'source', 'build', 'install' folders ) <br>
+		<br>
+		So, after creating a "build" folder, the next step is to "cd" into 
+your build folder, and call cmake, and tell cmake: where the source 
+folder's top-level CMakeLists.txt file is.  Suppose you are now at the 
+"build" folder, and the "source" folder in at upper level. type in: 
+		$ cmake ../geant4.10.xx.    <br><br>
+		 
+		Once we finish cmake, We can then use ccmake to fine tune our build 
+options, such as where you want to put your final products to. <br>
+
+		<img src="Install%20GEAN4%20Instruction_files/ccmake.png"> <br>
+		<img src="Install%20GEAN4%20Instruction_files/ccmake2.png"> <br>
+		Some build options I set:<br>
+		(1) CMAKE_INSTALL_PREFIX. It is where (path) you want to store the 
+final products, which corresponding to the "install" directory. Note: 
+think it as the prefix (file path) adding to all the final files. It is 
+relevant to the command "cmake install"
+		<br><br>
+		(2) GEANT4_INSTALL_DATA ON. I recommend to download the data files 
+during the installation process, since many built-in examples need these
+ data files. Hence, you don't need to manually download data files unzip
+ them, recompile the sources.
+		<br><br>
+		(3)GEANT4_USE_OPENGL_X11 ON
+		<br><br>
+		(4)GEANT4_USE_QT ON 
+		<br><br>
+		(5) GEANT4_USESYSTEM_EXPAT ON
+		<br><br>
+		(6) QT_QMAKE_EXECUTABLE
+		in my case, it is at /usr/local/Trolltech/Qt-4.8.6/bin/qmake.    
+		<br><br>
+		(7) GEANT4_BUILD_MULTITHREADED, if you want to use mulit-thread 
+version, set it ON. Otherwise, it will be sequential mode.  Here, I set 
+OFF.
+		To write MT Geant4 version of Geant4 application is quite simple. For 
+B1 example, once you compile Geant4 in MT mode, it will run in MT 
+automatically, 
+		no need to change anything (by default 2 threads).
+		
+		<br>
+		<br>
+		Now you have done ALL the configuration, and then  just type "make 
+-j2" (for two cores), and "sudo make install".  Now, in your 
+"install/bin" folder, you should see the following: <br>
+		<img src="Install%20GEAN4%20Instruction_files/install_folder.png"> <br>
+		<br>
+		the geant4.sh script is for setting environment parameters, such as 
+G4RADIOACTIVEDATA.  You need to run this script to use GEANT4.  
+		Also, you need to append the Qt4.8 shared library path to your 
+LD_LIBRARY_PATH variable. <br>
+		<br>
+		In your .bashrc file, add the following lines. <br>
+		<code> source your_install_folder/bin/geant4.sh <br>
+		export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/Trolltech/Qt-4.8.7/lib/ </code>  
+
+	</p>
+ 
+	<br>
+	<br>
+	<hr>
+	<br>
+	<h1> Run the B1 example </h1>	
+	<p>
+		The following demo is just for you to test the Geant4 installation. <br>
+		the tasks are: <br>
+		(1) create a new folder, ex. "B1-test" <br>
+		(2) "cd" into "B1-test" folder <br>
+		(3) use "cmake" and input the B1 source location. ex. <code> cmake your_source/examples/basics/B1/ </code> <br>
+		(4) use ccmake to check the parameters. ( optional ) <br>
+		(5) make <br>
+		(6) ./exampleB1 <br>
+		(7) type in "/run/beamOn 10"<br>
+
+		<br>  
+		<br>
+		<img src="Install%20GEAN4%20Instruction_files/b1_example.png"> <br>
+		(figure: After compiling, you should see these files in the 'B1-test' folder)
+		<br>
+		<br>
+		Well done, then type './exampleB1' ( the following is from OpenGL) <br>
+		<img src="Install%20GEAN4%20Instruction_files/b1_example_run.png" width="900px"> <br>
+		<br>
+		<br>
+		The following is from QT. You can drag and rotate the object and it 
+provides auto-completion for your command.  Try to type in "/run/beamOn 
+10" at the entry of "session". <br>
+		<img src="Install%20GEAN4%20Instruction_files/useQT.png" width="900px"> <br>
+		<br>
+		 
+
+	</p>
+	<br>
+	<br>
+
+	<br>	
+	<br><br><br><br>
+	</div>	
+	
+	<div id="footer">
+			<br><hr>
+			<strong>Contact:</strong> <img src="Install%20GEAN4%20Instruction_files/contact.png">			
+			<br>
+	</div>
+
+
+
+</div>
+
+</body></html>

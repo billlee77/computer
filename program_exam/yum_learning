@@ -1,0 +1,14 @@
+rpm -qa | grep asdf
+
+
+yum repolist
+
+
+
+
+rm /etc/yum.repos.d/bad.repo
+
+
+yum-config-manager --enable  http://linuxsoft.cern.ch/epel/
+yum-config-manager --disable  http://linuxsoft.cern.ch/epel/
+

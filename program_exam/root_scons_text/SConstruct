@@ -1,0 +1,71 @@
+import os
+import subprocess
+import SCons
+import glob
+import re
+import sys
+
+## /*--------------------------------------------------*/
+#env = Environment(CPPPATH = ['.'])
+##rootsys = os.getenv('ROOTSYS', '/usr/local/root/PRO')
+#
+##print rootsys
+#
+#ROOT_CFLAGS = subprocess.Popen(["%s/bin/root-config" % rootsys, "--cflags"], stdout=subprocess.PIPE).communicate()[0]
+#ROOT_LINKFLAGS = subprocess.Popen(["%s/bin/root-config" % rootsys, "--glibs" ], stdout=subprocess.PIPE).communicate()[0]
+#
+##env.Append(CPPFLAGS=ROOT_CFLAGS)
+##env.Append(LINKFLAGS=ROOT_LINKFLAGS)
+#
+#env.Program('test', 'test.cpp') 
+#
+# /*--------------------------------------------------*/
+
+env = Environment()
+
+env['CXX'] = 'g++'
+
+
+# # lib_var = os.popen("root-config --libs").read()
+
+env['CCFLAGS'] = '-std=c++11 -pthread -m64 -I/home/apps/root/include' 
+
+env['LINKFLAGS'] = '-L/home/apps/root/lib -lCore -lImt -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lROOTVecOps -lTree -lTreePlayer -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lMultiProc -lROOTDataFrame -pthread -lm -ldl -rdynamic' 
+
+#output = os.environ["ROOTSYS"]
+#
+#rootsys = os.environ["ROOTSYS"] 
+#rootsys_inc = rootsys + "/include"
+
+#env.Append(CPPPATH =[rootsys_inc, rootsys])
+
+
+	
+#root_lib = os.popen("/sciclone/home10/jrstevens01/builds/root/root-6.08.06/bin/root-config --libs").read()
+
+#env['LIBS'] = 'nsl', 'crypt', 'dl', 'Minuit', 'Xt', 'X11', 'Xpm' 
+
+##print "AAAA"
+##print root_lib
+#
+#
+#env.ParseConfig('/sciclone/home10/jrstevens01/builds/root/root-6.08.06/bin/root-config --cflags')
+#
+##env.ParseConfig('root-config --libs')
+#
+
+#ROOT_CFLAGS = subprocess.Popen(["%s/bin/root-config" % rootsys, "--cflags"], stdout=subprocess.PIPE).communicate()[0]
+#ROOT_LINKFLAGS = subprocess.Popen(["%s/bin/root-config" % rootsys, "--glibs" ], stdout=subprocess.PIPE).communicate()[0]
+
+
+#print ROOT_CFLAGS
+
+#env.Append(CPPFLAGS=ROOT_CFLAGS)
+#env.Append(LINKFLAGS=ROOT_LINKFLAGS)
+
+
+#env[LINKFLAGS] = 
+env.Program("eic", "test.cc")
+
+
+

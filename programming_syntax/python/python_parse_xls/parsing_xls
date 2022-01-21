@@ -1,0 +1,10 @@
+
+# Install python-pip
+	sudo apt-get install python-pip
+
+# Install python modules
+	sudo pip install numpy
+	sudo pip install pandas
+	sudo pip install xlrd 
+
+

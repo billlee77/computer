@@ -1,0 +1,39 @@
+# login into the accelerator site
+	
+	$ ssh billlee@hallgw.jlab.org
+
+	PIN + 2-factor-altentication-code
+
+	$ ssh gluonXX
+
+# VNC session only connect to Gluon46
+
+#  see reference: website: https://halldweb.jlab.org/hdops/wiki/index.php/Accessing_Onsite_Webpages_From_Offsite
+
+1. Starting the VNC server:
+	$vncserver -geometry 1200x1000 :2  
+	$ :2 means 5902
+
+2. Checking the VNC session on the server end
+	$ ps -ef | grep vnc
+
+3. Setting up tunneling
+
+	# Tunneling from localhost to gate, from 5902 on localhost to gateway port 54111 
+		$ ssh -L5902:localhost:54111 hallgw.jlab.org
+
+	# Tunneling from the gateway to Gluon46, from 54111 on gateway to gluon46 port 5902:
+		$ ssh -L54111:localhost:5902 gluon46
+
+4. lunching the VNC after the ssh tunneling is ready:
+	$ vncviewer localhost:2
+
+
+/*--------------------------------------------------*/
+# GlueX Remote shift:
+	ssh -t -L5955:localhost:5955 billlee@hallgw.jlab.org ssh -t -L5955:localhost:5933 hdops@gluon03
+# Separate terminal
+	vncviewer ::5955
+
+
+

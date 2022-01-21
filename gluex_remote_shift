@@ -1,0 +1,2 @@
+
+	ssh -t -L59XX:localhost:59XX your_jlab_userid@hallgw.jlab.org ssh -t -L59XX:localhost:5933 hdops@gluon03

@@ -1,0 +1,7 @@
+lpr -P HP_LaserJet_400_M401dn -o HPOption_Duplexer=True -o HPOption_Tray3=False -o HPEconoMode=False -o HPBookletPageSize=Letter -o PageSize=Letter -o PageRegion=Letter -o InputSlot=Auto -o Duplex=DuplexNoTumble -o MediaType=Unspecified -o HPPrintQuality=FastRes1200 Aidala_1209.2803.pdf
+
+lpr -P HP_LaserJet_400_M401dn -o HPOption_Duplexer=True -o HPOption_Tray3=False -o HPEconoMode=False -o HPBookletPageSize=Letter -o PageSize=Letter -o PageRegion=Letter -o InputSlot=Auto -o Duplex=DuplexNoTumble -o MediaType=Unspecified -o HPPrintQuality=FastRes1200 -o sides=two-sided-long-edge -o number-up=4 psfiles/exp_yields_pl.ps
+
+lpr -P Lab114 -o HPOption_Duplexer=True -o HPOption_Tray3=False -o HPEconoMode=False -o HPBookletPageSize=Letter -o PageSize=Letter -o PageRegion=Letter -o InputSlot=Auto -o Duplex=DuplexNoTumble -o MediaType=Unspecified -o HPPrintQuality=FastRes1200 160_32_970.pdf
+
+lpr -P Lab114 -o HPOption_Tray3=False -o HPEconoMode=False -o HPBookletPageSize=Letter -o PageSize=Letter -o PageRegion=Letter -o InputSlot=Auto -o MediaType=Unspecified -o HPPrintQuality=FastRes1200 160_32_970.pdf

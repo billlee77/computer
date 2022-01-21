@@ -1,0 +1,320 @@
+Testing locking build!
+
+	export ROOT_INCLUDE_PATH=<local macros git directory>/common:$ROOT_INCLUDE_PATH
+
+	git clone git@github.com:ECCE-EIC/calibrations.git 
+
+	export CALIBRATIONROOT=$PWD/calibrations 
+
+Check version: 
+
+	md5sum $OFFLINE_MAIN/rootmacros/G4_hFarFwdBeamLine_EIC.C
+
+#---------------------------------------------------
+# Instructions On ifarm  
+
+# on your computer
+	ssh login.jlab.org
+
+# on login.jlab.org
+	ssh ifarm1802
+
+
+/*--------------------------------------------------*/
+# For singularity 3.4.0 
+# ifarm1802.jlab.org> 
+	module load /apps/modulefiles/singularity/3.4.0
+	singularity shell --writable -B /cvmfs:/cvmfs /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext
+	export LANG=C
+	source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n
+
+
+	git clone https://github.com/ECCE-EIC/tutorials
+	cd tutorials/Momentum
+
+	root.exe FastTrackingEval.root
+
+/*--------------------------------------------------*/
+# For singularity 3.9.2 
+# ifarm1802.jlab.org> 
+
+	module load singularity/3.9.2
+
+	singularity shell -c -H "$HOME" -B /apps,/cvmfs,/group,/work/eic,/work/eic2,/work/eic3 /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext
+
+	export LANG=C
+	source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n
+
+
+	git clone https://github.com/ECCE-EIC/tutorials
+	cd tutorials/Momentum
+
+	root.exe FastTrackingEval.root
+
+
+
+
+
+
+# Running EIC smear
+
+	export EIC_LEVEL=dev
+	source /cvmfs/eic.opensciencegrid.org/x8664_sl7/MCEG/releases/etc/eic_bash.sh
+
+	root -l
+	gSystem->Load("libeicsmear.so")
+	BuildTree("target.dat", ".", -1, "")
+
+
+
+# Use the develpement version of the g4e
+	export EIC_LEVEL=dev
+
+	export EIC_LEVEL=pro
+	source /cvmfs/eic.opensciencegrid.org/x8664_sl7/MCEG/releases/etc/eic_bash.sh
+
+
+#-----------------------------------------------
+
+To add the weight into the for DEMP 
+	https://github.com/blackcathj/coresoftware.git
+
+
+
+# Single job DBG
+
+$ bash 
+
+$ eval `/usr/bin/modulecmd bash load /apps/modulefiles/singularity/3.4.0`
+
+$ singularity exec --no-home -B /cvmfs:/cvmfs /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext ./run_EIC_production.sh 10 /w/eic2-scshelf2103/ECCE/users/billlee/eic-smear_tree/u_pi0/eic_input_DEMPGen_Pion0_no_decay_50k.root DST_DiffractiveAndTagging_DEMP_ep-5x100-upi0_000_0029000_01000.root 29000 /work/eic2/ECCE/MC/prop.2/Diff_Tagg_IP6_100GeV_08.03.21/DiffractiveAndTagging/DEMP/ep-5x100-upi0 prop.2 DiffractiveAndTagging Diff_Tagg_IP6_100GeV_08.03.21 JLAB DEMP ep-5x100-upi0 diff_tagg_physics_IP6_June_16_2021
+
+
+
+/*--------------------------------------------------*/
+# Running evaluator on ifarm after log into the singlarity
+
+1. Checkout repositories: 
+   $ git clone https://github.com/billlee77/bill_diff_tagg_script
+
+2. enter bill_diff_tagg_script/diff_tagg_ana
+   $ cd bill_diff_tagg_script/diff_tagg_ana
+
+3. Compile: 
+   $ mkdir build
+   $ cd build
+   $ ../autogen.sh --prefix=/Straing-path-to/diff_tagg_ana/build
+   $ make install
+
+4. Go to bill_diff_tagg_script dir:
+   $ cd ../../
+  
+5. Checkout main macros from EIC repository:
+   $ git clone https://github.com/ECCE-EIC/macros
+   $ cd macros/detectors/EICDetector/
+
+
+6. Copy over scripts and compile libaries over from Bill's repository
+   $ cp ../../../ifarm/* .
+   $ cp ../../../diff_tagg_ana/build/lib/libdifftaggana.* .
+   $ cp ../../../diff_tagg_ana/build/include/difftaggana/diff_tagg_ana.h . 
+
+7. Edit the emyFileList.txt to include the direct path to the DST files, see example below
+   /work/eic2/ECCE/MC/prop.2/Diff_Tagg_IP6_41GeV_08.03.21/DiffractiveAndTagging/BeAGLE/ep-5x41-NeutronSS/DST_DiffractiveAndTagging_BeAGLE_ep-5x41-NeutronSS_000_0010000_01000.root
+
+
+8. Run Fun root Fun4all_reana.C
+   $ root Fun4all_reana.C
+
+
+
+/*--------------------------------------------------*/
+// Where EventDEMP is
+
+/cvmfs/eic.opensciencegrid.org/x8664_sl7/MCEG/releases/env/dev/PACKAGES/eic-smear/include/eicsmear/erhic/EventDEMP.h
+
+
+
+
+export OPT_FUN4ALL=/cvmfs/eic.opensciencegrid.org/x8664_sl7/opt/fun4all/core
+
+
+
+
+/*--------------------------------------------------*/
+
+../autogen.sh --prefix=$MYINSTALL
+
+
+
+
+/*--------------------------------------------------*/
+# Compiling Eic-smear
+
+cmake ..  -DCMAKE_INSTALL_PREFIX:PATH=/w/eic-sciwork18/users/billlee/eic-smear/build
+
+
+git clone git@github.com:billlee77/coresoftware.git
+git checkout -b DEMP origin/DEMP
+
+
+# Compiling coresoftware/simulation/g4main/
+../autogen.sh --prefix=/w/eic-sciwork18/users/billlee/coresoftware/simulation/g4simulation/g4main/build
+
+cp -r ../../../../../eic-smear/build/include/ .
+
+cp -r ../../../../../eic-smear/build/lib/ .
+
+make install
+
+
+
+cp -r ~/work_eic/coresoftware/simulation/g4simulation/g4main/build/include .
+
+Singularity rhic_sl7_ext:~/work_eic/productions/extras/diff_taff> cp -r ~/work_eic/coresoftware/simulation/g4simulation/g4main/build/lib .
+
+
+
+/w/eic-sciwork18/users/billlee/install
+
+
+../autogen.sh --prefix=/w/eic-sciwork18/users/billlee/install
+
+
+
+
+root.exe -q -b Fun4All_G4_EICDetector.C\(10, "/w/eic2-scshelf2103/ECCE/users/billlee/eic-smear_tree/u_pi0/eic_input_DEMPGen_Pion0_no_decay_50k.root")
+
+
+root.exe -q -b Fun4All_G4_EICDetector.C\(10, \"/w/eic2-scshelf2103/ECCE/users/billlee/eic-smear_tree/u_pi0/eic_input_DEMPGen_Pion0_no_decay_50k.root\", \"aa.root\", 0, , \".\" \)
+
+
+
+
+
+
+.x Fun4All_G4_EICDetector.C(10,"/w/eic2-scshelf2103/ECCE/users/billlee/eic-smear_tree/u_pi0/eic_input_DEMPGen_Pion0_no_decay_50k.root")
+
+
+
+In the 
+
+
+# locally built libs
+export MYINSTALL=~/install  
+
+export MYINSTALL=/w/eic-sciwork18/users/billlee/install
+
+# use locally built libs
+source ${OPT_FUN4ALL}/bin/setup_local.sh $MYINSTALL
+
+
+
+.x Fun4All_G4_EICDetector.C(10,"/w/eic2-scshelf2103/ECCE/users/billlee/eic-smear_tree/u_pi0/eic_input_DEMPGen_Pion0_no_decay_50k.root")
+
+
+
+
+
+
+
+
+
+
+singularity exec --no-home -B /cvmfs:/cvmfs /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext ./run_EIC_production.sh 10 /w/eic2-scshelf2103/ECCE/users/billlee/eic-smear_tree/u_pi0/eic_input_DEMPGen_Pion0_no_decay_50k.root DST_DiffractiveAndTagging_DEMP_ep-5x100-upi0_000_0029000_01000.root 29000 . new DiffractiveAndTagging Diff_Tagg_IP6_100GeV_08.03.21 JLAB DEMP ep-5x100-upi0 diff_tagg_physics_IP6_June_16_2021
+
+
+
+
+
+
+singularity exec --no-home -B /cvmfs:/cvmfs /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext ./run_EIC_production.sh 10 /w/eic2-scshelf2103/ECCE/users/billlee/DVCS_output/GK_10x100IPRO4/asc_milou.root DST_DiffractiveAndTagging_DEMP_ep-5x100-upi0_000_0029000_01000.root 29000 . ana.23 DiffractiveAndTagging Diff_Tagg_IP6_100GeV_08.03.21 JLAB DEMP ep-5x100-upi0 diff_tagg_physics_IP6_June_16_2021
+
+
+singularity exec --no-home -B /cvmfs:/cvmfs /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext ./run_EIC_production.sh 10 /w/eic2-scshelf2103/ECCE/users/billlee/eic-smear_tree/u_pi0/eic_input_DEMPGen_Pion0_no_decay_50k.root DST_DiffractiveAndTagging_DEMP_ep-5x100-upi0_000_0029000_01000.root 29000 . ana.23 DiffractiveAndTagging Diff_Tagg_IP6_100GeV_08.03.21 JLAB DEMP ep-5x100-upi0 diff_tagg_physics_IP6_June_16_2021
+
+
+.x Fun4All_G4_EICDetector.C(10,"/w/eic2-scshelf2103/ECCE/users/billlee/DVCS_output/GK_10x100IPRO4/asc_milou.root")
+
+
+
+
+Fun4All_G4_EICDetector.C(10,"/w/eic2-scshelf2103/ECCE/users/billlee/DVCS_output/GK_10x100IPRO4/asc_milou.root","DST_DiffractiveAndTagging_DEMP_ep-5x100-upi0_000_0029000_01000.root","",29000,".")
+
+
+
+
+/*--------------------------------------------------*/
+source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n ana.23
+
+export MYINSTALL=$(pwd)/diff_taff/install  
+source ${OPT_FUN4ALL}/bin/setup_local.sh $MYINSTALL
+
+
+
+
+/*--------------------------------------------------*/
+Accessing eicS3 from JLab
+
+Entering the singularity container
+$ module load /apps/modulefiles/singularity/3.4.0
+$ singularity shell -B /cvmfs:/cvmfs /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext
+$ export LANG=C
+
+source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n
+$ mcs3 ls eicS3
+
+Accessing single electron:
+$ mcs3 ls eicS3/eictest/ECCE/MC/ana.26/79e1691/General/particleGun/singleElectron
+
+Accessing single pion:
+$ mcs3 ls eicS3/eictest/ECCE/MC/ana.26/408060a/General/particleGun/singlePion
+
+copy thing over
+mcs3 cp <someFile> <someDownloadLocation>
+
+
+
+
+
+
+
+
+#  export MYINSTALL=/work/eic/users/billlee/install/
+export MYINSTALL=/work/eic/users/billlee/bill_weight_test/diff_tagg_ana/build
+source ${OPT_FUN4ALL}/bin/setup_local.sh $MYINSTALL
+
+
+
+####Test job
+
+singularity exec --no-home -B /cvmfs:/cvmfs /cvmfs/eic.opensciencegrid.org/singularity/rhic_sl7_ext ./run_EIC_production.sh 10 /work/eic/users/trottar/OUTPUTS/pi_n_18.0on275.0_x0.0010-1.0000_q1.0-1000.0_pythia.root DST_DiffractiveAndTagging_EIC_mesonMC_ep-18x275-PiStruc_000_1239000_01000.root 1239000 /work/eic2/ECCE/MC/prop.4/prop.4.0/DiffractiveAndTagging/EIC_mesonMC/ep-18x275-PiStruc prop.4 DiffractiveAndTagging Diff_Tagg_IP6_r6 JLAB EIC_mesonMC ep-18x275-PiStruc diff_tagg_physics_IP6_June_16_2021
+
+
+
+running root.exe -q -b Fun4All_G4_EICDetector.C(10,"/work/eic/users/trottar/OUTPUTS/pi_n_18.0on275.0_x0.0010-1.0000_q1.0-1000.0_pythia.root","DST_DiffractiveAndTagging_EIC_mesonMC_ep-18x275-PiStruc_000_1239000_01000.root","",1239000,"/work/eic2/ECCE/MC/prop.4/prop.4.0/DiffractiveAndTagging/EIC_mesonMC/ep-18x275-PiStruc")
+
+
+# Use the newest calibration database
+git clone https://github.com/ECCE-EIC/calibrations.git
+source /cvmfs/eic.opensciencegrid.org/ecce/gcc-8.3/opt/fun4all/core/bin/ecce_setup.sh -n prop.4
+export CALIBRATIONROOT=${pwd}/calibrations
+
+Install custmoized repository
+
+	../autogen.sh --prefix=/work/eic/users/billlee/build/install/
+
+# locally built libs
+	export MYINSTALL=/work/eic/users/billlee/build/install/
+
+# use locally built libs
+	source ${OPT_FUN4ALL}/bin/setup_local.sh $MYINSTALL
+
+
+
+
+
+
+#
+	cat run_DiffractiveAndTagging_Djangoh_eHe3-*q2* | grep nTotalEvents | awk '{print $2}'
+

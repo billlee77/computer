@@ -1,0 +1,184 @@
+main()
+main
+.q
+.q
+.L hdds_parse.C
+.q
+.q
+.x hdds_parser.C
+.q
+.x hdds_parser.C
+.q
+.x hdds_parser.C
+.q
+.x hdds_parser.C
+.q
+.x hdds_parser.C
+.q
+.x hdds_parser.C
+.q
+.x hdds_parser.C
+.q
+.x hdds_parser.C
+.q
+.x hdds_parser.C+
+.q
+.x hdds_parser.C++
+.q
+.x hdds_parser.C+
+.include
+.q
+gSystem->SetIncludePath( " -I/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/" 
+)
+gSystem->SetIncludePath( " -I/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/")
+.include
+gSystem->SetIncludePath("-I/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/")
+.include
+.include -I/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/
+.include
+.include -I/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/
+.include
+.q
+.q
+.x hdds_parser.C
+.q
+.x hdds_parser.C
+..q
+.q
+.x hdds_parser.C+
+w
+ls
+gROOT->ProcessLine(".include -I/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/")
+.x hdds_parser.C 
+.q
+gROOT->ProcessLine(".include -I/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/")
+.x hdds_parser.
+.x hdds_parser.C
+.x hdds_parser.C+
+./include
+.include
+.q
+gROOT->ProcessLine(".include -I/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/include/")
+.x hdds_parser.C+
+.q
+.x hdds_parser.C+
+.q
+.q
+.q
+.x aaa.C
+.q
+TFile *_file0 = TFile::Open("/sciclone/gluex10/RunPeriod-2019-11/analysis/ver01/tree_pi0kpkm__B4_M7/merged/tree_pi0kpkm__B4_M7_071940.root")
+.x $ROOT_ANALYSIS_HOME/scripts/Load_DSelector.C
+pi0kpkm__B4_M7_Tree->Process("DSelector_pi0kpkm.C+")
+pi0kpkm__B4_M7_Tree->Process("DSelector_pi0kpkm.C+")
+pi0kpkm__B4_M7_Tree->Process("DSelector_pi0kpkm.C+")
+pi0kpkm__B4_M7_Tree->Process("DSelector_pi0kpkm.C+")
+.x include_path_root_test.C
+.q
+.x include_path_root_test.C
+.q
+.x include_path_root_test.C
+.q
+.x include_path_root_test.C
+.q
+.x include_path_root_test.C
+.q
+.x include_path_root_test.C
+.x include_path_root_test.C
+.q
+.x include_path_root_test.C
+.q
+.x include_path_root_test.C
+.x include_path_root_test.C
+.q
+.x include_path_root_test.C
+.q
+.x include_path_root_test.C
+.q
+.x include_path_root_test.C
+gSystem->AddIncludePath("~/Programs/fastjet-install/include");
+.q
+.x include_path_root_test.C
+.q
+.x include_path_root_test.C
+
+
+
+
+.include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib
+.x include_path_root_test.C
+.q
+.include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib
+.include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/include
+.x include_path_root_test.C
+.x include_path_root_test.C
+.x include_path_root_test.C
+.include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib
+.include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/include
+.include -lxerces-c
+.x include_path_root_test.C
+gSystem->Load("-lxerces")
+.x include_path_root_test.C
+gSystem->Load("xerces")
+.x include_path_root_test.C
+.L include_path_root_test.C
+.x include_path_root_test.C
+gSystem->Load("sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/libxerces-c.so")
+.x include_path_root_test.C
+gSystem->Load("sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/libxerces-c-3.1.so")
+gSystem->Load("/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/libxerces-c-3.1.so")
+.x include_path_root_test.C
+.L include_path_root_test.C
+./main()
+main()
+main()
+main()
+
+
+
+
+
+
+.q
+.x include_path_root_test_inline.C
+.q
+.x include_path_root_test_inline.C
+.x include_path_root_test_inline.C
+.q
+.x include_path_root_test_inline.C
+.q
+.x include_path_root_test_inline.C
+.q
+.x include_path_root_test_inline.C
+gROOT->ProcessLine(".include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib");
+gROOT->ProcessLine(".include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/include");
+gSystem->Load("/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/libxerces-c-3.1.so");
+#include "hdds_parser.h"
+include
+.include
+#include "hdds_parser.h"
+.q
+.x include_path_root_test.C
+gROOT->ProcessLine(".include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib");
+gROOT->ProcessLine(".include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/include");
+gSystem->Load("/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/libxerces-c-3.1.so");
+#include "hdds_parser.h"
+ls
+.q
+.x include_path_root_test.C
+gROOT->ProcessLine(".include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib");
+gROOT->ProcessLine(".include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/include");
+gSystem->Load("/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/libxerces-c-3.1.so");
+./L include_path_root_test.C
+.L include_path_root_test.C
+gSystem->Load("/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/libxerces-c.so");
+.L include_path_root_test.C
+.include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib
+.include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/include
+gSystem->Load("/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/libxerces-c-3.1.so")
+.L include_path_root_test.C
+gROOT->ProcessLine(".include -lxerces-c");
+.L include_path_root_test.C
+gSystem->Load("-lxerces")
+.L include_path_root_test.C
+.q

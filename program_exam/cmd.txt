@@ -1,0 +1,36 @@
+# ---------------------------------------
+# Check Low Voltage
+
+camonitor B_HW_HVRICH0_Sl08_Ch00:imon
+camonitor B_HW_HVRICH0_Sl08_Ch01:imon
+
+
+# ---------------------------------------
+# Check High Voltage
+
+camonitor B_HW_HVRICH0_Sl11_Ch00:imon
+camonitor B_HW_HVRICH0_Sl11_Ch01:imon
+
+
+ssh clonsl1 "caget B_HW_HVRICH0_Sl08_Ch00 imon"
+
+
+# ---------------------------------------
+# Check IP address
+ping 192.168.1.10
+ping 192.168.2.10
+
+
+
+# Hall B slow control 
+ssh clonsl2
+clascss
+
+
+# ---------------------------------------
+# Data transfer
+
+rsync -e ssh -auv  load_32_DIRC_025_026/  billlee@ifarm:/lustre/expphy/volatile/halld/home/billlee/HDDIRC_data/load_32_DIRC_025_026/
+
+
+

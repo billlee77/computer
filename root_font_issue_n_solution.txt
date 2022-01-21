@@ -1,0 +1,48 @@
+Issue: root font will not shown properly at certian system such as ubuntu 20.04. Letters such as 'w', 'i' and 'l' are missing. 
+
+Explanation: there is no system default helvetica font in 20.04.
+
+Potential solutions: local solution and remote server solution
+
+Local solution #1: 
+# If one uses the Local machine to access TBrowser, then network speed is not a concern, therefore one can turn on X11.UseXft option on like the settings below. In fact this is the default setting for root_v6.22.06.  
+
+This can be done either at global setting configuration file under: ${ROOTSYS}/etc/system.rootrc or local .rootrc.
+
+# Settings for X11 behaviour.
+X11.Sync:                no
+X11.FindBestVisual:      yes
+X11.UseXft:              yes
+X11.XInitThread:         yes
+
+gvim ${ROOTSYS}/etc/system.rootrc
+
+
+/*--------------------------------------------------*/
+
+Remote server solution #2:
+
+If X11.UseXft is turned on, then the speed of TBrowser is reduced significantly. To maximize the speedm, one should turn off the X11.UseXft, in  ${ROOTSYS}/etc/system.rootrc or local .rootrc.
+
+X11.UseXft:              no
+
+To get the font to show properly, one could changge the font from helvetica to arial in ${ROOTSYS}/etc/system.rootrc or local .rootrc. 
+
+# Change the default root font
+
+Gui.DefaultFont:            -*-arial-medium-r-*-*-12-*-*-*-*-*-iso8859-1
+Gui.MenuFont:               -*-arial-medium-r-*-*-12-*-*-*-*-*-iso8859-1
+Gui.MenuHiFont:             -*-arial-bold-r-*-*-12-*-*-*-*-*-iso8859-1
+Gui.DocFixedFont:           -*-courier-medium-r-*-*-12-*-*-*-*-*-iso8859-1
+Gui.DocPropFont:            -*-arial-medium-r-*-*-12-*-*-*-*-*-iso8859-1
+Gui.IconFont:               -*-arial-medium-r-*-*-10-*-*-*-*-*-iso8859-1
+Gui.StatusFont:             -*-arial-medium-r-*-*-10-*-*-*-*-*-iso8859-1
+
+After changing to the following to make sure arial is used.
+
+$ root
+! gEnv->Print()
+
+Option 2 is a better solution for remote server usage.
+
+

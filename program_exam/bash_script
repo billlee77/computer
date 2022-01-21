@@ -1,0 +1,123 @@
+touch foo{1..100}
+
+for x in `cat file_list.txt` ; do cp /dsk2/fpi_data/pass2.use/ntup/sos$x.hbook .; done
+
+for x in `ls sos*hbook`; do h2root $x; done
+
+
+
+
+
+
+for x in `cat file_list.txt` ; do cp /dsk2/fpi_data/omega2/ntup/hms$x.hbook .; done
+
+for x in `cat file_list.txt` ; do cp /dsk2/fpi_data/omega2/scalers/hms$x.txt .; done
+
+for x in `ls hms*hbook`; do h2root $x; done
+
+for x in `ls *.rzdat`; do h2root $x; done
+
+
+for x in `cat ../file_list.txt` ; do cp /dsk2/fpi_data/fpi2.scalers.old/gen$x.txt .; done
+
+for x in `cat ../file_list.txt` ; do cp /dsk2/fpi_data/pass2.use/hms.tracktest/scalers/gen$x.txt .; done
+
+
+for x in `ls` ; do h2root $x; done
+
+cp /dsk2/fpi_data/omega2/scalers/*{47725..47735}.txt .
+
+
+for x in `cat ../file_list.txt` ; do cp /dsk2/fpi_data/omega2/scalers/sos$x.txt .; done
+
+
+
+while read line; do if ! grep -q ! <<< $line; then echo $line; fi; done < file_list.txt
+
+while read line; do if ! grep -q ! <<< $line; then echo $line; fi; done < file_list.txt
+
+
+while read line; do if [[ $line =~ \! ]]; then echo $line; fi; done < file_list.txt
+while read line; do if [[ ! $line =~ \! ]]; then echo $line; fi; done < file_list.txt
+
+while read line; do if [[ ! $line =~ \! ]]; then cp /dsk2/fpi_data/omega2/ntup/coin$line.hbook .; fi; done < ../file_list.txt
+
+
+
+du -sh /*
+
+find /home/billlee/ -type f -size +1000000000c
+
+while read line; do if ! grep -q ! <<< $line; then ln -s /home/billlee/scratch/heep/data/coin$line.root coin$line.root; fi; done < ../heep_list.txt
+
+while read line; do if [[ ! $line =~ \! ]]; then cp /dsk2/fpi_data/pass2.use/scalers/gen$line.txt .; fi; done < ../file_list.txt
+
+while read line; do if [[ ! $line =~ \! ]]; then cp /dsk2/fpi_data/pass2.use/scalers/hms$line.txt .; fi; done < ../file_list.txt
+
+while read line; do if [[ ! $line =~ \! ]]; then cp /dsk2/fpi_data/pass2.use/scalers/sos$line.txt .; fi; done < ../file_list.txt
+
+for f in batch*; do qsub "$f"; done
+
+
+
+
+
+
+for f in omega_*hist; do grep_normfac.pl $f; done
+
+for f in rho_*hist; do grep_normfac.pl $f; done
+
+for f in xphsp_*hist; do grep_normfac.pl $f; done
+
+
+
+
+
+cp -r averages ratio_check/ kindata/ u_int_fit/ xsects/ final_* calc_xsect.f itt_sim_data/wt_test.C itt_sim_data/model_function_plot/  iteration/ittasdasd
+
+cp -r averages ratio_check/ kindata/ u_int_fit/ xsects/ final_* calc_xsect.f itt_sim_data/wt_test.C itt_sim_data/model_function_plot/ xfit_in_* parameters/ fit_params/  iteration/itt_6/
+
+
+cp -r averages average_kinematics.f ratio_check/ kindata/ u_int_fit/ xsects/ final_* calc_xsect.f itt_sim_data/wt_test.C itt_sim_data/model_function_plot/ xfit_in_*f parameters/ fit_params/ model_model_compare/ u_bin_fit/   iteration/itt_7_significant_change/
+
+
+
+cp -r averages average_kinematics.f ratio_check/ kindata/ u_int_fit/ xsects/ final_* calc_xsect.f itt_sim_data/wt_test.C itt_sim_data/model_function_plot/ xfit_in_*f parameters/ fit_params/ model_model_compare/ u_bin_fit/ recon_kin/ *.C   iteration/itt_34_bg_refitted/
+
+
+cp -r averages average_kinematics.f ratio_check/ kindata/ u_int_fit/ xsects/ final_* calc_xsect.f itt_sim_data/wt_test.C itt_sim_data/model_function_plot/ xfit_in_*f parameters/ fit_params/ model_model_compare/ u_bin_fit/ recon_kin/ *.C  iteration/itt_91/
+
+
+
+
+cp -r ../u_bin_interval averages average_kinematics.f ratio_check/ kindata/ u_int_fit/ xsects/ final_* calc_xsect.f itt_sim_data/wt_test.C itt_sim_data/model_function_plot/ xfit_in_*f parameters/ fit_params/ model_model_compare/ u_bin_fit/ recon_kin/ *.C  iteration/itt_152
+
+
+for f in `ls *.eps`; do convert -density 200 $f -flatten ${f%.*}.png; done
+
+
+find . -type f | wc -lh
+find . -type f | du -ch
+
+ls -1 /usr/bin/ | wc -l
+
+
+
+
+g++ -o decodeFE decodeFE.cc `root-config --cflags  --glibs`
+
+
+for f in eta_*; do h2root "$f"; done
+
+
+
+# Kill all suspended processes
+	pkill -P $$
+
+# Check process
+	ps aux
+
+# kill with pid
+	kill -9 46292
+
+

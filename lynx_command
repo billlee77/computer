@@ -1,0 +1,135 @@
+# list all installed packaged related to vim
+
+	$ sudo apt list --installed | grep vim
+	$ dpkg-query -l
+	$ dpkg -l
+
+
+# check OpenGL
+
+	$ glxinfo
+	$ glxinfo | less
+	$ glxinfo | grep something
+	$ glxinfo | grep render
+
+
+
+# Resetting enviroment variable in bash
+	
+	export G4ENSDFSTATEDATA=/home/eicuser/workspace/share/apps/geant4.10.07_data/
+	
+
+
+
+
+
+#/*--------------------------------------------------*/
+# Color to the ls directory:
+# In bash: adding the following command to the ~/.bashrc file
+
+	LS_COLORS=$LS_COLORS:'di=0;94:' ; export LS_COLORS
+
+# In csh: 
+	1. Create a ~/.dircolors file
+	2. Adding the following line to the file:
+		DIR 0;94
+	
+
+#/*--------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+pdfjam --fitpaper true --trim "-1.9cm -1.9cm -1.9cm -1.9cm" aaa.pdf -o output.pdf
+pdfjam --papersize '{8.5in,11in}' --scale 0.905  aaa.pdf -o output.pdf
+
+pdftk pg*.pdf cat output combined.pdf
+
+
+pdfjam --offset '1mm 0cm' output.pdf
+
+pdfjam --offset "0cm -0.1cm" aaa.pdf -o output.pdf
+
+
+pdfjam --fitpaper true --trim "0cm 0.5cm -2cm 0.5cm" aaa.pdf -o output.pdf
+
+/*--------------------------------------------------*/
+Step 1 
+pdfjam --fitpaper true --trim "-1.9cm -1.9cm -1.9cm -1.9cm" aaa.pdf -o output.pdf
+
+/*--------------------------------------------------*/
+Step 2 
+pdfjam --papersize '{8.5in,11in}' --scale 0.905  aaa.pdf -o output.pdf
+
+
+/*--------------------------------------------------*/
+Step 3 
+pdfjam --offset '0.7mm 0.2mm' page_9_mod_2.pdf -o page_9_mod_3.pd
+
+
+
+/*--------------------------------------------------*/
+# login into the docker with bash
+
+docker exec -it billlee_can bash
+
+docker commit 3a1a52fcdf83  electronioncollider/escalate:billlee_can_1.3.0
+
+sudo du -h --threshold=1G
+
+
+
+/*--------------------------------------------------*/
+# Update the forked master branch
+
+git remote add upstream https://github.com/ECCE-EIC/macros.git
+git fetch upstream
+git rebase upstream/master
+git push origin master --force
+
+
+
+
+/*--------------------------------------------------*/
+sed -i 's/Andrew/James/g' /home/oleksandr/names.txt
+
+sed -i 's/prop.4-production-DiffractiveAndTagging-IP6/prop.4-production-DiffractiveAndTagging-IP6-/g' run_DiffractiveAndTagging_*-IP6.txt
+
+
+
+# Insert and append in the particular line
+sed -i '5s/$/-IP6/g' run_DiffractiveAndTagging_*-IP6.txt
+sed -i '5s/-IP6-IP6/-IP6/g' run_DiffractiveAndTagging_*-IP6.txt
+
+sed -i '5s/-IP6-IP6/-IP6/g' run_DiffractiveAndTagging_*-IP6.txt
+
+sed -i 's/prop.2.1-/prop.4-/g' run_ExclusiveReactions_*
+
+sed -i '5s/$/-IP6/g' run_ExclusiveReactions_*-IP6.txt
+sed -i '5s/-IP6-IP6/-IP6/g' run_ExclusiveReactions_*-IP6.txt
+
+
+
+
+
+
+
+# Print event number
+cat run_ExclusiveReactions_*lumi10* | grep nTotalEv | awk '{print $2}'
+
+cat run_DiffractiveAndTagging_Djangoh_eHe3-*q2* | grep nTotalEvents | awk '{print $2}'
+
+
+# check slurm jobs with all name
+
+
+
+
+find /work/eic2/ECCE/MC/prop.4/prop.4.0/DiffractiveAndTagging/EIC_mesonMC/ep-10x100-PiStruc-IP8/*.root -size +60M
+
+sed -i 's/prop.6/prop.7/g' run_DiffractiveAndTagging_*

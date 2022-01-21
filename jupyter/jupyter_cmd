@@ -1,0 +1,61 @@
+Installing Jupyter lab:
+
+	sudo apt install python3-pip python3-dev
+	sudo -H pip3 install --upgrade pip
+	sudo -H pip3 install virtualenv
+
+
+
+Installing Jupyter Lab:
+	https://jupyter.org/install
+
+	$ pip install jupyterlab
+	
+Install notebook
+	$ pip install notebook
+
+
+
+Install RISE
+	$ pip install RISE
+
+Installing spell check
+
+	$ pip install jupyterlab-spellchecker
+
+	$ pip install jupyter_contrib_nbextensions
+	$ jupyter contrib nbextension install --user
+	$ jupyter nbextension enable spellchecker/main
+
+
+Splitcell
+	$ jupyter nbextension enable splitcell/splitcell
+
+
+
+
+
+/*--------------------------------------------------*/	
+/// Hide code in slides
+
+
+def hide_code_in_slideshow():   
+    from IPython import display
+    import binascii
+    import os
+    uid = binascii.hexlify(os.urandom(8)).decode()    
+    html = """<div id="%s"></div>
+    <script type="text/javascript">
+        $(function(){
+            var p = $("#%s");
+            if (p.length==0) return;
+            while (!p.hasClass("cell")) {
+                p=p.parent();
+                if (p.prop("tagName") =="body") return;
+            }
+            var cell = p;
+            cell.find(".input").addClass("hide-in-slideshow")
+        });
+    </script>""" % (uid, uid)
+    display.display_html(html, raw=True)
+

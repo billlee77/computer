@@ -1,0 +1,15 @@
+https://www.sdcc.bnl.gov/information/ssh/generate-ssh-key-pairs
+
+
+
+1. wli2@ssh.sdcc.bnl.gov
+
+2. Generate the key
+
+3. Upload the key
+
+4. ssh wli2@rcf3.rhic.bnl.gov
+
+
+
+

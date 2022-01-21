@@ -1,0 +1,14 @@
+
+.include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib
+.include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/include
+
+gSystem->Load("/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/libxerces-c-3.1.so")
+
+
+Or
+
+gROOT->ProcessLine(".include /sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib");
+gROOT->ProcessLine(".include -lxerces-c");
+
+gSystem->Load("/sciclone/home10/jrstevens01/builds/xerces-c/xerces-c-3.1.4/lib/libxerces-c-3.1.so")
+

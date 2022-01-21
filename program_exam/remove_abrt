@@ -1,0 +1,3 @@
+Must Reove abrt and associate softwares
+	yum remove abrt*
+
